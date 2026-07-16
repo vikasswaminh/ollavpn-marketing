@@ -24,7 +24,7 @@ jobs:
             else npm install; npm run build; fi
             OUT="$W/dist"
           else
-            OUT="$W/_site"; mkdir -p "$OUT"; cp -a . "$OUT"/; rm -rf "$OUT/.git" "$OUT/.gitea" "$OUT/.github"
+            OUT=$(mktemp -d); cp -a "$W"/. "$OUT"/; rm -rf "$OUT/.git" "$OUT/.gitea" "$OUT/.github"
           fi
           echo "deploy $OUT -> $PROJECT (branch $REF)"
           npx --yes wrangler@4 pages deploy "$OUT" --project-name="$PROJECT" --branch="$REF" --commit-dirty=true
