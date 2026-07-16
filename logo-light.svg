@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" role="img" aria-label="OllaVPN">
+  <g>
+    <rect x="2" y="4" width="40" height="40" rx="9" fill="#DA291C"/>
+    <path d="M 12 36 L 12 22 A 10 10 0 0 1 32 22 L 32 36 Z" fill="#FFFFFF"/>
+    <circle cx="22" cy="26" r="3.6" fill="#DA291C"/>
+  </g>
+  <text x="52" y="30" font-family="Lato, system-ui, -apple-system, sans-serif"
+        font-weight="600" font-size="22" fill="#FFFFFF" letter-spacing="-0.5">Olla<tspan font-weight="400">VPN</tspan></text>
+  <text x="52" y="42" font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="8.5" fill="#D8D8DE" letter-spacing="0.4">&#183; pqc-ready</text>
+</svg>

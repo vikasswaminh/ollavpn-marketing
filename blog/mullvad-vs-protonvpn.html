@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mullvad vs ProtonVPN: 2026 Comparison · OllaVPN</title>
+<meta name="description" content="Mullvad's flat-rate anonymity vs ProtonVPN's Swiss open-source ecosystem — two privacy-respected VPNs compared fairly, plus a newer name to know." />
+<link rel="canonical" href="https://ollavpn.com/blog/mullvad-vs-protonvpn.html" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="Mullvad vs ProtonVPN: 2026 Comparison · OllaVPN" />
+<meta property="og:description" content="Mullvad's flat-rate anonymity vs ProtonVPN's Swiss open-source ecosystem — two privacy-respected VPNs compared fairly, plus a newer name to know." />
+<meta property="og:url" content="https://ollavpn.com/blog/mullvad-vs-protonvpn.html" />
+<meta property="og:image" content="https://ollavpn.com/blog/og-mullvad-vs-protonvpn.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Mullvad vs ProtonVPN — an honest 2026 comparison" />
+<meta property="article:published_time" content="2026-05-16T00:00:00Z" />
+<meta property="article:modified_time" content="2026-05-16T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="VPN Comparisons" />
+<meta property="article:tag" content="Mullvad" />
+<meta property="article:tag" content="ProtonVPN" />
+<meta property="article:tag" content="VPN comparison" />
+<meta property="article:tag" content="Post-quantum cryptography" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mullvad vs ProtonVPN: 2026 Comparison · OllaVPN" />
+<meta name="twitter:description" content="Mullvad's flat-rate anonymity vs ProtonVPN's Swiss open-source ecosystem — two privacy-respected VPNs compared fairly, plus a newer name to know." />
+
+<meta name="twitter:image" content="https://ollavpn.com/blog/og-mullvad-vs-protonvpn.png" />
+<!-- Self-hosted Lato (no Google Fonts CDN call for primary type). JetBrains Mono is still pulled
+     from Google for mono code blocks - used sparingly, can be self-hosted in a follow-up. -->
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="../styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Mullvad vs ProtonVPN (2026): An Honest, Side-by-Side Comparison",
+  "description": "A fair, plain-English comparison of two of the most privacy-respected VPNs in the world. Mullvad's flat-rate anonymity vs ProtonVPN's Swiss-based open-source ecosystem.",
+  "image": "https://ollavpn.com/favicon-256.png",
+  "author": {
+    "@type": "Person",
+    "name": "Nathan Pratt",
+    "url": "https://ollavpn.com/about/team#nathan-pratt",
+    "jobTitle": "Privacy & Security Lead",
+    "worksFor": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" }
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Hannah Wu",
+    "url": "https://ollavpn.com/about/team#hannah-wu",
+    "jobTitle": "Senior Security Engineer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": { "@type": "ImageObject", "url": "https://ollavpn.com/favicon-256.png" }
+  },
+  "datePublished": "2026-05-16",
+  "dateModified": "2026-05-16",
+  "mainEntityOfPage": "https://ollavpn.com/blog/mullvad-vs-protonvpn.html",
+  "inLanguage": "en",
+  "articleSection": "VPN Comparisons"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Mullvad better than ProtonVPN?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Neither is objectively better — they reflect two slightly different philosophies of how a privacy VPN should work. Mullvad's strength is uncompromising privacy-by-design: anonymous account numbers, flat €5/month pricing, and quantum-resistant tunnels by default. ProtonVPN's strength is the breadth of its open-source ecosystem and a genuinely usable free tier. Most privacy-aware readers will be very happy with either." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Mullvad cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mullvad charges a single flat rate of €5 per month (about $5.86 USD), with no tiered plans, no annual discounts, and no multi-year deals. You can pay month-to-month at the same rate as if you paid for a year. The pricing model itself is part of the brand — a deliberate refusal to lock customers in." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ProtonVPN have a free plan?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. ProtonVPN's free plan has no data cap, no time limit, no ads, and no upsell prompts during a session. It's limited to one device at a time and a smaller set of automatically chosen server countries. It is one of the friendliest free VPN tiers in the market." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Mullvad use post-quantum encryption?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Mullvad shipped post-quantum WireGuard tunnels using a Classic McEliece + Kyber hybrid and made them the default on desktop in 2023. Mullvad was among the earliest VPN providers to deploy quantum-resistant encryption in production, and the move is widely respected in the privacy community." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many devices can I use on each plan?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mullvad allows up to 5 simultaneous devices on one account. ProtonVPN's free plan allows one device at a time; VPN Plus and Proton Unlimited allow up to 10 devices simultaneously." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is more anonymous, Mullvad or ProtonVPN?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mullvad has historically taken anonymity further at the signup step: you create an account by clicking a button, receive a random account number, and can pay in cash sent by mail if you choose. No email required. ProtonVPN requires an email address at signup but accepts disposable or temporary addresses. Both run audited no-logs policies, so the practical privacy difference once you're using the service is small." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better for streaming, Mullvad or ProtonVPN?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ProtonVPN is the better choice for streaming. It maintains dedicated streaming infrastructure and consistently unblocks the major catalogs. Mullvad deliberately doesn't optimize for streaming — the company's stated position is that a VPN's job is privacy, not unblocking. If watching foreign streaming catalogs matters to you, choose ProtonVPN (or any other streaming-focused service)." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is faster, Mullvad or ProtonVPN?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Both use modern WireGuard-based protocols and feel fast on typical home internet. Independent reviewers have generally found the two within margin of each other for everyday use. The speed difference between any two reputable modern VPNs is rarely the deciding factor." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Mullvad and ProtonVPN both based outside Five Eyes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Mullvad is based in Sweden; ProtonVPN is based in Switzerland. Sweden is a Fourteen Eyes member but has historically respected privacy obligations. Switzerland is outside both Five and Fourteen Eyes arrangements and has some of the strongest data-protection laws in Europe. Both run independently audited no-logs policies." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is post-quantum cryptography, and why does it matter for a VPN?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Post-quantum cryptography (PQC) is a new family of encryption algorithms designed to remain secure against future quantum computers. The concern, often called 'harvest now, decrypt later,' is that encrypted traffic captured today could be saved and decrypted years from now once quantum computers mature. A PQC-ready VPN protects your sessions against that future, today. Mullvad pioneered PQC in production VPN tunnels. OllaVPN is built PQC-ready from day one." }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ollavpn.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Mullvad vs ProtonVPN (2026)", "item": "https://ollavpn.com/blog/mullvad-vs-protonvpn.html" }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%); pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 800px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em; line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text); }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim); margin-top: 20px; max-width: 720px; }
+
+  .article {
+    max-width: 760px; margin: 0 auto;
+    padding: 12px 28px 56px;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p, .article > ul, .article > ol { margin: 0 0 1.15em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600; letter-spacing: -0.02em;
+    font-size: 28px; margin: 2.2em 0 0.6em; color: var(--text); scroll-margin-top: 96px;
+  }
+  .article h3 {
+    font-family: var(--display); font-weight: 600; letter-spacing: -0.015em;
+    font-size: 20px; margin: 1.8em 0 0.5em; color: var(--text);
+  }
+  .article ul, .article ol { margin: 0 0 1.2em; padding-left: 1.3em; }
+  .article ul li, .article ol li { margin: 0.4em 0; }
+  .article ul li::marker { color: var(--red); }
+  .article strong { font-weight: 600; color: var(--text); }
+  .article em { font-style: italic; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+  .article hr { border: 0; border-top: 1px solid var(--line); margin: 2.4em auto; max-width: 80px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 22px 26px; margin: 0 0 1.4em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red); letter-spacing: 0.06em; text-transform: uppercase; }
+  .tldr p { margin: 8px 0 0; }
+
+  .answer-card {
+    border-left: 3px solid var(--red);
+    background: rgba(238,62,71,0.04);
+    padding: 14px 18px;
+    margin: 0 0 1.2em;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+  }
+  .answer-card .q-label { font-family: var(--mono); font-size: 10px; color: var(--red); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+  .toc { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 20px 26px; margin: 0 0 2.2em; }
+  .toc .label { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; }
+  .toc ol { margin: 12px 0 0; padding-left: 1.4em; columns: 2; column-gap: 32px; }
+  .toc ol li { font-size: 14px; line-height: 1.6; break-inside: avoid; margin: 0; }
+  .toc ol li a { color: var(--text); text-decoration: none; }
+  .toc ol li a:hover { color: var(--red); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  @media (max-width: 640px) { .toc ol { columns: 1; } }
+
+  .compare {
+    width: 100%; border-collapse: collapse; margin: 1.4em 0;
+    border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: 14px;
+  }
+  .compare th, .compare td {
+    padding: 14px 16px; text-align: left; vertical-align: top;
+    border-bottom: 1px solid var(--line); border-right: 1px solid var(--line);
+  }
+  .compare th { background: var(--panel); font-weight: 600; color: var(--text); font-size: 13px; }
+  .compare td:last-child, .compare th:last-child { border-right: 0; }
+  .compare tr:last-child td { border-bottom: 0; }
+  .compare td:first-child { font-weight: 600; color: var(--text); width: 28%; }
+
+  .strengths { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 1.6em 0; }
+  .strength { border: 1px solid var(--line); border-radius: 12px; padding: 22px; background: var(--panel); }
+  .strength h4 { font-family: var(--display); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 12px; color: var(--text); }
+  .strength ul { margin: 0; padding-left: 1.2em; }
+  .strength ul li { font-size: 15px; line-height: 1.55; color: var(--text-dim); margin: 6px 0; }
+  @media (max-width: 720px) { .strengths { grid-template-columns: 1fr; } }
+
+  .pull-card {
+    border: 1px solid rgba(238,62,71,0.35);
+    background: linear-gradient(180deg, rgba(238,62,71,0.07), rgba(238,62,71,0.01));
+    border-radius: 12px; padding: 24px 26px; margin: 1.8em 0;
+  }
+  .pull-card .pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+  .pull-card .pricing .tier { border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; background: #fff; }
+  .pull-card .pricing .tier .label { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; text-transform: uppercase; }
+  .pull-card .pricing .tier .price { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-top: 4px; }
+  .pull-card .pricing .tier .desc { font-size: 13px; color: var(--text-dim); margin-top: 6px; line-height: 1.45; }
+  @media (max-width: 720px) { .pull-card .pricing { grid-template-columns: 1fr; } }
+
+  .related-posts { margin: 2.2em 0 0; border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; background: var(--panel); }
+  .related-posts h3 { font-family: var(--display); font-size: 17px; font-weight: 600; margin: 0 0 12px; color: var(--text); }
+  .related-posts ul { margin: 0; padding-left: 1.2em; }
+  .related-posts ul li { font-size: 15px; line-height: 1.6; color: var(--text-dim); margin: 6px 0; }
+
+  .footnote { max-width: 760px; margin: 0 auto; padding: 0 28px 56px; font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+
+  .author-row { display: flex; align-items: center; gap: 14px; margin-top: 22px; font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .author-row .dot-sep { color: var(--line); }
+
+  /* Pillar 3-column layout — hidden by default; shown at >= 1200px. */
+  .pillar-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1240px;
+    margin: 0 auto;
+    gap: 0;
+  }
+  .pillar-sidebar-left, .pillar-sidebar-right { display: none; }
+  @media (min-width: 1200px) {
+    .pillar-layout {
+      grid-template-columns: 200px minmax(0, 1fr) 240px;
+      padding: 0 28px;
+      gap: 32px;
+      align-items: start;
+    }
+    .pillar-layout > .article {
+      max-width: 100%;
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .pillar-sidebar-left, .pillar-sidebar-right {
+      display: block;
+      position: sticky;
+      top: 24px;
+      font-size: 14px;
+    }
+  }
+  .pillar-sidebar h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-mute);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .pillar-sidebar-list { list-style: none; padding: 0; margin: 0 0 28px; }
+  .pillar-sidebar-list li { margin: 0; }
+  .pillar-sidebar-list a {
+    display: block;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .pillar-sidebar-list a:hover { color: var(--red); }
+  .pillar-card-mini {
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    margin-bottom: 24px;
+  }
+  .pillar-card-mini h4 { border-bottom: none; padding-bottom: 4px; margin-bottom: 10px; }
+  .pillar-card-mini p.smallcopy { font-size: 13px; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
+  .pillar-card-mini .btn { display: block; text-align: center; }
+  .pillar-author-mini { display: flex; gap: 12px; align-items: flex-start; }
+  .pillar-author-mini .avatar {
+    flex: none;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(238,62,71,0.12);
+    color: var(--red);
+    display: grid; place-items: center;
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    border: 1px solid rgba(238,62,71,0.3);
+  }
+  .pillar-author-mini .meta { line-height: 1.35; }
+  .pillar-author-mini .meta a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .pillar-author-mini .role { font-size: 12px; color: var(--text-mute); }
+</style>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<!-- Top utility bar - networkershome.com pattern: a thin mono-typeface
+     row above the main nav for live status + secondary links. -->
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="wrap">
+    <span class="meta">Comparison · 2026 · 05 · 16</span>
+    <h1>Mullvad vs ProtonVPN (2026): An Honest, Side-by-Side Comparison</h1>
+    <p class="lede">Two of the most privacy-respected VPNs in the world, compared the way a friend would compare them — fairly, in plain English, with real pricing and no marketing puff. Plus a newer name worth knowing if you want the same privacy posture in a different pricing shape.</p>
+<div class="article-byline">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div class="author-meta">
+        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
+        <div class="author-role">Privacy &amp; Security Lead</div>
+      </div>
+      <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pillar-layout">
+  <aside class="pillar-sidebar pillar-sidebar-left" aria-label="More from OllaVPN">
+  <div class="pillar-card-mini">
+    <h4>By the author</h4>
+    <div class="pillar-author-mini">
+      <div class="avatar" aria-hidden="true">NP</div>
+      <div class="meta">
+        <a href="/about/team#nathan-pratt">Nathan Pratt</a>
+        <div class="role">Privacy &amp; Security Lead</div>
+      </div>
+    </div>
+  </div>
+  <h4>More pillars</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="what-is-post-quantum-cryptography.html">Post-quantum cryptography</a></li>
+    <li><a href="what-is-a-dns-leak.html">DNS leaks</a></li>
+    <li><a href="what-is-a-vpn-kill-switch.html">Kill switches</a></li>
+    <li><a href="five-eyes-nine-eyes-fourteen-eyes.html">Five Eyes alliances</a></li>
+    <li><a href="what-is-multi-hop-vpn.html">Multi-hop VPN</a></li>
+    <li><a href="what-logs-does-vpn-keep.html">What VPNs log</a></li>
+  </ul>
+  <h4>Comparisons</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a></li>
+    <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a></li>
+    <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN</a></li>
+    <li><a href="nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a></li>
+  </ul>
+  <div class="pillar-card-mini">
+    <h4>Try OllaVPN</h4>
+    <p class="smallcopy">Free forever. 10&nbsp;Mbps. Every country. No card.</p>
+    <a class="btn primary" href="/dl/">Download free →</a>
+  </div>
+</aside>
+  <article class="article">
+
+  <div class="tldr">
+    <div class="label">TL;DR — The Short Answer</div>
+
+  <a class="post-cta" href="/dl/" style="display:flex;align-items:center;gap:14px;margin:28px 0 0;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,rgba(220,38,38,0.06),var(--panel));text-decoration:none;color:inherit;transition:border-color .15s ease,transform .15s ease;">
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:10px;background:var(--red);color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">S</span>
+    <span style="flex:1;font-size:15px;line-height:1.45;color:var(--text);">
+      <strong>Try OllaVPN free — post-quantum-ready, lifetime free plan.</strong>
+      <span style="display:block;color:var(--text-mute);font-size:13px;margin-top:2px;">No credit card. Or $2/mo for 5 devices on a faster plan.</span>
+    </span>
+    <span style="font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:0.06em;flex-shrink:0;">DOWNLOAD →</span>
+  </a>
+
+    <p><strong>Mullvad</strong> and <strong>ProtonVPN</strong> are two of the most respected names in privacy-first VPN. <strong>Mullvad</strong> is the option for people who want uncompromising privacy-by-design: anonymous account-number signup, a single flat €5/month price with no tiers or upsells, and quantum-resistant tunnels by default. <strong>ProtonVPN</strong> is the option for people who want a broader privacy ecosystem: open-source apps across every platform, a genuinely usable free tier, and integration with Proton Mail, Drive, and Pass. If you'd like the same privacy-first ethos in a simpler pricing shape — with a lifetime free plan and a $2/month paid tier — <strong>OllaVPN</strong> is a top-grade PQC-ready alternative worth a look.</p>
+  </div>
+
+  <div class="toc">
+    <div class="label">Jump to a section</div>
+    <ol>
+      <li><a href="#at-a-glance">At a glance</a></li>
+      <li><a href="#philosophy">Two privacy philosophies</a></li>
+      <li><a href="#pricing">Pricing in 2026</a></li>
+      <li><a href="#signup">Signup and anonymity</a></li>
+      <li><a href="#speed">Speed and performance</a></li>
+      <li><a href="#streaming">Streaming and torrenting</a></li>
+      <li><a href="#security">Security and encryption</a></li>
+      <li><a href="#pqc-pioneers">Post-quantum readiness</a></li>
+      <li><a href="#privacy">Jurisdiction and no-logs</a></li>
+      <li><a href="#apps">Apps and ease of use</a></li>
+      <li><a href="#support">Customer support</a></li>
+      <li><a href="#strengths">Where each one shines</a></li>
+      <li><a href="#who">Which one is right for you?</a></li>
+      <li><a href="#ollavpn">A newer name to know — OllaVPN</a></li>
+      <li><a href="#verdict">Final verdict</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </div>
+
+  <p>If you've ever spent an afternoon reading the privacy-focused corners of the internet, two names you'll have seen mentioned with genuine warmth are <strong>Mullvad</strong> and <strong>ProtonVPN</strong>. They aren't the biggest VPN brands in the world. They aren't the loudest in the marketing sense. But within the privacy-aware audience — researchers, journalists, security professionals, the kind of people who actually read terms of service — they are the two names that tend to come up first.</p>
+
+  <p>This guide is for anyone trying to decide between them. We've written it the way a thoughtful friend would walk you through the choice — without spec-sheet wallpaper, without finger-on-the-scale framing, and without telling you which one is "best." We respect both products deeply and we think you'll be happy with either.</p>
+
+  <p>At the end, we'll also introduce you to <strong>OllaVPN</strong>, a newer privacy-focused service worth a place on your shortlist if you want the same posture as Mullvad and ProtonVPN — including post-quantum readiness — but in a simpler pricing shape with a <a href="/free-vpn">lifetime free tier</a>. More on that below.</p>
+
+  <h2 id="at-a-glance">At a glance</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Mullvad and ProtonVPN are both privacy-first VPNs with audited no-logs policies. Mullvad is the option for uncompromising privacy-by-design with flat €5/month pricing. ProtonVPN is the option for an open-source ecosystem and one of the most usable free tiers in the category.
+  </div>
+
+  <p>Here's the quick side-by-side. Figures verified against each provider's pricing page on May 16, 2026.</p>
+
+  <table class="compare">
+    <thead>
+      <tr><th>What you care about</th><th>Mullvad</th><th>ProtonVPN</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Headquartered in</td><td>Sweden</td><td>Switzerland</td></tr>
+      <tr><td>Free plan</td><td>No</td><td>Yes — no data cap, no ads</td></tr>
+      <tr><td>Price</td><td>Flat €5 / month (~$5.86)</td><td>$2.99 / month (VPN Plus, 2-yr)</td></tr>
+      <tr><td>Higher tier</td><td>None — one price for everyone</td><td>$7.99 / month (Proton Unlimited, 2-yr)</td></tr>
+      <tr><td>Multi-year discounts</td><td>None — deliberate</td><td>Yes — significant on 2-yr plans</td></tr>
+      <tr><td>Devices per account</td><td>5</td><td>1 free / 10 paid</td></tr>
+      <tr><td>Signup requires email?</td><td>No — anonymous account number</td><td>Yes (any address accepted)</td></tr>
+      <tr><td>Cash payment accepted?</td><td>Yes, by mail</td><td>No (card, crypto, PayPal)</td></tr>
+      <tr><td>Apps include source code?</td><td>Fully open source</td><td>Fully open source</td></tr>
+      <tr><td>Protocol</td><td>WireGuard + OpenVPN</td><td>WireGuard + OpenVPN</td></tr>
+      <tr><td>Post-quantum tunnels</td><td>Default on desktop (pioneered)</td><td>Rolling out</td></tr>
+      <tr><td>Kill switch</td><td>Yes, on all platforms</td><td>Yes, on all platforms</td></tr>
+    </tbody>
+  </table>
+
+  <p>What this table is really telling you: this isn't a "which is better" decision in the usual sense. Both products are excellent. The choice is between two genuinely thoughtful philosophies about how a privacy VPN should be structured.</p>
+
+  <h2 id="philosophy">Two privacy philosophies</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Mullvad's philosophy is "no upsells, no tiers, no lock-in — one price, full anonymity at signup, the best privacy posture we can ship." ProtonVPN's philosophy is "an open, audited privacy ecosystem with a free tier that respects free users, paid tiers for people who want more, and integration with the broader Proton suite."
+  </div>
+
+  <p>If you only remember one thing from this guide, remember this: the difference between Mullvad and ProtonVPN is mostly a difference in <strong>philosophy</strong>, not in execution. Both companies are very good at the actual product. They just believe slightly different things about how the product should be presented.</p>
+
+  <h3>Mullvad's philosophy</h3>
+
+  <p>Mullvad has spent over a decade refining a deliberately small, deliberately principled offering. Their website doesn't have a pricing matrix — it has one price. €5 per month, no discount for paying annually, no premium tier with "extras," no add-on bundle, no referral program. You can pay monthly forever at the same rate as paying yearly. They will sell you a year's subscription for €60, the same €5 × 12 it would cost to pay monthly. There is no math advantage to a longer commitment, by design.</p>
+
+  <p>The signup experience is the most quietly radical thing about Mullvad. You click a button. The site generates a random account number. That's your identity. No email, no name, no card unless you want to use one. If you want to pay in cash, you can — fold a banknote into an envelope with your account number, mail it to Sweden, and Mullvad will credit your account.</p>
+
+  <p>The philosophy is: <em>a privacy company shouldn't need to know who you are.</em></p>
+
+  <h3>ProtonVPN's philosophy</h3>
+
+  <p>ProtonVPN is part of the broader Proton ecosystem — the same company that runs Proton Mail, Proton Drive, Proton Pass, and Proton Calendar. The philosophy here is: <em>a privacy ecosystem should cover every part of your digital life, not just the network.</em></p>
+
+  <p>ProtonVPN's free tier is unusually generous. No data cap. No time limit. No ads. No upsell prompts during a session. A free user can use the product genuinely as a free user, forever, and Proton makes the math work because the company sees the free tier as an extension of its mission rather than a lead-generation funnel.</p>
+
+  <p>The paid tiers add server coverage, streaming support, multi-hop routing through Secure Core, and (at the top tier) the entire Proton ecosystem — encrypted email, encrypted cloud storage, password manager, calendar. The pitch is comprehensive: <em>move your whole digital footprint into a privacy-first ecosystem, run by one company you've decided to trust.</em></p>
+
+  <h2 id="pricing">Pricing in 2026</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Mullvad charges a flat €5/month (about $5.86 USD) — no tiers, no annual discounts. ProtonVPN charges $0 for Free, about $2.99/month for VPN Plus on a 2-year plan, and about $7.99/month for Proton Unlimited on a 2-year plan.
+  </div>
+
+  <h3>Mullvad pricing</h3>
+
+  <p>One number: <strong>€5 per month</strong>. That's about <strong>$5.86 USD</strong> at current rates.</p>
+
+  <p>You can pay monthly, top up your account for a longer period at the same rate, or even buy time in advance using one of several payment methods including credit cards, PayPal, bank transfer, Bitcoin, Monero, and physical cash sent by mail. The company has been doing this for over a decade and the cash-by-mail option is real, not a theatrical gesture.</p>
+
+  <p>There is no money-back guarantee in the traditional sense because there's no long-term commitment. If you don't want to keep using Mullvad, simply stop topping up the account.</p>
+
+  <h3>ProtonVPN pricing</h3>
+
+  <p>ProtonVPN offers three plans:</p>
+
+  <ul>
+    <li><strong>Proton Free</strong> — <strong>$0</strong>. One device, smaller automatic server selection, no time limit, no data cap, no ads.</li>
+    <li><strong>VPN Plus</strong> — about <strong>$2.99/month</strong> on the 2-year plan. Ten devices, full server network, P2P, NetShield ad and malware blocker.</li>
+    <li><strong>Proton Unlimited</strong> — about <strong>$7.99/month</strong> on the 2-year plan. Includes the full Proton suite (Mail Plus, Drive Plus, Pass, Calendar).</li>
+  </ul>
+
+  <p>Paid plans include a <strong>30-day money-back guarantee</strong>.</p>
+
+  <h3>Comparing the two</h3>
+
+  <p>For straight VPN-only use, ProtonVPN VPN Plus on a 2-year plan is meaningfully cheaper than Mullvad — about $2.99/month vs Mullvad's $5.86/month equivalent. That's the trade-off for Mullvad's no-lock-in philosophy: they don't reward longer commitments because they don't ask for them.</p>
+
+  <p>For ecosystem-style use (you'd also use Proton Mail, Drive, and Pass), Proton Unlimited at $7.99/month is genuinely strong value compared to buying those products separately. Mullvad doesn't compete in that space — Mullvad is one product.</p>
+
+  <p>If you'd rather not commit two years at signup, both companies are reasonable. ProtonVPN's 1-month plan exists but costs significantly more than the 2-year rate. Mullvad's "monthly forever at the same rate" model is the simplest and the most flexible.</p>
+
+  <h2 id="signup">Signup and anonymity</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Mullvad requires no email at signup — you receive a randomly generated account number you use to log in. ProtonVPN requires an email address but accepts any working email, including disposable or temporary ones. Both run audited no-logs policies once you're using the service.
+  </div>
+
+  <p>This is the section where Mullvad's particular brand of seriousness shows up most clearly.</p>
+
+  <p>To sign up for <strong>Mullvad</strong>, you visit their site and click a button labeled "Generate account." The site gives you a 16-digit account number. That's it. No email field. No name. No address. The account number is your login credential. If you lose it, you lose the account — there's no email-based recovery because there's no email on file.</p>
+
+  <p>To pay, you can use a card, but you can also use Bitcoin, Monero, PayPal, bank transfer, or — famously — cash sent in an envelope to a Swedish PO box with your account number on a slip of paper inside. The cash option exists because the privacy-maximalist position is "the VPN provider should know nothing it doesn't strictly need to know to provide service."</p>
+
+  <p>To sign up for <strong>ProtonVPN</strong>, you provide an email address. Any email works — disposable, temporary, encrypted, or your regular one. Proton uses the email for account recovery and occasional service messages. Paying is conventional: credit card, PayPal, or crypto.</p>
+
+  <p>Both companies run audited no-logs policies once you're actually using the service. The difference in signup matters most if you specifically want the VPN provider to have no way of associating your identity with your account in the first place.</p>
+
+  <h2 id="speed">Speed and performance</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Both use WireGuard and feel fast on typical home internet. Independent reviewers have generally found the two within margin of each other for everyday use. The speed difference between modern reputable VPNs is rarely the deciding factor.
+  </div>
+
+  <p>Both Mullvad and ProtonVPN run <strong>WireGuard</strong> alongside OpenVPN. WireGuard is the protocol that powers most of the fastest VPNs on the market today, and both providers' implementations are well-regarded.</p>
+
+  <p>For day-to-day use — browsing, video calls, downloads — both feel fast. Independent reviewers measuring them side-by-side have generally found the two within a few percentage points of each other on raw throughput, with the winner depending heavily on which servers were tested and from which location.</p>
+
+  <p>The most useful speed advice for either VPN is the same as for any modern WireGuard-based service: <strong>connect to a server geographically close to you</strong>. That's the single biggest variable. Protocol differences are secondary.</p>
+
+  <h2 id="streaming">Streaming and torrenting</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    ProtonVPN actively supports streaming and consistently unblocks major catalogs. Mullvad does not optimize for streaming on principle — the company's view is that a VPN's job is privacy, not unblocking. If streaming matters to you, choose ProtonVPN.
+  </div>
+
+  <p>This is one of the few areas where there's a genuinely clear answer.</p>
+
+  <p><strong>ProtonVPN</strong> maintains servers dedicated to streaming and actively works to keep major catalogs accessible. Netflix, Disney+, BBC iPlayer, Prime Video, Hulu — ProtonVPN unblocks them most of the time. The free tier doesn't support streaming, but VPN Plus and Proton Unlimited do.</p>
+
+  <p><strong>Mullvad</strong> deliberately does not optimize for streaming. The company's stated philosophical position is that a VPN's purpose is privacy, not bypassing geographic content restrictions. Streaming services occasionally work through Mullvad, but the company makes no effort to keep that working — when a service blocks Mullvad's IP ranges, Mullvad doesn't chase. If you're shopping for a streaming VPN, Mullvad is not the right tool.</p>
+
+  <p>For <strong>torrenting</strong>, both work well. Both allow P2P traffic and both run kill switches. Mullvad in particular is popular in the privacy-respecting torrent community because of its anonymous-signup story.</p>
+
+  <h2 id="security">Security and encryption</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Both use modern encryption with kill switches enabled by default. Both run RAM-only diskless server infrastructure. Both have been independently audited multiple times. Both publish their source code.
+  </div>
+
+  <p>The honest summary: <strong>both VPNs use modern, well-respected encryption</strong>. Both run WireGuard. Both include kill switches on every platform, on by default. Both protect against the standard categories of leak — DNS, IPv6, WebRTC — out of the box. If you're curious whether your VPN actually does this, our <a href="what-is-a-dns-leak.html">guide to DNS leaks</a> covers the test method.</p>
+
+  <p>What sets both apart from the broader VPN market — and from each other on subtle dimensions:</p>
+
+  <ul>
+    <li><strong>Mullvad</strong> has been audited multiple times by major firms including Cure53, Assured AB, and Radically Open Security. The apps are <strong>fully open source</strong>. Server infrastructure runs in RAM only. The company has resisted, in public legal proceedings, attempts to compel it to log user activity — and won.</li>
+    <li><strong>ProtonVPN</strong> has been audited by Securitum and others. The apps are <strong>fully open source</strong> across every platform. ProtonVPN's <strong>Secure Core</strong> feature routes traffic through a hardened entry server in a privacy-friendly country before forwarding it onward — a multi-hop architecture that adds protection against network-level surveillance of the entry point.</li>
+  </ul>
+
+  <p>The open-source-on-both-sides situation is genuinely unusual. Most VPN apps are closed source. Mullvad and ProtonVPN are both companies that have made transparency a structural commitment, not just a marketing line.</p>
+
+  <h2 id="pqc-pioneers">Post-quantum readiness — Mullvad's important lead</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Mullvad pioneered post-quantum-safe WireGuard tunnels and made them the default on desktop in 2023. ProtonVPN is rolling out post-quantum protections more recently. OllaVPN is built post-quantum-ready from day one.
+  </div>
+
+  <p>This deserves its own section because Mullvad genuinely led the industry here, and it would be dishonest to tell this story without giving them direct credit.</p>
+
+  <p>The concern that drives post-quantum cryptography is a pattern researchers call <strong>"harvest now, decrypt later"</strong>: an adversary captures and stores your encrypted traffic today, even though they can't read it today, on the bet that they'll be able to decrypt it five or ten years from now once quantum computers mature. The encrypted sessions you run this week could sit in storage somewhere, waiting for the locks to become breakable.</p>
+
+  <p>Most of the encryption used on the internet today relies on math problems that a sufficiently powerful quantum computer could solve. Post-quantum algorithms are designed to resist that future. Some of the biggest names in security — Apple, Signal, Cloudflare, Google — have been rolling out PQC across their own products over the last two years.</p>
+
+  <p><strong>Mullvad shipped quantum-resistant tunnels in production WireGuard ahead of essentially every other commercial VPN.</strong> In 2023, the company integrated a Classic McEliece and Kyber hybrid into WireGuard's existing handshake. In 2024, Mullvad made those tunnels <strong>the default on desktop clients</strong> — meaning new connections automatically use post-quantum protection without requiring the user to flip any switch.</p>
+
+  <p>It's the kind of move that defines what "privacy-first" actually means in practice. Mullvad didn't wait for the rest of the industry. They didn't wait for standardization to finish. They didn't wait for a marketing reason. They did it because it was the right thing to do for users.</p>
+
+  <p>ProtonVPN is rolling out post-quantum protections more recently, alongside the broader industry. That's not a criticism — it's the normal pace at which large security companies adopt new cryptography. Mullvad's early move is genuinely exceptional.</p>
+
+  <p>If post-quantum readiness is a thing you care about, both companies have credible answers. Mullvad has the historical lead.</p>
+
+  <h2 id="privacy">Jurisdiction and no-logs</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Mullvad is based in Sweden; ProtonVPN is based in Switzerland. Both publish independently audited no-logs policies. Sweden is a Fourteen Eyes member; Switzerland is outside both Five and Fourteen Eyes arrangements.
+  </div>
+
+  <p>Both companies run <strong>independently audited no-logs policies</strong>. Neither retains the content of your traffic, the sites you visit, the apps you use, or your real IP after a session ends.</p>
+
+  <p>Jurisdictions:</p>
+
+  <ul>
+    <li><strong>Mullvad</strong> operates from <strong>Sweden</strong>. Sweden is a member of the broader Fourteen Eyes intelligence-sharing arrangement, which some privacy-conscious readers do consider. Mullvad's response to this is to minimize what it stores in the first place — there is famously little for any government to obtain because Mullvad doesn't keep it.</li>
+    <li><strong>ProtonVPN</strong> operates from <strong>Switzerland</strong>, outside both Five and Fourteen Eyes structures, with some of the strongest data-protection laws in Europe and a long tradition of personal-privacy protections.</li>
+  </ul>
+
+  <p>The Sweden-vs-Switzerland distinction matters more in theory than in practice for most users, because both companies run no-logs policies that have been audited and tested under legal pressure. The strongest privacy posture is "don't have data to hand over" — and both companies pursue that aggressively.</p>
+
+  <h2 id="apps">Apps and ease of use</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Mullvad's apps are deliberately minimalist and focused — connect, choose a country, that's it. ProtonVPN's apps are calmer than the consumer-VPN average and include features like Secure Core, NetShield, and a Tor integration.
+  </div>
+
+  <h3>Mullvad's app experience</h3>
+
+  <p>Mullvad's apps are <strong>deliberately minimalist</strong>. Open the app. Choose a country (or let the app pick). Click the big switch. Connected. There is almost nothing else on the main screen — no map, no upsell, no "tip of the day," no banner about the next sale.</p>
+
+  <p>The settings are restrained. The most important ones — kill switch, post-quantum tunnels, DNS settings — are present and clearly labeled. The aesthetic is calm and grown-up. The app looks like it was made by people who use it themselves and want it to stay out of their way.</p>
+
+  <h3>ProtonVPN's app experience</h3>
+
+  <p>ProtonVPN's apps are <strong>calmer than most consumer VPN apps</strong> while including more features than Mullvad's. The main screen shows your status, current server, and a connect/disconnect button. Below that is a server list organized by country. The mobile apps are particularly well-done — they feel like they were designed by people who care about how a privacy app should feel.</p>
+
+  <p>Paid plans expose features Mullvad doesn't have: <strong>Secure Core</strong> for multi-hop routing, <strong>NetShield</strong> for ad and tracker blocking, and <strong>Tor over VPN</strong> for the small number of cases where that combination makes sense.</p>
+
+  <h2 id="support">Customer support</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Both offer email-only support with thoughtful, accurate responses. Neither offers 24/7 live chat. Both maintain extensive help-center documentation. Reddit communities for both companies are active and reasonably well-moderated.
+  </div>
+
+  <p>Neither Mullvad nor ProtonVPN offers a 24/7 live-chat experience the way the big consumer-VPN brands do. Both rely on <strong>email support</strong>, supplemented by extensive help-center articles and active user communities on Reddit and elsewhere.</p>
+
+  <p>In practice, support responses from both companies tend to be slower than NordVPN or ExpressVPN but meaningfully better-written and more accurate when they arrive. The trade-off is the kind of thing that matches both companies' personalities — they aren't trying to be hand-holding consumer brands. They're trying to be quietly excellent privacy services.</p>
+
+  <h2 id="strengths">Where each one shines</h2>
+
+  <div class="strengths">
+    <div class="strength">
+      <h4>Mullvad — what it does brilliantly</h4>
+      <ul>
+        <li>The most privacy-respecting signup experience in the entire category — no email required</li>
+        <li>Flat €5/month pricing with no upsells, tiers, or multi-year lock-in</li>
+        <li>Cash-by-mail payment option that actually works</li>
+        <li>Pioneered post-quantum WireGuard tunnels in production — default on desktop</li>
+        <li>Fully open-source apps audited by Cure53 and Assured AB</li>
+        <li>RAM-only diskless server infrastructure</li>
+        <li>Quietly excellent minimalist app design across every platform</li>
+      </ul>
+    </div>
+    <div class="strength">
+      <h4>ProtonVPN — what it does brilliantly</h4>
+      <ul>
+        <li>One of the friendliest genuinely-free tiers in the VPN industry</li>
+        <li>Fully open-source apps inspected and audited</li>
+        <li>Swiss-based, outside both Five and Fourteen Eyes</li>
+        <li>Secure Core multi-hop routing for sensitive sessions</li>
+        <li>Strong streaming support across major platforms</li>
+        <li>Integrates with the broader Proton suite (Mail, Drive, Pass, Calendar)</li>
+        <li>Backed by a company whose entire brand is privacy</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="who">Which one is right for you?</h2>
+
+  <h3>Pick Mullvad if…</h3>
+  <ul>
+    <li>You want the <strong>most privacy-respecting signup experience</strong> available — no email, no name, no card unless you choose.</li>
+    <li>You like the idea of a flat <strong>€5/month price with no lock-in, no upsells, no tiers</strong> — and you don't need a free option.</li>
+    <li>You'd appreciate <strong>quantum-resistant tunnels enabled by default</strong>.</li>
+    <li>You prefer minimalist apps that get out of your way.</li>
+    <li>You're a <strong>privacy maximalist</strong> and the philosophical match matters to you as much as the product features.</li>
+    <li>You don't need a streaming-focused VPN.</li>
+  </ul>
+
+  <h3>Pick ProtonVPN if…</h3>
+  <ul>
+    <li>You want a genuinely usable <strong>free tier</strong> with no data cap.</li>
+    <li>You'd use, or want to start using, the <strong>broader Proton ecosystem</strong> (Mail, Drive, Pass, Calendar).</li>
+    <li>You value <strong>Secure Core multi-hop routing</strong> for extra-sensitive sessions.</li>
+    <li>You want <strong>strong streaming support</strong> across major platforms.</li>
+    <li>You're more comfortable with conventional email-based signup.</li>
+    <li>You'd prefer a <strong>Swiss jurisdiction</strong>, outside Five and Fourteen Eyes.</li>
+  </ul>
+
+  <p>Both are excellent. Both deserve your trust. The choice is about which of the two philosophies above sounds more like you.</p>
+
+  <h2 id="ollavpn">A newer name to know — OllaVPN</h2>
+
+  <p>Before we close, one more name to put on your radar — especially if the privacy-first ethos of Mullvad and ProtonVPN resonates with you, but you'd like a different pricing shape.</p>
+
+  <p><strong>OllaVPN</strong> is a newer privacy-focused VPN built around three deliberate choices: <strong>post-quantum cryptography ready from day one</strong>, a <strong>lifetime free plan that really is free</strong>, and a single <strong>$2/month paid plan</strong> with no tiers, no upsells, and no ecosystem-bundle math to evaluate. We're full-disclosure OllaVPN's own team writing this, and we've tried to keep the rest of this guide honest enough that you can trust this section too. If you walked away today and bought Mullvad or ProtonVPN, we'd consider that a great decision.</p>
+
+  <p>Here's where we think OllaVPN fits on a privacy-first shortlist:</p>
+
+  <ul>
+    <li><strong>Post-quantum cryptography ready from day one.</strong> Mullvad pioneered the move in production VPN tunnels. We've built the same future-readiness into OllaVPN from the start, available on every connection, free and paid alike.</li>
+    <li><strong>A lifetime free plan with no data caps or time limits.</strong> ProtonVPN's free tier is excellent and we genuinely admire it. We added country choice and the ability to use all the same protection features free users sometimes don't get elsewhere.</li>
+    <li><strong>A $2/month paid plan, simpler and cheaper than Mullvad's flat rate.</strong> Five devices on one account. 10 Gbps connection speed. No tiers to evaluate. No add-on bundles. No "Plus" version. Just a faster pipe and more devices.</li>
+    <li><strong>A kill switch that's always on and can't be disabled.</strong> Privacy isn't a setting you should be able to accidentally turn off.</li>
+    <li><strong>One company, one product.</strong> We don't sell a password manager, encrypted email, cloud storage, a calendar, or anything else. We make a VPN.</li>
+  </ul>
+
+  <div class="pull-card">
+    <p style="margin-bottom: 6px;"><strong>OllaVPN pricing — the whole menu:</strong></p>
+    <div class="pricing">
+      <div class="tier">
+        <div class="label">Lifetime free</div>
+        <div class="price">$0 · 10 Mbps</div>
+        <div class="desc">Every country we serve. No time limits. No data caps. No ads. No upsell prompts. Free is free.</div>
+      </div>
+      <div class="tier">
+        <div class="label">Paid plan</div>
+        <div class="price">$2 / month · 10 Gbps</div>
+        <div class="desc">Five devices on one account. Fast enough for gigabit home internet. Cheap enough that it isn't a decision.</div>
+      </div>
+    </div>
+  </div>
+
+  <p>If you're already happy with Mullvad or ProtonVPN, stay where you are — they're both excellent and we'd be the last to talk you out of either. But if you want the same privacy posture in a simpler pricing shape, or if a no-strings lifetime free plan would change how you'd use a VPN, <strong>OllaVPN is a top-grade alternative worth a place on your shortlist</strong>.</p>
+
+  <p>You can <a href="../dl/">try the free plan</a> right now without an email or a card.</p>
+
+  <h2 id="verdict">Final verdict</h2>
+
+  <p>If we had to summarize this entire guide into three lines:</p>
+
+  <ul>
+    <li>Pick <strong>Mullvad</strong> if you want the most privacy-respecting signup experience in the category, flat pricing, and quantum-resistant tunnels by default.</li>
+    <li>Pick <strong>ProtonVPN</strong> if you want a usable free tier, an open-source ecosystem, and Swiss jurisdiction.</li>
+    <li>Try <strong>OllaVPN</strong> if you want the same privacy-first posture in a simpler pricing shape — lifetime free or $2/month, PQC-ready out of the box.</li>
+  </ul>
+
+  <p>This is a category where the leaders are all good and the differences are about <em>fit</em>, not <em>quality</em>. Whichever one you pick, having a reputable privacy-first VPN is meaningfully better than having none.</p>
+
+  <div class="related-posts">
+    <h3>Related reading</h3>
+    <ul>
+      <li><a href="what-is-post-quantum-cryptography.html"><strong>Pillar guide:</strong> What is post-quantum cryptography? A 2026 guide for anyone who cares about privacy</a></li>
+      <li><a href="nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN (2026): An Honest, Side-by-Side Comparison</a></li>
+      <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN (2026): An Honest, Side-by-Side Comparison</a></li>
+      <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN (2026): An Honest, Side-by-Side Comparison</a></li>
+      <li><a href="what-is-a-dns-leak.html">What is a DNS leak? How to test, fix, and prevent it</a></li>
+      <li><a href="../technology.html">Inside the OllaVPN stack — what PQC-ready actually means</a></li>
+    </ul>
+  </div>
+
+  <hr />
+
+  
+<!-- TIER1-ENRICHED -->
+
+  <h2 id="tier1-methodology">How we evaluated these — methodology disclosure</h2>
+  <p>A head-to-head comparison is only as honest as the methodology behind it. For every comparison we publish, the framework is the same:</p>
+  <p><strong>Data sources.</strong> Each operator's publicly documented privacy policy (read fully, not skimmed); their published independent audit reports where available (Securitum, Cure53, Radically Open Security, and KPMG have all audited VPNs in the names we compare); their security disclosure pages and warrant canaries; their pricing pages at the time of writing; and our own hands-on testing on at least two of Windows, macOS, and Android during the most recent quarterly refresh.</p>
+  <p><strong>What we test.</strong> DNS-leak posture (using <a href="/dns-lookup">our DNS lookup tool</a> + dnsleaktest.com cross-check), WebRTC leak posture via <a href="/webrtc-leak-test">our test</a>, kill-switch behavior under simulated network changes (toggling Wi-Fi off mid-session, putting the laptop to sleep with VPN active, swapping Wi-Fi networks), and IPv6 leak posture.</p>
+  <p><strong>What we do not test.</strong> Long-term performance under heavy load (we lack multi-month data on competitors), specific streaming-service compatibility (rotates daily, unfair to compare), and per-region speed (depends on the user's ISP and exit choice, not the VPN's design).</p>
+  <p><strong>Conflict-of-interest disclosure.</strong> OllaVPN is one of the operators we compare on this site. We manage the conflict by being explicit about methodology, by ranking by best-fit-for-the-reader's-situation rather than by what makes us look best, and by accepting that some readers will pick a different operator. The reader who picks Proton VPN, Mullvad, or another name after reading our comparison is a reader we still consider a good outcome.</p>
+  <h2 id="tier1-vetting">A vetting checklist for any VPN comparison you read</h2>
+  <p>Not every "X vs Y" article on the internet uses a defensible methodology. When you read someone else's comparison, watch for these patterns:</p>
+  <p><strong>Affiliate-driven rankings.</strong> Many comparison sites are funded by VPN affiliate commissions. Operators that pay higher commissions tend to win those comparisons. The tell is rankings that don't match the actual technical merits or audit history — and "best for streaming" being the default lead category, because streaming-VPN affiliate payouts are highest.</p>
+  <p><strong>Stale data.</strong> VPN operators change pricing, ownership, jurisdiction, and feature sets continuously. A comparison written in 2023 and republished in 2026 without re-checking is unreliable. Look for a "last updated" date and a methodology section before trusting the comparison.</p>
+  <p><strong>Missing audit attribution.</strong> Trustworthy comparisons cite the audit firm and year for each operator's last independent audit. If a "no-logs" claim is repeated without saying who verified it and when, the claim is doing less work than it appears to.</p>
+  <p><strong>No coverage of what each operator does NOT do.</strong> Honest comparisons include the limitations and non-features of each operator. A comparison that only lists positives is selling, not informing.</p>
+
+  <h2 id="tier1-about">About this guide</h2>
+  <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
+  <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
+<div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>At a glance</li>
+        <li>Two privacy philosophies</li>
+        <li>Pricing in 2026</li>
+        <li>Signup and anonymity</li>
+        <li>Speed and performance</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+
+  <h3>Is Mullvad better than ProtonVPN?</h3>
+  <p>Neither is objectively better — they reflect two slightly different philosophies of how a privacy VPN should work. <strong>Mullvad</strong>'s strength is uncompromising privacy-by-design: anonymous account numbers, flat €5/month pricing, and quantum-resistant tunnels by default. <strong>ProtonVPN</strong>'s strength is the breadth of its open-source ecosystem and a genuinely usable free tier.</p>
+
+  <h3>How much does Mullvad cost?</h3>
+  <p>Mullvad charges a single flat rate of <strong>€5 per month (about $5.86 USD)</strong>, with no tiered plans, no annual discounts, and no multi-year deals. You can pay month-to-month at the same rate as if you paid for a year.</p>
+
+  <h3>Does ProtonVPN have a free plan?</h3>
+  <p>Yes. ProtonVPN's free plan has <strong>no data cap, no time limit, no ads, and no upsell prompts</strong>. It's limited to one device at a time and a smaller set of automatically chosen server countries. It is one of the friendliest free VPN tiers in the market.</p>
+
+  <h3>Does Mullvad use post-quantum encryption?</h3>
+  <p>Yes. Mullvad shipped <strong>post-quantum WireGuard tunnels</strong> using a Classic McEliece + Kyber hybrid and made them the default on desktop in 2023. Mullvad was among the earliest VPN providers to deploy quantum-resistant encryption in production.</p>
+
+  <h3>How many devices can I use on each plan?</h3>
+  <p>Mullvad allows up to <strong>5 simultaneous devices</strong> on one account. ProtonVPN's free plan allows one device at a time; VPN Plus and Proton Unlimited allow up to <strong>10 devices</strong>.</p>
+
+  <h3>Which is more anonymous, Mullvad or ProtonVPN?</h3>
+  <p>Mullvad has historically taken anonymity further at the signup step: you create an account by clicking a button, receive a random account number, and can pay in cash sent by mail if you choose. <strong>No email required.</strong> ProtonVPN requires an email address at signup but accepts disposable or temporary addresses. Both run audited no-logs policies.</p>
+
+  <h3>Which is better for streaming, Mullvad or ProtonVPN?</h3>
+  <p><strong>ProtonVPN</strong> is the better choice for streaming. Mullvad deliberately doesn't optimize for streaming — the company's stated position is that a VPN's job is privacy, not unblocking. If streaming matters to you, choose ProtonVPN.</p>
+
+  <h3>Which is faster, Mullvad or ProtonVPN?</h3>
+  <p>Both use modern WireGuard-based protocols and feel fast on typical home internet. Independent reviewers have generally found the two <strong>within margin of each other</strong> for everyday use.</p>
+
+  <h3>Are Mullvad and ProtonVPN both based outside Five Eyes?</h3>
+  <p>Yes. Mullvad is based in <strong>Sweden</strong>; ProtonVPN is based in <strong>Switzerland</strong>. Sweden is a Fourteen Eyes member but has historically respected privacy obligations. Switzerland is outside both Five and Fourteen Eyes arrangements.</p>
+
+  <h3>What is post-quantum cryptography, and why does it matter for a VPN?</h3>
+  <p>Post-quantum cryptography (PQC) is a new family of encryption algorithms designed to remain secure against future quantum computers. The concern, often called <strong>"harvest now, decrypt later,"</strong> is that encrypted traffic captured today could be saved and decrypted years from now once quantum computers mature. Mullvad pioneered PQC in production VPN tunnels. <a href="../technology.html">OllaVPN is built PQC-ready</a> from day one.</p>
+
+    <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Fblog%2Fmullvad-vs-protonvpn" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fblog%2Fmullvad-vs-protonvpn" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fblog%2Fmullvad-vs-protonvpn&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fblog%2Fmullvad-vs-protonvpn&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    </article>
+  <aside class="pillar-sidebar pillar-sidebar-right" aria-label="Related reading">
+  <h4>Related reading</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="what-is-a-vpn-and-how-does-it-work.html">What is a VPN?</a></li>
+    <li><a href="what-is-encrypted-client-hello.html">Encrypted Client Hello</a></li>
+    <li><a href="wireguard-vs-openvpn.html">WireGuard vs OpenVPN</a></li>
+    <li><a href="can-government-track-vpn.html">Can governments track VPNs?</a></li>
+    <li><a href="why-are-free-vpns-free.html">Why are free VPNs free?</a></li>
+    <li><a href="best-free-vpn-for-windows.html">Best free VPN for Windows</a></li>
+  </ul>
+  <h4>Buyer guides</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="/best-free-vpn-2026">Best free VPN 2026</a></li>
+    <li><a href="/free-vpn-mac">Free VPN for Mac</a></li>
+    <li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li>
+    <li><a href="/free-vpn-for-india">Free VPN for India</a></li>
+  </ul>
+  <div class="pillar-card-mini">
+    <h4>Tools you might like</h4>
+    <ul class="pillar-sidebar-list" style="margin:0;">
+      <li><a href="/what-is-my-ip">What is my IP</a></li>
+      <li><a href="/webrtc-leak-test">WebRTC leak test</a></li>
+      <li><a href="/dns-lookup">DNS lookup</a></li>
+      <li><a href="/tools/">All tools →</a></li>
+    </ul>
+  </div>
+</aside>
+</div>
+
+<p class="footnote">Pricing and feature data verified against Mullvad and ProtonVPN public pricing pages on 2026-05-16. Pricing changes occasionally — please check current rates on each provider's site before purchasing.</p>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>PQC-ready · lifetime free · no card</span>
+    <h2 class="h-display h2 mt-16">Try OllaVPN <span class="accent">free for life</span>.</h2>
+    <div class="actions"><a class="btn primary xl" href="../dl/">Download free <span class="arrow">→</span></a><a class="btn xl" href="./">More from the blog →</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+<script src="../shared.js"></script>
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

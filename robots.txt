@@ -1,0 +1,114 @@
+# OllaVPN — robots.txt
+#
+# Public marketing site. Everything here is intended to be crawled,
+# indexed, and cited by search engines AND answer engines.
+#
+# We WANT to appear in classic search results AND in AI-generated
+# answers (ChatGPT, Claude, Perplexity, Gemini, Google AI Overviews,
+# Bing Copilot, etc.). Our content is written for AEO as well as SEO,
+# and the explicit permissions below remove any ambiguity for the
+# major crawlers' policies.
+#
+# User-facing app surfaces (dashboard, signup, login) live on
+# login.ollavpn.com and are behind authentication — not exposed here.
+
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+
+# ─── Major search engines ─────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ─── AI / answer-engine crawlers (explicitly allowed) ─────
+# We grant these crawlers full access for AEO. We want our
+# pages to be citable sources inside generated answers.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: omgili
+Allow: /
+
+User-agent: Mistralbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ─── Sitemap ──────────────────────────────────────────────
+Sitemap: https://ollavpn.com/sitemap.xml

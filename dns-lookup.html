@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DNS Lookup — See Any Domain's Records in Seconds | OllaVPN</title>
+<meta name="description" content="Free DNS lookup tool. See any domain's A, AAAA, MX, TXT, NS, and CNAME records — live and ungated. No signup." />
+<link rel="canonical" href="https://ollavpn.com/dns-lookup" />
+<meta name="theme-color" content="#0B0B12" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="DNS Lookup — Free Record Viewer" />
+<meta property="og:description" content="See any domain's A, AAAA, MX, TXT, NS, and CNAME records live." />
+<meta property="og:url" content="https://ollavpn.com/dns-lookup" />
+<meta property="og:image" content="https://ollavpn.com/og-dns-lookup.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="DNS Lookup — Free Record Viewer" />
+<meta name="twitter:description" content="See any domain's A, AAAA, MX, TXT, NS, and CNAME records live." />
+<meta name="twitter:image" content="https://ollavpn.com/og-dns-lookup.png" />
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+<link rel="stylesheet" href="/tool.css" />
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebApplication", "name": "DNS Lookup",
+  "applicationCategory": "UtilityApplication", "operatingSystem": "Any",
+  "url": "https://ollavpn.com/dns-lookup",
+  "description": "Free tool that shows a domain's DNS records (A, AAAA, MX, TXT, NS, CNAME) live.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "What does a DNS lookup actually do?",
+    "acceptedAnswer": { "@type": "Answer", "text": "It asks the global DNS for the records attached to a domain. The most common are A (IPv4 address), AAAA (IPv6 address), MX (mail servers), TXT (anything from SPF rules to verification tokens), NS (which nameservers serve the domain), and CNAME (an alias pointing one name at another). The tool above queries them all in one shot." } },
+  { "@type": "Question", "name": "Why does the same domain return different IPs at different times?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Large sites use multiple IPs and rotate which ones are returned based on geography, load, and provider routing. Cloudflare-fronted sites in particular return whichever IP is closest to whoever is asking. This is normal and is part of how the modern internet stays fast. Your browser doesn't care which IP it gets, as long as it gets one." } },
+  { "@type": "Question", "name": "What is a TXT record used for?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Everything. TXT records were originally for arbitrary notes, then became the home for SPF (which mail servers can send for the domain), DKIM (email signing keys), DMARC (email policy), and ownership verification tokens from Google, Apple, Microsoft, Atlassian, and dozens of others. You'll typically see 5 to 30 of them on an active domain — and most of them aren't human-readable." } },
+  { "@type": "Question", "name": "What is the difference between A and CNAME?",
+    "acceptedAnswer": { "@type": "Answer", "text": "An A record points the domain straight at an IPv4 address. A CNAME points it at another domain, which is then resolved through its own DNS. CNAMEs are good for pointing subdomains at services (blog.example.com -> ghost.io) but can't be used at the root domain in most cases. Modern providers offer ALIAS or ANAME records as a workaround." } },
+  { "@type": "Question", "name": "What is an MX record?",
+    "acceptedAnswer": { "@type": "Answer", "text": "MX (Mail Exchange) records say which servers handle email for the domain. The number in front is a priority (lower is preferred). If you see MX records pointing at Google, Microsoft, or Cloudflare's email infrastructure, that's the email host. No MX records means no email — useful for confirming a domain isn't actually used for mail." } },
+  { "@type": "Question", "name": "Does a VPN change DNS lookups?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Yes. With a VPN on, DNS queries get resolved by the VPN provider's resolver instead of your ISP's. This is how a VPN prevents DNS leaks — by making sure the lookups happen inside the encrypted tunnel rather than over your normal connection. Our /what-is-a-dns-leak post explains the failure mode when this goes wrong." } },
+  { "@type": "Question", "name": "How fast are DNS lookups?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Usually 10 to 80 milliseconds, depending on whether the answer is cached. The first lookup for a domain might take 200 to 500 ms because the resolver has to chase the answer up the DNS hierarchy. After that, it's cached for the TTL (time-to-live) the record specifies — anywhere from 60 seconds to a day." } },
+  { "@type": "Question", "name": "Do you log the domains I look up?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Standard web-server access logs are kept briefly for security and abuse detection, then rotated. We don't tie lookups to your identity, don't sell or share the data, and don't track you across sessions." } } ] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+  { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ollavpn.com/tools" },
+  { "@type": "ListItem", "position": 3, "name": "DNS Lookup", "item": "https://ollavpn.com/dns-lookup" } ] }
+</script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar"><div class="wrap"><div class="utilbar-left"><span class="green-dot">&#9679;</span> All systems operational <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a></div><div class="utilbar-right"><a href="/technology.html">Trust</a> <span style="opacity:.4;">&middot;</span> <a href="/blog/">Resources</a> <span style="opacity:.4;">&middot;</span> <a href="/contact.html">Contact</a></div></div></div>
+
+<nav class="nav"><div class="nav-inner"><a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a><div class="nav-links"><a href="/free-vpn">Free VPN</a><a href="/apps.html">Apps</a><a href="/dl/">Download</a></div><div class="nav-cta"><a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a><a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a></div></div></nav>
+
+<header class="tool-hero"><div class="wrap">
+  <div class="meta">FREE TOOL · LIVE LOOKUP · NO SIGNUP
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=dns">DNS</a></div>
+    </div>
+  <h1>DNS Lookup</h1>
+  <p class="lede">Pull every public DNS record for any domain in one shot — A, AAAA, MX, TXT, NS, CNAME. Useful for verifying a setup, debugging mail delivery, checking SPF or DKIM, or just satisfying curiosity about where a site really lives.</p>
+</div></header>
+
+<section class="tool-section">
+  <div class="check-card">
+    <form class="check-form" id="check-form" autocomplete="off">
+      <input type="text" id="domain-input" placeholder="example.com" required spellcheck="false" autocapitalize="off" autocorrect="off" />
+      <button type="submit" id="check-btn">Look up</button>
+    </form>
+    <div class="result" id="result" hidden>
+      <div class="verdict" id="verdict"><span class="dot"></span><span id="verdict-text">Looking up…</span></div>
+      <div id="records-output"></div>
+    </div>
+    <div class="tool-cta">
+      <p><strong>If lookups feel slow or you suspect a DNS leak</strong> on your network, a VPN with in-tunnel DNS fixes it.</p>
+      <a class="btn primary" href="/free-vpn">Try OllaVPN Free</a>
+    </div>
+  </div>
+</section>
+
+<div class="article-layout">
+  <article class="article">
+    <div class="tldr"><span class="label">TL;DR</span>
+      <p>DNS is the phone book of the internet. Every domain has records that say where to route different kinds of traffic — web (A/AAAA), email (MX), verification tokens (TXT), nameservers (NS), and aliases (CNAME).</p>
+      <p>This tool pulls all of them for any domain in one request. Useful when you're debugging a deployment, verifying that DKIM is set up, or just want to see what's actually attached to a site.</p>
+      <p>If you're worried about DNS leaks on your own network, a VPN with in-tunnel DNS resolves the lookups inside the encrypted tunnel — your ISP can't see what you query.</p>
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page"><span class="label">On this page</span><ol>
+      <li><a href="#what-it-does">What a DNS lookup actually does</a></li>
+      <li><a href="#record-types">Record types you'll see</a></li>
+      <li><a href="#why-multiple">Why one domain returns multiple IPs</a></li>
+      <li><a href="#dns-leak">DNS leaks — what they are and how to test</a></li>
+      <li><a href="#ttl">TTL and caching, explained</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol></nav>
+
+    <h2 id="what-it-does">What a DNS lookup actually does</h2>
+    <p class="short-answer">It asks the global Domain Name System where a particular name resolves and what records are attached to it.</p>
+    <p>When you type a URL into your browser, the very first thing that has to happen is a translation: <strong>example.com</strong> is a name, but routers only speak IP addresses. DNS is the system that does the translation. Your device asks a resolver (usually your ISP's, sometimes Cloudflare's 1.1.1.1 or Google's 8.8.8.8), the resolver chases the answer through the global DNS hierarchy, and an IP address comes back.</p>
+    <p>What this tool does is run that same lookup directly against the authoritative source, then surface not just the IP but every other public record attached to the domain. It's the same data your browser, mail server, or anti-spam scanner queries — just made visible.</p>
+
+    <h2 id="record-types">Record types you'll see</h2>
+    <p class="short-answer">Six types cover 95 percent of real-world DNS, and each is for a specific job.</p>
+    <p><strong>A</strong> records map a name to an IPv4 address. <strong>AAAA</strong> records do the same for IPv6. <strong>CNAME</strong> records are aliases — they say "look up this other name instead and use whatever it returns." <strong>MX</strong> records list the mail servers that handle email for the domain, with priority numbers (lower is preferred). <strong>TXT</strong> records hold arbitrary text — verification tokens, SPF rules, DKIM keys, DMARC policy, and a surprising amount of random metadata. <strong>NS</strong> records say which nameservers are authoritative for the domain.</p>
+    <p>Less common but worth knowing: <strong>SRV</strong> records map service-specific lookups (used heavily by SIP, Matrix, and Microsoft Active Directory). <strong>CAA</strong> records say which certificate authorities can issue certs for the domain. <strong>PTR</strong> records do reverse lookups (IP to name). The tool above returns the main six and any others that exist.</p>
+
+    <h2 id="why-multiple">Why one domain returns multiple IPs</h2>
+    <p class="short-answer">Modern infrastructure runs everything redundantly, and DNS is how clients pick a healthy endpoint.</p>
+    <p>You'll often see a domain with two, three, or even ten A records. Each is a different IP, usually pointing at the same site but hosted on a different server or in a different data centre. Your browser picks one (usually round-robin or based on its own heuristics) and connects. If that IP goes down, the next lookup picks a different one and the site keeps working.</p>
+    <p>Cloudflare-fronted sites take this further. Cloudflare returns the IP of whichever of its data centres is closest to whoever is asking. You'll see different IPs from different locations on the planet, all serving the same site. This is one reason "why does my IP change" questions are sometimes about Cloudflare's behaviour rather than the site itself.</p>
+
+    <h2 id="dns-leak">DNS leaks — what they are and how to test</h2>
+    <p class="short-answer">A DNS leak is when your queries escape the VPN tunnel and go to your ISP instead.</p>
+    <p>A correctly configured VPN routes both your traffic and your DNS through the encrypted tunnel. A misconfigured one leaks DNS — your traffic goes through the VPN but your DNS queries still go to your ISP's resolver, exposing every domain you visit even though the content is encrypted.</p>
+    <p>This isn't a leak of contents (HTTPS already encrypts that), but it is a leak of <strong>which sites you visit</strong>, which is enough for tracking, profiling, or censorship enforcement. The fix is a VPN with in-tunnel DNS as the default, which is what <a href="/free-vpn">our free plan</a> does. Our deeper write-up at <a href="/blog/what-is-a-dns-leak">/blog/what-is-a-dns-leak</a> covers how to test for one.</p>
+
+    <h2 id="ttl">TTL and caching, explained</h2>
+    <p class="short-answer">DNS answers are cached by every resolver in the chain, for a duration the record specifies.</p>
+    <p>Every DNS record has a <strong>TTL</strong> (time-to-live) value — usually 300 seconds (5 minutes), but anywhere from 30 seconds to a day is normal. After a resolver gets the answer, it caches it for that long, which is why DNS feels instant most of the time. Your browser hits the resolver, the resolver returns the cached answer in under a millisecond.</p>
+    <p>The flip side: when a site moves to a new IP, the change takes the longest TTL of any cached record to propagate. People say "DNS hasn't propagated yet" to mean "your resolver still has the old answer cached." Hard-flushing your local DNS cache or temporarily switching to a different resolver (1.1.1.1, 8.8.8.8) usually shortens the wait.</p>
+
+    <div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What a DNS lookup actually does</li>
+        <li>Record types you&#x27;ll see</li>
+        <li>Why one domain returns multiple IPs</li>
+        <li>DNS leaks — what they are and how to test</li>
+        <li>TTL and caching, explained</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What does a DNS lookup actually do?</h3><p>It asks the global DNS for the records attached to a domain. The most common are A (IPv4 address), AAAA (IPv6 address), MX (mail servers), TXT (anything from SPF rules to verification tokens), NS (which nameservers serve the domain), and CNAME (an alias pointing one name at another). The tool above queries them all in one shot.</p>
+      <h3>Why does the same domain return different IPs at different times?</h3><p>Large sites use multiple IPs and rotate which ones are returned based on geography, load, and provider routing. Cloudflare-fronted sites in particular return whichever IP is closest to whoever is asking. This is normal and is part of how the modern internet stays fast.</p>
+      <h3>What is a TXT record used for?</h3><p>Everything. TXT records were originally for arbitrary notes, then became the home for SPF (which mail servers can send for the domain), DKIM (email signing keys), DMARC (email policy), and ownership verification tokens from Google, Apple, Microsoft, Atlassian, and dozens of others.</p>
+      <h3>What is the difference between A and CNAME?</h3><p>An A record points the domain straight at an IPv4 address. A CNAME points it at another domain, which is then resolved through its own DNS. CNAMEs are good for pointing subdomains at services but can't be used at the root domain in most cases.</p>
+      <h3>What is an MX record?</h3><p>MX (Mail Exchange) records say which servers handle email for the domain. The number in front is a priority (lower is preferred). If you see MX records pointing at Google, Microsoft, or Cloudflare's email infrastructure, that's the email host.</p>
+      <h3>Does a VPN change DNS lookups?</h3><p>Yes. With a VPN on, DNS queries get resolved by the VPN provider's resolver instead of your ISP's. This is how a VPN prevents DNS leaks — by making sure the lookups happen inside the encrypted tunnel rather than over your normal connection.</p>
+      <h3>How fast are DNS lookups?</h3><p>Usually 10 to 80 milliseconds, depending on whether the answer is cached. The first lookup for a domain might take 200 to 500 ms because the resolver has to chase the answer up the DNS hierarchy. After that, it's cached for the TTL the record specifies.</p>
+      <h3>Do you log the domains I look up?</h3><p>Standard web-server access logs are kept briefly for security and abuse detection, then rotated. We don't tie lookups to your identity, don't sell or share the data, and don't track you across sessions.</p>
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Fdns-lookup" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fdns-lookup" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fdns-lookup&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fdns-lookup&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related"><h2>Related</h2><ul><ul class="related-cards">
+    <li><a href="/whois-lookup"><span class="card-tag">PRIVACY</span><span class="card-title">WHOIS lookup</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/ssl-checker"><span class="card-tag">PRIVACY</span><span class="card-title">SSL checker</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a DNS leak?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-quic-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free QUIC VPN for restrictive networks</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul></div>
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page"><span class="label">On this page</span><ol>
+    <li><a href="#what-it-does">What it does</a></li>
+    <li><a href="#record-types">Record types</a></li>
+    <li><a href="#why-multiple">Multiple IPs</a></li>
+    <li><a href="#dns-leak">DNS leaks</a></li>
+    <li><a href="#ttl">TTL & caching</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ol></aside>
+</div>
+
+<footer class="footer"><div class="wrap"><div class="top">
+  <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+  <div><h4>Product</h4><ul><li><a href="/apps.html">Apps</a></li><li><a href="/technology.html">Technology</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+  <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN guide</a></li><li><a href="/free-vpn-for-windows">For Windows</a></li><li><a href="/free-vpn-for-india">For India</a></li><li><a href="/free-wireguard-vpn">WireGuard VPN</a></li><li><a href="/free-quic-vpn">QUIC VPN</a></li></ul></div>
+  <div><h4>Tools</h4><ul><li><a href="/what-is-my-ip">What is my IP?</a></li><li><a href="/is-it-down">Is it down?</a></li><li><a href="/ssl-checker">SSL checker</a></li><li><a href="/whois-lookup">WHOIS lookup</a></li><li><a href="/dns-lookup">DNS lookup</a></li><li><a href="/headers-viewer">HTTP headers</a></li><li><a href="/email-verifier">Email verifier</a></li><li><a href="/webrtc-leak-test">WebRTC leak test</a></li><li><a href="/password-generator">Password generator</a></li></ul></div>
+  <div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+</div><div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div></div></footer>
+
+<script src="/tool.js"></script>
+<script>
+toolPage.run("dns-lookup", {
+  inputId: "domain-input",
+  submit: function (v) { return "/api/dns?domain=" + encodeURIComponent(v); },
+  render: function (data) {
+    if (data.error) return { verdict: "down", text: data.error };
+    var out = document.getElementById("records-output");
+    out.replaceChildren();
+    var records = data.records || {};
+    var types = Object.keys(records).sort();
+    var totalCount = 0;
+    types.forEach(function (type) {
+      var items = records[type];
+      if (!Array.isArray(items) || !items.length) return;
+      totalCount += items.length;
+      var block = document.createElement("div");
+      block.className = "records-block";
+      var heading = document.createElement("h4");
+      heading.textContent = type + " — " + items.length + " record" + (items.length > 1 ? "s" : "");
+      var ul = document.createElement("ul");
+      items.forEach(function (it) {
+        var li = document.createElement("li");
+        li.textContent = it;
+        ul.appendChild(li);
+      });
+      block.appendChild(heading);
+      block.appendChild(ul);
+      out.appendChild(block);
+    });
+    return { verdict: totalCount > 0 ? "up" : "warn",
+             text: totalCount > 0 ? ("Found " + totalCount + " records across " + types.length + " types.") : "No records returned for that domain." };
+  }
+});
+</script>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

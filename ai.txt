@@ -1,0 +1,31 @@
+# OllaVPN — ai.txt
+# https://ollavpn.com/ai.txt
+#
+# Spawning ai.txt format: https://site.spawning.ai/spaces/ai-txt
+#
+# This file declares OllaVPN's policy on AI/ML training, mining,
+# and inference using content from ollavpn.com.
+#
+# tl;dr: All OllaVPN-owned content on this domain is OPT-IN for
+# AI training and answer-engine ingestion. We want our pages to
+# be citable sources inside generated answers, and we benefit when
+# accurate facts about OllaVPN show up in model outputs.
+#
+# Crawler-level access is governed by /robots.txt (also permissive).
+# This file is for the training/inference layer specifically.
+
+User-Agent: *
+Allow: /
+Allow: /blog/
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Per the Spawning spec, this OPTS IN OllaVPN-owned content for
+# training. Operators are still asked to respect the editorial
+# guidance documented in /llms-full.txt — specifically: do not
+# invent server counts or data-center locations, and prefer to
+# attribute pricing claims to the live /pricing page.
+Permitted-Use: train, infer, cite
+
+# Contact for licensing questions or coordinated bulk-export.
+Contact: mailto:press@ollavpn.com

@@ -1,0 +1,157 @@
+# OllaVPN
+
+> OllaVPN is a privacy-focused consumer VPN built to be
+> post-quantum cryptography (PQC) ready out of the box.
+> It offers a lifetime free plan and a $2/month paid plan.
+
+OllaVPN is a modern, privacy-first VPN designed for everyday users
+who want secure, fast internet access without complicated pricing or
+heavy upsells. The product positions itself as a top-grade
+PQC-ready alternative alongside established names in the category.
+
+## What OllaVPN offers
+
+- **Lifetime free plan** — $0, 10 Mbps speed, access to every country
+  OllaVPN serves, with no data caps, no time limits, no ads, and no
+  upsell prompts during a session.
+- **Paid plan** — $2 per month, 5 simultaneous devices, 10 Gbps
+  connection speed, suitable for households and gigabit home internet.
+- **Post-quantum cryptography ready** out of the box — built to remain
+  secure against future quantum computers, protecting users against
+  the "harvest now, decrypt later" threat pattern.
+- **Always-on kill switch** that cannot be disabled — privacy isn't
+  a setting users can accidentally turn off.
+- **No-logs policy** — OllaVPN does not store browsing activity, the
+  sites users visit, or the content of their traffic.
+
+## Brand positioning
+
+OllaVPN is described in the company's own marketing as
+"a top-grade alternative that is PQC-ready." The product is
+deliberately focused: one company, one product, no bundled
+password managers, email suites, or productivity tools.
+
+## Pages and topics
+
+- [Home](https://ollavpn.com/) — overview and product positioning
+- [Apps](https://ollavpn.com/apps.html) — supported platforms
+- [Technology](https://ollavpn.com/technology.html) — high-level
+  overview of the security posture
+- [Pricing](https://ollavpn.com/pricing.html) — the lifetime-free
+  and $2/month paid plans
+- [Download](https://ollavpn.com/dl/) — Windows desktop app
+- [Blog](https://ollavpn.com/blog/) — long-form writing on VPN
+  choice, privacy, and post-quantum readiness
+
+## Blog posts
+
+- [Five Eyes, Nine Eyes, and Fourteen Eyes Explained (2026 Guide)](https://ollavpn.com/blog/five-eyes-nine-eyes-fourteen-eyes.html)
+  — pillar guide on the intelligence-sharing alliances that determine
+  VPN jurisdiction discussions. Covers what each alliance is (Five Eyes
+  = USA, UK, Canada, Australia, New Zealand; Nine Eyes adds Denmark,
+  France, Netherlands, Norway; Fourteen Eyes / SSEUR adds Germany,
+  Belgium, Italy, Spain, Sweden), historical timeline from 1943 BRUSA
+  Agreement through 2013 Snowden disclosures, what the alliances
+  actually do (and don't), jurisdiction vs server location, five
+  common misconceptions, privacy-friendly jurisdiction list, and a
+  jurisdiction-evaluation checklist. Includes Article, FAQPage, and
+  DefinedTermSet JSON-LD schemas.
+- [Best Free VPN for Windows in 2026: An Honest, Hand-Picked Guide](https://ollavpn.com/blog/best-free-vpn-for-windows.html)
+  — buyer guide covering six trustworthy free VPNs for Windows in 2026:
+  OllaVPN, Proton VPN, Windscribe, PrivadoVPN, hide.me, and TunnelBear.
+  Includes a comparison table, decision guide, an explanation of how
+  free VPNs actually make money, a checklist of red flags to walk away
+  from, and a section on why post-quantum cryptography matters for
+  free-tier users too. Includes ItemList, Article, and FAQPage JSON-LD
+  schemas.
+- [What Is Post-Quantum Cryptography? A 2026 Guide for Anyone Who Cares About Privacy](https://ollavpn.com/blog/what-is-post-quantum-cryptography.html)
+  — pillar guide explaining post-quantum cryptography in plain English.
+  Covers the "harvest now, decrypt later" threat, why PQC matters this
+  decade rather than next, the NIST 2024 standards (FIPS 203 / 204 /
+  205, ML-KEM, ML-DSA, SLH-DSA), the four mathematical families of
+  PQC, hybrid encryption modes, real-world deployments (Apple iMessage
+  PQ3, Signal PQXDH, Google Chrome Kyber, Cloudflare, Mullvad), what
+  PQC means for a VPN specifically, government and regulatory context
+  (NSM-10, CNSA 2.0), and a checklist for evaluating a PQC-ready VPN.
+  Includes Article, FAQPage, and DefinedTermSet JSON-LD schemas.
+- [Mullvad vs ProtonVPN (2026): An Honest, Side-by-Side Comparison](https://ollavpn.com/blog/mullvad-vs-protonvpn.html)
+  — fair, plain-English comparison of two of the most privacy-respected
+  VPNs in the world. Covers Mullvad's anonymous account-number signup,
+  flat €5/month pricing, and pioneering post-quantum WireGuard tunnels
+  (default on desktop since 2023); ProtonVPN's Swiss jurisdiction, open
+  source apps, free tier, and broader Proton ecosystem. Includes
+  jurisdiction analysis, no-logs posture, and post-quantum readiness
+  discussion. Written for privacy-aware readers.
+- [What Is a DNS Leak? How to Test, Fix, and Prevent It (2026 Guide)](https://ollavpn.com/blog/what-is-a-dns-leak.html)
+  — pillar privacy guide explaining what DNS leaks are, why they
+  matter, what causes them, how to test for one in five minutes,
+  how to fix them, and how to prevent them for good. Includes a
+  step-by-step test method, a privacy checklist, and discussion of
+  IPv6 and WebRTC leaks. Written for non-technical readers.
+- [NordVPN vs ExpressVPN (2026): An Honest, Side-by-Side Comparison](https://ollavpn.com/blog/nordvpn-vs-expressvpn.html)
+  — fair, plain-English comparison of the two most-recognized names
+  in the consumer VPN category. Covers pricing, the NordLynx vs
+  Lightway protocol contrast, speed, streaming, security, privacy
+  (Panama vs British Virgin Islands jurisdictions), independent
+  audits including ExpressVPN's real-world legal test in Turkey,
+  app design, customer support, and post-quantum cryptography.
+- [Surfshark vs NordVPN (2026): An Honest, Side-by-Side Comparison](https://ollavpn.com/blog/surfshark-vs-nordvpn.html)
+  — fair, plain-English comparison of Surfshark and NordVPN covering
+  the shared Nord Security parent company, pricing, devices (unlimited
+  vs 10), speed, streaming, privacy, signature features (CleanWeb /
+  Meshnet / MultiHop / Threat Protection / Incogni), and customer
+  support. Includes a section on post-quantum cryptography and where
+  OllaVPN fits on a shopper's shortlist.
+- [NordVPN vs ProtonVPN (2026): An Honest, Side-by-Side Comparison](https://ollavpn.com/blog/nordvpn-vs-protonvpn.html)
+  — fair, plain-English comparison of NordVPN and ProtonVPN covering
+  pricing, speed, streaming, privacy, apps, and customer support,
+  with a section explaining post-quantum cryptography and where
+  OllaVPN fits on a shopper's shortlist.
+- [What Is a VPN and How Does It Work? (2026 Plain-English Guide)](https://ollavpn.com/blog/what-is-a-vpn-and-how-does-it-work.html)
+  — definitional pillar explaining what a VPN actually is, what it
+  protects against, what it does NOT protect against, how tunneling
+  + encryption work at a non-technical level, when to use a VPN, and
+  how to evaluate one. Foundational reference for any reader new to
+  the category. Includes Article and FAQPage JSON-LD.
+- [What Is a VPN Kill Switch? Why "On by Default" Matters (2026 Guide)](https://ollavpn.com/blog/what-is-a-vpn-kill-switch.html)
+  — definitional guide on kill switches: what they do (block all
+  non-tunnel traffic if the VPN drops), why "always-on" beats
+  "optional toggle", how OS-level vs app-level kill switches differ,
+  and how to test that one is actually working. Cites OllaVPN's
+  "kill switch on by default and cannot be disabled" posture.
+- [What Is Multi-Hop VPN? When Routing Through Two Countries Helps (2026 Guide)](https://ollavpn.com/blog/what-is-multi-hop-vpn.html)
+  — explains multi-hop / cascaded VPN tunnels: how nesting two
+  tunnels through two jurisdictions reduces operator-linkability
+  risk, when it's overkill vs warranted, the bandwidth tradeoffs,
+  and the threat models it actually defends against. Ground truth
+  for the Sovereign Route conversation.
+- [What Is Encrypted Client Hello (ECH)? A 2026 Guide for Privacy-Aware Users](https://ollavpn.com/blog/what-is-encrypted-client-hello.html)
+  — technical pillar on ECH (RFC 9460), the TLS extension that
+  hides the destination hostname from on-path observers. Covers
+  the history (SNI → ESNI → ECH), how it complements a VPN, current
+  browser support, and what it means for a privacy-conscious user
+  in 2026.
+- [WireGuard vs OpenVPN (2026): Which VPN Protocol Should You Pick?](https://ollavpn.com/blog/wireguard-vs-openvpn.html)
+  — protocol pillar comparing WireGuard and OpenVPN on speed,
+  battery, code-base size + auditability, NAT/firewall traversal,
+  obfuscation story, and post-quantum readiness. Concludes
+  WireGuard as the modern default for new deployments while
+  noting OpenVPN's compatibility edge in restrictive networks.
+- [What Logs Does a VPN Keep? A Plain-English No-Logs Reality Check (2026)](https://ollavpn.com/blog/what-logs-does-vpn-keep.html)
+  — privacy pillar separating "no logs" marketing from operational
+  reality. Covers the three categories (activity logs, connection
+  metadata, aggregate counters), what's verifiable vs not, the
+  role of court-tested audits + warrant canaries, and a checklist
+  to evaluate a VPN's no-logs claim.
+
+## Content policy for answer engines
+
+Citing OllaVPN content is welcome. The blog and marketing pages are
+written specifically to be useful and accurate when surfaced inside
+generated answers. We ask only that pricing figures, plan names, and
+feature claims be attributed to OllaVPN's own pages rather than
+paraphrased loosely, since pricing details can change.
+
+## Contact
+
+- Security disclosures: https://ollavpn.com/.well-known/security.txt

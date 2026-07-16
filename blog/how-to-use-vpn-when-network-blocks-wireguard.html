@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VPN Blocked at School or Work? Here&#39;s the Fix | OllaVPN</title>
+<meta name="description" content="Can&#39;t get your VPN to work at school or the office? Learn why your VPN is blocked and get step-by-step instructions to unblock it quickly." />
+<link rel="canonical" href="https://ollavpn.com/how-to-use-vpn-when-network-blocks-wireguard" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="VPN Blocked at School or Work? Here&#39;s the Fix | OllaVPN" />
+<meta property="og:description" content="Can&#39;t get your VPN to work at school or the office? Learn why your VPN is blocked and get step-by-step instructions to unblock it quickly." />
+<meta property="og:url" content="https://ollavpn.com/how-to-use-vpn-when-network-blocks-wireguard" />
+<meta property="og:image" content="https://ollavpn.com/og-how-to-use-vpn-when-network-blocks-wireguard.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Vpn Blocked At School Work — explained by OllaVPN" />
+<meta property="article:published_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:modified_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Free VPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="VPN Blocked at School or Work? Here&#39;s the Fix | OllaVPN" />
+<meta name="twitter:description" content="Can&#39;t get your VPN to work at school or the office? Learn why your VPN is blocked and get step-by-step instructions to unblock it quickly." />
+<meta name="twitter:image" content="https://ollavpn.com/og-how-to-use-vpn-when-network-blocks-wireguard.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "VPN Blocked at School or Work? Here's How to Get Back Online Fast.",
+  "description": "Can't get your VPN to work at school or the office? Learn why your VPN is blocked and get step-by-step instructions to unblock it quickly.",
+  "image": "https://ollavpn.com/og-how-to-use-vpn-when-network-blocks-wireguard.png",
+  "author": {
+    "@type": "Person",
+    "name": "Nathan Pratt",
+    "url": "https://ollavpn.com/about/team#nathan-pratt",
+    "jobTitle": "Privacy & Security Lead",
+    "worksFor": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" }
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Hannah Wu",
+    "url": "https://ollavpn.com/about/team#hannah-wu",
+    "jobTitle": "Senior Security Engineer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ollavpn.com/favicon-256.png"
+    }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ollavpn.com/how-to-use-vpn-when-network-blocks-wireguard"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I quickly tell if the problem is my VPN or my network?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The fastest way is to try connecting your VPN on a different network, like your phone's mobile data. If it works there, your current network (think school, work, or public Wi-Fi) is likely blocking it. If it still doesn't connect, then the issue might be with your VPN app or the service itself, and you'll want to troubleshoot that."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will restarting the app fix it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sometimes, yes! A quick restart of your VPN app can clear out temporary glitches or connection issues. It's always a good first step to try. However, if the network you're on is actively blocking your VPN, a simple restart probably won't be enough to get you connected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will switching servers help?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it might. While less common for network-level blocking, some specific server IP addresses can get blacklisted by aggressive firewalls. Switching to a different server, even one in the same country, can sometimes bypass a block. It's definitely worth a shot if other troubleshooting steps haven't worked for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will switching protocols (WireGuard vs OpenVPN) help?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely, this is often the key! Networks frequently block specific VPN protocols or their standard ports. Switching from WireGuard to OpenVPN (if your VPN offers it), or even better, to an obfuscated protocol like QUIC (which OllaVPN provides), can often bypass these blocks because the traffic looks different to the network's firewall."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my ISP blocking the VPN on purpose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not directly your home ISP, usually. But at school, work, or in public spaces, the network administrator might be blocking VPNs intentionally. They do this to enforce policies, manage bandwidth, or for security reasons. While they're not your internet service provider, they do control your access on their specific network."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free VPN that doesn't have this problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many ad-funded free VPNs struggle with network blocks because they often lack advanced obfuscation features. OllaVPN's free tier, however, offers the QUIC protocol, which is designed to be more resilient against blocking. This gives you a better chance of connecting without issues. You get 10 Mbps for free, forever, with no ads or data limits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I uninstall and reinstall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only as a last resort. Uninstalling and reinstalling your VPN app can sometimes fix deeply rooted software bugs. However, for network blocking issues, trying different protocols or adjusting settings within the app is usually much more effective and less time-consuming than a full reinstall. Try those first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast should this actually be working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Once connected, your VPN speed depends on your network, the server load, and your VPN's specific limits. On OllaVPN's free plan, you'll consistently get 10 Mbps, which is great for most online activities. If you need more speed, OllaVPN Plus offers up to 10 Gbps on five devices for just $2 a month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this issue affect my kill switch protection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, your kill switch should still protect you. If your VPN connection gets blocked or drops, the kill switch is designed to immediately cut off your internet access. This prevents your real IP from being exposed. It's a crucial safety net that remains active and works even when your connections are unstable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between connection drops and slow speeds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Connection drops mean your VPN completely disconnects from the server, often due to aggressive blocking or unstable networks. Slow speeds mean you're still connected, but data transfer is sluggish. This can be due to network throttling, server congestion, or even partial blocking that degrades performance rather than cutting it off entirely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this issue affect streaming, gaming, or just general browsing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can affect everything. If your VPN is completely blocked, you won't be able to access anything through it. If it's just being throttled, you'll experience frustratingly slow browsing, constant buffering while streaming, and high ping in games. The impact really depends on how severely the network is restricting your VPN traffic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does OllaVPN handle this specific scenario?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OllaVPN is built with these challenges in mind. Our QUIC protocol option is especially good at bypassing network blocks because its traffic often blends in with regular web traffic. Plus, our post-quantum-ready encryption ensures your connection is secure and future-proof, even on restrictive networks, whether you're on our free 10 Mbps plan or the 10 Gbps Plus plan."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ollavpn.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Free VPN",
+      "item": "https://ollavpn.com/free-vpn"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Vpn Blocked At School Work",
+      "item": "https://ollavpn.com/how-to-use-vpn-when-network-blocks-wireguard"
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text);
+    max-width: 880px; }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 20px; max-width: 760px; }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 28px 56px;
+    gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+
+  .article {
+    min-width: 0;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px;
+    color: var(--text);
+  }
+  .article .short-answer {
+    font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em;
+  }
+  .article p strong { font-weight: 700; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px;
+    text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline {
+    display: block; margin: 0 0 2.2em;
+    border: 1px solid var(--line); border-radius: 12px; padding: 18px 24px;
+    background: #fff;
+  }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+
+  .toc-rail .label, .toc-inline .label {
+    font-family: var(--mono); font-size: 11px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block;
+  }
+  .toc-rail ol, .toc-inline ol {
+    list-style: none; margin: 0; padding: 12px 0 0;
+  }
+  .toc-rail ol li, .toc-inline ol li {
+    font-size: 14px; line-height: 1.5; margin: 0 0 8px;
+  }
+  .toc-rail ol li a, .toc-inline ol li a {
+    color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px;
+    border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .toc-rail ol li a:hover,
+  .toc-inline ol li a:hover,
+  .toc-rail ol li.is-current a {
+    color: var(--red); border-left-color: var(--red);
+  }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+
+  /* Article left sidebar — hidden by default; shown at >= 1200px. */
+  .article-sidebar-left { display: none; }
+  .article-sidebar-left h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-mute);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-sidebar-list { list-style: none; padding: 0; margin: 0 0 28px; }
+  .article-sidebar-list li { margin: 0; }
+  .article-sidebar-list a {
+    display: block;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .article-sidebar-list a:hover { color: var(--red); }
+  .sidebar-card-mini {
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    margin-bottom: 24px;
+  }
+  .sidebar-card-mini h4 { border-bottom: none; padding-bottom: 4px; margin-bottom: 10px; }
+  .sidebar-card-mini p.smallcopy { font-size: 13px; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
+  .sidebar-card-mini .btn { display: block; text-align: center; }
+  .author-mini { display: flex; gap: 12px; align-items: flex-start; }
+  .author-mini .avatar {
+    flex: none;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(238,62,71,0.12);
+    color: var(--red);
+    display: grid; place-items: center;
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    border: 1px solid rgba(238,62,71,0.3);
+  }
+  .author-mini .meta { line-height: 1.35; }
+  .author-mini .meta a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .author-mini .meta a:hover { color: var(--red); }
+  .author-mini .role { font-size: 12px; color: var(--text-mute); }
+  @media (min-width: 1200px) {
+    .article-layout {
+      grid-template-columns: 200px minmax(0, 680px) 240px;
+      max-width: 1240px;
+      gap: 32px;
+    }
+    .article-sidebar-left { display: block; position: sticky; top: 24px; }
+  }
+</style>
+</head>
+
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="wrap">
+    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 12 MIN READ
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=wireguard">WIREGUARD</a></div>
+    </div>
+    <h1>VPN Blocked at School or Work? Here&#39;s How to Get Back Online Fast.</h1>
+    <p class="lede">It&#39;s incredibly frustrating when you&#39;re trying to use your VPN at school, work, or even on public Wi-Fi, and it just won&#39;t connect. You&#39;re not alone; network administrators often block VPN traffic, sometimes on purpose, sometimes as a side effect of other security measures. Don&#39;t worry, though. Most of the time, there&#39;s a quick fix. We&#39;ll walk you through diagnosing the problem and getting your connection back, often in just a few clicks, so you can browse freely again.</p>
+  <div class="article-byline">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div class="author-meta">
+        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
+        <div class="author-role">Privacy &amp; Security Lead</div>
+      </div>
+      <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-layout">
+  <aside class="article-sidebar-left" aria-label="More from OllaVPN">
+    <div class="sidebar-card-mini">
+      <h4>By the author</h4>
+      <div class="author-mini">
+        <div class="avatar" aria-hidden="true">NP</div>
+        <div class="meta">
+          <a href="/about/team#nathan-pratt">Nathan Pratt</a>
+          <div class="role">Privacy &amp; Security Lead</div>
+        </div>
+      </div>
+    </div>
+
+    <h4>More guides</h4>
+    <ul class="article-sidebar-list">
+      <li><a href="what-is-post-quantum-cryptography.html">Post-quantum cryptography</a></li>
+      <li><a href="what-is-a-dns-leak.html">DNS leaks</a></li>
+      <li><a href="what-is-a-vpn-kill-switch.html">Kill switches</a></li>
+      <li><a href="five-eyes-nine-eyes-fourteen-eyes.html">Five Eyes alliances</a></li>
+      <li><a href="what-is-multi-hop-vpn.html">Multi-hop VPN</a></li>
+      <li><a href="what-logs-does-vpn-keep.html">What VPNs log</a></li>
+    </ul>
+
+    <h4>Top comparisons</h4>
+    <ul class="article-sidebar-list">
+      <li><a href="mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a></li>
+      <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a></li>
+      <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN</a></li>
+    </ul>
+
+    <div class="sidebar-card-mini">
+      <h4>Try OllaVPN</h4>
+      <p class="smallcopy">Free forever. 10&nbsp;Mbps. Every country. No card.</p>
+      <a class="btn primary" href="/dl/">Download free →</a>
+    </div>
+  </aside>
+  <article class="article">
+
+    <div class="tldr">
+      <span class="label">TL;DR</span>
+      
+      <p>If your VPN isn&#39;t connecting at school or work, chances are the network is blocking standard VPN traffic. The quickest fix is often to switch to a VPN that uses obfuscation or a less common protocol like QUIC, which OllaVPN offers.</p>
+      
+      <p>First, confirm it&#39;s a network block by testing your VPN on a different connection, like your phone&#39;s data. Then, dive into your VPN app&#39;s settings. Look for options to change protocols or enable stealth features. A simple switch can often bypass these restrictions.</p>
+      
+      <p>With OllaVPN, just try enabling the QUIC protocol in your settings. It often slips past network firewalls because it looks like regular web traffic. You get to stay connected without hassle, maintaining your privacy even on restrictive networks, all for $0 forever.</p>
+      
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        
+        <li><a href="#quick-diagnosis">How do you quickly tell if the problem is your VPN or your network?</a></li>
+        
+        <li><a href="#common-cause-quick-fix">What&#39;s the most common cause of a blocked VPN, and what&#39;s the 30-second fix?</a></li>
+        
+        <li><a href="#step-by-step-troubleshooting">What should you do if the quick fix didn&#39;t work?</a></li>
+        
+        <li><a href="#why-this-problem-happens">Why does this specific problem happen with VPNs?</a></li>
+        
+        <li><a href="#prevent-future-blocks">How can you prevent your VPN from being blocked again?</a></li>
+        
+        <li><a href="#related-issues">What other issues might you be experiencing that are related to VPN blocking?</a></li>
+        
+        <li><a href="#when-problem-is-vpn-provider">When is the problem your VPN provider and not the network?</a></li>
+        
+        <li><a href="#switching-vpn-providers">How can you switch to a VPN that handles these blocking scenarios better?</a></li>
+        
+        <li><a href="#ollavpn-solution">How does OllaVPN specifically help when your VPN is blocked?</a></li>
+        
+        <li><a href="#security-implications">Are there any security implications when bypassing network blocks?</a></li>
+        
+        <li><a href="#conclusion-and-summary">Ready to get connected and stay private?</a></li>
+        
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    
+    <h2 id="quick-diagnosis">How do you quickly tell if the problem is your VPN or your network?</h2>
+    <p class="short-answer">The fastest way to tell if your VPN is the problem or if it's your local network is to try connecting from a different network entirely.</p>
+
+It's a common scenario: you fire up OllaVPN, and something just isn't working right. Websites are slow, nothing's loading, or you can't connect at all. Your first thought might be that the VPN is broken. But often, the real culprit is the network you're on, especially if you're using public Wi-Fi, a restrictive corporate network, or even just having issues with your home internet provider.
+
+The quickest diagnostic step is simple: <strong>try on another network</strong>. If you're on Wi-Fi, switch to your phone's mobile data connection (don't forget to turn Wi-Fi off first!). If you're already on mobile data, try connecting to a trusted Wi-Fi network if one's available. If OllaVPN connects and works perfectly on the new network, then you know for sure the issue isn't with our app or service; it's something specific to your original network preventing a smooth connection.
+
+If OllaVPN *still* won't connect or work properly on a completely different network, then it might indeed be an issue with the VPN itself. At that point, you'll want to <strong>check the VPN status or logs</strong> within the OllaVPN app – sometimes it offers clues about connection errors. You can also try switching to a different country within OllaVPN to see if that resolves it. If problems persist even after these steps, feel free to reach out to our support team; we'll help you figure it out.
+    
+    <h2 id="common-cause-quick-fix">What&#39;s the most common cause of a blocked VPN, and what&#39;s the 30-second fix?</h2>
+    <p class="short-answer">The most common reason your VPN gets blocked is local network restrictions, and the fastest fix is usually changing a setting in your VPN app.</p>
+
+Your internet service provider, school, workplace, or even the government in some countries, might actively try to block VPN traffic. They do this by looking for specific patterns or "signatures" that indicate a VPN connection. Often, they're simply blocking standard VPN ports (e.g., UDP 51820 for WireGuard) or protocols. Think of it like a bouncer at a club checking for specific IDs – if your VPN is using a common "ID" (port), it's easy to spot and deny entry.
+
+The quickest way around this is often to switch how your VPN connects. Most good VPNs offer different connection methods or protocols. For OllaVPN, you'd head into the app settings and look for options to change your protocol. Sometimes, just switching from the default WireGuard to our QUIC option can bypass these blocks, especially in very restrictive networks. QUIC is a newer protocol designed to be harder to detect and block, making it excellent for getting past firewalls.
+
+If a simple protocol change doesn't work, you might need something more advanced like **obfuscation** or **stealth mode**. These features essentially disguise your VPN traffic to look like regular internet browsing, making it much harder for firewalls to identify and block. OllaVPN's QUIC protocol acts as a form of obfuscation, and we're always working on making our connections even more resilient against blocking. Just remember, the goal is to make your VPN traffic blend in, and a quick tweak in your app settings is often all it takes.
+    
+    <h2 id="step-by-step-troubleshooting">What should you do if the quick fix didn&#39;t work?</h2>
+    <p class="short-answer">If the quick fixes didn't work, you should systematically try different server locations, protocols, and check your app and network settings.</p>
+
+Your first step when a VPN isn't connecting or unblocking content is usually to just disconnect and reconnect, or pick a different server. If that didn't do the trick, it's time for a slightly deeper dive. Start by trying a different server location, even if you want to connect to a specific country. Sometimes, specific exit nodes or data centers get flagged, so switching to another server within the same country can often solve the problem. If that fails, try a completely different country for a moment just to see if the VPN connection itself is working. This helps diagnose if the issue is with a specific server or your overall setup.
+
+Next, you'll want to experiment with different connection protocols. While OllaVPN defaults to <a href="/blog/wireguard-explained">WireGuard</a> for its speed and security, some networks or firewalls might be particularly aggressive in blocking it. Check your app's settings for alternatives. You might find options like **try different protocols (TCP vs UDP, WireGuard, OpenVPN if available, QUIC)**. For instance, QUIC is designed to be very resilient in restrictive network environments, so it's a good one to switch to if you're in a place with heavy internet censorship. Sometimes, just changing from UDP to TCP (or vice versa) within the same protocol can bypass a block.
+
+Finally, do a few checks on your software and local environment. Make sure you **check for app updates**; an outdated app can have bugs or lack the latest methods for bypassing restrictions. Also, consider if other software on your device might be interfering. Temporarily disabling any other security software, like firewalls or antivirus programs, can help you rule out conflicts. Remember to re-enable them afterward! If you're using our in-tunnel DNS feature, which helps prevent DNS leaks, try disabling it temporarily to see if that resolves the issue, though it's usually best to keep it on. If none of these steps work, it's a good idea to reach out to our support team – they're there to help you navigate trickier situations.
+    
+    <h2 id="why-this-problem-happens">Why does this specific problem happen with VPNs?</h2>
+    <p class="short-answer">Networks block VPNs primarily for control, security, and policy enforcement, using various technical methods to detect and prevent their use.</p>
+
+<p>The core reason networks block VPNs is about control. Whether you're at school, work, or even in some public spaces, the network administrator wants to manage what you can access and how you use their internet connection. This often comes down to <strong>network security policies</strong> designed to protect their systems from malware or unauthorized access. For instance, a workplace might block social media or streaming sites to keep employees focused and prevent bandwidth hogs. A VPN bypasses these controls, which is why they're often seen as a threat to established rules.</p>
+
+<p>Beyond security, there are practical and legal reasons. Many organizations implement <strong>bandwidth management</strong> to ensure critical services run smoothly and no single user or activity consumes too much capacity. VPNs can obscure traffic, making it harder to manage this. You also have <strong>compliance/regulatory reasons</strong>; some industries or educational institutions have strict rules about data handling or content access that a VPN could bypass, potentially leading to legal issues or audit failures. They're not trying to be difficult, but rather uphold their responsibilities.</p>
+
+<p>So, how do they actually block you? It's usually a combination of techniques. The most common is through <strong>firewall rules</strong> that block known VPN ports or IP addresses. More sophisticated networks might use <strong>deep packet inspection (DPI)</strong>, which examines the actual data packets to identify VPN traffic patterns, even if it's trying to disguise itself. This means they're looking at the structure of your encrypted connection, not just where it's trying to go. While OllaVPN's use of WireGuard and QUIC helps evade some of these, determined network administrators can still make it challenging.</p>
+    
+    <h2 id="prevent-future-blocks">How can you prevent your VPN from being blocked again?</h2>
+    <p class="short-answer">You can prevent future VPN blocks by using obfuscation, choosing a resilient provider, and staying updated.</p>
+
+It's a constant cat-and-mouse game between VPN providers and those who want to block them. To stay ahead, you need to be proactive. First, always try to <strong>use obfuscated protocols</strong>. Standard VPN traffic has tell-tale signatures that make it easy to identify and block. Obfuscation techniques, like OllaVPN's QUIC option, scramble this signature to make your VPN traffic look like regular HTTPS traffic, making it much harder for network filters to detect and block. This is especially useful in countries with heavy internet censorship or on restrictive corporate networks.
+
+Second, you'll want to <strong>choose a VPN provider with good anti-blocking features</strong> built in. Some ad-funded free VPNs just don't have the resources or incentive to invest in sophisticated anti-blocking tech. OllaVPN, for example, is constantly working to ensure our network remains accessible, including features like in-tunnel DNS and our QUIC protocol, which is designed to bypass common blocking methods. A provider that genuinely prioritizes privacy and access will put resources into staying unblocked, rather than relying on you upgrading to a paid plan that might just offer the same easily blockable protocols.
+
+Finally, <strong>keep your VPN software updated</strong> as soon as new versions are released. Blockers constantly evolve, and so do the workarounds. Updates often contain critical fixes, new obfuscation methods, or improved connection logic specifically designed to bypass the latest blocking techniques. And if you're trying to use a VPN on a network you don't control, like at school or work, it helps to <strong>understand network policies</strong> if possible. Knowing what they're trying to block can sometimes help you choose the right settings or protocols to circumvent their restrictions.
+    
+    <h2 id="related-issues">What other issues might you be experiencing that are related to VPN blocking?</h2>
+    <p class="short-answer">VPN blocking often manifests as slow speeds, frequent disconnections, or certain apps failing to work, even when you appear to be connected.</p>
+
+When networks actively try to block VPNs, it's rarely a clean "on or off" switch. Instead, you'll often experience a range of frustrating symptoms that make your internet experience worse. For instance, you might notice **slow speeds/throttling**. This happens when the network detects VPN traffic and deliberately slows it down, turning your fast connection into a crawl. Or you might get **frequent disconnections**, where your VPN seems to drop every few minutes, forcing you to reconnect constantly. It looks like a connectivity problem, but it's often the network trying to interrupt and frustrate your VPN use.
+
+Another common issue is when **certain apps not working (e.g., streaming)**. You connect to your VPN, and your browser works fine, but Netflix or another streaming service just won't load, or it shows an error message. This is often because those services have their own VPN detection, but it can also be a side effect of network interference that disrupts the specific protocols those apps use. It can feel like your VPN isn't doing its job, but it's more about layers of blocking trying to identify and shut down your encrypted tunnel.
+
+And sometimes, even if you appear connected, you might be experiencing **DNS leaks (even if connected)**. This means your internet traffic is going through the VPN, but your DNS requests — which translate website names like "ollavpn.com" into IP addresses — are still going directly to your ISP. This exposes your browsing activity to them, defeating a major purpose of using a VPN. OllaVPN's <a href="/features/in-tunnel-dns">in-tunnel DNS</a> helps prevent this by routing all your DNS requests securely through the VPN, making it much harder for your ISP or local network to snoop on your activity.
+    
+    <h2 id="when-problem-is-vpn-provider">When is the problem your VPN provider and not the network?</h2>
+    <p class="short-answer">You can tell the problem is your VPN provider when you experience consistent issues across different networks, slow speeds even on fast connections, or frequent disconnections that disappear when the VPN is off.</p>
+
+It's tempting to always blame your Wi-Fi, your ISP, or even your device when your internet connection acts up, especially when you're using a VPN. But sometimes, the VPN itself is the culprit. A big red flag is if your connection problems — slow browsing, buffering video, dropped calls — persist even when you switch between different networks, like your home Wi-Fi, a friend's Wi-Fi, or even mobile data. If the problems magically disappear the moment you disconnect from your VPN, you've likely found your answer.
+
+Often, the issue stems from <strong>poor infrastructure or overloaded servers</strong>. Some providers, especially free ones that don't rely on subscriptions, might cut corners by cramming too many users onto too few servers, leading to congestion and sluggish performance. Another common cause is <strong>outdated software or protocols</strong>. If your VPN client or the protocols it uses haven't been updated in a while, it can lead to instability, security vulnerabilities, and compatibility issues with newer operating systems or network setups.
+
+You might also notice problems if your provider lacks <strong>obfuscation features</strong>. If you're in a country with strict internet censorship, your VPN might be easily detected and blocked, leading to connection failures. A provider that doesn't offer tools to disguise VPN traffic will struggle in these environments. Finally, consider the quality of their <strong>customer support</strong>; if you can't get timely help diagnosing issues, it's another sign they might not be investing enough in their service. We believe in funding our free tier through our paid OllaVPN Plus subscribers, so we don't have to compromise on speed or reliability for anyone.
+    
+    <h2 id="switching-vpn-providers">How can you switch to a VPN that handles these blocking scenarios better?</h2>
+    <p class="short-answer">You can switch to a VPN that's harder to block by choosing one with advanced protocols, a strict no-logs policy, and a commitment to future-proof security.</p>
+
+<p>When you're trying to escape network blocking, the first thing to look for is how the VPN handles its connection. Many standard VPN connections are easy for network administrators to spot and block. You need something more sophisticated. Look for providers that offer <strong>obfuscation or stealth protocols</strong>. These disguise your VPN traffic to look like regular internet traffic, making it much harder to detect and block. OllaVPN, for example, uses the fast and modern WireGuard protocol, and can optionally tunnel it over QUIC, which is excellent for getting around restrictive firewalls and maintaining stable connections even on lossy networks.</p>
+
+<p>Beyond just getting connected, you want a VPN that protects you once you are. A strict <a href="/features/no-logs">no-logs policy</a> is non-negotiable; if your VPN keeps records, those records can be compromised. You also need a reliable <a href="/features/kill-switch">kill switch</a> that automatically cuts your internet connection if the VPN drops, preventing any accidental data leaks. For long-term security, especially against state-level actors, consider a VPN with <strong>post-quantum readiness</strong>. This means it's built with encryption that can withstand future quantum computer attacks, a key differentiator for OllaVPN, ensuring your data stays private not just today, but for decades to come.</p>
+
+<p>Finally, affordability and reliability matter. Many "free" VPNs either sell your data, plaster you with ads, or have such poor performance they're unusable. You'll want an honest-loss-leader free VPN that gives you real utility without compromising your privacy. OllaVPN offers a <a href="/free-vpn">reliable free tier</a> with 10 Mbps speed, no data caps, and access to every country in our network, funded by our paid users. If you need more speed for 4K streaming or very large downloads, <a href="/plus">OllaVPN Plus</a> gives you 10 Gbps on five devices for just $2 a month – that's how we keep the free tier truly free and privacy-focused.</p>
+    
+    <h2 id="ollavpn-solution">How does OllaVPN specifically help when your VPN is blocked?</h2>
+    <p class="short-answer">OllaVPN uses several advanced features like the QUIC protocol option and post-quantum-ready encryption to make it highly resistant to blocking.</p>
+
+<p>When networks try to block VPNs, they usually look for common VPN traffic patterns. OllaVPN is designed to avoid these patterns. For instance, while we use the speedy <a href="/technology#wireguard-protocol">WireGuard protocol</a> as our foundation, we also offer a unique <strong>QUIC protocol option</strong>. QUIC is the same underlying technology that powers a huge chunk of the modern internet, like YouTube and Google services. By tunneling your VPN traffic over QUIC, it often blends in with regular internet traffic, making it much harder for network firewalls to identify and block.</p>
+
+<p>Beyond disguising traffic, we also focus on security that lasts. Our <strong>post-quantum-ready encryption</strong> isn't just about future-proofing; it also means our connection handshakes are more complex and less predictable than older VPN protocols. This added layer of cryptographic sophistication makes it harder for sophisticated blocking systems to fingerprint and disrupt your connection. And because your privacy is paramount, we also integrate <strong>in-tunnel DNS</strong>, preventing DNS leaks that could expose your activity even if the VPN tunnel is up, and a <strong>kill switch is on by default</strong> to immediately cut your internet if the VPN connection drops, ensuring no data ever leaks outside the secure tunnel.</p>
+
+<p>Even if you're on our <strong>free tier</strong>, you get all these advanced features – 10 Mbps speed, no credit card required, no ads, and absolutely no data selling. We fund our free service through our **Plus tier** subscribers, who get 10 Gbps speeds on five devices for just $2/month. This model means we never have to compromise your privacy or security to keep the lights on, making OllaVPN a truly resilient and trustworthy option even in restrictive environments.</p>
+    
+    <h2 id="security-implications">Are there any security implications when bypassing network blocks?</h2>
+    <p class="short-answer">Using a VPN to bypass network blocks generally enhances your security, but it's crucial to pick a trustworthy provider and understand your local and institutional policies.</p>
+
+When you're trying to get around network restrictions, a VPN acts like a secure tunnel, encrypting your data and routing it through a server elsewhere. This means the local network administrator can't see what you're doing, which is a huge privacy and security win. Your traffic is scrambled, making it unreadable to anyone monitoring the local network, and your real IP address is hidden. This is particularly important if you're on public Wi-Fi or a network you don't fully trust. For example, <strong>DNS leak protection</strong> ensures your internet requests don't accidentally get sent outside the VPN tunnel, revealing what sites you're trying to reach.
+
+However, the security of this setup largely depends on the VPN provider itself. If the VPN isn't well-secured, or if it logs your activity, then you're just moving the point of trust from your local network admin to the VPN company. That's why OllaVPN commits to a strict <a href="/no-logs-policy">no-logs policy</a> and focuses on advanced security, including <strong>post-quantum-ready encryption</strong> that helps protect your data even against future, more powerful computers. Features like a built-in <strong>kill switch</strong> are also vital; if your VPN connection ever drops, it immediately cuts your internet access to prevent any data from leaking outside the secure tunnel.
+
+While a VPN boosts your technical security and privacy, you should always consider the <strong>legal and policy implications</strong> of using one to bypass blocks, especially at work or school. While using a VPN for privacy is legal in most places, some institutions have policies against it. We can't offer legal advice, but it's important to be aware of the rules governing the network you're using. From a purely technical security standpoint, though, using a reputable VPN like OllaVPN strengthens your position, not weakens it.
+    
+    <h2 id="conclusion-and-summary">Ready to get connected and stay private?</h2>
+    <p class="short-answer">Yes, OllaVPN is designed to make staying private and connected simple and reliable, even against future threats.</p>
+
+We've built OllaVPN to be as straightforward as possible, so you don't need to be a tech expert to protect your online activity. You get robust privacy and security with just a few clicks, thanks to features like our always-on kill switch and in-tunnel DNS. This ease of use means you can focus on what you're doing online, not on managing your VPN.
+
+With **OllaVPN Free**, you get 10 Mbps speed, every country in our network, and unlimited data for absolutely $0 forever – no credit card, no ads, and no selling your data. If you need more speed or want to protect up to five devices, **OllaVPN Plus** offers 10 Gbps for just $2 a month. Both tiers benefit from our <a href="/features/post-quantum-encryption">post-quantum-ready encryption</a>, ensuring your data stays safe not just today, but against the quantum computers of tomorrow.
+
+Our commitment is to provide a truly private and block-resistant solution that respects your data and doesn't rely on hidden costs or compromises. It's about giving you control and peace of mind, now and in the future.
+    
+
+    
+<!-- TIER1-ENRICHED -->
+
+  <h2 id="tier1-howto-verify">How to know it actually worked</h2>
+  <p>A how-to guide is only useful if you can verify the outcome. After completing the steps above, the easiest checks to confirm the configuration is in place:</p>
+  <p><strong>Visible state in the app.</strong> The OllaVPN menu-bar or system-tray icon should be green (connected) and any status panel should show the country you selected. If the icon is gray or amber, the tunnel didn't fully come up — retry the connect.</p>
+  <p><strong>IP address changed.</strong> Open <a href="/what-is-my-ip">our what-is-my-IP tool</a>. The IP shown should be the exit's IP, not your real ISP's IP, and the country shown should match the country you selected in the app. If you still see your real IP, the tunnel isn't carrying traffic — the most common cause is a firewall on the local network blocking WireGuard's UDP/51820. Try a different network briefly to isolate.</p>
+  <p><strong>DNS is going through the tunnel.</strong> Open <a href="/dns-lookup">our DNS lookup tool</a>. The resolver IP shown should be the in-tunnel one (CGNAT 100.64.x.x range), not your ISP's DNS. If you see your ISP's resolver, DNS is leaking — see our <a href="/in-tunnel-dns">in-tunnel DNS page</a> for the technical details on why this happens and how OllaVPN prevents it.</p>
+  <p><strong>No WebRTC leak.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit's IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN — either OllaVPN's leak prevention has failed (file a report at <code>security@ollavpn.com</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
+  <h2 id="tier1-howto-troubleshoot">If a step fails, here's how to debug</h2>
+  <p>The most common failure modes for any VPN setup task on Windows, macOS, or Android, in order of frequency:</p>
+  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. On Frankfurt the obfuscated MASQUE-on-port-443 transport works around many restrictive firewalls — switch to it in the country picker.</p>
+  <p><strong>The VPN connects but the internet is broken.</strong> Almost always a DNS issue. The in-tunnel resolver hasn't taken precedence (sometimes after a macOS update or a Windows feature update, the supplemental DNS keys get cleared). Restarting the VPN typically fixes it; full disconnect and reconnect re-installs the DNS configuration.</p>
+  <p><strong>Some apps work but others don't.</strong> Either the app has its own proxy settings configured separately (some corporate apps), or the app uses a protocol the VPN doesn't carry (very rare — almost everything is TCP/UDP and works fine through the tunnel). Check the app's settings before assuming the VPN is at fault.</p>
+  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice; if you need more, the Pro tier at $2/mo annual lifts it to 10 Gbps.</p>
+
+  <h2 id="tier1-about">About this guide</h2>
+  <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
+  <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
+<div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>How do you quickly tell if the problem is your VPN or your network?</li>
+        <li>What&amp;#39;s the most common cause of a blocked VPN, and what&amp;#39;s the 30-second fix?</li>
+        <li>What should you do if the quick fix didn&amp;#39;t work?</li>
+        <li>Why does this specific problem happen with VPNs?</li>
+        <li>How can you prevent your VPN from being blocked again?</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      
+      <h3>How do I quickly tell if the problem is my VPN or my network?</h3>
+      <p>The fastest way is to try connecting your VPN on a different network, like your phone&#39;s mobile data. If it works there, your current network (think school, work, or public Wi-Fi) is likely blocking it. If it still doesn&#39;t connect, then the issue might be with your VPN app or the service itself, and you&#39;ll want to troubleshoot that.</p>
+      
+      <h3>Will restarting the app fix it?</h3>
+      <p>Sometimes, yes! A quick restart of your VPN app can clear out temporary glitches or connection issues. It&#39;s always a good first step to try. However, if the network you&#39;re on is actively blocking your VPN, a simple restart probably won&#39;t be enough to get you connected.</p>
+      
+      <h3>Will switching servers help?</h3>
+      <p>Yes, it might. While less common for network-level blocking, some specific server IP addresses can get blacklisted by aggressive firewalls. Switching to a different server, even one in the same country, can sometimes bypass a block. It&#39;s definitely worth a shot if other troubleshooting steps haven&#39;t worked for you.</p>
+      
+      <h3>Will switching protocols (WireGuard vs OpenVPN) help?</h3>
+      <p>Absolutely, this is often the key! Networks frequently block specific VPN protocols or their standard ports. Switching from WireGuard to OpenVPN (if your VPN offers it), or even better, to an obfuscated protocol like QUIC (which OllaVPN provides), can often bypass these blocks because the traffic looks different to the network&#39;s firewall.</p>
+      
+      <h3>Is my ISP blocking the VPN on purpose?</h3>
+      <p>Not directly your home ISP, usually. But at school, work, or in public spaces, the network administrator might be blocking VPNs intentionally. They do this to enforce policies, manage bandwidth, or for security reasons. While they&#39;re not your internet service provider, they do control your access on their specific network.</p>
+      
+      <h3>Is there a free VPN that doesn&#39;t have this problem?</h3>
+      <p>Many ad-funded free VPNs struggle with network blocks because they often lack advanced obfuscation features. OllaVPN&#39;s free tier, however, offers the QUIC protocol, which is designed to be more resilient against blocking. This gives you a better chance of connecting without issues. You get 10 Mbps for free, forever, with no ads or data limits.</p>
+      
+      <h3>Should I uninstall and reinstall?</h3>
+      <p>Only as a last resort. Uninstalling and reinstalling your VPN app can sometimes fix deeply rooted software bugs. However, for network blocking issues, trying different protocols or adjusting settings within the app is usually much more effective and less time-consuming than a full reinstall. Try those first.</p>
+      
+      <h3>How fast should this actually be working?</h3>
+      <p>Once connected, your VPN speed depends on your network, the server load, and your VPN&#39;s specific limits. On OllaVPN&#39;s free plan, you&#39;ll consistently get 10 Mbps, which is great for most online activities. If you need more speed, OllaVPN Plus offers up to 10 Gbps on five devices for just $2 a month.</p>
+      
+      <h3>Will this issue affect my kill switch protection?</h3>
+      <p>No, your kill switch should still protect you. If your VPN connection gets blocked or drops, the kill switch is designed to immediately cut off your internet access. This prevents your real IP from being exposed. It&#39;s a crucial safety net that remains active and works even when your connections are unstable.</p>
+      
+      <h3>What&#39;s the difference between connection drops and slow speeds?</h3>
+      <p>Connection drops mean your VPN completely disconnects from the server, often due to aggressive blocking or unstable networks. Slow speeds mean you&#39;re still connected, but data transfer is sluggish. This can be due to network throttling, server congestion, or even partial blocking that degrades performance rather than cutting it off entirely.</p>
+      
+      <h3>Does this issue affect streaming, gaming, or just general browsing?</h3>
+      <p>It can affect everything. If your VPN is completely blocked, you won&#39;t be able to access anything through it. If it&#39;s just being throttled, you&#39;ll experience frustratingly slow browsing, constant buffering while streaming, and high ping in games. The impact really depends on how severely the network is restricting your VPN traffic.</p>
+      
+      <h3>How does OllaVPN handle this specific scenario?</h3>
+      <p>OllaVPN is built with these challenges in mind. Our QUIC protocol option is especially good at bypassing network blocks because its traffic often blends in with regular web traffic. Plus, our post-quantum-ready encryption ensures your connection is secure and future-proof, even on restrictive networks, whether you&#39;re on our free 10 Mbps plan or the 10 Gbps Plus plan.</p>
+      
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=VPN%20Blocked%20at%20School%20or%20Work%3F%20Here%26%2339%3Bs%20How%20to%20Get%20Back%20Online%20Fast.&amp;url=https%3A%2F%2Follavpn.com%2Fblog%2Fhow-to-use-vpn-when-network-blocks-wireguard" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fblog%2Fhow-to-use-vpn-when-network-blocks-wireguard" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fblog%2Fhow-to-use-vpn-when-network-blocks-wireguard&amp;t=VPN%20Blocked%20at%20School%20or%20Work%3F%20Here%26%2339%3Bs%20How%20to%20Get%20Back%20Online%20Fast." target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fblog%2Fhow-to-use-vpn-when-network-blocks-wireguard&amp;title=VPN%20Blocked%20at%20School%20or%20Work%3F%20Here%26%2339%3Bs%20How%20to%20Get%20Back%20Online%20Fast." target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related">
+      <h2>Related reading</h2>
+      <ul><ul class="related-cards">
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-wireguard-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free WireGuard VPN</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-quic-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free QUIC VPN for restrictive networks</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-vpn-obfuscation"><span class="card-tag">PRIVACY</span><span class="card-title">What is vpn obfuscation</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-masque"><span class="card-tag">PRIVACY</span><span class="card-title">What is masque</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/can-a-website-detect-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Can a website detect vpn</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul>
+    </div>
+
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      
+      <li><a href="#quick-diagnosis">How do you quickly tell if the problem is your VPN or your network?</a></li>
+      
+      <li><a href="#common-cause-quick-fix">What&#39;s the most common cause of a blocked VPN, and what&#39;s the 30-second fix?</a></li>
+      
+      <li><a href="#step-by-step-troubleshooting">What should you do if the quick fix didn&#39;t work?</a></li>
+      
+      <li><a href="#why-this-problem-happens">Why does this specific problem happen with VPNs?</a></li>
+      
+      <li><a href="#prevent-future-blocks">How can you prevent your VPN from being blocked again?</a></li>
+      
+      <li><a href="#related-issues">What other issues might you be experiencing that are related to VPN blocking?</a></li>
+      
+      <li><a href="#when-problem-is-vpn-provider">When is the problem your VPN provider and not the network?</a></li>
+      
+      <li><a href="#switching-vpn-providers">How can you switch to a VPN that handles these blocking scenarios better?</a></li>
+      
+      <li><a href="#ollavpn-solution">How does OllaVPN specifically help when your VPN is blocked?</a></li>
+      
+      <li><a href="#security-implications">Are there any security implications when bypassing network blocks?</a></li>
+      
+      <li><a href="#conclusion-and-summary">Ready to get connected and stay private?</a></li>
+      
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<script>
+  // Scroll-spy: highlight current section in right rail TOC.
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What is Onion Over VPN? Explained Simply | OllaVPN</title>
+<meta name="description" content="Demystify Onion Over VPN: learn what it is, how it works, and why it&#39;s a powerful tool for online privacy and anonymity, explained in plain English." />
+<link rel="canonical" href="https://ollavpn.com/what-is-onion-over-vpn" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="What is Onion Over VPN? Explained Simply | OllaVPN" />
+<meta property="og:description" content="Demystify Onion Over VPN: learn what it is, how it works, and why it&#39;s a powerful tool for online privacy and anonymity, explained in plain English." />
+<meta property="og:url" content="https://ollavpn.com/what-is-onion-over-vpn" />
+<meta property="og:image" content="https://ollavpn.com/og-what-is-onion-over-vpn.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Onion Over Vpn — explained by OllaVPN" />
+<meta property="article:published_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:modified_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Free VPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What is Onion Over VPN? Explained Simply | OllaVPN" />
+<meta name="twitter:description" content="Demystify Onion Over VPN: learn what it is, how it works, and why it&#39;s a powerful tool for online privacy and anonymity, explained in plain English." />
+<meta name="twitter:image" content="https://ollavpn.com/og-what-is-onion-over-vpn.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What is Onion Over VPN, and Why Should You Care?",
+  "description": "Demystify Onion Over VPN: learn what it is, how it works, and why it's a powerful tool for online privacy and anonymity, explained in plain English.",
+  "image": "https://ollavpn.com/og-what-is-onion-over-vpn.png",
+  "author": {
+    "@type": "Person",
+    "name": "Nathan Pratt",
+    "url": "https://ollavpn.com/about/team#nathan-pratt",
+    "jobTitle": "Privacy & Security Lead",
+    "worksFor": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" }
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Hannah Wu",
+    "url": "https://ollavpn.com/about/team#hannah-wu",
+    "jobTitle": "Senior Security Engineer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ollavpn.com/favicon-256.png"
+    }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ollavpn.com/what-is-onion-over-vpn"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Onion Over VPN in one sentence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's connecting to your VPN first, then routing your internet traffic through the Tor network. This adds multiple layers of encryption and hops, making it much harder to trace your online activity. Think of it as putting your already-private VPN tunnel inside another anonymity network."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I care about Onion Over VPN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You should care if you need maximum anonymity online, perhaps for sensitive communications, bypassing heavy censorship, or protecting your identity from advanced surveillance. For most everyday internet use, a good VPN like OllaVPN is enough, but Onion Over VPN is a powerful tool when you truly need that extra layer of protection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it dangerous to ignore Onion Over VPN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not directly for most people. For everyday browsing, a reputable VPN like OllaVPN offers strong protection and is usually sufficient. It's only 'dangerous' to ignore if your personal threat model requires the absolute highest level of anonymity, which isn't the case for the majority of users just looking for privacy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a VPN relate to Onion Over VPN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In an Onion Over VPN setup, your VPN acts as the first line of defense. It encrypts your traffic and hides your real IP address from your Internet Service Provider and even from the Tor network's entry node. This adds a crucial layer of privacy and security before your data ever enters the Tor network."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a VPN to deal with this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You don't strictly 'need' a VPN to use Tor, but using a VPN *before* Tor (Onion Over VPN) significantly enhances your privacy. It prevents your ISP from knowing you're connecting to Tor directly and hides your real IP from the Tor entry node, making it much harder to trace you. We always recommend it for maximum security."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a free VPN handle Onion Over VPN properly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mostly \u2014 here's where it breaks. Many ad-funded free VPNs aren't designed for this level of privacy and often lack the speed or trust needed. OllaVPN's free tier offers 10 Mbps and strong privacy, which is enough to use with Tor Browser, but remember Tor itself will slow you down. Our free plan is $0 forever, no ads, and no data selling, so you can trust it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I check whether I'm protected by Onion Over VPN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First, ensure your VPN is connected. Then, open Tor Browser and navigate to check.torproject.org. It should confirm you're successfully connected to the Tor network. You can also visit an IP address checker within Tor Browser to see if the displayed IP matches a Tor exit node, confirming the full circuit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there free tools to test Onion Over VPN's effectiveness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, primarily check.torproject.org within the Tor Browser to confirm Tor connectivity. You can also use various online IP address lookup tools to verify your exit IP address is from Tor. For most users, confirming Tor connectivity is sufficient to know it's working as intended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Onion Over VPN still matter in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely. As surveillance technologies advance, layered privacy solutions like Onion Over VPN remain highly relevant for those requiring extreme anonymity. The core principles of obfuscating origin and destination remain crucial, especially with threats like post-quantum computing on the horizon, which OllaVPN is already addressing with our post-quantum-ready encryption."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the simplest fix for needing more anonymity online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The simplest fix for enhanced anonymity is to always use a reputable VPN like OllaVPN, and for situations demanding even more, combine it with the Tor Browser. Connect to OllaVPN first, then launch Tor Browser. This gives you a strong privacy foundation without needing complex configurations, leveraging our post-quantum-ready encryption."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there situations where Onion Over VPN doesn't apply?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Definitely. For routine tasks like streaming, online gaming, or casual browsing, Onion Over VPN is overkill and will significantly slow you down. A good VPN alone provides ample privacy for these activities. It's a tool for specific, high-anonymity needs, not an everyday solution due to the speed trade-off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does OllaVPN handle Onion Over VPN specifically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OllaVPN doesn't offer a built-in 'Onion Over VPN' mode. Instead, we recommend connecting to OllaVPN first, then launching the Tor Browser. This setup gives you the benefits of our secure, post-quantum-ready VPN protecting your connection to Tor, leveraging our robust network available on our free 10 Mbps tier or 10 Gbps Plus plan for $2/month."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ollavpn.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Free VPN",
+      "item": "https://ollavpn.com/free-vpn"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Onion Over Vpn",
+      "item": "https://ollavpn.com/what-is-onion-over-vpn"
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text);
+    max-width: 880px; }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 20px; max-width: 760px; }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 28px 56px;
+    gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+
+  .article {
+    min-width: 0;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px;
+    color: var(--text);
+  }
+  .article .short-answer {
+    font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em;
+  }
+  .article p strong { font-weight: 700; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px;
+    text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline {
+    display: block; margin: 0 0 2.2em;
+    border: 1px solid var(--line); border-radius: 12px; padding: 18px 24px;
+    background: #fff;
+  }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+
+  .toc-rail .label, .toc-inline .label {
+    font-family: var(--mono); font-size: 11px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block;
+  }
+  .toc-rail ol, .toc-inline ol {
+    list-style: none; margin: 0; padding: 12px 0 0;
+  }
+  .toc-rail ol li, .toc-inline ol li {
+    font-size: 14px; line-height: 1.5; margin: 0 0 8px;
+  }
+  .toc-rail ol li a, .toc-inline ol li a {
+    color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px;
+    border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .toc-rail ol li a:hover,
+  .toc-inline ol li a:hover,
+  .toc-rail ol li.is-current a {
+    color: var(--red); border-left-color: var(--red);
+  }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+
+  /* Article left sidebar — hidden by default; shown at >= 1200px. */
+  .article-sidebar-left { display: none; }
+  .article-sidebar-left h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-mute);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-sidebar-list { list-style: none; padding: 0; margin: 0 0 28px; }
+  .article-sidebar-list li { margin: 0; }
+  .article-sidebar-list a {
+    display: block;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .article-sidebar-list a:hover { color: var(--red); }
+  .sidebar-card-mini {
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    margin-bottom: 24px;
+  }
+  .sidebar-card-mini h4 { border-bottom: none; padding-bottom: 4px; margin-bottom: 10px; }
+  .sidebar-card-mini p.smallcopy { font-size: 13px; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
+  .sidebar-card-mini .btn { display: block; text-align: center; }
+  .author-mini { display: flex; gap: 12px; align-items: flex-start; }
+  .author-mini .avatar {
+    flex: none;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(238,62,71,0.12);
+    color: var(--red);
+    display: grid; place-items: center;
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    border: 1px solid rgba(238,62,71,0.3);
+  }
+  .author-mini .meta { line-height: 1.35; }
+  .author-mini .meta a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .author-mini .meta a:hover { color: var(--red); }
+  .author-mini .role { font-size: 12px; color: var(--text-mute); }
+  @media (min-width: 1200px) {
+    .article-layout {
+      grid-template-columns: 200px minmax(0, 680px) 240px;
+      max-width: 1240px;
+      gap: 32px;
+    }
+    .article-sidebar-left { display: block; position: sticky; top: 24px; }
+  }
+</style>
+</head>
+
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="wrap">
+    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 12 MIN READ
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
+    </div>
+    <h1>What is Onion Over VPN, and Why Should You Care?</h1>
+    <p class="lede">You&#39;ve probably heard of VPNs and maybe even Tor, the &#34;Onion Router.&#34; But what happens when you combine them? That&#39;s &#34;Onion Over VPN,&#34; a powerful setup for extra privacy and anonymity online. It sounds complex, but it doesn&#39;t have to be. We&#39;ll break down exactly what Onion Over VPN is, how it works, and why it might be a crucial tool for protecting your digital footprint, all without getting lost in technical jargon. You&#39;ll understand the benefits and the trade-offs, so you can decide if it&#39;s right for you.</p>
+  <div class="article-byline">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div class="author-meta">
+        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
+        <div class="author-role">Privacy &amp; Security Lead</div>
+      </div>
+      <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-layout">
+  <aside class="article-sidebar-left" aria-label="More from OllaVPN">
+    <div class="sidebar-card-mini">
+      <h4>By the author</h4>
+      <div class="author-mini">
+        <div class="avatar" aria-hidden="true">NP</div>
+        <div class="meta">
+          <a href="/about/team#nathan-pratt">Nathan Pratt</a>
+          <div class="role">Privacy &amp; Security Lead</div>
+        </div>
+      </div>
+    </div>
+
+    <h4>More guides</h4>
+    <ul class="article-sidebar-list">
+      <li><a href="what-is-post-quantum-cryptography.html">Post-quantum cryptography</a></li>
+      <li><a href="what-is-a-dns-leak.html">DNS leaks</a></li>
+      <li><a href="what-is-a-vpn-kill-switch.html">Kill switches</a></li>
+      <li><a href="five-eyes-nine-eyes-fourteen-eyes.html">Five Eyes alliances</a></li>
+      <li><a href="what-is-multi-hop-vpn.html">Multi-hop VPN</a></li>
+      <li><a href="what-logs-does-vpn-keep.html">What VPNs log</a></li>
+    </ul>
+
+    <h4>Top comparisons</h4>
+    <ul class="article-sidebar-list">
+      <li><a href="mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a></li>
+      <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a></li>
+      <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN</a></li>
+    </ul>
+
+    <div class="sidebar-card-mini">
+      <h4>Try OllaVPN</h4>
+      <p class="smallcopy">Free forever. 10&nbsp;Mbps. Every country. No card.</p>
+      <a class="btn primary" href="/dl/">Download free →</a>
+    </div>
+  </aside>
+  <article class="article">
+
+    <div class="tldr">
+      <span class="label">TL;DR</span>
+      
+      <p>&#34;Onion Over VPN&#34; means you connect to your VPN first, and then your internet traffic gets routed through the Tor network. This setup gives you the privacy benefits of your VPN – like keeping your real IP address hidden from your internet provider and the first Tor node you connect to – combined with Tor&#39;s anonymity, which bounces your traffic through several relays to obscure its origin.</p>
+      
+      <p>This approach significantly boosts privacy for anyone who needs to shield their identity and activities from advanced surveillance, such as journalists, activists, or people in highly restrictive regions. It makes it much tougher for anyone to trace your online actions back to you, adding layers of complexity for both your ISP and anyone monitoring the Tor network.</p>
+      
+      <p>While it offers enhanced anonymity, you&#39;re going to notice a big drop in speed because of Tor&#39;s multi-hop design. It&#39;s not really for your everyday browsing, but it&#39;s perfect for those specific times when maximum anonymity is absolutely essential. OllaVPN doesn&#39;t have a built-in &#34;Onion Over VPN&#34; mode, but you can easily achieve a similar effect by using our VPN with the Tor Browser. Remember, our free plan gives you 10 Mbps and works in every country, no card needed.</p>
+      
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        
+        <li><a href="#what-is-onion-over-vpn-plain-english">What exactly is Onion Over VPN in plain English?</a></li>
+        
+        <li><a href="#how-onion-over-vpn-works">How does Onion Over VPN actually work under the hood?</a></li>
+        
+        <li><a href="#why-onion-over-vpn-matters">Why does Onion Over VPN matter for everyday users?</a></li>
+        
+        <li><a href="#common-misconceptions">What are the common misconceptions about Onion Over VPN?</a></li>
+        
+        <li><a href="#onion-over-vpn-vs-other-concepts">How does Onion Over VPN relate to other internet privacy concepts?</a></li>
+        
+        <li><a href="#when-to-use-onion-over-vpn">When should you care about Onion Over VPN, and when can you ignore it?</a></li>
+        
+        <li><a href="#good-vpn-and-onion-over-vpn">How does a good VPN handle this for you automatically?</a></li>
+        
+        <li><a href="#practical-steps-today">What practical things can you do today based on what you&#39;ve learned?</a></li>
+        
+        <li><a href="#speed-impact-onion-over-vpn">Does Onion Over VPN significantly impact your internet speed?</a></li>
+        
+        <li><a href="#security-benefits-onion-over-vpn">What are the specific security benefits of Onion Over VPN?</a></li>
+        
+        <li><a href="#is-onion-over-vpn-legal">Is using Onion Over VPN legal?</a></li>
+        
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    
+    <h2 id="what-is-onion-over-vpn-plain-english">What exactly is Onion Over VPN in plain English?</h2>
+    <p class="short-answer">Onion Over VPN is a way to combine a VPN's privacy with Tor's anonymity by connecting to the VPN first, and then routing your traffic through the Tor network.</p>
+
+Think of it like this: your internet traffic first goes through your VPN, which hides your real IP address from your internet provider. From there, instead of going directly to the website you want to visit, it then enters the Tor network. Tor itself adds multiple layers of encryption and bounces your data through at least three random relay servers around the world. Because you're connecting to the VPN *first*, the very first Tor relay node you connect to only sees the VPN's IP address, not your actual one. This setup gives you a strong shield against someone figuring out who you are.
+
+This "VPN first, then Tor" order is crucial. It means your internet service provider can't see that you're using Tor at all, only that you're connected to a VPN. And, importantly, it hides your real IP from the Tor entry node, which is the most vulnerable point in the Tor network for de-anonymization attempts. You get the privacy benefits of the VPN protecting your connection from your ISP, combined with the multi-layer encryption and distributed network of Tor for enhanced anonymity.
+
+It's important to understand the difference between <strong>anonymity vs. privacy</strong> here. A VPN primarily offers privacy – it encrypts your connection and hides your IP from the websites you visit and your ISP. Tor, on the other hand, is built for anonymity, making it extremely difficult to trace your online activity back to you specifically. Combining them gives you a powerful one-two punch, especially for those who need to protect their identity online from sophisticated observers. It's a more secure setup than using Tor alone because your starting point is already obscured by the VPN.
+    
+    <h2 id="how-onion-over-vpn-works">How does Onion Over VPN actually work under the hood?</h2>
+    <p class="short-answer">Onion Over VPN works by first sending your encrypted traffic through a VPN server, which then routes it into the Tor network for an additional layer of anonymity.</p>
+
+<p>When you connect to Onion Over VPN, your device first establishes a secure <a href="/what-is-a-vpn-tunnel">VPN tunnel</a> to a OllaVPN server. All your internet traffic is encrypted within this tunnel, so your internet provider can't see what you're doing. This is the first critical step: your true IP address is masked by the VPN server's IP address. Once your traffic reaches our VPN server, instead of going directly to its final destination, the VPN server then takes your now-anonymized traffic and pushes it into the Tor network.</p>
+
+<p>From there, your traffic enters the Tor network through a <strong>Tor entry node</strong>. Tor works by routing your data through at least three random relays (nodes) around the world: an entry node, a middle node, and an exit node. Each hop adds and removes a layer of encryption, much like peeling an onion – hence the name. This multi-layered encryption makes it incredibly difficult to trace the origin of the traffic, even for sophisticated observers. The middle node further obscures the connection between the entry and exit nodes, adding to your anonymity.</p>
+
+<p>Finally, your data exits the Tor network through a <strong>Tor exit node</strong>. This exit node is the point where your traffic leaves the Tor network and goes out to the public internet to reach its intended destination, like a website or an online service. The crucial part here is that the IP address seen by the destination server is that of the Tor exit node, not your original IP address, and not even the IP address of the OllaVPN server. This multi-layered approach — VPN first, then Tor — provides a much higher degree of anonymity than using either technology alone, combining the privacy of the VPN with the deep anonymity of Tor.</p>
+    
+    <h2 id="why-onion-over-vpn-matters">Why does Onion Over VPN matter for everyday users?</h2>
+    <p class="short-answer">Onion Over VPN matters for everyday users because it provides an extra layer of anonymity critical for sensitive online activities, especially when facing surveillance or censorship.</p>
+
+<p>While OllaVPN alone offers strong privacy, <strong>Onion Over VPN</strong> adds another significant shield by routing your encrypted traffic through the Tor network *after* it leaves our VPN servers. This means your internet service provider (ISP) sees encrypted traffic going to OllaVPN, and OllaVPN sees encrypted traffic going into the Tor network. The Tor network then shuffles your data through multiple relays, making it extremely difficult for anyone to trace your online activity back to you. This combination offers significantly enhanced anonymity beyond what either a VPN or Tor can provide on its own.</p>
+
+<p>This isn't really for casual browsing; it's a specialized tool. Think about specific situations where you absolutely cannot be identified. For instance, it provides robust <strong>protection against ISP surveillance</strong> for individuals living in countries with strict internet monitoring, or those concerned about their online activities being logged and potentially used against them. It's also incredibly effective for <strong>circumventing censorship</strong>, allowing access to information and services that might be blocked in your region by making your traffic appear to originate from multiple, random points across the internet.</p>
+
+<p>The practical benefits extend to those who truly need to stay anonymous online. It's an invaluable tool for <strong>journalists and activists</strong> communicating sensitive information, whistleblowers, or anyone engaged in <strong>sensitive communications</strong> that could put them at risk. If you're sharing information that could have real-world consequences if traced back to you, Onion Over VPN gives you that critical additional layer of protection. For everything else, a regular VPN connection is usually more than enough and much faster.</p>
+    
+    <h2 id="common-misconceptions">What are the common misconceptions about Onion Over VPN?</h2>
+    <p class="short-answer">The biggest misconception is that Onion Over VPN provides perfect anonymity, but it doesn't make you invincible or guarantee high speeds.</p>
+
+One of the most common misunderstandings is that using Onion Over VPN makes you 100% anonymous, a kind of digital ghost that can't be traced. While it significantly enhances your privacy by routing your traffic through both a VPN server and the Tor network, it's not a magic bullet. Your activities can still be linked to you if you log into personal accounts, use identifiable information, or if you're targeted by sophisticated adversaries who can analyze traffic patterns or exploit vulnerabilities in your device. It's about layers of protection, not an impenetrable shield.
+
+Another frequent misconception is about speed. Many people expect Onion Over VPN to perform similarly to a standard VPN connection, but that's simply not the case. You're adding multiple additional hops (the Tor network has at least three relays) to your connection after it leaves the VPN server. This introduces significant latency and a considerable speed reduction. Don't expect to stream 4K video or play fast-paced online games; it's designed for privacy and circumvention, not high-bandwidth activities.
+
+Finally, there's often confusion between <strong>Onion Over VPN</strong> and <a href="/tor-over-vpn">Tor Over VPN</a> (the reverse order). With Onion Over VPN, your traffic first goes through the VPN, then into the Tor network. This means your ISP sees encrypted VPN traffic, and the Tor entry node only sees the VPN server's IP address, not yours. Tor Over VPN, on the other hand, means your traffic goes through Tor first, then the VPN. Your ISP would see you connecting to Tor, which might raise flags, but the final destination only sees the VPN's IP. They're different setups for different threat models. Both are susceptible to things like browser fingerprinting, so always use good browsing hygiene.
+    
+    <h2 id="onion-over-vpn-vs-other-concepts">How does Onion Over VPN relate to other internet privacy concepts?</h2>
+    <p class="short-answer">Onion Over VPN combines the privacy benefits of a VPN with the anonymity of Tor, creating a multi-layered security approach distinct from using either technology alone or regular browsing.</p>
+
+<p>When you're just browsing the regular internet without anything, your internet service provider (ISP) sees everything you do, and the websites you visit see your real IP address. It's like sending a postcard – everyone can read it and know where it came from. A <strong>standalone VPN</strong> is a step up: your ISP sees you connecting to the VPN server, but they can't see your activity beyond that. The destination website sees the VPN server's IP address, not yours. This hides your IP and encrypts your traffic, but the VPN provider itself could theoretically see your activity (though <a href="/no-logs">we don't log it</a>).</p>
+
+<p>Then there's <strong>standalone Tor</strong> (The Onion Router). With Tor, your ISP sees you connecting to the Tor network's entry node, but your traffic is then bounced through several relays, encrypting it at each step. The destination website only sees the IP address of the Tor exit node. This offers strong anonymity, making it very hard to trace your activity back to you. However, your ISP still knows you're using Tor, and the entry and exit nodes could potentially be compromised, though the multi-hop design makes this difficult.</p>
+
+<p><strong>Onion Over VPN</strong> is where these two powerful tools combine for what we call <strong>layered security</strong>. When you use Onion Over VPN, your traffic first goes through the VPN tunnel. This means your ISP only sees an encrypted connection to the VPN server – they don't even know you're connecting to Tor. From the VPN server, your traffic then enters the Tor network, gets routed through its relays, and finally exits to your destination. So, your ISP sees the VPN, the Tor entry node only sees the VPN server's IP, and the destination sees a Tor exit node. It's a robust setup that gives you the best of both worlds: the encryption and IP hiding of a VPN, plus the enhanced anonymity of Tor, all while making it harder for anyone to know you're even using Tor.</p>
+    
+    <h2 id="when-to-use-onion-over-vpn">When should you care about Onion Over VPN, and when can you ignore it?</h2>
+    <p class="short-answer">You should care about Onion Over VPN when you need high-stakes anonymity or are circumventing heavy censorship; otherwise, it's generally overkill for everyday browsing.</p>
+
+Onion Over VPN (sometimes called VPN over Tor) is a powerful tool, but it's not for everyone, and it certainly isn't for every situation. Think of it as putting on a full hazmat suit just to walk to your mailbox – incredibly secure, yes, but probably unnecessary for the task at hand. It routes your internet traffic first through the VPN tunnel and then through the Tor network, adding multiple layers of encryption and obfuscation. This makes it incredibly difficult to trace your online activity back to you.
+
+This setup is invaluable when you're looking for <strong>high-stakes anonymity</strong>, like protecting whistleblowers or journalistic sources, or when you need to circumvent heavy state-level censorship that even a regular VPN might struggle with. If you're operating in a hostile environment or dealing with truly sensitive information where exposure could have severe consequences, then Onion Over VPN offers a significant privacy boost. It’s part of a toolkit for those who need to remain completely anonymous online.
+
+However, for most people and most daily online activities, Onion Over VPN is simply not necessary. The Tor network is intentionally slow because of its multi-layered routing, which means you're trading off a lot of speed for that anonymity. You definitely won't be streaming HD video, gaming, or even browsing particularly quickly. For everyday tasks like checking email, social media, or even secure online banking, a standard VPN connection offers excellent privacy and security without the drastic speed penalty. Your typical browsing doesn't need it, and you'll just end up frustrated with the performance.
+    
+    <h2 id="good-vpn-and-onion-over-vpn">How does a good VPN handle this for you automatically?</h2>
+    <p class="short-answer">Most mainstream VPNs don't offer built-in Onion Over VPN, but you can easily achieve the same privacy benefits by using Tor Browser with your VPN.</p>
+
+A "good" VPN primarily focuses on securing and anonymizing your regular internet traffic, not routing it through the Tor network. While some VPNs offer built-in Tor integration, it's not a standard feature across the board. The main goal of a VPN is to encrypt your connection and hide your IP address from your ISP and the sites you visit, using its own network of servers. For an extra layer of anonymity, many people choose to combine a VPN with Tor.
+
+At OllaVPN, we focus on providing a fast, secure, and private VPN connection that's post-quantum-ready, using the <a href="/blog/wireguard-protocol">WireGuard protocol</a> for its efficiency and strong cryptography. We don't build Tor directly into our app. Instead, we recommend a simple and effective approach: connect to OllaVPN first, then open and use Tor Browser. This setup ensures your internet service provider (ISP) only sees encrypted traffic going to our VPN servers, not directly to the Tor network.
+
+This method, often called <strong>Tor Over VPN</strong>, gives you the benefits of both. Your ISP can't tell you're using Tor, and the entry node to the Tor network can't see your real IP address – it only sees OllaVPN's IP. This layered approach enhances your privacy significantly. Our post-quantum-ready encryption ensures that even your VPN tunnel itself is built for the long term, protecting your data against future decryption threats.
+    
+    <h2 id="practical-steps-today">What practical things can you do today based on what you&#39;ve learned?</h2>
+    <p class="short-answer">You can start enhancing your online privacy today by combining a VPN with Tor, and by adopting better digital habits.</p>
+
+So, you've learned a bit about Onion over VPN and how it works. What's next? The most direct step you can take is to actually try it out. First, you'll want to use a reputable VPN (like OllaVPN, of course). Make sure it's connected and active. Then, download Tor Browser – it's free and readily available. The critical step here is to connect your VPN first, then open Tor Browser. This ensures that your internet service provider (ISP) only ever sees encrypted traffic going to your VPN server, never directly to the Tor network.
+
+Once you have that setup, you're routing your traffic through OllaVPN's secure network, then through three layers of the Tor network, giving you significant anonymity. While this setup is fantastic for privacy, remember to practice good digital hygiene. This means being mindful of what information you share online, even when using Tor. Don't log into accounts with your real identity while using Tor if your goal is anonymity.
+
+It's also crucial to understand the risks. No system is 100% foolproof, and while Onion over VPN significantly raises your privacy bar, it's not an invisibility cloak. Governments and sophisticated actors can still potentially track users with enough resources and determination, especially if you make mistakes like reusing identifying information. However, for everyday privacy against mass surveillance and data harvesting, this combination is a powerful tool.
+    
+    <h2 id="speed-impact-onion-over-vpn">Does Onion Over VPN significantly impact your internet speed?</h2>
+    <p class="short-answer">Yes, Onion Over VPN significantly impacts your internet speed, making it noticeably slower than a standard VPN connection.</p>
+
+When you use Onion Over VPN, your internet traffic goes through multiple encryption layers and multiple hops. First, it's encrypted by your VPN and sent to a OllaVPN server. Then, from our server, it enters the Tor network, where it's encrypted three more times and routed through three different Tor relays before finally reaching its destination. Each of these steps adds latency and reduces your overall speed.
+
+The Tor network itself is designed for anonymity, not speed. Its inherent slowness means that even without a VPN, browsing through Tor can be quite sluggish. Adding a VPN on top of that, especially with OllaVPN's 10 Mbps free tier, means you're layering an already slow connection on top of another connection that has a speed cap.
+
+Because of these factors, Onion Over VPN is generally not suitable for bandwidth-intensive tasks like streaming high-definition video, online gaming, or large file downloads. It's best reserved for situations where maximum anonymity is your absolute top priority, and you're willing to sacrifice speed for it. If you need more speed for general browsing with a VPN, consider <a href="/plus">OllaVPN Plus</a> for 10 Gbps speeds.
+    
+    <h2 id="security-benefits-onion-over-vpn">What are the specific security benefits of Onion Over VPN?</h2>
+    <p class="short-answer">Onion Over VPN protects your connection from your ISP, hides your real IP from the Tor network, and makes traffic analysis significantly harder.</p>
+
+When you combine OllaVPN with Tor (often called Onion Over VPN), you create a powerful privacy setup that goes beyond just anonymity. Your internet service provider (ISP) can't see Tor usage directly because all they see is encrypted traffic going to a OllaVPN server. This is a big win for privacy, as many ISPs flag direct Tor connections.
+
+By connecting to OllaVPN first, your real IP address is hidden from the Tor entry node. Normally, the first node in the Tor network knows your true IP. With OllaVPN, that entry node only sees OllaVPN's IP, adding another layer of separation. This also makes it significantly harder for traffic correlation attacks, where an attacker tries to match your incoming and outgoing traffic patterns to identify you.
+
+While Tor is designed for anonymity, its exit nodes can sometimes be malicious, potentially monitoring or manipulating your traffic. Onion Over VPN offers some protection against malicious exit nodes by encrypting your traffic *before* it even enters the Tor network. However, it's important to remember that this protection is partial — your traffic still exits Tor unencrypted unless you're connecting to an HTTPS site.
+    
+    <h2 id="is-onion-over-vpn-legal">Is using Onion Over VPN legal?</h2>
+    <p class="short-answer">Using Onion Over VPN is generally legal, as both VPNs and Tor are legal in most countries, but the legality ultimately depends on your location and what you're doing online.</p>
+
+<p>VPNs are legal in most places around the world, and Tor, the network that powers Onion sites, is also legal in the vast majority of countries. So, combining them—which is what "Onion Over VPN" means—doesn't inherently make it illegal. Think of it like using a locked door (VPN) to enter a maze (Tor); neither the door nor the maze is illegal, but what you do once inside might be.</p>
+
+<p>The key here is that the legality of your online activity isn't usually determined by the tools you use, but by the activity itself. If something is illegal without a VPN or Tor, it remains illegal with them. So, if you're engaging in illegal activities, using Onion Over VPN won't suddenly make them legal or protect you from consequences. <strong>Jurisdictional Differences</strong> do play a role, as some countries have strict internet censorship and surveillance laws where even using a VPN or Tor might be frowned upon or restricted, though outright illegalization is rare for these technologies themselves.</p>
+
+<p>For most people, using Onion Over VPN is a privacy choice, enhancing anonymity by routing your connection first through a VPN server and then through the Tor network. This makes it much harder to trace your online activities back to you, which is perfectly legitimate for protecting your privacy from advertisers, ISPs, or even repressive regimes, provided your underlying actions are lawful.</p>
+    
+
+    
+<!-- TIER1-ENRICHED -->
+
+  <h2 id="tier1-deeper-context">Deeper context worth knowing</h2>
+  <p>A definitional explainer should leave you understanding not just the concept but the surrounding category — what other concepts it connects to, what common misunderstandings to avoid, and which adjacent ideas you should know about. A few worth covering:</p>
+  <p><strong>The category history matters.</strong> Most networking and privacy concepts you encounter today were invented to solve a specific problem that may or may not still be the dominant problem in 2026. Understanding why a concept exists helps you evaluate whether it's the right tool for your situation. We try to include the historical context for every "what is X" guide we publish.</p>
+  <p><strong>The standards-body work matters.</strong> Many privacy and networking concepts have a corresponding RFC, NIST publication, or IETF draft that defines them rigorously. The standard is the canonical source; vendor marketing pages and Wikipedia summaries are derivatives. When in doubt, find the standard.</p>
+  <p><strong>The threat model matters.</strong> The same concept can be a strong defense against one class of threat and useless against another. "Encrypted" doesn't mean "private" if the recipient is the threat actor. "Anonymized" doesn't mean "unlinkable" if you have enough side data. We try to be specific about what each property actually defends.</p>
+  <h2 id="tier1-related-ollavpn">How this connects to OllaVPN specifically</h2>
+  <p>If you've read this far, you probably want to know how the concept applies to OllaVPN's product. The short version:</p>
+  <p><strong>If the concept above is something a VPN should provide</strong> (no-logs, kill switch, in-tunnel DNS, peer isolation, post-quantum cryptography), OllaVPN ships it by default on the free tier. The cryptographic stack uses WireGuard with a hybrid X25519 + ML-KEM-768 handshake; the kill switch is enforced at the OS firewall layer (Windows Filtering Platform on Windows, Packet Filter on macOS, VpnService.setBlockingMode on Android); DNS goes to an in-tunnel unbound resolver with the OS DNS path firewall-blocked; peer isolation is enforced in four independent layers including an automated end-to-end test. Read the <a href="/technology">technology page</a> for the complete architecture.</p>
+  <p><strong>If the concept above is something only a VPN partially helps with</strong> (anonymity, censorship circumvention, streaming geo-unblock), OllaVPN does what a privacy VPN can do but the underlying limits of the category apply. We don't oversell capabilities we don't have. The <a href="/best-free-vpn-2026">best free VPN 2026 guide</a> covers what's realistic to expect from a free VPN versus what requires a paid tier or a different category of tool entirely.</p>
+  <p><strong>If the concept above is something a VPN doesn't help with at all</strong> (application-layer tracking, account-based identity, malware on your device, source-anonymity against a global passive adversary), we say so. A VPN replaces the ISP in the traffic-visibility role; it does not stop websites from tracking you, does not stop your accounts from identifying you, does not stop malware already on your device, and is not Tor. Use the right tool for each layer of the threat model.</p>
+
+  <h2 id="tier1-about">About this guide</h2>
+  <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
+  <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
+<div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What exactly is Onion Over VPN in plain English?</li>
+        <li>How does Onion Over VPN actually work under the hood?</li>
+        <li>Why does Onion Over VPN matter for everyday users?</li>
+        <li>What are the common misconceptions about Onion Over VPN?</li>
+        <li>How does Onion Over VPN relate to other internet privacy concepts?</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      
+      <h3>What is Onion Over VPN in one sentence?</h3>
+      <p>It&#39;s connecting to your VPN first, then routing your internet traffic through the Tor network. This adds multiple layers of encryption and hops, making it much harder to trace your online activity. Think of it as putting your already-private VPN tunnel inside another anonymity network.</p>
+      
+      <h3>Why should I care about Onion Over VPN?</h3>
+      <p>You should care if you need maximum anonymity online, perhaps for sensitive communications, bypassing heavy censorship, or protecting your identity from advanced surveillance. For most everyday internet use, a good VPN like OllaVPN is enough, but Onion Over VPN is a powerful tool when you truly need that extra layer of protection.</p>
+      
+      <h3>Is it dangerous to ignore Onion Over VPN?</h3>
+      <p>Not directly for most people. For everyday browsing, a reputable VPN like OllaVPN offers strong protection and is usually sufficient. It&#39;s only &#39;dangerous&#39; to ignore if your personal threat model requires the absolute highest level of anonymity, which isn&#39;t the case for the majority of users just looking for privacy.</p>
+      
+      <h3>How does a VPN relate to Onion Over VPN?</h3>
+      <p>In an Onion Over VPN setup, your VPN acts as the first line of defense. It encrypts your traffic and hides your real IP address from your Internet Service Provider and even from the Tor network&#39;s entry node. This adds a crucial layer of privacy and security before your data ever enters the Tor network.</p>
+      
+      <h3>Do I need a VPN to deal with this?</h3>
+      <p>You don&#39;t strictly &#39;need&#39; a VPN to use Tor, but using a VPN *before* Tor (Onion Over VPN) significantly enhances your privacy. It prevents your ISP from knowing you&#39;re connecting to Tor directly and hides your real IP from the Tor entry node, making it much harder to trace you. We always recommend it for maximum security.</p>
+      
+      <h3>Can a free VPN handle Onion Over VPN properly?</h3>
+      <p>Mostly — here&#39;s where it breaks. Many ad-funded free VPNs aren&#39;t designed for this level of privacy and often lack the speed or trust needed. OllaVPN&#39;s free tier offers 10 Mbps and strong privacy, which is enough to use with Tor Browser, but remember Tor itself will slow you down. Our free plan is $0 forever, no ads, and no data selling, so you can trust it.</p>
+      
+      <h3>How can I check whether I&#39;m protected by Onion Over VPN?</h3>
+      <p>First, ensure your VPN is connected. Then, open Tor Browser and navigate to check.torproject.org. It should confirm you&#39;re successfully connected to the Tor network. You can also visit an IP address checker within Tor Browser to see if the displayed IP matches a Tor exit node, confirming the full circuit.</p>
+      
+      <h3>Are there free tools to test Onion Over VPN&#39;s effectiveness?</h3>
+      <p>Yes, primarily check.torproject.org within the Tor Browser to confirm Tor connectivity. You can also use various online IP address lookup tools to verify your exit IP address is from Tor. For most users, confirming Tor connectivity is sufficient to know it&#39;s working as intended.</p>
+      
+      <h3>Does Onion Over VPN still matter in 2026?</h3>
+      <p>Yes, absolutely. As surveillance technologies advance, layered privacy solutions like Onion Over VPN remain highly relevant for those requiring extreme anonymity. The core principles of obfuscating origin and destination remain crucial, especially with threats like post-quantum computing on the horizon, which OllaVPN is already addressing with our post-quantum-ready encryption.</p>
+      
+      <h3>What&#39;s the simplest fix for needing more anonymity online?</h3>
+      <p>The simplest fix for enhanced anonymity is to always use a reputable VPN like OllaVPN, and for situations demanding even more, combine it with the Tor Browser. Connect to OllaVPN first, then launch Tor Browser. This gives you a strong privacy foundation without needing complex configurations, leveraging our post-quantum-ready encryption.</p>
+      
+      <h3>Are there situations where Onion Over VPN doesn&#39;t apply?</h3>
+      <p>Definitely. For routine tasks like streaming, online gaming, or casual browsing, Onion Over VPN is overkill and will significantly slow you down. A good VPN alone provides ample privacy for these activities. It&#39;s a tool for specific, high-anonymity needs, not an everyday solution due to the speed trade-off.</p>
+      
+      <h3>How does OllaVPN handle Onion Over VPN specifically?</h3>
+      <p>OllaVPN doesn&#39;t offer a built-in &#39;Onion Over VPN&#39; mode. Instead, we recommend connecting to OllaVPN first, then launching the Tor Browser. This setup gives you the benefits of our secure, post-quantum-ready VPN protecting your connection to Tor, leveraging our robust network available on our free 10 Mbps tier or 10 Gbps Plus plan for $2/month.</p>
+      
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=What%20is%20Onion%20Over%20VPN%2C%20and%20Why%20Should%20You%20Care%3F&amp;url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-onion-over-vpn" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-onion-over-vpn" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-onion-over-vpn&amp;t=What%20is%20Onion%20Over%20VPN%2C%20and%20Why%20Should%20You%20Care%3F" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-onion-over-vpn&amp;title=What%20is%20Onion%20Over%20VPN%2C%20and%20Why%20Should%20You%20Care%3F" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related">
+      <h2>Related reading</h2>
+      <ul><ul class="related-cards">
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-tor-vs-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">What is tor vs vpn</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-multi-hop-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">What is multi hop vpn</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-vpn-obfuscation"><span class="card-tag">PRIVACY</span><span class="card-title">What is vpn obfuscation</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-post-quantum-cryptography"><span class="card-tag">PRIVACY</span><span class="card-title">What is post-quantum cryptography?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a DNS leak?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul>
+    </div>
+
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      
+      <li><a href="#what-is-onion-over-vpn-plain-english">What exactly is Onion Over VPN in plain English?</a></li>
+      
+      <li><a href="#how-onion-over-vpn-works">How does Onion Over VPN actually work under the hood?</a></li>
+      
+      <li><a href="#why-onion-over-vpn-matters">Why does Onion Over VPN matter for everyday users?</a></li>
+      
+      <li><a href="#common-misconceptions">What are the common misconceptions about Onion Over VPN?</a></li>
+      
+      <li><a href="#onion-over-vpn-vs-other-concepts">How does Onion Over VPN relate to other internet privacy concepts?</a></li>
+      
+      <li><a href="#when-to-use-onion-over-vpn">When should you care about Onion Over VPN, and when can you ignore it?</a></li>
+      
+      <li><a href="#good-vpn-and-onion-over-vpn">How does a good VPN handle this for you automatically?</a></li>
+      
+      <li><a href="#practical-steps-today">What practical things can you do today based on what you&#39;ve learned?</a></li>
+      
+      <li><a href="#speed-impact-onion-over-vpn">Does Onion Over VPN significantly impact your internet speed?</a></li>
+      
+      <li><a href="#security-benefits-onion-over-vpn">What are the specific security benefits of Onion Over VPN?</a></li>
+      
+      <li><a href="#is-onion-over-vpn-legal">Is using Onion Over VPN legal?</a></li>
+      
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<script>
+  // Scroll-spy: highlight current section in right rail TOC.
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OllaVPN Technology — Post-Quantum-Ready VPN</title>
+<meta name="description" content="How OllaVPN builds a future-ready privacy VPN: post-quantum cryptography, always-on kill switch, DNS handled inside the tunnel, no-logs by design." />
+<link rel="canonical" href="https://ollavpn.com/technology.html" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="OllaVPN Technology — Post-Quantum-Ready VPN" />
+<meta property="og:description" content="Post-quantum cryptography, always-on kill switch, DNS handled inside the tunnel, no-logs by design." />
+<meta property="og:url" content="https://ollavpn.com/technology.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://ollavpn.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="OllaVPN — Free, post-quantum-ready VPN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="OllaVPN Technology — Post-Quantum-Ready VPN" />
+<meta name="twitter:description" content="A future-ready privacy VPN built on open standards. Post-quantum, no-logs, always-on kill switch." />
+<meta name="twitter:image" content="https://ollavpn.com/og-image.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "OllaVPN Technology — Post-Quantum-Ready VPN Built on Open Standards",
+  "description": "How OllaVPN builds a future-ready privacy VPN: post-quantum cryptography, always-on kill switch, DNS handled inside the tunnel, no-logs by design.",
+  "image": "https://ollavpn.com/og-image.png",
+  "author": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": { "@type": "ImageObject", "url": "https://ollavpn.com/favicon-256.png" }
+  },
+  "mainEntityOfPage": "https://ollavpn.com/technology.html",
+  "inLanguage": "en"
+}
+</script>
+<!-- Self-hosted Lato (no Google Fonts CDN call for primary type). JetBrains Mono is still pulled
+     from Google for mono code blocks - used sparingly, can be self-hosted in a follow-up. -->
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="styles.css?v=20260708-0556" />
+<style>
+  .page-hero { padding: 96px 0 56px; position: relative; overflow: hidden; }
+  .page-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.16), transparent 60%); pointer-events:none; }
+  .page-hero .wrap { position: relative; }
+
+  .stack-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; }
+  .layer-list { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; }
+  .layer { display: grid; grid-template-columns: 70px 1fr auto; padding: 18px 20px; border-bottom: 1px solid var(--line); align-items: center; gap: 14px; }
+  .layer:last-child { border-bottom: 0; }
+  .layer .n { font-family: var(--mono); font-size: 11px; color: var(--text-mute); }
+  .layer .name { font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
+  .layer .desc { font-size: 13px; color: var(--text-dim); margin-top: 2px; }
+  .layer.pqc { background: linear-gradient(180deg, rgba(238,62,71,0.10), rgba(238,62,71,0.02)); }
+  .layer.pqc .n { color: var(--red-2); }
+
+  .specs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .spec { padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+  .spec .k { font-family: var(--mono); font-size: 11px; color: var(--text-mute); }
+  .spec .v { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-top: 6px; }
+  .spec .v small { font-family: var(--mono); font-size: 11px; color: var(--red-2); display: block; margin-top: 4px; font-weight: 400; }
+
+  .roadmap { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .road { padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+  .road.now { background: linear-gradient(180deg, rgba(238,62,71,0.16), rgba(238,62,71,0.04)); border-color: rgba(238,62,71,0.35); }
+  .road .yr { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; color: var(--red-2); }
+  .road h4 { font-size: 15px; font-weight: 600; margin: 8px 0 0; letter-spacing: -0.01em; }
+  .road p { color: var(--text-dim); font-size: 13px; margin-top: 8px; }
+
+  .audit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .audit-card { padding: 28px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+  .audit-list { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin-top: 18px; }
+  .audit-row { display: flex; justify-content: space-between; padding: 12px 14px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 11px; color: var(--text-dim); letter-spacing: 0.04em; }
+  .audit-row:last-child { border-bottom: 0; }
+  .audit-row .ok { color: var(--green); }
+  .audit-row .todo { color: var(--text-mute); }
+
+  @media (max-width: 980px) { .stack-grid, .specs-grid, .roadmap, .audit-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- Top utility bar - networkershome.com pattern: a thin mono-typeface
+     row above the main nav for live status + secondary links. -->
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item active">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Technology · how OllaVPN works</span>
+    <h1 class="h-display h1 mt-16">Defence-grade.<br/>Future-proof. <span class="accent">Built to last.</span></h1>
+    <p class="lede mt-16" style="max-width:680px;color:var(--text-dim);">A modern, post-quantum-ready privacy VPN. Hybrid post-quantum key exchange on every connection. Strong defaults — kill switch, in-tunnel DNS, peer isolation — turned on out of the box.</p>
+    <div class="actions mt-32" style="display:flex;gap:12px;flex-wrap:wrap;"><a class="btn primary lg" href="#stack">How it works <span class="arrow">→</span></a><a class="btn lg" href="#principles">Our principles <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<section class="section-sm" id="what-we-mean">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> CONTEXT</span><h2 class="h-display h2 mt-16">What "modern privacy VPN" means <span class="accent">in 2026.</span></h2></div>
+    <p class="lede mt-16" style="color:var(--text-dim);font-size:17px;line-height:1.72;">A consumer VPN in 2026 is no longer a single product category. There are at least three things sold under the same word, and they require very different technical foundations.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1.2em;"><strong>Streaming-unlock VPNs</strong> exist primarily to put a non-domestic IP address in front of geo-blocked content. Their engineering investment goes into IP-rotation at scale, into avoiding streaming-service blocklists, and into peering with content-delivery networks. Their privacy properties are downstream of the streaming use case — useful, but not the design goal.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1.2em;"><strong>Corporate VPNs</strong> exist primarily to extend a company's internal network to remote employees. Their engineering investment goes into authentication, single-sign-on integration, access control, and audit logging. Their threat model is "the network is hostile, the user is trusted," which is the opposite of the threat model a privacy VPN operates against.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1.2em;"><strong>Privacy VPNs</strong> exist primarily to put a trusted operator between your device and the rest of the internet. Their engineering investment goes into the cryptographic protocol, the architecture of the data plane (so the operator structurally cannot see what you are doing even if they wanted to), the operational security of the infrastructure, and the transparency of how the operator funds itself. OllaVPN is in this third category.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1.2em;">The technical decisions on this page only make sense in the context of "we are a privacy VPN, full stop." The choices we make — WireGuard with a post-quantum hybrid extension, in-tunnel DNS, kill switch on by default and not toggleable, four-layer peer isolation, owned infrastructure on tier-1 baremetal — are correct for a privacy VPN and would be unnecessarily expensive for a streaming-unlock product. We accept that tradeoff because privacy is the product.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1.2em;">A modern privacy VPN in 2026 has six properties that older privacy VPNs did not: it ships post-quantum-ready cryptography by default (because "harvest now, decrypt later" is a working attack pattern, not a future hypothetical); it runs over WireGuard rather than OpenVPN or IPsec (because the smaller code surface is easier to audit and the performance is materially better); it operates the data plane on owned baremetal rather than commercial VPS (because the privacy promise depends on controlling the data path); it runs its own DNS resolvers inside the tunnel rather than handing DNS to OpenDNS or Cloudflare (because the resolver is part of the trust boundary); it ships its kill switch enforced at the OS firewall layer rather than as an in-app polling check (because the latter has races during transitions); and it makes the source of its client apps inspectable, so users do not have to take the operator's word for the implementation. OllaVPN ships all six. The rest of this page explains how each one works.</p>
+  </div>
+</section>
+
+<section class="section-sm" id="stack">
+  <div class="wrap">
+    <div class="head"><span class="kicker"><span class="pip">●</span> HOW IT WORKS</span><h2 class="h-display h2 mt-16">Strong defaults. <span class="accent">No advanced settings required.</span></h2></div>
+    <div class="stack-grid">
+      <div class="layer-list">
+        <div class="layer pqc"><div class="n">01</div><div><div class="name">Post-quantum-ready key exchange</div><div class="desc">A hybrid handshake protects every connection against today's networks and tomorrow's quantum-capable adversaries.</div></div><span class="pill">PQ READY</span></div>
+        <div class="layer"><div class="n">02</div><div><div class="name">Modern, forward-secret tunnel</div><div class="desc">Session keys rotate continuously. A recording of today's traffic cannot be decrypted by stealing a key in the future.</div></div><span class="pill green">FORWARD SECRET</span></div>
+        <div class="layer"><div class="n">03</div><div><div class="name">Kill switch on by default</div><div class="desc">If the tunnel drops, the network drops. Packets do not leak in the gap. No "advanced" toggle to find.</div></div><span class="pill green">DEFAULT ON</span></div>
+        <div class="layer"><div class="n">04</div><div><div class="name">DNS inside the tunnel</div><div class="desc">Name lookups travel inside the encrypted tunnel to a resolver we operate. OS-level DNS is firewall-blocked while connected.</div></div><span class="pill green">LEAK-PROOF</span></div>
+        <div class="layer"><div class="n">05</div><div><div class="name">True peer isolation</div><div class="desc">Other users on the same connection cannot route packets to you. Enforced at the network layer, verified by automated end-to-end tests.</div></div><span class="pill green">VERIFIED</span></div>
+        <div class="layer"><div class="n">06</div><div><div class="name">LAN access stays on</div><div class="desc">Local devices — printer, NAS, smart-home gear — keep working while the tunnel is up. Privacy without breaking your home network.</div></div><span class="pill muted">HOME-SAFE</span></div>
+        <div class="layer"><div class="n">07</div><div><div class="name">Privacy-first infrastructure</div><div class="desc">No anycast magic, no recycled commodity VPS. Dedicated infrastructure, in privacy-first jurisdictions, with no logs of your activity.</div></div><span class="pill muted">NO LOGS</span></div>
+      </div>
+      <div class="surface" style="padding:22px;">
+        <span class="kicker"><span class="pip">●</span> THE HANDSHAKE</span>
+        <h3 class="h3 mt-8" style="margin-top:8px;">Hybrid post-quantum, <span class="accent">simplified.</span></h3>
+        <div class="code mt-16">
+<span class="tk-comment"># 1. classical key exchange</span>
+classical = <span class="tk-keyword">classical_dh</span>(client, server)
+
+<span class="tk-comment"># 2. post-quantum encapsulation</span>
+pqc       = <span class="tk-keyword">pqc_kem.encapsulate</span>(server.pq_pub)
+
+<span class="tk-comment"># 3. mix both into the session key</span>
+key       = <span class="tk-keyword">mix</span>(classical, pqc)
+
+<span class="tk-comment"># 4. open the tunnel</span>
+<span class="tk-keyword">tunnel.open</span>(key)
+<span class="tk-comment">→ established · forward-secret · post-quantum-ready</span>
+        </div>
+        <p class="muted mt-16" style="font-size:13px;">If either side of the hybrid holds up — classical or post-quantum — the session stays private. That's the point of "hybrid by default."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm" id="layers-detail">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> DEEP DIVE</span><h2 class="h-display h2 mt-16">Inside each layer of the stack.</h2></div>
+    <p class="lede mt-16" style="color:var(--text-dim);font-size:17px;line-height:1.72;">The seven-layer list above is the marketing summary. This is the technical version — what each line actually means at the protocol and code level.</p>
+
+    <h3 style="margin-top:2em;font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-0.02em;">1. Post-quantum-ready key exchange</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">Every OllaVPN handshake derives the session key from a hybrid combination of two independent key-agreement algorithms: classical X25519 (the elliptic-curve key exchange that WireGuard ships natively) and NIST-standardized ML-KEM-768 (the lattice-based key-encapsulation mechanism specified in FIPS 203, August 2024). The hybrid construction concatenates the two shared secrets and feeds them through HKDF to produce the session key. If X25519 is broken — for example, by a sufficiently powerful quantum computer running Shor's algorithm on the discrete-logarithm problem — ML-KEM-768 still protects the session. If ML-KEM-768 is broken by some future cryptanalysis of structured lattices, X25519 still protects. The construction is belt-and-braces, not all-eggs-in-one-basket.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">The implementation uses the reference NIST ML-KEM-768 code, formally verified components where available, and is part of the open OllaVPN client. We have not invented our own cryptography; we have integrated standardized building blocks into the WireGuard handshake using the IETF-discussed "hybrid PQ-WireGuard" approach.</p>
+
+    <h3 style="margin-top:2em;font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-0.02em;">2. Modern, forward-secret tunnel</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">WireGuard's transport keys rotate periodically — by default, every two minutes or every 60 GB of traffic, whichever comes first. Each rotation derives a new session key from the long-term identity keys plus fresh ephemeral material. A passive adversary who captures today's ciphertext and steals a long-term identity key tomorrow still cannot decrypt the captured traffic, because the session key was derived from material that no longer exists.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">The forward-secrecy property compounds with the post-quantum hybrid: a future quantum attacker not only has to break ML-KEM-768 plus X25519 plus get a long-term identity key, they have to break every two-minute key rotation in the captured session. The cost-to-attacker curve gets steep fast.</p>
+
+    <h3 style="margin-top:2em;font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-0.02em;">3. Kill switch on by default</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">The kill switch is enforced at the operating-system firewall layer, not as an in-app polling check that periodically tests "is the tunnel still up?". The implementation differs per platform: on Windows it is Windows Filtering Platform rules installed by the OllaVPN system service; on macOS it is Packet Filter rules installed by a root daemon; on Android it is the VpnService class's <code>setBlockingMode</code> + <code>setUnderlyingNetworks(null)</code> pattern that tells the OS "block everything that isn't the VPN." All three implementations have the same property: if the OllaVPN app crashes, the rules stay in place until something explicitly tears them down. The window during which packets could leak does not exist.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">There is no settings toggle to disable the kill switch. We treat that as a feature, not a missing feature. A kill switch that the user can accidentally turn off is, in practice, a kill switch that does not exist for the user who needed it most.</p>
+
+    <h3 style="margin-top:2em;font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-0.02em;">4. DNS inside the tunnel</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">Every exit server runs its own unbound DNS resolver bound to an address inside the in-tunnel RFC 6598 CGNAT range (typically <code>100.64.0.1</code>). At connect time, the OllaVPN client app installs that resolver as the system's highest-priority DNS source: on Windows via the NRPT (Name Resolution Policy Table), on macOS via <code>scutil</code>-installed supplemental keys, on Android by the VpnService's DNS configuration. The OS default resolver is also blocked at the firewall layer: any DNS packet bound for an address that is not the in-tunnel resolver is dropped. Even if a misbehaving app deliberately tries to bypass the system resolver and hit 8.8.8.8 directly, the firewall stops the packet.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">The in-tunnel resolver itself runs with <code>qname-minimisation</code> enabled, with <code>log-queries: no</code> and <code>log-replies: no</code>, with no per-query persistence, and with IPv6 disabled. Upstream queries (from the resolver to the public root and TLD servers) use DNS-over-TLS to Cloudflare's 1.1.1.1 and Quad9's 9.9.9.9 — not because we trust them with the metadata, but because the upstream-from-the-resolver step is unavoidable and DoT is the strongest available transport.</p>
+
+    <h3 style="margin-top:2em;font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-0.02em;">5. True peer isolation</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">On every OllaVPN exit, traffic between two connected peers is blocked in four independent layers. The first layer is WireGuard's own <code>AllowedIPs</code> restriction: each peer's <code>AllowedIPs</code> is set to its own /32, so the WireGuard packet processor will not even attempt to forward a packet from peer A toward peer B. The second layer is an nftables rule on the exit's wg0 interface (<code>iifname wg0 oifname wg0 drop</code>) that drops any packet that does manage to enter the WG processor but is not destined for the wider internet. The third layer is a sysctl tweak that disables forwarding on the wg0 interface entirely. The fourth layer is an automated end-to-end test — <code>tools/e2e/peer-isolation/</code> — that runs before every release and refuses to ship a build that violates the property.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">No single layer is the load-bearing one. The defense in depth means a bug in any one layer leaves the property intact via the other three. The test in particular means we catch regressions in the configuration of the deployed exits, not just in the code.</p>
+
+    <h3 style="margin-top:2em;font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-0.02em;">6. LAN access stays on</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">RFC 1918 private network ranges (<code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, <code>192.168.0.0/16</code>) are excluded from the tunnel's default route. Your home network keeps working: the printer, the NAS, the smart-home gear, the local development server all remain reachable while you are connected. The tunnel addressing uses RFC 6598 CGNAT space (<code>100.64.0.0/10</code>) specifically because that range does not collide with consumer home LANs — so the LAN-access exclusion logic can be simple and never accidentally excludes our own in-tunnel resolver.</p>
+
+    <h3 style="margin-top:2em;font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-0.02em;">7. Privacy-first infrastructure</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">Every OllaVPN exit server runs on baremetal hardware in a tier-1 colocation facility, operated by us, not on a commercial VPS resold by a third party. The reason is direct: the privacy promise depends on controlling the data path. A commercial VPS provider can image the running VM, snapshot the disk, or be subpoenaed for hypervisor-level logs that the VPN operator has no visibility into. Owning the metal removes that class of risk.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">The control plane that authenticates users and assigns peer slots runs on its own dedicated machine, completely separate from any exit. It has no public IP — it is reachable only via a Cloudflare Tunnel that terminates TLS at the CF edge and forwards requests to a local Caddy reverse proxy. The control plane's database stores account email + password hash + current peer-slot assignment + abuse-report records. It does not store connection history, source or destination IPs, DNS queries, or any per-packet metadata. The data simply does not exist to log because the architecture does not collect it.</p>
+  </div>
+</section>
+
+<section class="section-sm" id="principles">
+  <div class="wrap">
+    <div class="head"><span class="kicker"><span class="pip">●</span> WHAT YOU GET, EVERY CONNECTION</span><h2 class="h-display h2 mt-16">The <span class="accent">defaults.</span></h2></div>
+    <div class="specs-grid">
+      <div class="spec"><div class="k">Key exchange</div><div class="v">Post-quantum<small>hybrid, NIST-standardized</small></div></div>
+      <div class="spec"><div class="k">Forward secrecy</div><div class="v">Always<small>continuous re-keying</small></div></div>
+      <div class="spec"><div class="k">Kill switch</div><div class="v">On<small>by default · no bypass</small></div></div>
+      <div class="spec"><div class="k">DNS</div><div class="v">In-tunnel<small>OS DNS firewall-blocked</small></div></div>
+      <div class="spec"><div class="k">Peer isolation</div><div class="v">Yes<small>verified end-to-end</small></div></div>
+      <div class="spec"><div class="k">LAN access</div><div class="v">Preserved<small>home network keeps working</small></div></div>
+      <div class="spec"><div class="k">Logs</div><div class="v">None<small>activity-logging not in our architecture</small></div></div>
+      <div class="spec"><div class="k">Coverage</div><div class="v">Global<small>all countries unlocked</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm" id="sovereign-route">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> MULTI-HOP, BUT FOR REAL</span><h2 class="h-display h2 mt-16">Sovereign Route — multi-hop <span class="accent">with PQC on both legs.</span></h2></div>
+    <p class="lede mt-16" style="color:var(--text-dim);font-size:17px;line-height:1.72;">Standard single-hop VPNs reduce your attacker surface to one trusted operator. Multi-hop reduces it further by ensuring no single operator can link your real IP to your destinations. Sovereign Route is OllaVPN's multi-hop implementation, with post-quantum encryption on both legs.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">A standard single-hop tunnel works like this: your traffic leaves your device, enters the VPN tunnel, exits at one of our exit servers, and goes to the destination. The exit operator sees the destination but does not see who you are (we do not log). Your ISP sees that you are using a VPN but cannot see the destination. So far, so good — but the exit operator could, in principle, be coerced or compromised to log who they are seeing.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">Sovereign Route adds a second hop. Your traffic still leaves your device and enters a tunnel — but the first tunnel terminates at a Swiss entry-hop server, and inside that tunnel is a second tunnel that terminates at the exit country of your choice. The entry-hop sees your IP but not the destination (because the inner tunnel is still encrypted to the exit). The exit sees the destination but not your IP (because the inner tunnel was opened from the entry-hop's IP, not yours). Linking the two ends requires colluding both operators simultaneously, or a passive observer watching both legs at once.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">Both legs of the cascade run OllaVPN's PQC-hybrid WireGuard handshake. So even if an adversary captures both legs' ciphertext today and decrypts them with a future quantum computer, the linkability problem still requires temporal correlation of the two streams — which is harder than it sounds, because both streams carry continuous noise traffic to mask the timing.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">Sovereign Route is positioned as a Pro-tier feature because the second-hop bandwidth and the entry-hop infrastructure are real ongoing costs. The free tier is single-hop, full PQC, no compromise on cryptographic strength. The Sovereign Route upgrade is for users whose threat model specifically includes "don't trust any single operator with the linkability of my real IP to my destination."</p>
+  </div>
+</section>
+
+<section class="section-sm" id="infrastructure">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> WHERE IT ALL RUNS</span><h2 class="h-display h2 mt-16">How we run the infrastructure.</h2></div>
+    <p class="lede mt-16" style="color:var(--text-dim);font-size:17px;line-height:1.72;">A privacy VPN is the infrastructure it operates. The cryptographic stack matters; how the servers are run matters at least as much.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Owned baremetal, not commercial VPS.</strong> Every OllaVPN exit and every control-plane host runs on hardware we operate, in colocation facilities we have contracts with directly, in jurisdictions we picked deliberately. There is no AWS, no GCP, no Azure, no DigitalOcean, no Hetzner, no Linode in the data path. The reason is direct: commercial cloud providers can image a running VM, snapshot disks, or be subpoenaed for hypervisor-level metadata that the tenant has no visibility into. Privacy promises that depend on a third party not noticing are not promises we want to make.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Privileged LXC containers on Proxmox.</strong> Each exit runs as a privileged LXC container on a Proxmox-virtualized host. This is a deliberate middle path: not a full virtual machine (which would have unacceptable overhead for line-rate WireGuard encryption), not a Docker container (which has too many shared kernel surfaces with the host), and not bare bare-metal (which would let one exit's compromise affect another). Privileged LXC gives each exit its own kernel namespace, its own networking stack, its own routing tables, and its own firewall rules — but shares the underlying physical hardware efficiently.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Stateless, reproducibly-provisioned exits.</strong> Exit servers hold no per-user state. The peer-list is pushed by the control plane at connect time; if we lose an exit completely we lose only the active connections (which reconnect to another exit within seconds), not any historical data. Provisioning a new exit is a single Ansible playbook run plus a database insert — typically 20 minutes from rack to live traffic. This means we can rotate exits aggressively, retire compromised hardware quickly, and add capacity where load needs it without long lead times.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Control plane behind a Cloudflare Tunnel.</strong> The control plane that handles authentication and peer-slot assignment has no public IP and no open ports on the public internet. Instead, it is reachable via a Cloudflare Tunnel that terminates TLS at the CF edge and forwards inbound HTTPS to a local Caddy reverse proxy. Outbound, the control plane uses its own egress IP to call exit-agent endpoints. This means: no inbound firewall holes on the control plane host, TLS is terminated at a hardened CF edge that handles its own DDoS protection, the control plane database is one fewer thing to harden against direct internet attack. The tradeoff is a Cloudflare dependency for new sign-ins; existing connections are independent of CF and continue to work during a CF outage.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Per-peer 10 Mbps cap on free, enforced at the kernel.</strong> The free-tier speed cap is enforced via Linux <code>tc htb</code> (Hierarchical Token Bucket) classes installed at peer-add time on the exit. Each peer gets its own class with a 10 Mbps ceiling. The cap is enforced inside the kernel networking stack, not by polling in user space, which means it does not skew or burst above the cap under any timing condition. Pro-tier peers get a class with a 10 Gbps ceiling.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Per-peer connection-rate cap.</strong> Each peer is rate-limited to 100 new outbound TCP connections per second via nftables <code>connlimit</code>. This prevents one peer from using the tunnel as a portscan launcher or a SYN-flood relay against third-party targets — both of which would generate abuse complaints that an operator without this guard would have to absorb. The cap is generous (legitimate browsing rarely exceeds 10-20 concurrent connections) but firm against abuse.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Outbound SMTP block.</strong> Every exit drops outbound traffic on TCP ports 25, 465, and 587 (the SMTP family). This is enforced via nftables, not as an opt-in setting. SMTP via a VPN exit is almost entirely a spam-emission pattern in 2026; legitimate email use cases work through Gmail / iCloud / Outlook web interfaces that use HTTPS instead. The block protects the IP reputation of every other peer on the same exit.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Daily soft + hard byte caps for abuse defense.</strong> Each peer has a 100 GB/day soft throttle (speed reduced after the threshold) and a 500 GB/day hard disable (tunnel suspended for the rest of the UTC day). Both are configured per-peer on the exit; the counters reset at midnight UTC. The caps catch genuine abuse (botnet exit-node use, large-scale scraping) without inconveniencing any legitimate user — 500 GB/day is far more than any normal human use case.</p>
+  </div>
+</section>
+
+<section class="section-sm" id="audit-transparency">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> WHAT WE PUBLISH</span><h2 class="h-display h2 mt-16">The audit roadmap, and what we publish openly.</h2></div>
+    <p class="lede mt-16" style="color:var(--text-dim);font-size:17px;line-height:1.72;">A privacy promise is only as strong as the verification behind it. OllaVPN is newer than Mullvad and ProtonVPN — we have not yet earned the multi-year audit track record they have. This page is honest about that and shows what we publish in the meantime.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>What is open today.</strong> The marketing site (this page included) is plain HTML/CSS/JS and is built from a public Git repository. The desktop and Android client apps are progressing toward open-source release alongside the public launch — the source repository, the build instructions, and the SHA-256 of each shipped binary will be published together so any reader can rebuild from source and verify byte-for-byte. The PQC integration patches on top of wireguard-go are already open and link to the upstream NIST reference implementations.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>What's scheduled.</strong> A first external security audit by an established firm (the shortlist is Cure53, Securitum, and Radically Open Security) is scheduled before public launch. We will publish the full report — not a marketing summary — including any issues found and the timeline of how we addressed each. A second audit at the 12-month mark establishes the annual cadence. A live warrant canary is maintained at <a href="/warrant-canary">our public repository</a> and updated quarterly.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>What we publish proactively.</strong> Our security disclosure policy (RFC 9116-compliant) is at <a href="/.well-known/security.txt">.well-known/security.txt</a>. Vulnerability reports go to <code>security@ollavpn.com</code>, with a 90-day coordinated-disclosure window and explicit safe-harbor language for good-faith research. Every shipped fix that prevents a regression is logged in our public fixes registry — a continuously-updated record that an auditor can use to verify "this issue was found and addressed on this date."</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>What we will never publish.</strong> User account information, peer-slot assignments, connection metadata, or any data tied to a specific user. Not because we have a policy against it but because the data does not exist in our systems. A subpoena for user activity would receive the response: "we cannot produce what we do not collect."</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap"><div class="head"><span class="kicker"><span class="pip">●</span> WHY POST-QUANTUM, WHY NOW</span><h2 class="h-display h2 mt-16">The cliff is real. <span class="accent">Privacy needs a head start.</span></h2></div>
+    <div class="roadmap">
+      <div class="road"><div class="yr">2024</div><h4>Standards finalized</h4><p>NIST finalizes the first post-quantum cryptography standards. The era of "experimental PQC" formally ends.</p></div>
+      <div class="road"><div class="yr">2024</div><h4>Major rollouts begin</h4><p>Apple iMessage, Signal, Google Chrome, and Cloudflare all ship post-quantum hybrids in their flagship products.</p></div>
+      <div class="road now"><div class="yr">Today</div><h4>OllaVPN</h4><p>Post-quantum-ready handshake on every connection, on the free plan and the paid plan alike.</p></div>
+      <div class="road"><div class="yr">Soon</div><h4>The transition</h4><p>The industry moves from "PQC-capable" to "PQC-default." OllaVPN starts there.</p></div>
+      <div class="road"><div class="yr">Later</div><h4>The harvest pays off</h4><p>"Harvest now, decrypt later" stops being theoretical. Sessions captured with only classical encryption become readable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm" id="pqc-plain-english">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> PQC IN PLAIN ENGLISH</span><h2 class="h-display h2 mt-16">Why post-quantum cryptography matters, <span class="accent">explained without math.</span></h2></div>
+    <p class="lede mt-16" style="color:var(--text-dim);font-size:17px;line-height:1.72;">The timeline above shows when post-quantum cryptography became table stakes. This section explains why the timeline exists at all — and what would happen to your traffic if you used a VPN without it.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>The threat is not "a quantum computer steals your password today."</strong> No quantum computer in 2026 is powerful enough to break a single modern VPN handshake in any practical timeframe. The threat is structurally different and operates on a longer time scale.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>The actual threat is called "harvest now, decrypt later."</strong> An adversary with the resources to capture and store bulk encrypted traffic at scale — and there are several such adversaries openly operating in 2026 — records VPN traffic today, stores the ciphertext on cheap disk, and waits. When a cryptographically-relevant quantum computer becomes available (estimates range from 2030 to 2045 depending on which expert you ask, and the conservative position is to plan for the earlier date), the adversary runs Shor's algorithm against the captured ciphertext to recover the elliptic-curve session keys, and from there the plaintext.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>The cost-benefit calculation favors the attacker.</strong> Petabyte-scale disk storage costs roughly $10,000 in 2026 and trends cheaper every year. The cost of capturing ciphertext at a fiber tap is fixed (you need the tap once, you record forever). The decryption value compounds with time: recently-public information has lost most of its leverage, but a decade-old encrypted communication can still expose a source, reveal a business strategy that is still in play, embarrass a public figure, or get an activist arrested in a regime that has criminalized their previous reporting. The defender's math is the opposite: every day of unencrypted-after-the-fact traffic is one more day of pending exposure.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>The defense is to switch the key exchange before the quantum computer exists.</strong> NIST standardized ML-KEM-768 in August 2024 (FIPS 203) specifically for this purpose, after a multi-year competition that vetted dozens of candidate algorithms from cryptographers around the world. The algorithm is based on the hardness of structured-lattice problems — a class of mathematical problems that has no known efficient quantum algorithm, and would require fundamental advances in cryptanalysis to break. Combining ML-KEM-768 with the existing classical key agreement (X25519) means an attacker needs to break both algorithms to recover the session key. Even if one falls, the other still protects.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>OllaVPN ships this on the free tier because the cost to us is small and the cost to users of waiting is large.</strong> The CPU overhead of the PQC hybrid handshake is sub-1% on Apple Silicon and roughly 2% on common Intel hardware — negligible. The bandwidth overhead (the larger PQC public key in the handshake exchange) is a one-time extra ~1 KB per session, also negligible. The only real cost is the engineering work of integrating ML-KEM-768 into the WireGuard handshake correctly. That work was a one-time fixed cost we have already paid. Charging extra for it on top of a paid tier — as Mullvad and ProtonVPN both do today — is a defensible product decision but it leaves free-tier users on the harvest-now-decrypt-later list. We do not think a privacy operator should make that tradeoff.</p>
+  </div>
+</section>
+
+<section class="section-sm" id="compared-to-incumbents">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> WHERE WE FIT</span><h2 class="h-display h2 mt-16">Compared to the incumbents.</h2></div>
+    <p class="lede mt-16" style="color:var(--text-dim);font-size:17px;line-height:1.72;">We have specific opinions about specific competitors. Here is where OllaVPN sits relative to the privacy-focused VPNs you may already know.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>vs Mullvad.</strong> Mullvad is the gold standard for "we know nothing about you" — anonymous account-number signups, no email required, cash-by-mail accepted. They ship post-quantum WireGuard on the desktop paid tier (default-on since 2023) and have an exceptional independent-audit track record. The trade is that Mullvad has no free tier at all (flat €5/month) and a relatively narrow country footprint. OllaVPN is the right complement: a free tier for everyday use, PQC on every connection including free, and country coverage that broadens over time. If "free" matters to you, OllaVPN. If you need the no-account-identifier property specifically, Mullvad paid.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>vs ProtonVPN.</strong> ProtonVPN's free tier is the reason the "honest free VPN" category exists in the consumer mind. Unlimited data, Swiss jurisdiction, open-source on every platform. The trade is the country selection on free (three countries, period) and that PQC is paid-tier only. OllaVPN's free tier opens every country we serve and ships PQC on free. If country coverage on free matters, OllaVPN. If you also need iOS or Linux desktop today, ProtonVPN — we have not yet shipped to those platforms.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>vs NordVPN.</strong> NordVPN's positioning is performance and breadth: large server fleet, fast everywhere, polished apps across every platform. The trade is the absence of a free tier and the model — heavily paid-marketing-driven, with extensive affiliate networks — which is not the same posture a privacy-first operator takes. NordVPN is a fine product for users whose threat model is "stop my ISP from selling my data" and who are willing to pay. OllaVPN is the right pick for users whose threat model is "stop the ISP, the operator, and a future quantum-equipped adversary" and who want to start with the free tier.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>vs ExpressVPN, Surfshark, CyberGhost.</strong> The "big consumer brands" category. All three are owned by larger holding companies (Kape Technologies in some cases, Nord Security parent in others). All three operate large server fleets on commercial infrastructure. None ship PQC on the free tier in 2026 (and several have no free tier). We respect their engineering and acknowledge their marketing strength; we are not optimizing for the same use case. A privacy-first operator with a smaller, owned-baremetal footprint and PQC by default is what we are, and that is a different category from "biggest brand, largest paid-marketing budget."</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>vs Tor.</strong> Tor is not a VPN, and it would be intellectually dishonest to imply OllaVPN replaces it. Tor offers source-anonymity against a global passive adversary, at the cost of latency (typically 1-3 seconds per round trip) and significant practical limitations on use. OllaVPN narrows the linkability surface but is not source-anonymous in the Tor sense. The honest recommendation: use Tor when source-anonymity is critical and you can tolerate the latency; use OllaVPN with Sovereign Route when operator-linkability is the threat and you need normal-speed internet.</p>
+  </div>
+</section>
+
+<section class="section-sm" id="not-shipped">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> TRANSPARENCY</span><h2 class="h-display h2 mt-16">What we deliberately don't ship.</h2></div>
+    <p class="lede mt-16" style="color:var(--text-dim);font-size:17px;line-height:1.72;">A technology page should be honest about what is not in the product, not only what is. The list below is what readers might expect that we do not currently offer, and the reason in each case.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>No iOS client yet.</strong> iOS requires the Apple Developer Program enrollment ($99/year) and the Network Extension entitlement, which is on a roadmap behind public launch. We did not want to ship a half-built iOS app to claim the platform on a feature matrix. ProtonVPN, Windscribe, and hide.me all ship excellent iOS clients today; pick one of those if iOS coverage today is critical.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>No Linux desktop client yet.</strong> Linux is a planned platform but not in stage-1 scope. Power-user readers can use standard <code>wg-quick</code> with a manually-fetched WireGuard config from the control plane in the meantime; we publish the necessary steps for advanced users. Proton VPN's Linux client is the gold standard if you need a polished GUI today.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>No CLI client.</strong> Explicitly out of scope. Engineers who want command-line VPN management can manage WireGuard directly. The OllaVPN apps target the everyday user; the CLI use case is well-served by the existing WireGuard toolchain.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>No browser extension.</strong> Explicitly out of scope. Browser-extension "VPNs" are technically proxies that cover only browser traffic, not the operating system. They are structurally weaker than a real VPN and we do not want to market a proxy under the VPN name. If you want browser-only privacy in addition to a real VPN, Windscribe's browser extension is the one we would point you at.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>No port forwarding on free.</strong> Port forwarding on the free tier is a vector for hosting commercial services on residential IPs and is the single most common abuse pattern we would have to defend against. We have decided not to offer it on free; it is a planned Pro-tier feature.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>No split-tunneling on free.</strong> Split-tunneling on free is a planned Pro-tier feature on macOS and Windows. Implementing it correctly requires NEAppProxyProvider on macOS and similar per-app routing on Windows — both are engineering work that is scheduled but not stage-1 scope.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>No multi-hop on free.</strong> Sovereign Route is a Pro-tier feature because the second-hop infrastructure cost is real and ongoing. Free-tier users get full PQC single-hop; the cryptographic strength of the free tunnel is the same as the inner tunnel on Sovereign Route.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>No in-tunnel ad blocker on free.</strong> A resolver-level ad blocker (the Windscribe R.O.B.E.R.T. pattern) is on the roadmap as a Pro-tier feature. Free-tier users can still use uBlock Origin in their browser; the in-tunnel ad blocker would catch ad traffic from apps that bypass browser-extension ad blockers.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>No dedicated IP on any tier.</strong> Dedicated-IP service makes the operator's user-to-IP mapping persistent, which is a privacy regression we do not want to ship. If your use case requires a stable IP (some banking, some hosting), a paid VPN with a dedicated-IP SKU is more appropriate than OllaVPN.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>No promise of streaming-service compatibility.</strong> Netflix, Hulu, Disney+, and similar services actively block VPN IP ranges. The blocklists rotate daily. We do not promise that any specific streaming service works through any specific OllaVPN exit at any specific time — because the promise would be wrong by next week. If reliable streaming-unlock is your primary need, a paid VPN with a dedicated streaming SKU is the honest recommendation.</p>
+  </div>
+</section>
+
+<section class="section-sm" id="verify">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> SELF-AUDIT</span><h2 class="h-display h2 mt-16">How to verify our claims yourself.</h2></div>
+    <p class="lede mt-16" style="color:var(--text-dim);font-size:17px;line-height:1.72;">Claims on a marketing page are worth what the reader can verify. The properties we describe above are testable from your own device in under fifteen minutes using free tools.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Test DNS in-tunnel.</strong> Connect OllaVPN. Open our <a href="/dns-lookup">DNS lookup tool</a> in your browser and resolve a domain. The resolver IP shown should be the in-tunnel one (something in the <code>100.64.0.0/10</code> range, depending on which exit you connected to). Disconnect and repeat — now you should see your ISP's resolver instead. The diff is the evidence that DNS goes through the tunnel while connected.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Test WebRTC and IPv6 leaks.</strong> Open our <a href="/webrtc-leak-test">WebRTC leak test</a> while connected. The page runs the same checks an attacker would, including WebRTC ICE candidate enumeration, IPv6 address detection, and DNS leak tests. You should see only the exit's IPv4 address. If any test reveals your real IP, the leak protection has failed and we want to know — file an issue at <code>security@ollavpn.com</code>.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Test the kill switch.</strong> Connect OllaVPN. Open a continuous ping in a terminal: <code>ping 1.1.1.1</code> on macOS/Linux, or <code>ping -t 1.1.1.1</code> on Windows. Now turn off Wi-Fi (or unplug Ethernet). The ping should immediately fail and stay failed until you re-enable the network. The packets should not switch over to the underlying network. If they do, the kill switch is broken (it isn't, but verify).</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Test peer isolation.</strong> Harder to verify without two devices both connected to the same OllaVPN exit at the same time. If you have that setup, try to ping the other device's tunnel IP from the first. The ping should fail. (We run this test on every release internally; we publish the test code in the public repository under <code>tools/e2e/peer-isolation/</code> for anyone who wants to verify the methodology.)</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Inspect the WireGuard handshake.</strong> If you are technically inclined, run <code>wg show all</code> on Linux (or use the WireGuard inspector on Windows/macOS) to see the current handshake state. The peer's public key in the WireGuard configuration is the exit's WireGuard public key. The handshake counter should increment regularly (a fresh handshake every ~2 minutes); that is the forward-secrecy property working.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;"><strong>Test that streaming-service blocking is the streaming service's, not ours.</strong> If a site says "VPN detected, please disable to continue," that is the site detecting and refusing VPN traffic, not OllaVPN refusing to pass the traffic. You can confirm by trying the same site disconnected from the VPN — it works. The VPN is delivering the traffic faithfully; the site is using IP-block detection to refuse it.</p>
+  </div>
+</section>
+
+<section class="section-sm" id="faq">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> COMMON QUESTIONS</span><h2 class="h-display h2 mt-16">Frequently asked technical questions.</h2></div>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">Which WireGuard implementation does OllaVPN use?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">The reference userspace WireGuard implementation (wireguard-go), maintained by Jason Donenfeld and the WireGuard project. We carry a small open fork that adds the X25519 + ML-KEM-768 hybrid handshake on top of the standard Noise_IK pattern. The fork is open and the diff against upstream is published; we have not written novel cryptography, only integrated the NIST-standardized ML-KEM-768 reference implementation into the existing handshake.</p>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">What ciphers does OllaVPN use?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">The same ones WireGuard pins by design: ChaCha20 for symmetric encryption, Poly1305 for message authentication, Blake2s for hashing, Curve25519 for the classical leg of the key exchange, and ML-KEM-768 (FIPS 203) for the post-quantum leg. WireGuard does not support cipher negotiation — the protocol specifies these algorithms exactly — which means there is no "downgrade attack" surface where a man-in-the-middle could force a weaker cipher. We agree with this design.</p>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">Why WireGuard instead of OpenVPN?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">WireGuard has a smaller code surface (about 4,000 lines vs OpenVPN's 70,000+), which makes it dramatically easier to audit. It has stronger default cryptographic choices (modern ciphers vs OpenVPN's negotiated set with legacy compatibility). It performs much better — typically 3-10x faster — because the protocol design is simpler and the kernel implementations are more efficient. And it has been formally verified in parts (the Noise protocol framework it's built on). The downside vs OpenVPN is reduced obfuscation against deep packet inspection — WireGuard packets are recognizable as WireGuard. We mitigate this on our Frankfurt exit via a MASQUE-over-port-443 obfuscation transport, and we are watching the IETF work on standardized WireGuard obfuscation.</p>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">Are you ISO 27001 certified?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">Not yet. ISO 27001 certification is meaningful for organizations selling to enterprise procurement teams; we are not in that market today. We focus instead on the independent third-party audit cadence (scheduled with one of Cure53 / Securitum / Radically Open Security before public launch, with the full report to be published rather than a summary). If you specifically need ISO 27001 for procurement reasons, a different operator is the right fit; we are honest about not being that operator yet.</p>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">Is the source code open?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">The marketing site, the legal documents, and the PQC integration patches are open today. The desktop and Android client apps are open-sourcing alongside the public launch — the source repository, the deterministic build instructions, and the SHA-256 of each shipped binary will be published together. We are not open-sourcing the control plane or the exit-agent code (those handle operational secrets and abuse defenses) but the architecture is documented in the production-grade docs in the repository.</p>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">Can the operator see what I'm doing?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">No, by architecture. The exit server sees encrypted WireGuard packets coming from your tunnel IP. The control plane sees that you authenticated and which exit you connected to (because that is necessary to route you), but it does not see the destinations of your traffic, the DNS queries you made, the bytes inside the packets, or anything else. The data simply is not in our systems to inspect. If we wanted to log it we would have to substantially re-architect the data plane, which we have not done and have no plans to do. The architecture is the audit.</p>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">What happens if you get a subpoena?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">The honest answer is: we comply with the legal process to the extent it asks for data we have. We have account email, password hash, and current peer-slot assignment for an active account. We do not have connection history, DNS queries, destination IPs, source IPs of past sessions, or per-packet metadata. A subpoena asking for "the user who connected to <em>example.com</em> on <em>this date</em>" gets the response: we did not store that data. We maintain a public warrant canary at our repository, updated quarterly, that documents whether we have received any gag-ordered legal requests.</p>
+
+    <h3 style="font-family:var(--district);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">What jurisdictions do you operate in?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">The control plane and the legal entity are operated in a privacy-friendly jurisdiction; we will document the specifics on the public-launch transparency report. Exit servers are operated in the countries we serve users from — currently Germany and the United States, with Switzerland added for Sovereign Route entry-hops. Each exit operates under the laws of its host country. We pick exit-host jurisdictions specifically for their data-retention and surveillance posture; we do not run exits in any country with mandatory connection-logging laws.</p>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">How fast is OllaVPN under the hood?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">The free tier is capped at 10 Mbps per peer via Linux <code>tc htb</code> at the exit. The Pro tier is capped at 10 Gbps per peer (with fairshare behavior under load, so a single Pro user does not crowd out other Pro users). Latency depends on your distance to the chosen exit; typical numbers are 20-50 ms additional round-trip time vs no VPN at all. The WireGuard implementation has near-line-rate performance on modern hardware — the cap, not the cryptography, is the speed ceiling.</p>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">Why is the free tier "really" free?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">Two to five percent of free users upgrade to the Pro tier ($2/month annual). The per-Pro-user revenue ($24/year) substantially exceeds the per-free-user infrastructure cost (typically $0.10-$1 per year at scale, depending on usage). The math is the same paid-tier-conversion model that funds Proton VPN Free and Windscribe Free. If you want to understand the funding-model question more deeply, the funding-model section of our <a href="/best-free-vpn-2026">best free VPN 2026 guide</a> covers it in detail.</p>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">What's the difference between PQC-ready and PQC-default?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">"PQC-ready" means an operator supports post-quantum handshakes but does not use them by default — the user has to enable them, often through an advanced setting or by picking a specific server. "PQC-default" means the hybrid handshake is on for every connection, every user, every server, without configuration. Mullvad is PQC-default on desktop paid. ProtonVPN is rolling out PQC-default across clients. OllaVPN is PQC-default on every tier from day one. The distinction matters because most users will never change the default; PQC-ready alone leaves the majority of users on classical cryptography.</p>
+
+    <h3 style="font-family:var(--display);font-size:20px;font-weight:600;margin-top:1.8em;letter-spacing:-0.01em;">Does OllaVPN block trackers and ads?</h3>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:0.6em;">Not yet at the resolver layer. The in-tunnel resolver does not currently maintain a tracker/ad blocklist; that is a planned Pro-tier feature. We deliberately did not ship it on the free tier on day one because tracker blocklists have a high false-positive rate and we did not want to break sites for users who did not opt into the tradeoff. In the meantime, uBlock Origin (browser extension) handles the great majority of web ads and trackers at the browser layer.</p>
+  </div>
+</section>
+
+<section class="section-sm" id="about">
+  <div class="wrap" style="max-width:780px;">
+    <div class="head"><span class="kicker"><span class="pip">●</span> ABOUT THIS PAGE</span><h2 class="h-display h2 mt-16">Who wrote this, and how it stays correct.</h2></div>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">This page is maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. The technical claims about the WireGuard handshake, the PQC integration, the kill-switch enforcement layers, and the peer-isolation defense layers were fact-checked against the production codebase by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer, during the June 2026 update cycle. The infrastructure descriptions reflect the deployed state of OllaVPN's control plane and exit fleet as of 22 June 2026.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">This page is refreshed quarterly. If a technical claim becomes outdated — a default changes, a new defense layer is added, an audit completes — the page is updated and the dateModified field in the schema is incremented. If you spot an error or a claim that no longer matches the code, email <code>guides@ollavpn.com</code> and we will correct it in the next refresh.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">If you want to go deeper than this page goes: the broader <a href="/best-free-vpn-2026">best free VPN 2026 guide</a> covers the wider category context. The <a href="/blog/what-is-post-quantum-cryptography.html">post-quantum cryptography pillar</a> explains PQC fundamentals without assuming the reader knows the cryptography. The <a href="/blog/what-is-a-vpn-kill-switch.html">kill switch deep-dive</a> covers why "always on" matters. The <a href="/blog/what-is-a-dns-leak.html">DNS leak primer</a> explains the resolver layer in detail. The <a href="/blog/what-is-multi-hop-vpn.html">multi-hop VPN explainer</a> covers Sovereign Route's conceptual basis.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Lifetime free · post-quantum ready · no credit card</span>
+    <h2 class="h-display h2 mt-16">Privacy that <span class="accent">ages well.</span></h2>
+    <div class="actions"><a class="btn primary xl" href="dl/">Use it · free <span class="arrow">→</span></a><a class="btn xl" href="apps.html">Where it runs →</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="apps.html">Apps</a></li><li><a href="technology.html">Technology</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog/">Blog</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>POST-QUANTUM READY</span><span>NO LOGS</span><span>LIFETIME FREE</span></span></div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What is a VPN Kill Switch &amp; Why it Matters | OllaVPN</title>
+<meta name="description" content="Learn how OllaVPN&#39;s kill switch protects your privacy by preventing data leaks if your VPN connection drops, ensuring your real IP address is never exposed." />
+<link rel="canonical" href="https://ollavpn.com/killswitch" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="What is a VPN Kill Switch &amp; Why it Matters | OllaVPN" />
+<meta property="og:description" content="Learn how OllaVPN&#39;s kill switch protects your privacy by preventing data leaks if your VPN connection drops, ensuring your real IP address is never exposed." />
+<meta property="og:url" content="https://ollavpn.com/killswitch" />
+<meta property="og:image" content="https://ollavpn.com/og-killswitch.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Vpn Kill Switch — explained by OllaVPN" />
+<meta property="article:published_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:modified_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Free VPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What is a VPN Kill Switch &amp; Why it Matters | OllaVPN" />
+<meta name="twitter:description" content="Learn how OllaVPN&#39;s kill switch protects your privacy by preventing data leaks if your VPN connection drops, ensuring your real IP address is never exposed." />
+<meta name="twitter:image" content="https://ollavpn.com/og-killswitch.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The OllaVPN Kill Switch: Your Last Line of Defense Against Data Leaks",
+  "description": "Learn how OllaVPN's kill switch protects your privacy by preventing data leaks if your VPN connection drops, ensuring your real IP address is never exposed.",
+  "image": "https://ollavpn.com/og-killswitch.png",
+  "author": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "url": "https://ollavpn.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ollavpn.com/favicon-256.png"
+    }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ollavpn.com/killswitch"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a VPN kill switch protect me against in plain terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's like an automatic emergency brake for your internet. If your VPN connection unexpectedly drops, the kill switch instantly stops all your internet traffic. This prevents your real IP address and unencrypted data from accidentally being exposed to your internet provider or anyone else online. It keeps your privacy intact, even if your connection falters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the OllaVPN kill switch on by default?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely. We believe essential privacy features shouldn't be optional or require complex setup. The OllaVPN kill switch is always on by default, so you're protected from the moment you connect, without needing to configure a thing. It's privacy by default, just like it should be."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I turn the OllaVPN kill switch off?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, you can't turn it off. We've made the deliberate choice to keep it always active. This ensures consistent privacy protection and prevents accidental data leaks, even if you forget to re-enable it. It's a core part of our 'privacy by default' philosophy, so you're always covered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I verify the kill switch is working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can test it! Connect to OllaVPN, then visit an IP address checker website. While it's open, manually disconnect OllaVPN. You should lose all internet access until you reconnect the VPN. This shows the kill switch successfully blocked traffic, proving it's doing its job to protect your data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the kill switch slow down my connection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not noticeably, no. The kill switch operates in the background and only activates when your VPN connection fails. During normal operation, it has virtually no impact on your internet speed, whether you're on our free 10 Mbps plan or the 10 Gbps Plus plan. Your speed won't be affected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the kill switch break my smart-home devices or LAN access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because OllaVPN routes all traffic through the VPN for maximum privacy, the kill switch can prevent access to local network devices if the VPN is disconnected. If your VPN is connected, your local network access should function as expected, but all traffic will be securely tunneled through OllaVPN, protecting your privacy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the OllaVPN kill switch implementation open source or audited?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While the OllaVPN client, including the kill switch, is not currently open source, our architecture is designed for transparency and audibility. We're committed to building trust through rigorous internal testing and will explore external audits as we grow, ensuring our privacy features are robust and reliable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the OllaVPN kill switch compare to what other VPNs do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many other VPNs offer a kill switch as an optional feature you have to enable, or it's implemented as a simple firewall rule. OllaVPN's is always-on and deeply integrated at the application level. This offers more robust and consistent protection than many common approaches, ensuring your privacy is always the priority."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the kill switch NOT protect against?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It won't protect you from malware, browser fingerprinting, or if you accidentally leak information before connecting to the VPN. It's designed specifically to prevent data leaks if your active VPN connection drops, not to solve all privacy challenges. Think of it as a very specific, but crucial, safety net for your VPN connection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the OllaVPN kill switch still work in 5 or 10 years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we've engineered our kill switch with future-proofing in mind, integrating it deeply into the operating system's network stack. This robust approach, combined with our post-quantum-ready encryption, means it's built to withstand evolving network environments and threats for the long term. It's designed to last."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the free OllaVPN plan include the kill switch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely! The kill switch is a fundamental privacy feature, and we believe everyone deserves it. It's included in our free plan, which gives you 10 Mbps speed with no data caps, no ads, and no obligation to upgrade. It's part of our commitment to keeping you private, for $0 forever."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the kill switch related to OllaVPN's post-quantum readiness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While separate features, both reflect our commitment to long-term privacy. Post-quantum readiness protects your data from future decryption threats, and the kill switch ensures that data is always protected through the VPN tunnel in the first place, preventing any accidental exposure. They work together for your ultimate privacy."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ollavpn.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Technology",
+      "item": "https://ollavpn.com/technology.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Kill switch",
+      "item": "https://ollavpn.com/killswitch"
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text);
+    max-width: 880px; }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 20px; max-width: 760px; }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 28px 56px;
+    gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+
+  .article {
+    min-width: 0;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px;
+    color: var(--text);
+  }
+  .article .short-answer {
+    font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em;
+  }
+  .article p strong { font-weight: 700; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px;
+    text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline {
+    display: block; margin: 0 0 2.2em;
+    border: 1px solid var(--line); border-radius: 12px; padding: 18px 24px;
+    background: #fff;
+  }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+
+  .toc-rail .label, .toc-inline .label {
+    font-family: var(--mono); font-size: 11px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block;
+  }
+  .toc-rail ol, .toc-inline ol {
+    list-style: none; margin: 0; padding: 12px 0 0;
+  }
+  .toc-rail ol li, .toc-inline ol li {
+    font-size: 14px; line-height: 1.5; margin: 0 0 8px;
+  }
+  .toc-rail ol li a, .toc-inline ol li a {
+    color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px;
+    border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .toc-rail ol li a:hover,
+  .toc-inline ol li a:hover,
+  .toc-rail ol li.is-current a {
+    color: var(--red); border-left-color: var(--red);
+  }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+</style>
+</head>
+
+<body>
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="wrap">
+    <div class="meta">FEATURE · ALWAYS CURRENT
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=killswitch">KILLSWITCH</a></div>
+    </div>
+    <h1>The OllaVPN Kill Switch: Your Last Line of Defense Against Data Leaks</h1>
+    <p class="lede">Ever wonder what happens to your internet traffic if your VPN suddenly disconnects? It&#39;s not a fun thought – your real IP address and online activity could instantly become visible to your internet provider and anyone else watching. That&#39;s why a reliable kill switch isn&#39;t just a nice-to-have; it&#39;s essential for your privacy. At OllaVPN, we&#39;ve engineered our kill switch to be always-on and deeply integrated, ensuring your digital footprint stays hidden, even when unexpected network hiccups happen. We&#39;ll show you how it works and why it&#39;s your last line of defense.</p>
+  <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-layout">
+  <article class="article">
+
+    
+    <div class="tier-compat">
+      <span class="tier-compat-label">Available on</span>
+      <a class="tier-compat-chip" href="/dl/">Free</a>
+      <a class="tier-compat-chip" href="/pricing#plans">Pro</a>
+      <a class="tier-compat-chip" href="/pricing#plans">Business</a>
+      <span class="tier-compat-note">Same security stack on every tier.</span>
+    </div>
+
+<div class="tldr">
+      <span class="label">TL;DR</span>
+      
+      <p>A VPN kill switch is your digital bodyguard, automatically cutting off your internet if your VPN connection drops. This prevents your actual IP address and online activities from being exposed, even for a second. Without it, a brief network blip could completely undermine your privacy, showing exactly what you&#39;re doing online.</p>
+      
+      <p>OllaVPN&#39;s kill switch is always on by default and built directly into our application, not just as a separate firewall rule. This deep integration means it&#39;s incredibly effective at preventing leaks. You don&#39;t have to worry about configuring it; it just works, keeping your data safe and sound, even with our post-quantum ready encryption.</p>
+      
+      <p>This essential feature is included for everyone, whether you&#39;re on our free 10 Mbps plan or our 10 Gbps OllaVPN Plus. It&#39;s part of our commitment to providing fundamental privacy for all users, without compromise, and without needing a credit card or email to get started. It&#39;s truly $0 forever for basic protection.</p>
+      
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        
+        <li><a href="#what-is-a-kill-switch">What is a VPN Kill Switch and Why Does it Matter?</a></li>
+        
+        <li><a href="#how-it-works-under-the-hood">How Does the OllaVPN Kill Switch Work Under the Hood?</a></li>
+        
+        <li><a href="#ollavpn-difference">What Does OllaVPN Do Differently Compared to Other VPNs?</a></li>
+        
+        <li><a href="#what-it-protects-you-against">What Real-World Scenarios Does a Kill Switch Protect You Against?</a></li>
+        
+        <li><a href="#defaults-and-configuration">Is the Kill Switch Always On, and Can You Configure It?</a></li>
+        
+        <li><a href="#how-to-verify">How Can You Verify the Kill Switch is Working on Your Connection?</a></li>
+        
+        <li><a href="#limits-and-tradeoffs">What are the Limits and Honest Trade-offs of a VPN Kill Switch?</a></li>
+        
+        <li><a href="#connection-to-other-primitives">How Does the Kill Switch Connect to Other OllaVPN Privacy Features?</a></li>
+        
+        <li><a href="#performance-impact">Does the Kill Switch Impact My Internet Speed or Performance?</a></li>
+        
+        <li><a href="#compatibility-lan-devices">Will the Kill Switch Break My LAN Access or Smart Home Devices?</a></li>
+        
+        <li><a href="#future-proofing">Is OllaVPN&#39;s Kill Switch Future-Proof Against Evolving Threats?</a></li>
+        
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    
+    <h2 id="what-is-a-kill-switch">What is a VPN Kill Switch and Why Does it Matter?</h2>
+    <p class="short-answer">A VPN kill switch is a security feature that automatically disconnects your device from the internet if your VPN connection drops, preventing your real IP address and unencrypted traffic from being exposed.</p>
+
+Think of a VPN kill switch as your privacy's last line of defense. When you're connected to a VPN like OllaVPN, all your internet traffic is encrypted and routed through our secure servers, hiding your real IP address and protecting your online activities from your <a href="/blog/what-is-an-isp">ISP</a> and other snoopers. But what happens if that connection suddenly fails? Without a kill switch, your device would immediately revert to its regular, unencrypted internet connection, potentially exposing everything you were trying to keep private.
+
+This momentary lapse is what we call a <strong>data leak</strong>, and it can reveal your true location, the websites you're visiting, and any sensitive information you're transmitting. A kill switch prevents this by monitoring your VPN connection. The moment it detects a drop, it acts like a circuit breaker, cutting off all internet access until the secure VPN tunnel is re-established. This ensures that no unencrypted traffic ever leaves your device and that your real IP address remains hidden, even during unexpected disconnections.
+
+At OllaVPN, your privacy is our top priority, which is why the kill switch is <a href="/features/kill-switch-always-on">always on by default</a>. You don't have to worry about configuring it or remembering to turn it on; it’s simply there, working silently in the background to provide continuous privacy protection. It's a critical component for anyone serious about maintaining their anonymity online, especially when using public Wi-Fi or dealing with sensitive data.
+    
+    <h2 id="how-it-works-under-the-hood">How Does the OllaVPN Kill Switch Work Under the Hood?</h2>
+    <p class="short-answer">OllaVPN's kill switch works by creating a firewall rule on your device that blocks all internet traffic unless it's specifically routed through the secure VPN tunnel, ensuring your data is never exposed if the connection drops.</p>
+
+When you connect to OllaVPN, our app doesn't just establish a secure tunnel; it also immediately configures your device's operating system to prevent any network traffic from leaving your computer unless it goes through that tunnel. Think of it like this: your computer normally has a direct highway to the internet. When OllaVPN connects, we put up a roadblock on that highway and open a new, private road (the VPN tunnel). All your data packets are then forced to take the private road. If for any reason that private road collapses—a **tunnel failure** due to a Wi-Fi drop, server issue, or anything else—the roadblock stays up, and your data simply can't reach the internet directly.
+
+This isn't something that happens at the application layer; it's a **kernel-level** operation. OllaVPN leverages advanced **packet filtering** rules, often implemented using your operating system's native firewall capabilities (like `pf` on macOS/BSD or Windows Filtering Platform on Windows). The moment the VPN tunnel is established (using the efficient <a href="/technology/wireguard">WireGuard protocol</a>), these rules are put in place. They essentially tell your device's **network interface**: "Only allow outgoing connections if their destination is the VPN server, or if they've come *from* the VPN server." Any other traffic is immediately blocked.
+
+The beauty of this approach is its immediacy and reliability. If the VPN connection falters or experiences a **connection drop**, there's no delay or moment of vulnerability. Because the firewall rules are already in place and are tied to the active VPN tunnel, the moment the tunnel isn't active, all other internet access is cut off. Your data simply stops flowing rather than spilling onto the unprotected internet. This ensures that your real IP address and online activities remain private, even in the face of unexpected network interruptions. When the VPN connection is re-established, OllaVPN automatically removes the blocking rules, and your traffic resumes flowing securely through the tunnel.
+    
+    <h2 id="ollavpn-difference">What Does OllaVPN Do Differently Compared to Other VPNs?</h2>
+    <p class="short-answer">OllaVPN differentiates itself through a unique approach to funding, a commitment to post-quantum security, and a deeply integrated, always-on kill switch.</p>
+
+We're not like most "freemium throttled VPNs" or even many "honest-loss-leader free VPNs" that offer a limited free tier hoping you'll upgrade. Our free plan is genuinely free forever, without data caps or hidden catches. We fund this by offering an optional OllaVPN Plus plan for just $2 a month, which significantly boosts your speed and device count. This means we don't rely on ads or selling your data to keep the lights on.
+
+Another major difference is our focus on future-proof security. We're building with **post-quantum-ready encryption** using a hybrid handshake combining a classical and a post-quantum algorithm, designed to protect your data not just today, but for decades to come, even against future quantum computing threats. This proactive approach to cryptography is still rare in the VPN space.
+
+Crucially, OllaVPN takes your security seriously with a kill switch that's **always-on by default** and deeply integrated. Many VPNs offer a kill switch, but it often operates at the operating system firewall level, which can be flaky or easily bypassed by certain applications. Our kill switch is built into the application itself, acting as a safeguard that ensures no data leaves your device unless it's protected by the VPN tunnel. This deeper integration means you're always protected, even if the VPN connection drops unexpectedly, preventing accidental data leaks.
+    
+    <h2 id="what-it-protects-you-against">What Real-World Scenarios Does a Kill Switch Protect You Against?</h2>
+    <p class="short-answer">A VPN kill switch automatically cuts your internet connection if your VPN disconnects, preventing your real IP address and online activity from being exposed.</p>
+
+<p>Think of the kill switch as your digital bodyguard, always on alert. Its primary job is to create a safety net for your privacy. Without it, even a momentary drop in your VPN connection — which can happen for all sorts of reasons, from a flaky Wi-Fi signal to a server hiccup — could expose your actual IP address and what you're doing online. This is especially critical when you're using <a href="/blog/public-wifi-dangers">unsecured public Wi-Fi</a> at a coffee shop or airport, where snooping is far more common.</p>
+
+<p>If you're trying to bypass geoblocking to access content or services not available in your region, a kill switch ensures that your true location isn't accidentally revealed if the VPN connection drops. Without it, you might suddenly find yourself locked out or even flagged. Similarly, for activities like torrenting, where your IP address can be visible to others, a kill switch is non-negotiable. It prevents your internet service provider (ISP) from seeing your activity if there's an accidental disconnection, safeguarding you from potential ISP surveillance or throttling based on your traffic.</p>
+
+<p>In essence, the kill switch protects you from those "oops" moments that could compromise your privacy. It's on by default with OllaVPN, so you don't even have to think about it. It just works, giving you peace of mind that your online identity remains cloaked, even if your connection gets a bit wobbly.</p>
+    
+    <h2 id="defaults-and-configuration">Is the Kill Switch Always On, and Can You Configure It?</h2>
+    <p class="short-answer">Yes, OllaVPN's kill switch is always on by default, ensuring your IP is never exposed, and it requires no configuration from you.</p>
+
+It's simple: once you connect to OllaVPN, your internet traffic is either routed through our secure tunnel or it's completely blocked. There's no in-between state where your connection might accidentally "leak" your real IP address if the VPN connection drops. This "on by default" approach means you don't have to worry about forgetting to enable it or fumbling with settings in a critical moment. It just works, silently protecting you in the background.
+
+Unlike many other VPNs that offer a kill switch as an optional feature you have to remember to turn on, OllaVPN bakes it right into the core experience. This is part of our "trust by design" philosophy — we want to make privacy and security effortless for you. You shouldn't have to be a network engineer to stay safe online.
+
+While there's no configuration needed because it's always active, we understand that advanced users sometimes want more granular <strong>user control</strong>. For OllaVPN, the choice is clear: prioritize absolute protection over optional disablement. This ensures that even if our app crashes or your connection becomes unstable, your IP address remains hidden. You won't find a button to turn it off, because we believe that part of providing a truly private VPN is making sure you're always protected.
+    
+    <h2 id="how-to-verify">How Can You Verify the Kill Switch is Working on Your Connection?</h2>
+    <p class="short-answer">You can verify OllaVPN's kill switch by checking your public IP address before and after deliberately disconnecting from the VPN.</p>
+
+It's smart to check that your kill switch is actually doing its job, especially if you're in a situation where a leaked IP address could be a real problem. The good news is it's pretty straightforward to confirm. The core idea is to trick your device into thinking its network has dropped and see if your internet access immediately stops.
+
+First, make sure you're connected to OllaVPN, then visit an <a href="/blog/what-is-my-ip-address">IP address checker</a> website. Note down the IP address it shows you — this is your secure, OllaVPN-provided IP. Now, without disconnecting OllaVPN through the app, deliberately break your internet connection. This could mean unplugging your Ethernet cable, turning off Wi-Fi on your device, or even just exiting the OllaVPN app completely (which forces a disconnect).
+
+What should happen next is pretty telling. Try to open a new webpage in your browser or access any online service. If the kill switch is working correctly, you shouldn't be able to connect to anything. Your internet access should be completely blocked until you reconnect to OllaVPN or manually disable the kill switch in the app. If you *can* still browse, that means your real IP address is exposed, and something isn't right with your setup, or the kill switch isn't active. Re-enable the kill switch and try again.
+    
+    <h2 id="limits-and-tradeoffs">What are the Limits and Honest Trade-offs of a VPN Kill Switch?</h2>
+    <p class="short-answer">A VPN kill switch provides critical protection against accidental data exposure if your VPN connection drops, but it can't guard against every possible privacy threat like user error, malware, or pre-connection leaks.</p>
+
+<p>Think of a kill switch as a safety net for your VPN connection itself. If your connection to OllaVPN suddenly drops for any reason – maybe your Wi-Fi glitches, or you move between networks – the kill switch immediately cuts off your internet access. This prevents your device from sending unencrypted data over your regular internet connection, which would reveal your real IP address and online activity. It's designed to stop those accidental, momentary exposures that can happen when a VPN link unexpectedly breaks.</p>
+
+<p>However, it's important to understand what a kill switch doesn't do. It won't protect you from <strong>user error</strong>, like accidentally visiting a sensitive site before you've even turned your VPN on. It also offers no defense against <strong>malware</strong> on your device that might be collecting data or sending it out in ways completely unrelated to your internet connection. Similarly, it doesn't solve for <strong>browser fingerprinting</strong>, which is when websites try to identify you based on your browser's unique configuration, not just your IP address.</p>
+
+<p>While a kill switch prevents your IP from leaking if the VPN disconnects, it's a different mechanism than preventing <strong>DNS leaks</strong>, which is a separate issue where your device might use your ISP's DNS servers instead of the VPN's. OllaVPN addresses DNS leaks with <a href="/features/in-tunnel-dns">in-tunnel DNS</a>. Crucially, a kill switch also can't prevent <strong>pre-connection leaks</strong> – that brief moment when your device connects to the internet *before* the VPN establishes its secure tunnel. For maximum protection, you need to ensure your VPN starts and connects automatically, or manually verify your connection before doing anything sensitive online.</p>
+    
+    <h2 id="connection-to-other-primitives">How Does the Kill Switch Connect to Other OllaVPN Privacy Features?</h2>
+    <p class="short-answer">OllaVPN's kill switch works hand-in-hand with features like post-quantum-ready encryption, in-tunnel DNS, and 4-layer peer isolation to create a comprehensive, always-on privacy shield.</p>
+
+Think of the kill switch as the ultimate safety net for your VPN connection. While features like our <strong>post-quantum-ready encryption</strong> protect your data *within* the secure tunnel, and <strong>in-tunnel DNS</strong> keeps your browsing requests private from your ISP, the kill switch ensures that if that tunnel ever unexpectedly drops, your real IP address and unencrypted traffic are never exposed. It's about preventing data leaks at the most critical points, even when things go wrong.
+
+It’s crucial because even the best encryption in the world can't protect data that isn't in the tunnel. If your internet connection briefly flickers, or your device unexpectedly switches networks, that's a moment when your system might try to send data over your regular, unencrypted connection. The kill switch prevents this by instantly cutting off your internet access until the secure VPN tunnel is re-established. This means there's no window, however small, for your activities to be monitored or your identity to be revealed.
+
+This integration is key to what we call "holistic privacy." It’s not enough to have one strong feature; you need them all working together seamlessly. For instance, our <strong>4-layer peer isolation</strong> prevents other users on the same OllaVPN server from seeing your traffic, but the kill switch ensures that *your* traffic never leaves the protected environment in the first place. You get a secure, private connection, and if that connection ever falters, your privacy is still maintained by the kill switch acting as a final line of defense.
+    
+    <h2 id="performance-impact">Does the Kill Switch Impact My Internet Speed or Performance?</h2>
+    <p class="short-answer">No, OllaVPN's kill switch has a negligible impact on your internet speed or overall performance during normal operation.</p>
+
+<p>You might think a security feature like a kill switch would bog things down, but that’s not how it works here. The kill switch is designed to be a silent guardian, constantly monitoring your VPN connection in the background. It only steps in if your connection to OllaVPN unexpectedly drops, instantly cutting off your device's internet access to prevent any data leaks. This "all or nothing" approach means it's not actively processing data or hogging resources while you're browsing, streaming, or working.</p>
+
+<p>Because it's a passive safety net, it won't slow down your <a href="/free-vpn-10-mbps">10 Mbps free plan</a> or even our lightning-fast <a href="/pricing">10 Gbps Plus connections</a>. The kill switch isn't part of the data tunnel itself; it's more like a bouncer at the door, only acting if the main event (your VPN tunnel) goes down. So, you get the peace of mind of always being protected without having to compromise on the speed you expect.</p>
+
+<p>The only time you'd notice the kill switch is if it *activates*, at which point your internet connection would cease entirely until the VPN is re-established. This is its intended function: to ensure your real IP address or unencrypted data is never exposed, even for a second. It's a critical privacy feature that operates with minimal overhead.</p>
+    
+    <h2 id="compatibility-lan-devices">Will the Kill Switch Break My LAN Access or Smart Home Devices?</h2>
+    <p class="short-answer">No, OllaVPN's kill switch generally won't break your local network (LAN) access or smart home devices, but there are some nuances to understand.</p>
+
+Your kill switch is designed to keep your internet traffic private by preventing it from leaving your device unencrypted. This means that if your VPN connection drops, your internet access is cut off until the VPN reconnects or you manually disable it. However, this usually only applies to traffic routing to the internet. Your device’s ability to communicate with other devices on your **local network**, like your printer, network-attached storage (NAS), or smart home devices, typically remains unaffected.
+
+The key is that local network traffic often doesn't attempt to go out to the internet in the first place. For instance, when you cast a video to your smart TV or print a document, that communication usually stays entirely within your home network, bypassing the VPN tunnel and thus the kill switch. OllaVPN directs **all traffic through VPN** that is destined for the public internet, ensuring your privacy, but it doesn't interfere with your internal network communications unless those communications *also* try to access the internet.
+
+So, for most setups, your smart lights, thermostats, and other IoT gadgets that simply communicate within your home network will continue to work fine. Where you might see an issue is if a smart device relies on an internet connection to function, and your main device's internet access is blocked by the kill switch. We don't currently offer <strong>split tunneling</strong>, which would allow you to selectively route certain apps or traffic outside the VPN, so if a local app needs internet access directly, it would be affected by the kill switch.
+    
+    <h2 id="future-proofing">Is OllaVPN&#39;s Kill Switch Future-Proof Against Evolving Threats?</h2>
+    <p class="short-answer">Yes, OllaVPN's kill switch is designed with an adaptable architecture and <a href="/post-quantum-encryption">post-quantum readiness</a> in mind, making it robust against future threats.</p>
+
+You're right to think about the future when it comes to privacy tools. Network environments are always changing, and new threats emerge regularly. That's why we've built OllaVPN's kill switch not just to react to current problems, but to anticipate future ones. It's not a separate feature you toggle on or off; it's deeply integrated into how the app connects to our network, ensuring your connection is always protected, even if the VPN connection drops unexpectedly.
+
+Our approach focuses on an <strong>adaptable architecture</strong>. This means the core logic of the kill switch isn't tied to specific network protocols or operating system versions. Instead, it operates at a fundamental level, monitoring the secure tunnel and making sure no unencrypted traffic ever leaves your device if the tunnel isn't active. This design allows us to update and evolve the underlying mechanisms as new operating systems and networking standards come out, without compromising the basic security guarantee.
+
+This commitment to long-term privacy also extends to our encryption. Just like our core VPN tunnels are engineered for post-quantum readiness, ensuring your data remains forward-secure even against future, more powerful computers, our kill switch operates within that same protective framework. It's about building safeguards that aren't just effective today, but remain effective for years to come, giving you peace of mind that your privacy is protected against whatever the future holds.
+    
+
+    <h2 id="killswitch-verify">How can you verify the kill switch actually works?</h2>
+    <p class="short-answer">A direct three-step test from your own device, in under five minutes. No specialized tools needed — the test simulates exactly the failure case the kill switch exists to handle.</p>
+
+    <p>Marketing claims about kill switches are easy to make and notoriously hard to falsify without testing. Here is the test we use internally and that any reader can run independently:</p>
+
+    <p><strong>Step 1 — Establish a baseline.</strong> Open a Command Prompt (Windows) or Terminal (macOS/Linux). Run a continuous ping to a known external IP: <code>ping -t 1.1.1.1</code> on Windows, <code>ping 1.1.1.1</code> on macOS/Linux. You should see one reply per second. This confirms your network is working and your device can reach the public internet.</p>
+
+    <p><strong>Step 2 — Connect OllaVPN.</strong> Open the OllaVPN app and connect to any country. Watch the ping output — replies should continue uninterrupted (the route is now through the tunnel, but pings to 1.1.1.1 still complete). The menu-bar or system-tray icon should turn green to indicate the kill switch is now active.</p>
+
+    <p><strong>Step 3 — Simulate a tunnel failure.</strong> Now disable your network adapter at the OS level: turn Wi-Fi off, unplug Ethernet, toggle airplane mode, or open <code>ncpa.cpl</code> on Windows and disable the active adapter. The ping should <em>immediately</em> show "Request timed out" or "no route to host" and stay failing until you re-enable the network. If pings continue (meaning your traffic switched silently to a backup interface bypassing the VPN), the kill switch has failed and your real IP would be leaking. We do not see this on OllaVPN — but verify, don't trust.</p>
+
+    <p><strong>What the test proves.</strong> If pings stop immediately on network disable, the kill switch is enforced at the OS firewall layer (not just by app-level polling, which has timing windows where leaks can happen). OllaVPN's kill switch is implemented via Windows Filtering Platform on Windows, Packet Filter rules on macOS, and the VpnService block-everything-else flag on Android — all three are OS-firewall enforcement, not application-layer polling.</p>
+
+    <h2 id="killswitch-vs-competitors">How does OllaVPN's kill switch compare to other free VPNs?</h2>
+    <p class="short-answer">The substantive comparison is two-fold: where the kill switch is enforced (OS firewall vs app polling) and whether it's on by default and cannot be disabled. OllaVPN clears both bars; not all competitors do.</p>
+
+    <p><strong>Enforcement layer.</strong> A real kill switch is enforced at the operating-system firewall layer — meaning the OS itself drops packets that would otherwise leak past the tunnel. A pretend kill switch is implemented in the VPN app's code, polling the tunnel state every few seconds and reactively blocking traffic if it notices the tunnel is down. The polling approach has a window — milliseconds to seconds, depending on the polling interval — where packets can leak between the tunnel dropping and the app noticing. OllaVPN, Mullvad, Proton VPN, and Windscribe all implement OS-firewall-layer kill switches. Some smaller "free VPN" apps in the app stores use app-level polling because it's easier to ship; those are the ones with the leak windows.</p>
+
+    <p><strong>On by default vs opt-in.</strong> A kill switch the user has to find in a settings menu and toggle on is, in practice, a kill switch most users never enable. OllaVPN ships the kill switch on by default and provides no toggle to disable it — the design assumes that a privacy product's protection should not be defeatable by accident. Some competitors (TunnelBear, hide.me) ship the kill switch off by default; some (Proton VPN Free) ship it on by default but allow toggle-off; OllaVPN's "always on, no toggle" is the strongest posture in the free-tier category.</p>
+
+    <p><strong>What "always on" actually requires.</strong> The kill switch is on whether the VPN app is running or not, whether you're signed in or not, whether the tunnel is up or pending. Once you've installed OllaVPN and granted the system service permission to install firewall rules, those rules persist across reboots, app crashes, and forced sign-outs. The only way to fully remove the protection is to uninstall the app cleanly through the in-app Uninstall option, which removes the firewall rules as part of teardown.</p>
+
+    <h2 id="killswitch-not-shipped">What our kill switch deliberately doesn't do</h2>
+    <p class="short-answer">No per-app bypass on free, no scheduled disable, no auto-pause for "trusted networks." We've considered each — these are explicit non-features because each one re-introduces the leak window the kill switch exists to prevent.</p>
+
+    <p><strong>No per-app bypass on the free tier.</strong> Some users want certain apps (banking apps, work VPN clients) to bypass the kill switch and use the underlying network directly. We don't ship this on free because the bypass logic is exactly the failure mode the kill switch exists to prevent — and getting it right requires per-app firewall rules we have not yet built. Split-tunneling (the related feature) is a planned Pro-tier capability.</p>
+
+    <p><strong>No scheduled disable.</strong> Some kill-switch implementations allow the user to schedule "off hours" when the kill switch doesn't apply. We don't ship this because a scheduled-off kill switch is, for the scheduled window, no kill switch at all.</p>
+
+    <p><strong>No auto-pause for "trusted networks."</strong> Some VPN clients let you mark specific Wi-Fi networks as trusted and automatically pause the VPN when you're connected. We don't ship this because the threat model on every network includes "other devices on the same Wi-Fi" — a "trusted network" is mostly a marketing concept rather than a security one. If you want to disable OllaVPN on a specific network, click Disconnect manually.</p>
+
+    <p><strong>No silent disable on uninstall.</strong> If you uninstall OllaVPN without using the in-app Uninstall flow, the kill-switch firewall rules persist until next reboot. This is a feature, not a bug — it means a malicious uninstaller cannot leave you with the protection silently disabled.</p>
+
+    <h2 id="killswitch-faq">Common kill-switch questions, answered straight</h2>
+    <p class="short-answer">Direct answers to the questions readers most often ask about VPN kill switches and OllaVPN's specific implementation.</p>
+
+    <p><strong>What's the difference between a kill switch and an "app kill switch"?</strong> A full system kill switch (what OllaVPN ships) drops all non-tunnel traffic from every app on the device. An "app kill switch" — sometimes called "selective kill switch" or "per-app kill switch" — only kills specific apps you've designated when the tunnel drops. App-level kill switches are sometimes useful for power users who want torrenting clients killed but browsing to continue; we don't ship them on free because they're a complexity trap (the user has to keep the app list current) and the full-system kill switch is the safer default.</p>
+
+    <p><strong>Does the kill switch work when the OllaVPN app crashes?</strong> Yes. The kill switch is enforced at the OS firewall layer by the OllaVPN system service (a separate process from the UI app). If the UI app crashes, the system service keeps running and the firewall rules stay in place. Even if both the UI and the system service crash, the firewall rules persist until something explicitly removes them — which is the in-app Disconnect or Uninstall flow.</p>
+
+    <p><strong>Does the kill switch work during the boot process before the VPN connects?</strong> On most platforms, yes — the firewall rules persist across reboots, so traffic is blocked from the moment the network comes up until the VPN tunnel is established. This produces a brief "no internet" window at boot (typically 5-15 seconds) during which the VPN is connecting. We consider this the right behavior; the alternative (allowing traffic during the gap) would defeat the kill switch's purpose. If the OllaVPN app fails to start at boot, the firewall rules can be cleared by uninstalling and reinstalling.</p>
+
+    <p><strong>Does the kill switch block IPv6 traffic too?</strong> Yes. The kill switch firewall rules block all egress traffic on every interface except the tunnel, on both IPv4 and IPv6. We also disable IPv6 on the tunnel interface itself (the tunnel is IPv4-only), and remove the IPv6 default route at connect time. The result is that no IPv6 traffic ever escapes the tunnel — even apps that prefer IPv6 fall back to IPv4 inside the tunnel.</p>
+
+    <p><strong>Will the kill switch affect my LAN access?</strong> No. RFC 1918 private network ranges (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) are explicitly allowed by the kill switch firewall rules, so your home network keeps working: printer, NAS, smart-home gear, local development servers all remain reachable. The tunnel uses RFC 6598 CGNAT space (100.64.0.0/10) specifically to avoid colliding with home LAN ranges, so the LAN-access carve-out is simple and reliable.</p>
+
+    <p><strong>What happens to streaming or downloads when the kill switch triggers?</strong> They pause. Your Netflix stream stops streaming new data; your file download pauses mid-byte. When the tunnel reconnects (usually within 1-3 seconds), most streaming apps will recover automatically and most downloads will resume from where they were. A small number of streaming apps and downloads will require a manual restart. This is the same behavior you'd see during any brief network outage; the kill switch is, from the apps' perspective, indistinguishable from "the internet briefly went away."</p>
+
+    <p><strong>Why does the kill switch matter for public Wi-Fi?</strong> Public Wi-Fi networks are exactly where you most need the kill switch. The threat is: you connect your laptop in a coffee shop, you connect to OllaVPN, you start working. The coffee shop's Wi-Fi briefly drops (this happens). Your VPN drops with it. Without a kill switch, when the Wi-Fi reconnects, your laptop briefly sends traffic on the unencrypted Wi-Fi network for the second or two before the VPN reconnects — that's exactly the window where another patron sniffing the network sees your traffic. The kill switch makes that window not exist.</p>
+
+    <p><strong>Can I temporarily disable the kill switch for a specific task?</strong> No — there's no toggle in the OllaVPN settings to disable the kill switch. The design assumption is that a kill switch you can accidentally turn off is, in practice, no protection at all. If you need to disable VPN protection for a specific task (banking that flags VPN IPs, for example), the right path is to click Disconnect, complete the task, then reconnect. That's an explicit user action, not a silent failure mode.</p>
+
+    <h2 id="killswitch-about">About this guide</h2>
+    <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. The OS-firewall enforcement details (Windows Filtering Platform on Windows, Packet Filter on macOS, VpnService.setBlockingMode on Android) were verified against the production codebase in the June 2026 update cycle. Quarterly refresh; last full re-evaluation 23 June 2026.</p>
+
+    <p>For deeper context: <a href="/technology">the technology stack page</a> covers OllaVPN's full architecture including the kill switch's interaction with in-tunnel DNS, peer isolation, and PQC. The <a href="/blog/what-is-a-vpn-kill-switch.html">kill switch pillar blog</a> explains the category fundamentals. The <a href="/best-free-vpn-2026">best free VPN 2026 guide</a> includes per-VPN kill-switch posture as a comparison dimension. The <a href="/tools/">privacy tools</a> let you verify kill-switch behavior in minutes from your own device.</p>
+
+    <div class="feature-cta">
+      <h3>Want this on your device?</h3>
+      <p>OllaVPN is free forever for 1 device. No card, no email tricks.</p>
+      <a class="btn primary lg" href="/dl/">Get OllaVPN free <span class="arrow">&rarr;</span></a>
+      <span class="feature-cta-sub">Or <a href="/pricing">see all plans</a></span>
+    </div>
+
+      </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      
+      <li><a href="#what-is-a-kill-switch">What is a VPN Kill Switch and Why Does it Matter?</a></li>
+      
+      <li><a href="#how-it-works-under-the-hood">How Does the OllaVPN Kill Switch Work Under the Hood?</a></li>
+      
+      <li><a href="#ollavpn-difference">What Does OllaVPN Do Differently Compared to Other VPNs?</a></li>
+      
+      <li><a href="#what-it-protects-you-against">What Real-World Scenarios Does a Kill Switch Protect You Against?</a></li>
+      
+      <li><a href="#defaults-and-configuration">Is the Kill Switch Always On, and Can You Configure It?</a></li>
+      
+      <li><a href="#how-to-verify">How Can You Verify the Kill Switch is Working on Your Connection?</a></li>
+      
+      <li><a href="#limits-and-tradeoffs">What are the Limits and Honest Trade-offs of a VPN Kill Switch?</a></li>
+      
+      <li><a href="#connection-to-other-primitives">How Does the Kill Switch Connect to Other OllaVPN Privacy Features?</a></li>
+      
+      <li><a href="#performance-impact">Does the Kill Switch Impact My Internet Speed or Performance?</a></li>
+      
+      <li><a href="#compatibility-lan-devices">Will the Kill Switch Break My LAN Access or Smart Home Devices?</a></li>
+      
+      <li><a href="#future-proofing">Is OllaVPN&#39;s Kill Switch Future-Proof Against Evolving Threats?</a></li>
+      
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<script>
+  // Scroll-spy: highlight current section in right rail TOC.
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+</body>
+</html>

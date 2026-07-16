@@ -1,0 +1,17 @@
+/* TEAM */
+
+  Build + operation: the OllaVPN team.
+
+/* THANKS */
+
+  WireGuard (Jason A. Donenfeld and contributors) — modern, open-source tunnel cryptography.
+  NIST and the global cryptography community — for the post-quantum standardisation effort.
+  The wider open-source ecosystem that makes a small, independent privacy tool possible.
+
+/* COLOPHON */
+
+  Design:   custom, in-house.
+  Type:     Inter, JetBrains Mono.
+  Stance:   privacy-first, post-quantum-ready, no logs, lifetime free plan.
+
+  Last update: 2026-05-17

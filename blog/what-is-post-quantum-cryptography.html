@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What Is Post-Quantum Cryptography? · OllaVPN</title>
+<meta name="description" content="Plain-English guide to post-quantum cryptography (PQC) — what it is, why it matters now, 'harvest now, decrypt later,' and the NIST standards." />
+<link rel="canonical" href="https://ollavpn.com/blog/what-is-post-quantum-cryptography.html" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="What Is Post-Quantum Cryptography? · OllaVPN" />
+<meta property="og:description" content="Plain-English guide to post-quantum cryptography (PQC) — what it is, why it matters now, 'harvest now, decrypt later,' and the NIST standards." />
+<meta property="og:url" content="https://ollavpn.com/blog/what-is-post-quantum-cryptography.html" />
+<meta property="og:image" content="https://ollavpn.com/blog/og-what-is-post-quantum-cryptography.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="What is post-quantum cryptography — a 2026 guide for everyone" />
+<meta property="article:published_time" content="2026-05-16T00:00:00Z" />
+<meta property="article:modified_time" content="2026-05-16T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Privacy guides" />
+<meta property="article:tag" content="Post-quantum cryptography" />
+<meta property="article:tag" content="Quantum computing" />
+<meta property="article:tag" content="PQC" />
+<meta property="article:tag" content="VPN security" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What Is Post-Quantum Cryptography? · OllaVPN" />
+<meta name="twitter:description" content="Plain-English guide to post-quantum cryptography (PQC) — what it is, why it matters now, 'harvest now, decrypt later,' and the NIST standards." />
+
+<meta name="twitter:image" content="https://ollavpn.com/blog/og-what-is-post-quantum-cryptography.png" />
+<!-- Self-hosted Lato (no Google Fonts CDN call for primary type). JetBrains Mono is still pulled
+     from Google for mono code blocks - used sparingly, can be self-hosted in a follow-up. -->
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="../styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is Post-Quantum Cryptography? A 2026 Guide for Anyone Who Cares About Privacy",
+  "description": "A plain-English guide to post-quantum cryptography (PQC): what it is, why it matters now, 'harvest now, decrypt later,' the new NIST standards, and what to look for in a future-ready VPN.",
+  "image": "https://ollavpn.com/favicon-256.png",
+  "author": {
+    "@type": "Person",
+    "name": "Nathan Pratt",
+    "url": "https://ollavpn.com/about/team#nathan-pratt",
+    "jobTitle": "Privacy & Security Lead",
+    "worksFor": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" }
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Hannah Wu",
+    "url": "https://ollavpn.com/about/team#hannah-wu",
+    "jobTitle": "Senior Security Engineer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": { "@type": "ImageObject", "url": "https://ollavpn.com/favicon-256.png" }
+  },
+  "datePublished": "2026-05-16",
+  "dateModified": "2026-05-16",
+  "mainEntityOfPage": "https://ollavpn.com/blog/what-is-post-quantum-cryptography.html",
+  "inLanguage": "en",
+  "articleSection": "Privacy guides",
+  "about": [
+    { "@type": "Thing", "name": "Post-quantum cryptography" },
+    { "@type": "Thing", "name": "Harvest now, decrypt later" },
+    { "@type": "Thing", "name": "Quantum computing" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is post-quantum cryptography in simple terms?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Post-quantum cryptography (PQC) is a new family of encryption algorithms designed to remain secure even against future quantum computers. Today's most common encryption relies on math problems that classical computers can't solve quickly, but that a sufficiently powerful quantum computer eventually could. PQC algorithms are based on different math problems that researchers believe both classical and quantum computers will still struggle with." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 'harvest now, decrypt later'?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Harvest now, decrypt later (HNDL) is the practice of capturing encrypted internet traffic today, storing it, and decrypting it years later once quantum computers are powerful enough to break the encryption it was protected with. The U.S. government and major security companies treat HNDL as a real, ongoing risk — not a theoretical future one. It's the central reason post-quantum cryptography matters now, not in ten years." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do quantum computers exist that can break encryption today?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not yet. Today's quantum computers have hundreds to a few thousand physical qubits, but breaking widely used encryption like RSA-2048 would require millions of error-corrected qubits. Mainstream estimates put the arrival of cryptographically relevant quantum computers somewhere between 2030 and 2045, though the precise date is uncertain. The threat to take seriously today is the harvest-now-decrypt-later pattern — capturing traffic now for future decryption." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the NIST post-quantum standards?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In August 2024, the U.S. National Institute of Standards and Technology (NIST) finalized three post-quantum standards. FIPS 203 (ML-KEM, based on the Kyber algorithm) is for key establishment — the part of a secure connection that exchanges secret keys. FIPS 204 (ML-DSA, based on Dilithium) and FIPS 205 (SLH-DSA, based on SPHINCS+) are for digital signatures. These standards now define what 'post-quantum-ready' means in practice." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which products already use post-quantum encryption?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Several major products already do. Apple's iMessage uses a post-quantum protocol called PQ3 (since February 2024). Signal launched a post-quantum upgrade called PQXDH in September 2023. Google Chrome rolled out a hybrid post-quantum key exchange (X25519Kyber768) and made it default in 2024. Cloudflare has supported post-quantum TLS connections since 2022. In the VPN industry, Mullvad pioneered post-quantum WireGuard tunnels and made them default on desktop in 2023." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my VPN need post-quantum cryptography?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If your threat model includes a well-resourced adversary who might be capturing your encrypted traffic today, the answer is yes. For most everyday users, post-quantum protection is a sensible long-term hedge rather than an immediate emergency. The good news is that adopting a PQC-ready VPN costs you nothing extra in speed or convenience — it's protection that simply works in the background." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a hybrid post-quantum encryption mode?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A hybrid mode combines a traditional encryption algorithm (like X25519) with a post-quantum algorithm (like ML-KEM) in the same handshake. The connection stays secure as long as either one remains unbroken. This belt-and-suspenders approach is what most major deployments use today, because it provides immediate quantum protection without abandoning the well-tested classical algorithms that have decades of cryptanalysis behind them." }
+    },
+    {
+      "@type": "Question",
+      "name": "When will quantum computers actually break current encryption?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mainstream expert estimates range from the early 2030s to the mid-2040s for a cryptographically relevant quantum computer capable of breaking RSA-2048. Estimates differ because progress on error-corrected qubits is hard to predict. What is not uncertain is the timeline for migrating the internet to post-quantum cryptography — that work needs to happen years ahead of the threat, which is why standardization happened in 2024 and major rollouts are happening now." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will post-quantum cryptography slow down my VPN?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not noticeably. Post-quantum key exchange adds a small amount of data to the initial connection handshake and a few extra milliseconds of computation. For everyday use — browsing, streaming, calls, downloads — the difference is imperceptible. Once the handshake is complete, traffic flows at full VPN speed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is OllaVPN post-quantum ready?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OllaVPN is built post-quantum-ready from day one, available on every connection — free and paid alike — without any configuration. The same future-readiness is available to lifetime free users at no cost. You can try it without an email or card." }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Post-quantum cryptography terms",
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Post-quantum cryptography (PQC)",
+      "description": "A family of encryption algorithms designed to remain secure against attacks by quantum computers."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Harvest now, decrypt later (HNDL)",
+      "description": "The practice of capturing encrypted traffic today and storing it for decryption years later, once quantum computers become powerful enough."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "ML-KEM (FIPS 203)",
+      "description": "The NIST-standardized post-quantum key-encapsulation mechanism based on the Kyber algorithm, finalized in August 2024."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "ML-DSA (FIPS 204)",
+      "description": "The NIST-standardized post-quantum digital signature algorithm based on Dilithium, finalized in August 2024."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hybrid post-quantum mode",
+      "description": "A handshake that combines a classical algorithm and a post-quantum algorithm, remaining secure as long as either one is unbroken."
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ollavpn.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "What Is Post-Quantum Cryptography?", "item": "https://ollavpn.com/blog/what-is-post-quantum-cryptography.html" }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%); pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 800px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em; line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text); }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim); margin-top: 20px; max-width: 720px; }
+
+  .article {
+    max-width: 760px; margin: 0 auto;
+    padding: 12px 28px 56px;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p, .article > ul, .article > ol { margin: 0 0 1.15em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600; letter-spacing: -0.02em;
+    font-size: 28px; margin: 2.2em 0 0.6em; color: var(--text); scroll-margin-top: 96px;
+  }
+  .article h3 {
+    font-family: var(--display); font-weight: 600; letter-spacing: -0.015em;
+    font-size: 20px; margin: 1.8em 0 0.5em; color: var(--text);
+  }
+  .article ul, .article ol { margin: 0 0 1.2em; padding-left: 1.3em; }
+  .article ul li, .article ol li { margin: 0.4em 0; }
+  .article ul li::marker { color: var(--red); }
+  .article strong { font-weight: 600; color: var(--text); }
+  .article em { font-style: italic; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+  .article hr { border: 0; border-top: 1px solid var(--line); margin: 2.4em auto; max-width: 80px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 22px 26px; margin: 0 0 1.4em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red); letter-spacing: 0.06em; text-transform: uppercase; }
+  .tldr p { margin: 8px 0 0; }
+
+  .answer-card {
+    border-left: 3px solid var(--red);
+    background: rgba(238,62,71,0.04);
+    padding: 14px 18px;
+    margin: 0 0 1.2em;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+  }
+  .answer-card .q-label { font-family: var(--mono); font-size: 10px; color: var(--red); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+  .toc { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 20px 26px; margin: 0 0 2.2em; }
+  .toc .label { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; }
+  .toc ol { margin: 12px 0 0; padding-left: 1.4em; columns: 2; column-gap: 32px; }
+  .toc ol li { font-size: 14px; line-height: 1.6; break-inside: avoid; margin: 0; }
+  .toc ol li a { color: var(--text); text-decoration: none; }
+  .toc ol li a:hover { color: var(--red); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  @media (max-width: 640px) { .toc ol { columns: 1; } }
+
+  .compare {
+    width: 100%; border-collapse: collapse; margin: 1.4em 0;
+    border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: 14px;
+  }
+  .compare th, .compare td {
+    padding: 14px 16px; text-align: left; vertical-align: top;
+    border-bottom: 1px solid var(--line); border-right: 1px solid var(--line);
+  }
+  .compare th { background: var(--panel); font-weight: 600; color: var(--text); font-size: 13px; }
+  .compare td:last-child, .compare th:last-child { border-right: 0; }
+  .compare tr:last-child td { border-bottom: 0; }
+  .compare td:first-child { font-weight: 600; color: var(--text); width: 30%; }
+
+  .timeline {
+    border: 1px solid var(--line); border-radius: 12px;
+    background: #fff; padding: 22px 26px; margin: 1.6em 0;
+  }
+  .timeline-row {
+    display: grid; grid-template-columns: 110px 1fr; gap: 18px;
+    padding: 12px 0; border-bottom: 1px solid var(--line);
+  }
+  .timeline-row:last-child { border-bottom: 0; }
+  .timeline-row .year {
+    font-family: var(--mono); font-size: 13px; color: var(--red);
+    font-weight: 600; letter-spacing: 0.04em;
+  }
+  .timeline-row .event {
+    font-size: 15px; line-height: 1.55; color: var(--text);
+  }
+  .timeline-row .event strong { color: var(--text); }
+
+  .pull-card {
+    border: 1px solid rgba(238,62,71,0.35);
+    background: linear-gradient(180deg, rgba(238,62,71,0.07), rgba(238,62,71,0.01));
+    border-radius: 12px; padding: 24px 26px; margin: 1.8em 0;
+  }
+  .pull-card .pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+  .pull-card .pricing .tier { border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; background: #fff; }
+  .pull-card .pricing .tier .label { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; text-transform: uppercase; }
+  .pull-card .pricing .tier .price { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-top: 4px; }
+  .pull-card .pricing .tier .desc { font-size: 13px; color: var(--text-dim); margin-top: 6px; line-height: 1.45; }
+  @media (max-width: 720px) { .pull-card .pricing { grid-template-columns: 1fr; } }
+
+  .checklist {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 1.6em 0;
+    background: var(--panel);
+  }
+  .checklist h4 { font-family: var(--display); font-size: 17px; font-weight: 600; margin: 0 0 10px; color: var(--text); }
+  .checklist ul { margin: 0; padding-left: 1.4em; }
+  .checklist ul li { font-size: 15px; line-height: 1.55; margin: 8px 0; color: var(--text); }
+
+  .related-posts { margin: 2.2em 0 0; border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; background: var(--panel); }
+  .related-posts h3 { font-family: var(--display); font-size: 17px; font-weight: 600; margin: 0 0 12px; color: var(--text); }
+  .related-posts ul { margin: 0; padding-left: 1.2em; }
+  .related-posts ul li { font-size: 15px; line-height: 1.6; color: var(--text-dim); margin: 6px 0; }
+
+  .footnote { max-width: 760px; margin: 0 auto; padding: 0 28px 56px; font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+
+  .author-row { display: flex; align-items: center; gap: 14px; margin-top: 22px; font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .author-row .dot-sep { color: var(--line); }
+
+  /* Pillar 3-column layout — hidden by default; shown at >= 1200px. */
+  .pillar-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1240px;
+    margin: 0 auto;
+    gap: 0;
+  }
+  .pillar-sidebar-left, .pillar-sidebar-right { display: none; }
+  @media (min-width: 1200px) {
+    .pillar-layout {
+      grid-template-columns: 200px minmax(0, 1fr) 240px;
+      padding: 0 28px;
+      gap: 32px;
+      align-items: start;
+    }
+    .pillar-layout > .article {
+      max-width: 100%;
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .pillar-sidebar-left, .pillar-sidebar-right {
+      display: block;
+      position: sticky;
+      top: 24px;
+      font-size: 14px;
+    }
+  }
+  .pillar-sidebar h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-mute);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .pillar-sidebar-list { list-style: none; padding: 0; margin: 0 0 28px; }
+  .pillar-sidebar-list li { margin: 0; }
+  .pillar-sidebar-list a {
+    display: block;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .pillar-sidebar-list a:hover { color: var(--red); }
+  .pillar-card-mini {
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    margin-bottom: 24px;
+  }
+  .pillar-card-mini h4 { border-bottom: none; padding-bottom: 4px; margin-bottom: 10px; }
+  .pillar-card-mini p.smallcopy { font-size: 13px; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
+  .pillar-card-mini .btn { display: block; text-align: center; }
+  .pillar-author-mini { display: flex; gap: 12px; align-items: flex-start; }
+  .pillar-author-mini .avatar {
+    flex: none;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(238,62,71,0.12);
+    color: var(--red);
+    display: grid; place-items: center;
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    border: 1px solid rgba(238,62,71,0.3);
+  }
+  .pillar-author-mini .meta { line-height: 1.35; }
+  .pillar-author-mini .meta a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .pillar-author-mini .role { font-size: 12px; color: var(--text-mute); }
+</style>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<!-- Top utility bar - networkershome.com pattern: a thin mono-typeface
+     row above the main nav for live status + secondary links. -->
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="wrap">
+    <span class="meta">Privacy guide · Pillar · 2026 · 05 · 16</span>
+    <h1>What Is Post-Quantum Cryptography? A 2026 Guide for Anyone Who Cares About Privacy</h1>
+    <p class="lede">The plain-English guide to one of the most important — and most misunderstood — shifts happening in internet security right now. What post-quantum cryptography actually is, why it matters this decade rather than next, and what to look for in a future-ready VPN.</p>
+<div class="article-byline">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div class="author-meta">
+        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
+        <div class="author-role">Privacy &amp; Security Lead</div>
+      </div>
+      <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pillar-layout">
+  <aside class="pillar-sidebar pillar-sidebar-left" aria-label="More from OllaVPN">
+  <div class="pillar-card-mini">
+    <h4>By the author</h4>
+    <div class="pillar-author-mini">
+      <div class="avatar" aria-hidden="true">NP</div>
+      <div class="meta">
+        <a href="/about/team#nathan-pratt">Nathan Pratt</a>
+        <div class="role">Privacy &amp; Security Lead</div>
+      </div>
+    </div>
+  </div>
+  <h4>More pillars</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="what-is-post-quantum-cryptography.html">Post-quantum cryptography</a></li>
+    <li><a href="what-is-a-dns-leak.html">DNS leaks</a></li>
+    <li><a href="what-is-a-vpn-kill-switch.html">Kill switches</a></li>
+    <li><a href="five-eyes-nine-eyes-fourteen-eyes.html">Five Eyes alliances</a></li>
+    <li><a href="what-is-multi-hop-vpn.html">Multi-hop VPN</a></li>
+    <li><a href="what-logs-does-vpn-keep.html">What VPNs log</a></li>
+  </ul>
+  <h4>Comparisons</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a></li>
+    <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a></li>
+    <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN</a></li>
+    <li><a href="nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a></li>
+  </ul>
+  <div class="pillar-card-mini">
+    <h4>Try OllaVPN</h4>
+    <p class="smallcopy">Free forever. 10&nbsp;Mbps. Every country. No card.</p>
+    <a class="btn primary" href="/dl/">Download free →</a>
+  </div>
+</aside>
+  <article class="article">
+
+  <div class="tldr">
+    <div class="label">TL;DR — The Short Answer</div>
+
+  <a class="post-cta" href="/dl/" style="display:flex;align-items:center;gap:14px;margin:28px 0 0;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,rgba(220,38,38,0.06),var(--panel));text-decoration:none;color:inherit;transition:border-color .15s ease,transform .15s ease;">
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:10px;background:var(--red);color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">S</span>
+    <span style="flex:1;font-size:15px;line-height:1.45;color:var(--text);">
+      <strong>Try OllaVPN free — post-quantum-ready, lifetime free plan.</strong>
+      <span style="display:block;color:var(--text-mute);font-size:13px;margin-top:2px;">No credit card. Or $2/mo for 5 devices on a faster plan.</span>
+    </span>
+    <span style="font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:0.06em;flex-shrink:0;">DOWNLOAD →</span>
+  </a>
+
+    <p><strong>Post-quantum cryptography (PQC)</strong> is a new family of encryption algorithms designed to remain secure even when powerful quantum computers eventually exist. Today's encryption protects most of the internet, but it's based on math problems that a sufficiently advanced quantum computer could one day solve. The threat that matters <em>today</em> is called <strong>"harvest now, decrypt later"</strong> — adversaries capturing encrypted traffic right now to decrypt years from now. In response, the U.S. National Institute of Standards and Technology finalized three post-quantum standards in 2024, and companies like Apple, Signal, Google, Cloudflare, and Mullvad have already deployed PQC in production. <a href="../dl/">OllaVPN is built PQC-ready</a> on every connection, including the lifetime free plan.</p>
+  </div>
+
+  <div class="toc">
+    <div class="label">Jump to a section</div>
+    <ol>
+      <li><a href="#why-now">Why this matters now</a></li>
+      <li><a href="#the-padlock">A simple analogy — the padlock</a></li>
+      <li><a href="#what-is-pqc">What post-quantum cryptography actually is</a></li>
+      <li><a href="#hndl">"Harvest now, decrypt later"</a></li>
+      <li><a href="#quantum-timeline">When quantum computers might arrive</a></li>
+      <li><a href="#nist">The new NIST standards</a></li>
+      <li><a href="#families">The four math families of PQC</a></li>
+      <li><a href="#hybrid">Hybrid mode — belt and suspenders</a></li>
+      <li><a href="#real-world">Who has already deployed PQC</a></li>
+      <li><a href="#vpn-context">What PQC means for a VPN specifically</a></li>
+      <li><a href="#government">Government and standards bodies</a></li>
+      <li><a href="#myths">Five myths about post-quantum cryptography</a></li>
+      <li><a href="#choose">How to evaluate a PQC-ready VPN</a></li>
+      <li><a href="#ollavpn">How OllaVPN handles PQC</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </div>
+
+  <p>If you've come across the phrase <em>"post-quantum cryptography"</em> in a news article, a software update note, or a VPN comparison and wondered what exactly it means and whether it matters to you — this is the guide for you. Written in plain English, with real examples, by people who care about getting it right.</p>
+
+  <p>We won't pretend this is a topic with no nuance. It isn't. But the central ideas are accessible to anyone, and understanding them will change how you think about the encryption that runs almost every interaction you have online.</p>
+
+  <h2 id="why-now">Why this matters now (not in ten years)</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    The internet is in the middle of a quiet but historic upgrade — the first major change to how online encryption works in over twenty years. The reason is the rise of quantum computing, which will eventually be able to break much of the encryption protecting the internet today. The work to replace it is happening now because it takes years to roll out a new standard safely.
+  </div>
+
+  <p>Here is a fact that surprises most people the first time they hear it: <strong>almost all sensitive traffic on the internet today is protected by a small number of cryptographic algorithms designed in the 1970s</strong>. RSA. Diffie-Hellman. Elliptic-curve variants of those. They have been adjusted, hardened, and re-implemented many times, but the underlying mathematics is from another era of computing.</p>
+
+  <p>Those algorithms have aged remarkably well. For half a century, they have resisted every serious attack that classical computers have thrown at them. The encryption that protects your bank login, your medical records, your encrypted messages, and your VPN tunnel rests on a small set of math problems that classical computers simply cannot solve in any reasonable amount of time.</p>
+
+  <p>The thing that changes the picture is <strong>quantum computing</strong>. A quantum computer is not just a faster classical computer; it is a fundamentally different kind of machine that can solve certain problems exponentially faster than any classical computer ever could. And as it turns out, several of those problems are <em>exactly</em> the ones that today's most common encryption algorithms rely on for their security.</p>
+
+  <p>That is why this matters now. The encryption that protects the internet was designed without quantum computers in mind. Replacing it is a generational engineering project, and it is well underway.</p>
+
+  <h2 id="the-padlock">A simple analogy — the padlock</h2>
+
+  <p>Forget the math for a moment. Imagine you are sending a small box across a long, unsafe journey. Anyone on the route can pick the box up, but they cannot open it without the key.</p>
+
+  <p>Today's internet uses a kind of digital padlock that requires solving a hard puzzle to open without the key. The puzzle is so hard that, with the best classical computers humanity has ever built, breaking the padlock would take longer than the age of the universe. So your box arrives safely.</p>
+
+  <p>A <strong>quantum computer</strong> is a new kind of puzzle-solver that, in theory, could open this particular padlock in hours instead of trillions of years. Quantum computers powerful enough to actually do this don't exist yet — but researchers are building them.</p>
+
+  <p><strong>Post-quantum cryptography</strong> is a new family of padlocks, designed to resist this new kind of puzzle-solver. The puzzles are based on different math — math that researchers believe both classical and quantum computers will still find very hard to solve.</p>
+
+  <p>That is the whole story, in one paragraph. The rest is detail.</p>
+
+  <h2 id="what-is-pqc">What post-quantum cryptography actually is</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Post-quantum cryptography (PQC) is a set of encryption and digital-signature algorithms built on mathematical problems that are believed to be hard for both classical and quantum computers. Unlike "quantum cryptography" (which uses quantum physics directly), PQC runs on the regular computers we already have.
+  </div>
+
+  <p>Two terms get confused in casual reading. Let's keep them straight.</p>
+
+  <ul>
+    <li><strong>Quantum cryptography</strong> uses the physics of quantum mechanics to send keys in a way that physically cannot be intercepted without detection. It requires specialized hardware. It is not what we're discussing here.</li>
+    <li><strong>Post-quantum cryptography</strong> is software. It runs on ordinary computers — phones, laptops, routers, servers. It uses new math instead of new physics. This is the practical, near-term answer to the quantum threat.</li>
+  </ul>
+
+  <p>Post-quantum cryptography is, in other words, the kind of fix the internet can actually deploy at scale. No new hardware. No specialized hardware. Just better math.</p>
+
+  <h2 id="hndl">"Harvest now, decrypt later" — the threat that matters today</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Harvest now, decrypt later (HNDL) is the practice of capturing encrypted internet traffic today and storing it for future decryption once quantum computers become powerful enough. It is treated as a real, ongoing threat by major governments and security companies — not a theoretical one. It is the central reason post-quantum cryptography matters this decade, not next.
+  </div>
+
+  <p>The most common misunderstanding about post-quantum cryptography is the idea that it only matters once quantum computers exist. That is wrong, and the reason is a deceptively simple pattern called <strong>"harvest now, decrypt later"</strong>, sometimes abbreviated <strong>HNDL</strong> or <strong>"store now, decrypt later"</strong>.</p>
+
+  <p>Here is the pattern in one sentence: <em>capture the encrypted data today, store it, decrypt it when quantum computers are ready, even if that's ten or fifteen years from now.</em></p>
+
+  <p>This isn't a theoretical concern. The U.S. government, the European Union, and major intelligence services in friendly and unfriendly nations alike are widely understood to be doing exactly this — vacuuming up encrypted traffic for archival. The Federal Reserve has published research on HNDL risk. The U.S. National Security Agency has explicitly warned about it. Major cybersecurity vendors treat it as a routine part of their threat modeling.</p>
+
+  <p>The data that matters most under this threat model isn't the trivial. It's <strong>anything that will still be sensitive in ten or twenty years</strong>: medical records, financial histories, government cables, journalist-source communications, business strategy, intellectual property, personal photos and messages, identity documents. The encrypted version sits in some archive somewhere right now. The decrypted version, eventually, will be readable.</p>
+
+  <p>This is why the rollout of post-quantum cryptography is happening today, ahead of the threat. <strong>The encryption you use this year is protecting traffic against attackers who will have quantum computers years from now.</strong> The earlier the upgrade, the more of your past traffic remains permanently safe.</p>
+
+  <h2 id="quantum-timeline">When quantum computers might actually arrive</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Today's quantum computers have hundreds to a few thousand physical qubits. Breaking the most common public-key encryption would require millions of error-corrected qubits. Mainstream expert estimates put the arrival of cryptographically relevant quantum computers between the early 2030s and the mid-2040s — but the work to replace today's encryption needs to happen years ahead of that.
+  </div>
+
+  <p>Let's be honest about the timeline, because exaggerating it serves nobody.</p>
+
+  <p>Quantum computers exist today, in real labs, doing real work. IBM has built quantum processors with more than a thousand physical qubits. Companies including Google, IonQ, Quantinuum, and Atom Computing all run real machines. They are remarkable engineering achievements.</p>
+
+  <p>They are also, as of today, nowhere close to breaking RSA-2048 or the elliptic-curve cryptography that protects most of the internet. The reason is <strong>error correction</strong>. Quantum bits are extremely fragile, and one logical qubit — the kind you can actually do cryptographic work with — requires hundreds or thousands of physical qubits. Breaking modern encryption is estimated to need millions of error-corrected logical qubits, which means tens or hundreds of millions of physical qubits.</p>
+
+  <p>Mainstream expert estimates for when a <strong>cryptographically relevant quantum computer (CRQC)</strong> will exist:</p>
+
+  <ul>
+    <li><strong>Optimistic forecasts:</strong> early 2030s</li>
+    <li><strong>Mainstream forecasts:</strong> 2035-2045</li>
+    <li><strong>Pessimistic forecasts:</strong> later than 2050, or maybe never at scale</li>
+  </ul>
+
+  <p>Reasonable people disagree about the exact year. But almost everyone in the field agrees on two things: <strong>it will eventually happen</strong>, and <strong>the upgrade to post-quantum cryptography needs to happen well before it does</strong>, because rolling out new cryptography across the entire internet takes years.</p>
+
+  <h2 id="nist">The new NIST standards — the 2024 milestone</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    In August 2024, the U.S. National Institute of Standards and Technology (NIST) finalized the first three post-quantum standards: FIPS 203 (ML-KEM, for key exchange), FIPS 204 (ML-DSA, for digital signatures), and FIPS 205 (SLH-DSA, a backup signature scheme). These standards define what "post-quantum-ready" means in practice.
+  </div>
+
+  <p>If post-quantum cryptography has felt fuzzy until now — a vague future thing — the reason it suddenly became concrete in 2024 is the finalization of formal standards. Standards are how the internet moves as a whole, not in pieces.</p>
+
+  <p>The body that did the work is the U.S. <strong>National Institute of Standards and Technology (NIST)</strong>, which has run public competitions to standardize cryptography since the 1970s. AES — the symmetric encryption that protects most of the data on the internet today — came out of a NIST competition. SHA-2 and SHA-3 came out of NIST processes. NIST's PQC competition was started in 2016 and ran for eight years.</p>
+
+  <p>In August 2024, NIST finalized three post-quantum standards:</p>
+
+  <ul>
+    <li><strong>FIPS 203 — ML-KEM</strong> (Module-Lattice-based Key-Encapsulation Mechanism, formerly known as Kyber). This is the most important one for everyday traffic. It replaces the part of a secure connection that exchanges a shared secret key.</li>
+    <li><strong>FIPS 204 — ML-DSA</strong> (Module-Lattice-based Digital Signature Algorithm, formerly Dilithium). This is for digital signatures — proving who signed something, like a software update or a TLS certificate.</li>
+    <li><strong>FIPS 205 — SLH-DSA</strong> (Stateless Hash-based Digital Signature Algorithm, formerly SPHINCS+). Another signature scheme, based on different math, kept as a backup in case lattice-based approaches turn out to have weaknesses.</li>
+  </ul>
+
+  <p>A fourth algorithm, <strong>FN-DSA</strong> (formerly Falcon), is expected to be finalized soon. NIST is also running a fourth round to standardize <strong>HQC</strong> (a code-based algorithm) as an additional backup for key encapsulation.</p>
+
+  <p>What you should remember: the standards exist, the competition has finished, the math has been vetted by years of public cryptanalysis, and major implementations are now rolling out.</p>
+
+  <h2 id="families">The four math families of post-quantum cryptography</h2>
+
+  <p>The candidates in the NIST competition came from four broad mathematical families. You don't need to know the math, but knowing the names lets you read tech-news articles without feeling lost.</p>
+
+  <table class="compare">
+    <thead>
+      <tr><th>Family</th><th>Based on</th><th>NIST-standardized examples</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Lattice-based</strong></td>
+        <td>Hard problems on geometric lattices in many dimensions</td>
+        <td>ML-KEM, ML-DSA, FN-DSA</td>
+      </tr>
+      <tr>
+        <td><strong>Hash-based</strong></td>
+        <td>The security of cryptographic hash functions (very well understood)</td>
+        <td>SLH-DSA</td>
+      </tr>
+      <tr>
+        <td><strong>Code-based</strong></td>
+        <td>Error-correcting codes; the basis of Classic McEliece (which Mullvad uses)</td>
+        <td>HQC (in fourth round)</td>
+      </tr>
+      <tr>
+        <td><strong>Multivariate</strong></td>
+        <td>Systems of multivariate polynomial equations</td>
+        <td>None (broken during competition)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Lattice-based schemes have emerged as the practical default — they're fast, the keys aren't huge, and decades of mathematical study back them. Hash-based schemes are slower with larger signatures, but they are based on the most well-understood mathematical primitive in cryptography, so they're kept as conservative backups.</p>
+
+  <h2 id="hybrid">Hybrid mode — the belt-and-suspenders approach</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Most early post-quantum deployments use a hybrid mode that combines a classical algorithm and a post-quantum algorithm in the same handshake. The connection stays secure as long as either algorithm holds up. This protects against quantum attacks AND against the small chance that a flaw is later discovered in the new post-quantum math.
+  </div>
+
+  <p>One of the smartest moves the industry made early in the post-quantum rollout was the decision to use <strong>hybrid modes</strong>: combine a well-tested classical algorithm with a new post-quantum algorithm in the same handshake. The connection stays secure as long as <em>either</em> one remains unbroken.</p>
+
+  <p>The logic is simple. Post-quantum algorithms are new, and new algorithms occasionally turn out to have flaws that aren't visible until years of public scrutiny. We don't want to bet the entire internet on math that hasn't yet had decades of attempts to break it. So during the transition years — roughly 2023 through the early 2030s — most deployments combine the old and the new.</p>
+
+  <p>You'll see hybrids written like <code>X25519Kyber768</code> (a classical X25519 key exchange combined with the post-quantum Kyber-768). Google Chrome uses exactly this hybrid in TLS. Cloudflare supports it. Signal's PQXDH does the same conceptual thing for messaging. Mullvad's quantum-resistant WireGuard tunnels combine Classic McEliece with the classical WireGuard handshake.</p>
+
+  <p>The cost of hybrids is small: a few extra kilobytes of data on the initial handshake and a few extra milliseconds of computation. The benefit is large: belt-and-suspenders protection during a period when nobody wants to commit fully to either side alone.</p>
+
+  <h2 id="real-world">Who has already deployed post-quantum cryptography</h2>
+
+  <p>This isn't theoretical. Here is what has actually shipped, in production, to billions of users.</p>
+
+  <div class="timeline">
+    <div class="timeline-row">
+      <div class="year">Aug 2016</div>
+      <div class="event">NIST opens the <strong>Post-Quantum Cryptography competition</strong>. Eight years of public cryptanalysis follow.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="year">Oct 2022</div>
+      <div class="event"><strong>Cloudflare</strong> begins supporting hybrid post-quantum key exchange across its edge network.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="year">May 2022</div>
+      <div class="event">The White House issues <strong>National Security Memorandum 10 (NSM-10)</strong>, directing federal agencies to migrate to quantum-resistant cryptography.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="year">Sep 2022</div>
+      <div class="event">The NSA publishes <strong>CNSA 2.0</strong>, the next-generation cryptography suite for U.S. national-security systems, requiring PQC migration by 2033.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="year">2023</div>
+      <div class="event"><strong>Mullvad</strong> ships post-quantum-safe WireGuard tunnels using a Classic McEliece + Kyber hybrid — among the first commercial VPNs to do so.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="year">Aug 2023</div>
+      <div class="event"><strong>Google Chrome</strong> rolls out the X25519Kyber768 hybrid in TLS 1.3, defaulted to on for most users in 2024.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="year">Sep 2023</div>
+      <div class="event"><strong>Signal</strong> launches PQXDH, upgrading its X3DH key-agreement protocol to a post-quantum hybrid.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="year">2023</div>
+      <div class="event"><strong>Mullvad</strong> makes quantum-resistant tunnels the <strong>default on desktop</strong> — every new connection by default now uses post-quantum protection.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="year">Feb 2024</div>
+      <div class="event"><strong>Apple iMessage</strong> launches <strong>PQ3</strong>, a post-quantum upgrade to its end-to-end encrypted messaging protocol.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="year">Aug 2024</div>
+      <div class="event"><strong>NIST finalizes FIPS 203, 204, and 205</strong> — the first three post-quantum standards. The era of "experimental PQC" formally ends.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="year">2025 onward</div>
+      <div class="event">Broad industry rollout begins across browsers, messaging apps, cloud providers, and — increasingly — VPN services. <strong>OllaVPN</strong> ships PQC-ready from day one.</div>
+    </div>
+  </div>
+
+  <p>If you've been wondering "is this real yet?" — the answer is unambiguously yes. The internet's encryption layer has begun the largest single upgrade since SSL/TLS itself.</p>
+
+  <h2 id="vpn-context">What post-quantum cryptography means for a VPN specifically</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    A VPN's job is to encrypt all your traffic before it leaves your device. If that encryption is vulnerable to "harvest now, decrypt later," your VPN-protected sessions today could be readable in fifteen years. A post-quantum-ready VPN closes that window — the same encryption that protects you today is built to remain protective into the quantum era.
+  </div>
+
+  <p>Here is where post-quantum cryptography intersects directly with VPN choice.</p>
+
+  <p>A VPN's whole purpose is to encrypt your network traffic — to put it inside a tunnel that no one along the route between you and the VPN server can read. That tunnel is built on the same family of cryptographic algorithms that protects everything else on the internet. If the algorithms are vulnerable to quantum attack, the tunnel is too. If they're future-proofed against quantum attack, the tunnel is too.</p>
+
+  <p>Specifically, a modern VPN tunnel uses cryptography in two places:</p>
+
+  <ul>
+    <li><strong>The initial handshake</strong> — when your device and the VPN server agree on a shared secret. This is the part that is most vulnerable to "harvest now, decrypt later," because the handshake is what an attacker would capture and replay against a future quantum computer to recover the session key.</li>
+    <li><strong>The symmetric encryption</strong> for the rest of the session. Most VPNs use AES-256 or ChaCha20 for this, both of which are <strong>much more resistant to quantum attack</strong> than public-key algorithms. Symmetric encryption needs roughly double the key length to maintain security against quantum attack — AES-256 is already strong enough.</li>
+  </ul>
+
+  <p>The handshake is the thing that needs upgrading. Post-quantum-ready VPNs replace or supplement the handshake with PQC algorithms, while keeping the strong symmetric encryption already in place. The result is a tunnel that is genuinely future-ready end-to-end.</p>
+
+  <h2 id="government">Government, standards bodies, and the regulatory picture</h2>
+
+  <p>If you only ever read VPN marketing material, you might be forgiven for thinking post-quantum cryptography is a small-tech-company concern. It is not. Government bodies have been driving this transition aggressively for years.</p>
+
+  <ul>
+    <li><strong>The White House</strong> issued National Security Memorandum 10 (May 2022), directing all federal agencies to begin migrating to PQC.</li>
+    <li><strong>The NSA</strong> published its Commercial National Security Algorithm Suite 2.0 in September 2022, requiring PQC adoption for national-security systems with a target completion date of 2033.</li>
+    <li><strong>NIST</strong> ran the multi-year PQC standardization competition and finalized the first standards in August 2024.</li>
+    <li><strong>The European Telecommunications Standards Institute (ETSI)</strong> has worked on PQC standards in parallel with NIST since 2014.</li>
+    <li><strong>The Internet Engineering Task Force (IETF)</strong> has been incorporating PQC into TLS, SSH, and other protocol standards.</li>
+  </ul>
+
+  <p>This level of coordinated public-sector activity is what drives industry adoption. When the U.S. government tells contractors they have until 2033 to migrate, the migration happens — and it happens early, because nobody wants to be the last vendor without PQC support.</p>
+
+  <h2 id="myths">Five myths about post-quantum cryptography</h2>
+
+  <h3>Myth 1: "Quantum computers don't exist yet, so PQC is premature."</h3>
+  <p>This misses the harvest-now-decrypt-later threat. Adversaries don't need quantum computers today — they only need patience. Storing encrypted data is cheap; future decryption is the bet. The earlier we upgrade, the more past traffic stays safe.</p>
+
+  <h3>Myth 2: "Post-quantum encryption is much slower than regular encryption."</h3>
+  <p>This was somewhat true for early experimental schemes. With the NIST-standardized algorithms, the performance cost is small — a few extra kilobytes on a handshake and a few milliseconds of computation. For VPNs, browsers, and messaging apps, it's imperceptible in everyday use.</p>
+
+  <h3>Myth 3: "If quantum computers can break encryption, they can break everything."</h3>
+  <p>Not really. Quantum computers are particularly effective against certain kinds of math problems (factoring, discrete logarithms). They have a smaller speedup against many other kinds of problems — including the ones that PQC algorithms rely on. PQC works because we deliberately chose math problems where quantum computers don't have a dramatic advantage.</p>
+
+  <h3>Myth 4: "Symmetric encryption like AES needs to be replaced too."</h3>
+  <p>AES is not broken by quantum attacks in the same way public-key encryption is. The relevant quantum algorithm (Grover's algorithm) provides a modest speedup, effectively halving the security margin of symmetric encryption. AES-256 is already strong enough that the post-quantum equivalent is — AES-256. The handshake is what needs upgrading, not the bulk encryption.</p>
+
+  <h3>Myth 5: "PQC means switching to quantum hardware."</h3>
+  <p>It does not. Post-quantum cryptography runs on ordinary computers. Your phone can do it. Your laptop can do it. A VPN server can do it. No new hardware is required — it's a pure software upgrade.</p>
+
+  <h2 id="choose">How to evaluate a PQC-ready VPN</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Look for: an explicit PQC capability described on the VPN's site, a hybrid mode that combines classical and post-quantum algorithms, no requirement that you manually enable it, no additional charge for it, and continued availability of standard features like the kill switch.
+  </div>
+
+  <p>Not every "post-quantum" claim is the same. Here's what actually matters when evaluating one.</p>
+
+  <div class="checklist">
+    <h4>The PQC-ready VPN checklist</h4>
+    <ul>
+      <li><strong>Explicit description of the post-quantum capability</strong> on the company's website or technical documentation — not just a vague mention. You should be able to find the algorithm names.</li>
+      <li><strong>Hybrid mode</strong> combining a classical and post-quantum algorithm — not a pure post-quantum-only mode (which is more aggressive than the industry consensus recommends today).</li>
+      <li><strong>Available on every connection by default</strong>, ideally without the user needing to flip any toggle. If PQC is buried in an advanced settings menu, most users won't ever benefit.</li>
+      <li><strong>No additional charge</strong> for PQC. Privacy upgrades should not be paywalled.</li>
+      <li><strong>Continued availability of standard features</strong> — kill switch, DNS leak protection, IPv6 handling — while PQC is enabled.</li>
+      <li><strong>An ongoing commitment to the standards</strong>. As NIST finalizes additional algorithms in coming years, the VPN's PQC mode should evolve to incorporate them.</li>
+    </ul>
+  </div>
+
+  <p>If a VPN claims post-quantum support but the details are missing, vague, or paywalled, treat the claim with friendly skepticism.</p>
+
+  <h2 id="ollavpn">How OllaVPN handles post-quantum cryptography</h2>
+
+  <p>We built <a href="/free-wireguard-vpn"><strong>OllaVPN</strong></a> to answer one question: <em>what should a modern, privacy-first VPN do automatically in 2026?</em> When it comes to post-quantum cryptography, the answer is straightforward.</p>
+
+  <ul>
+    <li><strong>Post-quantum cryptography is built in from day one</strong>, available on every connection. Not a roadmap item. Not a paid add-on. Not a setting buried three screens deep.</li>
+    <li><strong>Hybrid mode by default</strong>, combining the well-tested classical handshake with a post-quantum algorithm so your traffic stays protected as long as either one is unbroken.</li>
+    <li><strong>Available on the lifetime free plan</strong>. Privacy upgrades that matter aren't paywalled. Free users get the same future-readiness as paid users.</li>
+    <li><strong>An always-on kill switch</strong> that cannot be disabled. Privacy isn't a setting you should be able to accidentally turn off.</li>
+    <li><strong>DNS handled inside the encrypted tunnel</strong> by default — see our <a href="what-is-a-dns-leak.html">DNS leak guide</a> for what that means.</li>
+    <li><strong>Ongoing commitment to the standards</strong>. As NIST finalizes additional PQC algorithms in coming years, OllaVPN's mode will continue to evolve.</li>
+  </ul>
+
+  <div class="pull-card">
+    <p style="margin-bottom: 6px;"><strong>OllaVPN — PQC-ready out of the box:</strong></p>
+    <div class="pricing">
+      <div class="tier">
+        <div class="label">Lifetime free</div>
+        <div class="price">$0 · 10 Mbps</div>
+        <div class="desc">Post-quantum protection included. Every country we serve. No time limits. No data caps. No ads.</div>
+      </div>
+      <div class="tier">
+        <div class="label">Paid plan</div>
+        <div class="price">$2 / month · 10 Gbps</div>
+        <div class="desc">Same post-quantum protection, faster connection. Five devices on one account.</div>
+      </div>
+    </div>
+  </div>
+
+  <p>You can <a href="../dl/">try the free plan</a> right now — no email, no card, no upsell. The post-quantum protection is on from your first connection.</p>
+
+  <div class="related-posts">
+    <h3>Related reading</h3>
+    <ul>
+      <li><a href="mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN — including how Mullvad pioneered production PQC tunnels</a></li>
+      <li><a href="nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN — comparison of two privacy-focused VPN options</a></li>
+      <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN — value vs polish in mainstream consumer VPNs</a></li>
+      <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN — the two most-recognized names compared</a></li>
+      <li><a href="what-is-a-dns-leak.html">What is a DNS leak? How to test, fix, and prevent it</a></li>
+      <li><a href="../technology.html">Inside the OllaVPN stack — what PQC-ready actually means in our product</a></li>
+    </ul>
+  </div>
+
+  <hr />
+
+  
+<!-- TIER1-ENRICHED -->
+
+  <h2 id="tier1-deeper-context">Deeper context worth knowing</h2>
+  <p>A definitional explainer should leave you understanding not just the concept but the surrounding category — what other concepts it connects to, what common misunderstandings to avoid, and which adjacent ideas you should know about. A few worth covering:</p>
+  <p><strong>The category history matters.</strong> Most networking and privacy concepts you encounter today were invented to solve a specific problem that may or may not still be the dominant problem in 2026. Understanding why a concept exists helps you evaluate whether it's the right tool for your situation. We try to include the historical context for every "what is X" guide we publish.</p>
+  <p><strong>The standards-body work matters.</strong> Many privacy and networking concepts have a corresponding RFC, NIST publication, or IETF draft that defines them rigorously. The standard is the canonical source; vendor marketing pages and Wikipedia summaries are derivatives. When in doubt, find the standard.</p>
+  <p><strong>The threat model matters.</strong> The same concept can be a strong defense against one class of threat and useless against another. "Encrypted" doesn't mean "private" if the recipient is the threat actor. "Anonymized" doesn't mean "unlinkable" if you have enough side data. We try to be specific about what each property actually defends.</p>
+  <h2 id="tier1-related-ollavpn">How this connects to OllaVPN specifically</h2>
+  <p>If you've read this far, you probably want to know how the concept applies to OllaVPN's product. The short version:</p>
+  <p><strong>If the concept above is something a VPN should provide</strong> (no-logs, kill switch, in-tunnel DNS, peer isolation, post-quantum cryptography), OllaVPN ships it by default on the free tier. The cryptographic stack uses WireGuard with a hybrid X25519 + ML-KEM-768 handshake; the kill switch is enforced at the OS firewall layer (Windows Filtering Platform on Windows, Packet Filter on macOS, VpnService.setBlockingMode on Android); DNS goes to an in-tunnel unbound resolver with the OS DNS path firewall-blocked; peer isolation is enforced in four independent layers including an automated end-to-end test. Read the <a href="/technology">technology page</a> for the complete architecture.</p>
+  <p><strong>If the concept above is something only a VPN partially helps with</strong> (anonymity, censorship circumvention, streaming geo-unblock), OllaVPN does what a privacy VPN can do but the underlying limits of the category apply. We don't oversell capabilities we don't have. The <a href="/best-free-vpn-2026">best free VPN 2026 guide</a> covers what's realistic to expect from a free VPN versus what requires a paid tier or a different category of tool entirely.</p>
+  <p><strong>If the concept above is something a VPN doesn't help with at all</strong> (application-layer tracking, account-based identity, malware on your device, source-anonymity against a global passive adversary), we say so. A VPN replaces the ISP in the traffic-visibility role; it does not stop websites from tracking you, does not stop your accounts from identifying you, does not stop malware already on your device, and is not Tor. Use the right tool for each layer of the threat model.</p>
+
+  <h2 id="tier1-about">About this guide</h2>
+  <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
+  <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
+<div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>Why this matters now (not in ten years)</li>
+        <li>A simple analogy — the padlock</li>
+        <li>What post-quantum cryptography actually is</li>
+        <li>&quot;Harvest now, decrypt later&quot; — the threat that matters today</li>
+        <li>When quantum computers might actually arrive</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+
+  <h3>What is post-quantum cryptography in simple terms?</h3>
+  <p>Post-quantum cryptography (PQC) is a new family of encryption algorithms designed to remain secure even against future quantum computers. Today's most common encryption relies on math problems that classical computers can't solve quickly, but that a sufficiently powerful quantum computer eventually could. PQC algorithms are based on different math problems that researchers believe both classical and quantum computers will still struggle with.</p>
+
+  <h3>What is "harvest now, decrypt later"?</h3>
+  <p>Harvest now, decrypt later (HNDL) is the practice of capturing encrypted internet traffic today, storing it, and decrypting it years later once quantum computers are powerful enough. The U.S. government and major security companies treat HNDL as a real, ongoing risk. <strong>It's the central reason post-quantum cryptography matters now, not in ten years.</strong></p>
+
+  <h3>Do quantum computers exist that can break encryption today?</h3>
+  <p>Not yet. Today's quantum computers have hundreds to a few thousand physical qubits, but breaking widely used encryption like RSA-2048 would require millions of error-corrected qubits. <strong>Mainstream estimates put the arrival of cryptographically relevant quantum computers somewhere between 2030 and 2045</strong>, though the precise date is uncertain.</p>
+
+  <h3>What are the NIST post-quantum standards?</h3>
+  <p>In August 2024, NIST finalized three post-quantum standards. <strong>FIPS 203 (ML-KEM, based on Kyber)</strong> is for key establishment. <strong>FIPS 204 (ML-DSA, based on Dilithium)</strong> and <strong>FIPS 205 (SLH-DSA, based on SPHINCS+)</strong> are for digital signatures. These standards now define what "post-quantum-ready" means in practice.</p>
+
+  <h3>Which products already use post-quantum encryption?</h3>
+  <p><strong>Apple iMessage</strong> uses PQ3 (since February 2024). <strong>Signal</strong> launched PQXDH in September 2023. <strong>Google Chrome</strong> rolled out the X25519Kyber768 hybrid as default in 2024. <strong>Cloudflare</strong> has supported post-quantum TLS since 2022. <strong>Mullvad</strong> made post-quantum WireGuard tunnels the default on desktop in 2023.</p>
+
+  <h3>Does my VPN need post-quantum cryptography?</h3>
+  <p>If your threat model includes a well-resourced adversary who might be capturing your encrypted traffic today, the answer is <strong>yes</strong>. For most everyday users, post-quantum protection is a sensible long-term hedge rather than an immediate emergency. The good news is that adopting a PQC-ready VPN costs you nothing extra in speed or convenience.</p>
+
+  <h3>What is a hybrid post-quantum encryption mode?</h3>
+  <p>A hybrid mode combines a traditional encryption algorithm (like X25519) with a post-quantum algorithm (like ML-KEM) in the same handshake. <strong>The connection stays secure as long as either one remains unbroken.</strong> This belt-and-suspenders approach is what most major deployments use today.</p>
+
+  <h3>When will quantum computers actually break current encryption?</h3>
+  <p>Mainstream expert estimates range from the <strong>early 2030s to the mid-2040s</strong>. What is not uncertain is the timeline for migrating to post-quantum cryptography — that work needs to happen years ahead of the threat, which is why standardization happened in 2024 and major rollouts are happening now.</p>
+
+  <h3>Will post-quantum cryptography slow down my VPN?</h3>
+  <p><strong>Not noticeably.</strong> Post-quantum key exchange adds a small amount of data to the initial connection handshake and a few extra milliseconds of computation. For everyday use, the difference is imperceptible. Once the handshake is complete, traffic flows at full VPN speed.</p>
+
+  <h3>Is OllaVPN post-quantum ready?</h3>
+  <p>Yes. OllaVPN is built post-quantum-ready from day one, available on <strong>every connection — free and paid alike</strong> — without any configuration. The same future-readiness is available to lifetime free users at no cost. You can <a href="../dl/">try it</a> without an email or card.</p>
+
+    <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-post-quantum-cryptography" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-post-quantum-cryptography" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-post-quantum-cryptography&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-post-quantum-cryptography&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    </article>
+  <aside class="pillar-sidebar pillar-sidebar-right" aria-label="Related reading">
+  <h4>Related reading</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="what-is-a-vpn-and-how-does-it-work.html">What is a VPN?</a></li>
+    <li><a href="what-is-encrypted-client-hello.html">Encrypted Client Hello</a></li>
+    <li><a href="wireguard-vs-openvpn.html">WireGuard vs OpenVPN</a></li>
+    <li><a href="can-government-track-vpn.html">Can governments track VPNs?</a></li>
+    <li><a href="why-are-free-vpns-free.html">Why are free VPNs free?</a></li>
+    <li><a href="best-free-vpn-for-windows.html">Best free VPN for Windows</a></li>
+  </ul>
+  <h4>Buyer guides</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="/best-free-vpn-2026">Best free VPN 2026</a></li>
+    <li><a href="/free-vpn-mac">Free VPN for Mac</a></li>
+    <li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li>
+    <li><a href="/free-vpn-for-india">Free VPN for India</a></li>
+  </ul>
+  <div class="pillar-card-mini">
+    <h4>Tools you might like</h4>
+    <ul class="pillar-sidebar-list" style="margin:0;">
+      <li><a href="/what-is-my-ip">What is my IP</a></li>
+      <li><a href="/webrtc-leak-test">WebRTC leak test</a></li>
+      <li><a href="/dns-lookup">DNS lookup</a></li>
+      <li><a href="/tools/">All tools →</a></li>
+    </ul>
+  </div>
+</aside>
+</div>
+
+<p class="footnote">Pillar guide written and reviewed by the OllaVPN team. Sources include NIST FIPS 203/204/205 (2024), the U.S. National Security Memorandum on Quantum Computing (NSM-10, May 2022), NSA CNSA 2.0, public announcements from Apple, Signal, Cloudflare, Google, and Mullvad. We update this guide whenever the underlying landscape changes meaningfully.</p>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>PQC-ready · lifetime free · no card</span>
+    <h2 class="h-display h2 mt-16">Try OllaVPN <span class="accent">free for life</span>.</h2>
+    <div class="actions"><a class="btn primary xl" href="../dl/">Download free <span class="arrow">→</span></a><a class="btn xl" href="./">More from the blog →</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+<script src="../shared.js"></script>
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

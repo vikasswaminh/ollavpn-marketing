@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Warrant Canary — OllaVPN</title>
+<meta name="description" content="OllaVPN's warrant canary and transparency statement: the legal process we have and have not received, and how to read this signal." />
+<link rel="canonical" href="https://ollavpn.com/warrant-canary" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#0B0B12" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="Warrant Canary — OllaVPN" />
+<meta property="og:url" content="https://ollavpn.com/warrant-canary" />
+<link rel="stylesheet" href="styles.css?v=20260708-0556" />
+<style>
+.legal{max-width:820px;margin:0 auto;padding:48px 20px 72px}
+.legal h1{font-size:2rem;letter-spacing:-.02em;margin:0 0 8px}
+.legal .eff{color:var(--text-dim);font-size:.95rem;margin:0 0 32px}
+.legal h2{font-size:1.35rem;letter-spacing:-.02em;margin:40px 0 12px}
+.legal p,.legal li{color:var(--text-dim);line-height:1.7}
+.legal ul{padding-left:20px}
+.legal a{color:var(--red-2,#8F73FF)}
+.legal .lede{color:var(--text);font-size:1.05rem}
+.legal .canary{border:1px solid var(--line,rgba(255,255,255,.12));border-radius:12px;padding:20px 22px;margin:20px 0;background:rgba(255,255,255,.02)}
+.legal .canary p{color:var(--text)}
+.legal .status{color:var(--text-dim);font-size:.9rem;margin-top:8px}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <!-- Product — mega-dropdown -->
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technology — mega-dropdown -->
+      <div class="nav-item">
+        Technology <span class="caret">▾</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum handshake</a>
+              <a href="/pqc">WireGuard hybrid</a>
+              <a href="/pqc">Forward secrecy</a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Network topology</a>
+              <a href="/peer-isolation">Tunnel addressing (CGNAT)</a>
+              <a href="/peer-isolation">Exit operation</a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/in-tunnel-dns">DNS-leak defense</a>
+              <a href="/in-tunnel-dns">IPv6 handling</a>
+              <a href="/peer-isolation">Abuse defense</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing — mega-dropdown -->
+      <a href="/pricing">Pricing</a>
+
+      <!-- Resources — mega-dropdown -->
+      <div class="nav-item">
+        Resources <span class="caret">▾</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apps / Download — flat links (no dropdown needed for single-target items) -->
+      <a href="apps.html">Apps</a>
+      <a href="dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="dl/">Download free <span class="arrow">→</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+<main class="legal">
+<article>
+<h1>Warrant Canary</h1>
+<p class="eff">Last updated 11 July 2026.</p>
+
+<p class="lede">A warrant canary is a statement we can make freely, and would quietly stop making if it were no longer true. Because we can lawfully remain silent, the <em>absence</em> of an updated statement is the signal &mdash; not any explicit announcement.</p>
+
+<div class="canary">
+<p>As of <strong>11 July 2026</strong>, OllaVPN attests that:</p>
+<ul>
+<li>We have <strong>not</strong> received any National Security Letter, FISA order, or equivalent secret legal process.</li>
+<li>We have <strong>not</strong> received any court order, gag order, or government request that would compel us to compromise the security, privacy, or cryptographic guarantees of the service or its users.</li>
+<li>We have <strong>not</strong> been required to log, surveil, backdoor, or alter user traffic in any way that contradicts our <a href="/privacy">Privacy Policy</a>.</li>
+<li>We have <strong>not</strong> been required to retain data beyond what our Privacy Policy describes, nor to provide bulk access to any third party.</li>
+<li>No OllaVPN private cryptographic key has been disclosed to any third party.</li>
+</ul>
+<p class="status">This statement reflects our situation as of the date above and is made to the best knowledge of OllaVPN&rsquo;s operators.</p>
+</div>
+
+<h2>How to read this canary</h2>
+<ul>
+<li>We refresh this statement on a regular cadence. If it is <strong>not</strong> refreshed for an extended period, or if any of the statements above are removed, treat that as a meaningful change in our circumstances &mdash; do not wait for an explicit explanation, which a gag order could prevent us from giving.</li>
+<li>Missing a single refresh could be an operational slip; a prolonged absence should be treated as the alarm.</li>
+</ul>
+
+<h2>Cryptographic signing</h2>
+<p>We are standing up hardware-backed PGP signing so that each future statement can be independently verified against a pre-published key fingerprint and mirrored to an external archive. Until that key is published, treat this page as our plain-text transparency statement rather than a cryptographically signed attestation. We will publish the key fingerprint here and in our Privacy Policy when it is live.</p>
+
+<h2>Transparency reporting</h2>
+<p>If we ever receive lawful requests we are permitted to disclose, we will summarize their number and category in a periodic transparency report. To date there is nothing to report. For security disclosures, contact <a href="mailto:security@ollavpn.com">security@ollavpn.com</a>.</p>
+</article>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="brand"><span class="brand-mark"></span>OllaVPN</div>
+        <p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN. Lifetime free plan or $2/month for 5 devices.</p>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="/apps">Apps</a></li><li><a href="/technology">Technology</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li><li><a href="https://login.ollavpn.com/">Dashboard</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/careers">Careers</a></li><li><a href="/contact">Contact</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span>
+      <span class="badges"><span>POST-QUANTUM READY</span><span>NO LOGS</span><span>LIFETIME FREE</span></span>
+    </div>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>

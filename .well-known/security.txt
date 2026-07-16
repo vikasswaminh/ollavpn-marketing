@@ -1,0 +1,20 @@
+# OllaVPN security disclosure policy
+# https://ollavpn.com/.well-known/security.txt
+# RFC 9116 compliant.
+
+Contact: mailto:security@ollavpn.com
+Contact: mailto:security@ollavpn.com
+Expires: 2027-05-16T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://ollavpn.com/.well-known/security.txt
+Policy: https://ollavpn.com/warrant-canary
+
+# Coordinated-disclosure window: 90 days from confirmed-receipt.
+# We treat security researchers with respect and respond promptly.
+# Hall of thanks: see SECURITY.md in the source repo.
+#
+# Out-of-scope:
+#   - marketing-site cosmetic issues
+#   - third-party services we link to but don't operate
+#     (e.g. Cloudflare Pages, GitHub)
+#   - rate-limiting / volumetric DoS reports

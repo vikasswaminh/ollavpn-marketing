@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What Is My IP? Live IP & Location · OllaVPN</title>
+<meta name="description" content="Find out what your public IP address is right now, what location websites see, and what your browser leaks about you. Free tool, no signup, no logs." />
+<link rel="canonical" href="https://ollavpn.com/what-is-my-ip" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="What Is My IP? Live IP & Location · OllaVPN" />
+<meta property="og:description" content="Free tool: see your live public IP, approximate location, and what your browser tells every website. No signup, no logs." />
+<meta property="og:url" content="https://ollavpn.com/what-is-my-ip" />
+<meta property="og:image" content="https://ollavpn.com/og-what-is-my-ip.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="What is my IP address — live check by OllaVPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What Is My IP? Live IP & Location · OllaVPN" />
+<meta name="twitter:description" content="See your live public IP, approximate location, and what your browser tells every website." />
+<meta name="twitter:image" content="https://ollavpn.com/og-what-is-my-ip.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "What Is My IP Address — Live Check",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "url": "https://ollavpn.com/what-is-my-ip",
+  "description": "Free tool that shows your public IP address, approximate location, and what your browser reveals about you.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is my IP address used for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Your IP address is how the internet routes traffic back to you. Every website you visit can see it. Combined with browser fingerprinting, it lets services know roughly where you are, which network you're on, and tie your visits together across the web. A VPN replaces your real IP with the IP of a VPN server so websites see that one instead." } },
+    { "@type": "Question", "name": "Can someone find my home address from my IP?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not directly. An IP address typically reveals the city or metro area your internet provider serves you from, plus the provider's name. It doesn't reveal your street address. Law enforcement can request your account information from your ISP with a legal order, but a random website cannot." } },
+    { "@type": "Question", "name": "Why is my IP location wrong?",
+      "acceptedAnswer": { "@type": "Answer", "text": "IP geolocation is an approximation. The database matches your IP to where your ISP allocates that block, which may be a nearby city rather than your actual location. If you're on mobile data, it often shows the carrier's regional hub. Accuracy is usually city-level, sometimes off by 50 to 200 km." } },
+    { "@type": "Question", "name": "Does a VPN change my IP address?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. When you connect to a VPN, websites see the IP of the VPN server instead of your real one. Your internet provider still sees you connecting to the VPN, but they can't see what you do beyond that. Every country in our network gives you a different exit IP. You can verify it on this page after connecting." } },
+    { "@type": "Question", "name": "Is my IPv4 different from my IPv6?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. IPv4 is the older 32-bit format (like 203.0.113.45). IPv6 is the newer 128-bit format (like 2001:db8::1) and is gradually replacing it. Many networks support both at the same time. Sites can use either to identify you, which is why a VPN should route both through the tunnel." } },
+    { "@type": "Question", "name": "What do websites see besides my IP?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Quite a lot. Your User-Agent string tells them your browser and operating system. Your screen resolution, timezone, language, installed fonts, GPU details, and behavior patterns all combine into a browser fingerprint that can identify you even without cookies. A VPN doesn't hide this — only a privacy-focused browser does." } },
+    { "@type": "Question", "name": "Is the public IP shown here accurate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We read it from the connection itself — the same way every website you visit reads it. The geolocation is approximate (city-level) and comes from a public IP database. Numbers refresh on every reload, so you can test before and after connecting to a VPN to confirm the change." } },
+    { "@type": "Question", "name": "Do you log or store my IP when I use this tool?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The IP shown on this page is detected at the edge and returned to your browser. It is not stored, sold, or shared. Standard web-server access logs are kept briefly for security and abuse detection, then rotated. We have nothing to hand over." } }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ollavpn.com/tools" },
+    { "@type": "ListItem", "position": 3, "name": "What Is My IP", "item": "https://ollavpn.com/what-is-my-ip" }
+  ]
+}
+</script>
+
+<style>
+  .tool-hero { padding: 64px 0 24px; position: relative; overflow: hidden; }
+  .tool-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .tool-hero .wrap { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+  .tool-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .tool-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(28px, 3.6vw, 42px); margin-top: 14px; color: var(--text);
+    max-width: 820px; }
+  .tool-hero .lede { font-size: 17px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 14px; max-width: 700px; }
+
+  .tool-section { max-width: 1100px; margin: 0 auto 56px; padding: 0 28px; }
+  .ip-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    padding: 32px 32px; }
+  .ip-row { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 720px) { .ip-row { grid-template-columns: 1fr 1fr; gap: 32px; } }
+  .ip-block .label { font-family: var(--mono); font-size: 11px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .ip-block .ip-value { font-family: var(--mono); font-size: 28px; font-weight: 700;
+    color: var(--red); word-break: break-all; line-height: 1.2; }
+  .ip-block .geo-value { font-family: var(--display); font-size: 18px; color: var(--text);
+    line-height: 1.4; }
+
+  .browser-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 28px;
+    padding-top: 24px; border-top: 1px solid var(--line); }
+  @media (min-width: 600px) { .browser-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .browser-grid { grid-template-columns: repeat(3, 1fr); } }
+  .browser-grid .label { font-family: var(--mono); font-size: 10px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+  .browser-grid .value { font-family: var(--mono); font-size: 13px; color: var(--text);
+    word-break: break-all; line-height: 1.4; }
+
+  .tool-cta { margin-top: 28px; padding: 18px 22px; border-radius: 10px;
+    background: rgba(238,62,71,0.06); border: 1px solid rgba(238,62,71,0.18);
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    flex-wrap: wrap; }
+  .tool-cta p { margin: 0; font-size: 15px; color: var(--text); }
+  .tool-cta a.btn { white-space: nowrap; }
+
+  .article-layout {
+    display: grid; grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px; margin: 0 auto;
+    padding: 12px 28px 56px; gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+  .article { min-width: 0; font-size: 17px; line-height: 1.72; color: var(--text); }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px; color: var(--text); }
+  .article .short-answer { font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em; }
+  .article p strong { font-weight: 700; }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline { display: block; margin: 0 0 2.2em; border: 1px solid var(--line);
+    border-radius: 12px; padding: 18px 24px; background: #fff; }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+  .toc-rail .label, .toc-inline .label { font-family: var(--mono); font-size: 11px;
+    color: var(--text-mute); letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block; }
+  .toc-rail ol, .toc-inline ol { list-style: none; margin: 0; padding: 12px 0 0; }
+  .toc-rail ol li, .toc-inline ol li { font-size: 14px; line-height: 1.5; margin: 0 0 8px; }
+  .toc-rail ol li a, .toc-inline ol li a { color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px; border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease; }
+  .toc-rail ol li.is-current a, .toc-rail ol li a:hover, .toc-inline ol li a:hover {
+    color: var(--red); border-left-color: var(--red); }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+</style>
+</head>
+
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<!-- utility bar -->
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="tool-hero">
+  <div class="wrap">
+    <div class="meta">FREE TOOL · NO SIGNUP · LIVE
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
+    </div>
+    <h1>What Is My IP Address?</h1>
+    <p class="lede">Every website you visit can see your IP address, the rough location it points to, and a surprising amount of detail about your browser. Here's exactly what they see right now — straight from your connection.</p>
+  </div>
+</header>
+
+<section class="tool-section">
+  <div class="ip-card">
+    <div class="ip-row">
+      <div class="ip-block">
+        <span class="label">Your public IP</span>
+        <span class="ip-value" id="ip-value">Detecting…</span>
+      </div>
+      <div class="ip-block">
+        <span class="label">Approximate location</span>
+        <span class="geo-value" id="geo-value">Detecting…</span>
+      </div>
+    </div>
+
+    <div class="browser-grid">
+      <div><span class="label">ISP / network</span><span class="value" id="isp-value">—</span></div>
+      <div><span class="label">ASN</span><span class="value" id="asn-value">—</span></div>
+      <div><span class="label">Timezone</span><span class="value" id="tz-value">—</span></div>
+      <div><span class="label">Browser language</span><span class="value" id="lang-value">—</span></div>
+      <div><span class="label">Screen</span><span class="value" id="screen-value">—</span></div>
+      <div><span class="label">Do Not Track</span><span class="value" id="dnt-value">—</span></div>
+      <div style="grid-column: 1 / -1;"><span class="label">User-Agent</span><span class="value" id="ua-value">—</span></div>
+    </div>
+
+    <div class="tool-cta">
+      <p><strong>Want to change what websites see?</strong> OllaVPN replaces your real IP with one of ours. $0 forever, no card.</p>
+      <a class="btn primary" href="/free-vpn">Try OllaVPN Free</a>
+    </div>
+  </div>
+</section>
+
+<div class="article-layout">
+  <article class="article">
+
+    <div class="tldr">
+      <span class="label">TL;DR</span>
+      <p>Your public IP is the address every website you visit reads off your connection. It typically reveals the city you're in and which internet provider you use, though not your street address.</p>
+      <p>Beyond the IP, browsers leak a lot more — user-agent, screen size, timezone, language, even font lists. Combined, they form a fingerprint that can identify you even without cookies.</p>
+      <p>A VPN like OllaVPN replaces your IP with one of ours, so websites can't track you by it. The browser fingerprint is a separate problem that a privacy-focused browser handles.</p>
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        <li><a href="#what-is-an-ip">What is an IP address, exactly?</a></li>
+        <li><a href="#what-can-they-see">What can websites actually see from your IP?</a></li>
+        <li><a href="#location-accuracy">How accurate is IP-based location?</a></li>
+        <li><a href="#beyond-ip">What else does your browser reveal beyond the IP?</a></li>
+        <li><a href="#how-vpn-changes">How does a VPN change what you see here?</a></li>
+        <li><a href="#ipv4-vs-ipv6">What's the difference between IPv4 and IPv6?</a></li>
+        <li><a href="#what-to-do">What can you actually do about it?</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="what-is-an-ip">What is an IP address, exactly?</h2>
+    <p class="short-answer">It's the return address on every packet of data your device sends out.</p>
+    <p>Every time you load a webpage, your computer or phone sends little packets of data across the internet asking for it. Those packets need a way to find their way back to you, which is what an IP address is: a numeric label that uniquely identifies your connection on the network. Your internet provider assigns it to you, the server you're talking to reads it from the packets, and they use it to send the page back.</p>
+    <p>What's important about this is that your IP isn't a secret. There's no setting you can flip to hide it from the websites you visit — they need it to talk back to you. The only way to change what they see is to route your traffic through a different server first, which is what a VPN does. The IP shown above is the address every site you visit right now is reading.</p>
+    <p>One nuance: the IP your devices have inside your home network (something like <strong>192.168.1.4</strong>) is different from the one the internet sees. Your home router has a public IP from your provider, and all your devices share it through a process called NAT. The public IP is what matters for privacy and tracking.</p>
+
+    <h2 id="what-can-they-see">What can websites actually see from your IP?</h2>
+    <p class="short-answer">Roughly where in the world you are, which internet provider you use, and that all your visits in a session are from the same person.</p>
+    <p>Websites can run your IP through a public geolocation database and get back a rough location — usually accurate to a city or metro area. They get your internet provider's name (sometimes called the <strong>ASN</strong> or autonomous system number), which often signals whether you're on a residential connection, mobile data, a corporate network, or a known data centre. They can also see whether your IP has appeared on a list of known VPNs, proxies, or Tor exit nodes.</p>
+    <p>What they can't see directly from the IP alone is your name, your street address, your account on their site, or your real identity. Those connections only happen when they cross-reference your IP with other signals — cookies, browser fingerprints, accounts, or, in rare cases, legal requests to your ISP.</p>
+    <p>The most important thing to understand: every site you visit during a session sees the same IP, which is enough for them to tie your visits together. Even private browsing won't change that. The only way to break the link is to change the IP itself.</p>
+
+    <h2 id="location-accuracy">How accurate is IP-based location?</h2>
+    <p class="short-answer">Usually city-level on residential connections, but it can be off by 50 to 200 km on mobile data.</p>
+    <p>IP geolocation works by mapping blocks of IP addresses to physical locations using public databases. When your ISP gets allocated an IP range, the registration usually points to their regional hub — so for residential broadband you'll often see your city or a nearby one. Accuracy in this case is typically within 10 to 30 km.</p>
+    <p>Mobile data is different. Your phone's IP usually maps to wherever your carrier's regional gateway is, which might be in a totally different city from where you are. Travellers see this all the time — you can be in one city and have a public IP that geolocates 200 km away. That's not a bug, it's just how mobile networks route traffic.</p>
+    <p>Corporate VPNs and proxies add another layer. If your work laptop is connected to a company VPN, your IP geolocates to wherever the company's VPN exit is, not where you physically are. The same applies when you connect to a consumer VPN like OllaVPN — sites see the location of the exit, not yours.</p>
+
+    <h2 id="beyond-ip">What else does your browser reveal beyond the IP?</h2>
+    <p class="short-answer">A surprising amount — enough to identify you even with a different IP and no cookies.</p>
+    <p>Your browser sends a header called the <strong>User-Agent</strong> with every request, identifying the browser and operating system. JavaScript on the page can ask for your screen size, timezone, language, list of installed fonts, GPU details, and more. Sites can also measure how your device renders certain graphics — a technique called <strong>canvas fingerprinting</strong> — to get a unique signature even if nothing else identifies you.</p>
+    <p>Put together, these signals form what's known as a <strong>browser fingerprint</strong>. Research consistently shows that the combination is unique enough to identify a specific browser instance with high accuracy, even without any cookies set. Changing your IP doesn't change your fingerprint. That's why a VPN is one layer of privacy, not the whole story.</p>
+    <p>If browser fingerprinting concerns you, the right tool is a privacy-focused browser like <strong>Tor Browser</strong> or <strong>Brave</strong> with fingerprint protection enabled. They make your browser look like everyone else's, neutralising the technique. A VPN handles the IP-level tracking; a privacy browser handles the fingerprint-level tracking. Both together is the strongest position.</p>
+
+    <h2 id="how-vpn-changes">How does a VPN change what you see here?</h2>
+    <p class="short-answer">Your real IP gets replaced with the VPN server's IP, and the location follows it.</p>
+    <p>When you connect to a VPN, all your internet traffic travels through an encrypted tunnel to a VPN server. That server then makes requests to the websites on your behalf, using its own IP. From the site's perspective, you are wherever the VPN server is — Frankfurt, New York, Tokyo, whatever you pick. Reload this page after connecting to a VPN and you'll see the change immediately.</p>
+    <p>Your internet provider sees that you're connected to a VPN (they can see the encrypted traffic going to a VPN server), but they can't see what you do beyond that. The sites you visit only see the VPN's IP, never yours. Even if multiple people use the same VPN server, the IP they get is the same — which is part of what makes VPN traffic hard to attribute to one person.</p>
+    <p>One caveat: a VPN doesn't fix browser fingerprinting. It also doesn't log you out of accounts. If you log into your Google account through a VPN, Google still knows it's you — they just don't know your real IP. <a href="/free-vpn">Our free plan</a> gives you a VPN exit IP in every country we serve, for as long as you want, with no card required.</p>
+
+    <h2 id="ipv4-vs-ipv6">What's the difference between IPv4 and IPv6?</h2>
+    <p class="short-answer">IPv4 is the older numbering scheme; IPv6 is the bigger newer one, and most modern connections have both.</p>
+    <p>IPv4 addresses are the familiar four-number kind, like <strong>203.0.113.45</strong>. They were designed in the early 1980s and there are only about 4 billion of them — long since exhausted. Internet providers work around this by sharing one IPv4 address across many customers using a technology called CGNAT, which means your "public" IP may actually be shared with hundreds of other households.</p>
+    <p>IPv6 is the modern replacement, with effectively unlimited addresses. They look like <strong>2001:db8::1</strong> and your ISP usually gives you a giant block all to yourself. Most modern devices, networks, and websites support both IPv4 and IPv6 in parallel. A site might know you by either address, so a privacy-focused VPN routes both protocols through the tunnel — otherwise your IPv6 traffic can leak around it. Ours does this by default.</p>
+
+    <h2 id="what-to-do">What can you actually do about it?</h2>
+    <p class="short-answer">Combine a trustworthy VPN with a privacy-focused browser, and accept that perfect anonymity online is rare.</p>
+    <p>Step one is a VPN that handles both IPv4 and IPv6 inside the tunnel, includes a kill switch that's on by default, and doesn't keep logs of what you do. Our <a href="/free-vpn">lifetime free plan</a> gives you all of that without a card. Test before and after by reloading this page — you should see a completely different IP and location.</p>
+    <p>Step two is reducing what your browser tells sites. Tor Browser is the strongest answer, though it slows down general browsing. Brave with shields and fingerprint protection on is a more practical daily driver. Firefox with the resistFingerprinting setting and a few extensions like uBlock Origin is also a solid option.</p>
+    <p>Step three is accepting realistic limits. A determined adversary with deep enough resources — a government, a serious advertiser with cross-site data — can still piece you together. The goal isn't perfect anonymity; it's making yourself a hard target so the bulk of casual tracking just doesn't work on you.</p>
+
+    <div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What is an IP address, exactly?</li>
+        <li>What can websites actually see from your IP?</li>
+        <li>How accurate is IP-based location?</li>
+        <li>What else does your browser reveal beyond the IP?</li>
+        <li>How does a VPN change what you see here?</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What is my IP address used for?</h3>
+      <p>Your IP address is how the internet routes traffic back to you. Every website you visit can see it. Combined with browser fingerprinting, it lets services know roughly where you are, which network you're on, and tie your visits together across the web. A VPN replaces your real IP with the IP of a VPN server so websites see that one instead.</p>
+
+      <h3>Can someone find my home address from my IP?</h3>
+      <p>Not directly. An IP address typically reveals the city or metro area your internet provider serves you from, plus the provider's name. It doesn't reveal your street address. Law enforcement can request your account information from your ISP with a legal order, but a random website cannot.</p>
+
+      <h3>Why is my IP location wrong?</h3>
+      <p>IP geolocation is an approximation. The database matches your IP to where your ISP allocates that block, which may be a nearby city rather than your actual location. If you're on mobile data, it often shows the carrier's regional hub. Accuracy is usually city-level, sometimes off by 50 to 200 km.</p>
+
+      <h3>Does a VPN change my IP address?</h3>
+      <p>Yes. When you connect to a VPN, websites see the IP of the VPN server instead of your real one. Your internet provider still sees you connecting to the VPN, but they can't see what you do beyond that. Every country in our network gives you a different exit IP. You can verify it on this page after connecting.</p>
+
+      <h3>Is my IPv4 different from my IPv6?</h3>
+      <p>Yes. IPv4 is the older 32-bit format (like 203.0.113.45). IPv6 is the newer 128-bit format (like 2001:db8::1) and is gradually replacing it. Many networks support both at the same time. Sites can use either to identify you, which is why a VPN should route both through the tunnel.</p>
+
+      <h3>What do websites see besides my IP?</h3>
+      <p>Quite a lot. Your User-Agent string tells them your browser and operating system. Your screen resolution, timezone, language, installed fonts, GPU details, and behavior patterns all combine into a browser fingerprint that can identify you even without cookies. A VPN doesn't hide this — only a privacy-focused browser does.</p>
+
+      <h3>Is the public IP shown here accurate?</h3>
+      <p>Yes. We read it from the connection itself — the same way every website you visit reads it. The geolocation is approximate (city-level) and comes from a public IP database. Numbers refresh on every reload, so you can test before and after connecting to a VPN to confirm the change.</p>
+
+      <h3>Do you log or store my IP when I use this tool?</h3>
+      <p>No. The IP shown on this page is detected at the edge and returned to your browser. It is not stored, sold, or shared. Standard web-server access logs are kept briefly for security and abuse detection, then rotated. We have nothing to hand over.</p>
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Fwhat-is-my-ip" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fwhat-is-my-ip" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fwhat-is-my-ip&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fwhat-is-my-ip&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related">
+      <h2>Related</h2>
+      <ul><ul class="related-cards">
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn-for-windows"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN for Windows</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/is-it-down"><span class="card-tag">PRIVACY</span><span class="card-title">Is it down? — check any URL</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a DNS leak?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-post-quantum-cryptography"><span class="card-tag">PRIVACY</span><span class="card-title">What is post-quantum cryptography?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul>
+    </div>
+
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      <li><a href="#what-is-an-ip">What is an IP address?</a></li>
+      <li><a href="#what-can-they-see">What can sites see?</a></li>
+      <li><a href="#location-accuracy">Location accuracy</a></li>
+      <li><a href="#beyond-ip">Beyond the IP</a></li>
+      <li><a href="#how-vpn-changes">How a VPN changes it</a></li>
+      <li><a href="#ipv4-vs-ipv6">IPv4 vs IPv6</a></li>
+      <li><a href="#what-to-do">What to do</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="/apps.html">Apps</a></li><li><a href="/technology.html">Technology</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div>
+      <div><h4>Tools</h4><ul><li><a href="/what-is-my-ip">What is my IP?</a></li><li><a href="/is-it-down">Is it down?</a></li><li><a href="/ssl-checker">SSL checker</a></li><li><a href="/whois-lookup">WHOIS lookup</a></li><li><a href="/dns-lookup">DNS lookup</a></li><li><a href="/headers-viewer">HTTP headers</a></li><li><a href="/email-verifier">Email verifier</a></li><li><a href="/webrtc-leak-test">WebRTC leak test</a></li><li><a href="/password-generator">Password generator</a></li></ul></div>
+      <div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+<script>
+  // Fetch IP + geo, then fill in browser-side details.
+  (async function () {
+    try {
+      const r = await fetch("/api/myip");
+      if (r.ok) {
+        const data = await r.json();
+        if (data.ip) document.getElementById("ip-value").textContent = data.ip;
+        if (data.geo) {
+          const g = data.geo;
+          const loc = [g.city, g.region, g.country_name || g.country].filter(Boolean).join(", ");
+          if (loc) document.getElementById("geo-value").textContent = loc;
+          if (g.isp) document.getElementById("isp-value").textContent = g.isp;
+          if (g.asn) document.getElementById("asn-value").textContent = "AS" + g.asn;
+        }
+      } else {
+        document.getElementById("ip-value").textContent = "Unable to detect";
+      }
+    } catch (_) {
+      document.getElementById("ip-value").textContent = "Unable to detect";
+    }
+    try { document.getElementById("tz-value").textContent = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch(_){}
+    document.getElementById("lang-value").textContent = navigator.language || "—";
+    document.getElementById("screen-value").textContent =
+      (screen && screen.width) ? (screen.width + " × " + screen.height + " (" + (window.devicePixelRatio || 1) + "x)") : "—";
+    document.getElementById("dnt-value").textContent = navigator.doNotTrack === "1" ? "On" : "Off";
+    document.getElementById("ua-value").textContent = navigator.userAgent || "—";
+  })();
+
+  // Scroll-spy for sticky right TOC.
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

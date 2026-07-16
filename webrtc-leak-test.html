@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WebRTC Leak Test — Is Your VPN Hiding You?</title>
+<meta name="description" content="Free WebRTC leak test. Find out whether your browser is leaking your real IP address even with a VPN on. Live, in-browser check. No signup." />
+<link rel="canonical" href="https://ollavpn.com/webrtc-leak-test" />
+<meta name="theme-color" content="#0B0B12" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="WebRTC Leak Test — Is Your VPN Hiding You?" />
+<meta property="og:description" content="Check whether your browser is leaking your real IP through WebRTC, even with a VPN on." />
+<meta property="og:url" content="https://ollavpn.com/webrtc-leak-test" />
+<meta property="og:image" content="https://ollavpn.com/og-webrtc-leak-test.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WebRTC Leak Test — Is Your VPN Hiding You?" />
+<meta name="twitter:description" content="Check whether your browser is leaking your real IP through WebRTC, even with a VPN on." />
+<meta name="twitter:image" content="https://ollavpn.com/og-webrtc-leak-test.png" />
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+<link rel="stylesheet" href="/tool.css" />
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebApplication", "name": "WebRTC Leak Test",
+  "applicationCategory": "UtilityApplication", "operatingSystem": "Any",
+  "url": "https://ollavpn.com/webrtc-leak-test",
+  "description": "Free in-browser check that detects whether your browser is leaking your real IP address through WebRTC.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "What is a WebRTC leak?",
+    "acceptedAnswer": { "@type": "Answer", "text": "WebRTC is a real-time communication feature built into every modern browser. It uses a process called ICE candidate gathering to find network paths between peers. A side effect: your browser can ask STUN servers for your public IP — and that lookup happens even when you have a VPN connected. If the browser doesn't route it through the tunnel, the site you're visiting can read your real IP from JavaScript, bypassing the VPN entirely." } },
+  { "@type": "Question", "name": "Why does a VPN sometimes fail to protect against WebRTC?",
+    "acceptedAnswer": { "@type": "Answer", "text": "The browser's WebRTC stack has its own ideas about which network interface to use. If your VPN doesn't reroute UDP traffic correctly, or if your browser tries IPv6 outside the VPN, your real IP leaks. Good VPN clients block WebRTC at the network layer to prevent this; lower-quality ones leave the door open." } },
+  { "@type": "Question", "name": "How do I check if my browser is leaking?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Use the tool above. It runs the same WebRTC code a website would run, then compares the IPs it discovers against your known public IP. If the test finds an IP that isn't your VPN exit, that's a leak. The test works in any modern browser and takes about two seconds." } },
+  { "@type": "Question", "name": "What's the difference between a local IP and a public IP in the result?",
+    "acceptedAnswer": { "@type": "Answer", "text": "A local IP (like 192.168.1.50) is your address inside your home network. Sites can't directly use it, but combined with browser fingerprinting it can deanonymise you. A public IP is what the wider internet sees — this is the one a VPN is supposed to replace. Modern Chrome and Firefox use mDNS hostnames for local addresses by default, so you'll usually see those instead of raw 192.168.x.x." } },
+  { "@type": "Question", "name": "How do I fix a WebRTC leak?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Use a VPN that explicitly handles WebRTC at the network layer rather than relying on browser settings. As a backup, you can disable WebRTC entirely in some browsers (Firefox: media.peerconnection.enabled = false in about:config) or use an extension like uBlock Origin with WebRTC blocking enabled. Disabling breaks video calls, which is why a properly-configured VPN is the better answer." } },
+  { "@type": "Question", "name": "Does OllaVPN protect against WebRTC leaks?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Yes. OllaVPN's tunnel routes all UDP traffic — including the STUN lookups WebRTC uses — through the VPN. The browser doesn't even know there's a non-VPN path to leak over, so the leak class is eliminated structurally rather than papered over with browser settings." } },
+  { "@type": "Question", "name": "Will this tool see my real IP if I'm leaking?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Yes — that's how the test works. The tool runs entirely in your browser, then displays the result to you only. We don't log the discovered IPs, transmit them to our servers, or share them. Open your devtools network tab while the test runs to verify nothing is sent." } },
+  { "@type": "Question", "name": "Is WebRTC always a privacy risk?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Only when combined with a VPN that doesn't handle it. For normal browsing without a VPN, WebRTC just discovers the IP your ISP gave you — which is the same IP every other connection from your device uses. The risk is specifically that it can bypass a privacy tool that's supposed to hide that IP." } } ] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+  { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ollavpn.com/tools" },
+  { "@type": "ListItem", "position": 3, "name": "WebRTC Leak Test", "item": "https://ollavpn.com/webrtc-leak-test" } ] }
+</script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar"><div class="wrap"><div class="utilbar-left"><span class="green-dot">&#9679;</span> All systems operational <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a></div><div class="utilbar-right"><a href="/technology.html">Trust</a> <span style="opacity:.4;">&middot;</span> <a href="/blog/">Resources</a> <span style="opacity:.4;">&middot;</span> <a href="/contact.html">Contact</a></div></div></div>
+
+<nav class="nav"><div class="nav-inner"><a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a><div class="nav-links"><a href="/free-vpn">Free VPN</a><a href="/apps.html">Apps</a><a href="/dl/">Download</a></div><div class="nav-cta"><a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a><a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a></div></div></nav>
+
+<header class="tool-hero"><div class="wrap">
+  <div class="meta">FREE TOOL · IN-BROWSER · NO SIGNUP
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
+    </div>
+  <h1>WebRTC Leak Test</h1>
+  <p class="lede">Find out whether your browser is leaking your real IP address through WebRTC — even with a VPN on. The test runs entirely in your browser, takes two seconds, and shows you exactly what every website you visit can see.</p>
+</div></header>
+
+<section class="tool-section">
+  <div class="check-card">
+    <div class="result" id="result">
+      <div class="verdict" id="verdict"><span class="dot"></span><span id="verdict-text">Running test…</span></div>
+      <div class="result-grid">
+        <div class="item"><span class="label">Your reported public IP</span><span class="value" id="r-reported">Detecting…</span></div>
+        <div class="item"><span class="label">WebRTC public IPs found</span><span class="value" id="r-public">—</span></div>
+        <div class="item"><span class="label">WebRTC local IPs found</span><span class="value" id="r-local">—</span></div>
+      </div>
+      <div id="candidates-output"></div>
+    </div>
+    <div class="tool-cta">
+      <p><strong>If the test found IPs that aren't your VPN exit</strong> — your browser is leaking. Switch to a VPN that handles WebRTC at the network layer.</p>
+      <a class="btn primary" href="/free-vpn">Try OllaVPN Free</a>
+    </div>
+  </div>
+</section>
+
+<div class="article-layout">
+  <article class="article">
+    <div class="tldr"><span class="label">TL;DR</span>
+      <p>WebRTC is a browser feature for real-time communication. As a side effect, it can reveal your real IP address to any website — and the leak happens even with a VPN connected if the VPN doesn't handle WebRTC at the network layer.</p>
+      <p>The test above runs the same code a website would, then compares what WebRTC discovers against your known public IP. If WebRTC finds an IP that isn't your VPN exit, that's a leak. Everything runs in your browser; nothing is sent to us.</p>
+      <p>The fix is a VPN that routes WebRTC's STUN lookups through the tunnel. <a href="/free-vpn">Our free plan</a> does this by default — there's no setting to enable, no extension to install.</p>
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page"><span class="label">On this page</span><ol>
+      <li><a href="#what-is">What WebRTC is — and why it leaks</a></li>
+      <li><a href="#how-test">How this leak test actually works</a></li>
+      <li><a href="#interpret">Interpreting the result</a></li>
+      <li><a href="#why-vpns-fail">Why some VPNs fail at this</a></li>
+      <li><a href="#fixes">How to fix a WebRTC leak</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol></nav>
+
+    <h2 id="what-is">What WebRTC is — and why it leaks</h2>
+    <p class="short-answer">WebRTC is the browser feature behind video calls. It tries to find the most direct network path between peers, and that discovery process can reveal your real IP.</p>
+    <p>WebRTC (Web Real-Time Communication) is built into every modern browser. It powers Google Meet, Discord voice channels, browser-based video conferencing, peer-to-peer file transfer, and dozens of other features. The technology is genuinely useful — but it has a privacy quirk.</p>
+    <p>To establish a connection, WebRTC runs <strong>ICE candidate gathering</strong>. It asks the operating system "what IP addresses can someone reach me at?" — both local (192.168.x.x) and public (your real internet-facing IP). It collects this list by talking to STUN servers, which echo back what they see. Then it shares the list with the other peer.</p>
+    <p>The leak happens because any website's JavaScript can do this same gathering, even when you didn't ask it to start a video call. The website reads the discovered IPs and now knows the IP that should be hidden behind your VPN.</p>
+
+    <h2 id="how-test">How this leak test actually works</h2>
+    <p class="short-answer">It runs the same ICE gathering a malicious site would, against public STUN servers, then displays everything it discovers.</p>
+    <p>The test creates an <code>RTCPeerConnection</code> object configured with public STUN servers (Google's and Cloudflare's). It opens a data channel — a minimum trigger for ICE gathering — and then watches the <code>onicecandidate</code> event for the IPs WebRTC discovers along the way. The whole process takes one to three seconds.</p>
+    <p>Discovered IPs come in two flavours: <strong>host</strong> candidates (your local IPs, like 192.168.1.50) and <strong>srflx</strong> candidates (your public IP, as seen by the STUN server). Modern browsers anonymise local IPs by default using <strong>mDNS hostnames</strong> like xxx.local, which doesn't leak real network info. Public IPs are the privacy-critical ones.</p>
+    <p>We also fetch your public IP from <a href="/api/myip">/api/myip</a> as a reference. If a WebRTC-discovered IP matches that reference, you're not leaking — both report the same IP because both go through your VPN. If they differ, you're leaking.</p>
+
+    <h2 id="interpret">Interpreting the result</h2>
+    <p class="short-answer">If the WebRTC public IPs match your reported IP, you're safe. If they differ, you're leaking your real IP.</p>
+    <p>The clean case: WebRTC reports the same public IP that <code>/api/myip</code> reports. Both numbers are your VPN's exit, and that's what every website you visit sees. Your VPN is doing its job.</p>
+    <p>The leak case: WebRTC reports a public IP that's different from the one <code>/api/myip</code> shows. The different IP is your real one — your ISP-assigned address, not the VPN's. Any website using WebRTC can read that IP from JavaScript, completely bypassing the VPN.</p>
+    <p>Local IPs in the result (host candidates) are usually fine. Modern browsers replace them with mDNS hostnames that look like a long random string ending in .local. Those don't reveal anything about your real network. If you see actual 192.168.x.x or 10.x.x.x in the host candidates, your browser has the mDNS protection turned off — a minor fingerprinting risk, not a leak of your real IP.</p>
+
+    <h2 id="why-vpns-fail">Why some VPNs fail at this</h2>
+    <p class="short-answer">They route TCP through the tunnel but not UDP, or they don't bind every network interface to the tunnel.</p>
+    <p>A VPN client has two main approaches to routing your traffic. The clean approach is to capture every packet at the OS network layer and force it through the tunnel, no matter what protocol or interface. The lazier approach is to just install a default route through the tunnel and hope.</p>
+    <p>The lazy approach fails on WebRTC for two reasons. First, WebRTC uses UDP heavily for STUN, and UDP routing has more edge cases than TCP — some VPN clients don't handle them well. Second, some operating systems prefer specific interfaces for specific traffic types (mobile networks especially), and a VPN that only sets a default route gets bypassed.</p>
+    <p>The other failure mode is <strong>IPv6</strong>. If a VPN is IPv4-only and your network has IPv6 connectivity, WebRTC will happily try IPv6 STUN servers and reveal your real IPv6 address — completely outside the tunnel. Modern VPNs handle this by either tunneling IPv6 too or blocking it entirely.</p>
+
+    <h2 id="fixes">How to fix a WebRTC leak</h2>
+    <p class="short-answer">Use a VPN that handles WebRTC at the network layer. If you can't, disable WebRTC at the browser level.</p>
+    <p>The right answer is a VPN that captures all traffic — TCP, UDP, IPv4, IPv6 — and either tunnels it or drops it. <a href="/free-vpn">OllaVPN's free plan</a> does this by default. There's no setting to enable; the structural design prevents the leak class.</p>
+    <p>If you're stuck with a VPN that leaks and can't change, the browser-level fix is to disable WebRTC entirely. In Firefox, set <code>media.peerconnection.enabled</code> to false in <code>about:config</code>. In Chromium-based browsers, you'll need an extension — <strong>uBlock Origin</strong> has a "Prevent WebRTC from leaking local IP addresses" option in its settings. The downside is that you lose WebRTC features (video calls, P2P apps). Most users find this an acceptable trade if they can't fix the VPN side.</p>
+
+    <div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What WebRTC is — and why it leaks</li>
+        <li>How this leak test actually works</li>
+        <li>Interpreting the result</li>
+        <li>Why some VPNs fail at this</li>
+        <li>How to fix a WebRTC leak</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What is a WebRTC leak?</h3><p>WebRTC is a real-time communication feature built into every modern browser. It uses a process called ICE candidate gathering to find network paths between peers. A side effect: your browser can ask STUN servers for your public IP — and that lookup happens even when you have a VPN connected. If the browser doesn't route it through the tunnel, the site you're visiting can read your real IP from JavaScript, bypassing the VPN entirely.</p>
+      <h3>Why does a VPN sometimes fail to protect against WebRTC?</h3><p>The browser's WebRTC stack has its own ideas about which network interface to use. If your VPN doesn't reroute UDP traffic correctly, or if your browser tries IPv6 outside the VPN, your real IP leaks. Good VPN clients block WebRTC at the network layer to prevent this; lower-quality ones leave the door open.</p>
+      <h3>How do I check if my browser is leaking?</h3><p>Use the tool above. It runs the same WebRTC code a website would run, then compares the IPs it discovers against your known public IP. If the test finds an IP that isn't your VPN exit, that's a leak.</p>
+      <h3>What's the difference between a local IP and a public IP in the result?</h3><p>A local IP (like 192.168.1.50) is your address inside your home network. Sites can't directly use it. A public IP is what the wider internet sees — this is the one a VPN is supposed to replace. Modern Chrome and Firefox use mDNS hostnames for local addresses by default.</p>
+      <h3>How do I fix a WebRTC leak?</h3><p>Use a VPN that explicitly handles WebRTC at the network layer rather than relying on browser settings. As a backup, you can disable WebRTC entirely in some browsers or use an extension like uBlock Origin with WebRTC blocking enabled.</p>
+      <h3>Does OllaVPN protect against WebRTC leaks?</h3><p>Yes. OllaVPN's tunnel routes all UDP traffic — including the STUN lookups WebRTC uses — through the VPN. The browser doesn't even know there's a non-VPN path to leak over, so the leak class is eliminated structurally rather than papered over with browser settings.</p>
+      <h3>Will this tool see my real IP if I'm leaking?</h3><p>Yes — that's how the test works. The tool runs entirely in your browser, then displays the result to you only. We don't log the discovered IPs, transmit them to our servers, or share them. Open your devtools network tab while the test runs to verify nothing is sent.</p>
+      <h3>Is WebRTC always a privacy risk?</h3><p>Only when combined with a VPN that doesn't handle it. For normal browsing without a VPN, WebRTC just discovers the IP your ISP gave you — which is the same IP every other connection from your device uses. The risk is specifically that it can bypass a privacy tool that's supposed to hide that IP.</p>
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Fwebrtc-leak-test" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fwebrtc-leak-test" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fwebrtc-leak-test&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fwebrtc-leak-test&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related"><h2>Related</h2><ul><ul class="related-cards">
+    <li><a href="/what-is-my-ip"><span class="card-tag">PRIVACY</span><span class="card-title">What is my IP address?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a DNS leak?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn-for-windows"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN for Windows</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/password-generator"><span class="card-tag">PRIVACY</span><span class="card-title">Password generator</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul></div>
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page"><span class="label">On this page</span><ol>
+    <li><a href="#what-is">What WebRTC is</a></li>
+    <li><a href="#how-test">How the test works</a></li>
+    <li><a href="#interpret">Interpreting the result</a></li>
+    <li><a href="#why-vpns-fail">Why VPNs fail</a></li>
+    <li><a href="#fixes">How to fix it</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ol></aside>
+</div>
+
+<footer class="footer"><div class="wrap"><div class="top">
+  <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+  <div><h4>Product</h4><ul><li><a href="/apps.html">Apps</a></li><li><a href="/technology.html">Technology</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+  <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN guide</a></li><li><a href="/free-vpn-for-windows">For Windows</a></li><li><a href="/free-vpn-for-india">For India</a></li><li><a href="/free-wireguard-vpn">WireGuard VPN</a></li><li><a href="/free-quic-vpn">QUIC VPN</a></li></ul></div>
+  <div><h4>Tools</h4><ul><li><a href="/what-is-my-ip">What is my IP?</a></li><li><a href="/is-it-down">Is it down?</a></li><li><a href="/ssl-checker">SSL checker</a></li><li><a href="/whois-lookup">WHOIS lookup</a></li><li><a href="/dns-lookup">DNS lookup</a></li><li><a href="/headers-viewer">HTTP headers</a></li><li><a href="/email-verifier">Email verifier</a></li><li><a href="/webrtc-leak-test">WebRTC leak test</a></li><li><a href="/password-generator">Password generator</a></li></ul></div>
+  <div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+</div><div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div></div></footer>
+
+<script src="/tool.js"></script>
+<script>
+(async function () {
+  var verdict = document.getElementById("verdict");
+  var verdictText = document.getElementById("verdict-text");
+  function setVerdict(state, text) {
+    verdict.classList.remove("up", "down", "warn");
+    if (state) verdict.classList.add(state);
+    verdictText.textContent = text;
+  }
+  setVerdict(null, "Running test…");
+
+  // 1. Fetch our reference public IP (via the /api/myip Function).
+  var reportedIp = null;
+  try {
+    var r = await fetch("/api/myip");
+    if (r.ok) {
+      var data = await r.json();
+      reportedIp = data.ip || null;
+    }
+  } catch (_) {}
+  document.getElementById("r-reported").textContent = reportedIp || "Unavailable";
+
+  // 2. Run WebRTC ICE gathering.
+  var publicIps = new Set();
+  var localIps = new Set();
+  var mdnsCount = 0;
+  var ipRegex = /([0-9]{1,3}(?:\.[0-9]{1,3}){3})|([a-f0-9:]+:+[a-f0-9:]+)/i;
+  var isPrivateV4 = function (ip) {
+    return /^(10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|169\.254\.|127\.)/.test(ip);
+  };
+  var isLinkLocalV6 = function (ip) { return /^fe80:/i.test(ip); };
+
+  var pc;
+  try {
+    pc = new RTCPeerConnection({
+      iceServers: [
+        { urls: "stun:stun.l.google.com:19302" },
+        { urls: "stun:stun.cloudflare.com:3478" }
+      ]
+    });
+  } catch (e) {
+    setVerdict("warn", "WebRTC is disabled in this browser — no leak possible here.");
+    return;
+  }
+  pc.createDataChannel("");
+  pc.createOffer().then(function (o) { pc.setLocalDescription(o); }).catch(function () {});
+
+  var done = false;
+  function finish() {
+    if (done) return;
+    done = true;
+    try { pc.close(); } catch(_) {}
+
+    var publicList = Array.from(publicIps);
+    var localList = Array.from(localIps);
+    document.getElementById("r-public").textContent = publicList.length ? publicList.join(", ") : "None";
+    document.getElementById("r-local").textContent = localList.length ? localList.join(", ") : (mdnsCount > 0 ? "Hidden behind mDNS (" + mdnsCount + " entries)" : "None");
+
+    var out = document.getElementById("candidates-output");
+    if (publicList.length || localList.length || mdnsCount > 0) {
+      var block = document.createElement("div");
+      block.className = "records-block";
+      var heading = document.createElement("h4");
+      heading.textContent = "All discovered candidates";
+      var ul = document.createElement("ul");
+      publicList.forEach(function (ip) {
+        var li = document.createElement("li");
+        var s = document.createElement("strong");
+        s.style.color = "var(--red)";
+        s.textContent = "PUBLIC ";
+        li.appendChild(s);
+        li.appendChild(document.createTextNode(ip));
+        ul.appendChild(li);
+      });
+      localList.forEach(function (ip) {
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode("LOCAL  " + ip));
+        ul.appendChild(li);
+      });
+      if (mdnsCount > 0) {
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode("mDNS protected: " + mdnsCount + " host candidates anonymised by browser"));
+        ul.appendChild(li);
+      }
+      block.appendChild(heading);
+      block.appendChild(ul);
+      out.replaceChildren(block);
+    }
+
+    // Verdict
+    if (publicList.length === 0) {
+      setVerdict("warn", "No public IPs discovered by WebRTC. Either WebRTC is blocked, you're offline, or the test couldn't reach a STUN server. Not necessarily safe — try again.");
+      return;
+    }
+    if (reportedIp && publicList.includes(reportedIp)) {
+      var others = publicList.filter(function (ip) { return ip !== reportedIp; });
+      if (others.length > 0) {
+        setVerdict("down", "Leak detected. WebRTC found " + others.length + " extra public IP" + (others.length > 1 ? "s" : "") + " that aren't your VPN exit.");
+      } else {
+        setVerdict("up", "No leak. WebRTC sees the same public IP as the reference check.");
+      }
+    } else if (reportedIp) {
+      setVerdict("down", "Leak detected. WebRTC found a different public IP than the reference. Your VPN isn't routing WebRTC.");
+    } else {
+      setVerdict("warn", "Could not verify against a reference. WebRTC discovered: " + publicList.join(", "));
+    }
+  }
+
+  pc.onicecandidate = function (e) {
+    if (!e.candidate) { finish(); return; }
+    var c = e.candidate.candidate || "";
+    if (c.indexOf(".local") !== -1) { mdnsCount++; return; }
+    var m = c.match(ipRegex);
+    if (!m) return;
+    var ip = m[0];
+    if (isPrivateV4(ip) || isLinkLocalV6(ip)) localIps.add(ip);
+    else publicIps.add(ip);
+  };
+
+  setTimeout(finish, 3000);
+})();
+</script>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

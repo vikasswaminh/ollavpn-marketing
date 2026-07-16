@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Email Verifier — Check Any Address in Seconds | OllaVPN</title>
+<meta name="description" content="Free email verifier. Check whether an email address is real, deliverable, disposable, or a catch-all. No signup, no logs." />
+<link rel="canonical" href="https://ollavpn.com/email-verifier" />
+<meta name="theme-color" content="#0B0B12" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="Email Verifier — Live, Free" />
+<meta property="og:description" content="Check if an email is real, deliverable, disposable, or catch-all in seconds." />
+<meta property="og:url" content="https://ollavpn.com/email-verifier" />
+<meta property="og:image" content="https://ollavpn.com/og-email-verifier.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Email Verifier — Live, Free" />
+<meta name="twitter:description" content="Check if an email is real, deliverable, disposable, or catch-all in seconds." />
+<meta name="twitter:image" content="https://ollavpn.com/og-email-verifier.png" />
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+<link rel="stylesheet" href="/tool.css" />
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebApplication", "name": "Email Verifier",
+  "applicationCategory": "UtilityApplication", "operatingSystem": "Any",
+  "url": "https://ollavpn.com/email-verifier",
+  "description": "Free tool that checks an email address for valid syntax, MX records, disposable services, and catch-all mailbox behaviour.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "What does an email verifier actually check?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Three things: the syntax is valid (matches RFC 5322), the domain has MX records pointing at real mail servers, and the address responds to an SMTP probe. Some verifiers also detect known disposable-email services and catch-all configurations where every address at a domain is accepted regardless." } },
+  { "@type": "Question", "name": "What is a catch-all email address?",
+    "acceptedAnswer": { "@type": "Answer", "text": "A domain configured to accept mail to any address. Random123@example.com, made-up-name@example.com, and ceo@example.com all get accepted because the mail server doesn't actually validate the local part. Catch-all domains are common at companies that want every misdirected email forwarded to a central inbox. They make traditional verification less reliable." } },
+  { "@type": "Question", "name": "What is a disposable email address?",
+    "acceptedAnswer": { "@type": "Answer", "text": "An email address from a temporary-mail service like Mailinator, Guerrilla Mail, 10MinuteMail, or TempMail. Users sign up for things with these to avoid putting their real address into a database they don't trust. They're not a sign of fraud, but they do mean the user probably doesn't want to be contacted later." } },
+  { "@type": "Question", "name": "Why do verifiers return a score instead of yes or no?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Because some checks are definitive (syntax is wrong: no) and some are probabilistic (catch-all domain: maybe, can't tell). A score combines all the signals — syntax, MX records, SMTP response, disposable check, catch-all check — into one number you can threshold against. Scores below 0.4 are usually unsafe to email; scores above 0.8 are usually fine." } },
+  { "@type": "Question", "name": "Can I use this to clean a mailing list?",
+    "acceptedAnswer": { "@type": "Answer", "text": "For a few addresses, yes. For thousands, it's not the right shape — you want a proper bulk verifier with API rate limits, list segmentation, and reporting. Use this tool for spot-checks: an address you're about to email manually, or a sign-up flow you want to harden. For programmatic use, the Ollagraph endpoint behind this tool is the same one you'd call." } },
+  { "@type": "Question", "name": "Will the verifier send a real email to the address?",
+    "acceptedAnswer": { "@type": "Answer", "text": "No. The SMTP check goes through the handshake — HELO, MAIL FROM, RCPT TO — and then disconnects before sending any message. The owner of the address doesn't see anything in their inbox. Some mail servers do log these probes though, so technically the act of verifying isn't 100 percent invisible." } },
+  { "@type": "Question", "name": "Why does the verifier sometimes say 'unknown'?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Catch-all domains return 'accept' for every address, so we can't tell whether the specific mailbox exists. Some servers also throttle or deny SMTP probes for privacy reasons. In both cases the address might be real or might be made up — we can't distinguish, so we mark it as uncertain rather than guessing." } },
+  { "@type": "Question", "name": "Do you log the addresses I check?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Standard web-server access logs are kept briefly for security and abuse detection, then rotated. We don't tie checks to your identity, don't sell or share the data, and don't track you across sessions." } } ] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+  { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ollavpn.com/tools" },
+  { "@type": "ListItem", "position": 3, "name": "Email Verifier", "item": "https://ollavpn.com/email-verifier" } ] }
+</script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar"><div class="wrap"><div class="utilbar-left"><span class="green-dot">&#9679;</span> All systems operational <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a></div><div class="utilbar-right"><a href="/technology.html">Trust</a> <span style="opacity:.4;">&middot;</span> <a href="/blog/">Resources</a> <span style="opacity:.4;">&middot;</span> <a href="/contact.html">Contact</a></div></div></div>
+
+<nav class="nav"><div class="nav-inner"><a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a><div class="nav-links"><a href="/free-vpn">Free VPN</a><a href="/apps.html">Apps</a><a href="/dl/">Download</a></div><div class="nav-cta"><a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a><a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a></div></div></nav>
+
+<header class="tool-hero"><div class="wrap">
+  <div class="meta">FREE TOOL · LIVE CHECK · NO SIGNUP
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
+    </div>
+  <h1>Email Verifier</h1>
+  <p class="lede">Check whether an email address is real, deliverable, disposable, or a catch-all. Syntax check, MX lookup, SMTP probe, disposable-domain check, and catch-all detection — all in one request.</p>
+</div></header>
+
+<section class="tool-section">
+  <div class="check-card">
+    <form class="check-form" id="check-form" autocomplete="off">
+      <input type="email" id="email-input" placeholder="someone@example.com" required spellcheck="false" autocapitalize="off" autocorrect="off" />
+      <button type="submit" id="check-btn">Verify</button>
+    </form>
+    <div class="result" id="result" hidden>
+      <div class="verdict" id="verdict"><span class="dot"></span><span id="verdict-text">Verifying…</span></div>
+      <div class="result-grid">
+        <div class="item"><span class="label">Email</span><span class="value" id="r-email">—</span></div>
+        <div class="item"><span class="label">Confidence score</span><span class="value" id="r-score">—</span></div>
+        <div class="item"><span class="label">Valid syntax</span><span class="value" id="r-syntax">—</span></div>
+        <div class="item"><span class="label">Has MX records</span><span class="value" id="r-mx">—</span></div>
+        <div class="item"><span class="label">Disposable</span><span class="value" id="r-disp">—</span></div>
+        <div class="item"><span class="label">Catch-all</span><span class="value" id="r-ca">—</span></div>
+        <div class="item"><span class="label">SMTP check</span><span class="value" id="r-smtp">—</span></div>
+        <div class="item"><span class="label">Mail provider</span><span class="value" id="r-prov">—</span></div>
+      </div>
+    </div>
+    <div class="tool-cta">
+      <p><strong>Don't trust an address before you email it.</strong> Pair this check with double opt-in for the cleanest list.</p>
+      <a class="btn primary" href="/free-vpn">Try OllaVPN Free</a>
+    </div>
+  </div>
+</section>
+
+<div class="article-layout">
+  <article class="article">
+    <div class="tldr"><span class="label">TL;DR</span>
+      <p>Email verification combines five quick checks — syntax, MX records, SMTP handshake, disposable-domain detection, and catch-all detection — into one confidence score.</p>
+      <p>A score above 0.8 is generally safe to email. Below 0.4 is risky. The grey zone in between usually means the domain is a catch-all and there's no way to tell whether the specific mailbox really exists.</p>
+      <p>This tool is good for spot-checks and harder sign-up flows. For bulk list cleaning, use the underlying API directly with proper batching and rate limits.</p>
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page"><span class="label">On this page</span><ol>
+      <li><a href="#what-it-checks">What email verification actually checks</a></li>
+      <li><a href="#catch-all">Why catch-all addresses are tricky</a></li>
+      <li><a href="#disposable">Disposable emails and why people use them</a></li>
+      <li><a href="#score">How to interpret the confidence score</a></li>
+      <li><a href="#use-cases">When verification helps (and when it doesn't)</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol></nav>
+
+    <h2 id="what-it-checks">What email verification actually checks</h2>
+    <p class="short-answer">Five layers, each catching a different category of bad address.</p>
+    <p><strong>Syntax check</strong> — does the address match RFC 5322 well enough that a mail server would accept it? Catches typos like missing @ signs or invalid characters. Cheap and definitive.</p>
+    <p><strong>MX record lookup</strong> — does the domain actually have mail servers configured? If not, no email can be delivered there. Catches dead domains and ones never set up for mail.</p>
+    <p><strong>SMTP probe</strong> — connect to the domain's mail server and run a partial handshake. Most servers tell you whether the specific mailbox exists without you ever sending a real message. Some servers refuse to answer or always say yes, in which case this signal is weaker.</p>
+    <p><strong>Disposable-domain check</strong> — compare the domain against a maintained list of temporary-mail services (Mailinator, Guerrilla Mail, TempMail, and many others). Catches sign-ups that aren't worth keeping.</p>
+    <p><strong>Catch-all check</strong> — try a random address at the domain and see whether the server accepts it. If it does, the domain accepts every address and the SMTP probe is no longer reliable.</p>
+
+    <h2 id="catch-all">Why catch-all addresses are tricky</h2>
+    <p class="short-answer">A catch-all domain accepts every address by default, so traditional verification can't tell real from fake.</p>
+    <p>Catch-all configurations are common at small businesses and many corporates. The setup forwards every email to a central inbox so misdirected mail (typos, old aliases, bounces) doesn't go missing. From a verification perspective, this means the SMTP probe always returns "yes" — even for completely made-up addresses.</p>
+    <p>Sophisticated verifiers detect catch-all behaviour by probing a deliberately random address first. If the server accepts random-12345-abc@example.com, it's a catch-all. The specific address you're checking might still be real, but the verifier can't confirm — it returns "unknown" or a middle-range score rather than guessing.</p>
+
+    <h2 id="disposable">Disposable emails and why people use them</h2>
+    <p class="short-answer">Most disposable addresses come from people who want a free trial without giving you their real address — not fraudsters.</p>
+    <p>Temporary-mail services have existed for two decades and serve a legitimate purpose: signing up for things you don't fully trust. If a blog asks for an email before letting you read an article, a disposable address is the polite way to comply. If a forum requires registration but you only want to read, same thing.</p>
+    <p>Detecting them is straightforward — a list of known disposable domains catches 95 percent of them. The remaining 5 percent come and go too quickly to track. Whether to block them is a product decision: hard sign-up flows (banking, payments) should block. Soft sign-up flows (newsletters, free content) probably shouldn't.</p>
+
+    <h2 id="score">How to interpret the confidence score</h2>
+    <p class="short-answer">Think of it as the chance that mail will land in a real human's inbox.</p>
+    <p>Scores above <strong>0.8</strong> generally mean the address is real, has working MX records, isn't disposable, and the SMTP probe accepted it. Safe to email for transactional purposes (signup confirmation, password reset).</p>
+    <p>Scores between <strong>0.5 and 0.8</strong> usually mean the address is on a catch-all domain or the SMTP probe couldn't get a definitive answer. The address might be real; you just can't be sure from here. Use double opt-in.</p>
+    <p>Scores below <strong>0.4</strong> mean something is wrong — invalid syntax, no MX records, hard SMTP rejection, or known disposable domain. Don't waste sender reputation emailing these.</p>
+
+    <h2 id="use-cases">When verification helps (and when it doesn't)</h2>
+    <p class="short-answer">Helps a lot at sign-up; helps less for cold outreach; doesn't help at all for guessing addresses you don't have.</p>
+    <p>At sign-up time, verification catches typos, mistakes, and disposable addresses before they enter your database. The cost of verifying one address is tiny; the cost of an undeliverable address sitting in your list for years is much bigger (sender reputation, send costs, false metrics). This is the highest-ROI use case.</p>
+    <p>For cleaning an existing list, verification helps but isn't magic. Catch-all domains are unresolvable. SMTP probes get rate-limited or blocked by big providers (Google, Microsoft) in ways that look like fail-fast rejects. The right approach is verify-then-send-with-double-opt-in rather than verify-once-and-trust-forever.</p>
+    <p>For cold outreach where you guessed at addresses (first.last@company.com), verification helps you avoid wasting sends on guesses that didn't land — but it doesn't help you find the right address in the first place.</p>
+
+    <div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What email verification actually checks</li>
+        <li>Why catch-all addresses are tricky</li>
+        <li>Disposable emails and why people use them</li>
+        <li>How to interpret the confidence score</li>
+        <li>When verification helps (and when it doesn&#x27;t)</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What does an email verifier actually check?</h3><p>Three things: the syntax is valid (matches RFC 5322), the domain has MX records pointing at real mail servers, and the address responds to an SMTP probe. Some verifiers also detect known disposable-email services and catch-all configurations where every address at a domain is accepted regardless.</p>
+      <h3>What is a catch-all email address?</h3><p>A domain configured to accept mail to any address. Random123@example.com, made-up-name@example.com, and ceo@example.com all get accepted because the mail server doesn't actually validate the local part. Catch-all domains are common at companies that want every misdirected email forwarded to a central inbox.</p>
+      <h3>What is a disposable email address?</h3><p>An email address from a temporary-mail service like Mailinator, Guerrilla Mail, 10MinuteMail, or TempMail. Users sign up for things with these to avoid putting their real address into a database they don't trust.</p>
+      <h3>Why do verifiers return a score instead of yes or no?</h3><p>Because some checks are definitive (syntax is wrong: no) and some are probabilistic (catch-all domain: maybe, can't tell). A score combines all the signals into one number you can threshold against. Scores below 0.4 are usually unsafe to email; scores above 0.8 are usually fine.</p>
+      <h3>Can I use this to clean a mailing list?</h3><p>For a few addresses, yes. For thousands, it's not the right shape — you want a proper bulk verifier with API rate limits, list segmentation, and reporting. Use this tool for spot-checks: an address you're about to email manually, or a sign-up flow you want to harden.</p>
+      <h3>Will the verifier send a real email to the address?</h3><p>No. The SMTP check goes through the handshake — HELO, MAIL FROM, RCPT TO — and then disconnects before sending any message. The owner of the address doesn't see anything in their inbox.</p>
+      <h3>Why does the verifier sometimes say 'unknown'?</h3><p>Catch-all domains return 'accept' for every address, so we can't tell whether the specific mailbox exists. Some servers also throttle or deny SMTP probes for privacy reasons. In both cases the address might be real or might be made up — we can't distinguish.</p>
+      <h3>Do you log the addresses I check?</h3><p>Standard web-server access logs are kept briefly for security and abuse detection, then rotated. We don't tie checks to your identity, don't sell or share the data, and don't track you across sessions.</p>
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Femail-verifier" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Femail-verifier" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Femail-verifier&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Femail-verifier&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related"><h2>Related</h2><ul><ul class="related-cards">
+    <li><a href="/whois-lookup"><span class="card-tag">PRIVACY</span><span class="card-title">WHOIS lookup</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/dns-lookup"><span class="card-tag">PRIVACY</span><span class="card-title">DNS lookup</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/ssl-checker"><span class="card-tag">PRIVACY</span><span class="card-title">SSL checker</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a DNS leak?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul></div>
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page"><span class="label">On this page</span><ol>
+    <li><a href="#what-it-checks">What it checks</a></li>
+    <li><a href="#catch-all">Catch-all addresses</a></li>
+    <li><a href="#disposable">Disposable emails</a></li>
+    <li><a href="#score">The confidence score</a></li>
+    <li><a href="#use-cases">When it helps</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ol></aside>
+</div>
+
+<footer class="footer"><div class="wrap"><div class="top">
+  <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+  <div><h4>Product</h4><ul><li><a href="/apps.html">Apps</a></li><li><a href="/technology.html">Technology</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+  <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN guide</a></li><li><a href="/free-vpn-for-windows">For Windows</a></li><li><a href="/free-vpn-for-india">For India</a></li><li><a href="/free-wireguard-vpn">WireGuard VPN</a></li><li><a href="/free-quic-vpn">QUIC VPN</a></li></ul></div>
+  <div><h4>Tools</h4><ul><li><a href="/what-is-my-ip">What is my IP?</a></li><li><a href="/is-it-down">Is it down?</a></li><li><a href="/ssl-checker">SSL checker</a></li><li><a href="/whois-lookup">WHOIS lookup</a></li><li><a href="/dns-lookup">DNS lookup</a></li><li><a href="/headers-viewer">HTTP headers</a></li><li><a href="/email-verifier">Email verifier</a></li><li><a href="/webrtc-leak-test">WebRTC leak test</a></li><li><a href="/password-generator">Password generator</a></li></ul></div>
+  <div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+</div><div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div></div></footer>
+
+<script src="/tool.js"></script>
+<script>
+toolPage.run("email-verifier", {
+  inputId: "email-input",
+  submit: function (v) { return "/api/email?email=" + encodeURIComponent(v); },
+  render: function (data) {
+    if (data.error) return { verdict: "down", text: data.error };
+    document.getElementById("r-email").textContent = data.email || "—";
+    document.getElementById("r-score").textContent = data.score != null ? data.score.toFixed(2) : "—";
+    document.getElementById("r-syntax").textContent = data.is_valid_syntax ? "Yes" : "No";
+    document.getElementById("r-mx").textContent = data.mx_found ? "Yes" : "No";
+    document.getElementById("r-disp").textContent = data.is_disposable ? "Yes" : "No";
+    document.getElementById("r-ca").textContent = data.is_catch_all ? "Yes" : "No";
+    document.getElementById("r-smtp").textContent = data.smtp_check || "—";
+    document.getElementById("r-prov").textContent = data.smtp_provider || "—";
+
+    var score = data.score != null ? data.score : 0;
+    var verdict = "down", text = "Looks risky to email.";
+    if (score >= 0.8) { verdict = "up"; text = "Safe to email — high confidence."; }
+    else if (score >= 0.5) { verdict = "warn"; text = "Catch-all or uncertain — use double opt-in."; }
+    return { verdict: verdict, text: text };
+  }
+});
+</script>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

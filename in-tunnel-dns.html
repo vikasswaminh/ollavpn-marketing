@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What Is In-Tunnel DNS, and Why Does It Matter?</title>
+<meta name="description" content="How OllaVPN's in-tunnel DNS prevents leaks and enhances privacy by keeping DNS requests encrypted inside the VPN tunnel." />
+<link rel="canonical" href="https://ollavpn.com/in-tunnel-dns" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="What Is In-Tunnel DNS, and Why Does It Matter?" />
+<meta property="og:description" content="How OllaVPN's in-tunnel DNS prevents leaks and enhances privacy by keeping DNS requests encrypted inside the VPN tunnel." />
+<meta property="og:url" content="https://ollavpn.com/in-tunnel-dns" />
+<meta property="og:image" content="https://ollavpn.com/og-in-tunnel-dns.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="In-Tunnel Dns Vpn — explained by OllaVPN" />
+<meta property="article:published_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:modified_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Free VPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What Is In-Tunnel DNS, and Why Does It Matter?" />
+<meta name="twitter:description" content="How OllaVPN's in-tunnel DNS prevents leaks and enhances privacy by keeping DNS requests encrypted inside the VPN tunnel." />
+<meta name="twitter:image" content="https://ollavpn.com/og-in-tunnel-dns.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "In-Tunnel DNS: Why It's Crucial for Your VPN Privacy",
+  "description": "Learn how OllaVPN's in-tunnel DNS prevents leaks and enhances your privacy by keeping your DNS requests encrypted and within the VPN tunnel. Understand its technical benefits.",
+  "image": "https://ollavpn.com/og-in-tunnel-dns.png",
+  "author": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "url": "https://ollavpn.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ollavpn.com/favicon-256.png"
+    }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ollavpn.com/in-tunnel-dns"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does in-tunnel DNS protect me against in plain terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It stops your internet provider, or anyone else on your local network, from seeing what websites you're trying to visit. Think of it like putting your request to find 'ollavpn.com' into a sealed, encrypted envelope that only OllaVPN can open, preventing anyone from peeking at the address you're going to. It's a key privacy layer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is in-tunnel DNS on by default with OllaVPN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely! It's a core privacy feature, so we've made sure it's enabled by default for everyone, right out of the box. You don't need to configure anything to get this critical protection. We believe fundamental privacy shouldn't be something you have to hunt for in settings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I turn off in-tunnel DNS in OllaVPN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, you can't turn it off. It's an integral part of how OllaVPN protects your privacy and prevents DNS leaks. Disabling it would compromise your security and defeat a major purpose of using a VPN. We keep it on to ensure you're always protected, whether you're on the free plan or Plus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I verify that in-tunnel DNS is working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use a third-party DNS leak test website. Connect to OllaVPN, then visit one of these sites. It should show that your DNS requests are being handled by OllaVPN's servers, not your internet provider's. This confirms your DNS traffic is securely routed through our tunnel, just as intended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does in-tunnel DNS slow down my internet connection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not noticeably. The overhead is minimal, and our private DNS resolvers are optimized for speed. You won't feel a difference in your 10 Mbps free plan speed, or even on the 10 Gbps OllaVPN Plus plan. It's designed to be fast and invisible, keeping your browsing fluid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will in-tunnel DNS break my smart-home devices or LAN access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, it shouldn't. In-tunnel DNS primarily handles external website resolution. Your local network access for smart devices or file sharing within your LAN should continue to function normally. Those requests typically don't go through the VPN tunnel, so your home setup stays connected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is OllaVPN's in-tunnel DNS implementation open source or audited?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While the specific implementation isn't open source externally, our entire system is built on well-vetted, open-source components like WireGuard. We're committed to transparency and plan for independent audits of our infrastructure as we grow. We want you to trust that it works as advertised."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does OllaVPN's in-tunnel DNS compare to what other VPNs do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many VPNs rely on your operating system's default DNS, which can leak your activity. OllaVPN builds DNS directly into the encrypted tunnel, ensuring your requests never leave our secure environment. This crucial difference means your DNS queries are protected from the moment they leave your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does in-tunnel DNS NOT protect against?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It won't stop websites from tracking you with cookies or browser fingerprinting. It also doesn't protect against malware or phishing attacks if you click a malicious link. It's a crucial layer for privacy by hiding your destination, but it's not a silver bullet for all online risks you might encounter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will in-tunnel DNS still work in 5 or 10 years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we're building for the long term. Our DNS infrastructure is designed to be robust and secure. Coupled with our post-quantum-ready encryption, we're confident it will remain a strong privacy primitive for years to come, protecting your data against future threats."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the free plan include in-tunnel DNS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Every OllaVPN user, whether you're on our free plan or OllaVPN Plus, gets the full benefit of in-tunnel DNS. We believe fundamental privacy shouldn't be behind a paywall, and you don't even need a card on file for it. It's part of our \"free forever\" promise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is in-tunnel DNS related to OllaVPN's post-quantum readiness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In-tunnel DNS ensures your DNS queries are encrypted within the tunnel. Our post-quantum-ready encryption then protects that entire tunnel, including the DNS traffic, against future quantum computing threats. This offers end-to-end forward security for your privacy, future-proofing your connection."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ollavpn.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Technology",
+      "item": "https://ollavpn.com/technology.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "In-tunnel DNS",
+      "item": "https://ollavpn.com/in-tunnel-dns"
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text);
+    max-width: 880px; }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 20px; max-width: 760px; }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 28px 56px;
+    gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+
+  .article {
+    min-width: 0;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px;
+    color: var(--text);
+  }
+  .article .short-answer {
+    font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em;
+  }
+  .article p strong { font-weight: 700; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px;
+    text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline {
+    display: block; margin: 0 0 2.2em;
+    border: 1px solid var(--line); border-radius: 12px; padding: 18px 24px;
+    background: #fff;
+  }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+
+  .toc-rail .label, .toc-inline .label {
+    font-family: var(--mono); font-size: 11px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block;
+  }
+  .toc-rail ol, .toc-inline ol {
+    list-style: none; margin: 0; padding: 12px 0 0;
+  }
+  .toc-rail ol li, .toc-inline ol li {
+    font-size: 14px; line-height: 1.5; margin: 0 0 8px;
+  }
+  .toc-rail ol li a, .toc-inline ol li a {
+    color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px;
+    border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .toc-rail ol li a:hover,
+  .toc-inline ol li a:hover,
+  .toc-rail ol li.is-current a {
+    color: var(--red); border-left-color: var(--red);
+  }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+</style>
+</head>
+
+<body>
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="wrap">
+    <div class="meta">FEATURE · ALWAYS CURRENT
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=dns">DNS</a></div>
+    </div>
+    <h1>In-Tunnel DNS: Why It&#39;s Crucial for Your VPN Privacy</h1>
+    <p class="lede">You&#39;re probably using a VPN to keep your online activity private, but have you ever thought about how your device finds the websites you want to visit? That&#39;s DNS, and if your VPN isn&#39;t handling it correctly, your browsing habits might still be exposed, even when you think you&#39;re fully protected. Many VPNs overlook this common pitfall, but OllaVPN&#39;s in-tunnel DNS makes sure your DNS requests are just as secure and private as your traffic, closing a critical privacy gap.</p>
+  <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-layout">
+  <article class="article">
+
+    
+    <div class="tier-compat">
+      <span class="tier-compat-label">Available on</span>
+      <a class="tier-compat-chip" href="/dl/">Free</a>
+      <a class="tier-compat-chip" href="/pricing#plans">Pro</a>
+      <a class="tier-compat-chip" href="/pricing#plans">Business</a>
+      <span class="tier-compat-note">Same security stack on every tier.</span>
+    </div>
+
+<div class="tldr">
+      <span class="label">TL;DR</span>
+      
+      <p>Your DNS requests, which are like asking for directions to a website, often travel outside your VPN&#39;s protection. With OllaVPN, your DNS requests are encrypted and stay inside the secure tunnel, all the way to our private, zero-log DNS servers. This means your internet provider can&#39;t see what sites you&#39;re trying to visit, even if your connection briefly drops.</p>
+      
+      <p>Many VPNs rely on your operating system&#39;s default DNS settings, which can leave you vulnerable to leaks or manipulation. We&#39;ve built DNS directly into the OllaVPN tunnel. This ensures all your requests are handled securely and privately from the moment you connect, without you needing to do any extra configuration.</p>
+      
+      <p>This in-tunnel DNS is a core feature for all OllaVPN users, whether you&#39;re on our free 10 Mbps plan or OllaVPN Plus. It works seamlessly with our post-quantum ready encryption and the always-on kill switch to provide comprehensive privacy and security, helping us deliver on our promise of a truly free and private internet experience.</p>
+      
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        
+        <li><a href="#what-is-in-tunnel-dns">What is in-tunnel DNS and why is it so important?</a></li>
+        
+        <li><a href="#how-it-works-under-the-hood">How does OllaVPN&#39;s in-tunnel DNS work, step-by-step?</a></li>
+        
+        <li><a href="#what-other-vpns-get-wrong">What do other VPNs often get wrong with DNS, and how is OllaVPN different?</a></li>
+        
+        <li><a href="#real-world-protection">What real-world threats does in-tunnel DNS protect you against?</a></li>
+        
+        <li><a href="#defaults-and-configuration">Are OllaVPN&#39;s DNS features on by default, and can you customize them?</a></li>
+        
+        <li><a href="#how-to-verify">How can you verify that OllaVPN&#39;s in-tunnel DNS is working?</a></li>
+        
+        <li><a href="#limits-and-trade-offs">What are the limitations of in-tunnel DNS, and what doesn&#39;t it solve?</a></li>
+        
+        <li><a href="#connecting-to-other-primitives">How does in-tunnel DNS integrate with OllaVPN&#39;s other privacy features?</a></li>
+        
+        <li><a href="#performance-impact">Does in-tunnel DNS impact my connection speed or latency?</a></li>
+        
+        <li><a href="#future-proofing">Is OllaVPN&#39;s in-tunnel DNS future-proof against evolving threats?</a></li>
+        
+        <li><a href="#free-plan-inclusion">Is in-tunnel DNS available on OllaVPN&#39;s free plan?</a></li>
+        
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    
+    <h2 id="what-is-in-tunnel-dns">What is in-tunnel DNS and why is it so important?</h2>
+    <p class="short-answer">In-tunnel DNS means your requests to translate website names into IP addresses happen securely within the VPN's encrypted tunnel, preventing your internet service provider (ISP) from seeing your browsing activity.</p>
+
+Normally, when you type a website address like "ollavpn.com" into your browser, your device sends a request to a Domain Name System (DNS) server, usually operated by your internet service provider (ISP), to find the corresponding numerical IP address. This happens *before* your connection to the website is made. If you're using a VPN but your DNS requests aren't handled by the VPN itself, your ISP can still see every website you try to visit, even if the content of those websites is encrypted by your VPN. This is what's known as a <strong>DNS leak</strong>, and it pretty much defeats the purpose of using a VPN for privacy.
+
+OllaVPN solves this by routing all your DNS requests directly through the encrypted VPN tunnel. This means your device asks OllaVPN's DNS servers for IP addresses, not your ISP's. Because this request travels inside the secure tunnel, your ISP can't see what websites you're looking up. It's fully encrypted from your device to our network, ensuring your browsing habits remain private from anyone who might be monitoring your internet connection.
+
+This in-tunnel DNS is a fundamental part of our privacy-first approach. It's not just about encrypting your data; it's about protecting the metadata too — the information *about* your data. Without it, even with a strong VPN, a significant part of your online activity could still be exposed. It's automatically enabled and always on with OllaVPN, so you don't have to worry about configuring it or accidentally exposing yourself to a DNS leak.
+    
+    <h2 id="how-it-works-under-the-hood">How does OllaVPN&#39;s in-tunnel DNS work, step-by-step?</h2>
+    <p class="short-answer">OllaVPN intercepts your DNS requests on your device, encrypts them, and sends them through the secure VPN tunnel to our private, no-log DNS resolvers, which then fetch the IP addresses for the websites you want to visit.</p>
+
+<p>When you connect to OllaVPN, our app takes over your device's DNS settings. This means that instead of sending your domain name requests (like "ollavpn.com") to your internet provider's DNS servers, all those requests are immediately redirected to OllaVPN. From the moment you hit "connect," every bit of traffic, including your DNS queries, travels through our <a href="/technology#encrypted-tunnel">encrypted tunnel</a>, making it impossible for your ISP or anyone else to see what sites you're trying to reach.</p>
+
+<p>Once inside the tunnel, your DNS queries are sent directly to <strong>OllaVPN's private DNS resolvers</strong>. These aren't just any public DNS servers; they're infrastructure we operate ourselves, specifically designed to uphold our strict no-logs policy. They don't keep records of your activity, ensuring your browsing habits remain private. Using our own resolvers, rather than relying on third parties, is a critical part of how we protect your privacy end-to-end. Your requests stay within our trusted network until the very last step.</p>
+
+<p>After our resolvers look up the IP address for the website you're visiting, that information is sent back to your device, still protected within the secure tunnel. Only then does your device know where to send the actual request for the website's content. This whole process happens incredibly fast, thanks to the efficiency of the <a href="/technology#wireguard-protocol">WireGuard protocol</a> that OllaVPN uses. Even in restrictive network environments, our <a href="/technology#quic-option">QUIC option</a> helps ensure your DNS queries and regular traffic continue to flow smoothly and securely, bypassing common blocking techniques.</p>
+    
+    <h2 id="what-other-vpns-get-wrong">What do other VPNs often get wrong with DNS, and how is OllaVPN different?</h2>
+    <p class="short-answer">Many VPNs leave your DNS requests vulnerable to leaks or use third-party servers, while OllaVPN encrypts and routes all your DNS traffic directly through its own secure, private resolvers inside the VPN tunnel.</p>
+
+A lot of VPNs, especially the free ones from ad-funded free VPNs or freemium throttled VPNs, often overlook DNS security or cut corners. What happens is that even if your internet traffic is encrypted, your DNS requests – which are basically the phonebook lookups for websites – might still go through your internet provider or some third-party DNS server. This means your ISP can still see what sites you're trying to visit, even if they can't see the content of those sites. This is a pretty significant privacy hole, and it's called a DNS leak.
+
+Some VPNs try to fix this by using publicly available DNS resolvers like Cloudflare or Google. While these are often faster than your ISP's, they're still external entities that see your DNS traffic. Plus, if the VPN client doesn't properly force all DNS traffic through the tunnel, your operating system might default to its own <strong>OS-level DNS</strong> settings, leading to leaks. Imagine having a secure tunnel for your car, but the map you're using is still being read by someone outside the tunnel – that's what a DNS leak feels like.
+
+OllaVPN takes a different, more secure path. We operate our own private, zero-log DNS resolvers that are physically located within our VPN infrastructure. When you connect to OllaVPN, all your DNS requests are not only encrypted, but they're also routed exclusively through these resolvers, staying entirely within the secure VPN tunnel. This means your ISP, advertisers, or anyone else monitoring your network can't see your DNS lookups. There's no risk of <strong>DNS hijacking</strong> or accidental leaks because your operating system simply isn't allowed to use external DNS servers while OllaVPN is active. It's a complete, end-to-end privacy solution for your internet activity.
+    
+    <h2 id="real-world-protection">What real-world threats does in-tunnel DNS protect you against?</h2>
+    <p class="short-answer">In-tunnel DNS protects your online activity from being snooped on by your internet provider, bypasses government or corporate content filters, and helps prevent you from landing on malicious websites.</p>
+
+<p>When you type a website address like "ollavpn.com" into your browser, your computer needs to translate that into an IP address (like 192.0.2.1) to find the server. This translation is handled by something called a Domain Name System, or DNS. Normally, your internet service provider (ISP) handles this for you, and because they do, they see every single website you try to visit. That's a huge privacy hole, letting them build a detailed profile of your online habits.</p>
+
+<p><strong>ISP tracking</strong> is a big concern for many people, especially when ISPs can legally sell anonymized browsing data in some regions. When you use OllaVPN, your DNS requests don't go to your ISP at all. Instead, they travel securely inside the encrypted VPN tunnel to OllaVPN's own DNS servers, which are designed to be privacy-friendly. This means your ISP only sees encrypted traffic going to our servers, not the specific sites you're visiting.</p>
+
+<p>Beyond privacy, in-tunnel DNS is crucial for bypassing <strong>DNS censorship</strong>, which is when governments or corporations block access to certain websites by manipulating DNS requests. Because your requests are resolved within our network, you can often access content that would otherwise be blocked in your location. It also adds a layer of defense against <strong>phishing attacks</strong>. If you accidentally click on a link to a fake website designed to steal your login credentials, our DNS servers can sometimes identify and block access to known malicious domains, preventing you from ever reaching the dangerous site. Couple this with our always-on <a href="/features/kill-switch">kill switch</a>, and your connection is really buttoned up.</p>
+    
+    <h2 id="defaults-and-configuration">Are OllaVPN&#39;s DNS features on by default, and can you customize them?</h2>
+    <p class="short-answer">Yes, OllaVPN's in-tunnel DNS is on by default, and while we handle the secure defaults, you retain control over your DNS server choice.</p>
+
+OllaVPN routes all your DNS queries through our secure, encrypted tunnels by default. This means you don't need to configure anything yourself; it just works. This setup prevents DNS leaks, which is a common vulnerability where your internet provider could still see the websites you're trying to visit, even if your actual traffic is encrypted by the VPN. We believe that true privacy means protecting *all* your data, and that includes your DNS requests. Our system is designed to provide this protection silently in the background, requiring no user input to keep you safe.
+
+While we manage the secure defaults, we also understand that some users prefer more <strong>user control</strong> over their network settings. If you want to use a specific DNS provider, like a privacy-focused public DNS or a content-filtering service, you absolutely can. You'll find the option to customize your DNS servers within the OllaVPN app settings. Just enter the IPs of your preferred DNS servers, and your OllaVPN connection will use those instead, still routing them securely through our tunnel.
+
+It's worth noting that our in-tunnel DNS works hand-in-hand with the <strong>kill switch</strong>, which is also on by default. If your VPN connection ever drops unexpectedly, the kill switch immediately blocks all internet traffic, preventing any data — including DNS requests — from leaking outside the secure tunnel. This combination ensures your online activity remains private and protected, whether you stick with our defaults or choose to customize them.
+    
+    <h2 id="how-to-verify">How can you verify that OllaVPN&#39;s in-tunnel DNS is working?</h2>
+    <p class="short-answer">You can verify OllaVPN's in-tunnel DNS by running a DNS leak test and checking that your DNS requests resolve to your chosen OllaVPN server location, not your real IP address.</p>
+
+<p>The easiest way to confirm our in-tunnel DNS is doing its job is to use a <a href="https://www.dnsleaktest.com/">DNS leak test website</a>. Before connecting to OllaVPN, visit one of these sites and make a note of the IP addresses and locations shown for your DNS servers. They'll likely be from your internet service provider (ISP).</p>
+
+<p>Now, connect to OllaVPN. Choose any server location you like. Once you're connected, go back to the DNS leak test website and refresh the page. What you should see is that all the DNS servers listed now match the country of your chosen OllaVPN server location, and the IP addresses should be different from what you saw before — they'll be OllaVPN's DNS resolvers. If you still see your ISP's DNS servers or any others from your actual location, you might have a DNS leak, but our app's always-on kill switch should prevent this.</p>
+
+<p>This test confirms that your device is sending all DNS queries through the encrypted OllaVPN tunnel, preventing your ISP or anyone else from seeing what websites you're trying to visit. It's a quick and effective way to ensure your privacy is intact and that our in-tunnel DNS is fully functional.</p>
+    
+    <h2 id="limits-and-trade-offs">What are the limitations of in-tunnel DNS, and what doesn&#39;t it solve?</h2>
+    <p class="short-answer">In-tunnel DNS protects your DNS requests from being spied on by your ISP or local network, but it doesn't solve broader privacy issues like browser fingerprinting, website tracking, or malware.</p>
+<p>While in-tunnel DNS is a powerful privacy tool, it's not a magic bullet for all online privacy concerns. Its primary job is to encrypt your domain name requests and route them through the VPN tunnel, preventing your Internet Service Provider (ISP) or anyone on your local network from seeing which websites you're trying to visit. This stops them from collecting data on your browsing habits or censoring access to specific sites based on DNS lookups.</p>
+<p>However, it doesn't prevent websites themselves from tracking you. Once your connection is established, the website you visit can still use various methods like <strong>website tracking (cookies)</strong>, supercookies, or browser storage to identify you and monitor your activity. Your browser's unique configuration and settings can also lead to <strong>browser fingerprinting</strong>, where websites gather enough information about your device and software to create a unique profile, even without traditional cookies. In-tunnel DNS simply doesn't touch these layers of interaction.</p>
+<p>Think of it this way: in-tunnel DNS gets you to the front door of a website securely and privately, but it doesn't change what happens once you're inside. It won't protect you from <strong>malware</strong> if you download a malicious file, nor will it obscure your <strong>user behavior</strong> on a site once you've logged in or started interacting with its content. For those broader protections, you'd need additional tools and practices, like using privacy-focused browsers, ad blockers, and exercising caution about what you click and where you share personal information.</p>
+    
+    <h2 id="connecting-to-other-primitives">How does in-tunnel DNS integrate with OllaVPN&#39;s other privacy features?</h2>
+    <p class="short-answer">OllaVPN's in-tunnel DNS is a fundamental part of our comprehensive privacy approach, working with features like post-quantum ready encryption, the kill switch, and 4-layer peer isolation to ensure your online activity remains truly private.</p>
+
+<p>Think of in-tunnel DNS as making sure no part of your internet request ever leaves the secure VPN tunnel unprotected. When you type a website address, your device needs to translate that human-readable name (like ollavpn.com) into an IP address (like 104.26.1.189) that computers understand. This translation is handled by a DNS server. If that request goes outside the VPN, even for a split second, it's a privacy leak. With OllaVPN, your DNS requests travel securely inside the encrypted tunnel to our own private, zero-log DNS servers, meaning your ISP or anyone else can't see what sites you're trying to reach.</p>
+
+<p>This integration is crucial for <strong>comprehensive privacy</strong>. For instance, the <a href="/features/kill-switch">kill switch</a> ensures that if your VPN connection ever drops unexpectedly, your internet access is immediately cut off. This prevents any data, including those sensitive DNS requests, from being sent over your unencrypted connection even for a moment. Combine that with our <strong>post-quantum ready encryption</strong>, which secures all data — including DNS traffic — against even future, more powerful computers, and you have a robust defense against various snooping attempts.</p>
+
+<p>Furthermore, in-tunnel DNS works hand-in-hand with our <strong>4-layer peer isolation</strong>. This advanced security measure ensures that even within our own network, your traffic is kept completely separate from other users. So, not only are your DNS requests hidden from external observers, but they're also isolated from anyone else using our service. It's all about building layers of protection, where each feature reinforces the others to create a genuinely private online experience, whether you're on our free plan or enjoying 10 Gbps on <a href="/plus">OllaVPN Plus</a>.</p>
+    
+    <h2 id="performance-impact">Does in-tunnel DNS impact my connection speed or latency?</h2>
+    <p class="short-answer">No, OllaVPN's in-tunnel DNS has a minimal impact on your connection speed or latency.</p>
+
+When you use OllaVPN, your DNS requests are handled securely within the VPN tunnel itself, rather than by your internet provider's DNS server. This means your DNS queries are encrypted and routed through our network, preventing your ISP from seeing what sites you're trying to visit. You might think adding this step would slow things down, but it's designed for efficiency.
+
+We use highly optimized DNS resolvers that are physically close to our VPN servers. This setup ensures <strong>fast DNS resolution</strong>, meaning the time it takes to look up a website's IP address is incredibly short. The overhead introduced by handling DNS within the tunnel is truly minimal, often unnoticeable for most everyday use.
+
+For OllaVPN's free plan, where your speed is capped at 10 Mbps, this barely registers. Even if there were a fractional delay, it wouldn't impact your overall experience because your bandwidth is the primary limiting factor. If you're on the 10 Gbps OllaVPN Plus plan, you're looking at speeds where the extra milliseconds for secure DNS are still negligible compared to the massive bandwidth available.
+    
+    <h2 id="future-proofing">Is OllaVPN&#39;s in-tunnel DNS future-proof against evolving threats?</h2>
+    <p class="short-answer">Yes, OllaVPN's in-tunnel DNS is designed with future-proofing in mind, especially when combined with our post-quantum ready encryption.</p>
+
+<p>When you use OllaVPN, your DNS requests don't just go to a public DNS server; they travel securely within the encrypted VPN tunnel. This means that even if a public DNS provider were compromised, or if your local network tried to snoop on your DNS lookups, that information remains private. This approach is inherently more secure than relying on external DNS resolvers, as it ensures your entire connection, from your device to the VPN server, is under our protection.</p>
+
+<p>Our commitment to <strong>long-term privacy</strong> extends to how we handle the encryption protecting that tunnel. We're already <a href="/blog/post-quantum-encryption-explained">post-quantum ready</a>, meaning we've implemented quantum-resistant algorithms alongside traditional encryption. This makes your connection more resilient against potential future attacks from advanced adversaries, including those who might develop quantum computers capable of breaking current encryption standards. So, even as <strong>evolving threats</strong> emerge, your DNS traffic, along with all your other data, stays secure.</p>
+
+<p>This combined approach ensures that your browsing history and online activity, which can often be inferred from DNS requests, are shielded not just today, but also well into the future. It's about making sure your connection remains <a href="/features/forward-secrecy">forward-secure</a>, meaning that even if an encryption key were somehow compromised in the future, past communications would remain protected. We believe this proactive stance is crucial for true online privacy.</p>
+    
+    <h2 id="free-plan-inclusion">Is in-tunnel DNS available on OllaVPN&#39;s free plan?</h2>
+    <p class="short-answer">Yes, in-tunnel DNS is fully available on OllaVPN's free plan, just like every other core privacy feature.</p>
+
+<p>You don't have to worry about your DNS requests leaking outside the VPN tunnel, even if you're using our free plan. In-tunnel DNS is a fundamental part of how OllaVPN protects your privacy, ensuring that all your internet traffic—including those initial requests to look up websites—stays encrypted and routed through our secure servers. It's not an add-on or a premium feature; it's just how we do things.</p>
+
+<p>We believe core privacy shouldn't be paywalled. That's why features like <strong>in-tunnel DNS</strong>, the <strong>kill switch</strong>, and our <strong>post-quantum-ready encryption</strong> are available to everyone, whether you're on the $0 forever plan with its 10 Mbps speed cap, or you've upgraded to Plus. There's no card required to get started, and no hidden features locked behind a paywall; what you see is what you get.</p>
+    
+
+    <h2 id="dns-verify">How can you verify your DNS isn't leaking?</h2>
+    <p class="short-answer">A three-step test using free OllaVPN tools that takes about five minutes. The test proves that DNS queries originate from the in-tunnel resolver (not your ISP's resolver, not Google's 8.8.8.8, not Cloudflare's 1.1.1.1) while OllaVPN is connected.</p>
+
+    <p><strong>Step 1 — Baseline.</strong> Without OllaVPN connected, open <a href="/dns-lookup">our DNS lookup tool</a> in your browser and resolve <code>example.com</code>. The resolver IP returned will typically be your ISP's resolver — something in your ISP's IP range. Note it down.</p>
+
+    <p><strong>Step 2 — Connected.</strong> Connect OllaVPN. Resolve <code>example.com</code> again with the same tool. The resolver IP should now be a CGNAT address in the <code>100.64.0.0/10</code> range (e.g., <code>100.64.0.1</code>) — that's our in-tunnel unbound resolver. If you see your ISP's resolver again, the in-tunnel DNS configuration has failed and traffic is leaking at the DNS layer.</p>
+
+    <p><strong>Step 3 — Confirm with a second tool.</strong> Visit <a href="https://dnsleaktest.com">dnsleaktest.com</a> (an independent third-party DNS-leak testing service) while connected. Run the "Extended test." Every resolver returned should be an OllaVPN tunnel resolver, not your ISP, not Google, not Cloudflare. If you see any non-tunnel resolver in the list, that's a leak.</p>
+
+    <p><strong>What the test proves.</strong> If both tools show only OllaVPN's in-tunnel resolver while connected, every DNS query your device makes is going inside the tunnel — invisible to your ISP, invisible to the local network operator, invisible to anyone observing the network you're physically connected to. That's what "no DNS leaks" actually means at the technical level.</p>
+
+    <h2 id="dns-vs-competitors">How does OllaVPN's DNS posture compare to other free VPNs?</h2>
+    <p class="short-answer">The substantive comparison is two-fold: where the DNS resolver runs (operator-controlled inside the tunnel vs third-party like Cloudflare or Google) and whether the OS DNS path is firewall-blocked. OllaVPN clears both bars; many competitors don't.</p>
+
+    <p><strong>Operator-controlled vs third-party resolver.</strong> A real in-tunnel DNS implementation runs the resolver on infrastructure the VPN operator controls — so the resolver behavior (no query logging, no commercial analytics, no cross-referencing with the operator's other products) is entirely under the operator's policy. OllaVPN runs its own unbound resolver on every exit. Some competitors route DNS through the tunnel but to a third-party resolver (Cloudflare 1.1.1.1, Google 8.8.8.8, OpenDNS) — this is better than no in-tunnel DNS, but the user has now shifted DNS trust to a third party who has their own privacy posture and their own data-handling practices.</p>
+
+    <p><strong>OS DNS path firewall-blocked vs just preferred.</strong> A weak in-tunnel DNS implementation installs the tunnel resolver as the system's preferred DNS server but allows the OS resolver as a fallback. Apps that bypass the system resolver (notably anything using <code>dnssd</code> for mDNS, browsers using DNS-over-HTTPS, system-level updaters that hardcode resolver IPs) silently bypass the in-tunnel DNS. A strong implementation, like OllaVPN's, additionally installs firewall rules that block all DNS-port-53 traffic to non-tunnel resolvers — so even if some app or OS component tries to bypass the system resolver, the packet never leaves the device. This is what we mean by "in-tunnel DNS that actually doesn't leak."</p>
+
+    <p><strong>DNS-over-HTTPS handling.</strong> DNS-over-HTTPS sends DNS queries over port 443 (HTTPS) instead of port 53 (DNS), which means a naive firewall-blocking implementation won't catch DoH leaks. OllaVPN's in-tunnel resolver supports DoH for upstream queries (to Cloudflare and Quad9), but the client-side DoH bypass risk is real: Firefox in particular ships its own DoH client that can bypass the system DNS configuration entirely. We document this in our <a href="/free-vpn-mac">Mac</a> and Windows pages: turn off Firefox's "Enable DNS over HTTPS" in Settings → Privacy &amp; Security → Network Settings while using a VPN, so DNS goes through the tunnel resolver instead of Firefox's own DoH path.</p>
+
+    <h2 id="dns-not-shipped">What our DNS layer deliberately doesn't ship</h2>
+    <p class="short-answer">No custom DNS server selection on free, no built-in tracker/ad blocker on free (yet), no per-domain routing. Each non-feature has a reason — included so you can pick a different VPN if any of these is critical.</p>
+
+    <p><strong>No custom DNS server selection on free.</strong> Some VPNs let you pick which DNS resolver the tunnel uses (Cloudflare, Google, your own DoH provider). We don't ship this on free because the in-tunnel resolver is part of the trust boundary — letting users pick an arbitrary external resolver re-introduces the trust question we just answered by running our own. Pro-tier users may get this as a power-user option.</p>
+
+    <p><strong>No built-in tracker/ad blocker on free yet.</strong> A resolver-level tracker blocker (the Windscribe R.O.B.E.R.T. pattern) sits exactly where DNS is processed — so it's the natural place to drop known tracker domains. We have not yet shipped this on free because tracker blocklists have a high false-positive rate and we did not want to break sites for users who did not opt into the tradeoff. uBlock Origin in your browser handles the great majority of web ads and trackers in the meantime. The resolver-level blocker is a planned Pro-tier feature.</p>
+
+    <p><strong>No per-domain routing.</strong> Some advanced setups want specific domains to bypass the tunnel and use the underlying network resolver (typically for accessing internal corporate resources while connected to a personal VPN). This is split-tunneling at the DNS layer; it's a planned Pro-tier feature paired with the broader split-tunneling roadmap.</p>
+
+    <h2 id="dns-faq">Common DNS questions, answered straight</h2>
+    <p class="short-answer">Direct answers to the questions readers most often ask about VPN DNS handling and OllaVPN's specific implementation.</p>
+
+    <p><strong>What exactly is a DNS leak?</strong> A DNS leak happens when a DNS query (the lookup that converts <code>example.com</code> into the IP address your device actually connects to) goes outside the VPN tunnel instead of through the in-tunnel resolver. The leak reveals the destination to your ISP or whoever else can observe your real network — defeating one of the core privacy properties a VPN should provide. The traffic itself is still encrypted via the tunnel; the metadata (which sites you're visiting) is what leaks.</p>
+
+    <p><strong>Why does in-tunnel DNS matter if the rest of my traffic is already encrypted?</strong> Because DNS is metadata, and metadata is often more revealing than content. If your ISP sees you resolved <code>weight-loss-clinic.example</code>, <code>job-search-site.example</code>, and <code>visa-application-portal.example</code> in sequence, they have a pretty clear picture of your circumstances even if they can't see any of the actual page contents. DNS leaks defeat the privacy purpose of a VPN even when the encrypted-tunnel part is working perfectly.</p>
+
+    <p><strong>What's the difference between DNS-over-HTTPS (DoH) and in-tunnel DNS?</strong> DoH encrypts DNS queries between your device and a chosen DoH server (typically Cloudflare or Google), but the DoH server still sees the query. In-tunnel DNS sends the query through the VPN tunnel to a resolver the VPN operator runs, so neither your ISP nor a third-party DoH provider sees the query — only the operator does, and a no-logs operator like OllaVPN doesn't log it. DoH is better than plain DNS; in-tunnel DNS is better than DoH for VPN users.</p>
+
+    <p><strong>Why does Firefox sometimes bypass my VPN's DNS?</strong> Firefox ships its own DNS-over-HTTPS client (called "Trusted Recursive Resolver") that, when enabled, sends DNS queries directly to Cloudflare regardless of your system DNS configuration. The queries still go through the VPN tunnel (since they're HTTPS), but they go to Cloudflare's resolver instead of your VPN's in-tunnel resolver — meaning Cloudflare sees the queries even when your VPN is supposed to be handling DNS. To force Firefox to use the system DNS resolver (which on OllaVPN is the in-tunnel resolver), disable "Enable DNS over HTTPS" in Firefox Settings → Privacy &amp; Security → Network Settings.</p>
+
+    <p><strong>What does the in-tunnel resolver actually log?</strong> Nothing per-query. Our unbound configuration sets <code>log-queries: no</code> and <code>log-replies: no</code>; the resolver process does not write per-query records to disk. Aggregate operational metrics (total queries per second per resolver, cache hit rate, average response time) are collected for capacity planning but cannot be tied back to any specific user or query.</p>
+
+    <p><strong>What happens if the in-tunnel resolver is slow?</strong> macOS in particular has a tendency to fall back to the system's pre-VPN DNS resolver if the configured tunnel resolver is slow or unresponsive. Without firewall blocking, this would cause silent DNS leaks. OllaVPN handles this by blocking all port-53 traffic to non-tunnel resolvers at the firewall layer — so even if the OS tries to fall back, the packets cannot escape. The user-visible result of a slow in-tunnel resolver is "DNS takes a bit longer" rather than "DNS silently leaks."</p>
+
+    <p><strong>Does OllaVPN's resolver support DNSSEC?</strong> Yes. The upstream-from-the-resolver path (our unbound to the public roots and TLDs) validates DNSSEC signatures where they exist. The resolver returns SERVFAIL for bogus (signed but invalid) responses, which is the correct behavior. Most consumer domains are not yet DNSSEC-signed in 2026, but the protection works where it's available.</p>
+
+    <p><strong>Can the resolver block specific domains for me?</strong> Not on the free tier today. We deliberately don't ship resolver-level domain blocking on free because the false-positive rate on tracker/ad blocklists is high enough that it would silently break some sites for users who didn't opt in. Pro-tier users will get an optional resolver-level blocker (a Windscribe R.O.B.E.R.T.-style feature) when we ship it. uBlock Origin in your browser handles the great majority of web ads and trackers in the meantime — and runs entirely on your device, no DNS request needed.</p>
+
+    <p><strong>How does in-tunnel DNS interact with IPv6?</strong> The tunnel is IPv4-only. DNS queries inside the tunnel use IPv4 to reach the in-tunnel resolver (which itself is an IPv4 address in the CGNAT range). The resolver supports AAAA-record lookups (returning IPv6 addresses for sites that have them), but the actual IPv6 traffic doesn't have anywhere to go — IPv6 is disabled on the tunnel interface, so apps fall back to IPv4 for the actual connection. The resolver still handles the lookup correctly; the connection just routes via IPv4.</p>
+
+    <h2 id="dns-about">About this guide</h2>
+    <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. The DNS-layer implementation details (unbound configuration, scutil supplemental keys on macOS, NRPT on Windows, VpnService DNS configuration on Android, port-53 firewall blocking) were verified against the production codebase in the June 2026 update cycle. Quarterly refresh; last full re-evaluation 23 June 2026.</p>
+
+    <p>For deeper context: <a href="/technology">the technology stack page</a> covers OllaVPN's full architecture including DNS interaction with kill switch and peer isolation. The <a href="/blog/what-is-a-dns-leak.html">DNS leak pillar blog</a> explains the category fundamentals in plain English. The <a href="/dns-lookup">DNS lookup tool</a> is the fastest way to verify your current DNS resolver in any session.</p>
+
+    <p><strong>Why we document this depth.</strong> Most VPN marketing claims about DNS stop at "we prevent DNS leaks" without specifying which OS APIs are involved (scutil on macOS, NRPT on Windows, VpnService DNS configuration on Android), which firewall layer enforces the blocking (Packet Filter, Windows Filtering Platform, Android's VpnService block-mode), or what specifically happens when an app tries to bypass the system resolver. The privacy-conscious reader has been burned enough times by under-specified marketing that the default response to "no DNS leaks" is skepticism. The remedy for skepticism is verifiable detail. This page exists to provide that detail, so the verification effort that follows takes minutes rather than days.</p>
+
+    <p><strong>A final note on integrity.</strong> If at any point our in-tunnel DNS implementation regresses — a new macOS version breaks the scutil priority, a Windows feature update changes how NRPT is honored, an Android API revision allows DoH bypass we didn't account for — we will update this page to reflect that, including any temporary leak window before the fix ships. The honesty calculus on a privacy product is the same as for a backup product: the time to find out it didn't work is not when you needed it. We would rather lose a reader to an honest disclosure of a temporary regression than retain them through silence about an issue we knew but didn't say.</p>
+
+    <div class="feature-cta">
+      <h3>Want this on your device?</h3>
+      <p>OllaVPN is free forever for 1 device. No card, no email tricks.</p>
+      <a class="btn primary lg" href="/dl/">Get OllaVPN free <span class="arrow">&rarr;</span></a>
+      <span class="feature-cta-sub">Or <a href="/pricing">see all plans</a></span>
+    </div>
+
+      </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      
+      <li><a href="#what-is-in-tunnel-dns">What is in-tunnel DNS and why is it so important?</a></li>
+      
+      <li><a href="#how-it-works-under-the-hood">How does OllaVPN&#39;s in-tunnel DNS work, step-by-step?</a></li>
+      
+      <li><a href="#what-other-vpns-get-wrong">What do other VPNs often get wrong with DNS, and how is OllaVPN different?</a></li>
+      
+      <li><a href="#real-world-protection">What real-world threats does in-tunnel DNS protect you against?</a></li>
+      
+      <li><a href="#defaults-and-configuration">Are OllaVPN&#39;s DNS features on by default, and can you customize them?</a></li>
+      
+      <li><a href="#how-to-verify">How can you verify that OllaVPN&#39;s in-tunnel DNS is working?</a></li>
+      
+      <li><a href="#limits-and-trade-offs">What are the limitations of in-tunnel DNS, and what doesn&#39;t it solve?</a></li>
+      
+      <li><a href="#connecting-to-other-primitives">How does in-tunnel DNS integrate with OllaVPN&#39;s other privacy features?</a></li>
+      
+      <li><a href="#performance-impact">Does in-tunnel DNS impact my connection speed or latency?</a></li>
+      
+      <li><a href="#future-proofing">Is OllaVPN&#39;s in-tunnel DNS future-proof against evolving threats?</a></li>
+      
+      <li><a href="#free-plan-inclusion">Is in-tunnel DNS available on OllaVPN&#39;s free plan?</a></li>
+      
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<script>
+  // Scroll-spy: highlight current section in right rail TOC.
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+</body>
+</html>

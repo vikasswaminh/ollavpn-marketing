@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OllaVPN — Post-Quantum-Ready Free VPN</title>
+<meta name="description" content="Modern privacy-first VPN, post-quantum-ready out of the box. Lifetime free plan, no data caps. $2/mo for 5 devices on a faster connection." />
+<link rel="canonical" href="https://ollavpn.com/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="OllaVPN — Post-Quantum-Ready Free VPN" />
+<meta property="og:description" content="Modern privacy-first VPN, post-quantum-ready out of the box. Lifetime free plan, no data caps. $2/mo for 5 devices on a faster connection." />
+<meta property="og:url" content="https://ollavpn.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://ollavpn.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="OllaVPN — Free, post-quantum-ready VPN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="OllaVPN — Post-Quantum-Ready Free VPN" />
+<meta name="twitter:description" content="Modern privacy-first VPN, post-quantum-ready out of the box. Lifetime free plan, no data caps. $2/mo for 5 devices on a faster connection." />
+<meta name="twitter:image" content="https://ollavpn.com/og-image.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ollavpn.com/#org",
+      "name": "OllaVPN",
+      "url": "https://ollavpn.com/",
+      "description": "OllaVPN is a privacy-focused consumer VPN that is post-quantum cryptography (PQC) ready out of the box. Lifetime free tier (10 Mbps) and a $2/month Pro tier (10 Gbps, 5 devices).",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ollavpn.com/favicon-256.png",
+        "width": 256,
+        "height": 256
+      },
+      "sameAs": [],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "security",
+          "email": "security@ollavpn.com",
+          "url": "https://ollavpn.com/.well-known/security.txt"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@ollavpn.com",
+          "availableLanguage": ["en"]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "abuse",
+          "email": "abuse@ollavpn.com"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ollavpn.com/#website",
+      "url": "https://ollavpn.com/",
+      "name": "OllaVPN",
+      "publisher": { "@id": "https://ollavpn.com/#org" },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://ollavpn.com/blog/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://ollavpn.com/#product",
+      "name": "OllaVPN",
+      "brand": { "@id": "https://ollavpn.com/#org" },
+      "category": "Virtual Private Network",
+      "description": "Post-quantum-ready consumer VPN with a permanent free tier and a $2/month Pro tier. Always-on kill switch, in-tunnel DNS, no connection logs, and optional Sovereign Route multi-hop on Pro.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://ollavpn.com/pricing.html",
+          "availability": "https://schema.org/InStock",
+          "description": "Lifetime free — 10 Mbps, 1 device, every country."
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro (annual)",
+          "price": "24",
+          "priceCurrency": "USD",
+          "url": "https://ollavpn.com/pricing.html",
+          "availability": "https://schema.org/PreOrder",
+          "description": "$2/month billed annually — 10 Gbps, 5 devices, Sovereign Route multi-hop."
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Self-hosted Lato (no Google Fonts CDN call for primary type). JetBrains Mono is still pulled
+     from Google for mono code blocks — used sparingly, can be self-hosted in a follow-up. -->
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="styles.css?v=20260708-0556" />
+<style>
+  /* Centered hero (2026-06-09 redesign) — NetworkersHome shape.
+     Replaces the prior 2-column hero-grid + console mockup with a single
+     centered stack: pill -> h1 -> lede -> CTAs -> meta -> stat-strip -> 3-pillar
+     cards. Faint red radial wash (--gradient-hero) sits behind the H1. */
+  /* Tighter vertical rhythm: less air between nav -> hero (top) and
+     hero -> pricing (bottom + adjacent-section rule below). */
+  .hero { position: relative; padding: 40px 0 0; overflow: hidden; background: transparent; text-align: center; }
+  .hero + .section { padding-top: 24px; }
+  .hero + .section .head { margin-bottom: 18px; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background: var(--gradient-hero);
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  /* Hero content spans the full .wrap (1144px content area, matching every
+     other section). Inner elements (H1, pill) keep their own narrower
+     max-widths for typography reasons. */
+  .hero-content { max-width: none; margin: 0 auto; }
+
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px; border-radius: var(--radius-pill);
+    background: var(--red); color: #fff;
+    font-family: var(--mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    box-shadow: 0 4px 14px -4px rgba(218,41,28,0.45);
+  }
+  .hero-pill .pill-star { color: var(--amber); font-size: 13px; line-height: 1; }
+
+  /* Hero H1 (2026-06-09, denser): font-size ramp reduced ~30% per request
+     while keeping the chunky-display feel (Lato wght 700, tight -0.05em). */
+  .hero h1.h1 { font-family: var(--sans); font-size: clamp(34px, 5.3vw, 64px); margin: 20px auto 0; max-width: 760px; font-weight: 700; letter-spacing: -0.05em; line-height: 1.0; }
+  .hero h1 .accent { color: var(--red); }
+
+  .hero .lede { margin: 18px auto 0; color: var(--text-dim); font-size: 15px; max-width: 640px; line-height: 1.5; }
+  .hero .actions { margin-top: 25px; display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .hero .meta { margin-top: 20px; display: flex; gap: 24px; flex-wrap: wrap; font-size: 12px; color: var(--text-mute); justify-content: center; }
+  .hero .meta .ok { color: var(--green); margin-right: 4px; }
+
+  /* Stat strip immediately below hero (-20% internal padding, -30% num size) */
+  .hero-stats { padding: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--panel); }
+  .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .stat-strip .stat { padding: 22px 14px; text-align: center; border-right: 1px solid var(--line); }
+  .stat-strip .stat:last-child { border-right: 0; }
+  .stat-strip .stat-num { font-size: 26px; font-weight: 600; color: var(--red); letter-spacing: -0.02em; line-height: 1; }
+  .stat-strip .stat-label { margin-top: 6px; font-family: var(--mono); font-size: 10px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* 3-pillar cards under stat strip (-10% section padding, -20% card padding) */
+  .hero-pillars { padding: 72px 0; background: transparent; }
+  .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .pillar { padding: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); display: flex; flex-direction: column; transition: box-shadow .18s, transform .18s; }
+  .pillar:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+  .pillar-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--red-soft); color: var(--red); display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+  .pillar h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; margin: 0; }
+  .pillar p { color: var(--text-dim); font-size: 13px; line-height: 1.55; margin: 10px 0 0; flex: 1; }
+  .pillar-link { margin-top: 16px; color: var(--red); font-weight: 600; font-size: 13px; }
+  .pillar-link:hover { color: var(--red-2); }
+
+  /* Console-bar: kept for the "Owned metal · global network" feature card
+     below (Mac-style window chrome over an SVG network map). The original
+     hero console mockup was retired in the 2026-06-09 centered-hero swap;
+     its .console / .console-body / .console-footer / .stat-tile / .live-bar
+     rules + @keyframes pulse were removed at that time. */
+  .console-bar { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+  .console-bar .d { width: 11px; height: 11px; border-radius: 50%; background: var(--line-2); }
+  .console-bar .title { margin-left: 10px; font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .console-bar .right { margin-left: auto; display: flex; gap: 8px; }
+
+  /* Exit strip — padding -10% per request */
+  .exits { padding: 50px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .exits .label { font-family: var(--mono); font-size: 11px; color: var(--text-mute); text-align: center; letter-spacing: 0.04em; }
+  .exit-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .exit-grid > div { padding: 17px 14px; text-align: center; font-weight: 600; letter-spacing: -0.01em; color: var(--text); border-right: 1px solid var(--line); font-size: 13px; }
+  .exit-grid > div:last-child { border-right: 0; }
+  .exit-grid > div small { display: block; font-family: var(--mono); font-size: 10px; color: var(--text-mute); margin-top: 4px; font-weight: 400; }
+
+  /* Feature row */
+  .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 58px 0; border-top: 1px solid var(--line); }
+  .feature.reverse > :first-child { order: 2; }
+  .feature .copy .h3 { margin-top: 10px; }
+  .feature .copy p { margin-top: 10px; color: var(--text-dim); font-size: 13px; max-width: 520px; }
+  .feature .copy ul { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: var(--text-dim); }
+  /* ItemUI #19: unified bullet glyph — ✓ red across all marketing lists. */
+  .feature .copy ul li::before { content: "✓ "; color: var(--red); font-family: var(--mono); margin-right: 6px; }
+
+  /* Card grid (ItemUI #9, #13): cards are flex-columns so descriptions
+     stretch to fill height — every card in the row ends at the same
+     baseline regardless of body length. Hover translate removed; only
+     the border-color changes (gamey lift was off-brand for enterprise). */
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+  .card { padding: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); min-height: 200px; transition: border-color .15s; display: flex; flex-direction: column; }
+  .card:hover { border-color: var(--line-2); }
+  .card .num { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .card h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; margin: 12px 0 0; }
+  .card p { color: var(--text-dim); font-size: 14px; margin-top: 10px; }
+  .card .icon { width: 36px; height: 36px; border-radius: 10px; background: var(--red-soft); border: 1px solid rgba(124, 92, 255, 0.35); display: flex; align-items: center; justify-content: center; color: var(--red-2); font-family: var(--mono); font-size: 14px; margin-bottom: 14px; }
+
+  /* Per-exit throughput row */
+  .compare { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--panel); }
+  .compare-row { display: grid; grid-template-columns: 220px 1fr 130px; padding: 18px 22px; align-items: center; gap: 20px; border-bottom: 1px solid var(--line); }
+  .compare-row:last-child { border-bottom: 0; }
+  /* ItemUI #18: drop the pink tint on every compare-row (every row had
+     class .us, so every row was tinted — defeated the purpose). Uniform
+     white rows let the bar fill carry the visual emphasis. */
+  .compare-row.us { background: var(--panel); }
+  .compare-row .name { font-weight: 600; }
+  .compare-row .name small { display: block; font-family: var(--mono); font-size: 11px; color: var(--text-mute); margin-top: 2px; font-weight: 400; }
+  .bar { height: 10px; border-radius: 5px; background: var(--bg-2); border: 1px solid var(--line); overflow: hidden; }
+  .bar > span { display: block; height: 100%; background: var(--line-2); border-radius: 5px; }
+  .compare-row.us .bar > span { background: linear-gradient(90deg, var(--red), var(--red-2)); }
+  .compare-row .gbps { font-family: var(--mono); font-size: 14px; color: var(--text); text-align: right; }
+  .compare-row .gbps small { color: var(--text-mute); }
+
+  /* Plan cards (3-up teaser, 2026-06-09 update — matches /pricing layout).
+     inner <ul> grows with flex:1 so the CTA button anchors to the same
+     y-coordinate across all 3 plans regardless of bullet-count variance. */
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; padding-top: 14px; }
+  .plan { padding: 22px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--panel); display: flex; flex-direction: column; min-height: 420px; position: relative; box-shadow: var(--shadow-card); }
+  .plan.popular { border-color: var(--red); box-shadow: 0 12px 32px -12px rgba(218,41,28,0.30), var(--shadow-card); border-top-left-radius: 0; border-top-right-radius: 0; }
+  /* BEST DEAL banner — homepage teaser version */
+  .plan .plan-banner {
+    position: absolute; top: -28px; left: -1px; right: -1px; height: 28px;
+    background: var(--red); color: #fff;
+    border-top-left-radius: var(--radius); border-top-right-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.10em; text-transform: uppercase;
+  }
+  .plan .plan-pct-off {
+    position: absolute; top: 14px; right: 14px;
+    padding: 3px 8px; border-radius: var(--radius-pill);
+    background: rgba(11,143,95,0.10); color: var(--green);
+    border: 1px solid rgba(11,143,95,0.22);
+    font-family: var(--mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+  .plan .sub { color: var(--text-mute); font-size: 11px; margin: 4px 0 0; }
+  .plan .plan-strikethrough { font-family: var(--mono); font-size: 13px; color: var(--text-mute); text-decoration: line-through; margin-top: 14px; }
+  .plan .plan-save { font-family: var(--mono); font-size: 10px; color: var(--green); font-weight: 700; margin-top: 4px; }
+  .plan .plan-trust { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 8px; font-family: var(--mono); font-size: 10px; color: var(--text-mute); }
+
+  /* Homepage commitment toggle (1mo / 12mo / 24mo). Same widget pattern
+     as /pricing — clicking a tab swaps every [data-commit] element to
+     show only the matching term. */
+  .commit-row { text-align: center; margin-bottom: 24px; }
+  .commit-toggle {
+    display: inline-flex; gap: 0;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    padding: 4px;
+  }
+  .commit-toggle button {
+    appearance: none; cursor: pointer;
+    background: transparent; border: 0;
+    padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    font-family: var(--mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.06em; color: var(--text-mute);
+    transition: background .15s, color .15s;
+    white-space: nowrap;
+  }
+  .commit-toggle button .save-tag {
+    margin-left: 6px; padding: 2px 6px; border-radius: 999px;
+    background: rgba(11,143,95,0.10); color: var(--green);
+    font-size: 9px; letter-spacing: 0;
+  }
+  .commit-toggle button:hover { color: var(--text); }
+  .commit-toggle button.active { background: var(--red); color: #fff; }
+  .commit-toggle button.active .save-tag { background: rgba(255,255,255,0.20); color: #fff; }
+  /* Only the .active commit-val/commit-val-inline node shows; rest hidden */
+  .commit-val { display: none; }
+  .commit-val.active { display: block; }
+  .commit-val-inline { display: none; }
+  .commit-val-inline.active { display: inline; }
+  .plan.featured { border-color: rgba(124, 92, 255, 0.35); background: linear-gradient(180deg, var(--red-soft), var(--panel) 60%); }
+  .plan h3 { font-size: 18px; font-weight: 600; margin: 0; letter-spacing: -0.02em; }
+  .plan .who { font-family: var(--mono); font-size: 10px; color: var(--text-mute); margin-top: 4px; }
+  .plan .price { font-size: 40px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; line-height: 1; }
+  .plan .price small { font-size: 11px; color: var(--text-mute); margin-left: 6px; font-family: var(--mono); font-weight: 400; }
+  .plan .was { font-family: var(--mono); font-size: 11px; color: var(--text-mute); margin-top: 4px; }
+  .plan ul { margin: 16px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--text-dim); flex: 1; }
+  /* ItemUI #19: single bullet glyph + single color across all lists
+     (was ✓ green here, → red in .feature .copy ul). Now ✓ red everywhere. */
+  .plan ul li::before { content: "✓ "; color: var(--red); font-family: var(--mono); margin-right: 6px; }
+  .plan .btn { margin-top: auto; justify-content: center; }
+  .plan .badge { position: absolute; top: 14px; right: 14px; }
+
+  /* Section CTA */
+  .cta { padding: 86px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: radial-gradient(40% 50% at 50% 0%, rgba(225,28,38,0.10), transparent 60%); text-align: center; }
+  .cta .h2 { max-width: 760px; margin: 0 auto; }
+  .cta .actions { margin-top: 28px; display: inline-flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Marquee — real engineering signals only */
+  .marquee { overflow: hidden; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .marquee-track { display: flex; gap: 36px; white-space: nowrap; animation: scroll 40s linear infinite; font-family: var(--mono); font-size: 12px; color: var(--text-dim); letter-spacing: 0.04em; }
+  .marquee-track .pip { color: var(--red); }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* Receipts grid (build receipts, not fake quotes) */
+  .receipts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .rcard { padding: 24px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--panel); display: flex; flex-direction: column; gap: 10px; min-height: 200px; }
+  .rcard .head { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .rcard .head .ok { color: var(--green); }
+  .rcard h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin: 4px 0 0; }
+  .rcard p { color: var(--text-dim); font-size: 13px; margin: 6px 0 0; line-height: 1.55; }
+  .rcard .id { font-family: var(--mono); font-size: 11px; color: var(--text-mute); margin-top: auto; }
+
+  @media (max-width: 980px) {
+    .feature, .card-grid, .receipts-grid, .plans, .exit-grid, .pillar-grid { grid-template-columns: 1fr; }
+    .plan.popular { transform: none; }
+    .feature.reverse > :first-child { order: 0; }
+    .compare-row { grid-template-columns: 140px 1fr 90px; padding: 14px; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); }
+    .stat-strip .stat:nth-child(2) { border-right: 0; }
+    .hero .meta { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top utility bar — networkershome.com pattern: a thin mono-typeface
+     row above the main nav for live status + secondary links. -->
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">●</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="technology.html">Trust</a>
+      <span style="opacity:.4;">·</span>
+      <a href="blog/">Resources</a>
+      <span style="opacity:.4;">·</span>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <!-- Product — mega-dropdown -->
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technology — mega-dropdown -->
+      <div class="nav-item">
+        Technology <span class="caret">▾</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum handshake</a>
+              <a href="/pqc">WireGuard hybrid</a>
+              <a href="/pqc">Forward secrecy</a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Network topology</a>
+              <a href="/peer-isolation">Tunnel addressing (CGNAT)</a>
+              <a href="/peer-isolation">Exit operation</a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/in-tunnel-dns">DNS-leak defense</a>
+              <a href="/in-tunnel-dns">IPv6 handling</a>
+              <a href="/peer-isolation">Abuse defense</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing — mega-dropdown -->
+      <a href="/pricing">Pricing</a>
+
+      <!-- Resources — mega-dropdown -->
+      <div class="nav-item">
+        Resources <span class="caret">▾</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apps / Download — flat links (no dropdown needed for single-target items) -->
+      <a href="apps.html">Apps</a>
+      <a href="dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="dl/">Download free <span class="arrow">→</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero (centered, NetworkersHome shape — pill · h1 · lede · CTAs · meta) -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-content">
+      <span class="hero-pill">
+        <span class="pill-star">★</span>
+        100% PRIVATE · LIFETIME FREE
+      </span>
+      <h1 class="h-display h1">Secure Core in <span class="accent">120+ Countries</span></h1>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing (merged with hero on the homepage 2026-06-09: tight padding-top
+     so the pricing tier cards read as part of the hero region itself) -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker"><span class="pip">●</span> PRICING</span>
+      <h2 class="h-display h2">Free forever.<br/><span class="accent">Pro and Business when you outgrow it.</span></h2>
+      <p class="lede">Three plans, one security stack. Free for everyday use, Pro for power users, Business for teams.</p>
+    </div>
+
+    <!-- Commitment toggle (1mo / 12mo / 24mo) — same widget as /pricing -->
+    <div class="commit-row">
+      <div class="commit-toggle" role="tablist" aria-label="Choose billing term">
+        <button type="button" data-commit="mo1" role="tab">1 month</button>
+        <button type="button" data-commit="mo12" role="tab">12 months <span class="save-tag">save 40%</span></button>
+        <button type="button" data-commit="mo24" class="active" role="tab" aria-selected="true">24 months <span class="save-tag">save up to 70%</span></button>
+      </div>
+    </div>
+
+    <div class="plans">
+      <!-- Free (term-independent) -->
+      <div class="plan reveal">
+        <h3>Free</h3>
+        <p class="sub">Security and privacy for everyone</p>
+        <div class="price">$0.00<small>/forever</small></div>
+        <a class="btn outline lg" href="dl/">Get OllaVPN Free</a>
+        <div class="plan-trust">💳 No credit card required</div>
+        <ul>
+          <li>1 device · 10 Mbps</li>
+          <li>All countries unlocked</li>
+          <li>PQC handshake · kill switch · zero logs</li>
+          <li>In-tunnel DNS · peer isolation</li>
+        </ul>
+      </div>
+
+      <!-- Pro (BEST DEAL banner) -->
+      <div class="plan popular reveal">
+        <div class="plan-banner">★ Best deal</div>
+        <span class="plan-pct-off commit-val-inline" data-commit="mo12">40% OFF</span>
+        <span class="plan-pct-off commit-val-inline active" data-commit="mo24">70% OFF</span>
+        <h3>Pro</h3>
+        <p class="sub">Advanced features and fastest speeds</p>
+
+        <!-- Strikethrough only on multi-month -->
+        <div class="plan-strikethrough commit-val" data-commit="mo12">$9.99 /mo</div>
+        <div class="plan-strikethrough commit-val active" data-commit="mo24">$9.99 /mo</div>
+
+        <!-- Discounted price (1mo shows $9.99 with no strikethrough) -->
+        <div class="price commit-val" data-commit="mo1">$9.99<small>/mo</small></div>
+        <div class="price commit-val" data-commit="mo12">$5.99<small>/mo</small></div>
+        <div class="price commit-val active" data-commit="mo24">$2.99<small>/mo</small></div>
+
+        <!-- Save callout only on multi-month -->
+        <div class="plan-save commit-val" data-commit="mo12">Save $48 over 12 months</div>
+        <div class="plan-save commit-val active" data-commit="mo24">Save $168 over 24 months</div>
+
+        <a class="btn primary lg" href="pricing.html#plans">Get OllaVPN Pro <span class="arrow">→</span></a>
+        <div class="plan-trust">💲 30-day money-back guarantee</div>
+        <ul>
+          <li>5 devices · 10 Gbps per session</li>
+          <li>Premium low-latency exits</li>
+          <li>Same PQC + DNS + kill switch</li>
+          <li>Stream + game without throttling</li>
+        </ul>
+      </div>
+
+      <!-- Business -->
+      <div class="plan reveal">
+        <span class="plan-pct-off commit-val-inline" data-commit="mo12">23% OFF</span>
+        <span class="plan-pct-off commit-val-inline active" data-commit="mo24">38% OFF</span>
+        <h3>Business</h3>
+        <p class="sub">For teams that ship secure by default</p>
+
+        <div class="plan-strikethrough commit-val" data-commit="mo12">$12.99 /user/mo</div>
+        <div class="plan-strikethrough commit-val active" data-commit="mo24">$12.99 /user/mo</div>
+
+        <div class="price commit-val" data-commit="mo1">$12.99<small>/user/mo</small></div>
+        <div class="price commit-val" data-commit="mo12">$9.99<small>/user/mo</small></div>
+        <div class="price commit-val active" data-commit="mo24">$7.99<small>/user/mo</small></div>
+
+        <div class="plan-save commit-val" data-commit="mo12">Save $36 / user</div>
+        <div class="plan-save commit-val active" data-commit="mo24">Save $120 / user</div>
+
+        <a class="btn outline lg" href="pricing.html#plans">Get OllaVPN Business <span class="arrow">→</span></a>
+        <div class="plan-trust">💲 30-day money-back guarantee</div>
+        <ul>
+          <li>Unlimited devices per user</li>
+          <li>10 Gbps + QoS priority</li>
+          <li>Admin panel · audit · dedicated IPs</li>
+          <li>Slack support + 4-hour SLA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stat strip -->
+<section class="hero-stats">
+  <div class="wrap">
+    <div class="stat-strip">
+      <div class="stat">
+        <div class="stat-num">10 Mbps</div>
+        <div class="stat-label">Free forever</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Logs kept</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">PQC</div>
+        <div class="stat-label">Quantum-ready</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">$0</div>
+        <div class="stat-label">Lifetime cost</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3-pillar cards -->
+<section class="hero-pillars">
+  <div class="wrap">
+    <div class="pillar-grid">
+      <div class="pillar">
+        <div class="pillar-icon">◉</div>
+        <h3>Privacy that holds up</h3>
+        <p>True peer isolation, in-tunnel DNS, kill switch always on. Four enforcement layers — not one toggle. We can't disclose what we don't collect.</p>
+        <a href="/peer-isolation" class="pillar-link">How peer isolation works →</a>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">↯</div>
+        <h3>Speed that flows</h3>
+        <p>Modern WireGuard-class tunnel, owned metal, no resold-VPS supply chain. 10 Mbps free per user — honest cap, kernel-enforced, no fair-use fine print.</p>
+        <a href="/in-tunnel-dns" class="pillar-link">In-tunnel DNS details →</a>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">◇</div>
+        <h3>Built for quantum</h3>
+        <p>Hybrid post-quantum key exchange on every connection. Traffic captured today stays unreadable in the quantum era. Not a roadmap promise — shipping now.</p>
+        <a href="/pqc" class="pillar-link">The PQC handshake →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global presence strip -->
+<section class="exits">
+  <div class="wrap">
+    <div class="label">A global, privacy-first network · post-quantum-ready on every connection</div>
+    <div class="exit-grid mt-32">
+      <div>EUROPE<small>privacy-first jurisdictions</small></div>
+      <div>NORTH AMERICA<small>low-latency coverage</small></div>
+      <div>ALL COUNTRIES<small>unlocked on the free plan</small></div>
+      <div>OWNED METAL<small>no resold-VPS supply chain</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why PQC / why this VPN -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker"><span class="pip">●</span> WHY POST-QUANTUM, WHY NOW</span>
+      <h2 class="h-display h2">Encryption you trust today <span class="accent">is being recorded.</span></h2>
+      <p class="lede">"Harvest now, decrypt later" is real. Adversaries with quantum programmes are storing encrypted traffic to break the day a cryptographically-relevant quantum computer ships. We use the NIST-ratified replacement — already, today, on every tunnel.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="icon">PQ</div>
+        <div class="num">→ 01 / KEY EXCHANGE</div>
+        <h3>Hybrid post-quantum, by default</h3>
+        <p>A modern hybrid key exchange runs on every connection. Classical security floor, quantum-resistant ceiling — turned on, not buried in an advanced setting.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">∅</div>
+        <div class="num">→ 02 / PEER ISOLATION</div>
+        <h3>True peer isolation</h3>
+        <p>Other users on the same exit cannot reach you. Enforced at multiple layers, verified by automated end-to-end testing on every release.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">DNS</div>
+        <div class="num">→ 03 / IN-TUNNEL DNS</div>
+        <h3>DNS that doesn't leak</h3>
+        <p>Every connection uses a resolver inside the tunnel. OS-level DNS is firewall-blocked while the tunnel is up, so DNS leaks are structurally impossible.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">KS</div>
+        <div class="num">→ 04 / KILL SWITCH</div>
+        <h3>On by default. No bypass.</h3>
+        <p>Engages automatically the moment the tunnel covers your traffic. Drop the tunnel, drop the network — packets do not leak in the gap.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">LAN</div>
+        <div class="num">→ 05 / LAN STAYS UP</div>
+        <h3>Home network preserved</h3>
+        <p>Local devices on your home network keep working while the tunnel is up. Your printer, NAS, and smart-home gear stay reachable.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">$0</div>
+        <div class="num">→ 06 / LIFETIME FREE</div>
+        <h3>A free plan you can actually keep</h3>
+        <p>No credit card. No trial countdown. The free plan is built to stay free. A $2/month plan lifts the speed cap and adds 5-device support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Handshake feature -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="feature">
+      <div class="copy reveal">
+        <span class="kicker"><span class="pip">●</span> THE HANDSHAKE</span>
+        <h3 class="h3">Hybrid by design.<br/>Forward-secret on every session.</h3>
+        <p>OllaVPN does not replace classical cryptography — it mixes it with a post-quantum key exchange on every connection. If either side of the hybrid holds up, your session stays private.</p>
+        <ul>
+          <li>NIST-standardized post-quantum key exchange</li>
+          <li>Continuous re-keying — forward secrecy on every session</li>
+          <li>Hybrid by default, not an opt-in advanced setting</li>
+          <li>Session secrets never traverse the wire in the clear</li>
+        </ul>
+      </div>
+      <div class="surface reveal" style="padding: 22px;">
+        <div class="code">
+<span class="tk-comment"># 1. classical key exchange</span>
+classical  = <span class="tk-keyword">classical_dh</span>(client, server)
+
+<span class="tk-comment"># 2. post-quantum encapsulation</span>
+pqc        = <span class="tk-keyword">pqc_kem.encapsulate</span>(server.pq_pub)
+
+<span class="tk-comment"># 3. mix both into the session key</span>
+tunnel_key = <span class="tk-keyword">mix</span>(classical, pqc)
+
+<span class="tk-comment"># 4. open the tunnel</span>
+<span class="tk-keyword">tunnel.open</span>(tunnel_key)
+<span class="tk-comment">→ established · forward-secret · post-quantum-ready</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="copy reveal">
+        <span class="kicker"><span class="pip">●</span> THE NETWORK</span>
+        <h3 class="h3">Owned metal.<br/>No reseller supply chain.</h3>
+        <p>No anycast magic, no recycled commodity VPS. OllaVPN runs on infrastructure we operate directly — dedicated public IPs, modern Linux, and a tuned WireGuard data plane on every node.</p>
+        <ul>
+          <li>Global coverage · all countries unlocked on the free plan</li>
+          <li>Honest, kernel-enforced per-session speed governance</li>
+          <li>Mutually-authenticated control plane — pinned, not trust-on-first-use</li>
+          <li>Privacy-first jurisdictions, by deliberate placement</li>
+        </ul>
+      </div>
+      <div class="surface reveal" style="padding: 0;">
+        <div class="console-bar">
+          <span class="d" style="background:#ff5f57"></span>
+          <span class="d" style="background:#febc2e"></span>
+          <span class="d" style="background:#28c840"></span>
+          <span class="title">ollavpn · global network</span>
+        </div>
+        <div style="padding: 18px;">
+          <svg viewBox="0 0 480 220" style="width:100%; display:block;">
+            <g stroke="rgba(255,255,255,0.10)" stroke-width="0.6" fill="none">
+              <ellipse cx="240" cy="110" rx="220" ry="90"/>
+              <ellipse cx="240" cy="110" rx="220" ry="50"/>
+              <line x1="240" y1="20" x2="240" y2="200"/>
+              <line x1="20" y1="110" x2="460" y2="110"/>
+            </g>
+            <g fill="#1E1E2E">
+              <path d="M70,80 q22,-18 52,-12 q30,6 38,26 q8,16 -10,30 q-22,14 -52,4 q-30,-10 -40,-22 q-10,-12 12,-26z"/>
+              <path d="M180,68 q42,-12 80,-2 q38,10 48,40 q4,24 -26,30 q-30,4 -60,-6 q-40,-14 -54,-30 q-12,-14 12,-32z"/>
+              <path d="M310,100 q30,-8 60,8 q24,14 18,34 q-12,20 -42,14 q-30,-6 -44,-22 q-14,-14 8,-34z"/>
+            </g>
+            <g fill="#7C5CFF">
+              <circle cx="105" cy="100" r="4"/>
+              <circle cx="115" cy="105" r="4"/>
+              <circle cx="245" cy="80" r="4"/>
+              <circle cx="262" cy="78" r="4"/>
+            </g>
+            <g font-family="JetBrains Mono, monospace" font-size="9" fill="#7A7A88">
+              <text x="60" y="125">NORTH AMERICA</text>
+              <text x="225" y="65">EUROPE</text>
+            </g>
+            <g fill="none" stroke="#7C5CFF" stroke-width="1.2">
+              <circle cx="245" cy="80" r="4"><animate attributeName="r" from="4" to="22" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" from="1" to="0" dur="2s" repeatCount="indefinite"/></circle>
+              <circle cx="262" cy="78" r="4"><animate attributeName="r" from="4" to="22" dur="2.4s" begin="0.5s" repeatCount="indefinite"/><animate attributeName="opacity" from="1" to="0" dur="2.4s" begin="0.5s" repeatCount="indefinite"/></circle>
+              <circle cx="110" cy="103" r="4"><animate attributeName="r" from="4" to="22" dur="2.2s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" from="1" to="0" dur="2.2s" begin="1s" repeatCount="indefinite"/></circle>
+            </g>
+            <g stroke="#22D3EE" stroke-width="1" fill="none" opacity="0.55">
+              <path d="M110,103 Q 180,40 245,80"/>
+              <path d="M245,80 Q 254,70 262,78"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Same posture everywhere -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker"><span class="pip">●</span> SAME PROTECTION, EVERY CONNECTION</span>
+      <h2 class="h-display h2">No "premium" countries.<br/><span class="accent">No encryption tiers.</span></h2>
+      <p class="lede">Every connection gets the same post-quantum-ready protection, the same kill switch, the same DNS hygiene. The free plan and the $2 plan use the same security stack — the paid plan just removes the speed cap and adds 5-device support.</p>
+    </div>
+    <div class="compare reveal">
+      <div class="compare-row us">
+        <div class="name">Post-quantum-ready handshake <small>on every connection</small></div>
+        <div class="bar"><span style="width:100%"></span></div>
+        <div class="gbps">●<small>included</small></div>
+      </div>
+      <div class="compare-row us">
+        <div class="name">Kill switch + DNS-leak protection <small>on by default</small></div>
+        <div class="bar"><span style="width:100%"></span></div>
+        <div class="gbps">●<small>included</small></div>
+      </div>
+      <div class="compare-row us">
+        <div class="name">All countries unlocked <small>no geo upsell</small></div>
+        <div class="bar"><span style="width:100%"></span></div>
+        <div class="gbps">●<small>included</small></div>
+      </div>
+      <div class="compare-row us">
+        <div class="name">Independent peer isolation <small>verified end-to-end</small></div>
+        <div class="bar"><span style="width:100%"></span></div>
+        <div class="gbps">●<small>included</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing preview -->
+<!-- Principles -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker"><span class="pip">●</span> WHAT WE WON'T DO</span>
+      <h2 class="h-display h2">Privacy you can <span class="accent">actually verify.</span></h2>
+      <p class="lede">A privacy product is only as good as the principles it refuses to bend on. These are ours.</p>
+    </div>
+    <div class="receipts-grid">
+      <div class="rcard reveal">
+        <div class="head"><span class="ok">●</span> NO LOGS</div>
+        <h3>We don't keep your activity</h3>
+        <p>OllaVPN does not log the sites you visit, the apps you use, or the traffic you send through the tunnel. Privacy isn't a marketing line — it's an architecture choice.</p>
+        <div class="id">Privacy policy</div>
+      </div>
+      <div class="rcard reveal">
+        <div class="head"><span class="ok">●</span> NO ENCRYPTION TIERS</div>
+        <h3>Free and paid use the same stack</h3>
+        <p>Post-quantum-ready handshake, kill switch, DNS-leak protection, peer isolation — identical on the free plan and the $2 plan. The paid plan just removes the speed cap.</p>
+        <div class="id">Same security, every plan</div>
+      </div>
+      <div class="rcard reveal">
+        <div class="head"><span class="ok">●</span> NO DARK PATTERNS</div>
+        <h3>No credit card, no trial trap</h3>
+        <p>The lifetime free plan is genuinely free. No "free trial, then auto-charge." No "premium servers" upsell. No 70%-off countdown banner.</p>
+        <div class="id">Built to stay free</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Lifetime free · post-quantum ready · no credit card</span>
+    <h2 class="h-display h2 mt-16">Stand up your privacy. <span class="accent">Today.</span></h2>
+    <div class="actions">
+      <a class="btn primary xl" href="dl/">Download OllaVPN — free <span class="arrow">→</span></a>
+      <a class="btn xl" href="technology.html">How the handshake works <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="brand"><span class="brand-mark"></span>OllaVPN</div>
+        <p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN. Lifetime free plan or $2/month for 5 devices.</p>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="apps.html">Apps</a></li><li><a href="technology.html">Technology</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li><li><a href="https://login.ollavpn.com/">Dashboard</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog/">Blog</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span>
+      <span class="badges"><span>POST-QUANTUM READY</span><span>NO LOGS</span><span>LIFETIME FREE</span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+  // Homepage commitment-tier toggle (1mo / 12mo / 24mo). Swaps every
+  // [data-commit] element to show only the matching term. Free tier is
+  // term-independent (no data-commit elements inside it).
+  (function () {
+    function setCommit(commit) {
+      document.querySelectorAll(".commit-toggle button").forEach(function (b) {
+        var on = b.dataset.commit === commit;
+        b.classList.toggle("active", on);
+        b.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll(".commit-val, .commit-val-inline").forEach(function (el) {
+        el.classList.toggle("active", el.dataset.commit === commit);
+      });
+    }
+    document.querySelectorAll(".commit-toggle button").forEach(function (b) {
+      b.addEventListener("click", function () { setCommit(b.dataset.commit); });
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VPN Peer Isolation Explained: Your Privacy Shield | OllaVPN</title>
+<meta name="description" content="How OllaVPN's 4-layer peer isolation protects your devices from others on the network — why it matters for your online privacy." />
+<link rel="canonical" href="https://ollavpn.com/peer-isolation" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="VPN Peer Isolation Explained: Your Privacy Shield | OllaVPN" />
+<meta property="og:description" content="How OllaVPN's 4-layer peer isolation protects your devices from others on the network — why it matters for your online privacy." />
+<meta property="og:url" content="https://ollavpn.com/peer-isolation" />
+<meta property="og:image" content="https://ollavpn.com/og-peer-isolation.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Vpn Peer Isolation — explained by OllaVPN" />
+<meta property="article:published_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:modified_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Free VPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="VPN Peer Isolation Explained: Your Privacy Shield | OllaVPN" />
+<meta name="twitter:description" content="How OllaVPN's 4-layer peer isolation protects your devices from others on the network — why it matters for your online privacy." />
+<meta name="twitter:image" content="https://ollavpn.com/og-peer-isolation.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "VPN Peer Isolation: Your Digital Fortress Against Network Snoops",
+  "description": "Understand VPN peer isolation and how OllaVPN's 4-layer approach protects your devices from others on the network. Learn why it matters for your online privacy.",
+  "image": "https://ollavpn.com/og-peer-isolation.png",
+  "author": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "url": "https://ollavpn.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ollavpn.com/favicon-256.png"
+    }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ollavpn.com/peer-isolation"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does VPN peer isolation protect me against in plain terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">It stops other users on the same VPN server from seeing or interacting with your devices.</p><p>Think of it like being in a shared office building, but your office door is always locked and soundproofed from everyone else. This means your computer, phone, or smart devices are hidden from anyone else using that shared VPN network, protecting you from snooping or accidental exposure to their potentially compromised devices. It's a key part of staying safe online.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is OllaVPN's peer isolation on by default?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">Yes, absolutely.</p><p>Peer isolation is a core security feature and is enabled by default for all OllaVPN users, whether you're on our free plan or OllaVPN Plus. You don't need to do anything to turn it on; it just works in the background to keep your devices safe from others on the shared network. We don't believe in making fundamental security an optional extra.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I turn off peer isolation if I want to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">No, you can't turn off OllaVPN's peer isolation.</p><p>It's deeply integrated into our network architecture as a fundamental security measure. We believe this protection is too important to be optional, ensuring everyone benefits from it by default. Turning it off would expose you to unnecessary risks from other users on the shared VPN server, and we're not comfortable with that.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I verify that OllaVPN's peer isolation is working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">You can verify it by trying to discover other devices on the same VPN server.</p><p>If you're technically inclined, you can use network scanning tools or attempt to ping other users' simulated internal VPN IPs. With OllaVPN, these attempts should consistently fail, confirming that isolation is active and effective. It's designed to make your device invisible to others sharing the same network resources.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does peer isolation slow down my connection speed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">Not noticeably.</p><p>The overhead from peer isolation is minimal. It's designed to be extremely efficient, so you won't experience significant speed reductions because of this protection. Our free plan still gives you a solid 10 Mbps, and Plus users get up to 10 Gbps\u2014these speeds aren't impacted by our peer isolation safeguards.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will peer isolation break my smart-home devices or local network access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">No, it shouldn't break your smart-home devices or local network access.</p><p>Peer isolation prevents *other VPN users* from seeing your devices. It generally doesn't interfere with your ability to access devices on your *local* home network, like printers or smart speakers, when you're connected to the VPN. Your local network traffic usually behaves as expected, keeping your smart home running smoothly.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is OllaVPN's peer isolation implementation open source or audited?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">While our client applications are open-source, the server-side implementation details are proprietary.</p><p>The specific network primitives for our peer isolation are part of our unique architecture. We are committed to independent security audits, which include scrutinizing these core components to ensure they meet our rigorous security standards. Transparency and trust are paramount to us.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does OllaVPN's peer isolation compare to other VPNs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">Many VPNs either don't implement peer isolation at all, or rely on basic, easily bypassed firewall rules.</p><p>OllaVPN's 4-layer approach is built into the very foundation of our network, making it much more robust and effective than typical solutions. We designed it from the ground up to offer a superior level of privacy and security on shared VPN infrastructure.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does peer isolation NOT protect against?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">It doesn't protect against general internet threats like malware, phishing scams, or insecure websites.</p><p>Peer isolation specifically prevents other users on the same VPN server from interacting with your device; it's not a comprehensive antivirus or anti-phishing solution. You still need to practice good internet hygiene and have appropriate endpoint security for those types of threats.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will OllaVPN's peer isolation still work in 5 or 10 years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">We design our core security primitives, including peer isolation, with future threats in mind.</p><p>Our commitment to post-quantum readiness extends to our entire network architecture, ensuring our protections remain effective and adaptable for the long term. We build our systems to be resilient, so you can trust your privacy will be protected well into the future.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the OllaVPN free plan include peer isolation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">Absolutely, yes.</p><p>Peer isolation is a fundamental privacy feature that's included for all OllaVPN users, regardless of whether you're using our $0 forever free plan or OllaVPN Plus. We don't compromise on core security for any user, ever. Everyone deserves the same level of protection from others on the network.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is peer isolation related to OllaVPN's post-quantum readiness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p class=\"short-answer\">While not directly the same, both are foundational security layers.</p><p>Post-quantum readiness protects the encryption of your data from future quantum attacks, ensuring long-term confidentiality. Peer isolation, on the other hand, protects your device's visibility on the shared network. Both are crucial, distinct components that work together to provide comprehensive, future-proof privacy and security.</p>"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ollavpn.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Technology",
+      "item": "https://ollavpn.com/technology.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Peer isolation",
+      "item": "https://ollavpn.com/peer-isolation"
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text);
+    max-width: 880px; }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 20px; max-width: 760px; }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 28px 56px;
+    gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+
+  .article {
+    min-width: 0;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px;
+    color: var(--text);
+  }
+  .article .short-answer {
+    font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em;
+  }
+  .article p strong { font-weight: 700; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px;
+    text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline {
+    display: block; margin: 0 0 2.2em;
+    border: 1px solid var(--line); border-radius: 12px; padding: 18px 24px;
+    background: #fff;
+  }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+
+  .toc-rail .label, .toc-inline .label {
+    font-family: var(--mono); font-size: 11px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block;
+  }
+  .toc-rail ol, .toc-inline ol {
+    list-style: none; margin: 0; padding: 12px 0 0;
+  }
+  .toc-rail ol li, .toc-inline ol li {
+    font-size: 14px; line-height: 1.5; margin: 0 0 8px;
+  }
+  .toc-rail ol li a, .toc-inline ol li a {
+    color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px;
+    border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .toc-rail ol li a:hover,
+  .toc-inline ol li a:hover,
+  .toc-rail ol li.is-current a {
+    color: var(--red); border-left-color: var(--red);
+  }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+</style>
+</head>
+
+<body>
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="wrap">
+    <div class="meta">FEATURE · ALWAYS CURRENT
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
+    </div>
+    <h1>VPN Peer Isolation: Your Digital Fortress Against Network Snoops</h1>
+    <p class="lede">When you connect to a VPN, you&#39;re sharing a server with other people. That&#39;s just how they work. But without the right defenses, this shared space could accidentally expose your online activity to those other users. We don&#39;t think that&#39;s okay. That&#39;s why OllaVPN uses peer isolation: it builds a crucial barrier between you and everyone else on our network, making sure your digital life stays private even when you&#39;re in a crowd. It&#39;s a fundamental part of how we keep you safe online.</p>
+  <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-layout">
+  <article class="article">
+
+    
+    <div class="tier-compat">
+      <span class="tier-compat-label">Available on</span>
+      <a class="tier-compat-chip" href="/dl/">Free</a>
+      <a class="tier-compat-chip" href="/pricing#plans">Pro</a>
+      <a class="tier-compat-chip" href="/pricing#plans">Business</a>
+      <span class="tier-compat-note">Same security stack on every tier.</span>
+    </div>
+
+<div class="tldr">
+      <span class="label">TL;DR</span>
+      
+      <p>Peer isolation means that even if you&#39;re sharing an OllaVPN server with hundreds of other users, they can&#39;t see or interact with your devices on your local network. It&#39;s like having your own private, soundproof room in a shared building, ensuring that no one else sharing the same internet exit point can snoop on your computer or attempt to access it.</p>
+      
+      <p>We&#39;ve built this multi-layered protection directly into our network architecture, making it impossible for traffic to flow directly between users on the same server. This isn&#39;t just a simple software setting; it&#39;s a fundamental design choice that prevents direct connections and keeps your device&#39;s identity hidden from others, even though you&#39;re sharing the same public IP address.</p>
+      
+      <p>This crucial privacy feature is active by default for all OllaVPN users, whether you&#39;re on our free 10 Mbps plan or the 10 Gbps Plus tier. It works alongside our post-quantum-ready encryption and other safeguards to provide you with comprehensive security, ensuring your sensitive online activities remain private and protected without needing a credit card or email to start.</p>
+      
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        
+        <li><a href="#what-is-peer-isolation">What is VPN peer isolation and why does it matter?</a></li>
+        
+        <li><a href="#how-olla-vpn-implements-it">How does OllaVPN&#39;s 4-layer peer isolation work under the hood?</a></li>
+        
+        <li><a href="#comparison-with-other-vpns">What do other VPNs typically get wrong with peer isolation?</a></li>
+        
+        <li><a href="#real-world-protection">What does peer isolation protect you against in real-world scenarios?</a></li>
+        
+        <li><a href="#default-settings">Is peer isolation on by default, and can you configure it?</a></li>
+        
+        <li><a href="#verifying-isolation">How can you verify OllaVPN&#39;s peer isolation is working?</a></li>
+        
+        <li><a href="#limits-and-tradeoffs">What are the limits of peer isolation, and what doesn&#39;t it solve?</a></li>
+        
+        <li><a href="#impact-on-speed">Does peer isolation affect my connection speed or performance?</a></li>
+        
+        <li><a href="#lan-access">Will peer isolation prevent me from accessing local network devices?</a></li>
+        
+        <li><a href="#integration-with-other-primitives">How does peer isolation connect with OllaVPN&#39;s other privacy features?</a></li>
+        
+        <li><a href="#future-proofing">Is OllaVPN&#39;s peer isolation future-proof against emerging threats?</a></li>
+        
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    
+    <h2 id="what-is-peer-isolation">What is VPN peer isolation and why does it matter?</h2>
+    <p class="short-answer">VPN peer isolation is a security measure that prevents users connected to the same shared VPN server from seeing or interacting with each other's devices on the local network.</p>
+
+When you connect to a VPN, you're usually sharing a server with many other users. Think of it like being in a big, busy apartment building: everyone has their own apartment, but they all share the same main entrance and hallways. With a traditional VPN setup, even though your internet traffic is encrypted and routed through the VPN server, there's a risk that other users on that same server could potentially see your device on what looks like a shared local network. This means they might be able to discover your computer, phone, or other devices, leading to unintended exposure of your internal network services.
+
+That's where **peer isolation** comes in. OllaVPN implements a 4-layer peer isolation system that essentially puts each user in their own separate "room" within that shared VPN server "building." It isolates your connection, making sure that your device is completely invisible to anyone else connected to the same server. You get privacy from other users, even if they're literally using the same server at the exact same moment.
+
+This is a critical privacy feature because it eliminates a common vulnerability. Without it, someone with malicious intent on the same shared VPN servers could try to exploit weaknesses in your device's network visibility, even if your internet traffic itself is encrypted. Our peer isolation ensures that your local network presence remains private and secure, safeguarding you from potential snooping or attacks from other VPN users.
+    
+    <h2 id="how-olla-vpn-implements-it">How does OllaVPN&#39;s 4-layer peer isolation work under the hood?</h2>
+    <p class="short-answer">OllaVPN implements a 4-layer peer isolation strategy by segmenting network traffic and preventing direct communication between users on the same server, ensuring your online activity remains private and separate from others.</p>
+
+<p>Think of it like this: when you connect to OllaVPN, you're not just joining a big, open network where everyone can see everyone else. Instead, we've designed our network architecture to put you in your own little digital bubble. This means that even if another OllaVPN user is connected to the exact same server location as you, their traffic and your traffic are kept completely separate. There's absolutely no direct peer-to-peer communication possible between users on our network, which is a fundamental part of how we protect your privacy.</p>
+
+<p>Our 4-layer approach starts right from the moment your device connects using the <a href="/technology/wireguard-protocol">WireGuard protocol</a>. Each user gets a unique, isolated tunnel to our infrastructure. Within that tunnel, we use advanced routing and firewall rules to ensure that your data can only go where it's supposed to – out to the internet and back to you. It can't, for example, accidentally or maliciously be routed to another OllaVPN user's device. This traffic separation is crucial, as it stops any potential snooping or data leakage between users.</p>
+
+<p>The layers build on each other. So, first, you have the encrypted WireGuard tunnel. Secondly, we have network-level firewalls that block any attempts at local communication between clients. Thirdly, our internal routing ensures that packets originating from your connection are tagged and only delivered back to you. Finally, even our in-tunnel DNS requests are handled in a way that prevents them from revealing anything about other users or your own activity to them. This multi-layered defense means that even if one layer were somehow compromised (which is highly unlikely), the others would still keep your data safe and isolated. It's all about building redundancy and defense in depth, ensuring that your online world stays private and yours alone.</p>
+    
+    <h2 id="comparison-with-other-vpns">What do other VPNs typically get wrong with peer isolation?</h2>
+    <p class="short-answer">Many generic VPNs either completely neglect peer isolation, leaving you exposed to other users on the same server, or they implement it poorly, creating potential security and privacy risks.</p>
+
+<p>Most generic VPNs, especially the ad-funded free VPNs or even some freemium throttled VPNs, often don't bother with peer isolation at all. When you connect to one of their servers, you're frequently lumped into a shared network segment with dozens, if not hundreds, of other users. This <strong>lack of isolation</strong> means that if one of those other users is malicious or has a compromised device, they could potentially see your device on the local network, or even attempt to exploit it. It’s like being in a crowded room with no walls between you and strangers – not ideal for privacy or security.</p>
+
+<p>Even those that claim some form of isolation might only implement a basic firewall that blocks incoming connections but doesn't prevent outing scanning or other forms of <strong>local network discovery</strong>. This can still lead to security vulnerabilities, as a determined attacker could try to identify and exploit other users on the same VPN server. It’s a common oversight, and often it’s not even a feature you can easily configure; it's simply part of their default settings.</p>
+
+<p>At OllaVPN, we take a different approach. We implement <strong>4-layer peer isolation</strong>, which means every connection through our network is treated like its own private tunnel, completely separated from every other user. You're not just behind a basic firewall; you are effectively on your own isolated segment, making it virtually impossible for other users on the same server to see or interact with your device. This isn't an optional setting; it's how we design our network from the ground up, ensuring your privacy and security are paramount, whether you're on our <a href="/free-vpn">free plan</a> or OllaVPN Plus.</p>
+    
+    <h2 id="real-world-protection">What does peer isolation protect you against in real-world scenarios?</h2>
+    <p class="short-answer">Peer isolation protects you by preventing other users on the same VPN server from seeing or interacting with your device, safeguarding you from network-based attacks.</p>
+
+<p>Imagine you're connected to a shared public Wi-Fi network at a coffee shop or airport. This is already a risky environment, but when you connect to a VPN, you're sharing a server with other users, some of whom might be malicious actors. Without peer isolation, those other users could potentially see your device on the shared VPN subnet. This opens the door to things like <strong>network scanning</strong>, where they try to identify your device, its operating system, and any open ports.</p>
+
+<p>Once they can "see" your device, they could attempt <strong>device discovery</strong>, trying to figure out what services you're running or even attempting to exploit known vulnerabilities. This is where <strong>data theft attempts</strong> can start, as they might try to access shared folders, unencrypted network traffic, or exploit weaknesses in your device's security. Peer isolation acts as a crucial barrier here, making your device invisible to these other users on the VPN server, even if they're actively trying to find targets.</p>
+
+<p>Think of it like being in a large building with many apartments. A regular VPN might put everyone in the same open-plan office, where anyone can walk up to your desk. Peer isolation is like giving every user their own soundproof, opaque office with a locked door. You're all in the same building (the VPN server), but you can't see or hear what anyone else is doing, and they can't see you. This significantly reduces your attack surface and enhances your privacy and security, especially when you're connected to any shared network, public or otherwise.</p>
+    
+    <h2 id="default-settings">Is peer isolation on by default, and can you configure it?</h2>
+    <p class="short-answer">Yes, peer isolation is on by default in OllaVPN, and there's no configuration needed or available because it's baked into how our network works.</p>
+
+When you connect to OllaVPN, you're not just getting a secure tunnel; you're also automatically protected from other users on the network. This <strong>four-layer peer isolation</strong> is one of our fundamental security features, meaning no matter which server you connect to, you're isolated from anyone else using that same server. You don't have to toggle a setting or worry if it's active — it just is, from the moment you hit connect.
+
+This design choice prioritizes your privacy and security above all else, and it's part of why we can offer a <a href="/free-vpn">free plan</a> without compromising on safety. We want to make using a VPN as simple and secure as possible, so features like peer isolation and our always-on kill switch are enabled by default, requiring no extra thought from you. It’s part of our commitment to ease of use and making strong privacy accessible to everyone.
+
+Because it's a core architectural component, peer isolation isn't something you can turn off or adjust. It's always active, ensuring that your traffic remains private and separate from other users, even on shared servers. This means you get the benefits of a shared IP address for anonymity without the risks of direct peer-to-peer exposure.
+    
+    <h2 id="verifying-isolation">How can you verify OllaVPN&#39;s peer isolation is working?</h2>
+    <p class="short-answer">You can verify OllaVPN's peer isolation by performing network tests like ping and traceroute while connected to the VPN, and observing that other VPN users' internal IP addresses are not visible to you.</p>
+
+<p>Confirming that peer isolation is active and working on OllaVPN involves using common network tools to observe your connection. When you connect to our VPN, you're assigned an internal IP address within our network, but crucially, other users on the same server are also assigned their own distinct internal IPs. Our 4-layer peer isolation ensures that these internal addresses are not discoverable by other peers, which is a key privacy feature.</p>
+
+<p>One of the simplest <strong>testing methods</strong> is to use diagnostic tools like `ping` or `traceroute` from your device while connected to OllaVPN. If you were on a network without proper peer isolation, you might be able to discover or even attempt to connect to other devices on the same VPN server by trying common internal IP ranges. With OllaVPN, you won't be able to do this. You'll only see your own traffic and the VPN server's external IP address.</p>
+
+<p>You can also use online tools that report your <strong>IP address visibility</strong>. While these mainly show your external, public IP (which will be one of OllaVPN's exit nodes, shared with other users for anonymity), the absence of any leaks showing your real IP or internal network details is a good sign. The true test for peer isolation, however, really comes down to trying to identify or connect to other internal VPN clients, and finding that you simply can't.</p>
+    
+    <h2 id="limits-and-tradeoffs">What are the limits of peer isolation, and what doesn&#39;t it solve?</h2>
+    <p class="short-answer">Peer isolation protects your network traffic from other users on the VPN, but it's not a silver bullet for all online threats and doesn't protect against issues outside the VPN's scope.</p>
+
+Peer isolation is a powerful security feature, but it's important to understand its boundaries. What it does is prevent other OllaVPN users from seeing or interacting with your device on the network segment you share. Think of it like giving every user their own private subnet within the VPN, even though you're all using the same exit server. This stops things like local network attacks or accidental data exposure to other VPN users.
+
+However, it's not a complete cybersecurity solution. Peer isolation doesn't offer protection against malware you might download, phishing scams you encounter, or vulnerabilities in the websites you visit. These are issues that happen at your device or on the web itself, independent of how your traffic is routed through the VPN. You still need good antivirus software, a careful eye for suspicious links, and common sense when browsing.
+
+It also doesn't prevent things like <strong>browser fingerprinting</strong>, where websites gather unique characteristics about your browser and device to identify you, or tracking through cookies and other web technologies. Your online anonymity largely depends on your user behavior, regardless of the VPN's network-level protections. While OllaVPN secures your connection and hides your IP address, it can't control what you choose to share or where you browse online.
+    
+    <h2 id="impact-on-speed">Does peer isolation affect my connection speed or performance?</h2>
+    <p class="short-answer">No, OllaVPN's peer isolation has a negligible impact on your connection speed or performance.</p>
+
+<p>You might think adding a security layer like <a href="/features/peer-isolation">peer isolation</a> would slow things down, but that's not how we've built it. Our 4-layer peer isolation is designed to be incredibly efficient, meaning it adds almost no noticeable network overhead. We've engineered it to protect your privacy without getting in the way of your online experience, whether you're just browsing or streaming video.</p>
+
+<p>The system is built to be lightweight, so the extra processing needed to keep your connection isolated from others on the same server is minimal. This means you won't see a hit to your speed because of peer isolation. <strong>Network efficiency</strong> is a core principle in our design, allowing us to offer robust security features without compromising on performance.</p>
+
+<p>For most users, especially those on our 10 Mbps free plan, any impact would be completely imperceptible. Even if you're on the 10 Gbps Plus plan, pushing massive amounts of data, the design ensures that peer isolation isn't the bottleneck. We've optimized our entire network stack to ensure that security and speed go hand-in-hand, so you get the best of both worlds without compromise.</p>
+    
+    <h2 id="lan-access">Will peer isolation prevent me from accessing local network devices?</h2>
+    <p class="short-answer">No, peer isolation won't prevent you from accessing local network devices like printers or smart home gadgets when you're connected to OllaVPN.</p>
+
+<p>We designed OllaVPN with your convenience in mind, especially for things that live on your local network. While our 4-layer peer isolation ensures that other users on the OllaVPN network can't see or interact with your device, it doesn't block your connection to devices within your own home or office network. So, you can still print documents, control your smart home devices, or access network shares without having to disconnect from the VPN.</p>
+
+<p>This means you get the best of both worlds: enhanced privacy and security from the outside world through OllaVPN's <a href="/features/post-quantum-encryption">post-quantum-ready encryption</a>, while maintaining seamless access to everything you need on your local network. You won't find yourself constantly toggling the VPN on and off just to print a document or cast to your TV.</p>
+
+<p>Some VPNs might require complex <strong>split tunneling</strong> configurations to achieve this, or they might simply block local network access altogether. With OllaVPN, we handle it automatically. Your internet traffic goes securely through our servers, but your requests to local IP addresses stay on your local network, ensuring everything just works as you'd expect.</p>
+    
+    <h2 id="integration-with-other-primitives">How does peer isolation connect with OllaVPN&#39;s other privacy features?</h2>
+    <p class="short-answer">Peer isolation at OllaVPN works hand-in-hand with our other privacy features like post-quantum encryption, the kill switch, and in-tunnel DNS to create a truly multi-layered, comprehensive privacy shield for your online activity.</p>
+
+<p>Think of it like different security systems in a very secure building, all working together. <strong>Peer isolation</strong> is like having individual, locked rooms for each visitor, preventing anyone from seeing or interacting with others in the building. This means that even if you and another OllaVPN user are connected to the same server, your traffic is completely separated at a fundamental network layer. This isn't just about hiding your IP from websites; it's about making sure no other user on our network can even accidentally (or maliciously) snoop on your connection or identify you.</p>
+
+<p>Now, layer that with our <strong>post-quantum readiness</strong>. While peer isolation keeps you separate on our network, post-quantum encryption protects your data as it travels across the internet, making it unreadable to anyone outside our VPN tunnel. This forward-looking encryption ensures your data remains secret even against future, more powerful computers. Then, you have the <strong>kill switch</strong>, which acts as an automatic deadbolt. If your VPN connection ever drops unexpectedly, the kill switch immediately cuts your internet access, preventing any data from leaking outside the secure tunnel. Coupled with our <strong>in-tunnel DNS</strong>, which handles all your domain requests securely within the VPN, we're ensuring every aspect of your online presence is protected, right down to the websites you visit.</p>
+
+<p>Every piece of our architecture, from the four-layer peer isolation to our strict <a href="/no-logs-policy">no-logs policy</a>, is designed to complement the others. It's not just a collection of features; it's a carefully engineered system for comprehensive privacy. This multi-layered security approach means that even if one component were to face an unforeseen challenge, the others are there to back it up, ensuring your anonymity and data security remain intact, whether you're using our free plan at 10 Mbps or enjoying 10 Gbps with OllaVPN Plus.</p>
+    
+    <h2 id="future-proofing">Is OllaVPN&#39;s peer isolation future-proof against emerging threats?</h2>
+    <p class="short-answer">Yes, OllaVPN's 4-layer peer isolation is designed with adaptability in mind, making it highly resilient against emerging threats and ensuring its long-term viability.</p>
+
+<p>We built our network with the understanding that the threat landscape is always changing. That's why our approach to peer isolation isn't a static solution, but a layered defense system. This means it's inherently more flexible than single-point security measures. Each of the four layers acts as an independent barrier, so even if one layer were to face a novel attack, the others remain in place, protecting your privacy and data.</p>
+
+<p>This layered architecture gives us significant room for <strong>continuous improvement</strong> and adaptation. As new vulnerabilities or attack vectors appear, we can update or reinforce individual layers without needing to overhaul the entire system. This modularity is key to its future-proofing, allowing us to maintain robust <strong>network security</strong> against even the most sophisticated <strong>evolving threats</strong>. It's not just about what threats exist today, but being prepared for what might come tomorrow.</p>
+
+<p>Think of it like building a house with multiple locks on the door, reinforced windows, and a strong foundation – if one part is compromised, the others still stand strong. This design philosophy is what gives OllaVPN's peer isolation its <strong>long-term viability</strong> and helps us protect you in an ever-changing digital world.</p>
+    
+
+    <h2 id="peer-iso-4-layers">The four-layer defense, in technical detail</h2>
+    <p class="short-answer">Peer isolation on OllaVPN exits is enforced in four independent layers, each separately sufficient. Defense in depth means a bug in any single layer leaves the property intact via the other three.</p>
+
+    <p><strong>Layer 1 — WireGuard AllowedIPs restriction.</strong> Every connected peer's WireGuard configuration on the exit specifies <code>AllowedIPs = peer-ip/32</code> — meaning the WireGuard packet processor will only accept and forward packets from that peer that are destined for the wider internet, not for another peer's /32. A peer that tries to send a packet to another peer's tunnel IP gets the packet dropped at the WireGuard layer before it even reaches the IP stack.</p>
+
+    <p><strong>Layer 2 — nftables drop rule on the wg0 interface.</strong> Even if a packet somehow passes the WireGuard layer (a hypothetical implementation bug), an nftables rule on the wg0 interface drops any packet whose ingress interface is wg0 and whose egress interface is also wg0. The rule is <code>iifname wg0 oifname wg0 drop</code>. Packets that should leave the tunnel to reach the wider internet are not affected; only peer-to-peer-via-the-tunnel packets match this rule.</p>
+
+    <p><strong>Layer 3 — sysctl forwarding disable.</strong> The wg0 interface has IP forwarding administratively disabled at the kernel level via <code>sysctl net.ipv4.conf.wg0.forwarding=0</code>. The wider internet egress works via a separate routing path that doesn't require the kernel to forward between two virtual interfaces; peer-to-peer-via-the-tunnel would require this forwarding capability, which is administratively off.</p>
+
+    <p><strong>Layer 4 — automated end-to-end test that runs before every release.</strong> The <code>tools/e2e/peer-isolation/</code> harness in the OllaVPN repository spins up two peers on a test exit, attempts to ping each peer from the other, and asserts that 100% of pings fail. A release that violates peer isolation fails this test and is blocked from shipping. The test catches both code regressions (someone changes the AllowedIPs logic) and configuration regressions (an exit gets deployed without the nftables rule).</p>
+
+    <p>No single layer is the load-bearing one. The defense-in-depth design specifically ensures that an undetected bug in any one layer still leaves the privacy property protected by the other three. The test layer ensures we catch any such bug before users do.</p>
+
+    <h2 id="peer-iso-verify">How can you verify peer isolation works?</h2>
+    <p class="short-answer">Hardest of OllaVPN's privacy properties to verify alone, because it requires two devices on the same exit at the same time. The test code is published; the methodology is reproducible.</p>
+
+    <p>Peer isolation is harder to verify than DNS-leak or kill-switch behavior because the test requires two devices both connected to the same OllaVPN exit at the same time. If you have that setup (a laptop and a phone both on OllaVPN, both routed via the same exit) you can run the test:</p>
+
+    <p><strong>Step 1 — Connect both devices to the same exit.</strong> In the OllaVPN app on each device, pick the same country and same city. The country picker shows the active exit ID; matching IDs means matching exit.</p>
+
+    <p><strong>Step 2 — Identify each device's tunnel IP.</strong> On each device, open <a href="/what-is-my-ip">our what-is-my-IP tool</a> and note the tunnel IP shown (this is the in-tunnel CGNAT address, not the exit's public IP). Or run <code>ipconfig</code> (Windows) / <code>ifconfig</code> (macOS) and look at the OllaVPN tunnel interface.</p>
+
+    <p><strong>Step 3 — Attempt to ping across.</strong> From device A's terminal, ping device B's tunnel IP. The ping should fail with 100% packet loss. The same from device B to device A. If any pings succeed, peer isolation has failed (it hasn't, but verify). The expected result is total isolation — the two devices cannot see each other through the tunnel.</p>
+
+    <p><strong>What if you only have one device?</strong> The published test code in our repository (<code>tools/e2e/peer-isolation/</code>) describes the methodology. You can run it against any exit if you have two test accounts and two simulated clients. It's not as accessible as a browser-based test, but the methodology is public, the code is open, and the test runs before every release as a CI gate.</p>
+
+    <h2 id="peer-iso-vs-competitors">How OllaVPN's peer isolation compares to other VPNs</h2>
+    <p class="short-answer">Most paid VPNs claim peer isolation; few publish how it's enforced. OllaVPN's distinguishing posture is the four-layer defense-in-depth, the published e2e test, and explicit advertisement of all four layers — most competitors implement one or two layers and don't talk about the rest.</p>
+
+    <p><strong>Single-layer implementations are common.</strong> Many commercial VPNs enforce peer isolation only at the WireGuard AllowedIPs layer (or the equivalent in OpenVPN). This works in practice — bugs in WireGuard's packet processor are extremely rare — but a defense that relies on a single layer is fragile against the day that layer regresses. Mullvad publishes detailed peer-isolation documentation describing a multi-layer approach similar to ours; we consider Mullvad the gold-standard reference for this specific property.</p>
+
+    <p><strong>The test gate matters.</strong> A peer-isolation guarantee that's only enforced in code, with no automated test that fails the build when the guarantee breaks, is one regression away from silently failing. OllaVPN's <code>tools/e2e/peer-isolation/</code> harness runs as a pre-release CI gate, so the property is continuously enforced rather than periodically reviewed. The test code is open in the repository — readers who want to know exactly what we're testing for can read the test.</p>
+
+    <p><strong>The "we don't talk about it" tier.</strong> Some free VPNs simply don't discuss peer isolation. The absence of discussion is not proof of absence (some operators implement the property quietly), but in our experience the operators that quietly skip it tend to be the same ones that quietly skip other security properties. Asking the operator "do you isolate peers from each other, and how?" is a good vetting question whenever you're evaluating a free VPN.</p>
+
+    <h2 id="peer-iso-faq">Common peer-isolation questions, answered straight</h2>
+
+    <p><strong>Why would another VPN user want to reach my device?</strong> Most don't intentionally. The risk is incidental: an infected device on the same exit might portscan its local subnet and stumble onto your device; a misconfigured app on another user's device might broadcast to a range that includes you. Peer isolation makes both scenarios impossible at the network layer regardless of intent.</p>
+
+    <p><strong>Does peer isolation affect my speed?</strong> No measurable impact. The nftables drop rule operates at packet receipt; matching packets are dropped immediately with negligible CPU cost. The sysctl forwarding disable is set once at exit boot, not per-packet. The WireGuard AllowedIPs check is part of the standard WireGuard packet flow and adds nothing measurable.</p>
+
+    <p><strong>Does peer isolation affect my LAN access?</strong> No. Peer isolation only blocks tunnel-to-tunnel traffic on the exit. Your home LAN devices (printer, NAS, smart-home gear) are reachable via your local network interface, which is separate from the tunnel. RFC 1918 LAN ranges are explicitly carved out from the kill-switch firewall rules, so LAN access keeps working.</p>
+
+    <p><strong>What about peer-to-peer apps like file-sharing or video calls?</strong> Direct peer-to-peer connections between two OllaVPN users on the same exit are blocked. Most modern P2P apps (Zoom, Discord, FaceTime) use external relay servers when direct connection fails, so the user-visible behavior is "calls work, slightly higher latency than direct P2P would have given." Apps that strictly require direct P2P (some torrent clients in specific configurations) may behave differently — try and see.</p>
+
+    <p><strong>Is peer isolation different on the free vs Pro tier?</strong> No. Peer isolation is a network-architecture property of the exit servers, not a per-user feature. Free users and Pro users on the same exit are equally isolated from each other (and from all other users).</p>
+
+    <p><strong>What if the exit's nftables rule gets accidentally deleted?</strong> The e2e test would catch it before release ships, the four-layer design means the WireGuard and sysctl layers still enforce the property, and our deployment automation re-applies the nftables rules on every restart. The window for a regression to escape into production is small.</p>
+
+    <h2 id="peer-iso-about">About this guide</h2>
+    <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. The four-layer implementation details (WireGuard AllowedIPs, nftables drop rule, sysctl forwarding, e2e test) were verified against the production exit configuration and the test code in the June 2026 update cycle. Quarterly refresh; last full re-evaluation 23 June 2026.</p>
+
+    <p>For deeper context: <a href="/technology">the technology stack page</a> covers OllaVPN's full architecture including peer isolation's interaction with the kill switch and in-tunnel DNS. The <a href="/killswitch">kill switch page</a> documents the related OS-firewall-layer defense. The <a href="/in-tunnel-dns">in-tunnel DNS page</a> covers the resolver-layer defense. Together, the three privacy primitives form OllaVPN's core privacy guarantee — read all three for the complete picture.</p>
+
+    <h2 id="peer-iso-historical-incidents">Why peer isolation matters — historical incidents</h2>
+    <p class="short-answer">The peer-isolation property exists because its absence has caused real incidents on real VPN services. The category history is worth knowing before you trust any VPN with your traffic.</p>
+
+    <p>Peer isolation isn't an abstract concern. Multiple commercial VPN services have shipped exits without proper peer isolation, with documented consequences:</p>
+
+    <p><strong>The "broadcast traffic exposure" pattern.</strong> Without peer isolation, an exit acts a bit like a giant Wi-Fi network: thousands of users sharing the same broadcast domain. Misconfigured user devices that broadcast service discovery (Apple Bonjour, Windows SMB browsing, printer discovery) leak the device's hostname, OS, and sometimes user information to every other user on the same exit. Academic researchers have repeatedly demonstrated that they can passively listen on a poorly-isolated VPN exit and compile a list of connected users' device makes, models, hostnames, and software versions — all without sending a single probe packet.</p>
+
+    <p><strong>The "lateral movement" pattern.</strong> An attacker connects to a VPN with a compromised device (one already infected with malware that scans local networks for vulnerable services). Without peer isolation, the malware scans the tunnel subnet and finds other connected peers — possibly with unpatched services exposed because the user assumed they were on a "safe" VPN. The attacker now has lateral movement opportunities against other paying customers of the same VPN service.</p>
+
+    <p><strong>The "amplification" pattern.</strong> Some VPN services have been documented allowing peer-to-peer traffic at line rate, which lets a malicious peer use the exit as an amplification vector — sending small attack packets to other peers' broadcast addresses and triggering large response volumes that the operator's bandwidth then carries. The operator absorbs the cost; the legitimate users absorb the slowdown.</p>
+
+    <p>All three patterns are eliminated by enforcing peer isolation at the network layer, which is what OllaVPN does. We document the implementation explicitly because the category history of <em>not</em> documenting it has been bad for users.</p>
+
+    <div class="feature-cta">
+      <h3>Want this on your device?</h3>
+      <p>OllaVPN is free forever for 1 device. No card, no email tricks.</p>
+      <a class="btn primary lg" href="/dl/">Get OllaVPN free <span class="arrow">&rarr;</span></a>
+      <span class="feature-cta-sub">Or <a href="/pricing">see all plans</a></span>
+    </div>
+
+      </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      
+      <li><a href="#what-is-peer-isolation">What is VPN peer isolation and why does it matter?</a></li>
+      
+      <li><a href="#how-olla-vpn-implements-it">How does OllaVPN&#39;s 4-layer peer isolation work under the hood?</a></li>
+      
+      <li><a href="#comparison-with-other-vpns">What do other VPNs typically get wrong with peer isolation?</a></li>
+      
+      <li><a href="#real-world-protection">What does peer isolation protect you against in real-world scenarios?</a></li>
+      
+      <li><a href="#default-settings">Is peer isolation on by default, and can you configure it?</a></li>
+      
+      <li><a href="#verifying-isolation">How can you verify OllaVPN&#39;s peer isolation is working?</a></li>
+      
+      <li><a href="#limits-and-tradeoffs">What are the limits of peer isolation, and what doesn&#39;t it solve?</a></li>
+      
+      <li><a href="#impact-on-speed">Does peer isolation affect my connection speed or performance?</a></li>
+      
+      <li><a href="#lan-access">Will peer isolation prevent me from accessing local network devices?</a></li>
+      
+      <li><a href="#integration-with-other-primitives">How does peer isolation connect with OllaVPN&#39;s other privacy features?</a></li>
+      
+      <li><a href="#future-proofing">Is OllaVPN&#39;s peer isolation future-proof against emerging threats?</a></li>
+      
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<script>
+  // Scroll-spy: highlight current section in right rail TOC.
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+</body>
+</html>

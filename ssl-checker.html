@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SSL Checker — Live Certificate Test · OllaVPN</title>
+<meta name="description" content="Free SSL/TLS certificate checker. Verify any domain's certificate validity, expiry date, issuer, and chain in under three seconds. No signup." />
+<link rel="canonical" href="https://ollavpn.com/ssl-checker" />
+<meta name="theme-color" content="#0B0B12" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="SSL Checker — Live Certificate Test · OllaVPN" />
+<meta property="og:description" content="Verify any domain's SSL/TLS certificate — validity, expiry, issuer, chain. Free, no signup." />
+<meta property="og:url" content="https://ollavpn.com/ssl-checker" />
+<meta property="og:image" content="https://ollavpn.com/og-ssl-checker.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SSL Checker — Live Certificate Test · OllaVPN" />
+<meta name="twitter:description" content="Check any domain's SSL/TLS certificate in seconds. Free, no signup." />
+<meta name="twitter:image" content="https://ollavpn.com/og-ssl-checker.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+<link rel="stylesheet" href="/tool.css" />
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "SSL Checker — Live Certificate Verification",
+  "applicationCategory": "UtilityApplication", "operatingSystem": "Any",
+  "url": "https://ollavpn.com/ssl-checker",
+  "description": "Free tool that verifies a domain's SSL/TLS certificate health: validity, expiry, issuer, and chain.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "What does an SSL checker actually check?",
+    "acceptedAnswer": { "@type": "Answer", "text": "It connects to the domain on port 443, reads the TLS certificate the server presents, and verifies four things: that the certificate is signed by a trusted authority, that it covers the hostname you asked about, that it hasn't expired, and that it hasn't been revoked. Together these tell you whether browsers will accept the certificate and load the site over HTTPS." } },
+  { "@type": "Question", "name": "What is the difference between SSL and TLS?",
+    "acceptedAnswer": { "@type": "Answer", "text": "SSL is the old name. The protocol was renamed TLS (Transport Layer Security) in 1999 and has gone through several major revisions since. Modern sites use TLS 1.2 or TLS 1.3. Everyone still casually calls it SSL because the old name stuck, but technically when you check a site's 'SSL certificate' you're checking its TLS certificate." } },
+  { "@type": "Question", "name": "How long does a certificate stay valid?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Public certificates today max out at about 90 days. Let's Encrypt and most free issuers use that length. Paid certificates from commercial CAs can run up to 12 months, though Apple, Google, and Mozilla are pushing to shorten this to 47 days by 2029. Internal certificates (corporate intranets, IoT devices) can be much longer because they aren't browser-trusted." } },
+  { "@type": "Question", "name": "What happens when an SSL certificate expires?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Browsers stop trusting the site and show a full-screen warning that's nearly impossible for users to click through. The server is technically still serving traffic, but for practical purposes the site is down. Most outages caused by SSL expiry are 100 percent preventable — automated renewal handles them, but it occasionally fails silently. Checking 14 to 30 days in advance is the easy save." } },
+  { "@type": "Question", "name": "Who is the issuer and why does it matter?",
+    "acceptedAnswer": { "@type": "Answer", "text": "The issuer is the certificate authority that signed the certificate. Common ones include Let's Encrypt, Google Trust Services, DigiCert, Sectigo, and Cloudflare. Browsers come with a list of trusted issuers built in. If the issuer is on the list, the certificate works. If it's a self-signed certificate or signed by an unknown CA, browsers refuse it." } },
+  { "@type": "Question", "name": "Can SSL hide my browsing from my ISP?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Partly. SSL encrypts what you send and receive, so your ISP can't see the contents of pages or the data inside forms. But they can still see which domains you connect to (via the SNI field in the TLS handshake and the DNS lookups your device makes). To hide the domains too you need a VPN, which routes everything through an encrypted tunnel and resolves DNS on the other side." } },
+  { "@type": "Question", "name": "Is SSL the same thing as a VPN?",
+    "acceptedAnswer": { "@type": "Answer", "text": "No. SSL/TLS protects a single connection between you and one specific site. A VPN protects every connection from your device by routing it through an encrypted tunnel to a server you choose. SSL and VPNs solve different problems and most people benefit from using both. Our free plan adds a VPN layer in front of every site's SSL — defence in depth." } },
+  { "@type": "Question", "name": "Can a website fake its SSL certificate?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Not realistically. Certificates have to be signed by a trusted authority, and authorities are audited heavily. The closest practical attack is buying a real certificate for a typosquat domain (paypa1.com instead of paypal.com) and tricking users into visiting it. Browsers can't help with that — only paying attention to the URL does." } } ] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+  { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ollavpn.com/tools" },
+  { "@type": "ListItem", "position": 3, "name": "SSL Checker", "item": "https://ollavpn.com/ssl-checker" } ] }
+</script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar"><div class="wrap"><div class="utilbar-left"><span class="green-dot">&#9679;</span> All systems operational <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a></div><div class="utilbar-right"><a href="/technology.html">Trust</a> <span style="opacity:.4;">&middot;</span> <a href="/blog/">Resources</a> <span style="opacity:.4;">&middot;</span> <a href="/contact.html">Contact</a></div></div></div>
+
+<nav class="nav"><div class="nav-inner"><a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a><div class="nav-links"><a href="/free-vpn">Free VPN</a><a href="/apps.html">Apps</a><a href="/dl/">Download</a></div><div class="nav-cta"><a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a><a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a></div></div></nav>
+
+<header class="tool-hero"><div class="wrap">
+  <div class="meta">FREE TOOL · LIVE CHECK · NO SIGNUP
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
+    </div>
+  <h1>SSL Certificate Checker</h1>
+  <p class="lede">Verify any domain's SSL/TLS certificate in seconds. See who issued it, when it expires, whether it covers the hostname, and whether it's healthy enough that browsers will accept it. The same checks every visitor's browser runs automatically — surfaced so you can see them.</p>
+</div></header>
+
+<section class="tool-section">
+  <div class="check-card">
+    <form class="check-form" id="check-form" autocomplete="off">
+      <input type="text" id="domain-input" placeholder="example.com" required spellcheck="false" autocapitalize="off" autocorrect="off" />
+      <button type="submit" id="check-btn">Check certificate</button>
+    </form>
+
+    <div class="result" id="result" hidden>
+      <div class="verdict" id="verdict"><span class="dot"></span><span id="verdict-text">Checking…</span></div>
+      <div class="result-grid">
+        <div class="item"><span class="label">Domain</span><span class="value" id="r-domain">—</span></div>
+        <div class="item"><span class="label">Issuer</span><span class="value" id="r-issuer">—</span></div>
+        <div class="item"><span class="label">Valid from</span><span class="value" id="r-from">—</span></div>
+        <div class="item"><span class="label">Valid until</span><span class="value" id="r-until">—</span></div>
+        <div class="item"><span class="label">Days remaining</span><span class="value" id="r-days">—</span></div>
+        <div class="item"><span class="label">Signature algorithm</span><span class="value" id="r-sigalg">—</span></div>
+        <div class="item" style="grid-column: 1 / -1;"><span class="label">Covers (SAN)</span><span class="value" id="r-san">—</span></div>
+      </div>
+    </div>
+
+    <div class="tool-cta">
+      <p><strong>Running a site?</strong> Pair certificate health with the <a href="/is-it-down" style="color:var(--red);">uptime checker</a> to catch failures before users do.</p>
+      <a class="btn primary" href="/free-vpn">Try OllaVPN Free</a>
+    </div>
+  </div>
+</section>
+
+<div class="article-layout">
+  <article class="article">
+
+    <div class="tldr"><span class="label">TL;DR</span>
+      <p>An SSL/TLS certificate is what makes the green padlock appear in your browser. It proves the site is who it says it is and lets your traffic to it be encrypted.</p>
+      <p>The four things that matter: a trusted issuer, the right hostname, an unexpired date, and a strong signature. Miss any one and browsers refuse to load the site.</p>
+      <p>Use this tool to check your own certificate health before users hit a wall of warnings, or to verify a site you're about to log into is genuinely the one you think it is.</p>
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page"><span class="label">On this page</span><ol>
+      <li><a href="#what-it-is">What is an SSL certificate, really?</a></li>
+      <li><a href="#what-to-check">What does the checker actually verify?</a></li>
+      <li><a href="#issuer">Who is the issuer and why does it matter?</a></li>
+      <li><a href="#expiry">How long is a certificate valid?</a></li>
+      <li><a href="#errors">Common SSL errors and what they mean</a></li>
+      <li><a href="#vs-vpn">SSL vs VPN — are they the same thing?</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol></nav>
+
+    <h2 id="what-it-is">What is an SSL certificate, really?</h2>
+    <p class="short-answer">A small file that proves a website is who it says it is, signed by an authority your browser trusts.</p>
+    <p>When you visit an HTTPS site, the server hands your browser a certificate. The certificate says "I am example.com, here is my public key, and this signature proves an authority called <strong>Let's Encrypt</strong> (or DigiCert, Cloudflare, whoever) vouches for me." Your browser checks the signature against its built-in list of trusted authorities. If it matches, the connection is encrypted and the padlock appears. If anything is off — expired, wrong hostname, untrusted issuer — the browser refuses to load the site.</p>
+    <p>The technology is called <strong>TLS</strong> (Transport Layer Security) now. Everyone still calls it SSL because the old name stuck. Either way it's the same thing: a one-way trust chain rooted in a small list of authorities your browser ships with, used to encrypt every page you load over HTTPS.</p>
+
+    <h2 id="what-to-check">What does the checker actually verify?</h2>
+    <p class="short-answer">The same four things every visitor's browser checks silently, every time.</p>
+    <p>First, the <strong>issuer</strong> — the certificate has to be signed by an authority on the trusted list. Self-signed certificates fail this. Internal corporate CAs fail it on public devices. Real public CAs (Let's Encrypt, Google Trust Services, Cloudflare, DigiCert, Sectigo) pass it.</p>
+    <p>Second, the <strong>hostname coverage</strong> — the certificate has to list the exact hostname you're visiting in its Subject Alternative Name (SAN) field. A certificate for example.com that doesn't also list www.example.com will fail on the www variant. Wildcard certificates (*.example.com) cover everything one level deep.</p>
+    <p>Third, the <strong>date range</strong> — both the not-before and not-after dates have to bracket the current moment. An expired certificate is the single most common cause of preventable outages.</p>
+    <p>Fourth, the <strong>signature algorithm</strong> — old algorithms like SHA-1 are no longer trusted. Modern certificates use SHA-256 or stronger. The checker surfaces this so you can see at a glance.</p>
+
+    <h2 id="issuer">Who is the issuer and why does it matter?</h2>
+    <p class="short-answer">It's the authority that signed the certificate, and only a few of them are trusted by browsers.</p>
+    <p>There are maybe a dozen major certificate authorities and a few dozen smaller ones, all of which are heavily audited. Browsers ship with a built-in list — the root store — that decides which CAs are trusted. <strong>Let's Encrypt</strong> issues most certificates on the modern internet because it's free, automated, and trustworthy. <strong>Google Trust Services</strong> (used by Cloudflare and Google's own sites) is the other heavyweight. <strong>DigiCert</strong> and <strong>Sectigo</strong> dominate the paid market for businesses that want extended validation or longer validity.</p>
+    <p>The issuer matters operationally because each CA has different renewal flows, different validation methods, and slightly different rules. It also matters geopolitically — a few CAs have lost browser trust in the past after security incidents (DigiNotar, Symantec, China Trust). If a site's issuer is one you don't recognise, look it up before trusting the certificate.</p>
+
+    <h2 id="expiry">How long is a certificate valid?</h2>
+    <p class="short-answer">Maximum 90 days for free certificates today, with the industry moving toward 47 days by 2029.</p>
+    <p>Public certificates have shrunk dramatically in the last decade. They used to be valid for years; now most run 90 days, and Apple has proposed reducing this to 47 days by 2029 with Google and Mozilla aligned. The shorter the validity, the smaller the window of misuse if a private key leaks.</p>
+    <p>Automation makes shorter certificates manageable. <strong>Let's Encrypt</strong> with the <strong>ACME</strong> protocol handles renewal silently every 60 days. <strong>Caddy</strong>, <strong>Traefik</strong>, and <strong>Cloudflare</strong> handle it without any configuration. If you see a certificate with weeks left and no automated renewal, that's the warning sign.</p>
+
+    <h2 id="errors">Common SSL errors and what they mean</h2>
+    <p class="short-answer">There are roughly six categories, and most are operator mistakes rather than attacks.</p>
+    <p><strong>Expired certificate</strong> — auto-renewal failed silently. Check your ACME logs. <strong>Hostname mismatch</strong> — the certificate covers example.com but you visited www.example.com (or vice versa). Add both to your SAN list. <strong>Untrusted issuer</strong> — usually a self-signed certificate served by mistake, or an internal CA that wasn't installed on the visitor's device. <strong>Weak algorithm</strong> — old certificates signed with SHA-1 or smaller keys; just reissue. <strong>Revoked</strong> — the CA declared the certificate invalid (often after a key compromise); browsers fetch revocation lists in the background. <strong>Chain broken</strong> — the certificate is valid but the server didn't send the intermediate certificates that connect it to the trusted root. Add the intermediate bundle to your server config.</p>
+
+    <h2 id="vs-vpn">SSL vs VPN — are they the same thing?</h2>
+    <p class="short-answer">No. SSL encrypts one site at a time; a VPN encrypts everything your device sends.</p>
+    <p>SSL/TLS protects the connection between your browser and a single specific site. When you load HTTPS gmail.com, only your traffic to Gmail is encrypted — but your ISP can see that you're talking to Gmail. A VPN sits one layer earlier: it encrypts all your device's traffic into a tunnel to a VPN server, and that server then makes requests on your behalf. Your ISP just sees encrypted traffic to the VPN — they can't tell whether you're loading Gmail, Wikipedia, or anything else.</p>
+    <p>The two work together rather than competing. Even with a VPN on, individual sites still use SSL so the VPN server can't see your passwords or messages. And with SSL alone, your ISP and any network operator between you and the server still know which sites you visit. Most privacy-aware users run both. <a href="/free-vpn">Our free plan</a> gives you the VPN layer for $0 forever.</p>
+
+    <div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What is an SSL certificate, really?</li>
+        <li>What does the checker actually verify?</li>
+        <li>Who is the issuer and why does it matter?</li>
+        <li>How long is a certificate valid?</li>
+        <li>Common SSL errors and what they mean</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What does an SSL checker actually check?</h3><p>It connects to the domain on port 443, reads the TLS certificate the server presents, and verifies four things: that the certificate is signed by a trusted authority, that it covers the hostname you asked about, that it hasn't expired, and that it hasn't been revoked. Together these tell you whether browsers will accept the certificate and load the site over HTTPS.</p>
+      <h3>What is the difference between SSL and TLS?</h3><p>SSL is the old name. The protocol was renamed TLS in 1999 and has gone through several major revisions since. Modern sites use TLS 1.2 or TLS 1.3. Everyone still casually calls it SSL because the old name stuck, but technically when you check a site's 'SSL certificate' you're checking its TLS certificate.</p>
+      <h3>How long does a certificate stay valid?</h3><p>Public certificates today max out at about 90 days. Let's Encrypt and most free issuers use that length. Paid certificates from commercial CAs can run up to 12 months, though Apple, Google, and Mozilla are pushing to shorten this to 47 days by 2029.</p>
+      <h3>What happens when an SSL certificate expires?</h3><p>Browsers stop trusting the site and show a full-screen warning that's nearly impossible for users to click through. The server is technically still serving traffic, but for practical purposes the site is down. Automated renewal handles this, but it occasionally fails silently. Checking 14 to 30 days in advance is the easy save.</p>
+      <h3>Who is the issuer and why does it matter?</h3><p>The issuer is the certificate authority that signed the certificate. Common ones include Let's Encrypt, Google Trust Services, DigiCert, Sectigo, and Cloudflare. Browsers come with a list of trusted issuers built in. If the issuer is on the list, the certificate works. If it's a self-signed certificate or signed by an unknown CA, browsers refuse it.</p>
+      <h3>Can SSL hide my browsing from my ISP?</h3><p>Partly. SSL encrypts what you send and receive, so your ISP can't see the contents of pages. But they can still see which domains you connect to via the SNI field in the TLS handshake and the DNS lookups your device makes. To hide the domains too you need a VPN, which routes everything through an encrypted tunnel.</p>
+      <h3>Is SSL the same thing as a VPN?</h3><p>No. SSL/TLS protects a single connection between you and one specific site. A VPN protects every connection from your device by routing it through an encrypted tunnel to a server you choose. SSL and VPNs solve different problems and most people benefit from using both.</p>
+      <h3>Can a website fake its SSL certificate?</h3><p>Not realistically. Certificates have to be signed by a trusted authority, and authorities are audited heavily. The closest practical attack is buying a real certificate for a typosquat domain and tricking users into visiting it. Browsers can't help with that — only paying attention to the URL does.</p>
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Fssl-checker" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fssl-checker" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fssl-checker&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fssl-checker&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related"><h2>Related</h2><ul><ul class="related-cards">
+    <li><a href="/what-is-my-ip"><span class="card-tag">PRIVACY</span><span class="card-title">What is my IP address?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/is-it-down"><span class="card-tag">PRIVACY</span><span class="card-title">Is it down? — uptime checker</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/whois-lookup"><span class="card-tag">PRIVACY</span><span class="card-title">WHOIS lookup</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/dns-lookup"><span class="card-tag">PRIVACY</span><span class="card-title">DNS lookup</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul></div>
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page"><span class="label">On this page</span><ol>
+    <li><a href="#what-it-is">What it is</a></li>
+    <li><a href="#what-to-check">What's checked</a></li>
+    <li><a href="#issuer">The issuer</a></li>
+    <li><a href="#expiry">Validity period</a></li>
+    <li><a href="#errors">Common errors</a></li>
+    <li><a href="#vs-vpn">SSL vs VPN</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ol></aside>
+</div>
+
+<footer class="footer"><div class="wrap"><div class="top">
+  <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+  <div><h4>Product</h4><ul><li><a href="/apps.html">Apps</a></li><li><a href="/technology.html">Technology</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+  <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN guide</a></li><li><a href="/free-vpn-for-windows">For Windows</a></li><li><a href="/free-vpn-for-india">For India</a></li><li><a href="/free-wireguard-vpn">WireGuard VPN</a></li><li><a href="/free-quic-vpn">QUIC VPN</a></li></ul></div>
+  <div><h4>Tools</h4><ul><li><a href="/what-is-my-ip">What is my IP?</a></li><li><a href="/is-it-down">Is it down?</a></li><li><a href="/ssl-checker">SSL checker</a></li><li><a href="/whois-lookup">WHOIS lookup</a></li><li><a href="/dns-lookup">DNS lookup</a></li><li><a href="/headers-viewer">HTTP headers</a></li><li><a href="/email-verifier">Email verifier</a></li><li><a href="/webrtc-leak-test">WebRTC leak test</a></li><li><a href="/password-generator">Password generator</a></li></ul></div>
+  <div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+</div><div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div></div></footer>
+
+<script src="/tool.js"></script>
+<script>
+function fmtDate(s) { try { return new Date(s).toISOString().slice(0, 10); } catch(_) { return s || "—"; } }
+toolPage.run("ssl-checker", {
+  inputId: "domain-input",
+  submit: function (v) { return "/api/ssl?domain=" + encodeURIComponent(v); },
+  render: function (data) {
+    if (data.error) return { verdict: "down", text: data.error };
+    var days = data.days_remaining != null ? data.days_remaining : null;
+    var valid = data.is_valid !== false && (days == null || days > 0);
+    document.getElementById("r-domain").textContent = data.domain || data.host || "—";
+    document.getElementById("r-issuer").textContent = data.issuer_cn || (data.issuer && data.issuer.cn) || "—";
+    document.getElementById("r-from").textContent = fmtDate(data.not_before);
+    document.getElementById("r-until").textContent = fmtDate(data.not_after);
+    document.getElementById("r-days").textContent = days != null ? days + " days" : "—";
+    document.getElementById("r-sigalg").textContent = data.signature_algorithm || "—";
+    document.getElementById("r-san").textContent = (data.san || data.sans || []).join(", ") || "—";
+    var warn = data.warning;
+    if (warn) return { verdict: "down", text: "Certificate warning: " + warn };
+    if (valid) return { verdict: "up", text: "Certificate looks healthy." + (days != null ? " " + days + " days remaining." : "") };
+    return { verdict: "down", text: "Certificate is not valid." };
+  }
+});
+</script>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

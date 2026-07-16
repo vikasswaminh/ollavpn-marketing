@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OllaVPN — Apps for Windows · Post-Quantum-Ready VPN</title>
+<meta name="description" content="Download OllaVPN free for Windows. Post-quantum-ready encryption, always-on kill switch, no logs, no email required. Lifetime free or $2/month." />
+<link rel="canonical" href="https://ollavpn.com/apps.html" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="OllaVPN — Apps for Windows · Post-Quantum-Ready" />
+<meta property="og:description" content="Download OllaVPN free for Windows. Post-quantum-ready, always-on kill switch, no logs, no email required." />
+<meta property="og:url" content="https://ollavpn.com/apps.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://ollavpn.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="OllaVPN — Free, post-quantum-ready VPN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="OllaVPN — Apps for Windows" />
+<meta name="twitter:description" content="Download free for Windows. Post-quantum-ready, no logs, no email required." />
+<meta name="twitter:image" content="https://ollavpn.com/og-image.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OllaVPN for Windows",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "SecurityApplication",
+  "downloadUrl": "https://login.ollavpn.com/downloads/OllaVPN-amd64-installer.exe",
+  "softwareVersion": "0.1.0",
+  "fileSize": "10.15 MB",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "OllaVPN" }
+}
+</script>
+<!-- Self-hosted Lato (no Google Fonts CDN call for primary type). JetBrains Mono is still pulled
+     from Google for mono code blocks - used sparingly, can be self-hosted in a follow-up. -->
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="styles.css?v=20260708-0556" />
+<style>
+  .page-hero { padding: 96px 0 56px; position: relative; overflow: hidden; }
+  .page-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.16), transparent 60%); pointer-events:none; }
+  .page-hero .wrap { position: relative; }
+
+  .platforms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .plat { padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); display:flex; flex-direction:column; gap:10px; min-height:170px; transition: border-color .15s, transform .15s; }
+  .plat:hover { border-color: var(--line-2); transform: translateY(-2px); }
+  .plat.live { border-color: rgba(238,62,71,0.35); background: linear-gradient(180deg, rgba(238,62,71,0.08), var(--panel) 60%); }
+  .plat.deferred { opacity: 0.85; }
+  .plat.skip { opacity: 0.55; }
+  .plat .icon { width: 36px; height: 36px; border-radius: 10px; background: var(--bg-2); border: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-weight: 600; }
+  .plat.live .icon { background: var(--red-soft); border-color: #F7C9CD; color: var(--red-2); }
+  .plat h3 { font-size: 17px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+  .plat .v { font-family: var(--mono); font-size: 11px; color: var(--text-mute); }
+  .plat .dl { margin-top: auto; font-family: var(--mono); font-size: 11px; color: var(--red-2); }
+  .plat .dl.muted { color: var(--text-mute); }
+
+  .show { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-top: 48px; }
+
+  .desk { width: 100%; max-width: 540px; margin: 0 auto; border: 1px solid var(--line); background: var(--panel); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(11,11,16,0.18), 0 24px 64px -28px rgba(11,11,16,0.10); }
+  .desk .bar { padding: 10px 14px; display:flex; gap: 6px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+  .desk .bar .d { width: 11px; height: 11px; border-radius: 50%; background: var(--line-2); }
+  .desk .grid { padding: 22px; display: grid; grid-template-columns: 200px 1fr; gap: 22px; }
+  .desk .side { display: flex; flex-direction: column; gap: 4px; }
+  .desk .item { padding: 9px 12px; font-family: var(--mono); font-size: 11px; color: var(--text-dim); border-radius: 8px; }
+  .desk .item.active { background: var(--bg-2); color: var(--text); }
+  .desk .main { display: flex; flex-direction: column; gap: 14px; }
+  .desk .big { padding: 22px; border-radius: 12px; background: linear-gradient(180deg, var(--red-soft), var(--bg) 60%); border: 1px solid #F7C9CD; }
+  .desk .big .city { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; }
+  .desk .big .meta { font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; }
+  .desk .triple { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .desk .triple > div { padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+  .desk .triple .k { font-family: var(--mono); font-size: 10px; color: var(--text-mute); }
+  .desk .triple .v { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-top: 2px; }
+  .desk .triple .v small { font-family: var(--mono); font-size: 10px; color: var(--red-2); font-weight: 400; }
+
+  .install { padding: 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+  .install .step { display: grid; grid-template-columns: 28px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .install .step:first-child { border-top: 0; }
+  .install .step .n { font-family: var(--mono); font-size: 13px; color: var(--red-2); }
+  .install .step .body { font-size: 14px; color: var(--text-dim); }
+  .install .step .body code { display: block; margin-top: 8px; font-family: var(--mono); font-size: 12px; padding: 8px 12px; border-radius: 6px; background: var(--bg-2); border: 1px solid var(--line); color: var(--text); white-space: pre-wrap; }
+
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .feat-card { padding: 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+  .feat-card.todo { background: var(--bg-2); }
+  .feat-card .num { font-family: var(--mono); font-size: 11px; color: var(--text-mute); }
+  .feat-card.todo .num { color: var(--text-mute); }
+  .feat-card h3 { font-size: 18px; font-weight: 600; margin: 10px 0 0; letter-spacing: -0.01em; }
+  .feat-card p { color: var(--text-dim); font-size: 14px; margin-top: 10px; }
+
+  @media (max-width: 980px) { .platforms, .show, .features { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+
+<!-- Top utility bar - networkershome.com pattern: a thin mono-typeface
+     row above the main nav for live status + secondary links. -->
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/apps.html" class="active">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Apps · Windows available now</span>
+    <h1 class="h-display h1 mt-16">Windows now. <span class="accent">More to come.</span></h1>
+    <p class="lede mt-16" style="max-width:680px;color:var(--text-dim);">One account. One install. The Windows app is available today — self-contained, no separate driver to chase down, no second installer. macOS and Android are next on the roadmap.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="platforms">
+      <div class="plat live">
+        <div class="icon">W</div>
+        <h3>Windows</h3>
+        <div class="v">10 / 11 · 64-bit</div>
+        <div class="dl"><a href="dl/" style="color:inherit;">↓ download · verify SHA-256 →</a></div>
+      </div>
+      <div class="plat deferred">
+        <div class="icon">M</div>
+        <h3>macOS</h3>
+        <div class="v">Apple Silicon + Intel</div>
+        <div class="dl muted">on the roadmap</div>
+      </div>
+      <div class="plat deferred">
+        <div class="icon">A</div>
+        <h3>Android</h3>
+        <div class="v">modern Android</div>
+        <div class="dl muted">on the roadmap</div>
+      </div>
+      <div class="plat deferred">
+        <div class="icon">i</div>
+        <h3>iOS</h3>
+        <div class="v">iPhone &amp; iPad</div>
+        <div class="dl muted">on the roadmap</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="head"><span class="kicker"><span class="pip">●</span> WHAT IT LOOKS LIKE</span><h2 class="h-display h2 mt-16">One click. <span class="accent">Connected.</span></h2><p class="lede" style="color:var(--text-dim);">A connect button bigger than the rest of the UI. We don't bury the thing you came to do — and the privileged service does the dangerous parts so the UI never needs admin rights at click-time.</p></div>
+    <div class="show">
+      <div class="desk">
+        <div class="bar"><span class="d"></span><span class="d"></span><span class="d"></span></div>
+        <div class="grid">
+          <div class="side">
+            <div class="item active">→ Connect</div>
+            <div class="item">→ Exits</div>
+            <div class="item">→ LAN access</div>
+            <div class="item">→ Diagnostics</div>
+            <div class="item">→ Account</div>
+            <div class="item">→ Settings</div>
+          </div>
+          <div class="main">
+            <div class="big">
+              <div style="font-family:var(--mono); font-size:10px; color:var(--text-dim);">CONNECTED · POST-QUANTUM · KILL SWITCH ON</div>
+              <div class="city">Europe</div>
+              <div class="meta">Forward-secret · re-keyed continuously</div>
+            </div>
+            <div class="triple">
+              <div><div class="k">TUNNEL</div><div class="v">UP<small> secure</small></div></div>
+              <div><div class="k">PEERS</div><div class="v">●<small> isolated</small></div></div>
+              <div><div class="k">DNS</div><div class="v">●<small> in-tunnel</small></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="install">
+        <span class="kicker"><span class="pip">●</span> INSTALL · WINDOWS</span>
+        <h3 class="h3 mt-8" style="margin-top:8px;">Three steps. <span class="accent">One installer.</span></h3>
+        <div class="step"><div class="n">01</div><div class="body">Download the installer from <a href="dl/" style="color:var(--red-2);">ollavpn.com/dl/</a>. One file, self-contained.</div></div>
+        <div class="step"><div class="n">02</div><div class="body">Verify the SHA-256 checksum on the download page if you want to. A recipe is included.</div></div>
+        <div class="step"><div class="n">03</div><div class="body">Run the installer. Sign in. Click Connect. That's it.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="head"><span class="kicker"><span class="pip">●</span> BUILT INTO THE WINDOWS CLIENT</span><h2 class="h-display h2 mt-16">Power, not <span class="accent">prompts.</span></h2></div>
+    <div class="features">
+      <div class="feat-card"><div class="num">→ 01</div><h3>Kill switch always on</h3><p>If the tunnel drops, the network drops with it. Packets do not leak in the gap. No "advanced" toggle to find — it's the default.</p></div>
+      <div class="feat-card"><div class="num">→ 02</div><h3>LAN access stays on</h3><p>Local devices on your home network keep working while the tunnel is up. Printer, NAS, smart-home gear — all reachable. One-click toggle if you want it off.</p></div>
+      <div class="feat-card"><div class="num">→ 03</div><h3>Post-quantum-ready, by default</h3><p>Every connection uses a hybrid post-quantum key exchange. No setting to find, no premium upsell. Quantum-era privacy on the lifetime free plan.</p></div>
+      <div class="feat-card"><div class="num">→ 04</div><h3>Self-contained installer</h3><p>One installer. No separate driver to chase down. No second VPN client to install. Sign in, click Connect, you're done.</p></div>
+      <div class="feat-card"><div class="num">→ 05</div><h3>DNS that doesn't leak</h3><p>Name lookups travel inside the tunnel. OS-level DNS is firewall-blocked while you're connected, so a misconfigured app can't accidentally reveal what you're visiting.</p></div>
+      <div class="feat-card"><div class="num">→ 06</div><h3>True peer isolation</h3><p>Other users on the same connection cannot reach your device. Independent layers of network enforcement, verified end-to-end on every release.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Lifetime free · Windows · self-contained installer</span>
+    <h2 class="h-display h2 mt-16">Install. Click. <span class="accent">Stand.</span></h2>
+    <div class="actions"><a class="btn primary xl" href="dl/">Download for Windows <span class="arrow">→</span></a><a class="btn xl" href="technology.html">How it works →</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="apps.html">Apps</a></li><li><a href="technology.html">Technology</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog/">Blog</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>POST-QUANTUM READY</span><span>NO LOGS</span><span>LIFETIME FREE</span></span></div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

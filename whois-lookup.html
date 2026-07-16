@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WHOIS Lookup — Find Domain Registrar · OllaVPN</title>
+<meta name="description" content="Free WHOIS lookup. See who registered any domain, when it expires, which nameservers it uses, and which registrar manages it. No signup." />
+<link rel="canonical" href="https://ollavpn.com/whois-lookup" />
+<meta name="theme-color" content="#0B0B12" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="WHOIS Lookup — Find Domain Registrar · OllaVPN" />
+<meta property="og:description" content="Find any domain's registrar, expiry, and nameservers in seconds." />
+<meta property="og:url" content="https://ollavpn.com/whois-lookup" />
+<meta property="og:image" content="https://ollavpn.com/og-whois-lookup.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WHOIS Lookup — Find Domain Registrar · OllaVPN" />
+<meta name="twitter:description" content="Find any domain's registrar, expiry, and nameservers in seconds." />
+<meta name="twitter:image" content="https://ollavpn.com/og-whois-lookup.png" />
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+<link rel="stylesheet" href="/tool.css" />
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebApplication", "name": "WHOIS Lookup",
+  "applicationCategory": "UtilityApplication", "operatingSystem": "Any",
+  "url": "https://ollavpn.com/whois-lookup",
+  "description": "Free tool that shows who registered a domain, when it expires, which nameservers it uses, and who the registrar is.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "What is a WHOIS lookup?",
+    "acceptedAnswer": { "@type": "Answer", "text": "WHOIS is a public protocol that returns who registered a domain and when. Every registrar is required to publish basic record fields — registrar name, registration date, expiry date, nameservers, and (in some cases) contact emails. WHOIS lookup tools just query these public registries and format the answer." } },
+  { "@type": "Question", "name": "Why are owner names often hidden in WHOIS?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Most registrars now offer free WHOIS privacy by default, especially after GDPR took effect in Europe in 2018. The real registrant's name and email are replaced with a privacy service. The registrar info, registration dates, and nameservers are still public, which is enough for most legitimate uses." } },
+  { "@type": "Question", "name": "Can I see who really owns a domain?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. If WHOIS privacy is off, you'll see the real owner. If it's on, you'll see the privacy provider's details. There are paid commercial tools that can sometimes pierce the privacy veil by correlating across data sources, but for normal lookups, what WHOIS returns is what's public." } },
+  { "@type": "Question", "name": "What does the expiry date tell me?",
+    "acceptedAnswer": { "@type": "Answer", "text": "When the current registration ends. If the owner doesn't renew, the domain goes through a grace period of about 30 to 45 days, then enters auction or becomes available for anyone to register. Watching expiry dates is how domain investors find drop opportunities, and how site operators avoid losing their own name." } },
+  { "@type": "Question", "name": "Can I find a domain's IP address with WHOIS?",
+    "acceptedAnswer": { "@type": "Answer", "text": "No — that's what DNS is for. WHOIS shows the nameservers (which providers handle the DNS) but not the actual IP addresses behind the site. For that, use a DNS lookup tool. Our DNS lookup at /dns-lookup returns A and AAAA records alongside MX, TXT, and NS records." } },
+  { "@type": "Question", "name": "Is WHOIS the same as DNS?",
+    "acceptedAnswer": { "@type": "Answer", "text": "No. WHOIS tells you who manages the domain's registration. DNS tells you where to route traffic for that domain. They're separate systems. A domain has both at once: a registrar that holds the name (WHOIS), and a nameserver that resolves it to an IP (DNS)." } },
+  { "@type": "Question", "name": "Can WHOIS leak my home address?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Historically yes — if you registered a domain without privacy, your full contact details were publicly searchable. Today, almost every registrar enables WHOIS privacy by default and most jurisdictions require it. If you registered a domain years ago, check whether privacy is on and turn it on if not." } },
+  { "@type": "Question", "name": "Why is WHOIS for some TLDs different?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Each TLD's registry sets the rules. .com and .net follow ICANN's standard. Many country-code TLDs (.de, .fr, .uk, .in) have their own rules — some hide contact info by default, some require more verification, some don't expose all fields at all. The tool above handles all standard TLDs and tells you when a field isn't published." } } ] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+  { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ollavpn.com/tools" },
+  { "@type": "ListItem", "position": 3, "name": "WHOIS Lookup", "item": "https://ollavpn.com/whois-lookup" } ] }
+</script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar"><div class="wrap"><div class="utilbar-left"><span class="green-dot">&#9679;</span> All systems operational <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a></div><div class="utilbar-right"><a href="/technology.html">Trust</a> <span style="opacity:.4;">&middot;</span> <a href="/blog/">Resources</a> <span style="opacity:.4;">&middot;</span> <a href="/contact.html">Contact</a></div></div></div>
+
+<nav class="nav"><div class="nav-inner"><a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a><div class="nav-links"><a href="/free-vpn">Free VPN</a><a href="/apps.html">Apps</a><a href="/dl/">Download</a></div><div class="nav-cta"><a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a><a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a></div></div></nav>
+
+<header class="tool-hero"><div class="wrap">
+  <div class="meta">FREE TOOL · LIVE LOOKUP · NO SIGNUP
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
+    </div>
+  <h1>WHOIS Lookup</h1>
+  <p class="lede">See who registered any domain, which registrar manages it, when it expires, and which nameservers it points at. Public WHOIS data, fetched live, formatted plainly.</p>
+</div></header>
+
+<section class="tool-section">
+  <div class="check-card">
+    <form class="check-form" id="check-form" autocomplete="off">
+      <input type="text" id="domain-input" placeholder="example.com" required spellcheck="false" autocapitalize="off" autocorrect="off" />
+      <button type="submit" id="check-btn">Look up</button>
+    </form>
+    <div class="result" id="result" hidden>
+      <div class="verdict" id="verdict"><span class="dot"></span><span id="verdict-text">Looking up…</span></div>
+      <div class="result-grid">
+        <div class="item"><span class="label">Domain</span><span class="value" id="r-domain">—</span></div>
+        <div class="item"><span class="label">Registrar</span><span class="value" id="r-registrar">—</span></div>
+        <div class="item"><span class="label">Created</span><span class="value" id="r-created">—</span></div>
+        <div class="item"><span class="label">Expires</span><span class="value" id="r-expires">—</span></div>
+        <div class="item" style="grid-column: 1 / -1;"><span class="label">Nameservers</span><span class="value" id="r-ns">—</span></div>
+        <div class="item" style="grid-column: 1 / -1;"><span class="label">Contact emails</span><span class="value" id="r-emails">—</span></div>
+      </div>
+    </div>
+    <div class="tool-cta">
+      <p><strong>Pair with</strong> the <a href="/dns-lookup" style="color:var(--red);">DNS lookup</a> and <a href="/ssl-checker" style="color:var(--red);">SSL checker</a> to get the full picture on any domain.</p>
+      <a class="btn primary" href="/free-vpn">Try OllaVPN Free</a>
+    </div>
+  </div>
+</section>
+
+<div class="article-layout">
+  <article class="article">
+    <div class="tldr"><span class="label">TL;DR</span>
+      <p>WHOIS is the public registry of who owns each domain. Every domain has a registrar (the company that manages its registration), a registration date, an expiry date, and a set of nameservers — all surfaceable in a few seconds.</p>
+      <p>What you can see has shrunk a lot since GDPR. The registrar, dates, and nameservers stay public. The owner's name and email are usually replaced with a privacy service — that's a good thing for personal sites and a slight friction for legitimate research.</p>
+      <p>Use this tool to check when your own domain expires (a surprising number of outages come from forgotten renewals), to verify a site is who it claims to be, or to look up the registrar before you transfer a domain in or out.</p>
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page"><span class="label">On this page</span><ol>
+      <li><a href="#what-it-is">What WHOIS actually tells you</a></li>
+      <li><a href="#why-private">Why most owners are now hidden</a></li>
+      <li><a href="#fields">The fields that matter</a></li>
+      <li><a href="#use-cases">When to actually use a WHOIS lookup</a></li>
+      <li><a href="#whois-vs-dns">WHOIS vs DNS — what's the difference?</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol></nav>
+
+    <h2 id="what-it-is">What WHOIS actually tells you</h2>
+    <p class="short-answer">Public registration metadata about a domain — who manages it, when it was registered, when it expires, and where its DNS lives.</p>
+    <p>WHOIS is one of the oldest internet protocols, dating back to 1982. It runs over TCP port 43 and is essentially a public database of domain registrations. Every time someone registers a domain, the registrar publishes a set of fields about it: the registration date, expiry date, the registrar's name, the nameservers handling DNS, and (for non-private registrations) the registrant's contact details.</p>
+    <p>This information is public on purpose. The internet's accountability model partly depends on being able to look up who runs a domain — for legal disputes, for security research, for journalism, and for simple "who owns this name I want to buy?" questions. Modern WHOIS tools just format the raw protocol response into something readable.</p>
+
+    <h2 id="why-private">Why most owners are now hidden</h2>
+    <p class="short-answer">GDPR made the old behaviour illegal in Europe, and the industry adapted everywhere.</p>
+    <p>Before 2018, registering a domain meant publishing your name, email, phone number, and home address in a globally searchable database. The General Data Protection Regulation (GDPR) made that incompatible with European law, and registrars couldn't easily separate European registrants from non-European ones. The industry response was to enable <strong>WHOIS privacy</strong> by default for almost everyone.</p>
+    <p>What you see today depends on the registrar and the TLD. Most .com and .net domains return the privacy service's contact details rather than the registrant's. Many country-code TLDs (.de, .fr, .uk) hide ownership entirely. A few jurisdictions still expose owner details for business or commercial registrations.</p>
+    <p>The trade-off: privacy is genuinely good for personal site owners but adds friction for legitimate research — security investigators, IP-rights claims, journalism. Specialised tools exist that can sometimes piece together ownership across multiple data sources, but they aren't free or instant.</p>
+
+    <h2 id="fields">The fields that matter</h2>
+    <p class="short-answer">For most lookups: registrar, expiry, and nameservers. Everything else is supporting context.</p>
+    <p><strong>Registrar</strong> tells you which company manages the registration. Common ones include GoDaddy, Namecheap, Cloudflare, Porkbun, BigRock, OVH, and Google Domains (now Squarespace). The registrar is who you contact to transfer or renew the domain.</p>
+    <p><strong>Creation date</strong> is when the domain was first registered. Useful for verifying a "new" site isn't actually decades old, or vice versa. <strong>Expiry date</strong> is when the current registration runs out. Domains in their final 30-day window often face downtime if renewal fails.</p>
+    <p><strong>Nameservers</strong> tell you which DNS provider actually serves the domain's records. A domain pointing at Cloudflare nameservers, for example, is using Cloudflare for DNS — even though the registration might be at a totally different registrar. This split is normal and lets people use the best registrar and the best DNS independently.</p>
+
+    <h2 id="use-cases">When to actually use a WHOIS lookup</h2>
+    <p class="short-answer">Five common cases: own-domain renewal check, registrar transfer, security verification, journalism, and competitor research.</p>
+    <p>If you run a website, check your own domain's WHOIS once a quarter. Outages from expired registrations are entirely preventable and remarkably common. Auto-renewal exists but occasionally fails — usually because of expired credit cards.</p>
+    <p>If you're transferring a domain, the registrar info is what you need before initiating the transfer at the new registrar. If a security alert says a phishing site is using a particular registrar, WHOIS is how you confirm it. Journalists chasing the provenance of a misinformation site often start with WHOIS and follow the trail to whatever public records still exist.</p>
+    <p>Competitor research is more limited than it used to be — the privacy veil hides most identity-level info now. But you can still see when competitors registered domains, their nameserver patterns, and whether they're using the same provider as you.</p>
+
+    <h2 id="whois-vs-dns">WHOIS vs DNS — what's the difference?</h2>
+    <p class="short-answer">WHOIS tells you who registered the domain. DNS tells you where to route traffic for it.</p>
+    <p>A domain has two separate concepts attached to it. The <strong>registration</strong> says "this name exists and belongs to this person at this registrar." That's WHOIS. The <strong>resolution</strong> says "when someone visits this name, send them to this IP address." That's DNS.</p>
+    <p>You can change one without the other. Switching DNS providers (Cloudflare to AWS Route 53, for example) doesn't change WHOIS — only the nameservers field updates. Transferring the domain to a new registrar updates WHOIS but doesn't affect DNS at all. Most outages people blame on "WHOIS" are actually DNS problems, and vice versa. Our <a href="/dns-lookup">DNS lookup tool</a> handles the resolution side.</p>
+
+    <div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What WHOIS actually tells you</li>
+        <li>Why most owners are now hidden</li>
+        <li>The fields that matter</li>
+        <li>When to actually use a WHOIS lookup</li>
+        <li>WHOIS vs DNS — what&#x27;s the difference?</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What is a WHOIS lookup?</h3><p>WHOIS is a public protocol that returns who registered a domain and when. Every registrar is required to publish basic record fields — registrar name, registration date, expiry date, nameservers, and (in some cases) contact emails. WHOIS lookup tools just query these public registries and format the answer.</p>
+      <h3>Why are owner names often hidden in WHOIS?</h3><p>Most registrars now offer free WHOIS privacy by default, especially after GDPR took effect in Europe in 2018. The real registrant's name and email are replaced with a privacy service. The registrar info, registration dates, and nameservers are still public, which is enough for most legitimate uses.</p>
+      <h3>Can I see who really owns a domain?</h3><p>Sometimes. If WHOIS privacy is off, you'll see the real owner. If it's on, you'll see the privacy provider's details. There are paid commercial tools that can sometimes pierce the privacy veil by correlating across data sources, but for normal lookups, what WHOIS returns is what's public.</p>
+      <h3>What does the expiry date tell me?</h3><p>When the current registration ends. If the owner doesn't renew, the domain goes through a grace period of about 30 to 45 days, then enters auction or becomes available for anyone to register. Watching expiry dates is how domain investors find drop opportunities, and how site operators avoid losing their own name.</p>
+      <h3>Can I find a domain's IP address with WHOIS?</h3><p>No — that's what DNS is for. WHOIS shows the nameservers (which providers handle the DNS) but not the actual IP addresses behind the site. For that, use a DNS lookup tool.</p>
+      <h3>Is WHOIS the same as DNS?</h3><p>No. WHOIS tells you who manages the domain's registration. DNS tells you where to route traffic for that domain. They're separate systems. A domain has both at once: a registrar that holds the name (WHOIS), and a nameserver that resolves it to an IP (DNS).</p>
+      <h3>Can WHOIS leak my home address?</h3><p>Historically yes — if you registered a domain without privacy, your full contact details were publicly searchable. Today, almost every registrar enables WHOIS privacy by default. If you registered a domain years ago, check whether privacy is on and turn it on if not.</p>
+      <h3>Why is WHOIS for some TLDs different?</h3><p>Each TLD's registry sets the rules. .com and .net follow ICANN's standard. Many country-code TLDs (.de, .fr, .uk, .in) have their own rules — some hide contact info by default, some require more verification, some don't expose all fields at all. The tool above handles all standard TLDs and tells you when a field isn't published.</p>
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Fwhois-lookup" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fwhois-lookup" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fwhois-lookup&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fwhois-lookup&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related"><h2>Related</h2><ul><ul class="related-cards">
+    <li><a href="/dns-lookup"><span class="card-tag">PRIVACY</span><span class="card-title">DNS lookup</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/ssl-checker"><span class="card-tag">PRIVACY</span><span class="card-title">SSL checker</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/is-it-down"><span class="card-tag">PRIVACY</span><span class="card-title">Is it down? — uptime checker</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/what-is-my-ip"><span class="card-tag">PRIVACY</span><span class="card-title">What is my IP?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul></div>
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page"><span class="label">On this page</span><ol>
+    <li><a href="#what-it-is">What WHOIS tells you</a></li>
+    <li><a href="#why-private">Why owners are hidden</a></li>
+    <li><a href="#fields">The fields that matter</a></li>
+    <li><a href="#use-cases">When to use it</a></li>
+    <li><a href="#whois-vs-dns">WHOIS vs DNS</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ol></aside>
+</div>
+
+<footer class="footer"><div class="wrap"><div class="top">
+  <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+  <div><h4>Product</h4><ul><li><a href="/apps.html">Apps</a></li><li><a href="/technology.html">Technology</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+  <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN guide</a></li><li><a href="/free-vpn-for-windows">For Windows</a></li><li><a href="/free-vpn-for-india">For India</a></li><li><a href="/free-wireguard-vpn">WireGuard VPN</a></li><li><a href="/free-quic-vpn">QUIC VPN</a></li></ul></div>
+  <div><h4>Tools</h4><ul><li><a href="/what-is-my-ip">What is my IP?</a></li><li><a href="/is-it-down">Is it down?</a></li><li><a href="/ssl-checker">SSL checker</a></li><li><a href="/whois-lookup">WHOIS lookup</a></li><li><a href="/dns-lookup">DNS lookup</a></li><li><a href="/headers-viewer">HTTP headers</a></li><li><a href="/email-verifier">Email verifier</a></li><li><a href="/webrtc-leak-test">WebRTC leak test</a></li><li><a href="/password-generator">Password generator</a></li></ul></div>
+  <div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+</div><div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div></div></footer>
+
+<script src="/tool.js"></script>
+<script>
+function fmtDate(s) { try { return new Date(s).toISOString().slice(0, 10); } catch(_) { return s || "—"; } }
+toolPage.run("whois-lookup", {
+  inputId: "domain-input",
+  submit: function (v) { return "/api/whois?domain=" + encodeURIComponent(v); },
+  render: function (data) {
+    if (data.error) return { verdict: "down", text: data.error };
+    document.getElementById("r-domain").textContent = data.domain || "—";
+    document.getElementById("r-registrar").textContent = data.registrar || "—";
+    document.getElementById("r-created").textContent = fmtDate(data.creation_date);
+    document.getElementById("r-expires").textContent = fmtDate(data.expiry_date);
+    document.getElementById("r-ns").textContent = (data.name_servers || []).join(" · ") || "—";
+    document.getElementById("r-emails").textContent = (data.emails || []).join(", ") || "—";
+    var status = data.status === "success" ? "Lookup successful." : "Partial or empty record.";
+    return { verdict: data.status === "success" ? "up" : "warn", text: status };
+  }
+});
+</script>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/* Self-hosted JetBrains Mono — single variable woff2 (wght axis 100-800).
+   Replaces 3 prior @font-face declarations that all pointed at byte-identical
+   copies of this same file (Google Fonts serves the variable font under
+   three filenames; we were paying 3x the bandwidth for zero benefit).
+   Browser interpolates weight at render time via the wght axis. */
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-variable-latin.woff2') format('woff2-variations'),
+       url('/fonts/jetbrains-mono-variable-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

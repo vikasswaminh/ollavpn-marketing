@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Is It Down? Check Any Website in 5s · OllaVPN</title>
+<meta name="description" content="Check whether any website is down for everyone or just you. Free real-time status checker — see HTTP response, SSL certificate, and response time." />
+<link rel="canonical" href="https://ollavpn.com/is-it-down" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="Is It Down? Check Any Website in 5s · OllaVPN" />
+<meta property="og:description" content="Check whether any website is down for everyone or just you. Free, no signup." />
+<meta property="og:url" content="https://ollavpn.com/is-it-down" />
+<meta property="og:image" content="https://ollavpn.com/og-is-it-down.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Is it down? Free site status checker by OllaVPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Is It Down? Check Any Website in 5s · OllaVPN" />
+<meta name="twitter:description" content="Check whether any website is down for everyone or just you." />
+<meta name="twitter:image" content="https://ollavpn.com/og-is-it-down.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Is It Down — Live Site Status Checker",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "url": "https://ollavpn.com/is-it-down",
+  "description": "Free tool that checks whether a website is up or down right now, plus its HTTP response, SSL certificate status, and response time.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is it down for everyone or just me?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We check the site from our server, which is on a different network than yours. If our check says it's up but you still can't reach it, the problem is likely on your side — your network, DNS, ISP, or a regional outage. If our check says it's down, it's probably down for most people." } },
+    { "@type": "Question", "name": "Why does the site work for me but show as down here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Some sites block server-to-server checks while allowing browser requests. Cloudflare-protected sites, sites that require JavaScript to render, and a handful that block known data-centre IPs may show as down here while loading fine in your browser. The HTTP status code we show usually tells the story." } },
+    { "@type": "Question", "name": "What does the HTTP status code mean?",
+      "acceptedAnswer": { "@type": "Answer", "text": "200 means the page loaded successfully. 301 and 302 are redirects (the site is up but bounces you elsewhere). 403 means access was refused. 404 means the URL doesn't exist. 500 and above are server errors. We follow redirects automatically so the final status reflects whether the site really works." } },
+    { "@type": "Question", "name": "What is the SSL warning at the bottom?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We check the site's HTTPS certificate as part of the uptime test. If the certificate is expired, expiring soon (within 14 days), or invalid, we flag it. An expired certificate makes browsers refuse to load the site, which is functionally the same as being down." } },
+    { "@type": "Question", "name": "How fresh are the results?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Live. Every time you submit a URL, the check runs in real time from our server. Nothing is cached. Results in 1 to 4 seconds depending on how fast the target site responds." } },
+    { "@type": "Question", "name": "Why is the site loading slowly for me but showing fast here?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Our server might be much closer (network-wise) to the target than you are. Or your ISP might be throttling specific traffic. A VPN with a closer exit can sometimes route around regional slowness — that's a separate issue from the site being down, but it's a common cause of perceived outages." } },
+    { "@type": "Question", "name": "What if the site is blocked in my country?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Blocking is different from being down. Our check runs from outside your network, so if the site is up but blocked by your ISP, your country, your workplace, or your school, we'll show it as up. A VPN that exits in a country where the site isn't blocked is the standard fix." } },
+    { "@type": "Question", "name": "Do you log the URLs I check?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Standard web-server access logs are kept briefly for security and abuse detection, then rotated. We don't tie checks to your identity, don't sell or share the data, and don't track you across sessions. There is no account to log into for this tool." } }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ollavpn.com/tools" },
+    { "@type": "ListItem", "position": 3, "name": "Is It Down", "item": "https://ollavpn.com/is-it-down" }
+  ]
+}
+</script>
+
+<style>
+  .tool-hero { padding: 64px 0 24px; position: relative; overflow: hidden; }
+  .tool-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .tool-hero .wrap { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+  .tool-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .tool-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(28px, 3.6vw, 42px); margin-top: 14px; color: var(--text); }
+  .tool-hero .lede { font-size: 17px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 14px; max-width: 700px; }
+
+  .tool-section { max-width: 1100px; margin: 0 auto 56px; padding: 0 28px; }
+
+  .check-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    padding: 32px; }
+  .check-form { display: flex; gap: 12px; flex-wrap: wrap; }
+  .check-form input[type="text"] {
+    flex: 1; min-width: 260px; padding: 14px 18px; font-size: 18px;
+    font-family: var(--mono); color: var(--text);
+    background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    outline: none; transition: border-color .15s ease;
+  }
+  .check-form input[type="text"]:focus { border-color: var(--red); }
+  .check-form button {
+    padding: 14px 26px; font-size: 16px; font-weight: 600; cursor: pointer;
+    background: var(--red); color: #fff; border: 0; border-radius: 10px;
+    font-family: inherit; transition: opacity .15s ease;
+  }
+  .check-form button:hover { opacity: .9; }
+  .check-form button:disabled { opacity: .5; cursor: wait; }
+
+  .result { margin-top: 28px; }
+  .result .verdict {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 22px; border-radius: 12px;
+    font-family: var(--display); font-size: 20px; font-weight: 600;
+  }
+  .result .verdict.up { background: rgba(34,167,93,0.10); color: #1e8a51; border: 1px solid rgba(34,167,93,0.25); }
+  .result .verdict.down { background: rgba(238,62,71,0.10); color: var(--red); border: 1px solid rgba(238,62,71,0.25); }
+  .result .verdict .dot { width: 14px; height: 14px; border-radius: 50%; background: currentColor; }
+
+  .result-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 20px; }
+  @media (min-width: 600px) { .result-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .result-grid { grid-template-columns: repeat(4, 1fr); } }
+  .result-grid .item { padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+  .result-grid .label { font-family: var(--mono); font-size: 10px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+  .result-grid .value { font-family: var(--mono); font-size: 15px; color: var(--text);
+    word-break: break-all; }
+
+  .ssl-row { margin-top: 16px; padding: 14px 18px; border-radius: 10px;
+    background: rgba(0,0,0,0.04); border: 1px solid var(--line); font-size: 14px; line-height: 1.55; }
+  .ssl-row.warn { background: rgba(238,62,71,0.06); border-color: rgba(238,62,71,0.25); }
+  .ssl-row .label { font-family: var(--mono); font-size: 10px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+  .tool-cta { margin-top: 28px; padding: 18px 22px; border-radius: 10px;
+    background: rgba(238,62,71,0.06); border: 1px solid rgba(238,62,71,0.18);
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    flex-wrap: wrap; }
+  .tool-cta p { margin: 0; font-size: 15px; }
+  .tool-cta a.btn { white-space: nowrap; }
+
+  .article-layout {
+    display: grid; grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px; margin: 0 auto;
+    padding: 12px 28px 56px; gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+  .article { min-width: 0; font-size: 17px; line-height: 1.72; color: var(--text); }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px; color: var(--text); }
+  .article .short-answer { font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em; }
+  .article p strong { font-weight: 700; }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline { display: block; margin: 0 0 2.2em; border: 1px solid var(--line);
+    border-radius: 12px; padding: 18px 24px; background: #fff; }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+  .toc-rail .label, .toc-inline .label { font-family: var(--mono); font-size: 11px;
+    color: var(--text-mute); letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block; }
+  .toc-rail ol, .toc-inline ol { list-style: none; margin: 0; padding: 12px 0 0; }
+  .toc-rail ol li, .toc-inline ol li { font-size: 14px; line-height: 1.5; margin: 0 0 8px; }
+  .toc-rail ol li a, .toc-inline ol li a { color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px; border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease; }
+  .toc-rail ol li.is-current a, .toc-rail ol li a:hover, .toc-inline ol li a:hover {
+    color: var(--red); border-left-color: var(--red); }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+</style>
+</head>
+
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="tool-hero">
+  <div class="wrap">
+    <div class="meta">FREE TOOL · LIVE CHECK · NO SIGNUP
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
+    </div>
+    <h1>Is It Down Right Now?</h1>
+    <p class="lede">Check whether any website is genuinely down for everyone, or whether the problem is your network. Real-time check from our server, with HTTP status, response time, and SSL certificate health all in one place.</p>
+  </div>
+</header>
+
+<section class="tool-section">
+  <div class="check-card">
+    <form class="check-form" id="check-form" autocomplete="off">
+      <input type="text" id="url-input" placeholder="example.com or https://example.com" required spellcheck="false" autocapitalize="off" autocorrect="off" />
+      <button type="submit" id="check-btn">Check now</button>
+    </form>
+
+    <div class="result" id="result" hidden>
+      <div class="verdict" id="verdict">
+        <span class="dot"></span>
+        <span id="verdict-text">Checking…</span>
+      </div>
+      <div class="result-grid">
+        <div class="item"><span class="label">Final URL</span><span class="value" id="r-url">—</span></div>
+        <div class="item"><span class="label">HTTP status</span><span class="value" id="r-status">—</span></div>
+        <div class="item"><span class="label">Response time</span><span class="value" id="r-elapsed">—</span></div>
+        <div class="item"><span class="label">Method</span><span class="value" id="r-method">—</span></div>
+      </div>
+      <div class="ssl-row" id="ssl-row" hidden>
+        <span class="label">SSL certificate</span>
+        <div id="ssl-text">—</div>
+      </div>
+    </div>
+
+    <div class="tool-cta">
+      <p><strong>If the site is up but blocked from your network</strong> — a VPN with an exit somewhere else usually fixes it.</p>
+      <a class="btn primary" href="/free-vpn">Try OllaVPN Free</a>
+    </div>
+  </div>
+</section>
+
+<div class="article-layout">
+  <article class="article">
+
+    <div class="tldr">
+      <span class="label">TL;DR</span>
+      <p>Most "the site won't load" moments aren't actually outages. They're DNS hiccups, regional routing issues, ISP throttling, or your network blocking the site. Knowing which one it is changes what you can do about it.</p>
+      <p>Our checker hits the URL from our server. If we get a clean 200 OK in under a second and you still can't reach it, the problem is on your side. If we get a 500 or a timeout, it's the site.</p>
+      <p>Use this with the <a href="/what-is-my-ip">live IP check</a> and a free VPN to triage the issue in under two minutes.</p>
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        <li><a href="#how-to-check">How to check if a site is really down</a></li>
+        <li><a href="#vs-just-me">"Down for everyone" vs "down for just me"</a></li>
+        <li><a href="#status-codes">What HTTP status codes actually mean</a></li>
+        <li><a href="#blocked-vs-down">Blocked vs throttled vs down</a></li>
+        <li><a href="#how-vpn-helps">When a VPN actually helps</a></li>
+        <li><a href="#ssl-issues">Why SSL certificate problems look like outages</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="how-to-check">How to check if a site is really down</h2>
+    <p class="short-answer">Hit the URL from somewhere that isn't your network, and look at the HTTP response.</p>
+    <p>The fastest way to know whether a site is actually down is to make a request to it from a different network than yours. That's what the checker above does — it sends an HTTP request from our server and reports back what came back. If the server returns a clean 200, the site is up. If we get a 5xx error or a timeout, the site itself is in trouble. If we get something in between — a redirect, a 403, a Cloudflare challenge — the story is more nuanced.</p>
+    <p>Two checks really help: <strong>response time</strong> and the <strong>final URL after redirects</strong>. A site that responds in 4 seconds when it usually responds in 200 ms is technically up but functionally unusable. A site that 301-redirects to a different domain might be migrating, or its CDN routing may have changed. Both look like "it's broken" to a user but neither is a real outage.</p>
+
+    <h2 id="vs-just-me">"Down for everyone" vs "down for just me"</h2>
+    <p class="short-answer">If our server can reach the site but you can't, the problem is on your side — and there are five places to look.</p>
+    <p>"Just me" usually means one of: your DNS resolver is stuck on a stale answer (try restarting your router or switching to 1.1.1.1); your ISP is throttling or briefly dropping traffic to that destination; a security tool on your machine is blocking it; the site is blocked at the network level (school, work, country); or your physical connection is unstable. In all five cases, the site is technically fine and someone else can use it.</p>
+    <p>"Everyone" means the site itself is having problems. Maybe their server crashed, maybe their CDN is having an incident, maybe their DNS got misconfigured. There's nothing you can do from your side — you wait for them to fix it. The checker above tells you which category you're in within a few seconds.</p>
+
+    <h2 id="status-codes">What HTTP status codes actually mean</h2>
+    <p class="short-answer">2xx is good, 3xx is a redirect, 4xx is your fault, 5xx is the site's fault.</p>
+    <p><strong>200 OK</strong> means the page loaded successfully. Almost everything you see while browsing is a 200 in the background. <strong>301</strong> and <strong>302</strong> are redirects — the URL you asked for has moved. Our checker follows redirects automatically and reports the final destination's status code.</p>
+    <p><strong>403 Forbidden</strong> means the server got your request but refused it — often because the site uses Cloudflare or similar to block server-to-server checks while allowing real browsers. A 403 here often doesn't mean the site is broken; it just doesn't let our checker through. <strong>404 Not Found</strong> means the URL doesn't exist (a real outage looks like 5xx, not 404). <strong>500 Internal Server Error</strong>, <strong>502 Bad Gateway</strong>, and <strong>503 Service Unavailable</strong> are the codes you actually want to look for when a site is broken.</p>
+
+    <h2 id="blocked-vs-down">Blocked vs throttled vs down</h2>
+    <p class="short-answer">Three different problems, three different fixes.</p>
+    <p>A <strong>blocked</strong> site is fully functional but unreachable from your specific network. Common reasons: your country, your ISP, your workplace, your school, or a parental control. Our checker runs from outside your network, so it'll show the site as up. A VPN with an exit somewhere the block doesn't apply is the standard fix.</p>
+    <p>A <strong>throttled</strong> site is reachable but painfully slow. Streaming services, P2P, gaming, and certain video platforms get throttled by some ISPs as a traffic-management measure. Our checker may show fast response times because it's measuring a single HTTP request, not sustained bandwidth. If everything else feels fast but one specific site is slow, this is often the cause.</p>
+    <p>A <strong>down</strong> site isn't reachable from anywhere. Nothing you do from your side helps. Wait, refresh, or use an archive like the Wayback Machine for cached content.</p>
+
+    <h2 id="how-vpn-helps">When a VPN actually helps</h2>
+    <p class="short-answer">When the site is up but blocked, throttled, or has DNS issues specifically on your network.</p>
+    <p>A VPN reroutes your traffic through a different network and a different DNS resolver. That fixes a surprising amount of "is it down for me?" cases: a workplace block, an ISP throttle on a specific service, a regional outage at your DNS provider, a site that's only available in certain countries. None of those is a real outage — they're location-specific routing problems, and a VPN routes around them.</p>
+    <p>If our checker says the site is up but you still can't reach it, try the <a href="/free-vpn">free OllaVPN plan</a> — different exit, different DNS, no card required. If the site loads through the VPN, you've confirmed the problem was on your network's side and you've got a workaround.</p>
+
+    <h2 id="ssl-issues">Why SSL certificate problems look like outages</h2>
+    <p class="short-answer">Because modern browsers refuse to load sites with expired or broken certificates.</p>
+    <p>Every HTTPS site presents a certificate that proves it's authentic. The certificate is signed by a trusted authority and has an expiry date — usually 90 days for free certificates, up to a year for paid ones. If the certificate expires, the site is technically still serving traffic, but every modern browser will refuse to render the page and show a big red warning instead. From the user's perspective, the site is down.</p>
+    <p>Our checker reports the certificate's days-remaining and flags anything within 14 days of expiry. If you run a site, this is the warning to act on — automated renewal usually handles it, but it occasionally fails silently. The certificate also gets flagged if it's been revoked, if the hostname doesn't match, or if it's signed by an authority your browser doesn't trust.</p>
+
+    <div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>How to check if a site is really down</li>
+        <li>&quot;Down for everyone&quot; vs &quot;down for just me&quot;</li>
+        <li>What HTTP status codes actually mean</li>
+        <li>Blocked vs throttled vs down</li>
+        <li>When a VPN actually helps</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <h3>Is it down for everyone or just me?</h3>
+      <p>We check the site from our server, which is on a different network than yours. If our check says it's up but you still can't reach it, the problem is likely on your side — your network, DNS, ISP, or a regional outage. If our check says it's down, it's probably down for most people.</p>
+
+      <h3>Why does the site work for me but show as down here?</h3>
+      <p>Some sites block server-to-server checks while allowing browser requests. Cloudflare-protected sites, sites that require JavaScript to render, and a handful that block known data-centre IPs may show as down here while loading fine in your browser. The HTTP status code we show usually tells the story.</p>
+
+      <h3>What does the HTTP status code mean?</h3>
+      <p>200 means the page loaded successfully. 301 and 302 are redirects (the site is up but bounces you elsewhere). 403 means access was refused. 404 means the URL doesn't exist. 500 and above are server errors. We follow redirects automatically so the final status reflects whether the site really works.</p>
+
+      <h3>What is the SSL warning at the bottom?</h3>
+      <p>We check the site's HTTPS certificate as part of the uptime test. If the certificate is expired, expiring soon (within 14 days), or invalid, we flag it. An expired certificate makes browsers refuse to load the site, which is functionally the same as being down.</p>
+
+      <h3>How fresh are the results?</h3>
+      <p>Live. Every time you submit a URL, the check runs in real time from our server. Nothing is cached. Results in 1 to 4 seconds depending on how fast the target site responds.</p>
+
+      <h3>Why is the site loading slowly for me but showing fast here?</h3>
+      <p>Our server might be much closer (network-wise) to the target than you are. Or your ISP might be throttling specific traffic. A VPN with a closer exit can sometimes route around regional slowness — that's a separate issue from the site being down, but it's a common cause of perceived outages.</p>
+
+      <h3>What if the site is blocked in my country?</h3>
+      <p>Blocking is different from being down. Our check runs from outside your network, so if the site is up but blocked by your ISP, your country, your workplace, or your school, we'll show it as up. A VPN that exits in a country where the site isn't blocked is the standard fix.</p>
+
+      <h3>Do you log the URLs I check?</h3>
+      <p>Standard web-server access logs are kept briefly for security and abuse detection, then rotated. We don't tie checks to your identity, don't sell or share the data, and don't track you across sessions. There is no account to log into for this tool.</p>
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Fis-it-down" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fis-it-down" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fis-it-down&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fis-it-down&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related">
+      <h2>Related</h2>
+      <ul><ul class="related-cards">
+    <li><a href="/what-is-my-ip"><span class="card-tag">PRIVACY</span><span class="card-title">What is my IP address?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn-for-india"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN that works in India</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-quic-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free QUIC VPN for restrictive networks</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a DNS leak?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul>
+    </div>
+
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      <li><a href="#how-to-check">How to check it</a></li>
+      <li><a href="#vs-just-me">Everyone vs just me</a></li>
+      <li><a href="#status-codes">HTTP status codes</a></li>
+      <li><a href="#blocked-vs-down">Blocked vs throttled vs down</a></li>
+      <li><a href="#how-vpn-helps">When a VPN helps</a></li>
+      <li><a href="#ssl-issues">SSL issues</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="/apps.html">Apps</a></li><li><a href="/technology.html">Technology</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div>
+      <div><h4>Tools</h4><ul><li><a href="/what-is-my-ip">What is my IP?</a></li><li><a href="/is-it-down">Is it down?</a></li><li><a href="/ssl-checker">SSL checker</a></li><li><a href="/whois-lookup">WHOIS lookup</a></li><li><a href="/dns-lookup">DNS lookup</a></li><li><a href="/headers-viewer">HTTP headers</a></li><li><a href="/email-verifier">Email verifier</a></li><li><a href="/webrtc-leak-test">WebRTC leak test</a></li><li><a href="/password-generator">Password generator</a></li></ul></div>
+      <div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById("check-form");
+    var input = document.getElementById("url-input");
+    var btn = document.getElementById("check-btn");
+    var result = document.getElementById("result");
+    var verdict = document.getElementById("verdict");
+    var verdictText = document.getElementById("verdict-text");
+    var sslRow = document.getElementById("ssl-row");
+    var sslText = document.getElementById("ssl-text");
+
+    function setResult(state) {
+      verdict.classList.remove("up", "down");
+      if (state) verdict.classList.add(state);
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var url = (input.value || "").trim();
+      if (!url) return;
+      result.hidden = false;
+      btn.disabled = true;
+      btn.textContent = "Checking…";
+      setResult(null);
+      verdictText.textContent = "Checking…";
+      document.getElementById("r-url").textContent = "—";
+      document.getElementById("r-status").textContent = "—";
+      document.getElementById("r-elapsed").textContent = "—";
+      document.getElementById("r-method").textContent = "—";
+      sslRow.hidden = true;
+
+      try {
+        var r = await fetch("/api/uptime?url=" + encodeURIComponent(url));
+        var data = await r.json();
+        if (data.error) {
+          setResult("down");
+          verdictText.textContent = "Could not check — " + data.error;
+        } else if (data.is_up) {
+          setResult("up");
+          verdictText.textContent = "It looks up. We reached it from our server.";
+        } else {
+          setResult("down");
+          verdictText.textContent = "It looks down. Our check did not get a clean response.";
+        }
+        document.getElementById("r-url").textContent = data.final_url || url;
+        document.getElementById("r-status").textContent = data.final_status != null ? String(data.final_status) : "—";
+        document.getElementById("r-elapsed").textContent = data.elapsed_ms != null ? data.elapsed_ms + " ms" : "—";
+        document.getElementById("r-method").textContent = data.method_used || "—";
+        if (data.ssl) {
+          sslRow.hidden = false;
+          sslRow.classList.toggle("warn", !!data.ssl.warning || !data.ssl.valid);
+          var parts = [];
+          parts.push(data.ssl.valid ? "Valid" : "Invalid");
+          if (data.ssl.days_remaining != null) parts.push(data.ssl.days_remaining + " days remaining");
+          if (data.ssl.issuer_cn) parts.push("issued by " + data.ssl.issuer_cn);
+          if (data.ssl.warning) parts.push("⚠ " + data.ssl.warning);
+          sslText.textContent = parts.join(" · ");
+        }
+      } catch (err) {
+        setResult("down");
+        verdictText.textContent = "Could not check — try again in a moment.";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Check now";
+      }
+    });
+  })();
+
+  // Scroll-spy
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Post-Quantum Cryptography VPN Explained | OllaVPN</title>
+<meta name="description" content="Future-proof your online privacy with OllaVPN&#39;s post-quantum cryptography. Learn how it protects your data from even the most advanced, quantum-era threats." />
+<link rel="canonical" href="https://ollavpn.com/pqc" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="Post-Quantum Cryptography VPN Explained | OllaVPN" />
+<meta property="og:description" content="Future-proof your online privacy with OllaVPN&#39;s post-quantum cryptography. Learn how it protects your data from even the most advanced, quantum-era threats." />
+<meta property="og:url" content="https://ollavpn.com/pqc" />
+<meta property="og:image" content="https://ollavpn.com/og-pqc.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Post-Quantum Cryptography Vpn — explained by OllaVPN" />
+<meta property="article:published_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:modified_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Free VPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Post-Quantum Cryptography VPN Explained | OllaVPN" />
+<meta name="twitter:description" content="Future-proof your online privacy with OllaVPN&#39;s post-quantum cryptography. Learn how it protects your data from even the most advanced, quantum-era threats." />
+<meta name="twitter:image" content="https://ollavpn.com/og-pqc.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What is Post-Quantum Cryptography and Why Does OllaVPN Use It?",
+  "description": "Future-proof your online privacy with OllaVPN's post-quantum cryptography. Learn how it protects your data from even the most advanced, quantum-era threats.",
+  "image": "https://ollavpn.com/og-pqc.png",
+  "author": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "url": "https://ollavpn.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ollavpn.com/favicon-256.png"
+    }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ollavpn.com/pqc"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Post-Quantum Cryptography protect me against?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It protects your data from being compromised by future quantum computers. These powerful machines could easily decrypt today's standard encryption, potentially exposing your past and present communications. OllaVPN's PQC ensures your sensitive information remains private for the long haul, helping to future-proof your privacy against this emerging threat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is OllaVPN's Post-Quantum Cryptography on by default?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely. We believe this level of security should be standard for everyone, not an optional setting you have to remember to toggle. It's automatically active on every connection you make through OllaVPN, right out of the box, ensuring you're always protected without extra steps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I turn off Post-Quantum Cryptography in OllaVPN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, you can't turn it off. We've integrated post-quantum cryptography as a core component of our security architecture. It's always on to ensure all users benefit from this advanced protection without needing to make complex security decisions. It's there to keep you safe, automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I verify OllaVPN's PQC is working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While we aim for seamless operation, technically inclined users can certainly use network analysis tools to observe the cryptographic handshakes. Our client is also open-source, which allows for inspection of the underlying code, helping you confirm its implementation and our commitment to transparency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does PQC slow down my OllaVPN connection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not noticeably. While post-quantum algorithms can be a bit more computationally intensive, OllaVPN's implementation is highly optimized. Free plan users get a solid 10 Mbps, which is plenty for most tasks, and Plus users enjoy up to 10 Gbps, so speed really isn't an issue for either group."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will PQC break my smart-home devices or LAN access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, it won't. Post-quantum cryptography operates at a fundamental encryption layer within the VPN tunnel itself. It doesn't interfere with your local network traffic or device discovery. Your smart home devices and local network access should work just as they always do, without any issues."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is OllaVPN's PQC implementation open source or audited?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our client is open-source, allowing for community review and verification of our post-quantum cryptography implementation. We're committed to transparency and plan for independent security audits to further validate our claims, ensuring you can trust our security measures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does OllaVPN's PQC compare to what other VPNs do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most other VPNs currently rely solely on traditional encryption, which isn't quantum-resistant. OllaVPN is proactive, using a hybrid approach that combines current strong cryptography with post-quantum cryptography. This future-proofs your privacy against emerging threats, setting us apart in terms of long-term security."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Post-Quantum Cryptography NOT protect against?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It doesn't protect against things like malware, phishing, or social engineering attacks. PQC secures your data in transit, but it can't fix vulnerabilities on your device or prevent you from willingly giving away information. Good digital hygiene is still crucial, even with the strongest encryption."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will OllaVPN's PQC still work in 5 or 10 years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, that's precisely the whole point! We've chosen algorithms that are currently considered quantum-resistant and are actively involved in the PQC standardization process. Our system is designed for long-term adaptability, ensuring your data stays safe for decades to come, no matter what."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the OllaVPN free plan include Post-Quantum Cryptography?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Every OllaVPN user, whether you're on our free plan or OllaVPN Plus, gets the full benefit of our post-quantum cryptography. We firmly believe that fundamental privacy and security shouldn't be hidden behind a paywall, so it's included for everyone, always."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this related to OllaVPN's post-quantum readiness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OllaVPN's post-quantum cryptography implementation is the very core of our post-quantum readiness strategy. It means we're not just waiting for quantum computers to become a threat; we've already built the defenses into our service to protect your data now and well into the quantum future."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ollavpn.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Technology",
+      "item": "https://ollavpn.com/technology.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Post-quantum encryption",
+      "item": "https://ollavpn.com/pqc"
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text);
+    max-width: 880px; }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 20px; max-width: 760px; }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 28px 56px;
+    gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+
+  .article {
+    min-width: 0;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px;
+    color: var(--text);
+  }
+  .article .short-answer {
+    font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em;
+  }
+  .article p strong { font-weight: 700; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px;
+    text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline {
+    display: block; margin: 0 0 2.2em;
+    border: 1px solid var(--line); border-radius: 12px; padding: 18px 24px;
+    background: #fff;
+  }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+
+  .toc-rail .label, .toc-inline .label {
+    font-family: var(--mono); font-size: 11px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block;
+  }
+  .toc-rail ol, .toc-inline ol {
+    list-style: none; margin: 0; padding: 12px 0 0;
+  }
+  .toc-rail ol li, .toc-inline ol li {
+    font-size: 14px; line-height: 1.5; margin: 0 0 8px;
+  }
+  .toc-rail ol li a, .toc-inline ol li a {
+    color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px;
+    border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .toc-rail ol li a:hover,
+  .toc-inline ol li a:hover,
+  .toc-rail ol li.is-current a {
+    color: var(--red); border-left-color: var(--red);
+  }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+</style>
+</head>
+
+<body>
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="wrap">
+    <div class="meta">FEATURE · ALWAYS CURRENT
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=pqc">PQC</a></div>
+    </div>
+    <h1>What is Post-Quantum Cryptography and Why Does OllaVPN Use It?</h1>
+    <p class="lede">You&#39;ve probably heard the buzz about quantum computers, and while they might seem like science fiction, they pose a very real, long-term threat to the encryption that protects your online life. The math securing your banking, emails, and even your VPN connections today could be vulnerable to future quantum attacks. This article explains what post-quantum cryptography (PQC) is, why OllaVPN uses it, and how it ensures your data stays private not just now, but for decades to come, protecting against a future where your past data might otherwise be exposed.</p>
+  <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-layout">
+  <article class="article">
+
+    
+    <div class="tier-compat">
+      <span class="tier-compat-label">Available on</span>
+      <a class="tier-compat-chip" href="/dl/">Free</a>
+      <a class="tier-compat-chip" href="/pricing#plans">Pro</a>
+      <a class="tier-compat-chip" href="/pricing#plans">Business</a>
+      <span class="tier-compat-note">Same security stack on every tier.</span>
+    </div>
+
+<div class="tldr">
+      <span class="label">TL;DR</span>
+      
+      <p>Post-quantum cryptography (PQC) is about making sure your private data stays private, even when incredibly powerful quantum computers arrive. Right now, most VPNs use encryption that these future machines could easily break, putting your past and present online activity at risk of being exposed years down the line.</p>
+      
+      <p>OllaVPN takes a different approach. We combine the strongest current encryption with PQC algorithms. This hybrid method gives your connection a powerful, dual layer of protection, securing you against both today&#39;s threats and the quantum threats of tomorrow. It&#39;s automatically enabled for everyone, even if you&#39;re just using our free, 10 Mbps plan.</p>
+      
+      <p>This proactive step means your sensitive information isn&#39;t just protected now; it&#39;s future-proofed against the day quantum computers become a reality. It&#39;s a core part of how we ensure your privacy is truly long-lasting, all without needing your credit card or tracking your email, ever.</p>
+      
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        
+        <li><a href="#what-is-pqc-and-why-it-matters">What exactly is Post-Quantum Cryptography?</a></li>
+        
+        <li><a href="#how-ollavpn-implements-pqc">How does OllaVPN actually use Post-Quantum Cryptography?</a></li>
+        
+        <li><a href="#request-walkthrough">Could you walk me through a connection with OllaVPN&#39;s PQC?</a></li>
+        
+        <li><a href="#ollavpn-vs-other-vpns">How does OllaVPN&#39;s PQC approach compare to other VPNs?</a></li>
+        
+        <li><a href="#real-world-protection">What real-world scenarios does OllaVPN&#39;s PQC protect me from?</a></li>
+        
+        <li><a href="#defaults-and-configuration">Is OllaVPN&#39;s Post-Quantum Cryptography on by default?</a></li>
+        
+        <li><a href="#how-to-verify-pqc">How can I verify OllaVPN&#39;s Post-Quantum Cryptography is working?</a></li>
+        
+        <li><a href="#limits-and-tradeoffs">What are the limitations or trade-offs of using PQC?</a></li>
+        
+        <li><a href="#pqc-and-other-primitives">How does PQC fit with OllaVPN&#39;s other privacy features?</a></li>
+        
+        <li><a href="#future-readiness">Will OllaVPN&#39;s PQC still be effective in 5-10 years?</a></li>
+        
+        <li><a href="#free-plan-inclusion">Is Post-Quantum Cryptography included in OllaVPN&#39;s free plan?</a></li>
+        
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    
+    <h2 id="what-is-pqc-and-why-it-matters">What exactly is Post-Quantum Cryptography?</h2>
+    <p class="short-answer">Post-Quantum Cryptography (PQC) is a new generation of encryption designed to protect your data from attacks by future quantum computers.</p>
+
+<p>Right now, the encryption that keeps your online activity private is incredibly strong. Even the most powerful supercomputers would take billions of years to break it. But there's a new threat on the horizon: quantum computers. While they're still in early development, these machines operate on different principles than traditional computers and could, theoretically, break today's standard encryption algorithms with relative ease. That's where PQC comes in.</p>
+
+<p>Imagine someone recording all of your encrypted internet traffic today, storing it, and then waiting a few years for powerful quantum computers to become available. This is known as a <strong>"harvest now, decrypt later"</strong> attack. All your past communications, once thought secure, could then be exposed. This is especially concerning for VPNs, which are designed for long-term data security and privacy. OllaVPN's commitment to PQC is about preventing this exact scenario, giving you true <a href="/blog/future-proof-encryption">future-proofing</a> for your sensitive information.</p>
+
+<p>By integrating quantum-resistant algorithms now, OllaVPN ensures that even if quantum computers become a reality in the future, your past, present, and future browsing history remains private. It's about building a VPN that's secure not just for today, but for decades to come, protecting your digital life against threats that haven't even fully materialized yet.</p>
+    
+    <h2 id="how-ollavpn-implements-pqc">How does OllaVPN actually use Post-Quantum Cryptography?</h2>
+    <p class="short-answer">OllaVPN uses a hybrid handshake that combines classical and post-quantum algorithms during the initial connection to protect your data against future quantum computer attacks.</p>
+
+<p>We're serious about future-proofing your privacy, which is why OllaVPN was built from the ground up with post-quantum cryptography (PQC) in mind. While today's computers can't break current encryption standards, the concern is that future quantum computers will be able to retroactively decrypt traffic captured now. That's why we've implemented a <strong>hybrid handshake</strong> for every connection you make.</p>
+
+<p>What does "hybrid handshake" mean? It means that when your OllaVPN client connects to our servers, it performs two separate key exchanges simultaneously. One uses a classical, proven algorithm like Diffie-Hellman, which is secure against all known conventional attacks. The other uses a post-quantum algorithm, specifically Kyber-768, which is designed to withstand attacks from even the most powerful theoretical quantum computers. By combining both, your connection's security is as strong as the stronger of the two algorithms. If a weakness is found in one, the other still protects you.</p>
+
+<p>This PQC layer works seamlessly with the underlying <a href="/blog/wireguard-protocol-explained">WireGuard protocol</a>, which is already known for its strong cryptography and efficient key management. WireGuard handles the secure tunneling and data transfer, while our hybrid handshake ensures that the initial <strong>key exchange</strong>—the crucial part where your device and our server agree on the secret keys for that session—is quantum-resistant. It's an extra layer of protection that doesn't slow you down, ensuring your past, present, and future data remains private.</p>
+
+<p>You don't need to do anything special to enable it; it's active by default on all OllaVPN connections, ensuring you're <strong>future-ready</strong> against potential threats from quantum computing. This forward-looking approach is a core part of how we protect your privacy, whether you're using our free plan or OllaVPN Plus.</p>
+    
+    <h2 id="request-walkthrough">Could you walk me through a connection with OllaVPN&#39;s PQC?</h2>
+    <p class="short-answer">When you connect to OllaVPN, your device and our server establish a secure tunnel using a combination of classical and post-quantum encryption to protect your data from current and future threats.</p>
+
+It all starts when your client initiates a connection to an OllaVPN server. First, your device and our server perform a handshake. This isn't just any handshake; it's a dual-layered one. We use a traditional, highly-trusted elliptical curve cryptography (ECC) key exchange for immediate security, but simultaneously, we establish a second, post-quantum-resistant key exchange. This dual approach means your connection is secure against today's known attacks and also built to withstand the theoretical power of future quantum computers. Both keys are used together to derive the session keys that will encrypt your data.
+
+Once these dual encryption keys are established, our server authenticates itself to your client. This ensures you're connecting to a genuine OllaVPN server and not an imposter. With mutual trust established and keys exchanged, a secure data tunnel is created. All your internet traffic, from browsing to streaming, now travels through this encrypted tunnel. Even your DNS requests are handled within the tunnel via our in-tunnel DNS, which prevents your internet provider from seeing what sites you're trying to visit.
+
+This entire process happens in milliseconds, completely transparent to you. The post-quantum readiness isn't an add-on; it's baked into how OllaVPN works from the ground up. It means that even if someone recorded your encrypted traffic today, they wouldn't be able to decrypt it years from now when quantum computers might be powerful enough to break classical encryption. It's about protecting your privacy not just for the moment, but for the long haul.
+    
+    <h2 id="ollavpn-vs-other-vpns">How does OllaVPN&#39;s PQC approach compare to other VPNs?</h2>
+    <p class="short-answer">OllaVPN takes a proactive approach to post-quantum cryptography, building in quantum-resistance now, while most other VPNs still rely on standard encryption that will eventually be vulnerable.</p>
+
+<p>Most VPNs today, whether they're ad-funded free VPNs, freemium throttled VPNs, or even honest-loss-leader free VPNs, use what's called "standard encryption." This means they're secure against today's threats, but they haven't started preparing for the future. Specifically, they're not ready for the advent of quantum computers powerful enough to break these traditional encryption methods. It's a bit like building a fort out of wood when you know a fire-breathing dragon is coming eventually.</p>
+
+<p>OllaVPN, on the other hand, is built with a <strong>post-quantum-ready</strong> design. We use a hybrid handshake that combines a classical, proven encryption algorithm with a quantum-resistant one. This means your connection is secure against both current threats and the theoretical threats posed by future quantum computers. We're not waiting for the "quantum apocalypse" to happen before we act; we're building for the long term now, ensuring your privacy remains protected for decades to come, not just until the next technological leap.</p>
+
+<p>This proactive stance is a key differentiator. While others might eventually adapt, they'll be playing catch-up. Our approach means that from day one, you're getting forward-secure encryption designed to withstand even the most advanced attacks. It's a significant investment in your privacy that most providers simply aren't making yet, choosing instead a reactive approach to security upgrades.</p>
+    
+    <h2 id="real-world-protection">What real-world scenarios does OllaVPN&#39;s PQC protect me from?</h2>
+    <p class="short-answer">OllaVPN's post-quantum-ready encryption protects your data from future decryption by powerful adversaries, safeguarding sensitive communications and long-term privacy against government surveillance and corporate espionage.</p>
+
+<p>Most VPNs use encryption that's secure against today's computers, but vulnerable to quantum computers that are currently in development. These future machines could retroactively decrypt recorded encrypted traffic. This is a critical concern for anyone with data that needs to stay private for decades, not just days or months. Think about medical records, legal documents, or journalistic sources – information that, if exposed years from now, could still cause significant harm. Our post-quantum-ready protocols ensure that even if your encrypted data is collected today, it will remain unreadable by quantum computers tomorrow.</p>
+
+<p>This long-term security is especially vital when considering threats like <strong>government surveillance</strong>. Agencies with vast resources often collect encrypted traffic now, hoping to decrypt it later once quantum computing power becomes available. OllaVPN's approach prevents this "harvest now, decrypt later" attack. Your browsing history, online communications, and other sensitive data are protected not just from current prying eyes, but from future ones too. This gives you genuine, lasting peace of mind that your digital footprint won't be compromised years down the line.</p>
+
+<p>Beyond governments, <strong>corporate espionage</strong> and <strong>data harvesting</strong> operations also pose significant risks. Imagine a competitor or a data broker recording your company's proprietary information or your personal browsing habits, banking on future decryption. With OllaVPN, your connections are secured with a hybrid handshake that combines a classical and a post-quantum algorithm, making it extremely difficult for any entity to ever unlock your past data. This commitment to <a href="/blog/long-term-privacy">long-term privacy</a> means your secrets stay secret, even as technology evolves.</p>
+    
+    <h2 id="defaults-and-configuration">Is OllaVPN&#39;s Post-Quantum Cryptography on by default?</h2>
+    <p class="short-answer">Yes, OllaVPN's post-quantum cryptography is on by default for all users, with no configuration needed.</p>
+
+It's actually a core part of how OllaVPN works, not an optional extra you need to remember to switch on. From the moment you connect, your traffic is protected by a hybrid cryptographic handshake that includes a post-quantum algorithm. This means you get the best of both worlds: the proven security of traditional cryptography today, combined with forward-looking protection against potential future threats from quantum computers. It's built in for everyone, whether you're on the free plan or a Plus subscriber.
+
+We believe true privacy shouldn't require you to be a security expert. That's why we bake these advanced protections directly into the service. There's <strong>no user configuration needed</strong> for our post-quantum features; it just works automatically in the background. This ensures you always have the strongest possible encryption without having to tinker with settings or understand complex security concepts. It's designed for seamless integration into your everyday internet use.
+
+You won't find a toggle switch for "post-quantum mode" because it's always active. This approach guarantees that every connection you make through OllaVPN benefits from this advanced layer of security, protecting your data not just now, but well into a future where quantum computing might become a threat to conventional encryption. It's our way of making sure your privacy is built for the long term.
+    
+    <h2 id="how-to-verify-pqc">How can I verify OllaVPN&#39;s Post-Quantum Cryptography is working?</h2>
+    <p class="short-answer">You can verify OllaVPN's Post-Quantum Cryptography (PQC) is active by inspecting the handshake details with network analysis tools, though it requires some technical know-how.</p>
+
+It's a really good question, and one we encourage you to ask any VPN provider. The core of "trust but verify" means you shouldn't just take our word for it. While directly seeing a "PQC active" light isn't a thing, you can use technical verification methods to confirm the post-quantum handshake is happening. This involves capturing your network traffic and analyzing the cryptographic negotiation.
+
+Specifically, you'll be looking for the inclusion of the CRYSTALS-Kyber algorithm during the <a href="/blog/wireguard-pqc-explained">WireGuard handshake</a>. Our client is open-source, so you can even dig into the code if you're so inclined, but for most people, using network analysis tools like Wireshark is the go-to. You'd set up a capture, connect to OllaVPN, and then filter for the handshake packets. Inside those packets, you should see the Kyber parameters being exchanged alongside the traditional elliptic curve Diffie-Hellman keys.
+
+This isn't something the average user will do daily, for sure. It requires a decent understanding of network protocols and cryptography to interpret the results correctly. However, the fact that you *can* do it is important. It's our commitment to transparency and our way of showing that when we say we're post-quantum-ready, we mean it with verifiable, concrete steps, not just marketing fluff. This forward-secure approach is built for the long term, protecting your data even against future quantum computing threats.
+    
+    <h2 id="limits-and-tradeoffs">What are the limitations or trade-offs of using PQC?</h2>
+    <p class="short-answer">Post-quantum cryptography isn't a magic bullet; it primarily addresses the threat of future quantum computer attacks on current encryption, with minimal performance impact.</p>
+
+<p>You’re right to ask about limitations. While PQC is a huge step forward for long-term security, it's important to understand that it's not a silver bullet. It doesn't prevent all attacks, nor does it magically solve every cybersecurity problem. For instance, PQC won't protect you from phishing scams, malware, or social engineering. Good security practices, like using strong, unique passwords and being wary of suspicious links, remain crucial regardless of the encryption under the hood.</p>
+
+<p>The primary focus of PQC is to secure your data against decryption by future, powerful quantum computers. It's about ensuring that the information you send today can't be stored and decrypted years from now by an adversary with a quantum machine. That's a very specific, albeit critical, threat. Other vulnerabilities, like those related to software bugs or misconfigurations, still need to be addressed through diligent development and security auditing, which we take very seriously at OllaVPN.</p>
+
+<p>From a practical standpoint, the biggest "trade-off" for you is barely noticeable. There's a <strong>minimal performance impact</strong> with post-quantum algorithms compared to classical ones. We're talking milliseconds, not seconds, on a modern CPU. For our free users, your connection is capped at 10 Mbps anyway, so you absolutely won't feel any difference from PQC. For OllaVPN Plus users enjoying 10 Gbps, any overhead is still negligible – the bottleneck is almost always your internet connection or the server load, not the PQC itself. We've optimized our implementation to ensure that this crucial security upgrade doesn't slow you down.</p>
+    
+    <h2 id="pqc-and-other-primitives">How does PQC fit with OllaVPN&#39;s other privacy features?</h2>
+    <p class="short-answer">Post-quantum cryptography adds a critical layer to OllaVPN's existing privacy features, creating a more robust and future-proof shield for your online activity.</p>
+
+<p>Think of post-quantum cryptography (PQC) as the latest upgrade to your digital armor. While features like our always-on <a href="/features/kill-switch">kill switch</a> prevent accidental data leaks if your VPN connection drops, and our <a href="/features/in-tunnel-dns">in-tunnel DNS</a> ensures your internet provider can't snoop on your DNS requests, PQC protects the fundamental encryption itself. It's about ensuring that even with hypothetical, incredibly powerful future computers, your past and present encrypted communications remain private. It's a proactive step against a threat that hasn't fully materialized yet, but one we take seriously.</p>
+
+<p>This isn't about replacing our other strong security primitives; it's about building on them. Our <strong>layered security</strong> approach means that each feature works in concert. For instance, our unique <strong>4-layer peer isolation</strong> prevents any cross-talk or data leakage between users on the same server, adding a powerful internal privacy boundary. PQC then ensures that the very tunnel protecting you from the outside world — from your ISP, from government surveillance, from malicious actors — is resilient against even the most advanced decryption attempts imaginable.</p>
+
+<p>So, while you're enjoying the everyday benefits of a VPN – like bypassing geo-restrictions or simply browsing privately – OllaVPN is also thinking years, even decades, ahead. It's all part of our <strong>holistic privacy approach</strong>. We're not just patching immediate vulnerabilities; we're designing for a future where your digital footprint is inherently more exposed. PQC is a cornerstone of that long-term vision, ensuring that the foundation of your privacy remains impenetrable, no matter what technological advancements the future holds.</p>
+    
+    <h2 id="future-readiness">Will OllaVPN&#39;s PQC still be effective in 5-10 years?</h2>
+    <p class="short-answer">Yes, OllaVPN's post-quantum cryptography is designed to remain effective for decades, not just years, thanks to its adaptable approach.</p>
+
+<p>You can count on OllaVPN's post-quantum encryption to protect your data long into the future. We're not just picking one "post-quantum" algorithm and hoping for the best; instead, we use a hybrid approach that combines a classical, well-understood encryption method with a new, quantum-resistant one. This means your connection is secure even if the new post-quantum algorithms hit an unexpected snag down the line, because the classical encryption is still there as a fallback. It's about building for <strong>long-term security</strong>.</p>
+
+<p>Our implementation is also built with <strong>algorithm agility</strong> in mind. The field of post-quantum cryptography is still evolving, with new research and potential breakthroughs happening regularly. The US National Institute of Standards and Technology (NIST) is leading the charge in standardizing these algorithms, and as their recommendations solidify and new, stronger algorithms emerge, OllaVPN can seamlessly update its systems. This <strong>adaptability</strong> ensures that we can always deploy the most secure and up-to-date post-quantum methods without you needing to do a thing.</p>
+
+<p>Think of it like this: we've designed our encryption to be future-proof by being flexible. As the world of quantum computing develops and new cryptographic standards are set, OllaVPN will be ready to integrate them, keeping your data safe from threats that don't even exist yet. It's a commitment to protecting your privacy not just today, but for decades to come.</p>
+    
+    <h2 id="free-plan-inclusion">Is Post-Quantum Cryptography included in OllaVPN&#39;s free plan?</h2>
+    <p class="short-answer">Yes, OllaVPN includes post-quantum cryptography in its free plan, available to all users without any restrictions.</p>
+
+<p>That's right, post-quantum-ready encryption isn't a premium feature or an add-on you have to pay for. It's built into every connection you make with OllaVPN, whether you're using our free plan or OllaVPN Plus. We believe that robust, future-proof security should be a standard, not a luxury. You get it automatically, for $0 forever, with no card or email required.</p>
+
+<p>You might be wondering how we can afford to offer such advanced security for free. The answer is simple: OllaVPN's free tier, which gives you 10 Mbps and access to every country in our network, is funded entirely by our Plus subscribers. When you upgrade to <a href="/plus">OllaVPN Plus</a> for just $2/month, you're not just getting 10 Gbps speeds on five devices; you're also directly supporting our mission to provide free, private, and secure internet access to everyone, worldwide. This model allows us to keep the free plan genuinely free, without resorting to ads or selling your data.</p>
+    
+
+    <h2 id="harvest-now-economics">Who actually does "harvest now, decrypt later," and at what cost?</h2>
+    <p class="short-answer">Bulk traffic capture is a documented practice of multiple nation-state intelligence services and well-funded private actors. Petabyte-scale storage costs roughly $10,000 in 2026 and keeps trending down; the decryption value grows with time. The economics favor the patient adversary.</p>
+
+    <p>The harvest-now-decrypt-later threat is concrete, not theoretical, and the people most exposed to it tend to be the people least aware that it applies to them. The bulk-capture capability has been publicly documented since the 2013 Snowden disclosures (the GCHQ "Tempora" programme, the NSA "Upstream" programme, and equivalent programmes in several allied jurisdictions). Captured ciphertext is cheap to store: a single petabyte of cold-tier disk costs roughly $10,000 in 2026 and the cost-per-byte trends downward every year. The capture itself is a one-time engineering investment (taps at major internet exchange points and cable landings); the storage is amortized indefinitely.</p>
+
+    <p>The decryption value, by contrast, compounds with time. Recently-public information has lost most of its leverage. A decade-old encrypted communication can still expose a source whose identity you forgot you had used encryption to protect, reveal a business strategy that is still in play, embarrass a public figure who had built their reputation since, identify an activist whose protest movement has succeeded and whose government has begun retaliating, or compromise the operational security of a still-running negotiation. The defender's economics are the opposite: every day of unencrypted-after-the-fact traffic is one more day of pending exposure.</p>
+
+    <p>The class of attacker that does this includes signals-intelligence agencies of the major powers, organized cybercrime groups operating at industrial scale, and (per disclosures in the academic literature) a handful of well-funded corporate competitive-intelligence operations. None of them will tell you they captured your traffic in 2026; some of them will quietly decrypt it in 2036 or 2046 and use what they find. The defense — switching the key agreement to a quantum-resistant algorithm before the quantum computer exists — costs almost nothing today. Refusing to ship that defense, on the grounds that the threat hasn't materialized yet, is the same logic that historically led people to leave their doors unlocked because no one had broken in yet.</p>
+
+    <h2 id="verify-pqc-claims">How can you verify OllaVPN's PQC claims independently?</h2>
+    <p class="short-answer">Run a packet capture during an OllaVPN handshake and examine the key-exchange messages, or use the open WireGuard inspector with our public client source. The hybrid handshake's extra ML-KEM-768 message is observable on the wire.</p>
+
+    <p>Marketing claims that "we ship post-quantum cryptography" are easy to make and harder to verify. Here is how to verify ours from your own device, without taking our word for any of it.</p>
+
+    <p><strong>Inspect the handshake message size.</strong> A vanilla WireGuard handshake initiation message is exactly 148 bytes. A WireGuard handshake initiation with the hybrid X25519 + ML-KEM-768 extension is substantially larger because the ML-KEM-768 encapsulation key adds roughly 1,184 bytes of additional payload. If you run a packet capture (Wireshark or tcpdump) on the WireGuard interface during a fresh OllaVPN connection, the size of the first handshake packet is the simplest evidence. If it's 148 bytes, you're on classical WireGuard. If it's substantially larger, you're on a hybrid handshake.</p>
+
+    <p><strong>Read the client source.</strong> The OllaVPN client apps progressively open-source alongside our public launch. The PQC integration patches on top of <code>wireguard-go</code> are open today and link directly to the NIST reference implementation of ML-KEM-768 (FIPS 203). You can read the diff against upstream wireguard-go and confirm that the additional key-exchange step uses the standardized algorithm with the parameters specified in FIPS 203 — no novel cryptography, no proprietary tweaks, just integration.</p>
+
+    <p><strong>Compare to other PQC-shipping VPNs.</strong> Mullvad ships post-quantum WireGuard on desktop paid (default-on since 2023) and has published the implementation details openly. ProtonVPN ships PQC on the paid tier and documents the rollout. Both use a similar hybrid construction. Cross-checking the wire-level behavior of OllaVPN against either gives you a second independent reference point. The hybrid handshake should look structurally similar on all three.</p>
+
+    <p><strong>Check the FIPS 203 reference.</strong> NIST publishes the official FIPS 203 specification, the test vectors, and the reference implementation at <code>nist.gov</code>. The ML-KEM-768 parameter set is one of three (alongside ML-KEM-512 and ML-KEM-1024). Confirm that our handshake uses the 768-bit security level — the standard recommendation for general-purpose use, providing security comparable to AES-192 against both classical and quantum attacks.</p>
+
+    <h2 id="why-not-everyone">If post-quantum cryptography is this important, why doesn't every VPN ship it?</h2>
+    <p class="short-answer">Three reasons: it requires engineering work most operators have not yet prioritised, the standardisation only finalised in August 2024, and integrating it into WireGuard requires running a small fork off the upstream protocol — which not every operator is willing to maintain.</p>
+
+    <p>The post-quantum-cryptography landscape in 2026 looks roughly like this: the largest VPN operators by user count (NordVPN, ExpressVPN, Surfshark, CyberGhost) do not yet ship PQC anywhere. The strongest privacy-first operators (Mullvad, ProtonVPN) ship PQC on the paid tier and are rolling it out across platforms. A small number of forward-looking operators (OllaVPN being one) ship PQC on the free tier by default.</p>
+
+    <p>The reasons for the gap are not that the technology is hard, expensive, or experimental in 2026 — those reasons were true in 2022, less true in 2024, and substantially false in 2026 now that NIST has finalised the standards and reference implementations are mature. The actual reasons are organizational and product-strategy reasons.</p>
+
+    <p><strong>Engineering attention.</strong> Most VPN operators have product backlogs full of features users explicitly ask for (more countries, faster servers, app polish). Post-quantum cryptography is a feature almost no end-user asks for, because most end-users don't know to ask. An operator prioritising what users explicitly request will rarely allocate engineering time to PQC.</p>
+
+    <p><strong>WireGuard fork maintenance.</strong> Standard WireGuard does not yet include hybrid PQC handshakes in the upstream protocol. The IETF is actively working on a standardised PQ-WireGuard, but until that standard ships and propagates through implementations, shipping PQC means running a small fork off upstream wireguard-go (or equivalent). Some operators are unwilling to carry the fork-maintenance burden; OllaVPN, Mullvad, and ProtonVPN have all chosen to.</p>
+
+    <p><strong>Marketing differentiation calculus.</strong> Some operators prefer to position PQC as a paid-tier-only feature because it provides upgrade motivation. We disagree with that strategy on principle — the privacy property is most valuable to the user who cannot afford to pay — but we recognise it as a defensible product decision for a paid-first operator.</p>
+
+    <p>The honest read: PQC will be table stakes for the privacy-VPN category by 2028 at latest, the way the kill switch became table stakes between 2018 and 2022. The question is whether your operator is ahead of that curve or behind it. OllaVPN's bet is that being ahead is the right place to be.</p>
+
+    <h2 id="pqc-faq">Common PQC questions, answered straight</h2>
+    <p class="short-answer">Direct answers to the questions readers most often ask about post-quantum cryptography on a VPN — covering both the technology and OllaVPN's specific implementation.</p>
+
+    <p><strong>Does PQC make my connection slower?</strong> Negligibly. The X25519 + ML-KEM-768 hybrid handshake adds roughly 1-2 milliseconds to the initial connection setup vs a classical handshake on modern hardware. After the handshake is complete, the session uses the same fast ChaCha20-Poly1305 symmetric cipher that WireGuard always uses — no ongoing PQC cost per packet. You will not notice the difference in everyday use.</p>
+
+    <p><strong>Does PQC change how much battery the VPN uses?</strong> No measurable difference. The handshake happens once per session (or once every two minutes during key rotation), and the additional ML-KEM-768 work is well under a millisecond of CPU. On an Apple Silicon Mac or a modern Android device the overhead is undetectable in battery accounting. On older Intel hardware it adds perhaps 0.1% to total VPN-related battery impact, which is again undetectable.</p>
+
+    <p><strong>If the quantum computer never arrives, was PQC a waste?</strong> No, for two reasons. First, the cost was negligible (see above), so even in the worst case the downside is small. Second, the relevant question isn't "will quantum computers arrive" but "will at least one cryptographically-relevant quantum computer arrive within the useful lifetime of today's captured ciphertext." Most experts put that probability between meaningfully-possible and likely; the conservative posture is to defend against it.</p>
+
+    <p><strong>Will PQC need to be replaced as quantum technology advances?</strong> The current ML-KEM-768 parameter set is designed for security comparable to AES-192 against both classical and quantum attacks. If cryptanalysis substantially weakens it (which would require fundamental advances in lattice-problem mathematics), NIST would publish a successor and we would integrate it the same way we integrated ML-KEM-768. The hybrid construction means the cost of a graceful transition is low.</p>
+
+    <p><strong>Is OllaVPN's PQC certified by NIST?</strong> NIST certifies algorithms, not implementations. ML-KEM-768 is the NIST-standardized algorithm (FIPS 203). Our implementation uses the NIST reference code with the standardized parameters; the algorithm itself is the certified piece. If you want a FIPS-validated implementation specifically (some US government use cases require this), you would need a FIPS-validated cryptographic module — none of the consumer VPNs ship one of these for their data plane.</p>
+
+    <p><strong>Does PQC protect me against an attacker who is already inside my device?</strong> No. PQC protects the cryptographic session keys against future quantum attacks on captured ciphertext. An attacker who has compromised your operating system or your browser is reading your plaintext before it ever enters the tunnel — PQC, classical encryption, and the tunnel itself are all irrelevant in that case. Use endpoint security (an up-to-date OS, a reputable browser, anti-malware on Windows) as a complement to a VPN.</p>
+
+    <p><strong>What's the difference between PQC and quantum key distribution (QKD)?</strong> Different defenses against the same threat. PQC uses classical mathematics (lattices, hash functions, codes) believed to be hard for quantum computers. QKD uses quantum-mechanical effects to detect eavesdropping on a key-exchange channel. PQC works over the existing internet without special hardware; QKD requires dedicated optical links between the two endpoints. For consumer VPNs, PQC is the only practical option. QKD is research and government infrastructure, not consumer technology.</p>
+
+    <p><strong>Does PQC interact with TLS for the website I'm visiting?</strong> No. The OllaVPN tunnel and the TLS connection to the destination website are independent layers. The tunnel protects your traffic from your ISP and from the local network; TLS protects your traffic from anyone observing between the OllaVPN exit and the destination. TLS in 2026 is starting to ship its own PQC hybrid (Cloudflare and Google are early adopters), but that is a separate rollout. Both can help; both are valuable; neither makes the other redundant.</p>
+
+    <p><strong>Why ML-KEM-768 specifically, instead of -512 or -1024?</strong> ML-KEM-768 is NIST's recommended general-purpose parameter set, providing security comparable to AES-192. ML-KEM-512 is comparable to AES-128 and is faster but with a smaller security margin. ML-KEM-1024 is comparable to AES-256 and is stronger but with larger handshake packets. For consumer VPN use, ML-KEM-768 is the right balance. The same choice is what Mullvad and ProtonVPN made.</p>
+
+    <p><strong>Will OllaVPN switch to PQ-WireGuard when it standardises?</strong> Yes. The IETF is actively working on a standardised PQ-WireGuard extension that would obsolete our small fork off upstream wireguard-go. When that standard ships and stable implementations are available, we will migrate to the standard and our fork will be retired. The user-facing behavior will not change; the maintenance burden on our side will decrease.</p>
+
+    <h2 id="about-this-guide">About this guide</h2>
+    <p>This guide is maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. The cryptographic claims (X25519, ML-KEM-768, FIPS 203, the hybrid handshake construction, the wireguard-go fork) were fact-checked against the production codebase by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer, during the June 2026 update cycle. We refresh this page quarterly. Last full re-evaluation: 23 June 2026.</p>
+
+    <p>Cross-references for deeper reading: the <a href="/technology">technology stack page</a> covers the complete OllaVPN architecture beyond just PQC. The <a href="/blog/what-is-post-quantum-cryptography.html">PQC pillar blog</a> covers the cryptography fundamentals in plain English. The <a href="/best-free-vpn-2026">best free VPN 2026 guide</a> covers the competitive landscape including PQC support across operators. The <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN comparison</a> includes their respective PQC implementations as a point of comparison.</p>
+
+    <p>If you spot a factual error — a cryptographic parameter that's drifted, an algorithm name that's been renamed in a NIST revision, an implementation claim that no longer matches the code — email <code>guides@ollavpn.com</code> and we will correct it in the next refresh.</p>
+
+    <p><strong>Why we publish this level of detail.</strong> Most VPN marketing pages on PQC stop at "we support post-quantum encryption" without naming the algorithm, the parameter set, the construction (hybrid vs pure), the implementation library, or the wire-level evidence a curious reader can verify. We publish the details because the privacy-conscious reader who actually evaluates these claims is exactly the reader we want — and the privacy-conscious reader has been burned enough times by under-specified marketing claims that they default to skepticism. The remedy for skepticism is verifiable detail. This page is our attempt to provide that detail.</p>
+
+    <p><strong>One last note on integrity.</strong> If at any point our PQC implementation regresses, gets superseded by a stronger standard we have not adopted, or is found to have a bug we have not fixed promptly, we will update this page to reflect that — even when the update is unflattering. The honesty calculus on a privacy product is the same as for a backup product: the time to find out it didn't work is not when you needed it. We would rather lose a reader to an honest disclosure of a temporary regression than retain them through silence.</p>
+
+    <div class="feature-cta">
+      <h3>Want this on your device?</h3>
+      <p>OllaVPN is free forever for 1 device. No card, no email tricks.</p>
+      <a class="btn primary lg" href="/dl/">Get OllaVPN free <span class="arrow">&rarr;</span></a>
+      <span class="feature-cta-sub">Or <a href="/pricing">see all plans</a></span>
+    </div>
+
+      </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      
+      <li><a href="#what-is-pqc-and-why-it-matters">What exactly is Post-Quantum Cryptography?</a></li>
+      
+      <li><a href="#how-ollavpn-implements-pqc">How does OllaVPN actually use Post-Quantum Cryptography?</a></li>
+      
+      <li><a href="#request-walkthrough">Could you walk me through a connection with OllaVPN&#39;s PQC?</a></li>
+      
+      <li><a href="#ollavpn-vs-other-vpns">How does OllaVPN&#39;s PQC approach compare to other VPNs?</a></li>
+      
+      <li><a href="#real-world-protection">What real-world scenarios does OllaVPN&#39;s PQC protect me from?</a></li>
+      
+      <li><a href="#defaults-and-configuration">Is OllaVPN&#39;s Post-Quantum Cryptography on by default?</a></li>
+      
+      <li><a href="#how-to-verify-pqc">How can I verify OllaVPN&#39;s Post-Quantum Cryptography is working?</a></li>
+      
+      <li><a href="#limits-and-tradeoffs">What are the limitations or trade-offs of using PQC?</a></li>
+      
+      <li><a href="#pqc-and-other-primitives">How does PQC fit with OllaVPN&#39;s other privacy features?</a></li>
+      
+      <li><a href="#future-readiness">Will OllaVPN&#39;s PQC still be effective in 5-10 years?</a></li>
+      
+      <li><a href="#free-plan-inclusion">Is Post-Quantum Cryptography included in OllaVPN&#39;s free plan?</a></li>
+      
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<script>
+  // Scroll-spy: highlight current section in right rail TOC.
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+</body>
+</html>

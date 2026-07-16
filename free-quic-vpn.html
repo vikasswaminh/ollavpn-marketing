@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free QUIC VPN: Bypass Blocks with OllaVPN | OllaVPN</title>
+<meta name="description" content="Stuck behind restrictive networks? OllaVPN's free QUIC mode makes VPN traffic look like ordinary HTTPS to bypass corporate, school, and hotel blocks." />
+<link rel="canonical" href="https://ollavpn.com/free-quic-vpn" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="Free QUIC VPN: Bypass Blocks with OllaVPN | OllaVPN" />
+<meta property="og:description" content="Stuck behind restrictive networks? OllaVPN's free QUIC mode makes VPN traffic look like ordinary HTTPS to bypass corporate, school, and hotel blocks." />
+<meta property="og:url" content="https://ollavpn.com/free-quic-vpn" />
+<meta property="og:image" content="https://ollavpn.com/og-free-quic-vpn.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Free QUIC VPN — VPN traffic that looks like ordinary HTTPS web traffic" />
+<meta property="article:published_time" content="2026-06-08T00:00:00Z" />
+<meta property="article:modified_time" content="2026-06-08T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Free VPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free QUIC VPN: Bypass Blocks with OllaVPN | OllaVPN" />
+<meta name="twitter:description" content="Stuck behind restrictive networks? OllaVPN's free QUIC mode makes VPN traffic look like ordinary HTTPS to bypass corporate, school, and hotel blocks." />
+<meta name="twitter:image" content="https://ollavpn.com/og-free-quic-vpn.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Free QUIC VPN: Break Through Network Blocks with OllaVPN",
+  "description": "Stuck behind restrictive networks? OllaVPN's free QUIC mode makes your VPN traffic look like normal HTTPS, helping you bypass corporate, university, and hotel blocks. Get privacy, speed, and freedom.",
+  "image": "https://ollavpn.com/og-free-quic-vpn.png",
+  "author": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "url": "https://ollavpn.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ollavpn.com/favicon-256.png"
+    }
+  },
+  "datePublished": "2026-06-08",
+  "dateModified": "2026-06-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ollavpn.com/free-quic-vpn"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a QUIC VPN faster than a WireGuard VPN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not directly. While QUIC can offer speed and reliability, in a VPN context, its main role is bypassing blocks. OllaVPN's free plan caps both at 10 Mbps. For raw speed on open networks, plain WireGuard might have slightly less overhead. QUIC's real advantage is getting you connected when WireGuard can't, not necessarily making it faster."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will QUIC mode work behind a captive portal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but with caveats. QUIC mode is designed to look like normal HTTPS traffic, which often gets through captive portals that block other VPNs. You might still need to complete the portal's login process first, but once you're past that, QUIC stands a much better chance of connecting than standard WireGuard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does QUIC mode use port 443?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it typically does! This is a big part of why QUIC mode is so effective at bypassing restrictions. By using UDP port 443, it mimics standard HTTPS web traffic. This makes it incredibly difficult for network firewalls and deep packet inspection systems to distinguish it from regular, allowed internet activity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my workplace IT detect QUIC VPN traffic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's much harder for them to detect. Because QUIC traffic looks so much like regular HTTPS, most basic network monitoring tools won't flag it as a VPN. Advanced, dedicated deep packet inspection might, but it's significantly more challenging for them than detecting standard VPN protocols. It's designed to blend in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is QUIC mode included in the free plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! OllaVPN's QUIC mode is fully available on our free plan. You get 10 Mbps speed, every country in our network, and all our security features, including post-quantum-ready encryption, with QUIC mode enabled. No credit card, no email, just free privacy, forever."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does QUIC mode work on cellular data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it does! QUIC mode isn't just for Wi-Fi. If your cellular provider is throttling or blocking VPN traffic, or if you're in an area with particularly restrictive mobile networks, QUIC mode can often help you establish a stable and secure connection, just like it would on a wired or Wi-Fi network."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my ISP throttle QUIC the way they throttle other VPNs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's much more difficult for them to do so. Since QUIC looks like regular HTTPS, an ISP would have to throttle all HTTPS traffic to effectively throttle QUIC VPN traffic, which would break most of the internet. This makes it a very effective way to bypass VPN throttling and keep your connection consistent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does QUIC mode work in China or other heavily-restricted networks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It has a significantly higher chance of working than standard VPN protocols. While no VPN can guarantee 100% uptime in heavily-restricted regions like China due to evolving censorship, QUIC's ability to mimic HTTPS gives it a strong advantage in bypassing sophisticated firewalls. It's definitely worth trying."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I get the full 10 Mbps free speed in QUIC mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you will. The 10 Mbps speed cap on OllaVPN's free plan applies regardless of whether you're using standard WireGuard or QUIC mode. So, you get the same reliable speed for browsing, streaming HD video, and video calls, even with QUIC's enhanced block resistance. If you need more, OllaVPN Plus offers 10 Gbps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is QUIC encrypted the same way as WireGuard?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "QUIC uses TLS 1.3 for its encryption, which is very robust and widely used for secure web traffic. OllaVPN layers its post-quantum-ready encryption on top of this, ensuring your data is secured to the highest standards, similar to how WireGuard handles its encryption. Both are extremely secure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will QUIC mode drain my phone battery faster?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not significantly more than standard VPN usage. While QUIC might have a slight overhead compared to plain WireGuard, it's generally designed to be efficient. Any difference in battery drain would likely be minimal and outweighed by the benefit of being able to connect at all in restrictive environments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to install anything special to use QUIC mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nope, nothing extra! If you have the OllaVPN app, you already have everything you need. QUIC mode is built right into our application. You just need to select it from the protocol settings within the app, and you're good to go. It's designed for simplicity and ease of use, with no fuss."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ollavpn.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Free VPN",
+      "item": "https://ollavpn.com/free-vpn"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Free QUIC VPN",
+      "item": "https://ollavpn.com/free-quic-vpn"
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text);
+    max-width: 880px; }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 20px; max-width: 760px; }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 28px 56px;
+    gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+
+  .article {
+    min-width: 0;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px;
+    color: var(--text);
+  }
+  .article .short-answer {
+    font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em;
+  }
+  .article p strong { font-weight: 700; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px;
+    text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline {
+    display: block; margin: 0 0 2.2em;
+    border: 1px solid var(--line); border-radius: 12px; padding: 18px 24px;
+    background: #fff;
+  }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+
+  .toc-rail .label, .toc-inline .label {
+    font-family: var(--mono); font-size: 11px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block;
+  }
+  .toc-rail ol, .toc-inline ol {
+    list-style: none; margin: 0; padding: 12px 0 0;
+  }
+  .toc-rail ol li, .toc-inline ol li {
+    font-size: 14px; line-height: 1.5; margin: 0 0 8px;
+  }
+  .toc-rail ol li a, .toc-inline ol li a {
+    color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px;
+    border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .toc-rail ol li a:hover,
+  .toc-inline ol li a:hover,
+  .toc-rail ol li.is-current a {
+    color: var(--red); border-left-color: var(--red);
+  }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+</style>
+</head>
+
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="wrap">
+    <div class="meta">GUIDE · UPDATED JUNE 8, 2026 · 16 MIN READ
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=free">FREE</a></div>
+    </div>
+    <h1>Free QUIC VPN: Break Through Network Blocks with OllaVPN</h1>
+    <p class="lede">Ever felt like your internet is being held hostage by a restrictive network? Maybe it&#39;s your workplace, your university, or even a hotel&#39;s Wi-Fi. Traditional VPNs often get detected and blocked in these situations, leaving you stuck. That&#39;s why OllaVPN offers a free QUIC mode, specifically designed to make your VPN traffic look just like regular web browsing. You&#39;ll learn how this technology helps you bypass those pesky network blocks, giving you back your online freedom without raising any flags.</p>
+  <div class="article-byline">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div class="author-meta">
+        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
+        <div class="author-role">Privacy &amp; Security Lead</div>
+      </div>
+      <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-layout">
+  <article class="article">
+
+    <div class="tldr">
+      <span class="label">TL;DR</span>
+      
+      <p>QUIC is a internet protocol, pioneered by Google, that&#39;s becoming a new standard. It&#39;s built for speed and security, but what truly makes it special for VPNs is its ability to blend in. Because it travels over UDP and often looks just like regular web traffic, QUIC can effectively bypass many network restrictions that would block traditional VPNs.</p>
+      
+      <p>Most VPN protocols, even great ones like WireGuard, have distinct traffic patterns that advanced firewalls can easily spot and block. QUIC sidesteps this by mimicking standard HTTPS traffic. This makes it incredibly difficult for deep packet inspection systems to detect you&#39;re using a VPN, letting you connect freely even on highly restricted networks.</p>
+      
+      <p>OllaVPN integrates QUIC mode into its free plan, giving you 10 Mbps speed and our post-quantum-ready encryption for $0 forever. This means you can often get around tough network blocks without paying anything, all while keeping your data safe. It&#39;s a perfect solution for anyone dealing with restrictive Wi-Fi or cellular networks who needs a reliable, free connection.</p>
+      
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        
+        <li><a href="#what-is-quic">What is QUIC and why are VPNs adopting it?</a></li>
+        
+        <li><a href="#why-vpns-get-blocked">Why do regular VPN protocols like WireGuard get blocked?</a></li>
+        
+        <li><a href="#quic-looks-like-https">How does QUIC make VPN traffic look like normal web browsing?</a></li>
+        
+        <li><a href="#quic-vs-standard-wireguard">How does OllaVPN&#39;s QUIC mode compare to standard WireGuard?</a></li>
+        
+        <li><a href="#where-quic-helps">Where will OllaVPN&#39;s QUIC mode help you the most?</a></li>
+        
+        <li><a href="#enable-quic-mode">How do you enable QUIC mode in the OllaVPN apps?</a></li>
+        
+        <li><a href="#quic-latency">What kind of latency does QUIC mode add compared to plain WireGuard?</a></li>
+        
+        <li><a href="#quic-vs-obfuscation">How does QUIC compare to other obfuscation methods like Shadowsocks?</a></li>
+        
+        <li><a href="#quic-free-plan">Is QUIC mode included in OllaVPN&#39;s free plan?</a></li>
+        
+        <li><a href="#when-to-use-wireguard">When might you choose plain WireGuard over QUIC mode?</a></li>
+        
+        <li><a href="#post-quantum-ready">What does &#39;post-quantum-ready&#39; encryption mean for QUIC mode?</a></li>
+        
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    
+    <h2 id="what-is-quic">What is QUIC and why are VPNs adopting it?</h2>
+    <p class="short-answer">QUIC is a modern internet transport protocol designed to make connections faster and more reliable, which VPNs are adopting because it excels at bypassing network restrictions and improving performance.</p>
+
+QUIC (Quick UDP Internet Connections) started at **Google** as an experiment to speed up web browsing. Think of it as a significant upgrade to how your computer talks to websites. Traditionally, a lot of internet traffic, especially for secure websites (HTTPS), relies on TCP, which can be slow to set up and recover from lost data packets. QUIC, on the other hand, builds on **UDP**, which is faster for establishing connections and handles packet loss more gracefully, leading to smoother, quicker experiences, especially on less stable networks. It essentially combines the best parts of TCP and TLS (the security layer) into one more efficient package at the **transport layer**.
+
+So, why does this matter for VPNs? For starters, its performance benefits mean you're likely to get a snappier connection, potentially reducing latency and making streaming or gaming feel more responsive. But more critically, QUIC's design makes it incredibly effective at network **obfuscation**. Because it’s relatively new and bundles its encryption within the protocol itself, it looks very different from traditional VPN traffic. This unique footprint makes it much harder for firewalls and internet service providers to detect and block VPN connections, especially in regions with heavy internet censorship.
+
+At OllaVPN, we're particularly interested in QUIC because it gives you another tool to maintain your privacy and access. If you're struggling to connect with the standard WireGuard protocol in a restrictive environment, switching to QUIC might just be the solution. It's not just about speed; it's about resilience against blocking. Plus, with the future in mind, QUIC's modern design makes it more adaptable for incorporating advanced security features, including those that are <a href="/blog/post-quantum-encryption-explained">post-quantum-ready</a>, ensuring your connection remains secure against future threats.
+    
+    <h2 id="why-vpns-get-blocked">Why do regular VPN protocols like WireGuard get blocked?</h2>
+    <p class="short-answer">Regular VPN protocols like WireGuard and OpenVPN get blocked because network administrators can detect their distinctive traffic patterns using tools like deep packet inspection.</p>
+
+<p>Most networks don't want you using a VPN. Whether it's a school, a workplace, or even an entire country, network administrators often try to control what you can access. They use powerful <a href="/blog/what-is-a-firewall">firewalls</a> to block connections, and one of their main tactics is looking for specific VPN
+    
+    <h2 id="quic-looks-like-https">How does QUIC make VPN traffic look like normal web browsing?</h2>
+    <p class="short-answer">QUIC makes VPN traffic look like normal web browsing by using the same port and encryption as standard HTTPS, making it difficult for network filters to tell the difference.</p>
+
+<p>It's all about blending in. Normally, VPN protocols use specific ports or tell-tale patterns that make them easy for network administrators or restrictive firewalls (often called "middleboxes") to identify and block. Think of it like a secret handshake that's not so secret once someone figures it out. QUIC, however, is a newer internet protocol that's designed to be fast and secure, and crucially for us, it runs over <strong>UDP port 443</strong>.</p>
+
+<p>Why is that important? Because HTTPS, the secure protocol your browser uses for nearly every website you visit, also commonly runs over port 443. By running our VPN traffic over QUIC on that same port, we're essentially making it look like regular, encrypted web browsing. When a middlebox sees traffic on port 443, it usually assumes it's legitimate HTTPS and lets it pass. This kind of <strong>obfuscation</strong> is a powerful tool for getting around blocks.</p>
+
+<p>On top of using the same port, QUIC traffic is inherently encrypted with <strong>TLS 1.3</strong>, the very latest version of the encryption standard used by HTTPS. This means the actual data payload is scrambled and unreadable to anyone inspecting the network traffic. So, not only does it look like HTTPS from the outside, but the contents are also just as private. This double layer of camouflage makes it extremely challenging for network administrators to distinguish your VPN connection from someone just browsing the web.</p>
+    
+    <h2 id="quic-vs-standard-wireguard">How does OllaVPN&#39;s QUIC mode compare to standard WireGuard?</h2>
+    <p class="short-answer">OllaVPN's QUIC mode offers better performance and block resistance in challenging network environments compared to standard WireGuard, while still providing the same strong post-quantum-ready encryption.</p>
+
+QUIC mode and standard WireGuard both use the same underlying <a href="/blog/wireguard-explained">WireGuard protocol</a>, meaning you get the same top-tier security and our post-quantum-ready encryption regardless of which one you choose. The main difference lies in how they handle the transport layer. Standard WireGuard typically uses UDP, which is fast but can be more easily blocked by firewalls or throttled by ISPs. QUIC, on the other hand, builds on UDP but adds features like stream multiplexing and connection migration, making it more resilient.
+
+For most users, especially on stable, unrestricted
+    
+    <h2 id="where-quic-helps">Where will OllaVPN&#39;s QUIC mode help you the most?</h2>
+    <p class="short-answer">OllaVPN's QUIC mode excels in highly restrictive network environments like corporate Wi-Fi, university networks, and when traveling to countries with strict internet censorship.</p>
+
+<p>You know the drill: you're trying to get some work done on <strong>corporate Wi-Fi</strong>, or maybe stream a show in your hotel, and suddenly nothing works. Often, these networks use aggressive firewalls to block VPN traffic, either intentionally or as a side effect of their security policies. QUIC mode is designed to look like regular HTTPS traffic, making it much harder for these firewalls to detect and block. It helps you bypass these restrictions and get connected when other VPNs might struggle.</p>
+
+<p>This is especially true for places like <strong>university networks</strong> or public Wi-Fi hotspots, which can be notoriously finicky. They often have strict rules about what kind of internet traffic is allowed, and traditional VPN protocols can stick out like a sore thumb. Because QUIC is built on UDP and uses a protocol that's very similar to what your browser uses for secure websites, it tends to fly under the radar, letting you maintain your privacy without constant connection drops.</p>
+
+<p>Beyond that, QUIC mode is your best friend when you're dealing with <strong>hotel captive portals</strong> or when you're on <strong>travel</strong>, particularly in countries with strong internet censorship. Many governments employ deep packet inspection to identify and block VPN connections. QUIC's design makes it more resilient to this kind of interference, giving you a much better chance of getting online and staying connected, even when other VPNs are being actively blocked. It's all about making your VPN traffic blend in, allowing you to sidestep those pesky firewalls and browse freely.</p>
+    
+    <h2 id="enable-quic-mode">How do you enable QUIC mode in the OllaVPN apps?</h2>
+    <p class="short-answer">You can enable QUIC mode directly in the OllaVPN app settings menu on both desktop and mobile platforms with a simple one-click enable.</p>
+
+<p>Switching to QUIC is pretty straightforward. Whether you're on your desktop or using the OllaVPN app on your phone, just open the app and head over to the settings menu. You'll find a section dedicated to <strong>protocol selection</strong>, and that's where you'll see the option for QUIC. Just tap or click to toggle it on, and you're good to go.</p>
+
+<p>The OllaVPN app handles all the technical bits in the background, so you don't need to worry about manual configurations. Once you've made the switch, your connection will automatically attempt to use QUIC.
+    
+    <h2 id="quic-latency">What kind of latency does QUIC mode add compared to plain WireGuard?</h2>
+    <p class="short-answer">QUIC mode adds a negligible amount of latency compared to plain WireGuard in most scenarios, and you're unlikely to notice it unless you're on a very high-speed connection.</p>
+<p>When you're using OllaVPN's QUIC mode, you're essentially adding another layer on top of WireGuard. WireGuard itself is already incredibly efficient and fast, but QUIC is designed to handle tricky network conditions even better. This extra layer does introduce a tiny bit of processing overhead, which technically translates to a fractional increase in latency. However, we're talking about milliseconds here, not whole seconds.</p>
+<p>For most users, especially those on our free 10 Mbps plan, this latency impact will be completely imperceptible. Your internet connection's inherent latency, the distance to the VPN server, and other factors will have a far greater effect on your overall speed experience. You'd really only start to notice this kind of overhead if you were pushing the limits on a very fast connection, like the 10 Gbps available with OllaVPN Plus, where every millisecond might theoretically count for specific, latency-sensitive applications.</p>
+<p>Think of it this way: <strong>Latency vs. Reliability</strong>. QUIC isn't primarily about making things faster in perfect conditions; it's about making them more reliable and consistent in imperfect conditions. So, while there's a theoretical latency overhead, the trade-off is a connection that's much more resilient to packet loss and network congestion, which can actually make your overall experience feel faster and smoother when your network is struggling.</p>
+    
+    <h2 id="quic-vs-obfuscation">How does QUIC compare to other obfuscation methods like Shadowsocks?</h2>
+    <p class="short-answer">QUIC offers a unique form of obfuscation that's often more effective and harder to detect than methods like Shadowsocks or stunnel because it blends in with legitimate internet traffic.</p>
+
+When you're trying to get around internet restrictions, methods like Shadowsocks or <a href="/blog/what-is-stunnel">stunnel</a> work by wrapping your traffic in a way that makes it look like something else, or by using specific protocols designed for evading censorship. The problem is, these methods can often be identified by advanced network monitoring techniques, specifically <strong>deep packet inspection (DPI)</strong>. Regimes that use DPI can learn the "fingerprint" of Shadowsocks or stunnel traffic and then block it outright, even if they can't see what's inside. It's like wearing a disguise that, while effective, still looks like "a person in a disguise."
+
+QUIC, on the other hand, is the underlying protocol for HTTP/3, meaning it's how a huge chunk of the modern internet's legitimate traffic (like YouTube, Google, and many other major websites) already travels. When you send your VPN traffic over QUIC, it genuinely looks like regular, encrypted web browsing to deep packet inspection systems. This makes detection significantly harder because blocking QUIC would mean blocking a vast amount of legitimate internet activity, which is usually undesirable for the censor. It's not a disguise; it's you blending into a very large crowd where everyone looks similar.
+
+While Shadowsocks and stunnel have their uses and can be quite effective in many scenarios, QUIC's advantage comes from its ubiquity and its design as a core internet protocol rather than a dedicated obfuscation tool. This gives it a natural stealth that other methods often lack, improving both its effectiveness against sophisticated censorship and its <strong>ease of use</strong>, as it often just works without needing complex configuration tweaks.
+    
+    <h2 id="quic-free-plan">Is QUIC mode included in OllaVPN&#39;s free plan?</h2>
+    <p class="short-answer">Yes, QUIC mode is fully included in OllaVPN's free plan, just like every other feature we offer.</p>
+
+<p>We don't hold back any features for our free users, including advanced options like QUIC mode. You get access to every country in our network, the kill switch, in-tunnel DNS, and our post-quantum-ready encryption, all for $0 forever. The only real difference between our free plan and OllaVPN Plus is speed: you get a consistent 10 Mbps on the free plan, which is plenty for HD streaming, browsing, and most gaming.</p>
+
+<p>QUIC mode is particularly useful if you're on a very restrictive network, like some public Wi-Fi hotspots or corporate firewalls. It uses UDP, which is often less aggressively blocked than TCP, making it easier for you to establish and maintain a VPN connection. We want everyone to have the best possible experience, regardless of their network conditions, which is why it's a core part of the free offering.</p>
+
+<p>You can enable QUIC mode right within the OllaVPN app, and it works seamlessly without any special configuration. There's no catch, no hidden fees, and no need for a credit card. We don't log your activity or sell your data; the free plan is truly <a href="/free-vpn-explained">funded by our Plus subscribers</a>, ensuring you get a private, secure connection without compromise.</p>
+    
+    <h2 id="when-to-use-wireguard">When might you choose plain WireGuard over QUIC mode?</h2>
+    <p class="short-answer">You'd choose plain WireGuard over QUIC mode when you're on an unrestricted network and want the absolute maximum raw speed and minimal overhead.</p>
+
+QUIC mode is fantastic for getting around tough network restrictions, but it does introduce a tiny bit more overhead because it has to wrap your WireGuard traffic in an additional layer. If you're not in a situation where you need to bypass firewalls, deep packet inspection, or other network blocks, then sticking with the standard WireGuard protocol can offer a marginally faster experience.
+
+Think of it this way: QUIC is like putting your car on a special transport truck to get it past a tricky roadblock. It works great, but if there's no roadblock, you're better off just driving the car directly. For day-to-day browsing, streaming, and even gaming on an open network, the difference might not be noticeable, but for tasks where every millisecond counts, or when you're pushing the limits of your connection, <strong>raw speed</strong> can be a factor.
+
+This is especially true if you're a <a href="/plus">OllaVPN Plus</a> subscriber, where you have access to speeds up to 10 Gbps. On those kinds of connections, even the slightest additional overhead from QUIC could theoretically impact your maximum throughput. For most users on <strong>unrestricted networks</strong>, WireGuard offers a streamlined, secure, and incredibly fast VPN experience with minimal overhead.
+    
+    <h2 id="post-quantum-ready">What does &#39;post-quantum-ready&#39; encryption mean for QUIC mode?</h2>
+    <p class="short-answer">For QUIC mode, 'post-quantum-ready' encryption means your data is protected against potential decryption by future quantum computers, even if those computers can break traditional encryption methods.</p>
+
+<p>You've probably heard about quantum computers and how they could break today's encryption. While true quantum computers that can do this aren't here yet, they're not science fiction either. That's why OllaVPN is built with <strong>post-quantum-ready encryption</strong> from the ground up. It's about future-proofing your privacy and security, ensuring that even if someone records your encrypted traffic today, they won't be able to decrypt it years from now when quantum computers become powerful enough.</p>
+
+<p>This commitment to <a href="/security">advanced security</a> extends to our QUIC mode. QUIC is a newer internet transport protocol that's great for bypassing restrictive networks and improving speed, especially on mobile. But because it's newer, ensuring its cryptographic strength against future threats is crucial. We've integrated post-quantum algorithms into QUIC mode to protect your connections, meaning your data remains private and secure against even theoretical future attacks.</p>
+
+<p>Think of it as an extra layer of defense. Most VPNs use standard encryption that's strong today but vulnerable to quantum computers tomorrow. OllaVPN's approach is designed to withstand that future threat, making it a significant differentiator. It's not just about protecting your browsing today; it's about making sure your past and future online activities stay truly private, no matter what technological advancements come our way.</p>
+    
+
+    <div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What is QUIC and why are VPNs adopting it?</li>
+        <li>Why do regular VPN protocols like WireGuard get blocked?</li>
+        <li>How does QUIC make VPN traffic look like normal web browsing?</li>
+        <li>How does OllaVPN&amp;#39;s QUIC mode compare to standard WireGuard?</li>
+        <li>Where will OllaVPN&amp;#39;s QUIC mode help you the most?</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      
+      <h3>Is a QUIC VPN faster than a WireGuard VPN?</h3>
+      <p>Not directly. While QUIC can offer speed and reliability, in a VPN context, its main role is bypassing blocks. OllaVPN&#39;s free plan caps both at 10 Mbps. For raw speed on open networks, plain WireGuard might have slightly less overhead. QUIC&#39;s real advantage is getting you connected when WireGuard can&#39;t, not necessarily making it faster.</p>
+      
+      <h3>Will QUIC mode work behind a captive portal?</h3>
+      <p>Yes, but with caveats. QUIC mode is designed to look like normal HTTPS traffic, which often gets through captive portals that block other VPNs. You might still need to complete the portal&#39;s login process first, but once you&#39;re past that, QUIC stands a much better chance of connecting than standard WireGuard.</p>
+      
+      <h3>Does QUIC mode use port 443?</h3>
+      <p>Yes, it typically does! This is a big part of why QUIC mode is so effective at bypassing restrictions. By using UDP port 443, it mimics standard HTTPS web traffic. This makes it incredibly difficult for network firewalls and deep packet inspection systems to distinguish it from regular, allowed internet activity.</p>
+      
+      <h3>Will my workplace IT detect QUIC VPN traffic?</h3>
+      <p>It&#39;s much harder for them to detect. Because QUIC traffic looks so much like regular HTTPS, most basic network monitoring tools won&#39;t flag it as a VPN. Advanced, dedicated deep packet inspection might, but it&#39;s significantly more challenging for them than detecting standard VPN protocols. It&#39;s designed to blend in.</p>
+      
+      <h3>Is QUIC mode included in the free plan?</h3>
+      <p>Absolutely! OllaVPN&#39;s QUIC mode is fully available on our free plan. You get 10 Mbps speed, every country in our network, and all our security features, including post-quantum-ready encryption, with QUIC mode enabled. No credit card, no email, just free privacy, forever.</p>
+      
+      <h3>Does QUIC mode work on cellular data?</h3>
+      <p>Yes, it does! QUIC mode isn&#39;t just for Wi-Fi. If your cellular provider is throttling or blocking VPN traffic, or if you&#39;re in an area with particularly restrictive mobile networks, QUIC mode can often help you establish a stable and secure connection, just like it would on a wired or Wi-Fi network.</p>
+      
+      <h3>Can my ISP throttle QUIC the way they throttle other VPNs?</h3>
+      <p>It&#39;s much more difficult for them to do so. Since QUIC looks like regular HTTPS, an ISP would have to throttle all HTTPS traffic to effectively throttle QUIC VPN traffic, which would break most of the internet. This makes it a very effective way to bypass VPN throttling and keep your connection consistent.</p>
+      
+      <h3>Does QUIC mode work in China or other heavily-restricted networks?</h3>
+      <p>It has a significantly higher chance of working than standard VPN protocols. While no VPN can guarantee 100% uptime in heavily-restricted regions like China due to evolving censorship, QUIC&#39;s ability to mimic HTTPS gives it a strong advantage in bypassing sophisticated firewalls. It&#39;s definitely worth trying.</p>
+      
+      <h3>Will I get the full 10 Mbps free speed in QUIC mode?</h3>
+      <p>Yes, you will. The 10 Mbps speed cap on OllaVPN&#39;s free plan applies regardless of whether you&#39;re using standard WireGuard or QUIC mode. So, you get the same reliable speed for browsing, streaming HD video, and video calls, even with QUIC&#39;s enhanced block resistance. If you need more, OllaVPN Plus offers 10 Gbps.</p>
+      
+      <h3>Is QUIC encrypted the same way as WireGuard?</h3>
+      <p>QUIC uses TLS 1.3 for its encryption, which is very robust and widely used for secure web traffic. OllaVPN layers its post-quantum-ready encryption on top of this, ensuring your data is secured to the highest standards, similar to how WireGuard handles its encryption. Both are extremely secure.</p>
+      
+      <h3>Will QUIC mode drain my phone battery faster?</h3>
+      <p>Not significantly more than standard VPN usage. While QUIC might have a slight overhead compared to plain WireGuard, it&#39;s generally designed to be efficient. Any difference in battery drain would likely be minimal and outweighed by the benefit of being able to connect at all in restrictive environments.</p>
+      
+      <h3>Do I need to install anything special to use QUIC mode?</h3>
+      <p>Nope, nothing extra! If you have the OllaVPN app, you already have everything you need. QUIC mode is built right into our application. You just need to select it from the protocol settings within the app, and you&#39;re good to go. It&#39;s designed for simplicity and ease of use, with no fuss.</p>
+      
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=Free%20QUIC%20VPN%3A%20Break%20Through%20Network%20Blocks%20with%20OllaVPN&amp;url=https%3A%2F%2Follavpn.com%2Ffree-quic-vpn" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Ffree-quic-vpn" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Ffree-quic-vpn&amp;t=Free%20QUIC%20VPN%3A%20Break%20Through%20Network%20Blocks%20with%20OllaVPN" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Ffree-quic-vpn&amp;title=Free%20QUIC%20VPN%3A%20Break%20Through%20Network%20Blocks%20with%20OllaVPN" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related">
+      <h2>Related reading</h2>
+      <ul><ul class="related-cards">
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-wireguard-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free WireGuard VPN</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn-for-india"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN that works for users in India</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-post-quantum-cryptography"><span class="card-tag">PRIVACY</span><span class="card-title">What is post-quantum cryptography?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a DNS leak?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/five-eyes-nine-eyes-fourteen-eyes"><span class="card-tag">PRIVACY</span><span class="card-title">Five Eyes, Nine Eyes, and Fourteen Eyes explained</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul>
+    </div>
+
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      
+      <li><a href="#what-is-quic">What is QUIC and why are VPNs adopting it?</a></li>
+      
+      <li><a href="#why-vpns-get-blocked">Why do regular VPN protocols like WireGuard get blocked?</a></li>
+      
+      <li><a href="#quic-looks-like-https">How does QUIC make VPN traffic look like normal web browsing?</a></li>
+      
+      <li><a href="#quic-vs-standard-wireguard">How does OllaVPN&#39;s QUIC mode compare to standard WireGuard?</a></li>
+      
+      <li><a href="#where-quic-helps">Where will OllaVPN&#39;s QUIC mode help you the most?</a></li>
+      
+      <li><a href="#enable-quic-mode">How do you enable QUIC mode in the OllaVPN apps?</a></li>
+      
+      <li><a href="#quic-latency">What kind of latency does QUIC mode add compared to plain WireGuard?</a></li>
+      
+      <li><a href="#quic-vs-obfuscation">How does QUIC compare to other obfuscation methods like Shadowsocks?</a></li>
+      
+      <li><a href="#quic-free-plan">Is QUIC mode included in OllaVPN&#39;s free plan?</a></li>
+      
+      <li><a href="#when-to-use-wireguard">When might you choose plain WireGuard over QUIC mode?</a></li>
+      
+      <li><a href="#post-quantum-ready">What does &#39;post-quantum-ready&#39; encryption mean for QUIC mode?</a></li>
+      
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<script>
+  // Scroll-spy: highlight current section in right rail TOC.
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

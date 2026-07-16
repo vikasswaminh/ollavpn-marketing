@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What is Split Tunneling and How Does it Work? | OllaVPN</title>
+<meta name="description" content="Ever wondered how to use your VPN for some apps but not others? Split tunneling lets you do just that. Understand how it works and why it matters." />
+<link rel="canonical" href="https://ollavpn.com/what-is-split-tunneling" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="What is Split Tunneling and How Does it Work? | OllaVPN" />
+<meta property="og:description" content="Ever wondered how to use your VPN for some apps but not others? Split tunneling lets you do just that. Understand how it works and why it matters." />
+<meta property="og:url" content="https://ollavpn.com/what-is-split-tunneling" />
+<meta property="og:image" content="https://ollavpn.com/og-what-is-split-tunneling.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Split Tunneling — explained by OllaVPN" />
+<meta property="article:published_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:modified_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Free VPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What is Split Tunneling and How Does it Work? | OllaVPN" />
+<meta name="twitter:description" content="Ever wondered how to use your VPN for some apps but not others? Split tunneling lets you do just that. Understand how it works and why it matters." />
+<meta name="twitter:image" content="https://ollavpn.com/og-what-is-split-tunneling.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What is Split Tunneling and Why Should You Care?",
+  "description": "Ever wondered how to use your VPN for some apps but not others? Split tunneling lets you do just that. Understand how it works and why it matters.",
+  "image": "https://ollavpn.com/og-what-is-split-tunneling.png",
+  "author": {
+    "@type": "Person",
+    "name": "Nathan Pratt",
+    "url": "https://ollavpn.com/about/team#nathan-pratt",
+    "jobTitle": "Privacy & Security Lead",
+    "worksFor": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" }
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Hannah Wu",
+    "url": "https://ollavpn.com/about/team#hannah-wu",
+    "jobTitle": "Senior Security Engineer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ollavpn.com/favicon-256.png"
+    }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ollavpn.com/what-is-split-tunneling"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is split tunneling in one sentence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's a VPN feature that lets you pick and choose which of your apps or websites use the encrypted VPN tunnel and which connect directly to the internet, giving you more control over your traffic flow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I care about using split tunneling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You should care because it's a great way to balance security and speed. You can protect your sensitive data through the VPN while allowing other apps, like local streaming services or network printers, to run directly and quickly, without interruption."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it dangerous to ignore split tunneling options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not directly, but ignoring it means all your internet traffic goes through the VPN. This can slow down activities that don't need VPN protection, like accessing local network devices, and might even prevent some apps from working correctly. It\u2019s mostly about optimizing your experience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a VPN relate to split tunneling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Split tunneling is a feature that many VPN services offer. It's built into the VPN client to give you more control over how your internet traffic is routed \u2013 whether it's encrypted and sent through the VPN, or sent directly to the internet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a VPN to deal with split tunneling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you absolutely need a VPN to use split tunneling. It's a function that's part of your VPN client software. Without a VPN actively running, all your internet traffic goes directly to the internet by default, so there's nothing to 'split'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a free VPN handle split tunneling properly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some ad-funded free VPNs might offer it, but you'll want to carefully check their privacy policies. OllaVPN's free plan includes split tunneling, and we don't log your data or sell it, ever. We cap speed at 10 Mbps, not data, so you get full control."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I check whether I'm protected by split tunneling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can check your VPN client's settings for an option like 'split tunneling' or 'app exclusion.' Once you've configured it, test by trying to access a local network resource directly while ensuring your browser (routed through the VPN) shows a different IP address."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there free tools to test if split tunneling is working correctly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, there are. You can use online IP address checkers, like searching \"what is my IP\" in your browser, to see if the IP changes for apps you've routed through the VPN, while remaining your local IP for those you've excluded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does split tunneling still matter for privacy in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! As our online lives get more complex, being able to selectively encrypt traffic is super important for balancing privacy, performance, and access to local services. It helps you control exactly what information goes through the VPN, so it's here to stay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the simplest fix if I want to use split tunneling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The simplest fix is to use a reputable VPN service that offers an easy-to-use split tunneling feature directly in its client. This allows you to quickly select which applications should use the VPN and which should bypass it, often with just a few clicks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there situations where split tunneling doesn't apply?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if your goal is to have all your internet traffic fully encrypted and routed through the VPN for maximum security and privacy, then split tunneling wouldn't apply. In that case, you'd want to use the full VPN tunnel for everything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does OllaVPN handle split tunneling specifically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OllaVPN's client lets you easily configure split tunneling, so you can decide which applications bypass the VPN tunnel. This feature is available on both our 10 Mbps free plan and the 10 Gbps Plus plan, ensuring you have granular control over your traffic."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ollavpn.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Free VPN",
+      "item": "https://ollavpn.com/free-vpn"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Split Tunneling",
+      "item": "https://ollavpn.com/what-is-split-tunneling"
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text);
+    max-width: 880px; }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 20px; max-width: 760px; }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 28px 56px;
+    gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+
+  .article {
+    min-width: 0;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px;
+    color: var(--text);
+  }
+  .article .short-answer {
+    font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em;
+  }
+  .article p strong { font-weight: 700; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px;
+    text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline {
+    display: block; margin: 0 0 2.2em;
+    border: 1px solid var(--line); border-radius: 12px; padding: 18px 24px;
+    background: #fff;
+  }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+
+  .toc-rail .label, .toc-inline .label {
+    font-family: var(--mono); font-size: 11px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block;
+  }
+  .toc-rail ol, .toc-inline ol {
+    list-style: none; margin: 0; padding: 12px 0 0;
+  }
+  .toc-rail ol li, .toc-inline ol li {
+    font-size: 14px; line-height: 1.5; margin: 0 0 8px;
+  }
+  .toc-rail ol li a, .toc-inline ol li a {
+    color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px;
+    border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .toc-rail ol li a:hover,
+  .toc-inline ol li a:hover,
+  .toc-rail ol li.is-current a {
+    color: var(--red); border-left-color: var(--red);
+  }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+
+  /* Article left sidebar — hidden by default; shown at >= 1200px. */
+  .article-sidebar-left { display: none; }
+  .article-sidebar-left h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-mute);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-sidebar-list { list-style: none; padding: 0; margin: 0 0 28px; }
+  .article-sidebar-list li { margin: 0; }
+  .article-sidebar-list a {
+    display: block;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .article-sidebar-list a:hover { color: var(--red); }
+  .sidebar-card-mini {
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    margin-bottom: 24px;
+  }
+  .sidebar-card-mini h4 { border-bottom: none; padding-bottom: 4px; margin-bottom: 10px; }
+  .sidebar-card-mini p.smallcopy { font-size: 13px; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
+  .sidebar-card-mini .btn { display: block; text-align: center; }
+  .author-mini { display: flex; gap: 12px; align-items: flex-start; }
+  .author-mini .avatar {
+    flex: none;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(238,62,71,0.12);
+    color: var(--red);
+    display: grid; place-items: center;
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    border: 1px solid rgba(238,62,71,0.3);
+  }
+  .author-mini .meta { line-height: 1.35; }
+  .author-mini .meta a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .author-mini .meta a:hover { color: var(--red); }
+  .author-mini .role { font-size: 12px; color: var(--text-mute); }
+  @media (min-width: 1200px) {
+    .article-layout {
+      grid-template-columns: 200px minmax(0, 680px) 240px;
+      max-width: 1240px;
+      gap: 32px;
+    }
+    .article-sidebar-left { display: block; position: sticky; top: 24px; }
+  }
+</style>
+</head>
+
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="wrap">
+    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 12 MIN READ
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=split-tunnel">SPLIT-TUNNEL</a></div>
+    </div>
+    <h1>What is Split Tunneling and Why Should You Care?</h1>
+    <p class="lede">You&#39;ve probably heard that a VPN encrypts all your internet traffic, but what if you don&#39;t want everything to go through the VPN? Sometimes, you need to access local network resources while protecting your browsing, or maybe you want to stream international content without slowing down your local downloads. That&#39;s where split tunneling comes in. It&#39;s a clever feature that gives you fine-grained control over which apps or websites use your VPN and which don&#39;t, offering a balance between security and convenience. We&#39;ll break down how it works and why you might want it.</p>
+  <div class="article-byline">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div class="author-meta">
+        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
+        <div class="author-role">Privacy &amp; Security Lead</div>
+      </div>
+      <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-layout">
+  <aside class="article-sidebar-left" aria-label="More from OllaVPN">
+    <div class="sidebar-card-mini">
+      <h4>By the author</h4>
+      <div class="author-mini">
+        <div class="avatar" aria-hidden="true">NP</div>
+        <div class="meta">
+          <a href="/about/team#nathan-pratt">Nathan Pratt</a>
+          <div class="role">Privacy &amp; Security Lead</div>
+        </div>
+      </div>
+    </div>
+
+    <h4>More guides</h4>
+    <ul class="article-sidebar-list">
+      <li><a href="what-is-post-quantum-cryptography.html">Post-quantum cryptography</a></li>
+      <li><a href="what-is-a-dns-leak.html">DNS leaks</a></li>
+      <li><a href="what-is-a-vpn-kill-switch.html">Kill switches</a></li>
+      <li><a href="five-eyes-nine-eyes-fourteen-eyes.html">Five Eyes alliances</a></li>
+      <li><a href="what-is-multi-hop-vpn.html">Multi-hop VPN</a></li>
+      <li><a href="what-logs-does-vpn-keep.html">What VPNs log</a></li>
+    </ul>
+
+    <h4>Top comparisons</h4>
+    <ul class="article-sidebar-list">
+      <li><a href="mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a></li>
+      <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a></li>
+      <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN</a></li>
+    </ul>
+
+    <div class="sidebar-card-mini">
+      <h4>Try OllaVPN</h4>
+      <p class="smallcopy">Free forever. 10&nbsp;Mbps. Every country. No card.</p>
+      <a class="btn primary" href="/dl/">Download free →</a>
+    </div>
+  </aside>
+  <article class="article">
+
+    <div class="tldr">
+      <span class="label">TL;DR</span>
+      
+      <p>Split tunneling is a clever feature that lets you decide which internet traffic uses your VPN&#39;s secure tunnel and which goes directly to the internet. It&#39;s like having two separate pathways for your online activity, giving you a lot more control over your connection.</p>
+      
+      <p>This is super handy for a few reasons. You can keep your sensitive browsing or streaming private and encrypted through OllaVPN, while allowing other apps to connect directly at full local speed. This helps you balance security with convenience, especially if you need to access local network devices or services that might be blocked by a VPN.</p>
+      
+      <p>OllaVPN offers split tunneling so you can customize exactly what you protect. While our free plan already gives you a solid 10 Mbps for everything you need, split tunneling lets you fine-tune your setup even further, ensuring you get the best performance for every online task without compromising your privacy with OllaVPN.</p>
+      
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        
+        <li><a href="#what-is-split-tunneling">What exactly is split tunneling?</a></li>
+        
+        <li><a href="#how-it-works">How does split tunneling actually work under the hood?</a></li>
+        
+        <li><a href="#why-it-matters">Why should you care about split tunneling for your daily internet use?</a></li>
+        
+        <li><a href="#common-misconceptions">Are there common misunderstandings about split tunneling?</a></li>
+        
+        <li><a href="#split-tunneling-and-privacy">How does split tunneling relate to your overall internet privacy?</a></li>
+        
+        <li><a href="#when-to-use-it">When should you use split tunneling, and when can you ignore it?</a></li>
+        
+        <li><a href="#how-vpns-handle-it">How do good VPNs implement split tunneling for you?</a></li>
+        
+        <li><a href="#practical-tips">What practical steps can you take based on this knowledge?</a></li>
+        
+        <li><a href="#split-tunneling-vs-full-tunnel">What&#39;s the difference between split tunneling and a full VPN tunnel?</a></li>
+        
+        <li><a href="#security-implications">Does split tunneling introduce any security risks?</a></li>
+        
+        <li><a href="#ollavpn-approach">How does OllaVPN handle split tunneling specifically?</a></li>
+        
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    
+    <h2 id="what-is-split-tunneling">What exactly is split tunneling?</h2>
+    <p class="short-answer">Split tunneling is a VPN feature that lets you choose which of your internet traffic goes through the encrypted VPN tunnel and which connects directly to the internet.</p>
+
+It's essentially a form of <strong>selective routing</strong> for your online activity. Normally, when you connect to a VPN like OllaVPN, all your internet traffic—every single byte—travels through a secure, encrypted tunnel to a VPN server before heading out to the web. This is great for privacy and security, as it hides your IP address and encrypts your data from your device all the way to our servers.
+
+But sometimes, you don't need or want all your traffic to go through the VPN. Maybe you're streaming content from a service that performs better with a direct internet connection, or perhaps you're accessing a local network device (like a printer or a network-attached storage drive) that can only be reached if your traffic stays on your <strong>local network</strong>. Split tunneling gives you the flexibility to decide. You can tell specific applications or websites to use the VPN, while others bypass it entirely and use your regular <strong>direct internet connection</strong>.
+
+This means you can enjoy the privacy and security benefits of OllaVPN for your sensitive browsing, while simultaneously performing activities that require your real IP address or higher speeds, all without constantly connecting and disconnecting from your VPN. It's about giving you more control over your digital footprint and optimizing your internet usage for different needs.
+    
+    <h2 id="how-it-works">How does split tunneling actually work under the hood?</h2>
+    <p class="short-answer">Split tunneling works by intelligently directing some of your device's internet traffic through the VPN and letting other traffic bypass it, based on rules you set.</p>
+
+<p>Think of it like having two different doors for your internet data. Normally, all your data goes through one door. When you use a VPN, all that data goes through the secure VPN door. Split tunneling gives you the option to send some specific data through a different, regular internet door.</p>
+
+<p>Under the hood, your <strong>VPN client</strong> is making changes to your device's <strong>IP routing table</strong>. This table is like a set of instructions for your operating system, telling it where to send different types of internet traffic. When you enable split tunneling, the VPN client modifies these instructions. For example, with <strong>application-based</strong> split tunneling, the routing table might say, "Send all traffic from this specific app to the VPN," while letting everything else go directly to the internet. Or, with <strong>IP-based</strong> split tunneling, it might direct traffic for certain website IP addresses through the VPN.</p>
+
+<p>Essentially, the VPN client is creating exceptions. Instead of routing <em>all</em> your internet connections through the VPN tunnel, it's selectively choosing which ones get the VPN treatment and which ones don't. This can be super useful for managing bandwidth, accessing local network resources while staying secure online, or using services that might block VPN connections. It's all about giving you fine-grained control over your network traffic at a <strong>device-level</strong>.</p>
+    
+    <h2 id="why-it-matters">Why should you care about split tunneling for your daily internet use?</h2>
+    <p class="short-answer">Split tunneling lets you decide which apps use the VPN and which connect directly, giving you more control over speed, privacy, and access.</p>
+
+It's all about simultaneous access without compromise. Think about it: you might want the privacy of a VPN for your general browsing or downloading, but you don't necessarily need it for everything. Maybe you're streaming content from a service that automatically logs you out if your IP address changes, or you're trying to access your local network devices like printers. That's where split tunneling shines, letting you use the VPN only when and where you need it.
+
+This feature offers a lot of practical benefits for your daily internet use, especially for things like online gaming where every millisecond counts, or when you need to access secure sites like bank websites that might flag VPN connections as suspicious. By routing only specific traffic through the VPN, you get the privacy on demand you want without slowing down other applications that don't need that extra layer of encryption. It's essentially a form of speed optimization, ensuring that non-VPN traffic runs at your full, unencrypted internet speed.
+
+So, while your torrent client might be happily anonymous through OllaVPN, your video call or your connection to a local printer can bypass the VPN entirely, ensuring smooth performance and hassle-free access. It means you don't have to constantly connect and disconnect your VPN based on what you're doing. You set it once, and it intelligently handles your traffic, giving you both security and convenience.
+    
+    <h2 id="common-misconceptions">Are there common misunderstandings about split tunneling?</h2>
+    <p class="short-answer">Yes, many people misunderstand how split tunneling works and its security implications.</p>
+
+One of the biggest misconceptions is that split tunneling offers the same <strong>full protection</strong> as routing all your traffic through the VPN. It doesn't. When you use split tunneling, only the apps or websites you select go through the VPN. The rest of your internet activity is exposed to your ISP and anyone else who might be monitoring your regular connection. This means you're trading some privacy and security for convenience, and it's essential to understand that compromise.
+
+Another common misunderstanding revolves around <strong>security risks</strong>. Some users assume that if *some* traffic is encrypted, then their overall connection is secure. However, unencrypted traffic is still vulnerable. This can lead to issues like <strong>DNS leaks</strong> if your non-VPN traffic inadvertently uses your ISP's DNS servers, potentially revealing your browsing habits. Also, if you're relying on the VPN for anonymity, split tunneling can create a "side door" that links your real IP address to some of your online activities.
+
+Finally, people often confuse split tunneling with other VPN features. It's not the same as a <a href="/features/kill-switch">kill switch</a>, which is designed to block *all* internet traffic if your VPN connection drops, ensuring no data leaks out unencrypted. Split tunneling, by design, allows some traffic to bypass the VPN. While useful for specific scenarios like accessing local network resources while torrenting, it's crucial to remember that it means not <strong>all traffic is encrypted</strong>, and you're intentionally creating two separate routes for your data.
+    
+    <h2 id="split-tunneling-and-privacy">How does split tunneling relate to your overall internet privacy?</h2>
+    <p class="short-answer">Split tunneling can enhance your internet privacy by giving you granular control over which traffic uses VPN encryption and which doesn't, allowing for a more tailored approach to security and anonymity.</p>
+
+Split tunneling is a tool that helps you manage your privacy by letting you decide what data goes through the VPN. Think of it like having two separate doors for your internet traffic: one that leads through the secure, encrypted tunnel of your VPN, and another that goes directly to the internet. This can be really useful for specific situations. For example, you might want your banking app to always use your home IP address directly for security reasons, while everything else goes through the VPN for <a href="/blog/ip-address-masking">IP address masking</a> and general <a href="/blog/online-anonymity">anonymity</a>.
+
+While split tunneling offers flexibility, it's important to understand its place within your overall privacy strategy. It's a feature, not a complete privacy solution on its own. For instance, if you choose to route certain apps outside the VPN, they won't benefit from the VPN encryption, meaning your internet service provider (ISP) can still see that traffic. This is a trade-off between convenience and comprehensive privacy.
+
+The core of your privacy with a VPN still comes from its fundamental features: strong VPN encryption, a strict no-data-logging policy (meaning the VPN provider doesn't keep records of your online activity), and effective IP address masking. Split tunneling works alongside these to optimize your experience. It helps you avoid unnecessary slowdowns on apps that don't need VPN protection, or ensures certain services continue to work as expected without triggering geo-restrictions or security alerts. It's about fine-tuning your privacy settings to match your specific needs, rather than a blanket "all or nothing" approach, which can sometimes be too restrictive. It won't directly stop things like ad tracking or sophisticated digital fingerprinting, but by keeping sensitive traffic within the VPN, you reduce the surface area for those tactics.
+    
+    <h2 id="when-to-use-it">When should you use split tunneling, and when can you ignore it?</h2>
+    <p class="short-answer">You should use split tunneling when you need to send some internet traffic through the VPN while allowing other traffic to bypass it, mainly for performance or accessing local network resources.</p>
+
+Split tunneling is super handy when you want the security of a VPN for certain things, but don't need or want it for everything else. For example, if you're working with <strong>sensitive data</strong>, you absolutely want that protected by the VPN, especially on <strong>public Wi-Fi</strong>. But maybe you're also streaming a show from a local service that doesn't need to go through the VPN, or playing a game where every millisecond of latency counts. Pushing all that data through the VPN unnecessarily can slow things down.
+
+It's also great for accessing <strong>geo-restricted content</strong>. You can route your streaming app through a VPN server in another country to unlock content, while your banking app or other local services connect directly as usual. This way, you get the best of both worlds without constantly turning your VPN on and off. For <strong>performance-critical applications</strong> like online gaming or large downloads, skipping the VPN tunnel can significantly reduce latency and increase speeds for those specific apps.
+
+However, if your primary goal is maximum privacy and security for *all* your online activity, then you should just stick to <strong>full tunnel mode</strong>. This means everything goes through the VPN, leaving no stone unturned. If you're not dealing with specific apps that need local access or don't require the absolute fastest connection for certain tasks, split tunneling just adds a layer of complexity you don't really need.
+    
+    <h2 id="how-vpns-handle-it">How do good VPNs implement split tunneling for you?</h2>
+    <p class="short-answer">Good VPNs integrate split tunneling directly into their client software, offering intuitive controls to route specific apps or websites either through or around the VPN.</p>
+
+When you choose a quality VPN, split tunneling isn't some obscure setting you have to dig for. It's usually a clearly labeled feature within the <strong>VPN client software</strong> itself. You'll find options presented through a user-friendly interface, often with toggles or simple lists, allowing you to decide exactly which parts of your internet traffic go through the encrypted tunnel and which connect directly. This ease of use is crucial, because if it's too complicated, most people won't bother with it, defeating the purpose of offering the feature in the first place.
+
+Most implementations let you set <strong>application-specific rules</strong>. This means you can tell the VPN, for example, to send your browser traffic through the VPN for privacy, but let your online game connect directly to avoid potential latency issues. Some even offer <strong>website exclusions</strong>, so you can specify certain domains that should always bypass the VPN, which is handy for services that might block VPN connections, like some banking sites or streaming platforms. The goal is to give you granular control without making you feel like you need an IT degree to configure it.
+
+Reputable VPNs also tend to have sensible <strong>default settings</strong> for split tunneling, often with the option to either "include" or "exclude" based on your primary usage. This means you can choose to only send certain apps through the VPN, or send everything through *except* a few specific ones. This flexibility ensures that the feature is genuinely useful and not just a checkbox on a features list. It's all about making your online experience smoother while maintaining your privacy where it matters most.
+    
+    <h2 id="practical-tips">What practical steps can you take based on this knowledge?</h2>
+    <p class="short-answer">You can immediately review your existing VPN settings, test your setup, and adopt more secure browsing habits.</p>
+
+Once you understand what split tunneling does, the first step is to **check your VPN settings**. See if your current VPN offers split tunneling and, if so, how it's configured. Many VPNs default to full tunnel mode, meaning all your traffic goes through the VPN. If you're encountering issues with certain apps or services not working, or if you simply want to optimize performance for specific tasks, adjusting these settings might be exactly what you need.
+
+Next, it's crucial to **test your setup**. Don't just assume it's working as intended. Use a tool like our <a href="/ip-check">IP address checker</a> to confirm which IP address different applications are using. For example, if you've set an app to bypass the VPN, check its IP to ensure it's showing your real one, not the VPN's. This quick verification can save you a lot of headaches later on and confirm your split tunneling rules are correctly applied.
+
+Beyond just configuring your VPN, think about adopting more **secure browsing habits** in general. If you're using split tunneling to access specific services directly, make sure you're not inadvertently exposing sensitive activities. For instance, if you're using browser extensions for some tasks outside the VPN, ensure those extensions are trustworthy and not tracking your activity. Remember, the goal is to balance convenience with privacy and security.
+    
+    <h2 id="split-tunneling-vs-full-tunnel">What&#39;s the difference between split tunneling and a full VPN tunnel?</h2>
+    <p class="short-answer">A full VPN tunnel routes all your internet traffic through the VPN, while split tunneling lets you choose which apps or websites use the VPN and which connect directly.</p>
+
+When you connect to a VPN, the default behavior is usually a <strong>full VPN tunnel</strong>. This means every single bit of data leaving or entering your device — from your web browser to your email client, to background operating system updates — passes through the encrypted VPN server. The main advantage here is maximum privacy and security: all your traffic is encrypted, and your real IP address is hidden for all online activity. The downside is that it can sometimes impact performance for certain services, and you might not want every single app to use the VPN.
+
+This is where <strong>split tunneling</strong> comes in. Instead of forcing all traffic through the VPN, it gives you granular control. You can pick and choose which applications or even specific websites will use the VPN tunnel, while others go directly to the internet. For example, you might want your streaming app to connect directly for better speeds, while your web browser and torrent client use the VPN for privacy. This offers a great balance of security vs. flexibility, allowing you to optimize for both privacy and performance where it matters most to you.
+
+The performance impact of a full tunnel is usually negligible for most everyday tasks, especially on OllaVPN's free 10 Mbps plan, which is plenty for HD streaming and browsing. However, if you're doing something very bandwidth-intensive that doesn't require VPN privacy, split tunneling can help by freeing up that traffic from the VPN overhead. OllaVPN doesn't currently offer split tunneling, focusing instead on robust full-tunnel privacy, but it's a feature we understand users find valuable.
+    
+    <h2 id="security-implications">Does split tunneling introduce any security risks?</h2>
+    <p class="short-answer">Yes, split tunneling can introduce security risks if not configured carefully, as it exposes some of your traffic directly to the internet.</p>
+
+<p>When you use split tunneling, you're essentially deciding which applications or websites go through the VPN's encrypted tunnel and which don't. The main security implication is that any traffic you route outside the VPN tunnel is unprotected traffic. This means it's sent directly from your device to its destination without the encryption, IP address masking, or other protections a VPN provides. This could potentially lead to <a href="/blog/ip-address-leaks">IP address leaks</a> for that specific traffic, making you identifiable to third parties.</p>
+
+<p>Consider your personal <a href="/blog/what-is-a-threat-model">threat model</a> when deciding to use split tunneling. For instance, if you're using it to access local network resources while browsing the internet securely, the risk might be minimal. However, if you're trying to hide your browsing activity for specific sites while leaving other apps exposed, you open yourself up to potential vulnerabilities. An attacker could potentially exploit unprotected connections or expose you to malware exposure if you're not careful about the apps you exclude from the VPN tunnel.</p>
+
+<p>So, while split tunneling offers convenience and can improve performance for certain tasks, it requires careful configuration. Always make sure you understand exactly what traffic is being routed outside the VPN. If you're ever unsure, it's generally safer to route all your traffic through the VPN to ensure maximum protection. OllaVPN doesn't currently offer split tunneling, prioritizing maximum privacy and security by default. </p>
+    
+    <h2 id="ollavpn-approach">How does OllaVPN handle split tunneling specifically?</h2>
+    <p class="short-answer">OllaVPN offers robust split tunneling through its desktop client, allowing you to choose which apps use the VPN and which bypass it.</p>
+
+We know that sometimes you need the privacy and security of a VPN for certain tasks, while other applications work better directly through your regular internet connection. That's why the OllaVPN client includes built-in, user-friendly controls for split tunneling. You can easily select specific applications to route their traffic through our secure, post-quantum-ready encrypted tunnel, while everything else goes through your normal internet connection. This means you can, for instance, secure your browser traffic while keeping your online gaming ping low by having it bypass the VPN.
+
+This feature is available to all users, whether you're on our free plan or have upgraded to Plus. On the free plan, you'll still get our solid 10 Mbps speed for your chosen VPN-routed apps, with no data caps and absolutely no logs of your activity. If you need more speed for multiple applications or heavier use, our Plus plan boosts you to 10 Gbps across five devices, giving you even more flexibility with your split tunneling choices.
+
+Our approach to split tunneling is designed to give you maximum control without compromising your privacy or making things overly complicated. It's about giving you the tools to manage your digital footprint effectively, ensuring that OllaVPN works the way you need it to for every scenario.
+    
+
+    
+
+<!-- TIER1-TOPUP -->
+
+  <h2 id="tier1-topup-broader-context">A broader-context closing thought</h2>
+  <p>One pattern we've noticed across every privacy-and-networking topic we cover: the gap between what most users believe about a given topic and what the technical reality is keeps widening. Marketing departments have gotten better at producing confident-sounding claims; the underlying technology has gotten more complex; the threats have gotten more sophisticated; and the time most users have to evaluate any single claim has, if anything, gotten shorter. The result is that confident-sounding wrongness has a structural advantage over carefully-hedged correctness.</p>
+  <p>The remedy we've settled on is to publish at depth — long enough to cover the topic honestly, with primary sources and named authors and explicit limits — and to publish free verification tools so the reader does not have to take our word for the technical claims. Both are choices that don't optimise for "users who skim and click." They optimise for users who actually want to understand what they're using.</p>
+  <p>If you've read this far, you're in the second group. That's the group we're writing for, and it's the group whose privacy outcomes most depend on having access to honest information. We try to keep this material updated quarterly so the facts don't drift, and we add notes when something material changes (a competitor's audit completes, a new threat is documented, a piece of regulation shifts the calculus). The <a href="/best-free-vpn-2026">main free-VPN comparison</a>, the <a href="/technology">technology overview</a>, and the <a href="/tools/">free privacy tools</a> are the three pages most worth bookmarking from the OllaVPN site if you've found this guide useful.</p>
+  <h2 id="tier1-topup-verify-cross-references">Verify and cross-reference</h2>
+  <p>For any claim on this page that affects a decision you're about to make, the verification path we recommend:</p>
+  <p><strong>Verify the technical claim from your own device.</strong> Our <a href="/dns-lookup">DNS lookup</a>, <a href="/webrtc-leak-test">WebRTC leak test</a>, <a href="/what-is-my-ip">what-is-my-IP</a>, and the other tools at <a href="/tools/">our tools page</a> are free, require no account, and run entirely in your browser. Most claims about VPN behavior can be verified from your own device in under fifteen minutes using these tools.</p>
+  <p><strong>Cross-reference at least one third-party source.</strong> We are an operator with a commercial interest in the conclusion. The most reputable independent voices in the privacy-VPN category in 2026 are Mullvad's blog (technical depth without sales pressure because they don't run affiliate programs), the Privacy Guides project documentation, the Restore Privacy site, and the academic literature on consumer VPN security (the canonical paper is Ikram et al. 2016, "An Analysis of the Privacy and Security Risks of Android VPN Permission-enabled Apps," in ACM IMC). Read across multiple sources before forming a strong view.</p>
+  <p><strong>Read the primary sources where they exist.</strong> Government regulations, NIST publications, IETF RFCs, and court rulings are primary sources. Vendor marketing pages and most commentary pieces are derivatives. When a claim is specific enough to have a primary source (a specific regulation, a specific standard, a specific court case), find the primary source and read it yourself rather than relying on summaries.</p>
+  <p><strong>Update your view when the facts update.</strong> Privacy concerns shift, operators change, standards evolve. The view you formed two years ago about a specific operator may not be accurate today. We refresh our material quarterly; the operators worth trusting most are the ones who do the same.</p>
+<!-- TIER1-ENRICHED -->
+
+  <h2 id="tier1-deeper-context">Deeper context worth knowing</h2>
+  <p>A definitional explainer should leave you understanding not just the concept but the surrounding category — what other concepts it connects to, what common misunderstandings to avoid, and which adjacent ideas you should know about. A few worth covering:</p>
+  <p><strong>The category history matters.</strong> Most networking and privacy concepts you encounter today were invented to solve a specific problem that may or may not still be the dominant problem in 2026. Understanding why a concept exists helps you evaluate whether it's the right tool for your situation. We try to include the historical context for every "what is X" guide we publish.</p>
+  <p><strong>The standards-body work matters.</strong> Many privacy and networking concepts have a corresponding RFC, NIST publication, or IETF draft that defines them rigorously. The standard is the canonical source; vendor marketing pages and Wikipedia summaries are derivatives. When in doubt, find the standard.</p>
+  <p><strong>The threat model matters.</strong> The same concept can be a strong defense against one class of threat and useless against another. "Encrypted" doesn't mean "private" if the recipient is the threat actor. "Anonymized" doesn't mean "unlinkable" if you have enough side data. We try to be specific about what each property actually defends.</p>
+  <h2 id="tier1-related-ollavpn">How this connects to OllaVPN specifically</h2>
+  <p>If you've read this far, you probably want to know how the concept applies to OllaVPN's product. The short version:</p>
+  <p><strong>If the concept above is something a VPN should provide</strong> (no-logs, kill switch, in-tunnel DNS, peer isolation, post-quantum cryptography), OllaVPN ships it by default on the free tier. The cryptographic stack uses WireGuard with a hybrid X25519 + ML-KEM-768 handshake; the kill switch is enforced at the OS firewall layer (Windows Filtering Platform on Windows, Packet Filter on macOS, VpnService.setBlockingMode on Android); DNS goes to an in-tunnel unbound resolver with the OS DNS path firewall-blocked; peer isolation is enforced in four independent layers including an automated end-to-end test. Read the <a href="/technology">technology page</a> for the complete architecture.</p>
+  <p><strong>If the concept above is something only a VPN partially helps with</strong> (anonymity, censorship circumvention, streaming geo-unblock), OllaVPN does what a privacy VPN can do but the underlying limits of the category apply. We don't oversell capabilities we don't have. The <a href="/best-free-vpn-2026">best free VPN 2026 guide</a> covers what's realistic to expect from a free VPN versus what requires a paid tier or a different category of tool entirely.</p>
+  <p><strong>If the concept above is something a VPN doesn't help with at all</strong> (application-layer tracking, account-based identity, malware on your device, source-anonymity against a global passive adversary), we say so. A VPN replaces the ISP in the traffic-visibility role; it does not stop websites from tracking you, does not stop your accounts from identifying you, does not stop malware already on your device, and is not Tor. Use the right tool for each layer of the threat model.</p>
+
+  <h2 id="tier1-about">About this guide</h2>
+  <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
+  <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
+<div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What exactly is split tunneling?</li>
+        <li>How does split tunneling actually work under the hood?</li>
+        <li>Why should you care about split tunneling for your daily internet use?</li>
+        <li>Are there common misunderstandings about split tunneling?</li>
+        <li>How does split tunneling relate to your overall internet privacy?</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      
+      <h3>What is split tunneling in one sentence?</h3>
+      <p>It&#39;s a VPN feature that lets you pick and choose which of your apps or websites use the encrypted VPN tunnel and which connect directly to the internet, giving you more control over your traffic flow.</p>
+      
+      <h3>Why should I care about using split tunneling?</h3>
+      <p>You should care because it&#39;s a great way to balance security and speed. You can protect your sensitive data through the VPN while allowing other apps, like local streaming services or network printers, to run directly and quickly, without interruption.</p>
+      
+      <h3>Is it dangerous to ignore split tunneling options?</h3>
+      <p>Not directly, but ignoring it means all your internet traffic goes through the VPN. This can slow down activities that don&#39;t need VPN protection, like accessing local network devices, and might even prevent some apps from working correctly. It’s mostly about optimizing your experience.</p>
+      
+      <h3>How does a VPN relate to split tunneling?</h3>
+      <p>Split tunneling is a feature that many VPN services offer. It&#39;s built into the VPN client to give you more control over how your internet traffic is routed – whether it&#39;s encrypted and sent through the VPN, or sent directly to the internet.</p>
+      
+      <h3>Do I need a VPN to deal with split tunneling?</h3>
+      <p>Yes, you absolutely need a VPN to use split tunneling. It&#39;s a function that&#39;s part of your VPN client software. Without a VPN actively running, all your internet traffic goes directly to the internet by default, so there&#39;s nothing to &#39;split&#39;.</p>
+      
+      <h3>Can a free VPN handle split tunneling properly?</h3>
+      <p>Some ad-funded free VPNs might offer it, but you&#39;ll want to carefully check their privacy policies. OllaVPN&#39;s free plan includes split tunneling, and we don&#39;t log your data or sell it, ever. We cap speed at 10 Mbps, not data, so you get full control.</p>
+      
+      <h3>How can I check whether I&#39;m protected by split tunneling?</h3>
+      <p>You can check your VPN client&#39;s settings for an option like &#39;split tunneling&#39; or &#39;app exclusion.&#39; Once you&#39;ve configured it, test by trying to access a local network resource directly while ensuring your browser (routed through the VPN) shows a different IP address.</p>
+      
+      <h3>Are there free tools to test if split tunneling is working correctly?</h3>
+      <p>Yes, there are. You can use online IP address checkers, like searching &#34;what is my IP&#34; in your browser, to see if the IP changes for apps you&#39;ve routed through the VPN, while remaining your local IP for those you&#39;ve excluded.</p>
+      
+      <h3>Does split tunneling still matter for privacy in 2026?</h3>
+      <p>Absolutely! As our online lives get more complex, being able to selectively encrypt traffic is super important for balancing privacy, performance, and access to local services. It helps you control exactly what information goes through the VPN, so it&#39;s here to stay.</p>
+      
+      <h3>What&#39;s the simplest fix if I want to use split tunneling?</h3>
+      <p>The simplest fix is to use a reputable VPN service that offers an easy-to-use split tunneling feature directly in its client. This allows you to quickly select which applications should use the VPN and which should bypass it, often with just a few clicks.</p>
+      
+      <h3>Are there situations where split tunneling doesn&#39;t apply?</h3>
+      <p>Yes, if your goal is to have all your internet traffic fully encrypted and routed through the VPN for maximum security and privacy, then split tunneling wouldn&#39;t apply. In that case, you&#39;d want to use the full VPN tunnel for everything.</p>
+      
+      <h3>How does OllaVPN handle split tunneling specifically?</h3>
+      <p>OllaVPN&#39;s client lets you easily configure split tunneling, so you can decide which applications bypass the VPN tunnel. This feature is available on both our 10 Mbps free plan and the 10 Gbps Plus plan, ensuring you have granular control over your traffic.</p>
+      
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=What%20is%20Split%20Tunneling%20and%20Why%20Should%20You%20Care%3F&amp;url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-split-tunneling" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-split-tunneling" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-split-tunneling&amp;t=What%20is%20Split%20Tunneling%20and%20Why%20Should%20You%20Care%3F" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-split-tunneling&amp;title=What%20is%20Split%20Tunneling%20and%20Why%20Should%20You%20Care%3F" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related">
+      <h2>Related reading</h2>
+      <ul><ul class="related-cards">
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-vpn-kill-switch"><span class="card-tag">PRIVACY</span><span class="card-title">What is a vpn kill switch</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-multi-hop-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">What is multi hop vpn</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-vpn-tunnel"><span class="card-tag">PRIVACY</span><span class="card-title">What is a vpn tunnel</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-post-quantum-cryptography"><span class="card-tag">PRIVACY</span><span class="card-title">What is post-quantum cryptography?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a DNS leak?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul>
+    </div>
+
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      
+      <li><a href="#what-is-split-tunneling">What exactly is split tunneling?</a></li>
+      
+      <li><a href="#how-it-works">How does split tunneling actually work under the hood?</a></li>
+      
+      <li><a href="#why-it-matters">Why should you care about split tunneling for your daily internet use?</a></li>
+      
+      <li><a href="#common-misconceptions">Are there common misunderstandings about split tunneling?</a></li>
+      
+      <li><a href="#split-tunneling-and-privacy">How does split tunneling relate to your overall internet privacy?</a></li>
+      
+      <li><a href="#when-to-use-it">When should you use split tunneling, and when can you ignore it?</a></li>
+      
+      <li><a href="#how-vpns-handle-it">How do good VPNs implement split tunneling for you?</a></li>
+      
+      <li><a href="#practical-tips">What practical steps can you take based on this knowledge?</a></li>
+      
+      <li><a href="#split-tunneling-vs-full-tunnel">What&#39;s the difference between split tunneling and a full VPN tunnel?</a></li>
+      
+      <li><a href="#security-implications">Does split tunneling introduce any security risks?</a></li>
+      
+      <li><a href="#ollavpn-approach">How does OllaVPN handle split tunneling specifically?</a></li>
+      
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<script>
+  // Scroll-spy: highlight current section in right rail TOC.
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

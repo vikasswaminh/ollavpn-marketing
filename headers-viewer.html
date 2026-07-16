@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HTTP Headers Viewer — See What Any URL Returns | OllaVPN</title>
+<meta name="description" content="Free HTTP header viewer. See every header a URL sends back — security headers, caching, server info, CDN, and more. No signup." />
+<link rel="canonical" href="https://ollavpn.com/headers-viewer" />
+<meta name="theme-color" content="#0B0B12" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="HTTP Headers Viewer — Live, Free" />
+<meta property="og:description" content="See every HTTP response header a URL returns, in seconds." />
+<meta property="og:url" content="https://ollavpn.com/headers-viewer" />
+<meta property="og:image" content="https://ollavpn.com/og-headers-viewer.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HTTP Headers Viewer" />
+<meta name="twitter:description" content="See every HTTP response header a URL returns, in seconds." />
+<meta name="twitter:image" content="https://ollavpn.com/og-headers-viewer.png" />
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+<link rel="stylesheet" href="/tool.css" />
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebApplication", "name": "HTTP Headers Viewer",
+  "applicationCategory": "UtilityApplication", "operatingSystem": "Any",
+  "url": "https://ollavpn.com/headers-viewer",
+  "description": "Free tool that shows the HTTP response headers a URL returns.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "What are HTTP headers?",
+    "acceptedAnswer": { "@type": "Answer", "text": "HTTP headers are small key-value pairs that travel alongside every web request and response. They tell the browser what kind of content is coming back, how to cache it, which security rules to apply, which compression was used, and many other things. The page itself is the body; the headers are the envelope." } },
+  { "@type": "Question", "name": "Why would I want to view a site's HTTP headers?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Three common reasons: debugging your own site (is the caching header right, is the CSP doing what you expect, is the redirect chain clean), inspecting a competitor's tech stack (what server, which CDN, what frameworks), and security review (which security headers are set, are they correct, what's missing)." } },
+  { "@type": "Question", "name": "What is the Server header and is it safe to expose?",
+    "acceptedAnswer": { "@type": "Answer", "text": "The Server header identifies the web server software running on the host — nginx, Apache, Cloudflare, Caddy, IIS. Modern security practice is to keep it generic. Old practice was to expose version numbers, which gives attackers a head start when a CVE drops. If you see 'nginx/1.18.0' that's an information disclosure issue worth fixing." } },
+  { "@type": "Question", "name": "What security headers should every site have?",
+    "acceptedAnswer": { "@type": "Answer", "text": "The four big ones: Strict-Transport-Security (HSTS — forces HTTPS), Content-Security-Policy (CSP — controls what scripts and styles can load), X-Content-Type-Options: nosniff (stops browsers from sniffing the content type), and X-Frame-Options or frame-ancestors (prevents clickjacking). Tools like Mozilla Observatory will score you against these." } },
+  { "@type": "Question", "name": "What does Cache-Control actually do?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Cache-Control tells browsers and intermediate caches how long they can keep the response. Public, immutable, max-age=31536000 means 'cache for a year, never check again' — appropriate for fonts and hashed JS files. no-store means 'don't cache at all' — appropriate for personal data. The wrong value here causes either stale content or slow pages." } },
+  { "@type": "Question", "name": "What is Content-Encoding?",
+    "acceptedAnswer": { "@type": "Answer", "text": "It's the compression used on the response body. The common values are gzip (universal but old), br (Brotli — better compression, supported by all modern browsers), and zstd (newer, even better for big assets). If you see no Content-Encoding header at all, the site is sending uncompressed responses — a quick performance win on most servers." } },
+  { "@type": "Question", "name": "Why does this tool sometimes show 403 even though the site works in my browser?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Some sites use bot-protection services (Cloudflare Bot Management, Akamai Bot Manager) that block server-to-server requests while allowing real browsers through. The 403 isn't an outage, just a 'come back with a real browser' message. It's also why this tool shows the same status code real browsers see — minus the JavaScript challenge step." } },
+  { "@type": "Question", "name": "Do you log the URLs I check?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Standard web-server access logs are kept briefly for security and abuse detection, then rotated. We don't tie checks to your identity, don't sell or share the data, and don't track you across sessions." } } ] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+  { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ollavpn.com/tools" },
+  { "@type": "ListItem", "position": 3, "name": "HTTP Headers Viewer", "item": "https://ollavpn.com/headers-viewer" } ] }
+</script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar"><div class="wrap"><div class="utilbar-left"><span class="green-dot">&#9679;</span> All systems operational <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a></div><div class="utilbar-right"><a href="/technology.html">Trust</a> <span style="opacity:.4;">&middot;</span> <a href="/blog/">Resources</a> <span style="opacity:.4;">&middot;</span> <a href="/contact.html">Contact</a></div></div></div>
+
+<nav class="nav"><div class="nav-inner"><a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a><div class="nav-links"><a href="/free-vpn">Free VPN</a><a href="/apps.html">Apps</a><a href="/dl/">Download</a></div><div class="nav-cta"><a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a><a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a></div></div></nav>
+
+<header class="tool-hero"><div class="wrap">
+  <div class="meta">FREE TOOL · LIVE FETCH · NO SIGNUP
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
+    </div>
+  <h1>HTTP Headers Viewer</h1>
+  <p class="lede">See every HTTP response header a URL returns. Useful for debugging your own site, inspecting a competitor's stack, or auditing security headers (HSTS, CSP, X-Frame-Options) on any public URL.</p>
+</div></header>
+
+<section class="tool-section">
+  <div class="check-card">
+    <form class="check-form" id="check-form" autocomplete="off">
+      <input type="text" id="url-input" placeholder="https://example.com" required spellcheck="false" autocapitalize="off" autocorrect="off" />
+      <button type="submit" id="check-btn">Fetch headers</button>
+    </form>
+    <div class="result" id="result" hidden>
+      <div class="verdict" id="verdict"><span class="dot"></span><span id="verdict-text">Fetching…</span></div>
+      <div class="result-grid">
+        <div class="item"><span class="label">Final URL</span><span class="value" id="r-url">—</span></div>
+        <div class="item"><span class="label">Status</span><span class="value" id="r-status">—</span></div>
+        <div class="item"><span class="label">Response time</span><span class="value" id="r-elapsed">—</span></div>
+      </div>
+      <div id="headers-output"></div>
+    </div>
+    <div class="tool-cta">
+      <p><strong>Browse from a different network</strong> if you want to see what an audience in another country actually receives.</p>
+      <a class="btn primary" href="/free-vpn">Try OllaVPN Free</a>
+    </div>
+  </div>
+</section>
+
+<div class="article-layout">
+  <article class="article">
+    <div class="tldr"><span class="label">TL;DR</span>
+      <p>Every web response carries a set of headers — small key-value pairs telling browsers how to render, cache, secure, and trust the page.</p>
+      <p>This tool fetches a URL from our server and shows you exactly what came back. Useful for debugging your own site, auditing security headers, or inspecting which CDN and frameworks a competitor runs.</p>
+      <p>Pair with the <a href="/ssl-checker">SSL checker</a> and <a href="/is-it-down">uptime checker</a> to get the full picture of a site's health in under a minute.</p>
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page"><span class="label">On this page</span><ol>
+      <li><a href="#what-are-they">What HTTP headers are, in plain English</a></li>
+      <li><a href="#security-headers">The security headers that actually matter</a></li>
+      <li><a href="#caching">Caching headers — getting them right</a></li>
+      <li><a href="#fingerprinting">What headers reveal about the stack</a></li>
+      <li><a href="#use-cases">When to actually use this tool</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol></nav>
+
+    <h2 id="what-are-they">What HTTP headers are, in plain English</h2>
+    <p class="short-answer">They're the envelope around every web response — they tell browsers how to handle the page, how long to cache it, and what security rules apply.</p>
+    <p>When you load a webpage, your browser sends a request, and the server sends back a response. The response has two parts: the body (the actual HTML, JSON, image, whatever you asked for) and the headers (instructions about the body). The body is what you see. The headers are what tell the browser how to treat what it sees.</p>
+    <p>A typical site sends back 15 to 40 headers per response. Some are basic plumbing — <strong>Content-Type</strong>, <strong>Content-Length</strong>. Some are security — <strong>Strict-Transport-Security</strong>, <strong>Content-Security-Policy</strong>. Some are operational — <strong>Cache-Control</strong>, <strong>ETag</strong>, <strong>Server</strong>, <strong>X-Powered-By</strong>. The tool above pulls all of them and surfaces them in order.</p>
+
+    <h2 id="security-headers">The security headers that actually matter</h2>
+    <p class="short-answer">Four of them cover most of the risk surface, and most sites should have all four.</p>
+    <p><strong>Strict-Transport-Security (HSTS)</strong> tells browsers "always use HTTPS for this domain, even if a user types http:// manually." Without it, attackers on the same Wi-Fi can hijack the first request before the redirect. The recommended value is <code>max-age=31536000; includeSubDomains</code>.</p>
+    <p><strong>Content-Security-Policy (CSP)</strong> declares which scripts, styles, images, and frames the page is allowed to load. A tight CSP makes most cross-site scripting (XSS) attacks impossible. CSPs are hard to write correctly — the modern path is to use the <code>script-src 'self' 'nonce-...'</code> pattern and accept that you'll iterate.</p>
+    <p><strong>X-Content-Type-Options: nosniff</strong> stops browsers from second-guessing the Content-Type header. Without it, a file declared as image/jpeg but actually containing JavaScript can sometimes get executed. The header is one line and there's no reason not to set it.</p>
+    <p><strong>X-Frame-Options: DENY</strong> (or the modern <code>Content-Security-Policy: frame-ancestors 'none'</code>) prevents your site from being embedded in an iframe by another site. That's the standard defence against clickjacking attacks.</p>
+
+    <h2 id="caching">Caching headers — getting them right</h2>
+    <p class="short-answer">Wrong caching is the most common cause of "I shipped a fix but users still see the bug."</p>
+    <p>The two headers that matter are <strong>Cache-Control</strong> and <strong>ETag</strong>. Cache-Control tells caches (browser, CDN, proxy) how long they can keep the response without checking back. ETag is a fingerprint that lets caches ask "is this still the latest?" cheaply.</p>
+    <p>The right defaults: hashed assets (CSS, JS, images with content hashes in the URL) get <code>Cache-Control: public, max-age=31536000, immutable</code>. HTML and API responses get <code>Cache-Control: no-cache</code> (or short max-age plus ETag). Personal data gets <code>Cache-Control: no-store, private</code>. The wrong defaults look fine for weeks and then bite you the day you push an emergency fix that nobody can see.</p>
+
+    <h2 id="fingerprinting">What headers reveal about the stack</h2>
+    <p class="short-answer">More than most operators realise — and not always intentionally.</p>
+    <p>The <strong>Server</strong> header often gives away the web server (nginx, Apache, Caddy, IIS), sometimes with the exact version. <strong>X-Powered-By</strong> gives away the framework (Express, PHP, ASP.NET, Rails). <strong>Set-Cookie</strong> with framework-specific names (PHPSESSID, JSESSIONID, _rails_session) gives away the runtime. <strong>X-Cache</strong> or <strong>CF-RAY</strong> headers reveal the CDN.</p>
+    <p>Some of this is fine to expose — Cloudflare is not a secret. Some of it is a small information leak — knowing the exact nginx version helps attackers when a vulnerability surfaces. Best practice is to strip <strong>X-Powered-By</strong>, hide specific version numbers, and let only essential operational headers through.</p>
+
+    <h2 id="use-cases">When to actually use this tool</h2>
+    <p class="short-answer">Five common cases: site debugging, security audit, competitor research, redirect-chain check, and CDN verification.</p>
+    <p>If you ship a site and want to verify your security headers are present, this is the fastest way to see them. If you want to know what server and CDN a competitor uses, the response headers usually reveal both. If you've set up a redirect chain (HTTP → HTTPS → www → final) you can confirm each hop is set up correctly. And if you're auditing your own caching strategy, looking at Cache-Control / ETag side by side with the response time tells you whether the CDN is doing what you think it is.</p>
+
+    <div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What HTTP headers are, in plain English</li>
+        <li>The security headers that actually matter</li>
+        <li>Caching headers — getting them right</li>
+        <li>What headers reveal about the stack</li>
+        <li>When to actually use this tool</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What are HTTP headers?</h3><p>HTTP headers are small key-value pairs that travel alongside every web request and response. They tell the browser what kind of content is coming back, how to cache it, which security rules to apply, which compression was used, and many other things. The page itself is the body; the headers are the envelope.</p>
+      <h3>Why would I want to view a site's HTTP headers?</h3><p>Three common reasons: debugging your own site (is the caching header right, is the CSP doing what you expect, is the redirect chain clean), inspecting a competitor's tech stack (what server, which CDN, what frameworks), and security review (which security headers are set, are they correct, what's missing).</p>
+      <h3>What is the Server header and is it safe to expose?</h3><p>The Server header identifies the web server software running on the host — nginx, Apache, Cloudflare, Caddy, IIS. Modern security practice is to keep it generic. Old practice was to expose version numbers, which gives attackers a head start when a CVE drops.</p>
+      <h3>What security headers should every site have?</h3><p>The four big ones: Strict-Transport-Security (HSTS — forces HTTPS), Content-Security-Policy (CSP — controls what scripts and styles can load), X-Content-Type-Options: nosniff (stops browsers from sniffing the content type), and X-Frame-Options or frame-ancestors (prevents clickjacking).</p>
+      <h3>What does Cache-Control actually do?</h3><p>Cache-Control tells browsers and intermediate caches how long they can keep the response. Public, immutable, max-age=31536000 means 'cache for a year, never check again' — appropriate for fonts and hashed JS files. no-store means 'don't cache at all' — appropriate for personal data.</p>
+      <h3>What is Content-Encoding?</h3><p>It's the compression used on the response body. The common values are gzip (universal but old), br (Brotli — better compression, supported by all modern browsers), and zstd (newer, even better for big assets). If you see no Content-Encoding header at all, the site is sending uncompressed responses — a quick performance win.</p>
+      <h3>Why does this tool sometimes show 403 even though the site works in my browser?</h3><p>Some sites use bot-protection services that block server-to-server requests while allowing real browsers through. The 403 isn't an outage, just a 'come back with a real browser' message.</p>
+      <h3>Do you log the URLs I check?</h3><p>Standard web-server access logs are kept briefly for security and abuse detection, then rotated. We don't tie checks to your identity, don't sell or share the data, and don't track you across sessions.</p>
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Fheaders-viewer" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fheaders-viewer" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fheaders-viewer&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fheaders-viewer&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related"><h2>Related</h2><ul><ul class="related-cards">
+    <li><a href="/ssl-checker"><span class="card-tag">PRIVACY</span><span class="card-title">SSL checker</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/is-it-down"><span class="card-tag">PRIVACY</span><span class="card-title">Is it down?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/dns-lookup"><span class="card-tag">PRIVACY</span><span class="card-title">DNS lookup</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/whois-lookup"><span class="card-tag">PRIVACY</span><span class="card-title">WHOIS lookup</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul></div>
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page"><span class="label">On this page</span><ol>
+    <li><a href="#what-are-they">What they are</a></li>
+    <li><a href="#security-headers">Security headers</a></li>
+    <li><a href="#caching">Caching headers</a></li>
+    <li><a href="#fingerprinting">Stack fingerprinting</a></li>
+    <li><a href="#use-cases">When to use it</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ol></aside>
+</div>
+
+<footer class="footer"><div class="wrap"><div class="top">
+  <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+  <div><h4>Product</h4><ul><li><a href="/apps.html">Apps</a></li><li><a href="/technology.html">Technology</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+  <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN guide</a></li><li><a href="/free-vpn-for-windows">For Windows</a></li><li><a href="/free-vpn-for-india">For India</a></li><li><a href="/free-wireguard-vpn">WireGuard VPN</a></li><li><a href="/free-quic-vpn">QUIC VPN</a></li></ul></div>
+  <div><h4>Tools</h4><ul><li><a href="/what-is-my-ip">What is my IP?</a></li><li><a href="/is-it-down">Is it down?</a></li><li><a href="/ssl-checker">SSL checker</a></li><li><a href="/whois-lookup">WHOIS lookup</a></li><li><a href="/dns-lookup">DNS lookup</a></li><li><a href="/headers-viewer">HTTP headers</a></li><li><a href="/email-verifier">Email verifier</a></li><li><a href="/webrtc-leak-test">WebRTC leak test</a></li><li><a href="/password-generator">Password generator</a></li></ul></div>
+  <div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+</div><div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div></div></footer>
+
+<script src="/tool.js"></script>
+<script>
+toolPage.run("headers-viewer", {
+  inputId: "url-input",
+  submit: function (v) { return "/api/headers?url=" + encodeURIComponent(v); },
+  render: function (data) {
+    if (data.error) return { verdict: "down", text: data.error };
+    document.getElementById("r-url").textContent = data.url || "—";
+    document.getElementById("r-status").textContent = data.final_status != null ? String(data.final_status) : "—";
+    document.getElementById("r-elapsed").textContent = data.elapsed_ms != null ? (data.elapsed_ms + " ms") : "—";
+
+    var out = document.getElementById("headers-output");
+    out.replaceChildren();
+    var headers = data.headers || [];
+    var block = document.createElement("div");
+    block.className = "records-block";
+    var heading = document.createElement("h4");
+    heading.textContent = "Response headers — " + headers.length;
+    var ul = document.createElement("ul");
+    headers.forEach(function (h) {
+      var k = h[0], v = h[1];
+      var li = document.createElement("li");
+      var strong = document.createElement("strong");
+      strong.style.color = "var(--red)";
+      strong.textContent = k + ": ";
+      li.appendChild(strong);
+      li.appendChild(document.createTextNode(String(v)));
+      ul.appendChild(li);
+    });
+    block.appendChild(heading);
+    block.appendChild(ul);
+    out.appendChild(block);
+
+    var ok = (data.final_status >= 200 && data.final_status < 400);
+    return { verdict: ok ? "up" : "warn", text: "Got " + headers.length + " headers back (" + (data.final_status || "n/a") + ")." };
+  }
+});
+</script>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

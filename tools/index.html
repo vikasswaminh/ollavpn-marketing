@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Free Privacy Tools — IP, DNS, SSL, WebRTC & More · OllaVPN</title>
+<meta name="description" content="A free toolkit for everyday internet privacy: live IP check, DNS lookup, WebRTC leak test, SSL inspector, headers viewer, password generator, and more. No signup, no logs." />
+<link rel="canonical" href="https://ollavpn.com/tools/" />
+<meta name="author" content="OllaVPN" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="Free Privacy Tools · OllaVPN" />
+<meta property="og:description" content="A toolkit for everyday internet privacy: IP check, DNS lookup, WebRTC leak test, SSL inspector, and more. No signup, no logs." />
+<meta property="og:url" content="https://ollavpn.com/tools/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://ollavpn.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="OllaVPN free privacy tools" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Privacy Tools · OllaVPN" />
+<meta name="twitter:description" content="Everyday internet privacy tools — free, no signup, no logs." />
+<meta name="twitter:image" content="https://ollavpn.com/og-image.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ollavpn.com/#org",
+      "name": "OllaVPN",
+      "url": "https://ollavpn.com/",
+      "logo": "https://ollavpn.com/favicon-256.png"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://ollavpn.com/tools/#collection",
+      "url": "https://ollavpn.com/tools/",
+      "name": "Free Privacy Tools",
+      "description": "A toolkit for everyday internet privacy — IP check, DNS lookup, WebRTC leak test, SSL inspector, headers viewer, password generator, and more.",
+      "isPartOf": { "@id": "https://ollavpn.com/#org" },
+      "breadcrumb": { "@id": "https://ollavpn.com/tools/#crumbs" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ollavpn.com/tools/#crumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://ollavpn.com/tools/#list",
+      "name": "OllaVPN privacy tools",
+      "numberOfItems": 9,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://ollavpn.com/what-is-my-ip", "name": "What Is My IP" },
+        { "@type": "ListItem", "position": 2, "url": "https://ollavpn.com/webrtc-leak-test", "name": "WebRTC Leak Test" },
+        { "@type": "ListItem", "position": 3, "url": "https://ollavpn.com/dns-lookup", "name": "DNS Lookup" },
+        { "@type": "ListItem", "position": 4, "url": "https://ollavpn.com/whois-lookup", "name": "WHOIS Lookup" },
+        { "@type": "ListItem", "position": 5, "url": "https://ollavpn.com/ssl-checker", "name": "SSL Certificate Checker" },
+        { "@type": "ListItem", "position": 6, "url": "https://ollavpn.com/headers-viewer", "name": "HTTP Headers Viewer" },
+        { "@type": "ListItem", "position": 7, "url": "https://ollavpn.com/password-generator", "name": "Password Generator" },
+        { "@type": "ListItem", "position": 8, "url": "https://ollavpn.com/email-verifier", "name": "Email Verifier" },
+        { "@type": "ListItem", "position": 9, "url": "https://ollavpn.com/is-it-down", "name": "Is It Down Right Now" }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="../styles.css" />
+
+<style>
+  .page-hero { padding: 96px 0 32px; position: relative; overflow: hidden; }
+  .page-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.12), transparent 60%); pointer-events:none; }
+  .page-hero .wrap { position: relative; }
+
+  .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .tool-card {
+    display: flex; flex-direction: column;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .tool-card:hover { border-color: rgba(238,62,71,0.45); box-shadow: 0 1px 0 rgba(0,0,0,0.04); }
+  .tool-card .tag { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; text-transform: uppercase; }
+  .tool-card h3 { font-family: var(--display); font-size: 19px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin: 10px 0 8px; color: var(--text); }
+  .tool-card p { font-size: 14px; color: var(--text-dim); line-height: 1.55; flex: 1; margin: 0; }
+  .tool-card .open { font-family: var(--mono); font-size: 12px; color: var(--red); letter-spacing: 0.04em; margin-top: 14px; }
+  @media (max-width: 1024px) { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .tools-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="ub-status"><span class="ub-dot"></span>Status · All systems normal</span>
+    </div>
+    <div class="utilbar-right">
+      <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item"><a href="/pricing">Pricing</a></div>
+      <div class="nav-item"><a href="/technology">Technology</a></div>
+      <div class="nav-item active"><a href="/tools/">Tools</a></div>
+      <div class="nav-item"><a href="/blog/">Blog</a></div>
+      <div class="nav-item"><a href="/apps">Apps</a></div>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/login">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Free · no signup · no logs</span>
+    <h1 class="h-display h1 mt-16">A privacy toolkit, on the house.</h1>
+    <p class="lede mt-16" style="max-width:640px;color:var(--text-dim);">Nine quick tools that answer the questions that come up when you're trying to understand or fix your internet — without ads, signups, or upsells.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="tools-grid">
+
+      <a class="tool-card" href="/what-is-my-ip">
+        <span class="tag">Identity · Live check</span>
+        <h3>What Is My IP?</h3>
+        <p>Your live public IP, the country and ASN websites see, and what your browser leaks about your setup. The starting point for any "am I leaking?" question.</p>
+        <span class="open">OPEN →</span>
+      </a>
+
+      <a class="tool-card" href="/webrtc-leak-test">
+        <span class="tag">Privacy · Browser leak</span>
+        <h3>WebRTC Leak Test</h3>
+        <p>WebRTC can expose your real IP even with a VPN on. This test runs the same checks an attacker would and tells you, in plain English, whether your VPN is actually hiding you.</p>
+        <span class="open">OPEN →</span>
+      </a>
+
+      <a class="tool-card" href="/dns-lookup">
+        <span class="tag">DNS · Resolution</span>
+        <h3>DNS Lookup</h3>
+        <p>Look up A, AAAA, MX, TXT, NS, and CNAME records for any domain. Useful when something's broken and you need to know whether DNS is the cause.</p>
+        <span class="open">OPEN →</span>
+      </a>
+
+      <a class="tool-card" href="/whois-lookup">
+        <span class="tag">Domain · Registrar</span>
+        <h3>WHOIS Lookup</h3>
+        <p>Who registered a domain, when, and which registrar's holding the keys. Helpful when you're vetting a sender or auditing a brand-impersonation domain.</p>
+        <span class="open">OPEN →</span>
+      </a>
+
+      <a class="tool-card" href="/ssl-checker">
+        <span class="tag">TLS · Certificate</span>
+        <h3>SSL Certificate Checker</h3>
+        <p>What's in the cert, who signed it, when it expires, and whether the chain validates. The quick way to confirm a site is actually who it claims to be.</p>
+        <span class="open">OPEN →</span>
+      </a>
+
+      <a class="tool-card" href="/headers-viewer">
+        <span class="tag">HTTP · Headers</span>
+        <h3>HTTP Headers Viewer</h3>
+        <p>The response headers any URL serves — status, content-type, security headers (HSTS, CSP), caching, server hints. Good for debugging and security review.</p>
+        <span class="open">OPEN →</span>
+      </a>
+
+      <a class="tool-card" href="/password-generator">
+        <span class="tag">Security · Credentials</span>
+        <h3>Password Generator</h3>
+        <p>Strong, copy-paste-ready passwords with tunable length and character classes. Generated in your browser — nothing is sent to us.</p>
+        <span class="open">OPEN →</span>
+      </a>
+
+      <a class="tool-card" href="/email-verifier">
+        <span class="tag">Email · Deliverability</span>
+        <h3>Email Verifier</h3>
+        <p>Quick syntactic and DNS-level check on an email address — is the domain real, does it accept mail, does the address look deliverable. No signup required.</p>
+        <span class="open">OPEN →</span>
+      </a>
+
+      <a class="tool-card" href="/is-it-down">
+        <span class="tag">Status · Reachability</span>
+        <h3>Is It Down Right Now?</h3>
+        <p>Tells you in five seconds whether a site is down for everyone or just you. The "wait, is the internet broken?" tool.</p>
+        <span class="open">OPEN →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Free · 10 Mbps · every country · no card</span>
+    <h2 class="h-display h2 mt-16">The tools are free. So is the VPN.</h2>
+    <p class="lede mt-16" style="max-width:640px;color:var(--text-dim);">Same idea behind these tools — useful things without a paywall — runs OllaVPN's free plan. Lifetime, 10 Mbps, every country, no card.</p>
+    <div class="actions"><a class="btn primary xl" href="/dl/">Download free <span class="arrow">→</span></a><a class="btn xl" href="/technology">See the stack →</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div>
+        <h5>Product</h5>
+        <a href="/pricing">Pricing</a>
+        <a href="/apps">Apps</a>
+        <a href="/dl/">Download</a>
+        <a href="/technology">Technology</a>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <a href="/blog/">Blog</a>
+        <a href="/tools/">Tools</a>
+        <a href="/about/team">Team</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div>
+        <h5>Trust</h5>
+        <a href="/.well-known/security.txt">Security disclosure</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+    <div class="legal muted">
+      <span>© 2026 OllaVPN. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

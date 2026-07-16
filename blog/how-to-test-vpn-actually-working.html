@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to Test if Your VPN is Working Correctly | OllaVPN</title>
+<meta name="description" content="Learn how to quickly and accurately verify your VPN connection is secure and private with our easy-to-follow guide. Get peace of mind in just 5 minutes." />
+<link rel="canonical" href="https://ollavpn.com/how-to-test-vpn-actually-working" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="How to Test if Your VPN is Working Correctly | OllaVPN" />
+<meta property="og:description" content="Learn how to quickly and accurately verify your VPN connection is secure and private with our easy-to-follow guide. Get peace of mind in just 5 minutes." />
+<meta property="og:url" content="https://ollavpn.com/how-to-test-vpn-actually-working" />
+<meta property="og:image" content="https://ollavpn.com/og-how-to-test-vpn-actually-working.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="How To Test If Vpn Is Working — explained by OllaVPN" />
+<meta property="article:published_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:modified_time" content="2026-06-09T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Free VPN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to Test if Your VPN is Working Correctly | OllaVPN" />
+<meta name="twitter:description" content="Learn how to quickly and accurately verify your VPN connection is secure and private with our easy-to-follow guide. Get peace of mind in just 5 minutes." />
+<meta name="twitter:image" content="https://ollavpn.com/og-how-to-test-vpn-actually-working.png" />
+
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Test If Your VPN Is Actually Working (And Fix It If It Isn't)",
+  "description": "Learn how to quickly and accurately verify your VPN connection is secure and private with our easy-to-follow guide. Get peace of mind in just 5 minutes.",
+  "image": "https://ollavpn.com/og-how-to-test-vpn-actually-working.png",
+  "author": {
+    "@type": "Person",
+    "name": "Nathan Pratt",
+    "url": "https://ollavpn.com/about/team#nathan-pratt",
+    "jobTitle": "Privacy & Security Lead",
+    "worksFor": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" }
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Hannah Wu",
+    "url": "https://ollavpn.com/about/team#hannah-wu",
+    "jobTitle": "Senior Security Engineer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ollavpn.com/favicon-256.png"
+    }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ollavpn.com/how-to-test-vpn-actually-working"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to test if my VPN is working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can usually get a good sense of whether your VPN is working correctly in about 5 minutes. The initial check is super quick \u2013 connect, visit a test site, and check the results. If you need to troubleshoot, it might take a little longer, but it's still a fast process. We've made it straightforward so you're not spending ages on it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to be technical to perform these VPN tests?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not at all! We've designed these steps to be super easy for anyone to follow. You just need to open your OllaVPN app, click a few links in your browser, and compare some information. No deep technical knowledge is required, we promise. If you can browse the internet, you can test your VPN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if a step doesn't work for me during the testing process?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If a step doesn't work, don't worry. It's usually a simple fix. Try restarting your OllaVPN app, connecting to a different server location, or checking your internet connection. We've got a whole section dedicated to common errors and quick fixes in the guide, so you won't be left hanging."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will testing my VPN delete any of my data permanently?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely not. Testing your VPN involves checking your public IP and DNS information through websites. It doesn't interact with your personal files or system settings in a way that could cause data loss. It's completely safe for your data, and you're just observing what your network is doing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I undo the changes if I change my mind after testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are no 'changes' to undo from simply testing your VPN. You're just observing your network information, not altering your system. If you tweak a setting in your VPN app as part of troubleshooting, you can always revert it within the app's settings. OllaVPN makes it easy to manage your preferences."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to test my VPN on a public Wi-Fi network?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it's safe to test your VPN on public Wi-Fi. In fact, it's a great place to ensure your VPN is protecting you, as public Wi-Fi is often less secure and a common target for snoopers. Just make sure your VPN is connected *before* you start browsing or testing anything important."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use a VPN while doing these tests?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you should definitely use your VPN while doing these tests! The whole point is to see if your VPN is actively masking your real IP and encrypting your traffic. Connect to OllaVPN, and then perform the checks to see if it's working as expected. You'll want to see your VPN's server details, not your own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I verify that my VPN actually worked after troubleshooting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After troubleshooting, simply repeat the initial test. Connect your OllaVPN, visit <a href=\"https://ipleak.net\">ipleak.net</a> or <a href=\"https://dnsleaktest.com\">dnsleaktest.com</a>, and confirm that your displayed IP address and DNS servers match the VPN server location you chose. If they do, you're good to go, and your connection is secure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the VPN changes apply to all my devices automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, a VPN connection is typically device-specific. If you connect OllaVPN on your laptop, it only protects that laptop. You'll need to install and connect OllaVPN on each device you want to protect. Our Plus plan lets you use up to five devices simultaneously, making it easy to protect your whole digital life."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between this and other VPN testing methods?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our method focuses on real-time, external verification of your IP and DNS, which directly checks for common leaks that could expose your identity. Some other methods might just check if you can access geo-restricted content, which doesn't confirm full privacy protection. We prioritize actual security and privacy for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free tool I can use to test my VPN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! The primary tools we recommend, like <a href=\"https://ipleak.net\">ipleak.net</a> and <a href=\"https://dnsleaktest.com\">dnsleaktest.com</a>, are completely free to use. OllaVPN also offers a free plan with 10 Mbps speed, so you can test your VPN connection without any cost, and without needing a card on file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I test my VPN connection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's a good idea to test your VPN whenever you're concerned about your privacy, especially if you've changed network settings, updated your operating system, or are using a new public Wi-Fi. For most users, an occasional check is sufficient to maintain peace of mind and ensure you're always protected."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ollavpn.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Free VPN",
+      "item": "https://ollavpn.com/free-vpn"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How To Test If Vpn Is Working",
+      "item": "https://ollavpn.com/how-to-test-vpn-actually-working"
+    }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%);
+    pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute);
+    letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text);
+    max-width: 880px; }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim);
+    margin-top: 20px; max-width: 760px; }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 28px 56px;
+    gap: 56px;
+  }
+  @media (min-width: 980px) {
+    .article-layout { grid-template-columns: minmax(0, 720px) 260px; align-items: start; gap: 64px; }
+  }
+
+  .article {
+    min-width: 0;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p { margin: 0 0 1.25em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.02em;
+    margin: 2.4em 0 0.5em; scroll-margin-top: 96px;
+    color: var(--text);
+  }
+  .article .short-answer {
+    font-size: 20px; font-weight: 600; line-height: 1.45;
+    color: var(--text); margin: 0 0 0.9em;
+  }
+  .article p strong { font-weight: 700; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px;
+    text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 22px 26px; margin: 0 0 2em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase; }
+  .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
+
+  .toc-rail { display: none; }
+  @media (min-width: 980px) {
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+  }
+  .toc-inline {
+    display: block; margin: 0 0 2.2em;
+    border: 1px solid var(--line); border-radius: 12px; padding: 18px 24px;
+    background: #fff;
+  }
+  @media (min-width: 980px) { .toc-inline { display: none; } }
+
+  .toc-rail .label, .toc-inline .label {
+    font-family: var(--mono); font-size: 11px; color: var(--text-mute);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line); display: block;
+  }
+  .toc-rail ol, .toc-inline ol {
+    list-style: none; margin: 0; padding: 12px 0 0;
+  }
+  .toc-rail ol li, .toc-inline ol li {
+    font-size: 14px; line-height: 1.5; margin: 0 0 8px;
+  }
+  .toc-rail ol li a, .toc-inline ol li a {
+    color: var(--text-dim); text-decoration: none;
+    display: block; padding: 4px 0 4px 14px;
+    border-left: 2px solid transparent;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .toc-rail ol li a:hover,
+  .toc-inline ol li a:hover,
+  .toc-rail ol li.is-current a {
+    color: var(--red); border-left-color: var(--red);
+  }
+
+  .faq h3 { font-family: var(--display); font-weight: 600; font-size: 18px;
+    margin: 1.8em 0 0.4em; color: var(--text); scroll-margin-top: 96px; }
+  .faq h3 + p { margin-top: 0.4em; }
+
+  .related { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1.8em; }
+  .related h2 { font-size: 20px; margin: 0 0 0.8em; }
+  .related ul { list-style: none; padding-left: 0; }
+  .related ul li { margin: 0.55em 0; font-size: 16px; }
+  .related ul li::before { content: "→ "; color: var(--red); font-weight: 700; }
+
+  /* Article left sidebar — hidden by default; shown at >= 1200px. */
+  .article-sidebar-left { display: none; }
+  .article-sidebar-left h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-mute);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-sidebar-list { list-style: none; padding: 0; margin: 0 0 28px; }
+  .article-sidebar-list li { margin: 0; }
+  .article-sidebar-list a {
+    display: block;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .article-sidebar-list a:hover { color: var(--red); }
+  .sidebar-card-mini {
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    margin-bottom: 24px;
+  }
+  .sidebar-card-mini h4 { border-bottom: none; padding-bottom: 4px; margin-bottom: 10px; }
+  .sidebar-card-mini p.smallcopy { font-size: 13px; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
+  .sidebar-card-mini .btn { display: block; text-align: center; }
+  .author-mini { display: flex; gap: 12px; align-items: flex-start; }
+  .author-mini .avatar {
+    flex: none;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(238,62,71,0.12);
+    color: var(--red);
+    display: grid; place-items: center;
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    border: 1px solid rgba(238,62,71,0.3);
+  }
+  .author-mini .meta { line-height: 1.35; }
+  .author-mini .meta a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .author-mini .meta a:hover { color: var(--red); }
+  .author-mini .role { font-size: 12px; color: var(--text-mute); }
+  @media (min-width: 1200px) {
+    .article-layout {
+      grid-template-columns: 200px minmax(0, 680px) 240px;
+      max-width: 1240px;
+      gap: 32px;
+    }
+    .article-sidebar-left { display: block; position: sticky; top: 24px; }
+  }
+</style>
+</head>
+
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="wrap">
+    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 12 MIN READ
+      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
+    </div>
+    <h1>How to Test If Your VPN Is Actually Working (And Fix It If It Isn&#39;t)</h1>
+    <p class="lede">You&#39;ve turned on your VPN, the app says &#34;Connected,&#34; but how do you really know it&#39;s doing its job? It&#39;s a fair question, because a green light doesn&#39;t always mean your privacy is watertight. Sometimes there are leaks, or your connection isn&#39;t as secure as you think. We&#39;ll show you how to quickly and reliably check your VPN&#39;s performance and ensure your data is truly protected, giving you peace of mind in just a few minutes. You don&#39;t need to be a tech expert; we&#39;ll walk you through it.</p>
+  <div class="article-byline">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div class="author-meta">
+        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
+        <div class="author-role">Privacy &amp; Security Lead</div>
+      </div>
+      <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-layout">
+  <aside class="article-sidebar-left" aria-label="More from OllaVPN">
+    <div class="sidebar-card-mini">
+      <h4>By the author</h4>
+      <div class="author-mini">
+        <div class="avatar" aria-hidden="true">NP</div>
+        <div class="meta">
+          <a href="/about/team#nathan-pratt">Nathan Pratt</a>
+          <div class="role">Privacy &amp; Security Lead</div>
+        </div>
+      </div>
+    </div>
+
+    <h4>More guides</h4>
+    <ul class="article-sidebar-list">
+      <li><a href="what-is-post-quantum-cryptography.html">Post-quantum cryptography</a></li>
+      <li><a href="what-is-a-dns-leak.html">DNS leaks</a></li>
+      <li><a href="what-is-a-vpn-kill-switch.html">Kill switches</a></li>
+      <li><a href="five-eyes-nine-eyes-fourteen-eyes.html">Five Eyes alliances</a></li>
+      <li><a href="what-is-multi-hop-vpn.html">Multi-hop VPN</a></li>
+      <li><a href="what-logs-does-vpn-keep.html">What VPNs log</a></li>
+    </ul>
+
+    <h4>Top comparisons</h4>
+    <ul class="article-sidebar-list">
+      <li><a href="mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a></li>
+      <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a></li>
+      <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN</a></li>
+    </ul>
+
+    <div class="sidebar-card-mini">
+      <h4>Try OllaVPN</h4>
+      <p class="smallcopy">Free forever. 10&nbsp;Mbps. Every country. No card.</p>
+      <a class="btn primary" href="/dl/">Download free →</a>
+    </div>
+  </aside>
+  <article class="article">
+
+    <div class="tldr">
+      <span class="label">TL;DR</span>
+      
+      <p>To quickly check if your OllaVPN is working, open the app, connect to a server in a different country, then immediately visit a site like &lt;a href=&#34;https://ipleak.net&#34;&gt;ipleak.net&lt;/a&gt; or &lt;a href=&#34;https://dnsleaktest.com&#34;&gt;dnsleaktest.com&lt;/a&gt;. These sites will show you your public IP address and DNS server locations. If they match the VPN server you connected to, you&#39;re all set.</p>
+      
+      <p>If those sites show your actual home IP address or DNS servers, your VPN isn&#39;t working correctly. This could be due to a DNS leak, an IP leak, or a WebRTC leak. Don&#39;t worry, these issues are usually fixable. We&#39;ll walk you through common troubleshooting steps like checking your kill switch, trying a different server, or simply restarting your app.</p>
+      
+      <p>Our method goes beyond just relying on the &#39;Connected&#39; status in your app because it actively verifies that your real IP and DNS aren&#39;t exposed, ensuring you&#39;re getting the privacy you expect from a service that&#39;s free forever, doesn&#39;t log your data, and doesn&#39;t even ask for a card.</p>
+      
+    </div>
+
+    <nav class="toc-inline" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        
+        <li><a href="#short-answer-5-minutes">What&#39;s the quick way to test your VPN in 5 minutes?</a></li>
+        
+        <li><a href="#step-by-step-walkthrough">Can you give me a step-by-step walkthrough for testing my VPN?</a></li>
+        
+        <li><a href="#what-if-step-fails">What should I do if a step in the VPN test fails?</a></li>
+        
+        <li><a href="#why-this-approach-works">Why is this testing approach better than just looking at my VPN app?</a></li>
+        
+        <li><a href="#common-errors-quick-fixes">What are the most common VPN errors and how do I fix them quickly?</a></li>
+        
+        <li><a href="#how-to-verify-correctly">How do I verify my VPN is working correctly after troubleshooting?</a></li>
+        
+        <li><a href="#tools-that-make-it-easier">Are there any tools that make VPN testing easier?</a></li>
+        
+        <li><a href="#how-vpn-helps-with-task">How does a VPN help (or not help) with this specific task?</a></li>
+        
+        <li><a href="#understanding-ip-dns-webrtc">What exactly are IP, DNS, and WebRTC leaks, and why do they matter?</a></li>
+        
+        <li><a href="#advanced-checks">Are there any advanced checks I can perform for ultimate peace of mind?</a></li>
+        
+        <li><a href="#ollavpn-guarantees">How does OllaVPN ensure my connection is always working and secure?</a></li>
+        
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    
+    <h2 id="short-answer-5-minutes">What&#39;s the quick way to test your VPN in 5 minutes?</h2>
+    <p class="short-answer">The quickest way to test your VPN is to connect, then check your IP address and DNS servers on an independent website like ipleak.net.</p>
+
+<p>You can quickly check if your VPN is doing its job in just a few minutes. First, make sure you're disconnected from your VPN. Then, open your web browser and navigate to <a href="https://ipleak.net">ipleak.net</a> or <a href="https://dnsleaktest.com">dnsleaktest.com</a>. These sites will show you your current public IP address and the DNS servers your computer is using. Jot these down, or take a screenshot, as this is your baseline.</p>
+
+<p>Next, fire up your VPN app and <strong>connect VPN</strong> to a server location of your choice. Once it shows you're connected, go back to ipleak.net or dnsleaktest.com and refresh the page. What you're looking for is a change in your public IP address. It should now show an IP address that corresponds to the VPN server you connected to, not your actual location. For example, if you connected to a server in Japan, you should see a Japanese IP address.</p>
+
+<p>Beyond just the IP, you also want to check your <strong>DNS servers</strong>. These should also show up as being in or near the VPN server location you've chosen. If they still show your original ISP's DNS servers, or servers in a completely different country, that's a DNS leak, and it means your VPN isn't fully protecting your privacy. A good VPN, like OllaVPN, routes all your traffic, including DNS requests, through its encrypted tunnel. If everything matches your VPN server location, you're good to go!</p>
+    
+    <h2 id="step-by-step-walkthrough">Can you give me a step-by-step walkthrough for testing my VPN?</h2>
+    <p class="short-answer">Yes, here's a step-by-step guide to testing your VPN connection and verifying its effectiveness.</p>
+
+Testing your VPN is a smart move to make sure you're actually protected and that your connection is working as expected. It's not complicated, and you don't need any special tools beyond your browser and a couple of trusted websites. We’ll walk you through the process, from connecting to your VPN to interpreting the results, guaranteeing you're getting the privacy and security you expect.
+
+First, you'll need to establish your baseline. Before doing anything else, open your web browser and visit a site like <a href="https://ipleak.net">ipleak.net</a> or <a href="https://whatismyipaddress.com">whatismyipaddress.com</a>. Make a note of your current IP address and reported location. This is your real, unmasked information. You'll compare this to what you see after connecting to the VPN. Disconnect from the internet if you're worried about even a moment of exposure, then reconnect when you're ready to proceed with the VPN.
+
+Now, for the actual test. <strong>Step 1: Open your VPN app.</strong> Launch the OllaVPN application on your device. <strong>Step 2: Select a server location.</strong> Choose a server location from the list. Pick one that's geographically distinct from your actual location to make the change obvious – for example, if you're in New York, pick a server in London. <strong>Step 3: Connect.</strong> Click the "Connect" button in the app. Wait for the app to confirm that you're connected. OllaVPN will show a clear "Connected" status. <strong>Step 4: Visit a test site.</strong> Open your browser again and revisit ipleak.net or whatismyipaddress.com. Look closely at the IP address and location displayed. This should now show the IP address and location of the VPN server you connected to, not your real one. Also check the DNS servers listed; they should also reflect the VPN's servers, preventing DNS leaks. If you see your original IP or DNS servers, your VPN isn't working correctly. <strong>Step 5: Interpret results.</strong> If the IP address and location have changed to match your chosen VPN server, and there are no DNS leaks, your VPN is working as it should. If not, try reconnecting or selecting a different server. Finally, <strong>Step 6: Disconnect VPN.</strong> Once you're done testing, you can disconnect from OllaVPN, and your internet traffic will revert to using your regular connection.
+    
+    <h2 id="what-if-step-fails">What should I do if a step in the VPN test fails?</h2>
+    <p class="short-answer">If a VPN test fails, start by reconnecting your VPN, trying a different server, or restarting the OllaVPN app.</p>
+
+Don't worry too much if one of your VPN tests doesn't give you the result you expect. Sometimes it's just a temporary glitch. The first thing you should always try is simply disconnecting from OllaVPN and then hitting the "Connect" button again. This often resolves minor network hiccups or server communication issues. If that doesn't work, try selecting a different location from the server list. Since OllaVPN offers every country in its network on the free plan, you have plenty of options to choose from.
+
+If reconnecting or switching servers doesn't fix it, the next step is to close the OllaVPN application completely and then reopen it. A fresh start for the app can clear up any internal software bugs that might be causing the problem. While you're doing this, it's also a good idea to quickly double-check your internet connection. Can you browse other websites normally without the VPN connected? If your internet isn't working at all, the VPN won't either!
+
+Another common cause for unexpected test results can be the <strong>kill switch</strong>. OllaVPN's kill switch is on by default to protect your privacy, meaning if your VPN connection drops unexpectedly, it will block all internet traffic to prevent your real IP from leaking. If you're trying to test certain aspects of your connection and the kill switch is activating frequently, it could indicate an underlying network instability or a problem with the specific server you're trying to connect to. In rare cases, if you're really stuck, you can try temporarily disabling the kill switch for diagnostic purposes, but remember to turn it back on immediately after your testing. For more detailed troubleshooting, you can always check our <a href="/support">support page</a>.
+    
+    <h2 id="why-this-approach-works">Why is this testing approach better than just looking at my VPN app?</h2>
+    <p class="short-answer">Because your VPN app can tell you it's connected, but it can't tell you if your data is secretly leaking around it.</p>
+
+Your VPN app is built to *try* and connect you securely, but it doesn't always know if it's succeeding 100% of the time, especially if something outside its control goes wrong. Think of it like your car's "engine running" light. It tells you the engine is on, but it won't tell you if you have a slow tire leak or if your brake line is about to give out. To really know your privacy is protected, you need active verification from an independent source, which is exactly what these tests provide.
+
+Your VPN app only sees what's happening *inside* its own connection. It can confirm it's established a tunnel to our servers and that traffic is flowing through it. What it *can't* reliably detect is if something is bypassing that tunnel. That's where things like an <strong>IP leak</strong> happen, where your real IP address might inadvertently slip out, or a <strong>DNS leak</strong>, exposing what websites you're trying to visit to your ISP. Even worse, a <strong>WebRTC leak</strong> can sometimes reveal your local IP address directly through your browser, completely bypassing your VPN connection.
+
+These tests actively try to find those leaks from the outside, just like a website or a malicious actor would. They query your connection to see what information is truly visible to the internet. If you see your real IP address, your local DNS server, or other identifying information, it means your data exposure is higher than you think, even if your VPN app says "connected." It's about verifying your protection, not just trusting the app's internal status.
+    
+    <h2 id="common-errors-quick-fixes">What are the most common VPN errors and how do I fix them quickly?</h2>
+    <p class="short-answer">Most VPN issues stem from connection blocks, software conflicts, or misconfigured settings, and you can usually resolve them by checking your internet, disabling local software, or adjusting VPN settings.</p>
+
+<p>You know the drill: you flip on your VPN, expect instant privacy, and instead, you're staring at a "connecting" spinner or a plain old error message. Don't worry, it happens to everyone. Often, the fix is super simple. First, always make sure your basic internet connection is working—sometimes it's just your Wi-Fi acting up, not the VPN. If your regular internet is fine, then it's time to troubleshoot the VPN itself.</p>
+
+<p>A common culprit is other software on your device. Your <strong>firewall interference</strong> or antivirus program might be blocking the VPN connection. Try temporarily disabling them to see if that resolves the issue; if it does, you'll need to add an exception for OllaVPN. Similarly, <strong>browser extensions</strong> can sometimes cause conflicts, especially if they're also privacy-focused or proxy-based. Try browsing in an incognito window or disabling extensions one by one to pinpoint the problem. And speaking of browsers, sometimes old data hangs around—a quick <strong>clear cache</strong> of your browser can work wonders.</p>
+
+<p>Inside OllaVPN, if you're experiencing drops, always double-check that your <a href="/blog/what-is-a-kill-switch">kill switch</a> is active. It's on by default for a reason – to prevent accidental data leaks if your connection drops. If you're having trouble connecting to certain sites or services, it might be related to your <a href="/blog/what-is-dns">DNS settings</a>. OllaVPN uses its own secure DNS, but sometimes local network settings can interfere, or you might need to flush your DNS cache. Finally, if you're on a particularly restrictive network, like at a school or workplace, try switching protocols. OllaVPN offers both WireGuard and a QUIC option, which can sometimes bypass blocks that traditional VPN protocols can't.</p>
+    
+    <h2 id="how-to-verify-correctly">How do I verify my VPN is working correctly after troubleshooting?</h2>
+    <p class="short-answer">After troubleshooting, you can verify your VPN is working correctly by repeating your initial tests to ensure your IP address, DNS servers, and WebRTC leak protection are all showing the VPN's details.</p>
+
+Once you've made changes to fix a VPN issue, the best way to confirm it's working is to go back and repeat the same tests you used to identify the problem in the first place. You're looking for consistency across multiple checks. Start by visiting an "IP checker" website – just search for "what is my IP" on your preferred search engine. It should now show an IP address that belongs to OllaVPN, and not your actual location. If it still shows your real IP or location, the VPN isn't connected or isn't routing your traffic properly.
+
+Next, you'll want to check your DNS and WebRTC for leaks. There are several free websites that offer these checks, often in one go. A good one will show you that your DNS requests are being handled by OllaVPN's servers, and that your WebRTC public IP is also masked. If you see your original ISP's DNS servers, or your real IP address exposed via WebRTC, it means some of your data is still leaking outside the VPN tunnel.
+
+It's a good idea to perform these checks a couple of times, perhaps even closing and re-opening your browser or reconnecting the VPN between tests, just to be sure. If all these <strong>repeat test</strong> steps consistently show that your IP is masked, your DNS is secured, and there are no WebRTC leaks, then you can be confident your OllaVPN connection is solid and doing its job.
+    
+    <h2 id="tools-that-make-it-easier">Are there any tools that make VPN testing easier?</h2>
+    <p class="short-answer">Yes, several online tools and built-in features make testing your VPN's effectiveness much easier.</p>
+<p>You don't need to be a technical expert to check if your VPN is doing its job. There are some fantastic, free web tools that quickly show you what information your connection might be leaking. These are your go-to for verifying that your IP address is hidden, your DNS requests aren't spilling out, and your browser isn't giving away more than you think.</p>
+<p>When you're connected to OllaVPN, you'll want to check a few things. First, visit a site like <a href="https://ipleak.net">ipleak.net</a>. This site gives you a comprehensive overview of your apparent IP address, your geographic location, and even if your WebRTC is leaking. It should show an IP address and location matching the OllaVPN server you're connected to, not your actual one. It's a quick visual confirmation that your primary identity is masked.</p>
+<p>Next, you'll want to test for DNS leaks. Your DNS requests — essentially, how your computer asks for website addresses — can sometimes bypass your VPN, revealing your internet provider. For this, head over to <a href="https://dnsleaktest.com">dnsleaktest.com</a>. Run the "Extended Test" to be thorough. Ideally, all the DNS servers listed should belong to OllaVPN (we use our own secure, in-tunnel DNS resolvers) or at least be located in the same country as your chosen VPN server, and definitely not your actual ISP.</p>
+<p>Finally, don't forget your <strong>browser built-in tools</strong>. Many browsers have privacy settings you can tweak, but for VPN testing, you're mostly concerned with what the web sees. OllaVPN also includes its own <strong>in-app checks</strong> that give you a quick status update, but for external validation, the sites above are invaluable. These tools, used together, give you a pretty clear picture of how well your VPN is protecting your identity online.</p>
+    
+    <h2 id="how-vpn-helps-with-task">How does a VPN help (or not help) with this specific task?</h2>
+    <p class="short-answer">A VPN helps secure your internet connection, mask your IP address, and bypass restrictions, but it's not a silver bullet for all digital privacy concerns.</p>
+
+When you connect to the internet, your activity is often visible to your Internet Service Provider (ISP), network administrators, and potentially even governments or savvy snoopers. A VPN works by creating an encrypted tunnel between your device and a VPN server. All your internet traffic passes through this tunnel, making it unreadable to anyone trying to intercept it. This is how a VPN helps to <strong>encrypt your traffic</strong> and prevent surveillance, keeping your online actions private from prying eyes. It also routes your connection through a server in a different location, effectively making it appear as if you're browsing from there, which is how it helps to mask your IP.
+
+This masking of your IP address also comes in handy for <strong>circumventing geo-blocks</strong>. If you're trying to access content or services that are only available in certain regions, connecting to a VPN server in that region can often grant you access. For instance, if you're traveling and want to keep up with your favorite shows back home, a VPN can make it seem like you never left. It's a powerful tool for maintaining your digital freedom and privacy, especially on public Wi-Fi where your data is particularly vulnerable.
+
+However, it's important to remember that a VPN won't protect you from everything. It can't stop you from willingly giving away information on insecure websites, nor will it protect you from malware or phishing scams. Think of it as a secure, private tunnel for your internet connection, not an antivirus or a magic shield. OllaVPN's free plan gives you 10 Mbps of speed, which is more than enough for everyday browsing, streaming in HD, and ensuring your connection is secure and private without costing you a dime. It's a great way to experience the core benefits of a VPN without any commitment.
+    
+    <h2 id="understanding-ip-dns-webrtc">What exactly are IP, DNS, and WebRTC leaks, and why do they matter?</h2>
+    <p class="short-answer">IP, DNS, and WebRTC leaks are vulnerabilities that can expose your real public IP address, the websites you visit, or even your internal network details, even when you think your VPN is protecting you.</p>
+
+When you connect to the internet, your device uses a unique identifier called an <strong>IP address</strong>, sort of like your home's mailing address. A VPN works by routing your internet traffic through its servers, giving you a new public IP address that masks your real one. An IP leak happens when your actual public IP address accidentally gets exposed, completely defeating the purpose of using a VPN. This can lead to your online activities being traceable back to you, risking your real identity exposure and location tracking.
+
+Similarly, every time you type a website name like "ollavpn.com" into your browser, your computer needs to translate that into an IP address (like 192.0.2.1). This translation is handled by a <strong>DNS resolver</strong>. Without a VPN, your internet provider usually handles this, meaning they see every website you try to visit. A DNS leak occurs when your VPN fails to route these DNS requests through its encrypted tunnel, allowing your internet provider or other third parties to see your browsing history.
+
+Finally, <strong>WebRTC STUN requests</strong> are another common culprit for leaks. WebRTC is a technology that allows real-time communication (like video calls) directly between browsers. While useful, it can sometimes reveal your actual public IP address even when a VPN is active, especially in browsers like Chrome, Firefox, and Opera. This happens because WebRTC might use methods that bypass your VPN tunnel to establish connections, inadvertently exposing your true IP. That's why OllaVPN includes built-in leak protection to ensure these common vulnerabilities don't compromise your privacy.
+    
+    <h2 id="advanced-checks">Are there any advanced checks I can perform for ultimate peace of mind?</h2>
+    <p class="short-answer">Yes, you can perform several advanced checks to verify your VPN connection and ensure ultimate privacy protection.</p>
+
+<p>For those who like to dig a little deeper, there are indeed some more technical ways to confirm your VPN is doing its job. One common method is using a <strong>traceroute</strong>. This lets you see the path your internet traffic takes from your device to its destination. When OllaVPN is active, you should see the first hop after your router go to a OllaVPN server, rather than directly to your ISP's network. This confirms your traffic is being routed through our secure tunnels.</p>
+
+<p>Another powerful tool is <strong>packet capture (Wireshark)</strong>. This allows you to inspect the actual data packets leaving your device. When OllaVPN is connected, you should see encrypted WireGuard traffic going to our network, and no unencrypted traffic related to your browsing or activity making it out. This is a definitive way to confirm that your data is being properly encapsulated and protected.</p>
+
+<p>You'll also want to check for potential vulnerabilities like <strong>IPv6 leaks</strong>. Many VPNs only secure IPv4 traffic, leaving your IPv6 address exposed. OllaVPN is designed to prevent these leaks, so you can use online tools to verify that both your IPv4 and IPv6 addresses are protected and showing our server's IP. Furthermore, given our commitment to future-proofing, you can rest assured that our <strong>post-quantum ready</strong> encryption means your traffic is secured against even theoretical future threats, a level of protection few others offer.</p>
+    
+    <h2 id="ollavpn-guarantees">How does OllaVPN ensure my connection is always working and secure?</h2>
+    <p class="short-answer">OllaVPN ensures your connection is always working and secure through a combination of advanced protocols, robust features, and a strict no-logs policy.</p>
+
+<p>You want your VPN to just work, and to keep you safe without you having to think about it. That's why we build OllaVPN with features like a <strong>kill switch by default</strong>. If your VPN connection ever drops unexpectedly, your internet traffic is immediately cut off, preventing any data leaks outside the secure tunnel. We also use the <a href="/technology#wireguard">WireGuard protocol</a>, which is known for its speed, efficiency, and strong cryptography, meaning a stable connection that won't drain your device battery.</p>
+
+<p>Security isn't just about encryption; it's also about preventing exposure. OllaVPN employs <strong>in-tunnel DNS</strong>, so your DNS requests never leave the encrypted tunnel, protecting you from DNS leaks that could reveal your browsing habits. Our network also features <strong>4-layer peer isolation</strong>, which means your traffic is kept completely separate from other users, adding another layer of privacy and security. We're serious about your privacy, which is why we have a strict <a href="/privacy-policy">no-logs policy</a> – we don't track, store, or sell any of your online activity.</p>
+
+<p>This commitment to security and reliability applies whether you're on our free plan or our Plus plan. Our free plan is truly $0 forever, with no hidden catches. For those who need more speed and want to support our mission, the 10 Gbps Plus plan is available for just $2/month, helping us fund the free tier without resorting to ads or data sales. It’s all about giving you a secure, reliable connection that you can trust, without compromise.</p>
+    
+
+    
+<!-- TIER1-ENRICHED -->
+
+  <h2 id="tier1-howto-verify">How to know it actually worked</h2>
+  <p>A how-to guide is only useful if you can verify the outcome. After completing the steps above, the easiest checks to confirm the configuration is in place:</p>
+  <p><strong>Visible state in the app.</strong> The OllaVPN menu-bar or system-tray icon should be green (connected) and any status panel should show the country you selected. If the icon is gray or amber, the tunnel didn't fully come up — retry the connect.</p>
+  <p><strong>IP address changed.</strong> Open <a href="/what-is-my-ip">our what-is-my-IP tool</a>. The IP shown should be the exit's IP, not your real ISP's IP, and the country shown should match the country you selected in the app. If you still see your real IP, the tunnel isn't carrying traffic — the most common cause is a firewall on the local network blocking WireGuard's UDP/51820. Try a different network briefly to isolate.</p>
+  <p><strong>DNS is going through the tunnel.</strong> Open <a href="/dns-lookup">our DNS lookup tool</a>. The resolver IP shown should be the in-tunnel one (CGNAT 100.64.x.x range), not your ISP's DNS. If you see your ISP's resolver, DNS is leaking — see our <a href="/in-tunnel-dns">in-tunnel DNS page</a> for the technical details on why this happens and how OllaVPN prevents it.</p>
+  <p><strong>No WebRTC leak.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit's IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN — either OllaVPN's leak prevention has failed (file a report at <code>security@ollavpn.com</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
+  <h2 id="tier1-howto-troubleshoot">If a step fails, here's how to debug</h2>
+  <p>The most common failure modes for any VPN setup task on Windows, macOS, or Android, in order of frequency:</p>
+  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. On Frankfurt the obfuscated MASQUE-on-port-443 transport works around many restrictive firewalls — switch to it in the country picker.</p>
+  <p><strong>The VPN connects but the internet is broken.</strong> Almost always a DNS issue. The in-tunnel resolver hasn't taken precedence (sometimes after a macOS update or a Windows feature update, the supplemental DNS keys get cleared). Restarting the VPN typically fixes it; full disconnect and reconnect re-installs the DNS configuration.</p>
+  <p><strong>Some apps work but others don't.</strong> Either the app has its own proxy settings configured separately (some corporate apps), or the app uses a protocol the VPN doesn't carry (very rare — almost everything is TCP/UDP and works fine through the tunnel). Check the app's settings before assuming the VPN is at fault.</p>
+  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice; if you need more, the Pro tier at $2/mo annual lifts it to 10 Gbps.</p>
+
+  <h2 id="tier1-about">About this guide</h2>
+  <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
+  <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
+<div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What&amp;#39;s the quick way to test your VPN in 5 minutes?</li>
+        <li>Can you give me a step-by-step walkthrough for testing my VPN?</li>
+        <li>What should I do if a step in the VPN test fails?</li>
+        <li>Why is this testing approach better than just looking at my VPN app?</li>
+        <li>What are the most common VPN errors and how do I fix them quickly?</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      
+      <h3>How long does it take to test if my VPN is working?</h3>
+      <p>You can usually get a good sense of whether your VPN is working correctly in about 5 minutes. The initial check is super quick – connect, visit a test site, and check the results. If you need to troubleshoot, it might take a little longer, but it&#39;s still a fast process. We&#39;ve made it straightforward so you&#39;re not spending ages on it.</p>
+      
+      <h3>Do I need to be technical to perform these VPN tests?</h3>
+      <p>Not at all! We&#39;ve designed these steps to be super easy for anyone to follow. You just need to open your OllaVPN app, click a few links in your browser, and compare some information. No deep technical knowledge is required, we promise. If you can browse the internet, you can test your VPN.</p>
+      
+      <h3>What if a step doesn&#39;t work for me during the testing process?</h3>
+      <p>If a step doesn&#39;t work, don&#39;t worry. It&#39;s usually a simple fix. Try restarting your OllaVPN app, connecting to a different server location, or checking your internet connection. We&#39;ve got a whole section dedicated to common errors and quick fixes in the guide, so you won&#39;t be left hanging.</p>
+      
+      <h3>Will testing my VPN delete any of my data permanently?</h3>
+      <p>Absolutely not. Testing your VPN involves checking your public IP and DNS information through websites. It doesn&#39;t interact with your personal files or system settings in a way that could cause data loss. It&#39;s completely safe for your data, and you&#39;re just observing what your network is doing.</p>
+      
+      <h3>Can I undo the changes if I change my mind after testing?</h3>
+      <p>There are no &#39;changes&#39; to undo from simply testing your VPN. You&#39;re just observing your network information, not altering your system. If you tweak a setting in your VPN app as part of troubleshooting, you can always revert it within the app&#39;s settings. OllaVPN makes it easy to manage your preferences.</p>
+      
+      <h3>Is it safe to test my VPN on a public Wi-Fi network?</h3>
+      <p>Yes, it&#39;s safe to test your VPN on public Wi-Fi. In fact, it&#39;s a great place to ensure your VPN is protecting you, as public Wi-Fi is often less secure and a common target for snoopers. Just make sure your VPN is connected *before* you start browsing or testing anything important.</p>
+      
+      <h3>Should I use a VPN while doing these tests?</h3>
+      <p>Yes, you should definitely use your VPN while doing these tests! The whole point is to see if your VPN is actively masking your real IP and encrypting your traffic. Connect to OllaVPN, and then perform the checks to see if it&#39;s working as expected. You&#39;ll want to see your VPN&#39;s server details, not your own.</p>
+      
+      <h3>How do I verify that my VPN actually worked after troubleshooting?</h3>
+      <p>After troubleshooting, simply repeat the initial test. Connect your OllaVPN, visit &lt;a href=&#34;https://ipleak.net&#34;&gt;ipleak.net&lt;/a&gt; or &lt;a href=&#34;https://dnsleaktest.com&#34;&gt;dnsleaktest.com&lt;/a&gt;, and confirm that your displayed IP address and DNS servers match the VPN server location you chose. If they do, you&#39;re good to go, and your connection is secure.</p>
+      
+      <h3>Will the VPN changes apply to all my devices automatically?</h3>
+      <p>No, a VPN connection is typically device-specific. If you connect OllaVPN on your laptop, it only protects that laptop. You&#39;ll need to install and connect OllaVPN on each device you want to protect. Our Plus plan lets you use up to five devices simultaneously, making it easy to protect your whole digital life.</p>
+      
+      <h3>What&#39;s the difference between this and other VPN testing methods?</h3>
+      <p>Our method focuses on real-time, external verification of your IP and DNS, which directly checks for common leaks that could expose your identity. Some other methods might just check if you can access geo-restricted content, which doesn&#39;t confirm full privacy protection. We prioritize actual security and privacy for you.</p>
+      
+      <h3>Is there a free tool I can use to test my VPN?</h3>
+      <p>Absolutely! The primary tools we recommend, like &lt;a href=&#34;https://ipleak.net&#34;&gt;ipleak.net&lt;/a&gt; and &lt;a href=&#34;https://dnsleaktest.com&#34;&gt;dnsleaktest.com&lt;/a&gt;, are completely free to use. OllaVPN also offers a free plan with 10 Mbps speed, so you can test your VPN connection without any cost, and without needing a card on file.</p>
+      
+      <h3>How often should I test my VPN connection?</h3>
+      <p>It&#39;s a good idea to test your VPN whenever you&#39;re concerned about your privacy, especially if you&#39;ve changed network settings, updated your operating system, or are using a new public Wi-Fi. For most users, an occasional check is sufficient to maintain peace of mind and ensure you&#39;re always protected.</p>
+      
+    </div>
+
+    <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=How%20to%20Test%20If%20Your%20VPN%20Is%20Actually%20Working%20%28And%20Fix%20It%20If%20It%20Isn%26%2339%3Bt%29&amp;url=https%3A%2F%2Follavpn.com%2Fblog%2Fhow-to-test-vpn-actually-working" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fblog%2Fhow-to-test-vpn-actually-working" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fblog%2Fhow-to-test-vpn-actually-working&amp;t=How%20to%20Test%20If%20Your%20VPN%20Is%20Actually%20Working%20%28And%20Fix%20It%20If%20It%20Isn%26%2339%3Bt%29" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fblog%2Fhow-to-test-vpn-actually-working&amp;title=How%20to%20Test%20If%20Your%20VPN%20Is%20Actually%20Working%20%28And%20Fix%20It%20If%20It%20Isn%26%2339%3Bt%29" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    <div class="related">
+      <h2>Related reading</h2>
+      <ul><ul class="related-cards">
+    <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/how-to-test-for-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">How to test for dns leak</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-webrtc-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a webrtc leak</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-an-ipv6-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is an ipv6 leak</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-post-quantum-cryptography"><span class="card-tag">PRIVACY</span><span class="card-title">What is post-quantum cryptography?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+    <li><a href="/blog/what-is-a-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a DNS leak?</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
+  </ul>
+    </div>
+
+      <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  </article>
+
+  <aside class="toc-rail" aria-label="On this page">
+    <span class="label">On this page</span>
+    <ol>
+      
+      <li><a href="#short-answer-5-minutes">What&#39;s the quick way to test your VPN in 5 minutes?</a></li>
+      
+      <li><a href="#step-by-step-walkthrough">Can you give me a step-by-step walkthrough for testing my VPN?</a></li>
+      
+      <li><a href="#what-if-step-fails">What should I do if a step in the VPN test fails?</a></li>
+      
+      <li><a href="#why-this-approach-works">Why is this testing approach better than just looking at my VPN app?</a></li>
+      
+      <li><a href="#common-errors-quick-fixes">What are the most common VPN errors and how do I fix them quickly?</a></li>
+      
+      <li><a href="#how-to-verify-correctly">How do I verify my VPN is working correctly after troubleshooting?</a></li>
+      
+      <li><a href="#tools-that-make-it-easier">Are there any tools that make VPN testing easier?</a></li>
+      
+      <li><a href="#how-vpn-helps-with-task">How does a VPN help (or not help) with this specific task?</a></li>
+      
+      <li><a href="#understanding-ip-dns-webrtc">What exactly are IP, DNS, and WebRTC leaks, and why do they matter?</a></li>
+      
+      <li><a href="#advanced-checks">Are there any advanced checks I can perform for ultimate peace of mind?</a></li>
+      
+      <li><a href="#ollavpn-guarantees">How does OllaVPN ensure my connection is always working and secure?</a></li>
+      
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+</div>
+
+<script>
+  // Scroll-spy: highlight current section in right rail TOC.
+  (function () {
+    var rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    var links = new Map();
+    rail.querySelectorAll("a").forEach(function (a) {
+      var id = a.getAttribute("href").replace("#", "");
+      links.set(id, a);
+    });
+    var headings = document.querySelectorAll(".article h2[id]");
+    if (!headings.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = links.get(e.target.id);
+        if (!link) return;
+        var li = link.closest("li");
+        if (e.isIntersecting) li.classList.add("is-current");
+        else li.classList.remove("is-current");
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    headings.forEach(function (h) { obs.observe(h); });
+  })();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OllaVPN — Team · Who's behind the privacy</title>
+<meta name="description" content="The two people running OllaVPN: Nathan Pratt (Privacy & Security Lead) and Hannah Wu (Senior Security Engineer). Small team, deep technical roots." />
+<link rel="canonical" href="https://ollavpn.com/about/team" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="OllaVPN — Team · Who's behind the privacy" />
+<meta property="og:description" content="The two people running OllaVPN: Nathan Pratt (Privacy & Security Lead) and Hannah Wu (Senior Security Engineer). Small team, deep technical roots." />
+<meta property="og:url" content="https://ollavpn.com/about/team" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://ollavpn.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="OllaVPN — Team" />
+<meta name="twitter:description" content="The two people running OllaVPN: Nathan Pratt (Privacy & Security Lead) and Hannah Wu (Senior Security Engineer). Small team, deep technical roots." />
+<meta name="twitter:image" content="https://ollavpn.com/og-image.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Person", "@id": "https://ollavpn.com/about/team#nathan-pratt", "name": "Nathan Pratt", "jobTitle": "Privacy & Security Lead", "worksFor": { "@id": "https://ollavpn.com/#org" } },
+    { "@type": "Person", "@id": "https://ollavpn.com/about/team#hannah-wu",   "name": "Hannah Wu",   "jobTitle": "Senior Security Engineer", "worksFor": { "@id": "https://ollavpn.com/#org" } }
+  ]
+}
+</script>
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+<style>
+  .page-hero { padding: 96px 0 56px; position: relative; overflow: hidden; }
+  .page-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.16), transparent 60%);
+    pointer-events:none; }
+  .page-hero .wrap { position: relative; }
+
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+  .person {
+    padding: 32px; border-radius: var(--radius-lg);
+    border: 1px solid var(--line); background: var(--panel);
+    box-shadow: var(--shadow-card);
+    scroll-margin-top: 96px;
+  }
+  .person .avatar {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--red); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-weight: 700; font-size: 24px;
+    letter-spacing: -0.01em; line-height: 1;
+    margin-bottom: 18px;
+  }
+  .person .name { font-family: var(--display); font-weight: 700;
+    font-size: 28px; letter-spacing: -0.035em; line-height: 1.1;
+    margin: 0; color: var(--text); }
+  .person .role { font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text-mute); margin-top: 8px; }
+  .person p { font-size: 15px; line-height: 1.65; color: var(--text-dim);
+    margin: 18px 0 0; }
+  .person .areas {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px;
+  }
+  .person .areas span {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 4px 10px;
+    border: 1px solid var(--line-2); border-radius: var(--radius-pill);
+    color: var(--text-dim);
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .person .areas span:hover { background: var(--red-soft); color: var(--red); border-color: var(--red); }
+
+  .stance {
+    margin-top: 56px;
+    border-top: 1px solid var(--line); padding-top: 40px;
+    max-width: 760px; margin-left: auto; margin-right: auto; text-align: center;
+  }
+  .stance h2 { font-size: 26px; margin: 0 0 12px; }
+  .stance p { font-size: 16px; color: var(--text-dim); line-height: 1.7; margin: 0 0 12px; }
+
+  .work-list { list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    max-width: 880px; margin-left: auto; margin-right: auto; }
+  .work-list li { padding: 18px 22px; border: 1px solid var(--line);
+    border-radius: var(--radius); background: var(--panel);
+    font-size: 14px; color: var(--text-dim); }
+
+  .team-cta { padding: 96px 0; border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: radial-gradient(40% 50% at 50% 0%, rgba(225,28,38,0.10), transparent 60%);
+    text-align: center; }
+  .team-cta .actions { margin-top: 28px; display: inline-flex; gap: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 880px) {
+    .team-grid, .work-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker"><span class="pip">&bull;</span> WHO'S BEHIND OLLAVPN</span>
+    <h1 class="h-display h1 mt-16">Small team.<br/><span class="accent">Deep technical roots.</span></h1>
+    <p class="lede mt-16" style="max-width:680px; color: var(--text-dim);">Two people run OllaVPN day-to-day. No marketing department, no growth-hacker rolodex, no &ldquo;head of partnerships&rdquo;. The same people who write the code answer the support emails and sign every release.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="team-grid">
+
+      <article class="person" id="nathan-pratt">
+        <div class="avatar" aria-hidden="true">NP</div>
+        <h2 class="name">Nathan Pratt</h2>
+        <div class="role">Privacy &amp; Security Lead</div>
+        <p>Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN, mostly on protocol design and the unglamorous business of making sure something as small as a stray DNS query doesn&#39;t blow a user&#39;s cover.</p>
+        <p>He writes most of the blog content here and reviews every fact-claim. If something on this site looks wrong, his email is in the header of every post.</p>
+        <div class="areas">
+          <span>Post-quantum crypto</span>
+          <span>WireGuard</span>
+          <span>DNS hygiene</span>
+          <span>Threat modeling</span>
+          <span>Policy</span>
+        </div>
+      </article>
+
+      <article class="person" id="hannah-wu">
+        <div class="avatar" aria-hidden="true">HW</div>
+        <h2 class="name">Hannah Wu</h2>
+        <div class="role">Senior Security Engineer</div>
+        <p>Hannah reviews everything Nathan writes before it ships. She came up through kernel networking at a major cloud provider and now spends her time on the OllaVPN data-plane: peer isolation, the four-layer leak defense, kill-switch behavior under partition, and the Windows / macOS client&#39;s tunnel state machine.</p>
+        <p>If a blog post here has a &ldquo;Reviewed by Hannah Wu&rdquo; line, it means she walked through every technical claim and either approved it or made Nathan rewrite it.</p>
+        <div class="areas">
+          <span>Kernel networking</span>
+          <span>Peer isolation</span>
+          <span>Kill switch</span>
+          <span>Linux / Windows / macOS</span>
+          <span>Audit</span>
+        </div>
+      </article>
+
+    </div>
+
+    <aside class="stance">
+      <h2>Why two-person matters here</h2>
+      <p>Most VPN companies have hundreds of employees, dozens of subcontractors, and a marketing team that doesn&#39;t know what their engineers ship. The bigger that team, the harder it is to make honest claims about what the product actually does &mdash; because nobody on staff has read all the code.</p>
+      <p>OllaVPN is two people. We&#39;ve both read every line of the data-plane. When a blog post says &ldquo;peer isolation is verified end-to-end,&rdquo; we can point at the four sysctl + nftables + WireGuard config + automated e2e test that enforces it. When something breaks, one of us pages the other on Signal. The product is small enough that we can still tell the truth about it.</p>
+      <p>When that stops being true, we&#39;ll say so.</p>
+    </aside>
+
+  </div>
+</section>
+
+<section class="section-sm" style="border-top: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker"><span class="pip">&bull;</span> WHAT WE'RE WORKING ON</span>
+      <h2 class="h-display h2 mt-16">Right now.</h2>
+      <p class="lede">Things we&#39;re shipping this quarter, in plain language.</p>
+    </div>
+    <ul class="work-list">
+      <li>macOS client polish &mdash; system-extension migration done, signing next</li>
+      <li>Android client &mdash; fork of <code style="font-family: var(--mono); font-size: 13px;">wireguard-android</code> in progress</li>
+      <li>Windows installer code-signing (EV cert)</li>
+      <li>Audited public transparency report &mdash; Q3 target</li>
+    </ul>
+  </div>
+</section>
+
+<section class="team-cta">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Try OllaVPN free &middot; no card &middot; lifetime</span>
+    <h2 class="h-display h2 mt-16">Built by two people who <span class="accent">read every line.</span></h2>
+    <div class="actions">
+      <a class="btn primary xl" href="/dl/">Get OllaVPN free <span class="arrow">&rarr;</span></a>
+      <a class="btn xl" href="/blog/">Read what Nathan writes</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="apps.html">Apps</a></li><li><a href="technology.html">Technology</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog/">Blog</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>POST-QUANTUM READY</span><span>NO LOGS</span><span>LIFETIME FREE</span></span></div>
+  </div>
+</footer>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>

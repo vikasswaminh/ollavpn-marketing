@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What Is a DNS Leak? Test, Fix, Prevent · OllaVPN</title>
+<meta name="description" content="Plain-English guide to DNS leaks — what they are, why they matter for privacy, how to test for one in five minutes, and how to prevent them." />
+<link rel="canonical" href="https://ollavpn.com/blog/what-is-a-dns-leak.html" />
+<meta name="theme-color" content="#0B0B12" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="The OllaVPN team" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="What Is a DNS Leak? Test, Fix, Prevent · OllaVPN" />
+<meta property="og:description" content="Plain-English guide to DNS leaks — what they are, why they matter for privacy, how to test for one in five minutes, and how to prevent them." />
+<meta property="og:url" content="https://ollavpn.com/blog/what-is-a-dns-leak.html" />
+<meta property="og:image" content="https://ollavpn.com/blog/og-what-is-a-dns-leak.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="What is a DNS leak — how to test, fix, and prevent it" />
+<meta property="article:published_time" content="2026-05-16T00:00:00Z" />
+<meta property="article:modified_time" content="2026-05-16T00:00:00Z" />
+<meta property="article:author" content="The OllaVPN team" />
+<meta property="article:section" content="Privacy guides" />
+<meta property="article:tag" content="DNS leak" />
+<meta property="article:tag" content="VPN privacy" />
+<meta property="article:tag" content="DNS leak test" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What Is a DNS Leak? Test, Fix, Prevent · OllaVPN" />
+<meta name="twitter:description" content="Plain-English guide to DNS leaks — what they are, why they matter for privacy, how to test for one in five minutes, and how to prevent them." />
+
+<meta name="twitter:image" content="https://ollavpn.com/blog/og-what-is-a-dns-leak.png" />
+<!-- Self-hosted Lato (no Google Fonts CDN call for primary type). JetBrains Mono is still pulled
+     from Google for mono code blocks - used sparingly, can be self-hosted in a follow-up. -->
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="../styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is a DNS Leak? How to Test, Fix, and Prevent It (2026 Guide)",
+  "description": "A plain-English guide to DNS leaks: what they are, why they matter for your privacy, how to test for one, and how to prevent them.",
+  "image": "https://ollavpn.com/favicon-256.png",
+  "author": {
+    "@type": "Person",
+    "name": "Nathan Pratt",
+    "url": "https://ollavpn.com/about/team#nathan-pratt",
+    "jobTitle": "Privacy & Security Lead",
+    "worksFor": { "@type": "Organization", "name": "OllaVPN", "url": "https://ollavpn.com" }
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Hannah Wu",
+    "url": "https://ollavpn.com/about/team#hannah-wu",
+    "jobTitle": "Senior Security Engineer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OllaVPN",
+    "logo": { "@type": "ImageObject", "url": "https://ollavpn.com/favicon-256.png" }
+  },
+  "datePublished": "2026-05-16",
+  "dateModified": "2026-05-16",
+  "mainEntityOfPage": "https://ollavpn.com/blog/what-is-a-dns-leak.html",
+  "inLanguage": "en",
+  "articleSection": "Privacy guides"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to test for a DNS leak",
+  "description": "A simple, five-minute test to verify that your VPN is properly protecting your DNS queries.",
+  "totalTime": "PT5M",
+  "tool": [
+    { "@type": "HowToTool", "name": "A web browser" },
+    { "@type": "HowToTool", "name": "Your VPN app" },
+    { "@type": "HowToTool", "name": "A DNS leak test website (such as dnsleaktest.com)" }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Disconnect from your VPN and take a baseline reading",
+      "text": "With your VPN turned off, open a DNS leak test site in your browser. Note the DNS servers shown — these belong to your internet provider (ISP) and represent your baseline."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Connect to your VPN",
+      "text": "Open your VPN app and connect to any server. Wait a few seconds for the connection to stabilize."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Run the test again",
+      "text": "Reload the DNS leak test site or run the test again. The DNS servers shown should now belong to your VPN provider, not your ISP."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Interpret the results",
+      "text": "If the test still shows your ISP's DNS servers, or shows a mix that includes them, you have a DNS leak. If the only servers shown belong to your VPN provider (or a privacy-friendly resolver they use), there is no leak."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Repeat with the extended test",
+      "text": "Most leak-test sites offer a standard test and an extended test. Run the extended test for a more thorough check, which catches edge-case leaks the standard test can miss."
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a DNS leak in simple terms?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A DNS leak happens when your device sends DNS requests — the lookups that turn 'ollavpn.com' into a numeric address — outside the encrypted VPN tunnel. Even though the rest of your traffic is private, the leaked DNS requests reveal which websites you're visiting to your internet service provider or another third party." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I check if my VPN is leaking DNS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Connect to your VPN, then visit a DNS leak test site such as dnsleaktest.com or browserleaks.com/dns. Run the extended test. If the only DNS servers shown belong to your VPN provider, there is no leak. If the test shows your internet provider's servers, your VPN is leaking DNS." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are DNS leaks dangerous?",
+      "acceptedAnswer": { "@type": "Answer", "text": "DNS leaks don't expose the content of your traffic, but they do reveal which websites you're visiting. For most people that's a privacy concern rather than a security emergency. For journalists, activists, business travelers, and anyone in a restrictive network environment, the exposure can be significant." }
+    },
+    {
+      "@type": "Question",
+      "name": "What causes a DNS leak?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Common causes include: a VPN that doesn't route DNS through its own servers, IPv6 traffic bypassing the IPv4 tunnel, an unexpected VPN disconnect (no kill switch), Windows or macOS misconfigurations, and using a public DNS resolver while connected to a VPN. The simplest fix is choosing a VPN that handles DNS securely by default." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a kill switch prevent DNS leaks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A kill switch prevents leaks that happen during a VPN disconnect by blocking all traffic until the tunnel is back. It doesn't prevent leaks caused by a VPN that mishandles DNS in the first place. You want both: built-in DNS leak protection AND an always-on kill switch." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do free VPNs leak DNS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Some do, some don't. Many free VPNs use third-party DNS resolvers or fail to handle IPv6 traffic, which causes leaks. Reputable free options — including OllaVPN's lifetime free plan — route DNS through their own infrastructure inside the tunnel by default." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I prevent DNS leaks without a VPN?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Partially. You can switch your device to use an encrypted DNS resolver such as Cloudflare's 1.1.1.1 or Quad9, which prevents your ISP from seeing your DNS lookups. This doesn't encrypt the rest of your traffic — for that you still need a VPN." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a DNS leak the same as an IP leak?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. A DNS leak exposes which websites you visit. An IP leak exposes your real IP address. They're different issues with different causes, and a good VPN protects against both. Many test sites check for both at the same time." }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I test for DNS leaks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Once when you first install a VPN, once after any major operating-system update, and once whenever you change network settings or switch between Wi-Fi and Ethernet on a new network. A reputable VPN handles DNS correctly out of the box, so frequent testing isn't usually necessary." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does OllaVPN protect against DNS leaks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OllaVPN routes all DNS requests inside the encrypted tunnel by default — there is nothing to configure. The kill switch is always on. The result: when you're connected to OllaVPN, the DNS leak test should show only OllaVPN's resolver, every time." }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ollavpn.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ollavpn.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "What Is a DNS Leak?", "item": "https://ollavpn.com/blog/what-is-a-dns-leak.html" }
+  ]
+}
+</script>
+
+<style>
+  .article-hero { padding: 88px 0 36px; position: relative; overflow: hidden; }
+  .article-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.10), transparent 60%); pointer-events:none; }
+  .article-hero .wrap { position: relative; max-width: 800px; }
+  .article-hero .meta { font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; }
+  .article-hero h1 { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em; line-height: 1.08; font-size: clamp(30px, 4vw, 46px); margin-top: 18px; color: var(--text); }
+  .article-hero .lede { font-size: 19px; line-height: 1.55; color: var(--text-dim); margin-top: 20px; max-width: 720px; }
+
+  .article {
+    max-width: 760px; margin: 0 auto;
+    padding: 12px 28px 56px;
+    font-size: 17px; line-height: 1.72; color: var(--text);
+  }
+  .article > p, .article > ul, .article > ol { margin: 0 0 1.15em; }
+  .article h2 {
+    font-family: var(--display); font-weight: 600; letter-spacing: -0.02em;
+    font-size: 28px; margin: 2.2em 0 0.6em; color: var(--text); scroll-margin-top: 96px;
+  }
+  .article h3 {
+    font-family: var(--display); font-weight: 600; letter-spacing: -0.015em;
+    font-size: 20px; margin: 1.8em 0 0.5em; color: var(--text);
+  }
+  .article ul, .article ol { margin: 0 0 1.2em; padding-left: 1.3em; }
+  .article ul li, .article ol li { margin: 0.5em 0; }
+  .article ul li::marker { color: var(--red); }
+  .article ol li::marker { color: var(--red); font-weight: 600; }
+  .article strong { font-weight: 600; color: var(--text); }
+  .article em { font-style: italic; color: var(--text); }
+  .article a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .article a:hover { text-decoration-thickness: 2px; }
+  .article hr { border: 0; border-top: 1px solid var(--line); margin: 2.4em auto; max-width: 80px; }
+
+  .tldr { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 22px 26px; margin: 0 0 1.4em; }
+  .tldr .label { font-family: var(--mono); font-size: 11px; color: var(--red); letter-spacing: 0.06em; text-transform: uppercase; }
+  .tldr p { margin: 8px 0 0; }
+
+  .answer-card {
+    border-left: 3px solid var(--red);
+    background: rgba(238,62,71,0.04);
+    padding: 14px 18px;
+    margin: 0 0 1.2em;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+  }
+  .answer-card .q-label { font-family: var(--mono); font-size: 10px; color: var(--red); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+  .toc { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 20px 26px; margin: 0 0 2.2em; }
+  .toc .label { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; }
+  .toc ol { margin: 12px 0 0; padding-left: 1.4em; columns: 2; column-gap: 32px; }
+  .toc ol li { font-size: 14px; line-height: 1.6; break-inside: avoid; margin: 0; }
+  .toc ol li a { color: var(--text); text-decoration: none; }
+  .toc ol li a:hover { color: var(--red); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  @media (max-width: 640px) { .toc ol { columns: 1; } }
+
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5em 0;
+  }
+  .steps > li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 52px;
+    margin-bottom: 1.4em;
+    min-height: 36px;
+  }
+  .steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 0;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--red);
+    color: #fff;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .steps > li strong { display: block; font-size: 17px; margin-bottom: 4px; }
+
+  .causes-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    margin: 1.6em 0;
+  }
+  .cause {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; background: var(--panel);
+  }
+  .cause h4 {
+    font-family: var(--display); font-size: 15px; font-weight: 600;
+    letter-spacing: -0.01em; margin: 0 0 8px; color: var(--text);
+  }
+  .cause p { font-size: 14px; color: var(--text-dim); line-height: 1.55; margin: 0; }
+  @media (max-width: 720px) { .causes-grid { grid-template-columns: 1fr; } }
+
+  .pull-card {
+    border: 1px solid rgba(238,62,71,0.35);
+    background: linear-gradient(180deg, rgba(238,62,71,0.07), rgba(238,62,71,0.01));
+    border-radius: 12px; padding: 24px 26px; margin: 1.8em 0;
+  }
+  .pull-card .pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+  .pull-card .pricing .tier { border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; background: #fff; }
+  .pull-card .pricing .tier .label { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; text-transform: uppercase; }
+  .pull-card .pricing .tier .price { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-top: 4px; }
+  .pull-card .pricing .tier .desc { font-size: 13px; color: var(--text-dim); margin-top: 6px; line-height: 1.45; }
+  @media (max-width: 720px) { .pull-card .pricing { grid-template-columns: 1fr; } }
+
+  .checklist {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 1.6em 0;
+    background: var(--panel);
+  }
+  .checklist h4 { font-family: var(--display); font-size: 17px; font-weight: 600; margin: 0 0 10px; color: var(--text); }
+  .checklist ul { margin: 0; padding-left: 1.4em; }
+  .checklist ul li { font-size: 15px; line-height: 1.55; margin: 8px 0; color: var(--text); }
+  .checklist ul li strong { color: var(--text); }
+
+  .related-posts { margin: 2.2em 0 0; border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; background: var(--panel); }
+  .related-posts h3 { font-family: var(--display); font-size: 17px; font-weight: 600; margin: 0 0 12px; color: var(--text); }
+  .related-posts ul { margin: 0; padding-left: 1.2em; }
+  .related-posts ul li { font-size: 15px; line-height: 1.6; color: var(--text-dim); margin: 6px 0; }
+
+  .footnote { max-width: 760px; margin: 0 auto; padding: 0 28px 56px; font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+
+  .author-row { display: flex; align-items: center; gap: 14px; margin-top: 22px; font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .author-row .dot-sep { color: var(--line); }
+
+  /* Pillar 3-column layout — hidden by default; shown at >= 1200px. */
+  .pillar-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1240px;
+    margin: 0 auto;
+    gap: 0;
+  }
+  .pillar-sidebar-left, .pillar-sidebar-right { display: none; }
+  @media (min-width: 1200px) {
+    .pillar-layout {
+      grid-template-columns: 200px minmax(0, 1fr) 240px;
+      padding: 0 28px;
+      gap: 32px;
+      align-items: start;
+    }
+    .pillar-layout > .article {
+      max-width: 100%;
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .pillar-sidebar-left, .pillar-sidebar-right {
+      display: block;
+      position: sticky;
+      top: 24px;
+      font-size: 14px;
+    }
+  }
+  .pillar-sidebar h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-mute);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .pillar-sidebar-list { list-style: none; padding: 0; margin: 0 0 28px; }
+  .pillar-sidebar-list li { margin: 0; }
+  .pillar-sidebar-list a {
+    display: block;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .pillar-sidebar-list a:hover { color: var(--red); }
+  .pillar-card-mini {
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    margin-bottom: 24px;
+  }
+  .pillar-card-mini h4 { border-bottom: none; padding-bottom: 4px; margin-bottom: 10px; }
+  .pillar-card-mini p.smallcopy { font-size: 13px; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
+  .pillar-card-mini .btn { display: block; text-align: center; }
+  .pillar-author-mini { display: flex; gap: 12px; align-items: flex-start; }
+  .pillar-author-mini .avatar {
+    flex: none;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(238,62,71,0.12);
+    color: var(--red);
+    display: grid; place-items: center;
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    border: 1px solid rgba(238,62,71,0.3);
+  }
+  .pillar-author-mini .meta { line-height: 1.35; }
+  .pillar-author-mini .meta a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .pillar-author-mini .role { font-size: 12px; color: var(--text-mute); }
+</style>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<!-- Top utility bar - networkershome.com pattern: a thin mono-typeface
+     row above the main nav for live status + secondary links. -->
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Resources</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark"></span>OllaVPN</a>
+    <div class="nav-links">
+      <div class="nav-item">
+        Product <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols mega-cols-tiers">
+            <a class="tier-card" href="/dl/">
+              <h5>Free</h5>
+              <div class="tier-price">$0<span>/forever</span></div>
+              <div class="tier-desc">1 device &middot; 10 Mbps &middot; all countries</div>
+              <span class="tier-arrow">Get free &rarr;</span>
+            </a>
+            <a class="tier-card tier-popular" href="/pricing#plans">
+              <h5>Pro</h5>
+              <div class="tier-price">$2.99<span>/mo</span></div>
+              <div class="tier-desc">5 devices &middot; 10 Gbps &middot; best deal</div>
+              <span class="tier-arrow">See Pro &rarr;</span>
+            </a>
+            <a class="tier-card" href="/pricing#plans">
+              <h5>Business</h5>
+              <div class="tier-price">$7.99<span>/user/mo</span></div>
+              <div class="tier-desc">Unlimited per user &middot; admin &middot; SLA</div>
+              <span class="tier-arrow">See Business &rarr;</span>
+            </a>
+          </div>
+          <div class="mega-cta">
+            <span>4 apps: Windows &middot; macOS &middot; Android &middot; iOS (soon)</span>
+            <a class="btn ghost" href="/apps.html">See all apps &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        Technology <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <div class="nav-item active">
+        Resources <span class="caret">&#9662;</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Guides</h5>
+              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
+              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
+              <a href="/blog/">What is post-quantum crypto?</a>
+            </div>
+            <div class="mega-col">
+              <h5>Comparisons</h5>
+              <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
+              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+            </div>
+            <div class="mega-col">
+              <h5>Tools</h5>
+              <a href="https://status.ollavpn.com/">Status page</a>
+              <a href="/blog/">Changelog</a>
+              <a href="/llms.txt">llms.txt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="wrap">
+    <span class="meta">Privacy guide · 2026 · 05 · 16</span>
+    <h1>What Is a DNS Leak? How to Test, Fix, and Prevent It (2026 Guide)</h1>
+    <p class="lede">A plain-English guide to one of the most quietly important privacy concepts on the internet — what a DNS leak actually is, why it matters, how to test for one in under five minutes, and how to make sure you never have to worry about it again.</p>
+<div class="article-byline">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div class="author-meta">
+        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
+        <div class="author-role">Privacy &amp; Security Lead</div>
+      </div>
+      <div class="reviewer-block">
+        <span class="reviewer-label">&#10003; Reviewed</span><br/>
+        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
+        <span>Last fact-checked 10 June 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pillar-layout">
+  <aside class="pillar-sidebar pillar-sidebar-left" aria-label="More from OllaVPN">
+  <div class="pillar-card-mini">
+    <h4>By the author</h4>
+    <div class="pillar-author-mini">
+      <div class="avatar" aria-hidden="true">NP</div>
+      <div class="meta">
+        <a href="/about/team#nathan-pratt">Nathan Pratt</a>
+        <div class="role">Privacy &amp; Security Lead</div>
+      </div>
+    </div>
+  </div>
+  <h4>More pillars</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="what-is-post-quantum-cryptography.html">Post-quantum cryptography</a></li>
+    <li><a href="what-is-a-dns-leak.html">DNS leaks</a></li>
+    <li><a href="what-is-a-vpn-kill-switch.html">Kill switches</a></li>
+    <li><a href="five-eyes-nine-eyes-fourteen-eyes.html">Five Eyes alliances</a></li>
+    <li><a href="what-is-multi-hop-vpn.html">Multi-hop VPN</a></li>
+    <li><a href="what-logs-does-vpn-keep.html">What VPNs log</a></li>
+  </ul>
+  <h4>Comparisons</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a></li>
+    <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a></li>
+    <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN</a></li>
+    <li><a href="nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a></li>
+  </ul>
+  <div class="pillar-card-mini">
+    <h4>Try OllaVPN</h4>
+    <p class="smallcopy">Free forever. 10&nbsp;Mbps. Every country. No card.</p>
+    <a class="btn primary" href="/dl/">Download free →</a>
+  </div>
+</aside>
+  <article class="article">
+
+  <div class="tldr">
+    <div class="label">TL;DR — The Short Answer</div>
+
+  <a class="post-cta" href="/dl/" style="display:flex;align-items:center;gap:14px;margin:28px 0 0;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,rgba(220,38,38,0.06),var(--panel));text-decoration:none;color:inherit;transition:border-color .15s ease,transform .15s ease;">
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:10px;background:var(--red);color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">S</span>
+    <span style="flex:1;font-size:15px;line-height:1.45;color:var(--text);">
+      <strong>Try OllaVPN free — post-quantum-ready, lifetime free plan.</strong>
+      <span style="display:block;color:var(--text-mute);font-size:13px;margin-top:2px;">No credit card. Or $2/mo for 5 devices on a faster plan.</span>
+    </span>
+    <span style="font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:0.06em;flex-shrink:0;">DOWNLOAD →</span>
+  </a>
+
+    <p>A <strong>DNS leak</strong> happens when your device sends DNS requests — the lookups that turn website names into numbers — outside your VPN's encrypted tunnel. Your browsing activity becomes visible to your internet service provider even while you think the VPN is protecting it. <strong>To test:</strong> connect to your VPN, then visit a DNS leak test site like <em>dnsleaktest.com</em>. If the test shows only your VPN provider's DNS servers, you're safe. If it shows your ISP's servers, you have a leak. <strong>To prevent it for good:</strong> use a reputable VPN that handles DNS inside the encrypted tunnel by default, with an always-on kill switch. <a href="../dl/">OllaVPN does this automatically</a> on every connection.</p>
+  </div>
+
+  <div class="toc">
+    <div class="label">Jump to a section</div>
+    <ol>
+      <li><a href="#what-is-dns">What DNS actually does</a></li>
+      <li><a href="#what-is-leak">What a DNS leak is</a></li>
+      <li><a href="#why-matters">Why DNS leaks matter</a></li>
+      <li><a href="#causes">What causes DNS leaks</a></li>
+      <li><a href="#test">How to test for a DNS leak</a></li>
+      <li><a href="#read-results">How to read the test results</a></li>
+      <li><a href="#fix">How to fix a DNS leak</a></li>
+      <li><a href="#prevent">How to prevent leaks for good</a></li>
+      <li><a href="#kill-switch">DNS leak protection vs the kill switch</a></li>
+      <li><a href="#ipv6">A note on IPv6 leaks</a></li>
+      <li><a href="#checklist">Your privacy checklist</a></li>
+      <li><a href="#ollavpn">How OllaVPN handles DNS</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </div>
+
+  <p>Most privacy stories on the internet are dramatic. A DNS leak is the opposite. It is the quiet, easy-to-miss way that a VPN you trust can still hand your browsing history to your internet provider — not because the VPN is malicious, but because of how the request for "where is this website" travels through your computer.</p>
+
+  <p>The good news: a DNS leak is one of the easiest privacy problems to test for, and one of the easiest to fix. This guide walks you through both, in plain English, the way we'd explain it over coffee.</p>
+
+  <h2 id="what-is-dns">What DNS actually does, in one paragraph</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    DNS — the Domain Name System — translates human-readable website names like "ollavpn.com" into the numeric IP addresses that computers use to communicate. Every time you visit a website, your device asks a DNS server for the right number. That request is what can leak.
+  </div>
+
+  <p>Every website on the internet has a numeric address — something like <code>104.21.74.182</code>. Humans don't memorize numbers, so we type names: <em>ollavpn.com</em>, <em>nytimes.com</em>, <em>your-bank.com</em>. <strong>DNS</strong> — the Domain Name System — is the lookup service that turns the name you typed into the number your computer actually uses to connect.</p>
+
+  <p>Think of it as a phonebook for the internet. You ask, "Where is ollavpn.com?" The DNS server answers with a number. Your computer then makes the connection to that number.</p>
+
+  <p>By default, your computer asks <strong>your internet service provider's DNS server</strong> for every lookup. Your provider sees the question — and therefore sees the list of websites you visit — even if it can't see the content of the pages once you load them. That's where the privacy problem starts.</p>
+
+  <h2 id="what-is-leak">What a DNS leak is, in plain English</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    A DNS leak is when your device sends DNS lookups <em>outside</em> the encrypted VPN tunnel — to your internet provider instead of to your VPN's servers. The rest of your traffic might be private, but your DNS lookups reveal which sites you're visiting.
+  </div>
+
+  <p>When you connect to a VPN, the expectation is straightforward: everything your device sends should go through the encrypted tunnel. Your internet provider sees that you're using a VPN, but it can't see what you do inside it.</p>
+
+  <p>A <strong>DNS leak</strong> is when that expectation breaks. Your VPN tunnel handles most of your traffic correctly, but your DNS lookups slip out through a side door — they get sent to your internet provider instead of to your VPN's servers. To your provider, the list of websites you visited still looks the same as it did before you turned the VPN on.</p>
+
+  <p>It's a small leak. But for the same reason a small drip ruins a basement, a DNS leak quietly undoes much of what a VPN is supposed to do.</p>
+
+  <h2 id="why-matters">Why DNS leaks matter (and when they don't)</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    A DNS leak doesn't expose the content of your traffic — only which sites you're visiting. For most people that's a privacy concern. For journalists, activists, business travelers, and anyone in a restrictive network environment, it can be a serious one.
+  </div>
+
+  <p>Let's be honest about scale. For a casual user reading the news from a coffee-shop Wi-Fi, a DNS leak is a privacy concern but rarely a crisis. Your internet provider seeing that you visited the BBC website is not the same as your internet provider reading your email.</p>
+
+  <p>Where DNS leaks matter more:</p>
+
+  <ul>
+    <li><strong>If your country restricts internet access</strong>, the list of sites you visited can have real consequences. A VPN that leaks DNS is not actually protecting you.</li>
+    <li><strong>If you're a journalist or activist</strong> communicating with sources, the metadata — who you talked to, what sites you accessed — often matters more than the content of the conversations.</li>
+    <li><strong>If you're a business traveler</strong> on a hotel or airport Wi-Fi, you probably don't want every site you visited on the trip stored by an opaque third-party network operator.</li>
+    <li><strong>If you're at home and you simply value privacy</strong>, you don't want your internet provider building a profile of your habits to sell to advertising networks.</li>
+  </ul>
+
+  <p>The best way to think about it: a DNS leak doesn't undo your VPN — but it dramatically narrows what your VPN is protecting.</p>
+
+  <h2 id="causes">What causes DNS leaks</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    The most common causes are VPNs that don't handle DNS inside their own infrastructure, IPv6 traffic bypassing the tunnel, unexpected VPN disconnects without a kill switch, and operating-system misconfigurations. Choosing a VPN that handles DNS correctly by default removes most of the risk.
+  </div>
+
+  <p>DNS leaks have a handful of common root causes. Most of them are unintentional — bugs in older VPN clients, oversights in operating-system networking, side effects of recent network changes.</p>
+
+  <div class="causes-grid">
+    <div class="cause">
+      <h4>The VPN doesn't run its own DNS</h4>
+      <p>Some VPNs route the rest of your traffic through the tunnel but leave DNS lookups to your operating system, which routes them to your internet provider's resolver. Reputable VPNs run their own DNS infrastructure to prevent this.</p>
+    </div>
+    <div class="cause">
+      <h4>IPv6 traffic bypasses an IPv4 tunnel</h4>
+      <p>Many VPNs tunnel only IPv4 traffic. If your network has IPv6 enabled, those lookups can travel outside the tunnel without anything stopping them. The fix is a VPN that handles IPv6 (or one that disables it inside the tunnel by default).</p>
+    </div>
+    <div class="cause">
+      <h4>The VPN disconnects unexpectedly</h4>
+      <p>If your VPN drops for even a few seconds without a kill switch, your device falls back to your provider's network, including its DNS — and your in-progress browsing leaks. An always-on kill switch prevents this.</p>
+    </div>
+    <div class="cause">
+      <h4>Operating-system misconfiguration</h4>
+      <p>Windows in particular has historically had quirks around DNS resolution that can cause leaks even when the VPN itself is set up correctly. Modern VPN apps work around these quirks; older or simpler clients sometimes don't.</p>
+    </div>
+    <div class="cause">
+      <h4>Custom DNS settings</h4>
+      <p>If you've set a custom DNS server (like Google's 8.8.8.8 or Cloudflare's 1.1.1.1) at the operating-system level, some VPNs will respect that setting and route your DNS lookups to it instead of the VPN's own resolver. Whether this counts as a "leak" depends on how you feel about that third-party seeing your lookups.</p>
+    </div>
+    <div class="cause">
+      <h4>Transparent DNS hijacking</h4>
+      <p>A small number of internet providers intercept DNS requests at the network level and force them through their own resolvers, regardless of what the device asked for. A well-built VPN can route around this.</p>
+    </div>
+  </div>
+
+  <h2 id="test">How to test for a DNS leak — the five-minute method</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Disconnect your VPN, visit a DNS leak test site to record a baseline, then reconnect to the VPN and run the test again. If the DNS servers shown change from your internet provider to your VPN provider, you're protected.
+  </div>
+
+  <p>You don't need any technical knowledge to test for a DNS leak. Five minutes and a browser.</p>
+
+  <ol class="steps">
+    <li><strong>Disconnect from your VPN.</strong> Make sure the VPN app shows you're not connected. Open a browser and visit a DNS leak test site such as <em>dnsleaktest.com</em> or <em>browserleaks.com/dns</em>. Note the DNS servers shown — they belong to your internet provider and represent your baseline.</li>
+    <li><strong>Connect to your VPN.</strong> Open your VPN app and connect to any server. Wait a few seconds for the connection to fully establish.</li>
+    <li><strong>Run the test again.</strong> Reload the leak-test page or run the test fresh. The DNS servers shown should now be different — they should belong to your VPN provider, not your internet provider.</li>
+    <li><strong>Run the extended test.</strong> Most leak-test sites offer a "standard" test and an "extended" test. The extended test makes more lookups and catches edge cases the standard test can miss. Run it.</li>
+    <li><strong>Interpret the result.</strong> If the only DNS servers shown belong to your VPN provider, you have no DNS leak. If the test shows any of your internet provider's servers — alongside the VPN's or instead of them — you have a leak that needs fixing.</li>
+  </ol>
+
+  <p>That's it. The whole test takes under five minutes and costs nothing. We recommend doing it once when you first install a VPN, and again any time you make a significant change to your network or operating system.</p>
+
+  <h2 id="read-results">How to read the test results</h2>
+
+  <p>A DNS leak test result usually shows a short table: <strong>IP address</strong>, <strong>hostname</strong>, <strong>ISP</strong>, and <strong>country</strong>. What you want to see depends on the VPN you're using, but the pattern is consistent.</p>
+
+  <ul>
+    <li><strong>The ISP column</strong> should match the company that operates your VPN, not your home or office internet provider. If it says "Comcast" or "BT" or "Airtel" while your VPN is on, that's a leak.</li>
+    <li><strong>The country column</strong> should usually match the VPN server location you chose, not your real location. If you connected to a server in Germany but the DNS shows your real country, that's a leak.</li>
+    <li><strong>The hostname column</strong> should contain something that visibly belongs to your VPN provider. If you see hostnames from your internet provider, that's a leak.</li>
+  </ul>
+
+  <p>A clean test result looks consistent across all rows. A leaky one looks like a mix.</p>
+
+  <h2 id="fix">How to fix a DNS leak</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    The most reliable fix is to use a VPN that handles DNS correctly out of the box. Other options include disabling IPv6 on your device, enabling your VPN's kill switch, manually setting a privacy-friendly DNS resolver, and updating your VPN app to the latest version.
+  </div>
+
+  <p>If your test showed a leak, the fix depends on the cause. In order of how likely they are to resolve the problem:</p>
+
+  <ol>
+    <li><strong>Update your VPN app to the latest version.</strong> Many DNS-handling bugs have been fixed in newer releases. Open the VPN app and check for updates.</li>
+    <li><strong>Enable your VPN's DNS leak protection setting.</strong> Most reputable VPN apps have this turned on by default, but some let you disable it. Make sure it's on.</li>
+    <li><strong>Enable the kill switch.</strong> If a leak only appears during a disconnect, the kill switch will stop it. On most VPN apps this is in the main settings.</li>
+    <li><strong>Disable IPv6 on your device</strong> if your VPN doesn't tunnel it. Windows, macOS, and Linux all let you do this in network settings. This is a workaround, not a permanent solution — choose a VPN that handles IPv6 instead.</li>
+    <li><strong>Restart your network adapter</strong> after connecting the VPN. Sometimes Windows in particular gets confused about which DNS to use until the adapter is reset.</li>
+    <li><strong>Switch to a VPN that handles DNS securely by default.</strong> If your current VPN persistently leaks despite the above, the problem is in the product. The simplest fix is changing products.</li>
+  </ol>
+
+  <h2 id="prevent">How to prevent DNS leaks for good</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    Choose a VPN that handles DNS through its own infrastructure inside the encrypted tunnel by default, with an always-on kill switch and built-in IPv6 handling. Test once at setup, then trust the product.
+  </div>
+
+  <p>The honest truth is that <strong>you shouldn't have to think about DNS leaks at all</strong>. A well-built modern VPN handles DNS correctly out of the box, and you should be able to install it, connect, and move on with your life.</p>
+
+  <p>What to look for in a VPN if you want to set it and forget it:</p>
+
+  <ul>
+    <li><strong>The VPN runs its own DNS resolver</strong> inside the encrypted tunnel. Not "uses a third-party public resolver." Not "lets you configure your own." Runs its own.</li>
+    <li><strong>The kill switch is always on by default</strong> and ideally cannot be disabled. Privacy is not a setting you should be able to accidentally turn off.</li>
+    <li><strong>IPv6 is handled inside the tunnel</strong> or disabled in the tunnel by default. Either is fine; what's not fine is letting IPv6 traffic slip out.</li>
+    <li><strong>The VPN updates its app regularly</strong>. Networking edge cases get found and fixed over time. An app that hasn't updated in two years is more likely to leak than one that updates monthly.</li>
+    <li><strong>The VPN passes its own DNS leak test</strong>. Test it yourself once, just to confirm. Then let it run.</li>
+  </ul>
+
+  <h2 id="kill-switch">DNS leak protection vs the kill switch — they're not the same thing</h2>
+
+  <div class="answer-card">
+    <span class="q-label">QUICK ANSWER</span>
+    A kill switch blocks all traffic during a VPN disconnect, preventing leaks that would happen in those brief moments. Built-in DNS leak protection prevents leaks while the VPN is connected. You want both — they protect against different failure modes.
+  </div>
+
+  <p>One of the most common pieces of bad advice on the internet is "you just need a kill switch to prevent DNS leaks." That's only half right.</p>
+
+  <p>A <strong>kill switch</strong> stops all traffic when the VPN connection drops. If your VPN disconnects unexpectedly, the kill switch holds the door closed until the tunnel is back. That prevents leaks during disconnect events.</p>
+
+  <p>But a kill switch can't help with leaks that happen <em>while the VPN is connected</em> — which is when most DNS leaks actually occur. If your VPN routes the rest of your traffic correctly but sends DNS lookups to your internet provider, the kill switch sees nothing wrong because the tunnel is up. The leak happens anyway.</p>
+
+  <p>What you want is both: <strong>built-in DNS leak protection inside the tunnel, plus an always-on kill switch around the tunnel</strong>. They work together. They protect against different things.</p>
+
+  <h2 id="ipv6">A note on IPv6 leaks</h2>
+
+  <p>IPv6 deserves its own mention because it's the source of more "I thought I was protected" VPN incidents than any other single cause.</p>
+
+  <p>Most VPNs were originally built for IPv4 — the older addressing system the internet has used for decades. When IPv6 — the newer system — became available on residential networks, many VPNs simply ignored it. The result: IPv4 traffic went through the tunnel, IPv6 traffic went around it. If your home network uses both, you had what's effectively a permanent partial leak.</p>
+
+  <p>Modern reputable VPNs handle IPv6 either by routing it through the tunnel or by disabling it inside the tunnel by default. Either is a valid approach. What's not valid is letting it leak.</p>
+
+  <p>When you run a DNS leak test, also check whether the site offers an <strong>IPv6 leak test</strong> — many do. Run both.</p>
+
+  <h2 id="checklist">Your privacy checklist</h2>
+
+  <div class="checklist">
+    <h4>The five-minute "no-leak" sanity check, once a year</h4>
+    <ul>
+      <li><strong>Run a DNS leak test</strong> while connected to your VPN. Standard <em>and</em> extended.</li>
+      <li><strong>Run an IPv6 leak test</strong> at the same time.</li>
+      <li><strong>Run a WebRTC leak test</strong> from a browser. (Browsers sometimes leak real IPs through WebRTC even when the VPN is up.)</li>
+      <li><strong>Verify the kill switch is enabled</strong> in your VPN app's settings.</li>
+      <li><strong>Update your VPN app</strong> to the latest version.</li>
+      <li><strong>Check that your operating system is up to date</strong> — Windows, macOS, and Linux release networking fixes regularly.</li>
+    </ul>
+  </div>
+
+  <p>If all six come back clean, you can stop worrying about leaks for the rest of the year.</p>
+
+  <h2 id="ollavpn">How OllaVPN handles DNS — by default, without configuration</h2>
+
+  <p>We built <strong>OllaVPN</strong> to be the answer to the question "what should a modern privacy VPN do automatically?" When it comes to DNS, the answer is simple:</p>
+
+  <ul>
+    <li><strong>DNS requests stay inside the encrypted tunnel.</strong> Every lookup goes through OllaVPN's own infrastructure. Your internet provider never sees the names of the sites you visit while connected.</li>
+    <li><strong>The kill switch is always on.</strong> You can't accidentally disable it. If the tunnel ever drops, traffic stops until the tunnel is back.</li>
+    <li><strong>IPv6 is handled by default.</strong> No partial leaks, no manual configuration.</li>
+    <li><strong>No third-party DNS resolver in the loop.</strong> We don't hand your lookups to a public resolver and call it private. They go through us, inside the tunnel.</li>
+    <li><strong>Post-quantum cryptography ready from day one.</strong> The same encryption that protects your traffic today is built to remain secure against future quantum computers — the "harvest now, decrypt later" concern explained in our <a href="nordvpn-vs-protonvpn.html">comparison guide</a>.</li>
+  </ul>
+
+  <p>The result: if you run a DNS leak test while connected to OllaVPN, the test should show only OllaVPN's resolver. Every connection. Every time. There's nothing for you to configure.</p>
+
+  <div class="pull-card">
+    <p style="margin-bottom: 6px;"><strong>Try OllaVPN — the whole menu:</strong></p>
+    <div class="pricing">
+      <div class="tier">
+        <div class="label">Lifetime free</div>
+        <div class="price">$0 · 10 Mbps</div>
+        <div class="desc">Every country we serve. No time limits, no data caps, no ads. DNS leak protection and kill switch included by default.</div>
+      </div>
+      <div class="tier">
+        <div class="label">Paid plan</div>
+        <div class="price">$2 / month · 10 Gbps</div>
+        <div class="desc">Five devices on one account. Fast enough for gigabit home internet. Cheap enough that it isn't a decision.</div>
+      </div>
+    </div>
+  </div>
+
+  <p>You can <a href="../dl/">try the free plan</a> right now — no email, no card. Then run a DNS leak test and see for yourself.</p>
+
+  <div class="related-posts">
+    <h3>Related reading</h3>
+    <ul>
+      <li><a href="what-is-post-quantum-cryptography.html"><strong>Pillar guide:</strong> What is post-quantum cryptography? A 2026 guide</a></li>
+      <li><a href="nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN (2026): An Honest, Side-by-Side Comparison</a></li>
+      <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN (2026): An Honest, Side-by-Side Comparison</a></li>
+      <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN (2026): An Honest, Side-by-Side Comparison</a></li>
+      <li><a href="mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN (2026): An Honest, Side-by-Side Comparison</a></li>
+      <li><a href="../technology.html">Inside the OllaVPN stack — what PQC-ready actually means</a></li>
+    </ul>
+  </div>
+
+  <hr />
+
+  
+
+<!-- TIER1-TOPUP -->
+
+  <h2 id="tier1-topup-broader-context">A broader-context closing thought</h2>
+  <p>One pattern we've noticed across every privacy-and-networking topic we cover: the gap between what most users believe about a given topic and what the technical reality is keeps widening. Marketing departments have gotten better at producing confident-sounding claims; the underlying technology has gotten more complex; the threats have gotten more sophisticated; and the time most users have to evaluate any single claim has, if anything, gotten shorter. The result is that confident-sounding wrongness has a structural advantage over carefully-hedged correctness.</p>
+  <p>The remedy we've settled on is to publish at depth — long enough to cover the topic honestly, with primary sources and named authors and explicit limits — and to publish free verification tools so the reader does not have to take our word for the technical claims. Both are choices that don't optimise for "users who skim and click." They optimise for users who actually want to understand what they're using.</p>
+  <p>If you've read this far, you're in the second group. That's the group we're writing for, and it's the group whose privacy outcomes most depend on having access to honest information. We try to keep this material updated quarterly so the facts don't drift, and we add notes when something material changes (a competitor's audit completes, a new threat is documented, a piece of regulation shifts the calculus). The <a href="/best-free-vpn-2026">main free-VPN comparison</a>, the <a href="/technology">technology overview</a>, and the <a href="/tools/">free privacy tools</a> are the three pages most worth bookmarking from the OllaVPN site if you've found this guide useful.</p>
+  <h2 id="tier1-topup-verify-cross-references">Verify and cross-reference</h2>
+  <p>For any claim on this page that affects a decision you're about to make, the verification path we recommend:</p>
+  <p><strong>Verify the technical claim from your own device.</strong> Our <a href="/dns-lookup">DNS lookup</a>, <a href="/webrtc-leak-test">WebRTC leak test</a>, <a href="/what-is-my-ip">what-is-my-IP</a>, and the other tools at <a href="/tools/">our tools page</a> are free, require no account, and run entirely in your browser. Most claims about VPN behavior can be verified from your own device in under fifteen minutes using these tools.</p>
+  <p><strong>Cross-reference at least one third-party source.</strong> We are an operator with a commercial interest in the conclusion. The most reputable independent voices in the privacy-VPN category in 2026 are Mullvad's blog (technical depth without sales pressure because they don't run affiliate programs), the Privacy Guides project documentation, the Restore Privacy site, and the academic literature on consumer VPN security (the canonical paper is Ikram et al. 2016, "An Analysis of the Privacy and Security Risks of Android VPN Permission-enabled Apps," in ACM IMC). Read across multiple sources before forming a strong view.</p>
+  <p><strong>Read the primary sources where they exist.</strong> Government regulations, NIST publications, IETF RFCs, and court rulings are primary sources. Vendor marketing pages and most commentary pieces are derivatives. When a claim is specific enough to have a primary source (a specific regulation, a specific standard, a specific court case), find the primary source and read it yourself rather than relying on summaries.</p>
+  <p><strong>Update your view when the facts update.</strong> Privacy concerns shift, operators change, standards evolve. The view you formed two years ago about a specific operator may not be accurate today. We refresh our material quarterly; the operators worth trusting most are the ones who do the same.</p>
+<!-- TIER1-ENRICHED -->
+
+  <h2 id="tier1-deeper-context">Deeper context worth knowing</h2>
+  <p>A definitional explainer should leave you understanding not just the concept but the surrounding category — what other concepts it connects to, what common misunderstandings to avoid, and which adjacent ideas you should know about. A few worth covering:</p>
+  <p><strong>The category history matters.</strong> Most networking and privacy concepts you encounter today were invented to solve a specific problem that may or may not still be the dominant problem in 2026. Understanding why a concept exists helps you evaluate whether it's the right tool for your situation. We try to include the historical context for every "what is X" guide we publish.</p>
+  <p><strong>The standards-body work matters.</strong> Many privacy and networking concepts have a corresponding RFC, NIST publication, or IETF draft that defines them rigorously. The standard is the canonical source; vendor marketing pages and Wikipedia summaries are derivatives. When in doubt, find the standard.</p>
+  <p><strong>The threat model matters.</strong> The same concept can be a strong defense against one class of threat and useless against another. "Encrypted" doesn't mean "private" if the recipient is the threat actor. "Anonymized" doesn't mean "unlinkable" if you have enough side data. We try to be specific about what each property actually defends.</p>
+  <h2 id="tier1-related-ollavpn">How this connects to OllaVPN specifically</h2>
+  <p>If you've read this far, you probably want to know how the concept applies to OllaVPN's product. The short version:</p>
+  <p><strong>If the concept above is something a VPN should provide</strong> (no-logs, kill switch, in-tunnel DNS, peer isolation, post-quantum cryptography), OllaVPN ships it by default on the free tier. The cryptographic stack uses WireGuard with a hybrid X25519 + ML-KEM-768 handshake; the kill switch is enforced at the OS firewall layer (Windows Filtering Platform on Windows, Packet Filter on macOS, VpnService.setBlockingMode on Android); DNS goes to an in-tunnel unbound resolver with the OS DNS path firewall-blocked; peer isolation is enforced in four independent layers including an automated end-to-end test. Read the <a href="/technology">technology page</a> for the complete architecture.</p>
+  <p><strong>If the concept above is something only a VPN partially helps with</strong> (anonymity, censorship circumvention, streaming geo-unblock), OllaVPN does what a privacy VPN can do but the underlying limits of the category apply. We don't oversell capabilities we don't have. The <a href="/best-free-vpn-2026">best free VPN 2026 guide</a> covers what's realistic to expect from a free VPN versus what requires a paid tier or a different category of tool entirely.</p>
+  <p><strong>If the concept above is something a VPN doesn't help with at all</strong> (application-layer tracking, account-based identity, malware on your device, source-anonymity against a global passive adversary), we say so. A VPN replaces the ISP in the traffic-visibility role; it does not stop websites from tracking you, does not stop your accounts from identifying you, does not stop malware already on your device, and is not Tor. Use the right tool for each layer of the threat model.</p>
+
+  <h2 id="tier1-about">About this guide</h2>
+  <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
+  <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
+<div class="key-takeaways">
+      <span class="label">&#11088; Key takeaways</span>
+      <h2>What to remember from this guide</h2>
+      <ul>
+        <li>What DNS actually does, in one paragraph</li>
+        <li>What a DNS leak is, in plain English</li>
+        <li>Why DNS leaks matter (and when they don&#x27;t)</li>
+        <li>What causes DNS leaks</li>
+        <li>How to test for a DNS leak — the five-minute method</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+
+  <h3>What is a DNS leak in simple terms?</h3>
+  <p>A DNS leak happens when your device sends DNS requests — the lookups that turn "ollavpn.com" into a numeric address — <strong>outside the encrypted VPN tunnel</strong>. Even though the rest of your traffic is private, the leaked DNS requests reveal which websites you're visiting to your internet service provider or another third party.</p>
+
+  <h3>How do I check if my VPN is leaking DNS?</h3>
+  <p>Connect to your VPN, then visit a DNS leak test site such as <em>dnsleaktest.com</em> or <em>browserleaks.com/dns</em>. Run the <strong>extended test</strong>. If the only DNS servers shown belong to your VPN provider, there is no leak. If the test shows your internet provider's servers, your VPN is leaking DNS.</p>
+
+  <h3>Are DNS leaks dangerous?</h3>
+  <p>DNS leaks don't expose the content of your traffic, but they do reveal <strong>which websites you're visiting</strong>. For most people that's a privacy concern rather than a security emergency. For journalists, activists, business travelers, and anyone in a restrictive network environment, the exposure can be significant.</p>
+
+  <h3>What causes a DNS leak?</h3>
+  <p>Common causes include a VPN that doesn't route DNS through its own servers, IPv6 traffic bypassing the IPv4 tunnel, an unexpected VPN disconnect (no kill switch), Windows or macOS misconfigurations, and using a public DNS resolver while connected to a VPN. The simplest fix is choosing a VPN that handles DNS securely by default.</p>
+
+  <h3>Does a kill switch prevent DNS leaks?</h3>
+  <p>A kill switch prevents leaks that happen during a VPN disconnect by blocking all traffic until the tunnel is back. It doesn't prevent leaks caused by a VPN that mishandles DNS in the first place. You want <strong>both</strong>: built-in DNS leak protection AND an always-on kill switch.</p>
+
+  <h3>Do free VPNs leak DNS?</h3>
+  <p>Some do, some don't. Many free VPNs use third-party DNS resolvers or fail to handle IPv6 traffic, which causes leaks. <strong>Reputable free options — including <a href="/free-vpn">OllaVPN's lifetime free plan</a> — route DNS through their own infrastructure inside the tunnel by default.</strong></p>
+
+  <h3>Can I prevent DNS leaks without a VPN?</h3>
+  <p>Partially. You can switch your device to use an encrypted DNS resolver such as Cloudflare's 1.1.1.1 or Quad9, which prevents your ISP from seeing your DNS lookups. This doesn't encrypt the rest of your traffic — for that you still need a VPN.</p>
+
+  <h3>Is a DNS leak the same as an IP leak?</h3>
+  <p>No. A DNS leak exposes <strong>which websites you visit</strong>. An IP leak exposes your <strong>real IP address</strong>. They're different issues with different causes, and a good VPN protects against both. Many test sites check for both at the same time.</p>
+
+  <h3>How often should I test for DNS leaks?</h3>
+  <p>Once when you first install a VPN, once after any major operating-system update, and once whenever you change network settings or switch between Wi-Fi and Ethernet on a new network. A reputable VPN handles DNS correctly out of the box, so frequent testing isn't usually necessary.</p>
+
+  <h3>Does OllaVPN protect against DNS leaks?</h3>
+  <p>Yes. OllaVPN routes all DNS requests inside the encrypted tunnel by default — there is nothing to configure. The kill switch is always on. The result: when you're connected to OllaVPN, the DNS leak test should show only OllaVPN's resolver, every time. <a href="../dl/">Download free</a> to try it.</p>
+
+    <aside class="author-bio-card">
+      <div class="author-avatar" aria-hidden="true">NP</div>
+      <div>
+        <div class="bio-name">Nathan Pratt</div>
+        <div class="bio-role">Privacy &amp; Security Lead</div>
+        <p class="bio-text">Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN.</p>
+        <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
+      </div>
+    </aside>
+
+  <div class="inline-newsletter">
+  <span class="label">&#9993; Get the next one</span>
+  <h3>Honest writeups, every two weeks.</h3>
+  <p>Nathan posts one deep-dive every two weeks. No spam, no sales blasts, no clickbait headlines.</p>
+  <form>
+    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="msg" aria-live="polite">No card. Unsubscribe with one click.</div>
+</div>
+
+    <div class="share-row">
+  <span class="share-label">Share</span>
+  <button class="copy-link" type="button" aria-label="Copy link"><span class="share-text">Copy link</span></button>
+  <a href="https://twitter.com/intent/tweet?text=OllaVPN%20blog&amp;url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-a-dns-leak" target="_blank" rel="noopener">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-a-dns-leak" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-a-dns-leak&amp;t=OllaVPN%20blog" target="_blank" rel="noopener">HN</a>
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Follavpn.com%2Fblog%2Fwhat-is-a-dns-leak&amp;title=OllaVPN%20blog" target="_blank" rel="noopener">Reddit</a>
+</div>
+
+    </article>
+  <aside class="pillar-sidebar pillar-sidebar-right" aria-label="Related reading">
+  <h4>Related reading</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="what-is-a-vpn-and-how-does-it-work.html">What is a VPN?</a></li>
+    <li><a href="what-is-encrypted-client-hello.html">Encrypted Client Hello</a></li>
+    <li><a href="wireguard-vs-openvpn.html">WireGuard vs OpenVPN</a></li>
+    <li><a href="can-government-track-vpn.html">Can governments track VPNs?</a></li>
+    <li><a href="why-are-free-vpns-free.html">Why are free VPNs free?</a></li>
+    <li><a href="best-free-vpn-for-windows.html">Best free VPN for Windows</a></li>
+  </ul>
+  <h4>Buyer guides</h4>
+  <ul class="pillar-sidebar-list">
+    <li><a href="/best-free-vpn-2026">Best free VPN 2026</a></li>
+    <li><a href="/free-vpn-mac">Free VPN for Mac</a></li>
+    <li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li>
+    <li><a href="/free-vpn-for-india">Free VPN for India</a></li>
+  </ul>
+  <div class="pillar-card-mini">
+    <h4>Tools you might like</h4>
+    <ul class="pillar-sidebar-list" style="margin:0;">
+      <li><a href="/what-is-my-ip">What is my IP</a></li>
+      <li><a href="/webrtc-leak-test">WebRTC leak test</a></li>
+      <li><a href="/dns-lookup">DNS lookup</a></li>
+      <li><a href="/tools/">All tools →</a></li>
+    </ul>
+  </div>
+</aside>
+</div>
+
+<p class="footnote">Guide written and reviewed by the OllaVPN team. Last updated 2026-05-16. We update privacy guides whenever the underlying landscape changes meaningfully.</p>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>PQC-ready · lifetime free · no card</span>
+    <h2 class="h-display h2 mt-16">Try OllaVPN <span class="accent">free for life</span>.</h2>
+    <div class="actions"><a class="btn primary xl" href="../dl/">Download free <span class="arrow">→</span></a><a class="btn xl" href="./">More from the blog →</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div>
+  </div>
+</footer>
+
+<script src="../shared.js"></script>
+<script defer src="/blog.js?v=20260610-1318"></script>
+</body>
+</html>
