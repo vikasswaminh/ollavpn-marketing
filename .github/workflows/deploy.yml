@@ -1,0 +1,23 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: deploy-main
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: [self-hosted, mkt]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -e
+          D=$(mktemp -d)
+          cp -a . "$D"/
+          rm -rf "$D/.git" "$D/.github"
+          npx --yes wrangler@4 pages deploy "$D" --project-name=ollavpn-marketing --branch=main --commit-dirty=true
