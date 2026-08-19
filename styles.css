@@ -161,19 +161,9 @@ h3 { font-size: clamp(17px, 1.6vw, 22px); letter-spacing: -0.03em; }
 /* Nav links with animated underline (ItemUI #17). Standard Proton/Express
    affordance: a 2px red line scales in from the left on hover/active.
    Better hit feedback than color-only change. */
-.nav-links { display: flex; gap: 22px; font-size: 14px; color: var(--text-dim); }
-.nav-links a {
-  position: relative;
-  padding: 6px 4px;
-  transition: color .15s;
-}
-.nav-links a::after {
-  content: "";
-  position: absolute; left: 4px; right: 4px; bottom: -1px;
-  height: 2px; background: var(--red);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform .18s ease;
-}
+.nav-links { display: flex; align-items: center; gap: 24px; font-size: 14px; color: var(--text-dim); }
+.nav-links a { position: relative; display: inline-flex; align-items: center; padding: 6px 0; transition: color .15s; white-space: nowrap; line-height: 1; }
+.nav-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .18s ease; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
 .nav-cta { display: flex; gap: 10px; align-items: center; }
@@ -183,14 +173,9 @@ h3 { font-size: clamp(17px, 1.6vw, 22px); letter-spacing: -0.03em; }
    menu below the navbar. CSS-only: hover shows, focus-within shows
    (keyboard reachable), click-out hides via shared.js. Desktop only
    (>=900px). Mobile collapses into the existing nav-links accordion. */
-.nav-item { position: relative; padding: 6px 4px; cursor: pointer; transition: color .15s; }
+.nav-item { position: relative; display: inline-flex; align-items: center; padding: 6px 0; cursor: pointer; transition: color .15s; white-space: nowrap; line-height: 1; }
 .nav-item:hover, .nav-item.active, .nav-item:focus-within { color: var(--text); }
-.nav-item::after {
-  content: ""; position: absolute; left: 4px; right: 4px; bottom: -1px;
-  height: 2px; background: var(--red);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform .18s ease;
-}
+.nav-item::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .18s ease; }
 .nav-item:hover::after, .nav-item.active::after, .nav-item:focus-within::after { transform: scaleX(1); }
 .nav-item .caret {
   display: inline-block; margin-left: 4px; font-size: 10px;
