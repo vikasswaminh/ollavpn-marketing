@@ -42,7 +42,7 @@
 <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/inter.css" />
 <link rel="stylesheet" href="/jetbrains-mono.css" />
-<link rel="stylesheet" href="/styles.css?v=20260708-0556" />
+<link rel="stylesheet" href="/styles.css?v=20260819_v3" />
 
 <script type="application/ld+json">
 {
@@ -364,6 +364,192 @@
     .article-sidebar-left { display: block; position: sticky; top: 24px; }
   }
 </style>
+
+<style id="related-category-styles">
+  /* Category Explore Section at end of article */
+  .category-explore-deck {
+    margin: 48px 0 32px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--panel);
+  }
+  .category-deck-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .category-deck-header h4 {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text);
+  }
+  .category-deck-header h4 a {
+    color: var(--red);
+    text-decoration: none;
+  }
+  .category-deck-header .deck-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--red);
+    background: rgba(99, 102, 241, 0.15);
+    padding: 2px 8px;
+    border-radius: 99px;
+    margin-left: 6px;
+  }
+  .category-deck-header .view-all-link {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .category-deck-header .view-all-link:hover { text-decoration: underline; }
+  .category-deck-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .deck-card {
+    display: block;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.02);
+    text-decoration: none;
+    color: inherit;
+    transition: all .15s ease;
+  }
+  .deck-card:hover {
+    border-color: var(--red);
+    background: rgba(99, 102, 241, 0.08);
+    transform: translateY(-1px);
+  }
+  .deck-card-title {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.35;
+    margin-bottom: 4px;
+  }
+  .deck-card-read {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--red);
+  }
+
+  /* Floating Bottom Category Widget */
+  .floating-cat-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-family: var(--display);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 24px -4px rgba(99, 102, 241, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all .2s ease;
+  }
+  .floating-cat-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -4px rgba(99, 102, 241, 0.7);
+  }
+  .floating-cat-drawer {
+    position: fixed;
+    bottom: 74px;
+    right: 24px;
+    width: 360px;
+    max-height: 480px;
+    z-index: 100;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 20px 48px rgba(0,0,0,0.6);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeInSlide .2s ease;
+  }
+  @keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .floating-cat-drawer.open { display: flex; }
+  .drawer-head {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.03);
+  }
+  .drawer-head h5 {
+    margin: 0;
+    font-family: var(--display);
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .drawer-close {
+    background: none;
+    border: none;
+    color: var(--text-mute);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+  }
+  .drawer-body {
+    padding: 12px 14px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .drawer-item {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 13px;
+    line-height: 1.35;
+    transition: all .15s ease;
+  }
+  .drawer-item:hover {
+    color: var(--text);
+    background: rgba(99, 102, 241, 0.12);
+  }
+  .drawer-foot {
+    padding: 10px 14px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    background: rgba(255,255,255,0.02);
+  }
+  .drawer-foot a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--red);
+    text-decoration: none;
+  }
+</style>
+
 </head>
 
 <body>
@@ -780,6 +966,80 @@ Think of it this way: what you do online while connected to OllaVPN is your busi
         <a class="bio-more" href="/about/team#nathan-pratt">More from Nathan &rarr;</a>
       </div>
     </aside>
+
+  
+    <!-- Category Explore Section (Discover all hidden blogs) -->
+    
+
+  
+    <!-- Category Explore Section (Discover all hidden blogs) -->
+    <section class="category-explore-deck" aria-label="Related articles in Beginner basics">
+      <div class="category-deck-header">
+        <h4>More in <a href="index.html#beginner-basics">Beginner basics</a> <span class="deck-count">22 guides</span></h4>
+        <a class="view-all-link" href="index.html#beginner-basics">View all 22 in Beginner basics &rarr;</a>
+      </div>
+      <div class="category-deck-grid">
+          <a class="deck-card" href="does-vpn-slow-down-internet.html">
+            <div class="deck-card-title">Does a VPN Slow Down Your Internet Speed? The Honest Truth.</div>
+            <span class="deck-card-read">Read comparison &rarr;</span>
+          </a>
+          <a class="deck-card" href="lifetime-free-vpn.html">
+            <div class="deck-card-title">Lifetime Free VPN: What You Need to Know Before You Download</div>
+            <span class="deck-card-read">Read comparison &rarr;</span>
+          </a>
+          <a class="deck-card" href="what-is-a-burner-email.html">
+            <div class="deck-card-title">What Is a Burner Email, and Why Should You Care?</div>
+            <span class="deck-card-read">Read comparison &rarr;</span>
+          </a>
+          <a class="deck-card" href="what-is-a-burner-phone-number.html">
+            <div class="deck-card-title">What is a Burner Phone Number, and Why Should You Care?</div>
+            <span class="deck-card-read">Read comparison &rarr;</span>
+          </a>
+      </div>
+    </section>
+
+    <!-- Floating Category Drawer Widget -->
+    <button class="floating-cat-btn" id="catDrawerBtn" onclick="toggleCatDrawer()" aria-label="Explore more in Beginner basics">
+      <span>&#128218; More Beginner basics (22)</span>
+    </button>
+    <div class="floating-cat-drawer" id="catDrawer">
+      <div class="drawer-head">
+        <h5>Beginner basics (22 guides)</h5>
+        <button class="drawer-close" onclick="toggleCatDrawer()" aria-label="Close">&times;</button>
+      </div>
+      <div class="drawer-body">
+        <a class="drawer-item" href="does-vpn-slow-down-internet.html">Does a VPN Slow Down Your Internet Speed? The Honest Truth.</a>
+        <a class="drawer-item" href="lifetime-free-vpn.html">Lifetime Free VPN: What You Need to Know Before You Download</a>
+        <a class="drawer-item" href="what-is-a-burner-email.html">What Is a Burner Email, and Why Should You Care?</a>
+        <a class="drawer-item" href="what-is-a-burner-phone-number.html">What is a Burner Phone Number, and Why Should You Care?</a>
+        <a class="drawer-item" href="what-is-a-captcha.html">What is a CAPTCHA and Why Do You Keep Seeing Them?</a>
+        <a class="drawer-item" href="what-is-a-port-number.html">What Is A Port Number, And Why Should You Care?</a>
+        <a class="drawer-item" href="what-is-a-proxy.html">VPN vs. Proxy: What's the Real Difference, and Why Should You Care?</a>
+        <a class="drawer-item" href="what-is-a-static-ip.html">What is a Static IP Address and Why Should You Care?</a>
+        <a class="drawer-item" href="what-is-a-vpn-and-how-does-it-work.html">What is a VPN and How Does it Work?</a>
+        <a class="drawer-item" href="what-is-a-vpn-concentrator.html">What Exactly Is a VPN Concentrator, and Why Should You Care?</a>
+        <a class="drawer-item" href="what-is-a-vpn-protocol.html">What Exactly Is a VPN Protocol, and Why Should You Care?</a>
+        <a class="drawer-item" href="what-is-a-vpn-tunnel.html">What Exactly Is a VPN Tunnel, and Why Should You Care?</a>
+        <a class="drawer-item" href="what-is-an-ssid.html">What is an SSID? Your Wi-Fi Network Name, Explained Simply</a>
+        <a class="drawer-item" href="what-is-dns-over-https.html">What is DNS over HTTPS (DoH)? Your Privacy, Explained.</a>
+        <a class="drawer-item" href="what-is-end-to-end-encryption.html">What is End-to-End Encryption, and Why Should You Care?</a>
+        <a class="drawer-item" href="what-is-split-tunneling.html">What is Split Tunneling and Why Should You Care?</a>
+        <a class="drawer-item" href="what-is-vpn-obfuscation.html">What is VPN Obfuscation and Why Does it Matter for Your Online Freedom?</a>
+        <a class="drawer-item" href="what-is-vpn-passthrough.html">What is VPN Passthrough and Why Should You Care?</a>
+        <a class="drawer-item" href="why-are-free-vpns-free.html">Why Are Free VPNs Free? What's the Catch?</a>
+        <a class="drawer-item" href="why-does-my-vpn-keep-disconnecting.html">Why Does My VPN Keep Disconnecting? Here's How to Fix It.</a>
+        <a class="drawer-item" href="why-is-my-vpn-so-slow.html">Why Is My VPN So Slow? Get Your Speed Back Now.</a>
+      </div>
+      <div class="drawer-foot">
+        <a href="index.html#beginner-basics">Browse all 22 in Beginner basics &rarr;</a>
+      </div>
+    </div>
+    <script>
+      function toggleCatDrawer() {
+        const d = document.getElementById('catDrawer');
+        if (d) d.classList.toggle('open');
+      }
+    </script>
 
   </article>
 
