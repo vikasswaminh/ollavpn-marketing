@@ -10,26 +10,26 @@
   /* Premium PQC dark (2026-07): near-black canvas + violet primary.
      Token NAMES unchanged so the whole site + blog inherit; --red now
      carries the VIOLET brand accent, red retired to logo/alerts. */
-  --bg: #0B0B12;             /* canvas — near-black */
-  --bg-2: #14141C;           /* surface-1: alt sections */
+  --bg: #07090E;             /* Deep Obsidian Midnight */             /* canvas — near-black */
+  --bg-2: #0E121E;           /* Elevated surface */           /* surface-1: alt sections */
   --grid-line: rgba(124, 92, 255, 0.06);   /* faint violet grid */
   --grid-size: 32px;
   --bg-tint: rgba(34, 211, 238, 0.07);     /* cyan-tint info card */
-  --panel: #14141C;          /* cards */
-  --panel-2: #1C1C26;        /* raised panel */
+  --panel: rgba(16, 22, 38, 0.75); /* Frosted glass card */          /* cards */
+  --panel-2: #151D33;        /* raised panel */
   --line: rgba(255, 255, 255, 0.09);       /* hairline — border-first */
   --line-2: rgba(255, 255, 255, 0.14);
-  --text: #ECECF2;           /* near-white */
-  --text-dim: #A8A8B6;
+  --text: #F8FAFC;           /* Ultra crisp white */           /* near-white */
+  --text-dim: #94A3B8;       /* Readable secondary slate */
   --text-mute: #6E6E7C;
-  --surface-dark: #14122A;   /* deep indigo band — footer + trust */
-  --red: #7C5CFF;            /* PRIMARY = electric violet (brand accent) */
-  --red-2: #6D4EE6;          /* hover/pressed */
-  --red-soft: rgba(124, 92, 255, 0.14);
+  --surface-dark: #070913;   /* deep indigo band — footer + trust */
+  --red: #6366F1;            /* Electric Indigo */            /* PRIMARY = electric violet (brand accent) */
+  --red-2: #4F46E5;          /* Hover Indigo */          /* hover/pressed */
+  --red-soft: rgba(99, 102, 241, 0.15);
   --amber: #FBBF24;
   --amber-2: #F59E0B;
   --green: #34D399;
-  --blue: #22D3EE;           /* quantum cyan */
+  --blue: #06B6D4;           /* Cyber Cyan */           /* quantum cyan */
   --violet: #8B5CF6;         /* PQC accent */
   /* Radius — default bumped to 12px for softer modern cards; 6/8/16 retained. */
   --radius: 12px;
@@ -41,15 +41,15 @@
   --shadow-card: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px rgba(0,0,0,.38);
   --shadow-card-hover: 0 1px 2px rgba(0,0,0,.45), 0 18px 46px rgba(0,0,0,.55);
   /* Radial hero glow — violet wash centered behind the H1 */
-  --gradient-hero: radial-gradient(60% 60% at 50% 0%, rgba(124,92,255,.14), transparent 70%);
+  --gradient-hero: radial-gradient(70% 60% at 50% 0%, rgba(99,102,241,.24), rgba(6,182,212,0.06) 45%, transparent 75%);
 
   /* Type system (2026-06-10): Lato for BOTH body + display so every head
      across the site carries the same chunky personality as the hero H1.
      Display heads use Lato 700 (Bold, self-hosted at lato-700-latin.woff2).
      Inter is left available but unused — preload kept for now in case we
      swap back; can drop in a follow-up if we commit to single-family. */
-  --sans: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  --display: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
@@ -63,7 +63,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.65; letter-spacing: -0.011em;
   font-feature-settings: "ss01", "cv11";
   /* Pure-white page + faint brand-red grid pattern (NetworkersHome shape).
      Two 1px linear-gradients give a perfectly tiled square grid; sections
@@ -290,7 +290,7 @@ h3 { font-size: clamp(17px, 1.6vw, 22px); letter-spacing: -0.03em; }
   background: var(--red);
   border: 1px solid var(--red-2);
   color: #fff;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+  box-shadow: 0 4px 18px rgba(99, 102, 241, 0.38); font-weight: 600;
 }
 .btn.primary:hover { background: var(--red-2); }
 .btn.ghost { background: transparent; border-color: transparent; color: var(--text-dim); }
@@ -303,7 +303,7 @@ h3 { font-size: clamp(17px, 1.6vw, 22px); letter-spacing: -0.03em; }
 .btn .arrow { font-family: var(--mono); font-size: 14px; opacity: 0.85; }
 
 /* Surfaces */
-.surface { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-card); transition: box-shadow .18s, transform .18s; }
+.surface { background: var(--panel); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-card); transition: box-shadow .18s, transform .18s; }
 .surface.elev { box-shadow: var(--shadow-card-hover); }
 .surface.glow { position: relative; }
 .surface.glow::before {
@@ -328,8 +328,8 @@ h3 { font-size: clamp(17px, 1.6vw, 22px); letter-spacing: -0.03em; }
    Heads are center-aligned site-wide for any single-column section
    (kicker + h2 + lede stack). Two-column .feature rows have their own
    .feature .copy layout and are NOT affected by this rule. */
-.section { padding: 79px 0; }
-.section-sm { padding: 58px 0; }
+.section { padding: 96px 0; }
+.section-sm { padding: 68px 0; }
 .section .head, .section-sm .head { max-width: 760px; margin: 0 auto 28px; text-align: center; }
 .section .head .h2 { margin-top: 10px; }
 .section .head .lede { margin-top: 13px; font-size: 14px; color: var(--text-dim); }
