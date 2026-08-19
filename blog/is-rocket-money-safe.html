@@ -1066,30 +1066,7 @@ When contacting support, be explicit that you want all your data permanently del
   </aside>
 </div>
 
-<script>
-  // Scroll-spy: highlight current section in right rail TOC.
-  (function () {
-    var rail = document.querySelector(".toc-rail");
-    if (!rail) return;
-    var links = new Map();
-    rail.querySelectorAll("a").forEach(function (a) {
-      var id = a.getAttribute("href").replace("#", "");
-      links.set(id, a);
-    });
-    var headings = document.querySelectorAll(".article h2[id]");
-    if (!headings.length) return;
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        var link = links.get(e.target.id);
-        if (!link) return;
-        var li = link.closest("li");
-        if (e.isIntersecting) li.classList.add("is-current");
-        else li.classList.remove("is-current");
-      });
-    }, { rootMargin: "-30% 0px -60% 0px" });
-    headings.forEach(function (h) { obs.observe(h); });
-  })();
-</script>
+
 
 <footer class="footer">
   <div class="wrap">
@@ -1104,6 +1081,7 @@ When contacting support, be explicit that you want all your data permanently del
   </div>
 </footer>
 
-<script defer src="/blog.js?v=20260610-1318"></script>
+
+<script defer src="/blog.js?v=20260819_v7"></script>
 </body>
 </html>
