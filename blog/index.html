@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/inter.css" />
 <link rel="stylesheet" href="/jetbrains-mono.css" />
-<link rel="stylesheet" href="../styles.css?v=20260819_v4" />
+<link rel="stylesheet" href="../styles.css?v=20260819_v5" />
 <style>
   .page-hero { padding: 88px 0 40px; position: relative; overflow: hidden; }
   .page-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.12), transparent 60%); pointer-events:none; }
@@ -41,11 +41,14 @@
     grid-template-columns: 240px minmax(0, 1fr) 260px;
     gap: 36px;
     align-items: start;
+    position: relative;
+    z-index: 1;
   }
   .blog-sidebar {
     position: sticky;
     top: 80px;
     font-size: 14px;
+    z-index: 10;
   }
   .blog-sidebar h4 {
     font-family: var(--mono);
@@ -63,7 +66,7 @@
   .blog-sidebar button.side-filter-btn {
     background: none;
     border: none;
-    cursor: pointer;
+    cursor: pointer !important;
     font-family: inherit;
     font-size: 14px;
     color: var(--text-dim);
@@ -78,15 +81,17 @@
     transition: all .15s ease;
     user-select: none;
     -webkit-user-select: none;
+    position: relative;
+    z-index: 20;
+    pointer-events: auto !important;
   }
-  .blog-sidebar button.side-filter-btn * { pointer-events: none; }
   .blog-sidebar button.side-filter-btn:hover {
     color: var(--text);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.06);
   }
   .blog-sidebar button.side-filter-btn.active {
     color: #fff !important;
-    background: rgba(99, 102, 241, 0.18) !important;
+    background: rgba(99, 102, 241, 0.2) !important;
     border-left: 3px solid var(--red) !important;
     font-weight: 600 !important;
   }
@@ -97,6 +102,7 @@
     background: rgba(255,255,255,0.06);
     padding: 2px 6px;
     border-radius: 99px;
+    pointer-events: none;
   }
   .blog-sidebar button.side-filter-btn.active .count {
     color: var(--red);
@@ -113,6 +119,8 @@
     border: 1px solid var(--line);
     border-radius: 14px;
     padding: 18px 20px;
+    position: relative;
+    z-index: 10;
   }
   .filter-header-row {
     display: flex;
@@ -171,6 +179,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    position: relative;
+    z-index: 15;
   }
   .pill-btn {
     background: var(--bg-2);
@@ -180,10 +190,13 @@
     font-family: var(--mono);
     padding: 6px 14px;
     border-radius: 999px;
-    cursor: pointer;
+    cursor: pointer !important;
     transition: all .15s ease;
     user-select: none;
     -webkit-user-select: none;
+    position: relative;
+    z-index: 20;
+    pointer-events: auto !important;
   }
   .pill-btn:hover { border-color: var(--red); color: var(--text); }
   .pill-btn.active {
@@ -1356,7 +1369,7 @@
     let visibleCount = 0;
 
     // Update active buttons in sidebar and pill-bar
-    document.querySelectorAll('.side-filter-btn, .pill-btn').forEach(btn => {
+    document.querySelectorAll('.side-filter-btn, .pill-btn').forEach(function(btn) {
       const bCat = btn.getAttribute('data-cat');
       if (bCat === activeCat) {
         btn.classList.add('active');
@@ -1373,7 +1386,7 @@
     }
 
     // Filter cards
-    cards.forEach(card => {
+    cards.forEach(function(card) {
       const cardCat = card.getAttribute('data-category');
       const isPillar = card.getAttribute('data-pillar') === 'true';
       const text = card.textContent.toLowerCase();
@@ -1405,9 +1418,20 @@
         history.replaceState(null, '', currentPath + newHash);
       }
     } catch (err) {
-      console.log(err);
+      // ignore
     }
   };
+
+  // Universal click delegation listener for extra reliability
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('[data-cat], .side-filter-btn, .pill-btn');
+    if (btn) {
+      const cat = btn.getAttribute('data-cat');
+      if (cat) {
+        window.applyCategoryFilter(cat);
+      }
+    }
+  });
 
   // Handle hashchange and initial load
   function initFilterFromURL() {
@@ -1429,6 +1453,6 @@
     initFilterFromURL();
   }
 </script>
-<script src="../shared.js?v=20260819_v4"></script>
+<script src="../shared.js?v=20260819_v5"></script>
 </body>
 </html>
