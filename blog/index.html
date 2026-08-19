@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/inter.css" />
 <link rel="stylesheet" href="/jetbrains-mono.css" />
-<link rel="stylesheet" href="../styles.css?v=20260819_v5" />
+<link rel="stylesheet" href="../styles.css?v=20260819_v6" />
 <style>
   .page-hero { padding: 88px 0 40px; position: relative; overflow: hidden; }
   .page-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.12), transparent 60%); pointer-events:none; }
@@ -408,55 +408,55 @@
         <h4>Categories</h4>
         <ul id="category-list">
           <li>
-            <button type="button" class="side-filter-btn active" data-cat="all" onclick="window.applyCategoryFilter('all')">
+            <button type="button" class="side-filter-btn active" data-cat="all">
               <span>All posts</span>
               <span class="count">110</span>
             </button>
           </li>
           <li>
-            <button type="button" class="side-filter-btn" data-cat="pillars" onclick="window.applyCategoryFilter('pillars')">
+            <button type="button" class="side-filter-btn" data-cat="pillars">
               <span>Pillar guides</span>
               <span class="count">13</span>
             </button>
           </li>
           <li>
-            <button type="button" class="side-filter-btn" data-cat="comparisons" onclick="window.applyCategoryFilter('comparisons')">
+            <button type="button" class="side-filter-btn" data-cat="comparisons">
               <span>Comparisons</span>
               <span class="count">15</span>
             </button>
           </li>
           <li>
-            <button type="button" class="side-filter-btn" data-cat="buyer-guides" onclick="window.applyCategoryFilter('buyer-guides')">
+            <button type="button" class="side-filter-btn" data-cat="buyer-guides">
               <span>Buyer guides</span>
               <span class="count">16</span>
             </button>
           </li>
           <li>
-            <button type="button" class="side-filter-btn" data-cat="privacy-security" onclick="window.applyCategoryFilter('privacy-security')">
+            <button type="button" class="side-filter-btn" data-cat="privacy-security">
               <span>Privacy guides</span>
               <span class="count">25</span>
             </button>
           </li>
           <li>
-            <button type="button" class="side-filter-btn" data-cat="how-to-guides" onclick="window.applyCategoryFilter('how-to-guides')">
+            <button type="button" class="side-filter-btn" data-cat="how-to-guides">
               <span>How-to guides</span>
               <span class="count">12</span>
             </button>
           </li>
           <li>
-            <button type="button" class="side-filter-btn" data-cat="beginner-basics" onclick="window.applyCategoryFilter('beginner-basics')">
+            <button type="button" class="side-filter-btn" data-cat="beginner-basics">
               <span>Beginner basics</span>
               <span class="count">22</span>
             </button>
           </li>
           <li>
-            <button type="button" class="side-filter-btn" data-cat="protocol-tech" onclick="window.applyCategoryFilter('protocol-tech')">
+            <button type="button" class="side-filter-btn" data-cat="protocol-tech">
               <span>Protocol &amp; tech</span>
               <span class="count">12</span>
             </button>
           </li>
           <li>
-            <button type="button" class="side-filter-btn" data-cat="use-cases" onclick="window.applyCategoryFilter('use-cases')">
+            <button type="button" class="side-filter-btn" data-cat="use-cases">
               <span>Use cases</span>
               <span class="count">8</span>
             </button>
@@ -465,10 +465,10 @@
 
         <h4>Quick Jump</h4>
         <div class="pill-bar" style="margin-bottom:24px;">
-          <button type="button" class="pill-btn" onclick="window.applyCategoryFilter('comparisons')">15 Comparisons</button>
-          <button type="button" class="pill-btn" onclick="window.applyCategoryFilter('use-cases')">Netflix &amp; Gaming</button>
-          <button type="button" class="pill-btn" onclick="window.applyCategoryFilter('protocol-tech')">WireGuard &amp; PQC</button>
-          <button type="button" class="pill-btn" onclick="window.applyCategoryFilter('buyer-guides')">India &amp; Windows</button>
+          <button type="button" class="pill-btn" data-cat="comparisons">15 Comparisons</button>
+          <button type="button" class="pill-btn" data-cat="use-cases">Netflix &amp; Gaming</button>
+          <button type="button" class="pill-btn" data-cat="protocol-tech">WireGuard &amp; PQC</button>
+          <button type="button" class="pill-btn" data-cat="buyer-guides">India &amp; Windows</button>
         </div>
       </aside>
 
@@ -481,20 +481,20 @@
             </h2>
             <div class="search-wrapper">
               <span class="search-icon">&#128269;</span>
-              <input type="text" id="blog-search" class="search-input" placeholder="Search 110 articles..." autocomplete="off" oninput="window.applyCategoryFilter(window.currentCategory || 'all')" />
+              <input type="text" id="blog-search" class="search-input" placeholder="Search 110 articles..." autocomplete="off" />
             </div>
           </div>
 
           <div class="pill-bar" id="pill-bar">
-            <button type="button" class="pill-btn active" data-cat="all" onclick="window.applyCategoryFilter('all')">All (110)</button>
-            <button type="button" class="pill-btn" data-cat="pillars" onclick="window.applyCategoryFilter('pillars')">Pillars (13)</button>
-            <button type="button" class="pill-btn" data-cat="comparisons" onclick="window.applyCategoryFilter('comparisons')">Comparisons (15)</button>
-            <button type="button" class="pill-btn" data-cat="buyer-guides" onclick="window.applyCategoryFilter('buyer-guides')">Buyer Guides (16)</button>
-            <button type="button" class="pill-btn" data-cat="privacy-security" onclick="window.applyCategoryFilter('privacy-security')">Privacy (25)</button>
-            <button type="button" class="pill-btn" data-cat="how-to-guides" onclick="window.applyCategoryFilter('how-to-guides')">How-To (12)</button>
-            <button type="button" class="pill-btn" data-cat="beginner-basics" onclick="window.applyCategoryFilter('beginner-basics')">Basics (22)</button>
-            <button type="button" class="pill-btn" data-cat="protocol-tech" onclick="window.applyCategoryFilter('protocol-tech')">Protocols (12)</button>
-            <button type="button" class="pill-btn" data-cat="use-cases" onclick="window.applyCategoryFilter('use-cases')">Use Cases (8)</button>
+            <button type="button" class="pill-btn active" data-cat="all">All (110)</button>
+            <button type="button" class="pill-btn" data-cat="pillars">Pillars (13)</button>
+            <button type="button" class="pill-btn" data-cat="comparisons">Comparisons (15)</button>
+            <button type="button" class="pill-btn" data-cat="buyer-guides">Buyer Guides (16)</button>
+            <button type="button" class="pill-btn" data-cat="privacy-security">Privacy (25)</button>
+            <button type="button" class="pill-btn" data-cat="how-to-guides">How-To (12)</button>
+            <button type="button" class="pill-btn" data-cat="beginner-basics">Basics (22)</button>
+            <button type="button" class="pill-btn" data-cat="protocol-tech">Protocols (12)</button>
+            <button type="button" class="pill-btn" data-cat="use-cases">Use Cases (8)</button>
           </div>
         </div>
 
@@ -1273,7 +1273,7 @@
         <div class="no-results" id="no-results">
           <h3>No articles found</h3>
           <p>Try searching for a different keyword or choose another category.</p>
-          <button type="button" class="btn ghost mt-16" onclick="window.applyCategoryFilter('all')">View all 110 articles</button>
+          <button type="button" class="btn ghost mt-16" data-reset-filter="true">View all 110 articles</button>
         </div>
       </main>
 
@@ -1345,114 +1345,7 @@
   </div>
 </footer>
 
-<script>
-  window.catTitles = {
-    'all': 'All Articles',
-    'pillars': 'Pillar Guides',
-    'comparisons': 'VPN Comparisons',
-    'buyer-guides': 'Buyer Guides',
-    'privacy-security': 'Privacy & Security Guides',
-    'how-to-guides': 'How-To Tutorials',
-    'beginner-basics': 'Beginner Basics',
-    'protocol-tech': 'Protocols & Cryptography',
-    'use-cases': 'Streaming & Use Cases'
-  };
-
-  window.currentCategory = 'all';
-
-  window.applyCategoryFilter = function(cat) {
-    window.currentCategory = cat || 'all';
-    const activeCat = window.currentCategory;
-    const cards = document.querySelectorAll('.post-card');
-    const searchInput = document.getElementById('blog-search');
-    const searchVal = searchInput ? searchInput.value.toLowerCase().trim() : '';
-    let visibleCount = 0;
-
-    // Update active buttons in sidebar and pill-bar
-    document.querySelectorAll('.side-filter-btn, .pill-btn').forEach(function(btn) {
-      const bCat = btn.getAttribute('data-cat');
-      if (bCat === activeCat) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-
-    // Update heading title
-    const headingEl = document.getElementById('active-cat-title');
-    if (headingEl) {
-      const titleText = window.catTitles[activeCat] || 'Articles';
-      headingEl.innerHTML = titleText + ' <span class="filter-badge" id="visible-count">0</span>';
-    }
-
-    // Filter cards
-    cards.forEach(function(card) {
-      const cardCat = card.getAttribute('data-category');
-      const isPillar = card.getAttribute('data-pillar') === 'true';
-      const text = card.textContent.toLowerCase();
-
-      let matchesCat = (activeCat === 'all') || (activeCat === 'pillars' && isPillar) || (cardCat === activeCat);
-      let matchesSearch = !searchVal || text.includes(searchVal);
-
-      if (matchesCat && matchesSearch) {
-        card.style.setProperty('display', 'flex', 'important');
-        visibleCount++;
-      } else {
-        card.style.setProperty('display', 'none', 'important');
-      }
-    });
-
-    const countEl = document.getElementById('visible-count');
-    if (countEl) countEl.textContent = visibleCount;
-
-    const noResultsEl = document.getElementById('no-results');
-    if (noResultsEl) {
-      noResultsEl.style.setProperty('display', visibleCount === 0 ? 'block' : 'none', 'important');
-    }
-
-    // Update URL hash safely without scrolling
-    try {
-      if (history.replaceState) {
-        const newHash = activeCat === 'all' ? '' : '#' + activeCat;
-        const currentPath = window.location.pathname + (window.location.search || '');
-        history.replaceState(null, '', currentPath + newHash);
-      }
-    } catch (err) {
-      // ignore
-    }
-  };
-
-  // Universal click delegation listener for extra reliability
-  document.addEventListener('click', function(e) {
-    const btn = e.target.closest('[data-cat], .side-filter-btn, .pill-btn');
-    if (btn) {
-      const cat = btn.getAttribute('data-cat');
-      if (cat) {
-        window.applyCategoryFilter(cat);
-      }
-    }
-  });
-
-  // Handle hashchange and initial load
-  function initFilterFromURL() {
-    const hash = (window.location.hash || '').replace('#', '').trim();
-    const urlParams = new URLSearchParams(window.location.search);
-    const catParam = urlParams.get('cat') || urlParams.get('category') || hash;
-    
-    if (catParam && window.catTitles[catParam]) {
-      window.applyCategoryFilter(catParam);
-    } else {
-      window.applyCategoryFilter('all');
-    }
-  }
-
-  window.addEventListener('hashchange', initFilterFromURL);
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initFilterFromURL);
-  } else {
-    initFilterFromURL();
-  }
-</script>
-<script src="../shared.js?v=20260819_v5"></script>
+<script src="blog.js?v=20260819_v6"></script>
+<script src="../shared.js?v=20260819_v6"></script>
 </body>
 </html>

@@ -959,6 +959,10 @@ You also lose a layer of anonymity the moment you **log into accounts** like Goo
 
   
     <!-- Category Explore Section (Discover all hidden blogs) -->
+    
+
+  
+    <!-- Category Explore Section (Discover all hidden blogs) -->
     <section class="category-explore-deck" aria-label="Related articles in Privacy guides">
       <div class="category-deck-header">
         <h4>More in <a href="index.html#privacy-security">Privacy guides</a> <span class="deck-count">25 guides</span></h4>
@@ -967,31 +971,31 @@ You also lose a layer of anonymity the moment you **log into accounts** like Goo
       <div class="category-deck-grid">
           <a class="deck-card" href="are-free-vpns-safe.html">
             <div class="deck-card-title">Are Free VPNs Safe? What You Need to Know Before You Connect</div>
-            <span class="deck-card-read">Read comparison &rarr;</span>
+            <span class="deck-card-read">Read guide &rarr;</span>
           </a>
           <a class="deck-card" href="are-vpns-legal.html">
             <div class="deck-card-title">Are VPNs Legal? What You Need to Know About VPN Legality and Privacy</div>
-            <span class="deck-card-read">Read comparison &rarr;</span>
+            <span class="deck-card-read">Read guide &rarr;</span>
           </a>
           <a class="deck-card" href="can-a-website-detect-vpn.html">
             <div class="deck-card-title">Can Websites Detect VPNs? What You Need to Know About Online Privacy</div>
-            <span class="deck-card-read">Read comparison &rarr;</span>
+            <span class="deck-card-read">Read guide &rarr;</span>
           </a>
           <a class="deck-card" href="can-government-track-vpn.html">
             <div class="deck-card-title">Can Governments Really Track Your VPN? The Unvarnished Truth About Your Online Privacy</div>
-            <span class="deck-card-read">Read comparison &rarr;</span>
+            <span class="deck-card-read">Read guide &rarr;</span>
           </a>
       </div>
     </section>
 
     <!-- Floating Category Drawer Widget -->
-    <button class="floating-cat-btn" id="catDrawerBtn" onclick="toggleCatDrawer()" aria-label="Explore more in Privacy guides">
+    <button class="floating-cat-btn" id="catDrawerBtn" type="button" aria-label="Explore more in Privacy guides">
       <span>&#128218; More Privacy guides (25)</span>
     </button>
     <div class="floating-cat-drawer" id="catDrawer">
       <div class="drawer-head">
         <h5>Privacy guides (25 guides)</h5>
-        <button class="drawer-close" onclick="toggleCatDrawer()" aria-label="Close">&times;</button>
+        <button class="drawer-close" type="button" aria-label="Close">&times;</button>
       </div>
       <div class="drawer-body">
         <a class="drawer-item" href="are-free-vpns-safe.html">Are Free VPNs Safe? What You Need to Know Before You Connect</a>
@@ -1023,12 +1027,6 @@ You also lose a layer of anonymity the moment you **log into accounts** like Goo
         <a href="index.html#privacy-security">Browse all 25 in Privacy guides &rarr;</a>
       </div>
     </div>
-    <script>
-      function toggleCatDrawer() {
-        const d = document.getElementById('catDrawer');
-        if (d) d.classList.toggle('open');
-      }
-    </script>
 
   </article>
 
