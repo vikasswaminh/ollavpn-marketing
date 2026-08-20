@@ -344,6 +344,146 @@
   gap: 8px !important;
 }
 
+
+/* ==========================================================================
+   Standard 3-Column Blog Article Layout (All 111 Blog Pages)
+   ========================================================================== */
+.article-layout {
+  display: grid !important;
+  grid-template-columns: 240px minmax(0, 1fr) 260px !important;
+  gap: 36px !important;
+  align-items: start !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding: 40px 24px 80px !important;
+}
+
+.article-sidebar-left {
+  position: sticky !important;
+  top: 84px !important;
+  font-size: 14px !important;
+  display: block !important;
+}
+
+.sidebar-card {
+  background: var(--panel) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  padding: 18px 20px !important;
+}
+
+.sidebar-card .chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--line) !important;
+  background: var(--bg-2) !important;
+  font-family: var(--mono) !important;
+  font-size: 10.5px !important;
+  color: var(--text-dim) !important;
+  letter-spacing: 0.04em !important;
+}
+
+.sidebar-card .dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: var(--red) !important;
+  box-shadow: 0 0 0 3px rgba(225, 28, 38, 0.2) !important;
+}
+
+.sidebar-card h4 {
+  margin: 12px 0 8px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+}
+
+.sidebar-card p {
+  font-size: 12.5px !important;
+  color: var(--text-dim) !important;
+  margin: 0 0 16px !important;
+  line-height: 1.5 !important;
+}
+
+.sidebar-card .btn.primary {
+  display: block !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  padding: 8px 12px !important;
+  text-decoration: none !important;
+}
+
+.toc-rail {
+  position: sticky !important;
+  top: 84px !important;
+  font-size: 13px !important;
+  max-height: calc(100vh - 100px) !important;
+  overflow-y: auto !important;
+  padding-left: 14px !important;
+  border-left: 1px solid var(--line) !important;
+  display: block !important;
+}
+
+.toc-rail .label {
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--text-mute) !important;
+  display: block !important;
+  margin-bottom: 12px !important;
+}
+
+.toc-rail ol {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.toc-rail li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.toc-rail a {
+  color: var(--text-dim) !important;
+  text-decoration: none !important;
+  display: block !important;
+  line-height: 1.4 !important;
+  transition: color .15s ease !important;
+}
+
+.toc-rail a:hover,
+.toc-rail li.is-current a {
+  color: var(--red) !important;
+  font-weight: 600 !important;
+}
+
+@media (max-width: 1200px) {
+  .article-layout {
+    grid-template-columns: minmax(0, 1fr) 240px !important;
+  }
+  .article-sidebar-left {
+    display: none !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .article-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .toc-rail {
+    display: none !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -440,21 +580,20 @@
   <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
-      <span class="chip"><span class="dot"></span>Privacy Guide · 2026</span>
-      <h4 style="margin:12px 0 8px;font-size:14px;">Published by OllaVPN</h4>
-      <p style="font-size:12.5px;color:var(--text-dim);margin:0 0 16px;line-height:1.5;">Technical investigation into surveillance advertising: third-party cookies, canvas fingerprinting, pixel beacons, and identity graphs.</p>
+      <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
+      <h4 style="margin:12px 0 8px;font-size:14px;color:#FFFFFF;">Published by OllaVPN</h4>
+      <p style="font-size:12.5px;color:var(--text-dim);margin:0 0 16px;line-height:1.5;">The complete, plain-English guide to how advertisers track you across the internet — third-party cookies, browser fingerprinting, pixel beacons, data brokers — and how to stop them.</p>
       <a class="btn primary" style="display:block;text-align:center;font-size:12px;padding:8px;" href="/dl/">Download OllaVPN free &rarr;</a>
     </div>
 
     <div style="margin-top:24px;">
       <h4 style="font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--text-mute);margin-bottom:12px;">Related reading</h4>
       <ul style="list-style:none;padding:0;margin:0;font-size:13px;">
-        <li style="margin-bottom:8px;"><a href="/blog/how-public-wifi-steals-passwords.html">Public Wi-Fi Password Theft</a></li>
-        <li style="margin-bottom:8px;"><a href="/blog/what-is-a-dns-leak.html">What is a DNS Leak?</a></li>
-        <li style="margin-bottom:8px;"><a href="/blog/what-is-encrypted-client-hello.html">Encrypted Client Hello (ECH)</a></li>
-        <li style="margin-bottom:8px;"><a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">Five Eyes Alliance</a></li>
-        <li style="margin-bottom:8px;"><a href="/blog/can-my-isp-see-vpn-traffic.html">Can My ISP See VPN Traffic?</a></li>
-        <li style="margin-bottom:8px;"><a href="/blog/what-logs-does-vpn-keep.html">What Logs Does a VPN Keep?</a></li>
+        <li style="margin-bottom:8px;"><a href="are-free-vpns-safe.html.html">Are Free VPNs Safe? What You Need to Know Before You Connect</a></li>
+        <li style="margin-bottom:8px;"><a href="are-vpns-legal.html.html">Are VPNs Legal? What You Need to Know About VPN Legality and Privacy</a></li>
+        <li style="margin-bottom:8px;"><a href="best-free-vpn-for-android.html.html">The Best Free VPN for Android</a></li>
+        <li style="margin-bottom:8px;"><a href="best-free-vpn-for-australia.html.html">What's the Best Free VPN for Australia?</a></li>
+        <li style="margin-bottom:8px;"><a href="best-free-vpn-for-canada.html.html">Is OllaVPN the Best Free VPN for Canada?</a></li>
       </ul>
     </div>
   </aside>
@@ -688,22 +827,7 @@
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
-      <li><a href="#why-ad-tracking-is-bigger-than-most-people-realize">Why ad tracking is massive</a></li>
-      <li><a href="#third-party-cookies-the-original-surveillance-tool">Third-party cookies</a></li>
-      <li><a href="#browser-fingerprinting-the-cookieless-tracker">Browser fingerprinting</a></li>
-      <li><a href="#tracking-pixels-and-invisible-beacons">Tracking pixels & beacons</a></li>
-      <li><a href="#ip-address-tracking-and-what-it-reveals">IP address tracking</a></li>
-      <li><a href="#login-based-tracking-the-hardest-to-escape">Login-based tracking</a></li>
-      <li><a href="#cross-device-tracking-and-identity-graphs">Cross-device identity graphs</a></li>
-      <li><a href="#data-brokers-where-it-all-gets-sold">Data brokers</a></li>
-      <li><a href="#the-cookie-death-myth-what-actually-replaced-cookies">The cookie death myth</a></li>
-      <li><a href="#supercookies-and-cname-cloaking">Supercookies & CNAME cloaking</a></li>
-      <li><a href="#mobile-tracking-apps-and-the-advertising-id">Mobile tracking & SDKs</a></li>
-      <li><a href="#what-advertisers-actually-know-about-you">What advertisers know</a></li>
-      <li><a href="#five-common-myths-about-ad-tracking">5 common ad tracking myths</a></li>
-      <li><a href="#how-to-actually-fight-back-a-realistic-defense-strategy">How to fight back</a></li>
-      <li><a href="#where-ollavpn-fits-in-ad-tracking-defense">Where OllaVPN fits in</a></li>
-      <li><a href="#frequently-asked-questions">Frequently asked questions</a></li>
+
     </ol>
   </aside>
 </main>

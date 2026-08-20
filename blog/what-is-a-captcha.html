@@ -527,6 +527,146 @@
   gap: 8px !important;
 }
 
+
+/* ==========================================================================
+   Standard 3-Column Blog Article Layout (All 111 Blog Pages)
+   ========================================================================== */
+.article-layout {
+  display: grid !important;
+  grid-template-columns: 240px minmax(0, 1fr) 260px !important;
+  gap: 36px !important;
+  align-items: start !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding: 40px 24px 80px !important;
+}
+
+.article-sidebar-left {
+  position: sticky !important;
+  top: 84px !important;
+  font-size: 14px !important;
+  display: block !important;
+}
+
+.sidebar-card {
+  background: var(--panel) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  padding: 18px 20px !important;
+}
+
+.sidebar-card .chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--line) !important;
+  background: var(--bg-2) !important;
+  font-family: var(--mono) !important;
+  font-size: 10.5px !important;
+  color: var(--text-dim) !important;
+  letter-spacing: 0.04em !important;
+}
+
+.sidebar-card .dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: var(--red) !important;
+  box-shadow: 0 0 0 3px rgba(225, 28, 38, 0.2) !important;
+}
+
+.sidebar-card h4 {
+  margin: 12px 0 8px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+}
+
+.sidebar-card p {
+  font-size: 12.5px !important;
+  color: var(--text-dim) !important;
+  margin: 0 0 16px !important;
+  line-height: 1.5 !important;
+}
+
+.sidebar-card .btn.primary {
+  display: block !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  padding: 8px 12px !important;
+  text-decoration: none !important;
+}
+
+.toc-rail {
+  position: sticky !important;
+  top: 84px !important;
+  font-size: 13px !important;
+  max-height: calc(100vh - 100px) !important;
+  overflow-y: auto !important;
+  padding-left: 14px !important;
+  border-left: 1px solid var(--line) !important;
+  display: block !important;
+}
+
+.toc-rail .label {
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--text-mute) !important;
+  display: block !important;
+  margin-bottom: 12px !important;
+}
+
+.toc-rail ol {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.toc-rail li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.toc-rail a {
+  color: var(--text-dim) !important;
+  text-decoration: none !important;
+  display: block !important;
+  line-height: 1.4 !important;
+  transition: color .15s ease !important;
+}
+
+.toc-rail a:hover,
+.toc-rail li.is-current a {
+  color: var(--red) !important;
+  font-weight: 600 !important;
+}
+
+@media (max-width: 1200px) {
+  .article-layout {
+    grid-template-columns: minmax(0, 1fr) 240px !important;
+  }
+  .article-sidebar-left {
+    display: none !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .article-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .toc-rail {
+    display: none !important;
+  }
+}
+
 </style>
 
 <style id="related-category-styles">
@@ -842,6 +982,146 @@
   gap: 8px !important;
 }
 
+
+/* ==========================================================================
+   Standard 3-Column Blog Article Layout (All 111 Blog Pages)
+   ========================================================================== */
+.article-layout {
+  display: grid !important;
+  grid-template-columns: 240px minmax(0, 1fr) 260px !important;
+  gap: 36px !important;
+  align-items: start !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding: 40px 24px 80px !important;
+}
+
+.article-sidebar-left {
+  position: sticky !important;
+  top: 84px !important;
+  font-size: 14px !important;
+  display: block !important;
+}
+
+.sidebar-card {
+  background: var(--panel) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  padding: 18px 20px !important;
+}
+
+.sidebar-card .chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--line) !important;
+  background: var(--bg-2) !important;
+  font-family: var(--mono) !important;
+  font-size: 10.5px !important;
+  color: var(--text-dim) !important;
+  letter-spacing: 0.04em !important;
+}
+
+.sidebar-card .dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: var(--red) !important;
+  box-shadow: 0 0 0 3px rgba(225, 28, 38, 0.2) !important;
+}
+
+.sidebar-card h4 {
+  margin: 12px 0 8px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+}
+
+.sidebar-card p {
+  font-size: 12.5px !important;
+  color: var(--text-dim) !important;
+  margin: 0 0 16px !important;
+  line-height: 1.5 !important;
+}
+
+.sidebar-card .btn.primary {
+  display: block !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  padding: 8px 12px !important;
+  text-decoration: none !important;
+}
+
+.toc-rail {
+  position: sticky !important;
+  top: 84px !important;
+  font-size: 13px !important;
+  max-height: calc(100vh - 100px) !important;
+  overflow-y: auto !important;
+  padding-left: 14px !important;
+  border-left: 1px solid var(--line) !important;
+  display: block !important;
+}
+
+.toc-rail .label {
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--text-mute) !important;
+  display: block !important;
+  margin-bottom: 12px !important;
+}
+
+.toc-rail ol {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.toc-rail li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.toc-rail a {
+  color: var(--text-dim) !important;
+  text-decoration: none !important;
+  display: block !important;
+  line-height: 1.4 !important;
+  transition: color .15s ease !important;
+}
+
+.toc-rail a:hover,
+.toc-rail li.is-current a {
+  color: var(--red) !important;
+  font-weight: 600 !important;
+}
+
+@media (max-width: 1200px) {
+  .article-layout {
+    grid-template-columns: minmax(0, 1fr) 240px !important;
+  }
+  .article-sidebar-left {
+    display: none !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .article-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .toc-rail {
+    display: none !important;
+  }
+}
+
 </style>
 
 </head>
@@ -955,39 +1235,23 @@
 </header>
 
 <div class="article-layout">
-  <aside class="article-sidebar-left" aria-label="More from OllaVPN">
-    <div class="sidebar-card-mini">
-      <h4>By the author</h4>
-      <div class="author-mini">
-        <div class="avatar" aria-hidden="true">NP</div>
-        <div class="meta">
-          <a href="/about/team#nathan-pratt">Nathan Pratt</a>
-          <div class="role">Privacy &amp; Security Lead</div>
-        </div>
-      </div>
+  <aside class="article-sidebar-left" aria-label="Article overview">
+    <div class="sidebar-card">
+      <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
+      <h4 style="margin:12px 0 8px;font-size:14px;color:#FFFFFF;">Published by OllaVPN</h4>
+      <p style="font-size:12.5px;color:var(--text-dim);margin:0 0 16px;line-height:1.5;">Ever wonder what a CAPTCHA is and why you keep seeing them? We break down how these internet gatekeepers work and why they matter for your online privacy.</p>
+      <a class="btn primary" style="display:block;text-align:center;font-size:12px;padding:8px;" href="/dl/">Download OllaVPN free &rarr;</a>
     </div>
 
-    <h4>More guides</h4>
-    <ul class="article-sidebar-list">
-      <li><a href="what-is-post-quantum-cryptography.html">Post-quantum cryptography</a></li>
-      <li><a href="what-is-a-dns-leak.html">DNS leaks</a></li>
-      <li><a href="what-is-a-vpn-kill-switch.html">Kill switches</a></li>
-      <li><a href="five-eyes-nine-eyes-fourteen-eyes.html">Five Eyes alliances</a></li>
-      <li><a href="what-is-multi-hop-vpn.html">Multi-hop VPN</a></li>
-      <li><a href="what-logs-does-vpn-keep.html">What VPNs log</a></li>
-    </ul>
-
-    <h4>Top comparisons</h4>
-    <ul class="article-sidebar-list">
-      <li><a href="mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a></li>
-      <li><a href="nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a></li>
-      <li><a href="surfshark-vs-nordvpn.html">Surfshark vs NordVPN</a></li>
-    </ul>
-
-    <div class="sidebar-card-mini">
-      <h4>Try OllaVPN</h4>
-      <p class="smallcopy">Free forever. 10&nbsp;Mbps. Every country. No card.</p>
-      <a class="btn primary" href="/dl/">Download free →</a>
+    <div style="margin-top:24px;">
+      <h4 style="font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--text-mute);margin-bottom:12px;">Related reading</h4>
+      <ul style="list-style:none;padding:0;margin:0;font-size:13px;">
+        <li style="margin-bottom:8px;"><a href="are-free-vpns-safe.html.html">Are Free VPNs Safe? What You Need to Know Before You Connect</a></li>
+        <li style="margin-bottom:8px;"><a href="are-vpns-legal.html.html">Are VPNs Legal? What You Need to Know About VPN Legality and Privacy</a></li>
+        <li style="margin-bottom:8px;"><a href="best-free-vpn-for-android.html.html">The Best Free VPN for Android</a></li>
+        <li style="margin-bottom:8px;"><a href="best-free-vpn-for-australia.html.html">What's the Best Free VPN for Australia?</a></li>
+        <li style="margin-bottom:8px;"><a href="best-free-vpn-for-canada.html.html">Is OllaVPN the Best Free VPN for Canada?</a></li>
+      </ul>
     </div>
   </aside>
   <article class="article">
@@ -1285,32 +1549,20 @@ However, even when present, CAPTCHAs aren't a silver bullet. <strong>Sophisticat
 
   </article>
 
-  <aside class="toc-rail" aria-label="On this page">
+  <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
-      
       <li><a href="#what-is-a-captcha-really">What is a CAPTCHA, in plain English?</a></li>
-      
-      <li><a href="#how-do-captchas-actually-work">How do CAPTCHAs actually work under the hood?</a></li>
-      
-      <li><a href="#why-do-captchas-matter-to-you">Why do CAPTCHAs matter for everyday internet users?</a></li>
-      
-      <li><a href="#common-captcha-misconceptions">What are some common misconceptions about CAPTCHAs?</a></li>
-      
-      <li><a href="#captchas-and-internet-privacy">How do CAPTCHAs relate to other internet privacy concepts?</a></li>
-      
-      <li><a href="#when-to-care-about-captchas">When should you really care about CAPTCHAs, and when can you ignore them?</a></li>
-      
-      <li><a href="#how-a-vpn-helps-with-captchas">How does a good VPN handle CAPTCHAs for you automatically?</a></li>
-      
-      <li><a href="#ollavpn-captcha-approach">How does OllaVPN specifically help you with CAPTCHAs?</a></li>
-      
-      <li><a href="#practical-tips-for-captchas">What practical things can you do today based on what you&#39;ve learned?</a></li>
-      
-      <li><a href="#are-captchas-evolving">Are CAPTCHAs still important in 2024 and beyond?</a></li>
-      
-      <li><a href="#when-captchas-dont-apply">Are there situations where CAPTCHAs don&#39;t apply or aren&#39;t effective?</a></li>
-      
+      <li><a href="#how-do-captchas-actually-work">How do CAPTCHAs actually work under the …</a></li>
+      <li><a href="#why-do-captchas-matter-to-you">Why do CAPTCHAs matter for everyday inte…</a></li>
+      <li><a href="#common-captcha-misconceptions">What are some common misconceptions abou…</a></li>
+      <li><a href="#captchas-and-internet-privacy">How do CAPTCHAs relate to other internet…</a></li>
+      <li><a href="#when-to-care-about-captchas">When should you really care about CAPTCH…</a></li>
+      <li><a href="#how-a-vpn-helps-with-captchas">How does a good VPN handle CAPTCHAs for …</a></li>
+      <li><a href="#ollavpn-captcha-approach">How does OllaVPN specifically help you w…</a></li>
+      <li><a href="#practical-tips-for-captchas">What practical things can you do today b…</a></li>
+      <li><a href="#are-captchas-evolving">Are CAPTCHAs still important in 2024 and…</a></li>
+      <li><a href="#when-captchas-dont-apply">Are there situations where CAPTCHAs don&…</a></li>
       <li><a href="#faq">Frequently asked questions</a></li>
     </ol>
   </aside>
