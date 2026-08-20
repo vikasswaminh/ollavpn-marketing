@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 12 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
-    </div>
-    <h1>What is Onion Over VPN, and Why Should You Care?</h1>
-    <p class="lede">You&#39;ve probably heard of VPNs and maybe even Tor, the &#34;Onion Router.&#34; But what happens when you combine them? That&#39;s &#34;Onion Over VPN,&#34; a powerful setup for extra privacy and anonymity online. It sounds complex, but it doesn&#39;t have to be. We&#39;ll break down exactly what Onion Over VPN is, how it works, and why it might be a crucial tool for protecting your digital footprint, all without getting lost in technical jargon. You&#39;ll understand the benefits and the trade-offs, so you can decide if it&#39;s right for you.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 4,966 WORDS</span>
+    <h1 style="margin-top:12px;">What is Onion Over VPN, and Why Should You Care?</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You&#39;ve probably heard of VPNs and maybe even Tor, the &#34;Onion Router.&#34; But what happens when you combine them? That&#39;s &#34;Onion Over VPN,&#34; a powerful setup for extra privacy and anonymity online. It sounds complex, but it doesn&#39;t have to be. We&#39;ll break down exactly what Onion Over VPN is, how it works, and why it might be a crucial tool for protecting your digital footprint, all without getting lost in technical jargon. You&#39;ll understand the benefits and the trade-offs, so you can decide if it&#39;s right for you.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>&#34;Onion Over VPN&#34; means you connect to your VPN first, and then your internet traffic gets routed through the Tor network. This setup gives you the privacy benefits of your VPN – like keeping your real IP address hidden from your internet provider and the first Tor node you connect to – combined with Tor&#39;s anonymity, which bounces your traffic through several relays to obscure its origin.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#what-is-onion-over-vpn-plain-english">What exactly is Onion Over VPN in plain English?</a></li>
-        
-        <li><a href="#how-onion-over-vpn-works">How does Onion Over VPN actually work under the hood?</a></li>
-        
-        <li><a href="#why-onion-over-vpn-matters">Why does Onion Over VPN matter for everyday users?</a></li>
-        
-        <li><a href="#common-misconceptions">What are the common misconceptions about Onion Over VPN?</a></li>
-        
-        <li><a href="#onion-over-vpn-vs-other-concepts">How does Onion Over VPN relate to other internet privacy concepts?</a></li>
-        
-        <li><a href="#when-to-use-onion-over-vpn">When should you care about Onion Over VPN, and when can you ignore it?</a></li>
-        
-        <li><a href="#good-vpn-and-onion-over-vpn">How does a good VPN handle this for you automatically?</a></li>
-        
-        <li><a href="#practical-steps-today">What practical things can you do today based on what you&#39;ve learned?</a></li>
-        
-        <li><a href="#speed-impact-onion-over-vpn">Does Onion Over VPN significantly impact your internet speed?</a></li>
-        
-        <li><a href="#security-benefits-onion-over-vpn">What are the specific security benefits of Onion Over VPN?</a></li>
-        
-        <li><a href="#is-onion-over-vpn-legal">Is using Onion Over VPN legal?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="what-is-onion-over-vpn-plain-english">What exactly is Onion Over VPN in plain English?</h2>
+<h2 id="what-is-onion-over-vpn-plain-english">What exactly is Onion Over VPN in plain English?</h2>
     <p class="short-answer">Onion Over VPN is a way to combine a VPN's privacy with Tor's anonymity by connecting to the VPN first, and then routing your traffic through the Tor network.</p>
 
 Think of it like this: your internet traffic first goes through your VPN, which hides your real IP address from your internet provider. From there, instead of going directly to the website you want to visit, it then enters the Tor network. Tor itself adds multiple layers of encryption and bounces your data through at least three random relay servers around the world. Because you're connecting to the VPN *first*, the very first Tor relay node you connect to only sees the VPN's IP address, not your actual one. This setup gives you a strong shield against someone figuring out who you are.
@@ -1416,7 +1370,7 @@ While Tor is designed for anonymity, its exit nodes can sometimes be malicious, 
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What exactly is Onion Over VPN in plain English?</li>
         <li>How does Onion Over VPN actually work under the hood?</li>
@@ -1488,7 +1442,7 @@ While Tor is designed for anonymity, its exit nodes can sometimes be malicious, 
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/what-is-tor-vs-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">What is tor vs vpn</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1543,30 +1497,26 @@ While Tor is designed for anonymity, its exit nodes can sometimes be malicious, 
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
       <li><a href="#what-is-onion-over-vpn-plain-english">What exactly is Onion Over VPN in…</a></li>
       <li><a href="#how-onion-over-vpn-works">How does Onion Over VPN actually…</a></li>
-      <li><a href="#why-onion-over-vpn-matters">Why does Onion Over VPN matter for…</a></li>
-      <li><a href="#common-misconceptions">What are the common misconceptions…</a></li>
+      <li><a href="#why-onion-over-vpn-matters">Why does Onion Over VPN matter…</a></li>
+      <li><a href="#common-misconceptions">What are the common…</a></li>
       <li><a href="#onion-over-vpn-vs-other-concepts">How does Onion Over VPN relate to…</a></li>
       <li><a href="#when-to-use-onion-over-vpn">When should you care about Onion…</a></li>
-      <li><a href="#good-vpn-and-onion-over-vpn">How does a good VPN handle this for…</a></li>
+      <li><a href="#good-vpn-and-onion-over-vpn">How does a good VPN handle this…</a></li>
       <li><a href="#practical-steps-today">What practical things can you do…</a></li>
       <li><a href="#speed-impact-onion-over-vpn">Does Onion Over VPN significantly…</a></li>
       <li><a href="#security-benefits-onion-over-vpn">What are the specific security…</a></li>
       <li><a href="#is-onion-over-vpn-legal">Is using Onion Over VPN legal?</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

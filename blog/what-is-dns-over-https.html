@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 14 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=dns">DNS</a></div>
-    </div>
-    <h1>What is DNS over HTTPS (DoH)? Your Privacy, Explained.</h1>
-    <p class="lede">You&#39;ve probably heard the term &#34;DNS&#34; floating around, especially when privacy comes up. And then there&#39;s &#34;DNS over HTTPS&#34; or &#34;DoH,&#34; which sounds super technical. Don&#39;t worry, it&#39;s not as complicated as it sounds. Think of it as a crucial upgrade to how your computer finds websites, adding a significant layer of privacy to your online life. This article will break down exactly what DoH is, why it matters to you, and how it protects your internet activity from prying eyes. It&#39;s not just for tech experts; it&#39;s something that impacts everyone who uses the internet.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 4,963 WORDS</span>
+    <h1 style="margin-top:12px;">What is DNS over HTTPS (DoH)? Your Privacy, Explained.</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You&#39;ve probably heard the term &#34;DNS&#34; floating around, especially when privacy comes up. And then there&#39;s &#34;DNS over HTTPS&#34; or &#34;DoH,&#34; which sounds super technical. Don&#39;t worry, it&#39;s not as complicated as it sounds. Think of it as a crucial upgrade to how your computer finds websites, adding a significant layer of privacy to your online life. This article will break down exactly what DoH is, why it matters to you, and how it protects your internet activity from prying eyes. It&#39;s not just for tech experts; it&#39;s something that impacts everyone who uses the internet.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>DNS over HTTPS (DoH) encrypts your website lookups, which are essentially the requests your computer sends to find a website&#39;s address. Think of it like putting your destination in a sealed envelope instead of shouting it out. This stops snoopers from seeing exactly which sites you&#39;re trying to visit before you even get there.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#what-is-doh-in-plain-english">What exactly is DNS over HTTPS, in plain English?</a></li>
-        
-        <li><a href="#how-doh-works-under-the-hood">How does DNS over HTTPS actually work under the hood?</a></li>
-        
-        <li><a href="#why-doh-matters-for-you">Why does DNS over HTTPS matter for everyday users like you?</a></li>
-        
-        <li><a href="#common-doh-misconceptions">What are some common misconceptions about DNS over HTTPS?</a></li>
-        
-        <li><a href="#doh-and-other-privacy-concepts">How does DoH relate to other internet privacy concepts you might know?</a></li>
-        
-        <li><a href="#when-to-care-about-doh">When should you care about DNS over HTTPS, and when can you ignore it?</a></li>
-        
-        <li><a href="#how-a-vpn-handles-doh">How does a good VPN handle DNS over HTTPS for you automatically?</a></li>
-        
-        <li><a href="#practical-things-to-do">What practical things can you do today based on what you&#39;ve learned?</a></li>
-        
-        <li><a href="#is-doh-enough-for-privacy">Is relying solely on DNS over HTTPS enough for full online privacy?</a></li>
-        
-        <li><a href="#doh-and-future-tech">How is DNS over HTTPS evolving with future technologies like post-quantum encryption?</a></li>
-        
-        <li><a href="#ollavpn-doh-solution">How does OllaVPN specifically handle your DNS and ensure your privacy?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="what-is-doh-in-plain-english">What exactly is DNS over HTTPS, in plain English?</h2>
+<h2 id="what-is-doh-in-plain-english">What exactly is DNS over HTTPS, in plain English?</h2>
     <p class="short-answer">DNS over HTTPS (DoH) is a way to look up website addresses securely, encrypting your requests so no one can snoop on what sites you're trying to visit.</p>
 
 Imagine the internet like a vast city, and every website has an address, like a street number. When you type a website name, say "ollavpn.com", your computer needs to find that numerical address (its IP address) to get there. This lookup process is handled by something called the Domain Name System, or DNS. Think of DNS as the internet's phone book. When you ask for "ollavpn.com", your computer is essentially looking it up in that phone book.
@@ -1420,7 +1374,7 @@ This setup prevents DNS leaks, which can accidentally reveal your real IP addres
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What exactly is DNS over HTTPS, in plain English?</li>
         <li>How does DNS over HTTPS actually work under the hood?</li>
@@ -1492,7 +1446,7 @@ This setup prevents DNS leaks, which can accidentally reveal your real IP addres
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/what-is-a-vpn-kill-switch"><span class="card-tag">PRIVACY</span><span class="card-title">What is a vpn kill switch</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1547,30 +1501,26 @@ This setup prevents DNS leaks, which can accidentally reveal your real IP addres
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
-      <li><a href="#what-is-doh-in-plain-english">What exactly is DNS over HTTPS, in…</a></li>
+      <li><a href="#what-is-doh-in-plain-english">What exactly is DNS over HTTPS,…</a></li>
       <li><a href="#how-doh-works-under-the-hood">How does DNS over HTTPS actually…</a></li>
-      <li><a href="#why-doh-matters-for-you">Why does DNS over HTTPS matter for…</a></li>
-      <li><a href="#common-doh-misconceptions">What are some common misconceptions…</a></li>
+      <li><a href="#why-doh-matters-for-you">Why does DNS over HTTPS matter…</a></li>
+      <li><a href="#common-doh-misconceptions">What are some common…</a></li>
       <li><a href="#doh-and-other-privacy-concepts">How does DoH relate to other…</a></li>
-      <li><a href="#when-to-care-about-doh">When should you care about DNS over…</a></li>
-      <li><a href="#how-a-vpn-handles-doh">How does a good VPN handle DNS over…</a></li>
+      <li><a href="#when-to-care-about-doh">When should you care about DNS…</a></li>
+      <li><a href="#how-a-vpn-handles-doh">How does a good VPN handle DNS…</a></li>
       <li><a href="#practical-things-to-do">What practical things can you do…</a></li>
-      <li><a href="#is-doh-enough-for-privacy">Is relying solely on DNS over HTTPS…</a></li>
-      <li><a href="#doh-and-future-tech">How is DNS over HTTPS evolving with…</a></li>
+      <li><a href="#is-doh-enough-for-privacy">Is relying solely on DNS over…</a></li>
+      <li><a href="#doh-and-future-tech">How is DNS over HTTPS evolving…</a></li>
       <li><a href="#ollavpn-doh-solution">How does OllaVPN specifically…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

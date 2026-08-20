@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 12 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=ipv6">IPv6</a></div>
-    </div>
-    <h1>What is an IPv6 Leak, and How Does It Affect Your Privacy?</h1>
-    <p class="lede">Even with a VPN, your online privacy isn&#39;t always as secure as you think. An IPv6 leak is one of those sneaky issues that can expose your real identity and location, much like wearing a disguise but forgetting to cover a distinctive tattoo. It&#39;s a common vulnerability, and it means that despite your best efforts to stay anonymous, a small oversight could give you away. We&#39;re going to break down what an IPv6 leak is in simple terms, why it matters for your digital footprint, and how you can protect yourself.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,358 WORDS</span>
+    <h1 style="margin-top:12px;">What is an IPv6 Leak, and How Does It Affect Your Privacy?</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">Even with a VPN, your online privacy isn&#39;t always as secure as you think. An IPv6 leak is one of those sneaky issues that can expose your real identity and location, much like wearing a disguise but forgetting to cover a distinctive tattoo. It&#39;s a common vulnerability, and it means that despite your best efforts to stay anonymous, a small oversight could give you away. We&#39;re going to break down what an IPv6 leak is in simple terms, why it matters for your digital footprint, and how you can protect yourself.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>An IPv6 leak is when your device accidentally uses your real internet address, an IPv6 address, instead of your VPN&#39;s address, even when your VPN is active. This can expose your actual location and browsing activity, completely undermining your privacy and the whole point of using a VPN.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#what-is-ipv6-leak">What Exactly is an IPv6 Leak in Plain English?</a></li>
-        
-        <li><a href="#how-it-works">How Does This Sneaky Leak Actually Happen Under the Hood?</a></li>
-        
-        <li><a href="#why-it-matters">Why Should You Even Care About an IPv6 Leak?</a></li>
-        
-        <li><a href="#common-misconceptions">Are There Common Misconceptions About IPv6 Leaks?</a></li>
-        
-        <li><a href="#ipv6-and-privacy">How Does an IPv6 Leak Relate to Other Internet Privacy Concepts?</a></li>
-        
-        <li><a href="#when-to-care">When Should You Really Worry About an IPv6 Leak, and When Can You Relax?</a></li>
-        
-        <li><a href="#vpn-protection">How Does a Good VPN Handle This for You Automatically?</a></li>
-        
-        <li><a href="#practical-steps">What Practical Things Can You Do Today to Stay Protected?</a></li>
-        
-        <li><a href="#ollavpn-solution">How Does OllaVPN Specifically Prevent IPv6 Leaks?</a></li>
-        
-        <li><a href="#testing-for-leaks">How Can You Test if You Have an IPv6 Leak Right Now?</a></li>
-        
-        <li><a href="#future-of-ipv6">Will IPv6 Leaks Be a Bigger Problem in the Future?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="what-is-ipv6-leak">What Exactly is an IPv6 Leak in Plain English?</h2>
+<h2 id="what-is-ipv6-leak">What Exactly is an IPv6 Leak in Plain English?</h2>
     <p class="short-answer">An IPv6 leak is when your real IP address is exposed to the websites and services you visit, even when you're connected to a VPN.</p>
 
 Think of your VPN as a secure, private tunnel that encrypts all your internet traffic and routes it through a server somewhere else. When you're connected, everyone you interact with online should only see the IP address of that VPN server, not your own. An IPv6 leak is like a tiny, unnoticed crack in that tunnel. While most of your traffic is going through the secure path, some bits — specifically those using the newer IPv6 internet protocol — might accidentally slip out through your regular, unencrypted internet connection.
@@ -1429,7 +1383,7 @@ This is why having <strong>forward-looking protection</strong> is so crucial. Ol
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What Exactly is an IPv6 Leak in Plain English?</li>
         <li>How Does This Sneaky Leak Actually Happen Under the Hood?</li>
@@ -1501,7 +1455,7 @@ This is why having <strong>forward-looking protection</strong> is so crucial. Ol
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/what-is-a-webrtc-leak"><span class="card-tag">PRIVACY</span><span class="card-title">What is a webrtc leak</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1556,30 +1510,26 @@ This is why having <strong>forward-looking protection</strong> is so crucial. Ol
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
       <li><a href="#what-is-ipv6-leak">What Exactly is an IPv6 Leak in…</a></li>
-      <li><a href="#how-it-works">How Does This Sneaky Leak Actually…</a></li>
+      <li><a href="#how-it-works">How Does This Sneaky Leak…</a></li>
       <li><a href="#why-it-matters">Why Should You Even Care About an…</a></li>
       <li><a href="#common-misconceptions">Are There Common Misconceptions…</a></li>
       <li><a href="#ipv6-and-privacy">How Does an IPv6 Leak Relate to…</a></li>
-      <li><a href="#when-to-care">When Should You Really Worry About…</a></li>
-      <li><a href="#vpn-protection">How Does a Good VPN Handle This for…</a></li>
+      <li><a href="#when-to-care">When Should You Really Worry…</a></li>
+      <li><a href="#vpn-protection">How Does a Good VPN Handle This…</a></li>
       <li><a href="#practical-steps">What Practical Things Can You Do…</a></li>
       <li><a href="#ollavpn-solution">How Does OllaVPN Specifically…</a></li>
       <li><a href="#testing-for-leaks">How Can You Test if You Have an…</a></li>
-      <li><a href="#future-of-ipv6">Will IPv6 Leaks Be a Bigger Problem…</a></li>
+      <li><a href="#future-of-ipv6">Will IPv6 Leaks Be a Bigger…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

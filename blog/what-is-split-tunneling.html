@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 12 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=split-tunnel">SPLIT-TUNNEL</a></div>
-    </div>
-    <h1>What is Split Tunneling and Why Should You Care?</h1>
-    <p class="lede">You&#39;ve probably heard that a VPN encrypts all your internet traffic, but what if you don&#39;t want everything to go through the VPN? Sometimes, you need to access local network resources while protecting your browsing, or maybe you want to stream international content without slowing down your local downloads. That&#39;s where split tunneling comes in. It&#39;s a clever feature that gives you fine-grained control over which apps or websites use your VPN and which don&#39;t, offering a balance between security and convenience. We&#39;ll break down how it works and why you might want it.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,204 WORDS</span>
+    <h1 style="margin-top:12px;">What is Split Tunneling and Why Should You Care?</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You&#39;ve probably heard that a VPN encrypts all your internet traffic, but what if you don&#39;t want everything to go through the VPN? Sometimes, you need to access local network resources while protecting your browsing, or maybe you want to stream international content without slowing down your local downloads. That&#39;s where split tunneling comes in. It&#39;s a clever feature that gives you fine-grained control over which apps or websites use your VPN and which don&#39;t, offering a balance between security and convenience. We&#39;ll break down how it works and why you might want it.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>Split tunneling is a clever feature that lets you decide which internet traffic uses your VPN&#39;s secure tunnel and which goes directly to the internet. It&#39;s like having two separate pathways for your online activity, giving you a lot more control over your connection.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#what-is-split-tunneling">What exactly is split tunneling?</a></li>
-        
-        <li><a href="#how-it-works">How does split tunneling actually work under the hood?</a></li>
-        
-        <li><a href="#why-it-matters">Why should you care about split tunneling for your daily internet use?</a></li>
-        
-        <li><a href="#common-misconceptions">Are there common misunderstandings about split tunneling?</a></li>
-        
-        <li><a href="#split-tunneling-and-privacy">How does split tunneling relate to your overall internet privacy?</a></li>
-        
-        <li><a href="#when-to-use-it">When should you use split tunneling, and when can you ignore it?</a></li>
-        
-        <li><a href="#how-vpns-handle-it">How do good VPNs implement split tunneling for you?</a></li>
-        
-        <li><a href="#practical-tips">What practical steps can you take based on this knowledge?</a></li>
-        
-        <li><a href="#split-tunneling-vs-full-tunnel">What&#39;s the difference between split tunneling and a full VPN tunnel?</a></li>
-        
-        <li><a href="#security-implications">Does split tunneling introduce any security risks?</a></li>
-        
-        <li><a href="#ollavpn-approach">How does OllaVPN handle split tunneling specifically?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="what-is-split-tunneling">What exactly is split tunneling?</h2>
+<h2 id="what-is-split-tunneling">What exactly is split tunneling?</h2>
     <p class="short-answer">Split tunneling is a VPN feature that lets you choose which of your internet traffic goes through the encrypted VPN tunnel and which connects directly to the internet.</p>
 
 It's essentially a form of <strong>selective routing</strong> for your online activity. Normally, when you connect to a VPN like OllaVPN, all your internet traffic—every single byte—travels through a secure, encrypted tunnel to a VPN server before heading out to the web. This is great for privacy and security, as it hides your IP address and encrypts your data from your device all the way to our servers.
@@ -1429,7 +1383,7 @@ Our approach to split tunneling is designed to give you maximum control without 
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What exactly is split tunneling?</li>
         <li>How does split tunneling actually work under the hood?</li>
@@ -1501,7 +1455,7 @@ Our approach to split tunneling is designed to give you maximum control without 
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/what-is-a-vpn-kill-switch"><span class="card-tag">PRIVACY</span><span class="card-title">What is a vpn kill switch</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1556,30 +1510,26 @@ Our approach to split tunneling is designed to give you maximum control without 
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
       <li><a href="#what-is-split-tunneling">What exactly is split tunneling?</a></li>
       <li><a href="#how-it-works">How does split tunneling actually…</a></li>
       <li><a href="#why-it-matters">Why should you care about split…</a></li>
-      <li><a href="#common-misconceptions">Are there common misunderstandings…</a></li>
-      <li><a href="#split-tunneling-and-privacy">How does split tunneling relate to…</a></li>
+      <li><a href="#common-misconceptions">Are there common…</a></li>
+      <li><a href="#split-tunneling-and-privacy">How does split tunneling relate…</a></li>
       <li><a href="#when-to-use-it">When should you use split…</a></li>
       <li><a href="#how-vpns-handle-it">How do good VPNs implement split…</a></li>
       <li><a href="#practical-tips">What practical steps can you take…</a></li>
-      <li><a href="#split-tunneling-vs-full-tunnel">What's the difference between split…</a></li>
-      <li><a href="#security-implications">Does split tunneling introduce any…</a></li>
+      <li><a href="#split-tunneling-vs-full-tunnel">What's the difference between…</a></li>
+      <li><a href="#security-implications">Does split tunneling introduce…</a></li>
       <li><a href="#ollavpn-approach">How does OllaVPN handle split…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

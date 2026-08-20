@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 14 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=killswitch">KILLSWITCH</a></div>
-    </div>
-    <h1>What is a VPN Kill Switch, How Does it Work, and Why Does it Matter?</h1>
-    <p class="lede">Ever wonder what happens to your internet connection if your VPN suddenly drops? Most people don&#39;t, until it&#39;s too late. That&#39;s where a VPN kill switch comes in. It&#39;s a critical, often overlooked, feature designed to protect your privacy and data security by ensuring that if your VPN connection ever fails, your internet traffic stops immediately, preventing any unprotected data from leaking out. Think of it as a safety net for your online privacy, catching you before you hit the ground.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,305 WORDS</span>
+    <h1 style="margin-top:12px;">What is a VPN Kill Switch, How Does it Work, and Why Does it Matter?</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">Ever wonder what happens to your internet connection if your VPN suddenly drops? Most people don&#39;t, until it&#39;s too late. That&#39;s where a VPN kill switch comes in. It&#39;s a critical, often overlooked, feature designed to protect your privacy and data security by ensuring that if your VPN connection ever fails, your internet traffic stops immediately, preventing any unprotected data from leaking out. Think of it as a safety net for your online privacy, catching you before you hit the ground.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>You know how a VPN keeps your online activity private? A kill switch is like the ultimate backup for that. It’s a crucial safety feature that automatically cuts off your internet connection if your VPN ever unexpectedly drops. This means your real IP address and any unencrypted data are never exposed, even for a second, keeping your privacy intact.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#what-is-a-vpn-kill-switch">What Exactly is a VPN Kill Switch?</a></li>
-        
-        <li><a href="#how-does-it-work">How Does a VPN Kill Switch Actually Work Under the Hood?</a></li>
-        
-        <li><a href="#why-it-matters-for-privacy">Why Does a VPN Kill Switch Matter for Your Everyday Privacy?</a></li>
-        
-        <li><a href="#common-misconceptions">Are There Any Common Misconceptions About Kill Switches?</a></li>
-        
-        <li><a href="#kill-switch-and-other-privacy-concepts">How Does a Kill Switch Relate to Other Internet Privacy Concepts?</a></li>
-        
-        <li><a href="#when-to-care">When Should You Care About Your Kill Switch, and When Can You Ignore It?</a></li>
-        
-        <li><a href="#how-good-vpn-handles-it">How Does a Good VPN Handle the Kill Switch Feature Automatically?</a></li>
-        
-        <li><a href="#ollavpn-kill-switch">How Does OllaVPN Handle Its Kill Switch Specifically?</a></li>
-        
-        <li><a href="#practical-things-to-do">What Practical Things Can You Do Today Based on This Information?</a></li>
-        
-        <li><a href="#kill-switch-vs-always-on">Is a Kill Switch the Same as an &#39;Always-On&#39; VPN Feature?</a></li>
-        
-        <li><a href="#future-of-kill-switches">Will Kill Switches Still Be Relevant in 2026?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="what-is-a-vpn-kill-switch">What Exactly is a VPN Kill Switch?</h2>
+<h2 id="what-is-a-vpn-kill-switch">What Exactly is a VPN Kill Switch?</h2>
     <p class="short-answer">A VPN kill switch is a security feature that automatically disconnects your device from the internet if your VPN connection drops, preventing your real IP address and online activity from being exposed.</p>
 
 <p>Think of it like a safety net for your internet connection. Normally, when you're using a VPN, all your internet traffic goes through an encrypted tunnel to the VPN server. But sometimes, for various reasons like a shaky Wi-Fi signal or a server hiccup, that connection can briefly drop. Without a kill switch, your device would immediately revert to its regular, unencrypted internet connection, potentially exposing your real IP address and what you're doing online. That's where a kill switch steps in.</p>
@@ -1429,7 +1383,7 @@ As internet threats continue to evolve, so does the need for robust, multi-layer
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What Exactly is a VPN Kill Switch?</li>
         <li>How Does a VPN Kill Switch Actually Work Under the Hood?</li>
@@ -1501,7 +1455,7 @@ As internet threats continue to evolve, so does the need for robust, multi-layer
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/why-does-my-vpn-keep-disconnecting"><span class="card-tag">PRIVACY</span><span class="card-title">Why does my vpn keep disconnecting</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1556,30 +1510,26 @@ As internet threats continue to evolve, so does the need for robust, multi-layer
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
       <li><a href="#what-is-a-vpn-kill-switch">What Exactly is a VPN Kill Switch?</a></li>
-      <li><a href="#how-does-it-work">How Does a VPN Kill Switch Actually…</a></li>
+      <li><a href="#how-does-it-work">How Does a VPN Kill Switch…</a></li>
       <li><a href="#why-it-matters-for-privacy">Why Does a VPN Kill Switch Matter…</a></li>
-      <li><a href="#common-misconceptions">Are There Any Common Misconceptions…</a></li>
+      <li><a href="#common-misconceptions">Are There Any Common…</a></li>
       <li><a href="#kill-switch-and-other-privacy-concepts">How Does a Kill Switch Relate to…</a></li>
       <li><a href="#when-to-care">When Should You Care About Your…</a></li>
-      <li><a href="#how-good-vpn-handles-it">How Does a Good VPN Handle the Kill…</a></li>
+      <li><a href="#how-good-vpn-handles-it">How Does a Good VPN Handle the…</a></li>
       <li><a href="#ollavpn-kill-switch">How Does OllaVPN Handle Its Kill…</a></li>
       <li><a href="#practical-things-to-do">What Practical Things Can You Do…</a></li>
       <li><a href="#kill-switch-vs-always-on">Is a Kill Switch the Same as an…</a></li>
       <li><a href="#future-of-kill-switches">Will Kill Switches Still Be…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

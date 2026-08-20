@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 14 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=wireguard">WIREGUARD</a> <a href="/blog/?tag=linux">LINUX</a></div>
-    </div>
-    <h1>WireGuard on Linux: Your Step-by-Step Setup Guide</h1>
-    <p class="lede">Setting up WireGuard on Linux can feel a bit like decoding an ancient scroll, but it&#39;s actually much simpler than you might think. This guide will walk you through every step, from installation to connection, focusing on getting you online with a secure, private VPN as quickly and painlessly as possible. You don&#39;t need to be a command-line guru; just follow along, and you&#39;ll have WireGuard up and running on your Linux machine in no time, ensuring your online activity stays protected.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,175 WORDS</span>
+    <h1 style="margin-top:12px;">WireGuard on Linux: Your Step-by-Step Setup Guide</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">Setting up WireGuard on Linux can feel a bit like decoding an ancient scroll, but it&#39;s actually much simpler than you might think. This guide will walk you through every step, from installation to connection, focusing on getting you online with a secure, private VPN as quickly and painlessly as possible. You don&#39;t need to be a command-line guru; just follow along, and you&#39;ll have WireGuard up and running on your Linux machine in no time, ensuring your online activity stays protected.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>Setting up WireGuard on Linux doesn&#39;t have to be complicated. You&#39;re looking for a straightforward guide to get your VPN running quickly, and we&#39;ve got you covered. This guide will walk you through the essential steps to install WireGuard, generate your keys, and configure your connection in about five minutes.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#short-answer-5-minutes">What&#39;s the quickest way to get WireGuard running on Linux?</a></li>
-        
-        <li><a href="#step-by-step-walkthrough">How do I set up WireGuard on Linux, step-by-step?</a></li>
-        
-        <li><a href="#if-a-step-fails">What should I do if a step in the setup process doesn&#39;t work?</a></li>
-        
-        <li><a href="#why-this-approach-works">Why is this manual WireGuard setup a good idea?</a></li>
-        
-        <li><a href="#common-errors-fixes">What are the most common WireGuard setup errors and their fixes?</a></li>
-        
-        <li><a href="#verify-it-worked">How can I confirm my WireGuard connection is working correctly?</a></li>
-        
-        <li><a href="#tools-to-make-it-easier">Are there tools that can simplify this WireGuard setup?</a></li>
-        
-        <li><a href="#vpn-help-with-task">How does a VPN like OllaVPN fit into this WireGuard setup?</a></li>
-        
-        <li><a href="#undo-changes">Can I easily undo the WireGuard setup if I need to?</a></li>
-        
-        <li><a href="#security-considerations">What security considerations should I keep in mind during setup?</a></li>
-        
-        <li><a href="#advanced-tips">Any advanced tips for optimizing my WireGuard connection?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="short-answer-5-minutes">What&#39;s the quickest way to get WireGuard running on Linux?</h2>
+<h2 id="short-answer-5-minutes">What&#39;s the quickest way to get WireGuard running on Linux?</h2>
     <p class="short-answer">The quickest way is to install WireGuard tools, generate keys, create a configuration file, and then use <code>wg-quick</code> to bring up the interface.</p>
 
 If you're comfortable with the command line and just want to get a WireGuard tunnel up and running on Linux, you can usually do it in about five minutes. First, you'll need to <strong>install WireGuard tools</strong>. On most Debian-based systems (like Ubuntu), that's `sudo apt update && sudo apt install wireguard`. For Fedora, it's `sudo dnf install wireguard-tools`. Once installed, you'll need to <strong>generate keys</strong> for your client. You can do this with `wg genkey | tee privatekey | wg pubkey > publickey`. Keep that private key safe – it's what authenticates you to the server.
@@ -1420,7 +1374,7 @@ Finally, let's talk about **DNS settings**. DNS (Domain Name System) is how your
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What&amp;#39;s the quickest way to get WireGuard running on Linux?</li>
         <li>How do I set up WireGuard on Linux, step-by-step?</li>
@@ -1492,7 +1446,7 @@ Finally, let's talk about **DNS settings**. DNS (Domain Name System) is how your
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/free-wireguard-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free WireGuard VPN</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1547,30 +1501,26 @@ Finally, let's talk about **DNS settings**. DNS (Domain Name System) is how your
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
       <li><a href="#short-answer-5-minutes">What's the quickest way to get…</a></li>
-      <li><a href="#step-by-step-walkthrough">How do I set up WireGuard on Linux…</a></li>
+      <li><a href="#step-by-step-walkthrough">How do I set up WireGuard on…</a></li>
       <li><a href="#if-a-step-fails">What should I do if a step in the…</a></li>
-      <li><a href="#why-this-approach-works">Why is this manual WireGuard setup…</a></li>
-      <li><a href="#common-errors-fixes">What are the most common WireGuard…</a></li>
+      <li><a href="#why-this-approach-works">Why is this manual WireGuard…</a></li>
+      <li><a href="#common-errors-fixes">What are the most common…</a></li>
       <li><a href="#verify-it-worked">How can I confirm my WireGuard…</a></li>
       <li><a href="#tools-to-make-it-easier">Are there tools that can simplify…</a></li>
       <li><a href="#vpn-help-with-task">How does a VPN like OllaVPN fit…</a></li>
       <li><a href="#undo-changes">Can I easily undo the WireGuard…</a></li>
-      <li><a href="#security-considerations">What security considerations should…</a></li>
-      <li><a href="#advanced-tips">Any advanced tips for optimizing my…</a></li>
+      <li><a href="#security-considerations">What security considerations…</a></li>
+      <li><a href="#advanced-tips">Any advanced tips for optimizing…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

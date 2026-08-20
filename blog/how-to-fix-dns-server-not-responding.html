@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 14 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=dns">DNS</a></div>
-    </div>
-    <h1>DNS Server Not Responding? Here&#39;s How to Fix It Quickly</h1>
-    <p class="lede">Ever hit a website only to see that dreaded &#39;DNS Server Not Responding&#39; message? It&#39;s super frustrating, and it feels like your internet&#39;s completely broken. Good news: it&#39;s usually not as bad as it seems, and you can almost always fix it yourself. This guide will walk you through the most common and effective fixes, getting you back online in just a few minutes. We&#39;ll start with the quickest solutions and then dive into a bit more detail if you need it, explaining why these steps work.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,262 WORDS</span>
+    <h1 style="margin-top:12px;">DNS Server Not Responding? Here&#39;s How to Fix It Quickly</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">Ever hit a website only to see that dreaded &#39;DNS Server Not Responding&#39; message? It&#39;s super frustrating, and it feels like your internet&#39;s completely broken. Good news: it&#39;s usually not as bad as it seems, and you can almost always fix it yourself. This guide will walk you through the most common and effective fixes, getting you back online in just a few minutes. We&#39;ll start with the quickest solutions and then dive into a bit more detail if you need it, explaining why these steps work.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>When you see a &#34;DNS server not responding&#34; error, it means your computer can&#39;t translate website names into the numerical addresses the internet uses. Think of it like your phone&#39;s contact list suddenly disappearing — you know who you want to call, but you don&#39;t have their number anymore. Without a working DNS, you can&#39;t reach websites, no matter how good your internet connection seems.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#short-answer-5-minutes">What&#39;s the quickest way to fix &#39;DNS Server Not Responding&#39;?</a></li>
-        
-        <li><a href="#step-by-step-walkthrough">Can you walk me through fixing &#39;DNS Server Not Responding&#39; step-by-step?</a></li>
-        
-        <li><a href="#what-if-step-fails">What should I do if a specific step doesn&#39;t seem to work for me?</a></li>
-        
-        <li><a href="#why-this-approach-works">Why does this specific approach work better than other methods?</a></li>
-        
-        <li><a href="#common-errors-quick-fixes">What are the most common errors and how can I fix them quickly?</a></li>
-        
-        <li><a href="#how-to-verify-it-worked">How can I verify that my DNS server is responding correctly now?</a></li>
-        
-        <li><a href="#tools-that-make-this-easier">Are there any tools that can make this process easier for me?</a></li>
-        
-        <li><a href="#how-vpn-helps">How does a VPN help (or not help) with DNS server issues?</a></li>
-        
-        <li><a href="#advanced-troubleshooting">What if none of these common fixes resolve my issue?</a></li>
-        
-        <li><a href="#preventative-measures">How can I prevent &#39;DNS Server Not Responding&#39; errors in the future?</a></li>
-        
-        <li><a href="#understanding-dns">What exactly is DNS and why is it so important for my internet connection?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="short-answer-5-minutes">What&#39;s the quickest way to fix &#39;DNS Server Not Responding&#39;?</h2>
+<h2 id="short-answer-5-minutes">What&#39;s the quickest way to fix &#39;DNS Server Not Responding&#39;?</h2>
     <p class="short-answer">The quickest way to fix "DNS Server Not Responding" is to flush your DNS cache, release and renew your IP address, change your DNS server, and restart your router and computer.</p>
 
 This error can feel really frustrating because it completely locks you out of the internet, but often it's a quick fix. You're basically telling your computer to forget where it *thinks* websites live and then asking it to find them again. Start by opening your command prompt or terminal. First, try `ipconfig /flushdns` to clear out your computer's stored DNS entries. Then, `ipconfig /release` followed by `ipconfig /renew` will get you a fresh IP address from your router. These three commands often do the trick on their own.
@@ -1422,7 +1376,7 @@ The impact of slow or unresponsive DNS can be really frustrating. If your DNS se
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What&amp;#39;s the quickest way to fix &amp;#39;DNS Server Not Responding&amp;#39;?</li>
         <li>Can you walk me through fixing &amp;#39;DNS Server Not Responding&amp;#39; step-by-step?</li>
@@ -1494,7 +1448,7 @@ The impact of slow or unresponsive DNS can be really frustrating. If your DNS se
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/how-to-test-for-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">How to test for dns leak</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1549,30 +1503,26 @@ The impact of slow or unresponsive DNS can be really frustrating. If your DNS se
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
-      <li><a href="#short-answer-5-minutes">What's the quickest way to fix 'DNS…</a></li>
-      <li><a href="#step-by-step-walkthrough">Can you walk me through fixing 'DNS…</a></li>
-      <li><a href="#what-if-step-fails">What should I do if a specific step…</a></li>
+      <li><a href="#short-answer-5-minutes">What's the quickest way to fix…</a></li>
+      <li><a href="#step-by-step-walkthrough">Can you walk me through fixing…</a></li>
+      <li><a href="#what-if-step-fails">What should I do if a specific…</a></li>
       <li><a href="#why-this-approach-works">Why does this specific approach…</a></li>
-      <li><a href="#common-errors-quick-fixes">What are the most common errors and…</a></li>
-      <li><a href="#how-to-verify-it-worked">How can I verify that my DNS server…</a></li>
+      <li><a href="#common-errors-quick-fixes">What are the most common errors…</a></li>
+      <li><a href="#how-to-verify-it-worked">How can I verify that my DNS…</a></li>
       <li><a href="#tools-that-make-this-easier">Are there any tools that can make…</a></li>
       <li><a href="#how-vpn-helps">How does a VPN help (or not help)…</a></li>
-      <li><a href="#advanced-troubleshooting">What if none of these common fixes…</a></li>
+      <li><a href="#advanced-troubleshooting">What if none of these common…</a></li>
       <li><a href="#preventative-measures">How can I prevent 'DNS Server Not…</a></li>
       <li><a href="#understanding-dns">What exactly is DNS and why is it…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

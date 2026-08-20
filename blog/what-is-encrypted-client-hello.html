@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 12 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
-    </div>
-    <h1>What is Encrypted Client Hello (ECH) and Why Should You Care?</h1>
-    <p class="lede">You know how websites use HTTPS to encrypt your connection, right? Well, even with that, anyone watching your network — like your internet provider — could still see *which* website you were trying to visit, even if they couldn&#39;t see what you were doing on it. Encrypted Client Hello (ECH) is here to fix that. It&#39;s a new privacy feature that stops those initial peeks, making it much harder for snoopers to know where you&#39;re going online. Let&#39;s dive into what ECH is, how it works, and why it&#39;s a big step forward for your digital privacy.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 4,996 WORDS</span>
+    <h1 style="margin-top:12px;">What is Encrypted Client Hello (ECH) and Why Should You Care?</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You know how websites use HTTPS to encrypt your connection, right? Well, even with that, anyone watching your network — like your internet provider — could still see *which* website you were trying to visit, even if they couldn&#39;t see what you were doing on it. Encrypted Client Hello (ECH) is here to fix that. It&#39;s a new privacy feature that stops those initial peeks, making it much harder for snoopers to know where you&#39;re going online. Let&#39;s dive into what ECH is, how it works, and why it&#39;s a big step forward for your digital privacy.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>Encrypted Client Hello (ECH) is a big step for your internet privacy. It encrypts the very first part of your connection to a website, meaning that even if a site uses HTTPS, the domain name you&#39;re trying to reach is no longer sent in plain text. This makes it much harder for your internet provider or anyone else watching your network to see exactly which websites you&#39;re visiting.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#what-is-ech-simply">What exactly is Encrypted Client Hello (ECH)?</a></li>
-        
-        <li><a href="#how-ech-works">How does ECH actually work its magic under the hood?</a></li>
-        
-        <li><a href="#why-ech-matters">Why should I care about ECH as an everyday internet user?</a></li>
-        
-        <li><a href="#ech-misconceptions">Are there any common misconceptions about ECH I should know about?</a></li>
-        
-        <li><a href="#ech-other-privacy">How does ECH fit in with other internet privacy concepts like DNS over HTTPS?</a></li>
-        
-        <li><a href="#when-to-care-ech">When is ECH super important, and when can I mostly ignore it?</a></li>
-        
-        <li><a href="#vpn-handles-ech">How does a good VPN, like OllaVPN, handle ECH for you automatically?</a></li>
-        
-        <li><a href="#practical-ech-actions">What practical steps can I take today based on what I&#39;ve learned about ECH?</a></li>
-        
-        <li><a href="#future-of-ech">Is ECH here to stay, or will something else replace it soon?</a></li>
-        
-        <li><a href="#ech-vs-https">Is ECH just a fancy version of HTTPS, or is it something entirely different?</a></li>
-        
-        <li><a href="#ech-and-censorship">Can ECH help me get around internet censorship in some regions?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="what-is-ech-simply">What exactly is Encrypted Client Hello (ECH)?</h2>
+<h2 id="what-is-ech-simply">What exactly is Encrypted Client Hello (ECH)?</h2>
     <p class="short-answer">Encrypted Client Hello (ECH) is a new internet standard that encrypts the very first part of your connection to a website, hiding which specific site you're trying to visit.</p>
 
 Think about when you type a website address into your browser. Even if you're using a secure HTTPS connection, there's always been a tiny bit of information that's sent in the clear, right at the beginning of that connection. This unencrypted part tells the server which specific <strong>domain name</strong> you're trying to reach. For example, it might say "I want to talk to example.com." This creates a significant <strong>privacy gap</strong> because even if your actual browsing content is encrypted, an observer can still see *which* website you're going to. It's like seeing the address on an envelope, even if you can't read the letter inside.
@@ -1416,7 +1370,7 @@ Finally, and perhaps most importantly, you should always <strong>use a VPN</stro
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What exactly is Encrypted Client Hello (ECH)?</li>
         <li>How does ECH actually work its magic under the hood?</li>
@@ -1488,7 +1442,7 @@ Finally, and perhaps most importantly, you should always <strong>use a VPN</stro
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/what-is-tls-vs-ssl"><span class="card-tag">PRIVACY</span><span class="card-title">What is tls vs ssl</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1543,30 +1497,26 @@ Finally, and perhaps most importantly, you should always <strong>use a VPN</stro
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
       <li><a href="#what-is-ech-simply">What exactly is Encrypted Client…</a></li>
       <li><a href="#how-ech-works">How does ECH actually work its…</a></li>
       <li><a href="#why-ech-matters">Why should I care about ECH as an…</a></li>
-      <li><a href="#ech-misconceptions">Are there any common misconceptions…</a></li>
+      <li><a href="#ech-misconceptions">Are there any common…</a></li>
       <li><a href="#ech-other-privacy">How does ECH fit in with other…</a></li>
       <li><a href="#when-to-care-ech">When is ECH super important, and…</a></li>
-      <li><a href="#vpn-handles-ech">How does a good VPN, like OllaVPN…</a></li>
+      <li><a href="#vpn-handles-ech">How does a good VPN, like…</a></li>
       <li><a href="#practical-ech-actions">What practical steps can I take…</a></li>
       <li><a href="#future-of-ech">Is ECH here to stay, or will…</a></li>
       <li><a href="#ech-vs-https">Is ECH just a fancy version of…</a></li>
-      <li><a href="#ech-and-censorship">Can ECH help me get around internet…</a></li>
+      <li><a href="#ech-and-censorship">Can ECH help me get around…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 14 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=isp">ISP</a></div>
-    </div>
-    <h1>Can Your ISP See Your VPN Traffic? Let&#39;s Get Real About Privacy.</h1>
-    <p class="lede">You&#39;re using a VPN because you want privacy, but how much can it truly hide from your Internet Service Provider (ISP)? It&#39;s a common and important question, and frankly, a lot of VPN providers aren&#39;t entirely upfront about the nuances. We&#39;ll cut through the marketing speak to explain exactly what your ISP can and can&#39;t see when you&#39;re connected to a VPN, why those distinctions matter for your online privacy, and how OllaVPN helps you stay truly private.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,098 WORDS</span>
+    <h1 style="margin-top:12px;">Can Your ISP See Your VPN Traffic? Let&#39;s Get Real About Privacy.</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You&#39;re using a VPN because you want privacy, but how much can it truly hide from your Internet Service Provider (ISP)? It&#39;s a common and important question, and frankly, a lot of VPN providers aren&#39;t entirely upfront about the nuances. We&#39;ll cut through the marketing speak to explain exactly what your ISP can and can&#39;t see when you&#39;re connected to a VPN, why those distinctions matter for your online privacy, and how OllaVPN helps you stay truly private.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>No, your internet service provider (ISP) can&#39;t see the content of your encrypted VPN traffic. Once you connect to OllaVPN, everything you do online — the websites you visit, the videos you stream, the messages you send — is scrambled into unreadable gibberish. They&#39;ll know you&#39;re using a VPN, but they won&#39;t know what you&#39;re doing inside that secure tunnel.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#short-answer-plain-english">What Can Your ISP Actually See When You Use a VPN?</a></li>
-        
-        <li><a href="#technical-reality">How Does a VPN Work to Hide Your Traffic From Your ISP?</a></li>
-        
-        <li><a href="#government-surveillance-limits">What Can Governments and Other Agencies See, Even with a VPN?</a></li>
-        
-        <li><a href="#logging-policies-matter">Why Do VPN Logging Policies Directly Affect Your Privacy?</a></li>
-        
-        <li><a href="#jurisdictional-considerations">Which Countries&#39; Laws Actually Affect Your VPN&#39;s Privacy Guarantees?</a></li>
-        
-        <li><a href="#common-vpn-myths">Are There Common Myths About VPNs and ISP Visibility?</a></li>
-        
-        <li><a href="#evaluating-vpn-claims">How Can You Evaluate a VPN&#39;s Claims About Privacy and Security?</a></li>
-        
-        <li><a href="#ollavpn-specifics">What Does OllaVPN Do to Protect Your Traffic From Your ISP?</a></li>
-        
-        <li><a href="#free-vs-paid-privacy">Is OllaVPN&#39;s Free Plan as Private as the Paid One?</a></li>
-        
-        <li><a href="#post-quantum-encryption">Why Does Post-Quantum Encryption Matter for ISP Privacy?</a></li>
-        
-        <li><a href="#when-vpn-doesnt-help">When Doesn&#39;t a VPN Protect You From Your ISP or Others?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="short-answer-plain-english">What Can Your ISP Actually See When You Use a VPN?</h2>
+<h2 id="short-answer-plain-english">What Can Your ISP Actually See When You Use a VPN?</h2>
     <p class="short-answer">Your ISP can see that you're using a VPN and how much data you're sending, but not what you're doing online.</p>
 
 Your internet service provider (ISP) can definitely tell you're connected to a VPN. They see an encrypted tunnel established between your device and one of our OllaVPN servers. Think of it like sending a sealed, unmarked package through the mail. The post office knows you sent a package, and where it's going (the VPN server's IP address), but they can't open it to see what's inside. That "what's inside" is your actual internet traffic, all scrambled and unreadable to anyone but your device and our server.
@@ -1417,7 +1371,7 @@ You also lose a layer of anonymity the moment you **log into accounts** like Goo
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What Can Your ISP Actually See When You Use a VPN?</li>
         <li>How Does a VPN Work to Hide Your Traffic From Your ISP?</li>
@@ -1489,7 +1443,7 @@ You also lose a layer of anonymity the moment you **log into accounts** like Goo
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/are-vpns-legal"><span class="card-tag">PRIVACY</span><span class="card-title">Are vpns legal</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1544,30 +1498,26 @@ You also lose a layer of anonymity the moment you **log into accounts** like Goo
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
-      <li><a href="#short-answer-plain-english">What Can Your ISP Actually See When…</a></li>
+      <li><a href="#short-answer-plain-english">What Can Your ISP Actually See…</a></li>
       <li><a href="#technical-reality">How Does a VPN Work to Hide Your…</a></li>
       <li><a href="#government-surveillance-limits">What Can Governments and Other…</a></li>
       <li><a href="#logging-policies-matter">Why Do VPN Logging Policies…</a></li>
       <li><a href="#jurisdictional-considerations">Which Countries' Laws Actually…</a></li>
       <li><a href="#common-vpn-myths">Are There Common Myths About VPNs…</a></li>
-      <li><a href="#evaluating-vpn-claims">How Can You Evaluate a VPN's Claims…</a></li>
+      <li><a href="#evaluating-vpn-claims">How Can You Evaluate a VPN's…</a></li>
       <li><a href="#ollavpn-specifics">What Does OllaVPN Do to Protect…</a></li>
       <li><a href="#free-vs-paid-privacy">Is OllaVPN's Free Plan as Private…</a></li>
       <li><a href="#post-quantum-encryption">Why Does Post-Quantum Encryption…</a></li>
-      <li><a href="#when-vpn-doesnt-help">When Doesn't a VPN Protect You From…</a></li>
+      <li><a href="#when-vpn-doesnt-help">When Doesn't a VPN Protect You…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

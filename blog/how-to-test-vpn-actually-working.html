@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 12 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
-    </div>
-    <h1>How to Test If Your VPN Is Actually Working (And Fix It If It Isn&#39;t)</h1>
-    <p class="lede">You&#39;ve turned on your VPN, the app says &#34;Connected,&#34; but how do you really know it&#39;s doing its job? It&#39;s a fair question, because a green light doesn&#39;t always mean your privacy is watertight. Sometimes there are leaks, or your connection isn&#39;t as secure as you think. We&#39;ll show you how to quickly and reliably check your VPN&#39;s performance and ensure your data is truly protected, giving you peace of mind in just a few minutes. You don&#39;t need to be a tech expert; we&#39;ll walk you through it.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,212 WORDS</span>
+    <h1 style="margin-top:12px;">How to Test If Your VPN Is Actually Working (And Fix It If It Isn&#39;t)</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You&#39;ve turned on your VPN, the app says &#34;Connected,&#34; but how do you really know it&#39;s doing its job? It&#39;s a fair question, because a green light doesn&#39;t always mean your privacy is watertight. Sometimes there are leaks, or your connection isn&#39;t as secure as you think. We&#39;ll show you how to quickly and reliably check your VPN&#39;s performance and ensure your data is truly protected, giving you peace of mind in just a few minutes. You don&#39;t need to be a tech expert; we&#39;ll walk you through it.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>To quickly check if your OllaVPN is working, open the app, connect to a server in a different country, then immediately visit a site like &lt;a href=&#34;https://ipleak.net&#34;&gt;ipleak.net&lt;/a&gt; or &lt;a href=&#34;https://dnsleaktest.com&#34;&gt;dnsleaktest.com&lt;/a&gt;. These sites will show you your public IP address and DNS server locations. If they match the VPN server you connected to, you&#39;re all set.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#short-answer-5-minutes">What&#39;s the quick way to test your VPN in 5 minutes?</a></li>
-        
-        <li><a href="#step-by-step-walkthrough">Can you give me a step-by-step walkthrough for testing my VPN?</a></li>
-        
-        <li><a href="#what-if-step-fails">What should I do if a step in the VPN test fails?</a></li>
-        
-        <li><a href="#why-this-approach-works">Why is this testing approach better than just looking at my VPN app?</a></li>
-        
-        <li><a href="#common-errors-quick-fixes">What are the most common VPN errors and how do I fix them quickly?</a></li>
-        
-        <li><a href="#how-to-verify-correctly">How do I verify my VPN is working correctly after troubleshooting?</a></li>
-        
-        <li><a href="#tools-that-make-it-easier">Are there any tools that make VPN testing easier?</a></li>
-        
-        <li><a href="#how-vpn-helps-with-task">How does a VPN help (or not help) with this specific task?</a></li>
-        
-        <li><a href="#understanding-ip-dns-webrtc">What exactly are IP, DNS, and WebRTC leaks, and why do they matter?</a></li>
-        
-        <li><a href="#advanced-checks">Are there any advanced checks I can perform for ultimate peace of mind?</a></li>
-        
-        <li><a href="#ollavpn-guarantees">How does OllaVPN ensure my connection is always working and secure?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="short-answer-5-minutes">What&#39;s the quick way to test your VPN in 5 minutes?</h2>
+<h2 id="short-answer-5-minutes">What&#39;s the quick way to test your VPN in 5 minutes?</h2>
     <p class="short-answer">The quickest way to test your VPN is to connect, then check your IP address and DNS servers on an independent website like ipleak.net.</p>
 
 <p>You can quickly check if your VPN is doing its job in just a few minutes. First, make sure you're disconnected from your VPN. Then, open your web browser and navigate to <a href="https://ipleak.net">ipleak.net</a> or <a href="https://dnsleaktest.com">dnsleaktest.com</a>. These sites will show you your current public IP address and the DNS servers your computer is using. Jot these down, or take a screenshot, as this is your baseline.</p>
@@ -1416,7 +1370,7 @@ Finally, <strong>WebRTC STUN requests</strong> are another common culprit for le
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What&amp;#39;s the quick way to test your VPN in 5 minutes?</li>
         <li>Can you give me a step-by-step walkthrough for testing my VPN?</li>
@@ -1488,7 +1442,7 @@ Finally, <strong>WebRTC STUN requests</strong> are another common culprit for le
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/how-to-test-for-dns-leak"><span class="card-tag">PRIVACY</span><span class="card-title">How to test for dns leak</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1543,30 +1497,26 @@ Finally, <strong>WebRTC STUN requests</strong> are another common culprit for le
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
       <li><a href="#short-answer-5-minutes">What's the quick way to test your…</a></li>
       <li><a href="#step-by-step-walkthrough">Can you give me a step-by-step…</a></li>
       <li><a href="#what-if-step-fails">What should I do if a step in the…</a></li>
-      <li><a href="#why-this-approach-works">Why is this testing approach better…</a></li>
-      <li><a href="#common-errors-quick-fixes">What are the most common VPN errors…</a></li>
+      <li><a href="#why-this-approach-works">Why is this testing approach…</a></li>
+      <li><a href="#common-errors-quick-fixes">What are the most common VPN…</a></li>
       <li><a href="#how-to-verify-correctly">How do I verify my VPN is working…</a></li>
       <li><a href="#tools-that-make-it-easier">Are there any tools that make VPN…</a></li>
       <li><a href="#how-vpn-helps-with-task">How does a VPN help (or not help)…</a></li>
       <li><a href="#understanding-ip-dns-webrtc">What exactly are IP, DNS, and…</a></li>
-      <li><a href="#advanced-checks">Are there any advanced checks I can…</a></li>
+      <li><a href="#advanced-checks">Are there any advanced checks I…</a></li>
       <li><a href="#ollavpn-guarantees">How does OllaVPN ensure my…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

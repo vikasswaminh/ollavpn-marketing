@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 14 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
-    </div>
-    <h1>Can Websites Detect VPNs? What You Need to Know About Online Privacy</h1>
-    <p class="lede">You&#39;re probably here because you&#39;ve heard some unsettling whispers: can websites actually tell you&#39;re using a VPN? Can governments or your internet provider still track you? It&#39;s a common concern, and honestly, there&#39;s a lot of confusing information out there. We&#39;re going to clear things up, giving you the straightforward truth about what can and can&#39;t be detected when you&#39;re connected to a VPN. You&#39;ll learn the technical realities, we&#39;ll debunk some persistent myths, and you&#39;ll get a real understanding of what truly protects your privacy online.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 4,956 WORDS</span>
+    <h1 style="margin-top:12px;">Can Websites Detect VPNs? What You Need to Know About Online Privacy</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You&#39;re probably here because you&#39;ve heard some unsettling whispers: can websites actually tell you&#39;re using a VPN? Can governments or your internet provider still track you? It&#39;s a common concern, and honestly, there&#39;s a lot of confusing information out there. We&#39;re going to clear things up, giving you the straightforward truth about what can and can&#39;t be detected when you&#39;re connected to a VPN. You&#39;ll learn the technical realities, we&#39;ll debunk some persistent myths, and you&#39;ll get a real understanding of what truly protects your privacy online.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>Yes, but with caveats. Websites can often tell you&#39;re using *a* VPN, but they usually can&#39;t tell *who* you are or *what* you&#39;re doing. They&#39;ll see an IP address that belongs to a VPN provider, not your home IP. This detection often leads to annoying CAPTCHAs or content blocks, not a breach of your privacy.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#short-answer">Can Websites Really Detect if I&#39;m Using a VPN?</a></li>
-        
-        <li><a href="#technical-reality">What&#39;s the Actual Technical Reality Behind VPN Detection?</a></li>
-        
-        <li><a href="#isp-government-visibility">What Can My ISP and Government See When I Use a VPN?</a></li>
-        
-        <li><a href="#logging-policies">How Do VPN Logging Policies Impact My Protection?</a></li>
-        
-        <li><a href="#jurisdictional-considerations">Do Jurisdictional Laws Affect My VPN&#39;s Privacy Guarantees?</a></li>
-        
-        <li><a href="#common-myths">What Are the Most Common VPN Myths, and What&#39;s Actually True?</a></li>
-        
-        <li><a href="#evaluating-claims">How Can I Evaluate a VPN&#39;s Privacy and No-Logs Claims?</a></li>
-        
-        <li><a href="#ollavpn-approach">How Does OllaVPN Specifically Address These Privacy Concerns?</a></li>
-        
-        <li><a href="#when-vpn-fails">Are There Situations Where a VPN Doesn&#39;t Actually Help?</a></li>
-        
-        <li><a href="#pqc-impact">Does Post-Quantum Encryption Matter for VPN Detection?</a></li>
-        
-        <li><a href="#free-vs-paid-privacy">Is the Free OllaVPN Plan as Private as the Paid One?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="short-answer">Can Websites Really Detect if I&#39;m Using a VPN?</h2>
+<h2 id="short-answer">Can Websites Really Detect if I&#39;m Using a VPN?</h2>
     <p class="short-answer">Yes, websites can often tell you're using a VPN, but they usually can't tell *who* you are or *what* you're doing.</p>
 
 <p>When you connect to a VPN like OllaVPN, your internet traffic goes through our <a href="/what-is-a-vpn">VPN server</a> first. This means websites see the IP address of our server, not your actual IP address. The catch is that these server IP addresses are often known to be associated with VPNs because many users connect through them. Think of it like a public phone booth – everyone knows it's a public phone, not a private line to someone's home.</p>
@@ -1418,7 +1372,7 @@ At OllaVPN, we use a **hybrid handshake** approach. This means your connection u
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>Can Websites Really Detect if I&amp;#39;m Using a VPN?</li>
         <li>What&amp;#39;s the Actual Technical Reality Behind VPN Detection?</li>
@@ -1490,7 +1444,7 @@ At OllaVPN, we use a **hybrid handshake** approach. This means your connection u
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/why-does-netflix-block-my-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Why does netflix block my vpn</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1545,30 +1499,26 @@ At OllaVPN, we use a **hybrid handshake** approach. This means your connection u
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
       <li><a href="#short-answer">Can Websites Really Detect if I'm…</a></li>
-      <li><a href="#technical-reality">What's the Actual Technical Reality…</a></li>
-      <li><a href="#isp-government-visibility">What Can My ISP and Government See…</a></li>
-      <li><a href="#logging-policies">How Do VPN Logging Policies Impact…</a></li>
+      <li><a href="#technical-reality">What's the Actual Technical…</a></li>
+      <li><a href="#isp-government-visibility">What Can My ISP and Government…</a></li>
+      <li><a href="#logging-policies">How Do VPN Logging Policies…</a></li>
       <li><a href="#jurisdictional-considerations">Do Jurisdictional Laws Affect My…</a></li>
-      <li><a href="#common-myths">What Are the Most Common VPN Myths…</a></li>
-      <li><a href="#evaluating-claims">How Can I Evaluate a VPN's Privacy…</a></li>
+      <li><a href="#common-myths">What Are the Most Common VPN…</a></li>
+      <li><a href="#evaluating-claims">How Can I Evaluate a VPN's…</a></li>
       <li><a href="#ollavpn-approach">How Does OllaVPN Specifically…</a></li>
       <li><a href="#when-vpn-fails">Are There Situations Where a VPN…</a></li>
-      <li><a href="#pqc-impact">Does Post-Quantum Encryption Matter…</a></li>
-      <li><a href="#free-vs-paid-privacy">Is the Free OllaVPN Plan as Private…</a></li>
+      <li><a href="#pqc-impact">Does Post-Quantum Encryption…</a></li>
+      <li><a href="#free-vs-paid-privacy">Is the Free OllaVPN Plan as…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

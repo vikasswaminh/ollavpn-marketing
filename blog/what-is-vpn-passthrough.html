@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 14 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
-    </div>
-    <h1>What is VPN Passthrough and Why Should You Care?</h1>
-    <p class="lede">You&#39;re probably familiar with what a VPN does for your online privacy, but have you ever heard of &#34;VPN passthrough&#34;? It sounds technical, and honestly, it can be a bit confusing at first glance. Don&#39;t worry, you&#39;re not alone if it&#39;s left you scratching your head. This concept is all about how your home router handles VPN connections, and understanding it can make a big difference in how effectively your VPN protects you, especially if you&#39;re looking to secure your entire home network. We&#39;ll break it down for you, step by step, without the jargon, so you can make informed choices about your digital security.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,093 WORDS</span>
+    <h1 style="margin-top:12px;">What is VPN Passthrough and Why Should You Care?</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You&#39;re probably familiar with what a VPN does for your online privacy, but have you ever heard of &#34;VPN passthrough&#34;? It sounds technical, and honestly, it can be a bit confusing at first glance. Don&#39;t worry, you&#39;re not alone if it&#39;s left you scratching your head. This concept is all about how your home router handles VPN connections, and understanding it can make a big difference in how effectively your VPN protects you, especially if you&#39;re looking to secure your entire home network. We&#39;ll break it down for you, step by step, without the jargon, so you can make informed choices about your digital security.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>VPN passthrough is basically your router&#39;s way of making sure your VPN connection gets through your home network without a hitch. Imagine it like a special VIP lane for your encrypted data; without it, your VPN traffic might get confused or blocked by your router, making your connection slow or even impossible.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#what-is-vpn-passthrough-simply-put">What exactly is VPN passthrough, in plain English?</a></li>
-        
-        <li><a href="#how-vpn-passthrough-works">How does VPN passthrough actually work under the hood?</a></li>
-        
-        <li><a href="#why-vpn-passthrough-matters">Why does VPN passthrough matter for your everyday privacy and security?</a></li>
-        
-        <li><a href="#common-misconceptions-about-passthrough">What are the common misconceptions about VPN passthrough?</a></li>
-        
-        <li><a href="#passthrough-and-other-privacy-concepts">How does VPN passthrough relate to other internet privacy concepts you&#39;ve heard of?</a></li>
-        
-        <li><a href="#when-to-care-about-passthrough">When should you actively care about VPN passthrough, and when can you just ignore it?</a></li>
-        
-        <li><a href="#how-a-good-vpn-handles-passthrough">How does a good VPN service handle this for you automatically?</a></li>
-        
-        <li><a href="#practical-steps-today">What practical things can you do today based on what you&#39;ve learned?</a></li>
-        
-        <li><a href="#is-passthrough-still-relevant">Is VPN passthrough still a relevant concern in today&#39;s internet landscape?</a></li>
-        
-        <li><a href="#ollavpn-and-passthrough">How does OllaVPN specifically ensure your connection is smooth?</a></li>
-        
-        <li><a href="#troubleshooting-passthrough-issues">What should you do if you suspect a VPN passthrough issue?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="what-is-vpn-passthrough-simply-put">What exactly is VPN passthrough, in plain English?</h2>
+<h2 id="what-is-vpn-passthrough-simply-put">What exactly is VPN passthrough, in plain English?</h2>
     <p class="short-answer">VPN passthrough is a feature on your router that allows devices connected to it to establish their own VPN connections without interference from the router's network address translation (NAT).</p>
 
 <p>Think of your home internet connection like a big apartment building. Your router is the doorman, and all your devices (phone, laptop, smart TV) are apartments inside. When your devices want to talk to the outside world, they send their requests to the doorman (router). The doorman then sends the request out, making it look like it came from the building itself, not a specific apartment. This process is called <strong>NAT (Network Address Translation)</strong>, and it helps manage all the traffic going in and out of your home network.</p>
@@ -1419,7 +1373,7 @@ VPN passthrough issues come down to your router. Many routers, especially older 
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What exactly is VPN passthrough, in plain English?</li>
         <li>How does VPN passthrough actually work under the hood?</li>
@@ -1491,7 +1445,7 @@ VPN passthrough issues come down to your router. Many routers, especially older 
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/what-is-a-vpn-protocol"><span class="card-tag">PRIVACY</span><span class="card-title">What is a vpn protocol</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1546,30 +1500,26 @@ VPN passthrough issues come down to your router. Many routers, especially older 
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
-      <li><a href="#what-is-vpn-passthrough-simply-put">What exactly is VPN passthrough, in…</a></li>
+      <li><a href="#what-is-vpn-passthrough-simply-put">What exactly is VPN passthrough,…</a></li>
       <li><a href="#how-vpn-passthrough-works">How does VPN passthrough actually…</a></li>
-      <li><a href="#why-vpn-passthrough-matters">Why does VPN passthrough matter for…</a></li>
-      <li><a href="#common-misconceptions-about-passthrough">What are the common misconceptions…</a></li>
-      <li><a href="#passthrough-and-other-privacy-concepts">How does VPN passthrough relate to…</a></li>
-      <li><a href="#when-to-care-about-passthrough">When should you actively care about…</a></li>
-      <li><a href="#how-a-good-vpn-handles-passthrough">How does a good VPN service handle…</a></li>
+      <li><a href="#why-vpn-passthrough-matters">Why does VPN passthrough matter…</a></li>
+      <li><a href="#common-misconceptions-about-passthrough">What are the common…</a></li>
+      <li><a href="#passthrough-and-other-privacy-concepts">How does VPN passthrough relate…</a></li>
+      <li><a href="#when-to-care-about-passthrough">When should you actively care…</a></li>
+      <li><a href="#how-a-good-vpn-handles-passthrough">How does a good VPN service…</a></li>
       <li><a href="#practical-steps-today">What practical things can you do…</a></li>
-      <li><a href="#is-passthrough-still-relevant">Is VPN passthrough still a relevant…</a></li>
+      <li><a href="#is-passthrough-still-relevant">Is VPN passthrough still a…</a></li>
       <li><a href="#ollavpn-and-passthrough">How does OllaVPN specifically…</a></li>
-      <li><a href="#troubleshooting-passthrough-issues">What should you do if you suspect a…</a></li>
+      <li><a href="#troubleshooting-passthrough-issues">What should you do if you suspect…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

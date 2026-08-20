@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 14 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=logs">LOGS</a></div>
-    </div>
-    <h1>What Logs Does a VPN Keep, and What Does That Really Mean for Your Privacy?</h1>
-    <p class="lede">You&#39;ve likely heard the term &#34;no-logs policy&#34; thrown around a lot when it comes to VPNs. It&#39;s a major selling point, but what does it actually mean for your privacy? And, more importantly, what can a VPN *really* log, and what does that imply for your online security? We&#39;re going to cut through the marketing jargon and give you the straightforward, technical reality of VPN logging, what governments and ISPs can see, and how to tell if a VPN&#39;s claims are truly protecting you.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,111 WORDS</span>
+    <h1 style="margin-top:12px;">What Logs Does a VPN Keep, and What Does That Really Mean for Your Privacy?</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You&#39;ve likely heard the term &#34;no-logs policy&#34; thrown around a lot when it comes to VPNs. It&#39;s a major selling point, but what does it actually mean for your privacy? And, more importantly, what can a VPN *really* log, and what does that imply for your online security? We&#39;re going to cut through the marketing jargon and give you the straightforward, technical reality of VPN logging, what governments and ISPs can see, and how to tell if a VPN&#39;s claims are truly protecting you.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>When a VPN says &#34;no logs,&#34; what does that actually mean? It&#39;s simple: it means they don&#39;t record anything that can identify you or your online activities. That includes your IP address, connection times, how much data you use, or what sites you visit. Anything less than that isn&#39;t truly a no-logs VPN, and that&#39;s an important distinction.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#short-answer-plain-english">What does &#34;VPN logs&#34; mean in plain English?</a></li>
-        
-        <li><a href="#technical-reality-of-logging">What&#39;s the actual technical reality of what a VPN *could* log?</a></li>
-        
-        <li><a href="#what-governments-isps-see">What can governments and ISPs see when you use a VPN?</a></li>
-        
-        <li><a href="#logging-policies-protection">How do VPN logging policies affect what you&#39;re protected from?</a></li>
-        
-        <li><a href="#jurisdictional-considerations">Which jurisdictional considerations actually matter for VPN logs?</a></li>
-        
-        <li><a href="#common-myths-truths">What are the common myths about VPN logging, and what&#39;s actually true?</a></li>
-        
-        <li><a href="#evaluate-vpn-claims">How can you evaluate any VPN&#39;s claims around logging?</a></li>
-        
-        <li><a href="#ollavpn-addressing-concerns">What does OllaVPN specifically do to address logging concerns?</a></li>
-        
-        <li><a href="#free-vs-paid-privacy">Is the free OllaVPN plan as private as the paid one?</a></li>
-        
-        <li><a href="#post-quantum-encryption-logs">How does post-quantum encryption relate to logging?</a></li>
-        
-        <li><a href="#beyond-no-logs">What other features are important for privacy beyond a no-logs policy?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="short-answer-plain-english">What does &#34;VPN logs&#34; mean in plain English?</h2>
+<h2 id="short-answer-plain-english">What does &#34;VPN logs&#34; mean in plain English?</h2>
     <p class="short-answer">"VPN logs" refers to any information a VPN provider stores about your usage of their service, ranging from harmless technical data to sensitive details about your online activity.</p>
 
 When you connect to a VPN, there's always some information exchanged between your device and the VPN server. What a VPN provider chooses to record, and for how long, is what we mean by "logs." Think of it like a phone call: the phone company always knows you called someone and for how long (that's connection data), but they don't usually record what you actually said (that would be activity data).
@@ -1417,7 +1371,7 @@ This commitment to <strong>long-term security</strong> significantly reduces the
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What does &amp;#34;VPN logs&amp;#34; mean in plain English?</li>
         <li>What&amp;#39;s the actual technical reality of what a VPN *could* log?</li>
@@ -1489,7 +1443,7 @@ This commitment to <strong>long-term security</strong> significantly reduces the
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/can-my-isp-see-vpn-traffic"><span class="card-tag">PRIVACY</span><span class="card-title">Can my isp see vpn traffic</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1544,30 +1498,26 @@ This commitment to <strong>long-term security</strong> significantly reduces the
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
-      <li><a href="#short-answer-plain-english">What does "VPN logs" mean in plain…</a></li>
-      <li><a href="#technical-reality-of-logging">What's the actual technical reality…</a></li>
+      <li><a href="#short-answer-plain-english">What does "VPN logs" mean in…</a></li>
+      <li><a href="#technical-reality-of-logging">What's the actual technical…</a></li>
       <li><a href="#what-governments-isps-see">What can governments and ISPs see…</a></li>
-      <li><a href="#logging-policies-protection">How do VPN logging policies affect…</a></li>
-      <li><a href="#jurisdictional-considerations">Which jurisdictional considerations…</a></li>
-      <li><a href="#common-myths-truths">What are the common myths about VPN…</a></li>
+      <li><a href="#logging-policies-protection">How do VPN logging policies…</a></li>
+      <li><a href="#jurisdictional-considerations">Which jurisdictional…</a></li>
+      <li><a href="#common-myths-truths">What are the common myths about…</a></li>
       <li><a href="#evaluate-vpn-claims">How can you evaluate any VPN's…</a></li>
       <li><a href="#ollavpn-addressing-concerns">What does OllaVPN specifically do…</a></li>
-      <li><a href="#free-vs-paid-privacy">Is the free OllaVPN plan as private…</a></li>
+      <li><a href="#free-vs-paid-privacy">Is the free OllaVPN plan as…</a></li>
       <li><a href="#post-quantum-encryption-logs">How does post-quantum encryption…</a></li>
       <li><a href="#beyond-no-logs">What other features are important…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 15 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a></div>
-    </div>
-    <h1>What Exactly Is an IPSec VPN, and Why Should You Care?</h1>
-    <p class="lede">You&#39;ve probably heard the term &#34;VPN&#34; quite a bit, but the tech behind it can sound like a foreign language. IPSec is one of those technical terms that seems complicated, but it&#39;s actually a core part of how your data stays private and secure online. Think of it as the secret handshake that keeps your information safe as it travels across the internet. Understanding IPSec isn&#39;t just for network gurus; it helps you grasp the real magic behind your online privacy, especially when you&#39;re using a VPN to protect yourself.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,338 WORDS</span>
+    <h1 style="margin-top:12px;">What Exactly Is an IPSec VPN, and Why Should You Care?</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You&#39;ve probably heard the term &#34;VPN&#34; quite a bit, but the tech behind it can sound like a foreign language. IPSec is one of those technical terms that seems complicated, but it&#39;s actually a core part of how your data stays private and secure online. Think of it as the secret handshake that keeps your information safe as it travels across the internet. Understanding IPSec isn&#39;t just for network gurus; it helps you grasp the real magic behind your online privacy, especially when you&#39;re using a VPN to protect yourself.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>IPSec is a set of rules that secures your internet traffic. Think of it as a digital bodyguard for your data, making sure that everything you send and receive online is private and hasn&#39;t been messed with. It&#39;s a foundational technology that encrypts and authenticates your data packets as they travel across the internet.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#what-is-ipsec-vpn">What is an IPSec VPN in plain English?</a></li>
-        
-        <li><a href="#how-ipsec-works">How does IPSec actually work its magic under the hood?</a></li>
-        
-        <li><a href="#why-ipsec-matters">Why should an everyday internet user care about IPSec?</a></li>
-        
-        <li><a href="#ipsec-common-misconceptions">What are some common misunderstandings about IPSec?</a></li>
-        
-        <li><a href="#ipsec-other-privacy-concepts">How does IPSec relate to other internet privacy concepts you might know?</a></li>
-        
-        <li><a href="#when-to-care-about-ipsec">When should you pay attention to IPSec, and when can you just ignore it?</a></li>
-        
-        <li><a href="#how-vpn-handles-ipsec">How does a good VPN handle IPSec or similar security for you automatically?</a></li>
-        
-        <li><a href="#ollavpn-ipsec">Does OllaVPN use IPSec, and how do you ensure my data is safe?</a></li>
-        
-        <li><a href="#practical-ipsec-knowledge">What practical steps can you take based on your new IPSec knowledge?</a></li>
-        
-        <li><a href="#ipsec-security-considerations">Are there any security concerns or limitations with IPSec?</a></li>
-        
-        <li><a href="#ipsec-future">Will IPSec still be relevant in the next few years?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="what-is-ipsec-vpn">What is an IPSec VPN in plain English?</h2>
+<h2 id="what-is-ipsec-vpn">What is an IPSec VPN in plain English?</h2>
     <p class="short-answer">IPSec is a collection of internet protocols that work together to secure the communication between two or more devices over a network, creating a private, encrypted connection.</p>
 
 <p>Think of IPSec not as a single thing, but as a whole <strong>suite of protocols</strong>. Imagine you're sending a postcard (an unencrypted data packet) across the internet. Everyone can read it. What IPSec does is put that postcard inside a super-strong, tamper-proof envelope, then puts that envelope inside another armored box, and then sends the whole thing through a private, guarded tunnel. It’s a way to ensure that whatever data you're sending, whether it's your browsing history or sensitive work documents, stays private and hasn't been messed with along the way.</p>
@@ -1429,7 +1383,7 @@ Finally, there's a definite <strong>performance overhead</strong>. Because IPSec
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What is an IPSec VPN in plain English?</li>
         <li>How does IPSec actually work its magic under the hood?</li>
@@ -1501,7 +1455,7 @@ Finally, there's a definite <strong>performance overhead</strong>. Because IPSec
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/free-wireguard-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free WireGuard VPN</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1556,11 +1510,9 @@ Finally, there's a definite <strong>performance overhead</strong>. Because IPSec
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
@@ -1570,16 +1522,14 @@ Finally, there's a definite <strong>performance overhead</strong>. Because IPSec
       <li><a href="#ipsec-common-misconceptions">What are some common…</a></li>
       <li><a href="#ipsec-other-privacy-concepts">How does IPSec relate to other…</a></li>
       <li><a href="#when-to-care-about-ipsec">When should you pay attention to…</a></li>
-      <li><a href="#how-vpn-handles-ipsec">How does a good VPN handle IPSec or…</a></li>
-      <li><a href="#ollavpn-ipsec">Does OllaVPN use IPSec, and how do…</a></li>
+      <li><a href="#how-vpn-handles-ipsec">How does a good VPN handle IPSec…</a></li>
+      <li><a href="#ollavpn-ipsec">Does OllaVPN use IPSec, and how…</a></li>
       <li><a href="#practical-ipsec-knowledge">What practical steps can you take…</a></li>
-      <li><a href="#ipsec-security-considerations">Are there any security concerns or…</a></li>
-      <li><a href="#ipsec-future">Will IPSec still be relevant in the…</a></li>
+      <li><a href="#ipsec-security-considerations">Are there any security concerns…</a></li>
+      <li><a href="#ipsec-future">Will IPSec still be relevant in…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

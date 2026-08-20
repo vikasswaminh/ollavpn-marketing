@@ -1212,29 +1212,8 @@
   </div>
 </nav>
 
-<header class="article-hero">
-  <div class="wrap">
-    <div class="meta">GUIDE · UPDATED JUNE 9, 2026 · 14 MIN READ
-      <div class="tag-chips"><a href="/blog/?tag=privacy">PRIVACY</a> <a href="/blog/?tag=comparison">COMPARISON</a></div>
-    </div>
-    <h1>TLS vs SSL: What&#39;s the Difference, and Why Should You Care?</h1>
-    <p class="lede">You&#39;ve probably seen &#39;HTTPS&#39; in your browser bar, maybe even noticed a little padlock icon. That&#39;s your browser telling you it&#39;s using something called TLS or SSL to secure your connection. But what exactly are these things, and why do they matter for your online privacy and security? Don&#39;t worry, we&#39;re going to break down this seemingly technical topic into plain English, so you&#39;ll understand what&#39;s happening behind the scenes every time you browse the web.</p>
-  <div class="article-byline">
-      <div class="author-avatar" aria-hidden="true">NP</div>
-      <div class="author-meta">
-        <div class="author-name"><a href="/about/team#nathan-pratt">Nathan Pratt</a></div>
-        <div class="author-role">Privacy &amp; Security Lead</div>
-      </div>
-      <div class="reviewer-block">
-        <span class="reviewer-label">&#10003; Reviewed</span><br/>
-        <span class="reviewer-name">Hannah Wu</span> &middot; Senior Security Engineer<br/>
-        <span>Last fact-checked 10 June 2026</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="article-layout">
+<main class="article-layout">
+  <!-- LHS Sidebar -->
   <aside class="article-sidebar-left" aria-label="Article overview">
     <div class="sidebar-card">
       <span class="chip"><span class="dot"></span>Privacy & Security &middot; 2026</span>
@@ -1253,10 +1232,16 @@
       </ul>
     </div>
   </aside>
+
+  <!-- Center Article -->
   <article class="article">
+    <span class="meta" style="font-family:var(--mono);font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;">2026 &middot; 07 &middot; 15 &middot; PRIVACY & SECURITY &middot; 5,082 WORDS</span>
+    <h1 style="margin-top:12px;">TLS vs SSL: What&#39;s the Difference, and Why Should You Care?</h1>
+
+    <p class="lede" style="font-size:17px;line-height:1.65;color:#FFFFFF;margin-bottom:24px;">You&#39;ve probably seen &#39;HTTPS&#39; in your browser bar, maybe even noticed a little padlock icon. That&#39;s your browser telling you it&#39;s using something called TLS or SSL to secure your connection. But what exactly are these things, and why do they matter for your online privacy and security? Don&#39;t worry, we&#39;re going to break down this seemingly technical topic into plain English, so you&#39;ll understand what&#39;s happening behind the scenes every time you browse the web.</p>
 
     <div class="tldr">
-      <span class="label">TL;DR</span>
+      <span class="tldr-label">TL;DR - The Short Answer</span>
       
       <p>SSL is the older, less secure version of a security protocol that encrypts your internet traffic, while TLS is its modern, much stronger replacement. Even though TLS is what&#39;s used today, you&#39;ll still hear people casually say &#34;SSL&#34; to mean any secure connection – it&#39;s like a secure, private tunnel for your data across the internet.</p>
       
@@ -1266,38 +1251,7 @@
       
     </div>
 
-    <nav class="toc-inline" aria-label="On this page">
-      <span class="label">On this page</span>
-      <ol>
-        
-        <li><a href="#what-are-tls-and-ssl">What are TLS and SSL in Plain English?</a></li>
-        
-        <li><a href="#how-do-they-work">How Do TLS and SSL Actually Work Under the Hood?</a></li>
-        
-        <li><a href="#why-tls-matters">Why Does TLS Matter for Your Everyday Online Life?</a></li>
-        
-        <li><a href="#common-misconceptions">What are the Common Misconceptions About TLS/SSL?</a></li>
-        
-        <li><a href="#tls-and-privacy-concepts">How Do TLS and SSL Relate to Other Internet Privacy Concepts?</a></li>
-        
-        <li><a href="#when-to-care">When Should You Really Care About TLS, and When Can You Relax?</a></li>
-        
-        <li><a href="#how-vpn-helps">How Does a Good VPN Handle This for You Automatically?</a></li>
-        
-        <li><a href="#ollavpn-tls-approach">How Does OllaVPN Specifically Protect Your Connections?</a></li>
-        
-        <li><a href="#practical-steps">What Practical Steps Can You Take Based on What You&#39;ve Learned?</a></li>
-        
-        <li><a href="#tls-evolution">Is TLS Still Evolving, and What&#39;s Next for Web Security?</a></li>
-        
-        <li><a href="#beyond-the-browser">Does TLS Only Protect Your Web Browser?</a></li>
-        
-        <li><a href="#faq">Frequently asked questions</a></li>
-      </ol>
-    </nav>
-
-    
-    <h2 id="what-are-tls-and-ssl">What are TLS and SSL in Plain English?</h2>
+<h2 id="what-are-tls-and-ssl">What are TLS and SSL in Plain English?</h2>
     <p class="short-answer">TLS and SSL are cryptographic protocols that create a secure, encrypted connection between two computers, like your browser and a website, ensuring privacy and data integrity.</p>
 
 <p>Think of it like this: when you want to send a secret message across a busy public square, you don't just shout it out. You use a coded language and make sure only the person you're sending it to can read it, and that no one messes with it on the way. TLS (Transport Layer Security) and its older predecessor, SSL (Secure Sockets Layer), do essentially the same thing for your internet traffic.</p>
@@ -1422,7 +1376,7 @@ This new generation of algorithms is designed to be resistant to attacks from bo
   <p>If you spot a fact that's drifted or an addition we should make, email <code>guides@ollavpn.com</code>. Reader corrections drive a meaningful percentage of our quarterly updates.</p>
 <div class="key-takeaways">
       <span class="label">&#11088; Key takeaways</span>
-      <h2>What to remember from this guide</h2>
+      <h2 id="what-to-remember-from-this-guide">What to remember from this guide</h2>
       <ul>
         <li>What are TLS and SSL in Plain English?</li>
         <li>How Do TLS and SSL Actually Work Under the Hood?</li>
@@ -1494,7 +1448,7 @@ This new generation of algorithms is designed to be resistant to attacks from bo
 </div>
 
     <div class="related">
-      <h2>Related reading</h2>
+      <h2 id="related-reading">Related reading</h2>
       <ul><ul class="related-cards">
     <li><a href="/free-vpn"><span class="card-tag">PRIVACY</span><span class="card-title">Free VPN — the honest 2026 guide</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
     <li><a href="/blog/what-is-end-to-end-encryption"><span class="card-tag">PRIVACY</span><span class="card-title">What is end to end encryption</span><span class="card-meta">8 min &middot; OllaVPN Blog</span></a></li>
@@ -1549,30 +1503,26 @@ This new generation of algorithms is designed to be resistant to attacks from bo
           </a>
       </div>
     </section>
-
-    
-
   </article>
 
+  <!-- RHS Sidebar -->
   <aside class="toc-rail" aria-label="Table of contents">
     <span class="label">On this page</span>
     <ol>
       <li><a href="#what-are-tls-and-ssl">What are TLS and SSL in Plain…</a></li>
       <li><a href="#how-do-they-work">How Do TLS and SSL Actually Work…</a></li>
       <li><a href="#why-tls-matters">Why Does TLS Matter for Your…</a></li>
-      <li><a href="#common-misconceptions">What are the Common Misconceptions…</a></li>
-      <li><a href="#tls-and-privacy-concepts">How Do TLS and SSL Relate to Other…</a></li>
+      <li><a href="#common-misconceptions">What are the Common…</a></li>
+      <li><a href="#tls-and-privacy-concepts">How Do TLS and SSL Relate to…</a></li>
       <li><a href="#when-to-care">When Should You Really Care About…</a></li>
-      <li><a href="#how-vpn-helps">How Does a Good VPN Handle This for…</a></li>
+      <li><a href="#how-vpn-helps">How Does a Good VPN Handle This…</a></li>
       <li><a href="#ollavpn-tls-approach">How Does OllaVPN Specifically…</a></li>
       <li><a href="#practical-steps">What Practical Steps Can You Take…</a></li>
       <li><a href="#tls-evolution">Is TLS Still Evolving, and What's…</a></li>
       <li><a href="#beyond-the-browser">Does TLS Only Protect Your Web…</a></li>
     </ol>
   </aside>
-</div>
-
-
+</main>
 
 <footer class="footer">
   <div class="wrap">

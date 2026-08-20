@@ -1720,3 +1720,329 @@ body.mobile-nav-open { overflow: hidden; }
     display: none !important;
   }
 }
+
+
+/* ==========================================================================
+   EXACT 3-Column Blog Layout (All 111 Blog Pages Matching Screenshot)
+   ========================================================================== */
+body {
+  background-color: #07090E !important;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px) !important;
+  background-size: 36px 36px !important;
+}
+
+.article-layout {
+  display: grid !important;
+  grid-template-columns: 240px minmax(0, 1fr) 260px !important;
+  gap: 40px !important;
+  align-items: start !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding: 40px 24px 80px !important;
+}
+
+/* Column 1: Left-Hand Side Sidebar */
+.article-sidebar-left {
+  position: sticky !important;
+  top: 84px !important;
+  font-size: 14px !important;
+  display: block !important;
+}
+
+.sidebar-card {
+  background: var(--panel) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  box-shadow: 0 8px 30px -8px rgba(0,0,0,0.6) !important;
+}
+
+.sidebar-card .chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--line) !important;
+  background: var(--bg-2) !important;
+  font-family: var(--mono) !important;
+  font-size: 10.5px !important;
+  color: #94A3B8 !important;
+  letter-spacing: 0.04em !important;
+}
+
+.sidebar-card .dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #818CF8 !important;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25) !important;
+}
+
+.sidebar-card h4 {
+  margin: 14px 0 8px !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+}
+
+.sidebar-card p {
+  font-size: 12.5px !important;
+  color: #94A3B8 !important;
+  margin: 0 0 18px !important;
+  line-height: 1.5 !important;
+}
+
+.sidebar-card .btn.primary {
+  display: block !important;
+  text-align: center !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  padding: 10px 14px !important;
+  background: linear-gradient(135deg, #6366F1, #4F46E5) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.45) !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.sidebar-card .btn.primary:hover {
+  background: linear-gradient(135deg, #4F46E5, #4338CA) !important;
+  box-shadow: 0 6px 20px 0 rgba(99, 102, 241, 0.65) !important;
+  transform: translateY(-1px) !important;
+}
+
+.article-sidebar-left h4.sub-heading {
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--text-mute) !important;
+  margin: 28px 0 14px !important;
+}
+
+.article-sidebar-left ul.related-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.article-sidebar-left ul.related-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.article-sidebar-left ul.related-list li a {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  display: block !important;
+  line-height: 1.45 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  transition: color 0.15s ease !important;
+}
+
+.article-sidebar-left ul.related-list li a:hover {
+  color: #818CF8 !important;
+}
+
+/* Column 2: Center Article Content */
+.article {
+  max-width: 840px !important;
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+  color: #FFFFFF !important;
+}
+
+.article h1 {
+  font-family: var(--display) !important;
+  font-size: clamp(28px, 3.5vw, 42px) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.03em !important;
+  margin: 12px 0 16px !important;
+  color: #FFFFFF !important;
+}
+
+.article p.lede {
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 24px !important;
+}
+
+.article .tldr {
+  background: rgba(99, 102, 241, 0.08) !important;
+  border-left: 4px solid #6366F1 !important;
+  border-radius: 0 12px 12px 0 !important;
+  padding: 20px 24px !important;
+  margin: 24px 0 36px !important;
+}
+
+.article .tldr .tldr-label {
+  font-family: var(--mono) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #818CF8 !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.05em !important;
+}
+
+.article .tldr p {
+  margin: 0 !important;
+  color: #FFFFFF !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+}
+
+.article .tldr a {
+  color: #818CF8 !important;
+  text-decoration: underline !important;
+}
+
+.article > p:first-of-type::first-letter,
+.article .tldr + p::first-letter {
+  float: left !important;
+  font-family: var(--display) !important;
+  font-size: 3.8em !important;
+  line-height: 0.8 !important;
+  padding-top: 4px !important;
+  padding-right: 12px !important;
+  padding-bottom: 2px !important;
+  color: #6366F1 !important;
+  font-weight: 800 !important;
+}
+
+.article h2 {
+  font-family: var(--display) !important;
+  font-size: clamp(20px, 2.4vw, 26px) !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  margin: 48px 0 16px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid var(--line) !important;
+  color: #FFFFFF !important;
+  position: relative !important;
+}
+
+.article h3 {
+  font-family: var(--display) !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin: 28px 0 12px !important;
+  color: #FFFFFF !important;
+}
+
+.article p {
+  margin: 0 0 18px !important;
+  color: #FFFFFF !important;
+}
+
+.article ul, .article ol {
+  margin: 0 0 20px 24px !important;
+  color: #FFFFFF !important;
+}
+
+.article li {
+  margin-bottom: 8px !important;
+  line-height: 1.65 !important;
+  color: #FFFFFF !important;
+}
+
+.article strong {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+.article a {
+  color: #818CF8 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(129, 140, 248, 0.3) !important;
+  transition: border-color .15s !important;
+}
+
+.article a:hover {
+  border-bottom-color: #818CF8 !important;
+  color: #FFFFFF !important;
+}
+
+/* Column 3: Right-Hand Side TOC Rail */
+.toc-rail {
+  position: sticky !important;
+  top: 84px !important;
+  font-size: 13px !important;
+  max-height: calc(100vh - 100px) !important;
+  overflow-y: auto !important;
+  padding-left: 14px !important;
+  border-left: 1px solid var(--line) !important;
+  display: block !important;
+}
+
+.toc-rail .label {
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--text-mute) !important;
+  display: block !important;
+  margin-bottom: 14px !important;
+}
+
+.toc-rail ol {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.toc-rail li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.toc-rail a {
+  color: var(--text-dim) !important;
+  text-decoration: none !important;
+  display: block !important;
+  line-height: 1.4 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: color .15s ease !important;
+}
+
+.toc-rail a:hover,
+.toc-rail li.is-current a {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 1200px) {
+  .article-layout {
+    grid-template-columns: minmax(0, 1fr) 240px !important;
+  }
+  .article-sidebar-left {
+    display: none !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .article-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .toc-rail {
+    display: none !important;
+  }
+}
