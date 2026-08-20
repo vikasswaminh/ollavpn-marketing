@@ -206,3 +206,102 @@
     });
   }
 })();
+
+
+// Commitment-tier toggle (1mo / 12mo / 24mo) for pricing.html & index.html
+(function () {
+  let activeCommit = "mo24";
+  function setCommit(commit) {
+    activeCommit = commit;
+    document.querySelectorAll(".commit-toggle button").forEach((b) => {
+      const on = b.dataset.commit === commit;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-selected", on ? "true" : "false");
+    });
+    document.querySelectorAll(".commit-val, .commit-val-inline").forEach((el) => {
+      el.classList.toggle("active", el.dataset.commit === commit);
+    });
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".commit-toggle button").forEach((b) => {
+      b.addEventListener("click", () => setCommit(b.dataset.commit));
+    });
+  });
+  if (document.readyState !== "loading") {
+    document.querySelectorAll(".commit-toggle button").forEach((b) => {
+      b.addEventListener("click", () => setCommit(b.dataset.commit));
+    });
+  }
+
+  // Notify-me form wire-up for Pro + Business pricing cards
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".notify-form").forEach((form) => {
+      const tier = form.dataset.tier;
+      const input = form.querySelector('input[type="email"]');
+      const button = form.querySelector("button");
+      const msg = form.querySelector(".msg");
+      const baseMsg = msg ? msg.textContent : "";
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = (input.value || "").trim();
+        if (!email) return;
+        form.classList.remove("success", "error");
+        button.disabled = true;
+        if (msg) msg.textContent = "Adding you to the list...";
+        try {
+          const activeCommitBtn = document.querySelector(".commit-toggle button.active");
+          const commitVal = activeCommitBtn ? activeCommitBtn.dataset.commit : activeCommit;
+          const r = await fetch("/api/waitlist", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, tier, commit: commitVal }),
+          });
+          const j = await r.json().catch(() => ({}));
+          if (r.ok && j.ok) {
+            form.classList.add("success");
+            if (msg) msg.textContent = "You're on the list — we'll email you at launch.";
+            input.value = "";
+          } else {
+            form.classList.add("error");
+            if (msg) msg.textContent = j.error || "Couldn't add you. Try again?";
+          }
+        } catch (err) {
+          form.classList.add("error");
+          if (msg) msg.textContent = "Network error. Try again?";
+        } finally {
+          button.disabled = false;
+          setTimeout(() => {
+            if (msg && !form.classList.contains("error")) msg.textContent = baseMsg;
+          }, 6000);
+        }
+      });
+    });
+  });
+
+  // Global TOC Scroll-Spy for Pillar & Landing Guides
+  document.addEventListener("DOMContentLoaded", () => {
+    const rail = document.querySelector(".toc-rail");
+    if (!rail) return;
+    const links = new Map();
+    rail.querySelectorAll("a").forEach((a) => {
+      const href = a.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        const id = href.replace("#", "");
+        const target = document.getElementById(id);
+        if (target) links.set(target, a.closest("li") || a);
+      }
+    });
+    if (!links.size) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          links.forEach((li) => li.classList.remove("is-current"));
+          const activeLi = links.get(entry.target);
+          if (activeLi) activeLi.classList.add("is-current");
+        }
+      });
+    }, { rootMargin: "-20% 0px -70% 0px" });
+    links.forEach((_, target) => observer.observe(target));
+  });
+})();

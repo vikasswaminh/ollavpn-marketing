@@ -844,25 +844,8 @@ tunnel_key = <span class="tk-keyword">mix</span>(classical, pqc)
 </footer>
 
 <script src="shared.js"></script>
-<script>
-  // Homepage commitment-tier toggle (1mo / 12mo / 24mo). Swaps every
-  // [data-commit] element to show only the matching term. Free tier is
-  // term-independent (no data-commit elements inside it).
-  (function () {
-    function setCommit(commit) {
-      document.querySelectorAll(".commit-toggle button").forEach(function (b) {
-        var on = b.dataset.commit === commit;
-        b.classList.toggle("active", on);
-        b.setAttribute("aria-selected", on ? "true" : "false");
-      });
-      document.querySelectorAll(".commit-val, .commit-val-inline").forEach(function (el) {
-        el.classList.toggle("active", el.dataset.commit === commit);
-      });
-    }
-    document.querySelectorAll(".commit-toggle button").forEach(function (b) {
-      b.addEventListener("click", function () { setCommit(b.dataset.commit); });
-    });
-  })();
-</script>
+
+
+<script defer src="/shared.js?v=20260820_v2"></script>
 </body>
 </html>

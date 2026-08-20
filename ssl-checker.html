@@ -248,30 +248,11 @@
 </div><div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>PQC-READY</span><span>OPEN STACK</span><span>NO LOGS</span></span></div></div></footer>
 
 <script src="/tool.js"></script>
-<script>
-function fmtDate(s) { try { return new Date(s).toISOString().slice(0, 10); } catch(_) { return s || "—"; } }
-toolPage.run("ssl-checker", {
-  inputId: "domain-input",
-  submit: function (v) { return "/api/ssl?domain=" + encodeURIComponent(v); },
-  render: function (data) {
-    if (data.error) return { verdict: "down", text: data.error };
-    var days = data.days_remaining != null ? data.days_remaining : null;
-    var valid = data.is_valid !== false && (days == null || days > 0);
-    document.getElementById("r-domain").textContent = data.domain || data.host || "—";
-    document.getElementById("r-issuer").textContent = data.issuer_cn || (data.issuer && data.issuer.cn) || "—";
-    document.getElementById("r-from").textContent = fmtDate(data.not_before);
-    document.getElementById("r-until").textContent = fmtDate(data.not_after);
-    document.getElementById("r-days").textContent = days != null ? days + " days" : "—";
-    document.getElementById("r-sigalg").textContent = data.signature_algorithm || "—";
-    document.getElementById("r-san").textContent = (data.san || data.sans || []).join(", ") || "—";
-    var warn = data.warning;
-    if (warn) return { verdict: "down", text: "Certificate warning: " + warn };
-    if (valid) return { verdict: "up", text: "Certificate looks healthy." + (days != null ? " " + days + " days remaining." : "") };
-    return { verdict: "down", text: "Certificate is not valid." };
-  }
-});
-</script>
+
 
 <script defer src="/blog.js?v=20260610-1318"></script>
+
+<script defer src="/ssl-checker.js"></script>
+<script defer src="/shared.js?v=20260820_v2"></script>
 </body>
 </html>

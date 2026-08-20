@@ -566,69 +566,9 @@
 </footer>
 
 <script src="shared.js"></script>
-<script>
-  // Commitment-tier toggle (1mo / 12mo / 24mo) — swaps every element
-  // marked with class="commit-val" or "commit-val-inline" + data-commit="moN"
-  // so only the active term's strikethrough/price/save/footnote/pctOff show.
-  let activeCommit = "mo24";
-  function setCommit(commit) {
-    activeCommit = commit;
-    document.querySelectorAll(".commit-toggle button").forEach((b) => {
-      const on = b.dataset.commit === commit;
-      b.classList.toggle("active", on);
-      b.setAttribute("aria-selected", on ? "true" : "false");
-    });
-    document.querySelectorAll(".commit-val, .commit-val-inline").forEach((el) => {
-      el.classList.toggle("active", el.dataset.commit === commit);
-    });
-  }
-  document.querySelectorAll(".commit-toggle button").forEach((b) => {
-    b.addEventListener("click", () => setCommit(b.dataset.commit));
-  });
-</script>
-<script>
-  // Notify-me form wire-up for Pro + Business pricing cards.
-  // POSTs { email, tier, commit } to /api/waitlist (CF Pages Function -> WAITLIST KV).
-  document.querySelectorAll(".notify-form").forEach((form) => {
-    const tier = form.dataset.tier;
-    const input = form.querySelector('input[type="email"]');
-    const button = form.querySelector("button");
-    const msg = form.querySelector(".msg");
-    const baseMsg = msg.textContent;
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = (input.value || "").trim();
-      if (!email) return;
-      form.classList.remove("success", "error");
-      button.disabled = true;
-      msg.textContent = "Adding you to the list…";
-      try {
-        const r = await fetch("/api/waitlist", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, tier, commit: activeCommit }),
-        });
-        const j = await r.json().catch(() => ({}));
-        if (r.ok && j.ok) {
-          form.classList.add("success");
-          msg.textContent = "You're on the list — we'll email you at launch.";
-          input.value = "";
-        } else {
-          form.classList.add("error");
-          msg.textContent = j.error || "Couldn't add you. Try again?";
-        }
-      } catch (err) {
-        form.classList.add("error");
-        msg.textContent = "Network error. Try again?";
-      } finally {
-        button.disabled = false;
-        setTimeout(() => {
-          if (!form.classList.contains("error")) msg.textContent = baseMsg;
-        }, 6000);
-      }
-    });
-  });
-</script>
+
+
+<script defer src="/shared.js?v=20260820_v2"></script>
 </body>
 </html>
