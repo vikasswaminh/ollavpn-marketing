@@ -1087,3 +1087,89 @@ body.mobile-nav-open { overflow: hidden; }
   color: #FF6B72;
   gap: 8px;
 }
+
+
+/* ==========================================================================
+   Related Reading 3-Column Grid Cards (All 111 Blog Pages)
+   ========================================================================== */
+.related {
+  margin: 48px 0 28px;
+}
+.related h2 {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 700;
+  color: #FFFFFF !important;
+  margin: 0 0 20px;
+  padding: 0;
+  border: none;
+  letter-spacing: -0.02em;
+}
+.related-cards {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 960px) {
+  .related-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .related-cards {
+    grid-template-columns: 1fr;
+  }
+}
+.related-cards li {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+}
+.related-cards li a {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 22px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.4);
+}
+.related-cards li a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(238, 62, 71, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(238, 62, 71, 0.3);
+}
+.related-cards .card-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-mute);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+.related-cards .card-title {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #FFFFFF !important;
+  margin-bottom: 14px;
+  display: block;
+}
+.related-cards .card-meta {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-mute);
+  letter-spacing: 0.04em;
+  display: block;
+}
