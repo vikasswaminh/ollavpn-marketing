@@ -1173,3 +1173,167 @@ body.mobile-nav-open { overflow: hidden; }
   letter-spacing: 0.04em;
   display: block;
 }
+
+
+/* ==========================================================================
+   Category Explore Deck - Window / Tab Card Component
+   ========================================================================== */
+.category-explore-deck {
+  display: block !important;
+  margin: 48px 0 36px !important;
+  padding: 28px 32px !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 16px !important;
+  background: var(--panel) !important;
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.5) !important;
+}
+
+.category-deck-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 24px !important;
+  padding-bottom: 16px !important;
+  border-bottom: 1px solid var(--line) !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+
+.category-deck-header h4 {
+  font-family: var(--display) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  letter-spacing: -0.01em !important;
+}
+
+.category-deck-header h4 a {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.category-deck-header h4 a:hover {
+  color: var(--red) !important;
+  border-color: var(--red) !important;
+}
+
+.deck-count {
+  display: inline-block !important;
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 3px 10px !important;
+  background: rgba(238, 62, 71, 0.12) !important;
+  color: var(--red) !important;
+  border: 1px solid rgba(238, 62, 71, 0.3) !important;
+  border-radius: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+}
+
+.view-all-link {
+  font-family: var(--mono) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--red) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 7px 16px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.view-all-link:hover {
+  background: rgba(238, 62, 71, 0.12) !important;
+  border-color: var(--red) !important;
+  color: #FFFFFF !important;
+  transform: translateX(2px) !important;
+}
+
+.category-deck-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 16px !important;
+}
+
+@media (max-width: 768px) {
+  .category-deck-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.deck-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 22px 24px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  min-height: 120px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.deck-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, var(--red), transparent) !important;
+  opacity: 0.4 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.deck-card:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-color: rgba(238, 62, 71, 0.5) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(238, 62, 71, 0.3) !important;
+}
+
+.deck-card:hover::before {
+  opacity: 1 !important;
+}
+
+.deck-card-title {
+  font-family: var(--display) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 14px !important;
+  text-decoration: none !important;
+}
+
+.deck-card-read {
+  font-family: var(--mono) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--red) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  margin-top: auto !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.deck-card:hover .deck-card-read {
+  color: #FF6B72 !important;
+  gap: 8px !important;
+}
