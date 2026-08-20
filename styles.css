@@ -19,8 +19,8 @@
   --panel-2: #151D33;        /* raised panel */
   --line: rgba(255, 255, 255, 0.09);       /* hairline — border-first */
   --line-2: rgba(255, 255, 255, 0.14);
-  --text: #F8FAFC;           /* Ultra crisp white */           /* near-white */
-  --text-dim: #94A3B8;       /* Readable secondary slate */
+  --text: #FFFFFF;           /* Ultra crisp white */           /* near-white */
+  --text-dim: #E2E8F0;       /* Readable secondary slate */
   --text-mute: #6E6E7C;
   --surface-dark: #070913;   /* deep indigo band — footer + trust */
   --red: #6366F1;            /* Electric Indigo */            /* PRIMARY = electric violet (brand accent) */
@@ -856,4 +856,34 @@ body.mobile-nav-open { overflow: hidden; }
 }
 @media (max-width: 880px) {
   .related .related-cards { grid-template-columns: 1fr; }
+}
+
+
+/* Crisp Pure White Article Typography */
+.article,
+.article p,
+.article li,
+.article ul,
+.article ol,
+.article td,
+.article blockquote,
+.article .quick-answer p,
+.article .tldr p,
+.article .faq-a,
+.article .faq-a p,
+.article .faq-q {
+  color: #FFFFFF !important;
+}
+
+.article h1,
+.article h2,
+.article h3,
+.article h4 {
+  color: #FFFFFF !important;
+}
+
+.article strong,
+.article b {
+  color: #FFFFFF !important;
+  font-weight: 700;
 }
