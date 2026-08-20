@@ -447,46 +447,12 @@
   }
 
   /* Floating Bottom Category Widget */
-  .floating-cat-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 99;
-    background: var(--red);
-    color: #fff;
-    border: none;
-    border-radius: 999px;
-    padding: 10px 18px;
-    font-family: var(--display);
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 8px 24px -4px rgba(99, 102, 241, 0.5);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all .2s ease;
-  }
+  
   .floating-cat-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 28px -4px rgba(99, 102, 241, 0.7);
   }
-  .floating-cat-drawer {
-    position: fixed;
-    bottom: 74px;
-    right: 24px;
-    width: 360px;
-    max-height: 480px;
-    z-index: 100;
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    box-shadow: 0 20px 48px rgba(0,0,0,0.6);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    animation: fadeInSlide .2s ease;
-  }
+  
   @keyframes fadeInSlide {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -1006,45 +972,7 @@ This isolation works even if those other users are *also* using OllaVPN. Each us
       </div>
     </section>
 
-    <!-- Floating Category Drawer Widget -->
-    <button class="floating-cat-btn" id="catDrawerBtn" type="button" aria-label="Explore more in Privacy guides">
-      <span>&#128218; More Privacy guides (25)</span>
-    </button>
-    <div class="floating-cat-drawer" id="catDrawer">
-      <div class="drawer-head">
-        <h5>Privacy guides (25 guides)</h5>
-        <button class="drawer-close" type="button" aria-label="Close">&times;</button>
-      </div>
-      <div class="drawer-body">
-        <a class="drawer-item" href="are-free-vpns-safe.html">Are Free VPNs Safe? What You Need to Know Before You Connect</a>
-        <a class="drawer-item" href="are-vpns-legal.html">Are VPNs Legal? What You Need to Know About VPN Legality and Privacy</a>
-        <a class="drawer-item" href="can-a-website-detect-vpn.html">Can Websites Detect VPNs? What You Need to Know About Online Privacy</a>
-        <a class="drawer-item" href="can-government-track-vpn.html">Can Governments Really Track Your VPN? The Unvarnished Truth About Your Online Privacy</a>
-        <a class="drawer-item" href="can-my-isp-see-vpn-traffic.html">Can Your ISP See Your VPN Traffic? Let's Get Real About Privacy.</a>
-        <a class="drawer-item" href="five-eyes-nine-eyes-fourteen-eyes.html">Five Eyes, Nine Eyes, and Fourteen Eyes Explained (2026 Guide)</a>
-        <a class="drawer-item" href="how-public-wifi-steals-passwords.html">How Public Wi-Fi Can Steal Your Passwords (2026 Guide)</a>
-        <a class="drawer-item" href="how-to-clear-instagram-cache.html">How to Clear Instagram Cache: A Simple Guide for iPhone and Android</a>
-        <a class="drawer-item" href="how-to-delete-reddit-account-permanently.html">How to Permanently Delete Your Reddit Account</a>
-        <a class="drawer-item" href="how-to-delete-telegram-account.html">How to Permanently Delete Your Telegram Account</a>
-        <a class="drawer-item" href="how-to-find-saved-passwords.html">How to Find Saved Passwords on Your Device: A Quick Guide</a>
-        <a class="drawer-item" href="how-to-make-facebook-account-private.html">How to Make Your Facebook Account Private: A Step-by-Step Guide to Digital Privacy</a>
-        <a class="drawer-item" href="is-rocket-money-safe.html">Is Rocket Money Safe to Use? What You Need to Know About Your Financial Data</a>
-        <a class="drawer-item" href="is-shein-safe.html">Is Shein Safe? A Deep Dive into Your Privacy and Security</a>
-        <a class="drawer-item" href="is-temu-safe.html">Is Temu Safe? What You Need to Know Before You Shop</a>
-        <a class="drawer-item" href="is-tiktok-shop-safe.html">Is TikTok Shop Safe? An Honest Look at Your Privacy and Data</a>
-        <a class="drawer-item" href="is-truthfinder-legit.html">Is Truthfinder Legit? Unpacking the Truth About People Search Services</a>
-        <a class="drawer-item" href="should-you-use-vpn-at-home.html">Do I Really Need a VPN at Home?</a>
-        <a class="drawer-item" href="vpn-for-public-wifi-traveler.html">Public WiFi and Travel: Do You Really Need a VPN?</a>
-        <a class="drawer-item" href="what-is-a-dns-leak.html">What Is a DNS Leak? How to Test, Fix, and Prevent It (2026 Guide)</a>
-        <a class="drawer-item" href="what-is-a-vpn-kill-switch.html">What is a VPN Kill Switch, How Does it Work, and Why Does it Matter?</a>
-        <a class="drawer-item" href="what-is-a-webrtc-leak.html">What is a WebRTC Leak, and Why Does It Matter for Your Privacy?</a>
-        <a class="drawer-item" href="what-is-an-ipv6-leak.html">What is an IPv6 Leak, and How Does It Affect Your Privacy?</a>
-        <a class="drawer-item" href="what-logs-does-vpn-keep.html">What Logs Does a VPN Keep, and What Does That Really Mean for Your Privacy?</a>
-      </div>
-      <div class="drawer-foot">
-        <a href="index.html#privacy-security">Browse all 25 in Privacy guides &rarr;</a>
-      </div>
-    </div>
+    
 
   </article>
 

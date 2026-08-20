@@ -447,46 +447,12 @@
   }
 
   /* Floating Bottom Category Widget */
-  .floating-cat-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 99;
-    background: var(--red);
-    color: #fff;
-    border: none;
-    border-radius: 999px;
-    padding: 10px 18px;
-    font-family: var(--display);
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 8px 24px -4px rgba(99, 102, 241, 0.5);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all .2s ease;
-  }
+  
   .floating-cat-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 28px -4px rgba(99, 102, 241, 0.7);
   }
-  .floating-cat-drawer {
-    position: fixed;
-    bottom: 74px;
-    right: 24px;
-    width: 360px;
-    max-height: 480px;
-    z-index: 100;
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    box-shadow: 0 20px 48px rgba(0,0,0,0.6);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    animation: fadeInSlide .2s ease;
-  }
+  
   @keyframes fadeInSlide {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -1003,36 +969,7 @@ These features aren't just for advanced users; they're for everyone who values t
       </div>
     </section>
 
-    <!-- Floating Category Drawer Widget -->
-    <button class="floating-cat-btn" id="catDrawerBtn" type="button" aria-label="Explore more in Buyer guides">
-      <span>&#128218; More Buyer guides (16)</span>
-    </button>
-    <div class="floating-cat-drawer" id="catDrawer">
-      <div class="drawer-head">
-        <h5>Buyer guides (16 guides)</h5>
-        <button class="drawer-close" type="button" aria-label="Close">&times;</button>
-      </div>
-      <div class="drawer-body">
-        <a class="drawer-item" href="best-free-vpn-for-android.html">The Best Free VPN for Android: Truly Free, No Catch, No Compromises</a>
-        <a class="drawer-item" href="best-free-vpn-for-australia.html">What's the Best Free VPN for Australia?</a>
-        <a class="drawer-item" href="best-free-vpn-for-chrome.html">What's the Best Free VPN for Chrome in 2024? (Hint: It's Us.)</a>
-        <a class="drawer-item" href="best-free-vpn-for-chromebook.html">The Best Free VPN for Chromebook: What You Need to Know</a>
-        <a class="drawer-item" href="best-free-vpn-for-firefox.html">The Best Free VPN for Firefox: Secure Your Browser, Protect Your Privacy</a>
-        <a class="drawer-item" href="best-free-vpn-for-germany.html">The Best Free VPN for Germany: Privacy, Speed, and No Hidden Catches</a>
-        <a class="drawer-item" href="best-free-vpn-for-india.html">Best Free VPN for India 2026: No Credit Card, No Logs, Really Free</a>
-        <a class="drawer-item" href="best-free-vpn-for-iphone.html">What's the Best Free VPN for iPhone That Actually Works?</a>
-        <a class="drawer-item" href="best-free-vpn-for-linux.html">The Best Free VPN for Linux? Here's What That Actually Means.</a>
-        <a class="drawer-item" href="best-free-vpn-for-mac.html">The Best Free VPN for Mac: Seriously Free, Seriously Private</a>
-        <a class="drawer-item" href="best-free-vpn-for-uae.html">Is OllaVPN the Best Free VPN for the UAE?</a>
-        <a class="drawer-item" href="best-free-vpn-for-uk.html">Is OllaVPN the Best Free VPN for UK Users?</a>
-        <a class="drawer-item" href="best-free-vpn-for-usa.html">The Best Free VPN for USA: What You Really Need to Know</a>
-        <a class="drawer-item" href="best-free-vpn-for-windows.html">Best Free VPN for Windows in 2026: An Honest, Hand-Picked Guide</a>
-        <a class="drawer-item" href="best-vpn-for-streaming-2026.html">Best VPN for Streaming in 2026: An Honest Comparison</a>
-      </div>
-      <div class="drawer-foot">
-        <a href="index.html#buyer-guides">Browse all 16 in Buyer guides &rarr;</a>
-      </div>
-    </div>
+    
 
   </article>
 
