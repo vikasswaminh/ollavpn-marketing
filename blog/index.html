@@ -70,7 +70,7 @@
   }
   .recent-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
   }
   .recent-card {
@@ -387,10 +387,12 @@
   }
   .side-link:hover { color: var(--red); }
 
+  @media (max-width: 1200px) {
+    .recent-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 1100px) {
     .blog-layout { grid-template-columns: minmax(0, 1fr) 260px; }
     .sidebar-left { display: none; }
-    .recent-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 820px) {
     .blog-layout { grid-template-columns: 1fr; }
@@ -506,12 +508,22 @@
         <h2 class="recent-blogs-title">Recent Blogs <span class="recent-badge">&#9889; Latest Releases</span></h2>
       </div>
       <div class="recent-grid">
+        <a class="recent-card" href="vpn-for-online-gaming.html">
+          <div class="tag-row">
+            <span class="tag">Buyer Guide</span>
+            <span class="date">2026 · 07 · 15</span>
+          </div>
+          <h3>Free VPN for Online Gaming 2026: Low Ping &amp; No Lag</h3>
+          <p>What actually reduces gaming ping, which free tiers are worth using, bufferbloat fixes, and DDoS mitigation.</p>
+          <span class="read-link">READ FULL GUIDE &rarr;</span>
+        </a>
+
         <a class="recent-card" href="how-advertisers-track-you-across-the-internet.html">
           <div class="tag-row">
             <span class="tag">Privacy Guide</span>
             <span class="date">2026 · 07 · 15</span>
           </div>
-          <h3>How Advertisers Track You Across the Internet (And How to Fight Back)</h3>
+          <h3>How Advertisers Track You Across the Internet</h3>
           <p>Third-party cookies, browser fingerprinting, pixel beacons, data brokers, and how to stop surveillance capitalism.</p>
           <span class="read-link">READ FULL GUIDE &rarr;</span>
         </a>
@@ -602,10 +614,10 @@
 
         <h4>Quick Jump</h4>
         <div class="pill-bar" style="margin-bottom:24px;">
+          <button type="button" class="pill-btn" data-cat="use-cases">Gaming &amp; Ping</button>
           <button type="button" class="pill-btn" data-cat="privacy-security">Ad Tracking</button>
           <button type="button" class="pill-btn" data-cat="beginner-basics">Lifetime Free VPN</button>
           <button type="button" class="pill-btn" data-cat="use-cases">Netflix Streaming</button>
-          <button type="button" class="pill-btn" data-cat="comparisons">Comparisons</button>
         </div>
       </aside>
 
@@ -636,6 +648,13 @@
         </div>
 
         <div class="post-grid" id="post-grid">
+      <a class="post-card" href="vpn-for-online-gaming.html" data-category="use-cases" data-pillar="false">
+        <span class="meta">2026 · 07 · 15 &middot; Buyer guide</span>
+        <h3>Free VPN for Online Gaming 2026: Low Ping & No Lag</h3>
+        <p>The honest guide to free VPNs for gaming in 2026 — what actually reduces ping, which free tiers are worth using, and bufferbloat fixes.</p>
+        <span class="read">READ &rarr;</span>
+      </a>
+
       <a class="post-card" href="how-advertisers-track-you-across-the-internet.html" data-category="privacy-security" data-pillar="false">
         <span class="meta">2026 · 07 · 15 &middot; Privacy guide</span>
         <h3>How Advertisers Track You Across the Internet (And How to Fight Back)</h3>
@@ -1189,13 +1208,6 @@
         <span class="read">READ &rarr;</span>
       </a>
 
-      <a class="post-card" href="vpn-for-online-gaming.html" data-category="use-cases" data-pillar="false">
-        <span class="meta">2026 · 06 · 09 &middot; Use cases</span>
-        <h3>VPN for Online Gaming: Boost Your Play or Just Overkill?</h3>
-        <p>You might be surprised how much a VPN can boost your online gaming. If you&#39;re struggling with your internet provider slowing you down (that&#39;s throttling!), running into geo-blocks for certain games, or even worry...</p>
-        <span class="read">READ &rarr;</span>
-      </a>
-
       <a class="post-card" href="vpn-for-traveling-abroad.html" data-category="use-cases" data-pillar="false">
         <span class="meta">2026 · 06 · 09 &middot; Use cases</span>
         <h3>VPN for Traveling Abroad: Your Essential Online Companion?</h3>
@@ -1431,11 +1443,11 @@
 
         <h4>Recent Blogs</h4>
         <ul>
+          <li><a class="side-link" href="vpn-for-online-gaming.html">Free VPN for Gaming 2026</a></li>
           <li><a class="side-link" href="how-advertisers-track-you-across-the-internet.html">How Advertisers Track You</a></li>
           <li><a class="side-link" href="lifetime-free-vpn.html">Lifetime Free VPN Guide</a></li>
           <li><a class="side-link" href="free-vpn-for-netflix.html">Free VPN for Netflix 2026</a></li>
           <li><a class="side-link" href="best-free-vpn-for-india.html">Best Free VPN for India 2026</a></li>
-          <li><a class="side-link" href="how-public-wifi-steals-passwords.html">Public Wi-Fi Password Theft</a></li>
         </ul>
 
         <h4>Curated Pillars</h4>
