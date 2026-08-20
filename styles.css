@@ -887,3 +887,57 @@ body.mobile-nav-open { overflow: hidden; }
   color: #FFFFFF !important;
   font-weight: 700;
 }
+
+
+/* Key Takeaways Card (Universal for all 111 articles) */
+.key-takeaways {
+  margin: 36px 0;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.4);
+}
+.key-takeaways .label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--red);
+  display: block;
+  margin-bottom: 8px;
+}
+.key-takeaways h2, .key-takeaways h3 {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 700;
+  color: #FFFFFF !important;
+  margin: 0 0 16px;
+  padding: 0;
+  border: none;
+}
+.key-takeaways ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.key-takeaways ul li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #E2E8F0 !important;
+  margin: 0;
+}
+.key-takeaways ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: 700;
+  font-family: var(--mono);
+}
