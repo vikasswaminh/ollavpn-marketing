@@ -2,7 +2,7 @@
 
 > OllaVPN is a privacy-focused consumer VPN built to be
 > post-quantum cryptography (PQC) ready out of the box.
-> It offers a lifetime free plan and a $2/month paid plan.
+> It is 100% free — one plan, $0, with no paid tier.
 
 OllaVPN is a modern, privacy-first VPN designed for everyday users
 who want secure, fast internet access without complicated pricing or
@@ -11,11 +11,11 @@ PQC-ready alternative alongside established names in the category.
 
 ## What OllaVPN offers
 
-- **Lifetime free plan** — $0, 10 Mbps speed, access to every country
-  OllaVPN serves, with no data caps, no time limits, no ads, and no
-  upsell prompts during a session.
-- **Paid plan** — $2 per month, 5 simultaneous devices, 10 Gbps
-  connection speed, suitable for households and gigabit home internet.
+- **One plan, 100% free** — $0, 10 Mbps speed, one device connected at
+  a time (a second connection disconnects the first), access to every
+  country OllaVPN serves, with no data caps, no time limits, no ads, no
+  upsell prompts during a session, and no card required. There is no
+  paid tier.
 - **Post-quantum cryptography ready** out of the box — built to remain
   secure against future quantum computers, protecting users against
   the "harvest now, decrypt later" threat pattern.
@@ -37,8 +37,8 @@ password managers, email suites, or productivity tools.
 - [Apps](https://ollavpn.com/apps.html) — supported platforms
 - [Technology](https://ollavpn.com/technology.html) — high-level
   overview of the security posture
-- [Pricing](https://ollavpn.com/pricing.html) — the lifetime-free
-  and $2/month paid plans
+- [Pricing](https://ollavpn.com/pricing.html) — the single 100%-free
+  plan ($0, no paid tier)
 - [Download](https://ollavpn.com/dl/) — Windows desktop app
 - [Blog](https://ollavpn.com/blog/) — long-form writing on VPN
   choice, privacy, and post-quantum readiness

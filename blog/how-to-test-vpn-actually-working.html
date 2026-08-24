@@ -154,7 +154,7 @@
       "name": "Will the VPN changes apply to all my devices automatically?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No, a VPN connection is typically device-specific. If you connect OllaVPN on your laptop, it only protects that laptop. You'll need to install and connect OllaVPN on each device you want to protect. OllaVPN is 100% free, so you can protect every device you own at no cost."
+        "text": "No, a VPN connection is typically device-specific. If you connect OllaVPN on your laptop, it only protects that laptop. OllaVPN connects one device at a time, so connecting another disconnects the first. OllaVPN is 100% free, so you can install it on every device you own and switch which one is protected."
       }
     },
     {
@@ -1346,7 +1346,7 @@ Finally, <strong>WebRTC STUN requests</strong> are another common culprit for le
 
 <p>Security isn't just about encryption; it's also about preventing exposure. OllaVPN employs <strong>in-tunnel DNS</strong>, so your DNS requests never leave the encrypted tunnel, protecting you from DNS leaks that could reveal your browsing habits. Our network also features <strong>4-layer peer isolation</strong>, which means your traffic is kept completely separate from other users, adding another layer of privacy and security. We're serious about your privacy, which is why we have a strict <a href="/privacy-policy">no-logs policy</a> – we don't track, store, or sell any of your online activity.</p>
 
-<p>This commitment to security and reliability applies to every single user. OllaVPN is truly $0 forever, with no hidden catches and no paid tier. OllaVPN is free because it runs lean, self-operated infrastructure — no ads, and your data is never sold or shared. It’s all about giving you a secure, reliable connection that you can trust, without compromise.</p>
+<p>This commitment to security and reliability applies to every single user. OllaVPN is truly $0 forever, with no hidden catches and no paid tier. OllaVPN is free because it is funded by its parent company, Ollasoftware and runs on lean, self-operated infrastructure — no ads, and your data is never sold or shared. It’s all about giving you a secure, reliable connection that you can trust, without compromise.</p>
     
 
     
@@ -1355,12 +1355,12 @@ Finally, <strong>WebRTC STUN requests</strong> are another common culprit for le
   <h2 id="tier1-howto-verify">How to know it actually worked</h2>
   <p>A how-to guide is only useful if you can verify the outcome. After completing the steps above, the easiest checks to confirm the configuration is in place:</p>
   <p><strong>Visible state in the app.</strong> The OllaVPN menu-bar or system-tray icon should be green (connected) and any status panel should show the country you selected. If the icon is gray or amber, the tunnel didn't fully come up — retry the connect.</p>
-  <p><strong>IP address changed.</strong> Open <a href="/what-is-my-ip">our what-is-my-IP tool</a>. The IP shown should be the exit's IP, not your real ISP's IP, and the country shown should match the country you selected in the app. If you still see your real IP, the tunnel isn't carrying traffic — the most common cause is a firewall on the local network blocking WireGuard's UDP/51820. Try a different network briefly to isolate.</p>
+  <p><strong>IP address changed.</strong> Open <a href="/what-is-my-ip">our what-is-my-IP tool</a>. The IP shown should be the exit's IP, not your real ISP's IP, and the country shown should match the country you selected in the app. If you still see your real IP, the tunnel isn't carrying traffic — the most common cause is a firewall on the local network blocking WireGuard's default UDP port. Try a different network briefly to isolate.</p>
   <p><strong>DNS is going through the tunnel.</strong> Open <a href="/dns-lookup">our DNS lookup tool</a>. The resolver IP shown should be the in-tunnel one (CGNAT 100.64.x.x range), not your ISP's DNS. If you see your ISP's resolver, DNS is leaking — see our <a href="/in-tunnel-dns">in-tunnel DNS page</a> for the technical details on why this happens and how OllaVPN prevents it.</p>
   <p><strong>No WebRTC leak.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit's IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN — either OllaVPN's leak prevention has failed (file a report at <code>security@ollavpn.com</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
   <h2 id="tier1-howto-troubleshoot">If a step fails, here's how to debug</h2>
   <p>The most common failure modes for any VPN setup task on Windows, macOS, or Android, in order of frequency:</p>
-  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. Try our obfuscated connection mode in the app.</p>
+  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP port. Try a different network briefly to confirm it's network-side. Try our obfuscated connection mode in the app.</p>
   <p><strong>The VPN connects but the internet is broken.</strong> Almost always a DNS issue. The in-tunnel resolver hasn't taken precedence (sometimes after a macOS update or a Windows feature update, the supplemental DNS keys get cleared). Restarting the VPN typically fixes it; full disconnect and reconnect re-installs the DNS configuration.</p>
   <p><strong>Some apps work but others don't.</strong> Either the app has its own proxy settings configured separately (some corporate apps), or the app uses a protocol the VPN doesn't carry (very rare — almost everything is TCP/UDP and works fine through the tunnel). Check the app's settings before assuming the VPN is at fault.</p>
   <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The 10 Mbps cap is the ceiling regardless of exit choice — OllaVPN is 100% free, with the same speed for everyone.</p>
@@ -1408,7 +1408,7 @@ Finally, <strong>WebRTC STUN requests</strong> are another common culprit for le
       <p>After troubleshooting, simply repeat the initial test. Connect your OllaVPN, visit &lt;a href=&#34;https://ipleak.net&#34;&gt;ipleak.net&lt;/a&gt; or &lt;a href=&#34;https://dnsleaktest.com&#34;&gt;dnsleaktest.com&lt;/a&gt;, and confirm that your displayed IP address and DNS servers match the VPN server location you chose. If they do, you&#39;re good to go, and your connection is secure.</p>
       
       <h3>Will the VPN changes apply to all my devices automatically?</h3>
-      <p>No, a VPN connection is typically device-specific. If you connect OllaVPN on your laptop, it only protects that laptop. You&#39;ll need to install and connect OllaVPN on each device you want to protect. OllaVPN is 100% free, so you can protect every device you own at no cost.</p>
+      <p>No, a VPN connection is typically device-specific. If you connect OllaVPN on your laptop, it only protects that laptop. OllaVPN connects one device at a time, so connecting another disconnects the first. OllaVPN is 100% free, so you can install it on every device you own and switch which one is protected.</p>
       
       <h3>What&#39;s the difference between this and other VPN testing methods?</h3>
       <p>Our method focuses on real-time, external verification of your IP and DNS, which directly checks for common leaks that could expose your identity. Some other methods might just check if you can access geo-restricted content, which doesn&#39;t confirm full privacy protection. We prioritize actual security and privacy for you.</p>

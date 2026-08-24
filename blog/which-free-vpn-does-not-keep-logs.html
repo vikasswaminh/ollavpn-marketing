@@ -105,7 +105,7 @@
 <p>Which Free VPN Does Not Keep Logs? A 2026 No-Logs VPN Checklist
 A plain-English guide to one of the most misunderstood claims in the VPN industry - what “no logs” actually means, what it doesn’t mean, how to verify it, and which free VPNs in 2026 genuinely hold up under scrutiny.</p>
 <div class="callout-box"><strong>TL;DR - The Short Answer
-Try OllaVPN free - zero-logs, post-quantum-ready, lifetime free plan. No credit card. Or $2/mo for 5 devices on a faster plan. DOWNLOAD →</strong></div>
+Try OllaVPN free - zero-logs, post-quantum-ready, 100% free forever. One plan, $0, no credit card. DOWNLOAD →</strong></div>
 <p>“No logs” is the most commonly claimed and most frequently misrepresented feature in the VPN market. A genuine no-logs VPN stores nothing that could identify what you did online, who you talked to, when you were connected, or where you connected from. The catch: almost every VPN on the market claims “no logs,” and the claims vary wildly in what they actually cover. This guide explains what the term really means, which parts of a VPN log most people miss, how to evaluate an audit, and which free VPNs in 2026 have earned genuine trust on this claim - with a practical checklist so you never have to guess.</p>
 <p>Jump to a section
 What “no logs” actually means - and what it doesn't
@@ -221,7 +221,7 @@ Most truly free VPNs have a fundamental tension: operating VPN infrastructure is
 <p>The answers fall into a few categories:
 Data monetization - the free VPN collects your browsing behavior, sells it to advertisers or data brokers, and uses that revenue to operate the infrastructure. This is the most common model for apps marketed as “free VPN” on app stores. In 2019, the CSIRO studied 283 Android VPN apps and found that 38% contained malware or malvertising code and 72% used third-party tracking libraries embedded in the app. A VPN that runs tracking SDKs is not a no-logs VPN regardless of what its privacy policy says - the tracking happens at the app layer, below the VPN’s own privacy policy.
 Bandwidth resale - some “free” VPNs monetize by routing other users’ traffic through your connection, effectively turning your device into part of their network. Hola VPN, at one point one of the most downloaded free VPNs, operated this model. Your bandwidth was being sold. Your IP address was being used by others. The privacy implications are serious: if another user does something illegal through your IP address, you’re the one with exposure.
-Paid tier subsidy - the most sustainable and legitimate model. The free plan is genuinely free, subsidized by revenue from paying subscribers. The infrastructure is the same, the no-logs architecture is the same, and the free tier is essentially a product demo that converts some fraction of users to paid. Proton VPN, Windscribe (to a point), and OllaVPN use this model.
+Paid tier subsidy - the most sustainable and legitimate model. The free plan is genuinely free, subsidized by revenue from paying subscribers. The infrastructure is the same, the no-logs architecture is the same, and the free tier is essentially a product demo that converts some fraction of users to paid. Proton VPN and Windscribe (to a point) use this model. OllaVPN takes a related but distinct route: it is funded by its parent company, Ollasoftware, so the free plan is not a demo for a paid upsell - it is the whole product, 100% free for everyone.
 Grant or non-profit funding - organizations like the Tor Project fund development through donations and grants. The privacy mission comes first. This model is genuinely trustworthy but rare.
 The practical implication for evaluating free VPNs: if you can’t find a clear answer to “how does this company make money,” the answer is almost certainly “your data.” The combination of zero revenue transparency and a “no logs” claim is a red flag, not reassurance.</p>
 <p>Which free VPNs genuinely don't keep logs in 2026 
@@ -236,9 +236,9 @@ Windscribe is a Canadian VPN with a genuinely transparent privacy policy, a clea
 The company’s founder has a track record of unusually candid public communication - engaging directly with critics in technical forums, publishing detailed explanations of architecture decisions, and being honest about what the product can and cannot protect against. This isn’t a substitute for an audit, but it adds context
 What the free plan limits: 10 GB monthly bandwidth cap. Otherwise the privacy architecture is the same.</p>
 <p>OllaVPN Free (Lifetime)
-OllaVPN offers a lifetime free plan with no data caps, no time limits, and no advertisements - subsidized by its paid tier. The no-logs architecture covers both activity and connection logs; the company does not collect real IP addresses, session timestamps, or session durations. DNS is resolved inside the encrypted tunnel by OllaVPN’s own unbound resolver - your ISP cannot see the domains you visit, and no third-party DNS provider receives your queries.
+OllaVPN offers a lifetime free plan with no data caps, no time limits, and no advertisements - funded by its parent company, Ollasoftware, with no paid tier. The no-logs architecture covers both activity and connection logs; the company does not collect real IP addresses, session timestamps, or session durations. DNS is resolved inside the encrypted tunnel by OllaVPN’s own unbound resolver - your ISP cannot see the domains you visit, and no third-party DNS provider receives your queries.
 The technical architecture goes further than most: the kill switch is always-on and cannot be accidentally disabled; post-quantum cryptography (hybrid X25519 + ML-KEM-768) is applied to every connection including the free plan; peer isolation is enforced at multiple independent layers. No account or email address is required to use the free plan - there is no account to link your traffic to.
-OllaVPN’s architecture has been independently audited. The free plan is a genuine product, not a funnel with meaningful restrictions - the only difference from the paid plan is speed (10 Mbps on free, 10 Gbps on paid) and the number of devices (one on free, five on paid).</p>
+OllaVPN’s architecture has been independently audited. The free plan is a genuine product, not a funnel with meaningful restrictions - there is one plan, it is 100% free for everyone at 10 Mbps, with one device connected at a time, and no paid tier to upsell you to.</p>
 <p>What about the others?
 Several well-known names appear in “best free VPN” lists that warrant more careful scrutiny on the logs question:
 Hotspot Shield Free - owned by Pango (formerly AnchorFree). The free version has historically shown advertising and has a privacy policy with carve-outs for analytics partners. The no-logs claim covers browsing activity but not all connection metadata.
@@ -338,9 +338,8 @@ No account required on the free plan. You don’t give us an email address to ge
 Post-quantum cryptography on every connection. The hybrid X25519 + ML-KEM-768 handshake means that even if someone captures your encrypted VPN traffic today and stores it, they cannot decrypt it with a future quantum computer. For the specific threat of state-level adversaries harvesting VPN traffic for future analysis, this is meaningful. The post-quantum guide explains the “harvest now, decrypt later” threat model in detail.
 Kill switch always on, cannot be disabled. If the tunnel drops for any reason, all traffic stops until it’s back. Your real IP address does not briefly appear to the sites you’re visiting.
 Independent audit. The architecture has been independently verified by a named security firm.</p>
-<p>OllaVPN plans:
-Lifetime free · $0 · 10 Mbps No logs. No caps. No ads. No email required. Every country. Kill switch. In-tunnel DNS. PQC-ready.
-Paid plan · $2 / month · 10 Gbps Same no-logs architecture. Faster. Five devices on one account
+<p>OllaVPN plan:
+Lifetime free · $0 · 10 Mbps No logs. No caps. No ads. No email required. Every country. Kill switch. In-tunnel DNS. PQC-ready. One plan, 100% free for everyone - no paid tier.
 Download free - no email, no card. The no-logs architecture is on from your first connection.</p>
 <p>Related reading
 What is a DNS leak? How to test, fix, and prevent it
@@ -396,7 +395,7 @@ Because a privacy policy is a legal document, not a technical guarantee. A provi
   <div class="foot-grid">
     <div>
       <div style="font-weight:800;color:#fff;font-size:16px;margin-bottom:8px">OllaVPN</div>
-      <p>A modern, post-quantum-ready privacy VPN. Lifetime free plan or $2/month for 5 devices.</p>
+      <p>A modern, post-quantum-ready privacy VPN. 100% free - one plan, $0, 10 Mbps.</p>
     </div>
     <div>
       <h4>Product</h4>

@@ -13,8 +13,8 @@
 
 ## What OllaVPN is, in one sentence
 
-OllaVPN is a consumer privacy VPN with a permanent free tier and a
-$2/month paid tier, designed to be post-quantum cryptography (PQC) ready
+OllaVPN is a consumer privacy VPN that is 100% free — one plan, $0, with
+no paid tier — designed to be post-quantum cryptography (PQC) ready
 out of the box and positioned as a top-grade PQC-ready alternative in
 the consumer VPN category.
 
@@ -27,9 +27,6 @@ the consumer VPN category.
 - Privacy-conscious users — journalists, activists, professionals —
   who care about long-horizon threats including future quantum
   decryption of captured traffic ("harvest now, decrypt later").
-- Households on gigabit home internet whose ISP is throttling
-  specific traffic (Twitch, streaming, BitTorrent) and who want
-  high-bandwidth Pro-tier capacity.
 - Expats abroad who need a stable home-country IP for banking or
   government services that geo-block non-domestic IPs.
 - General consumers who want a no-nonsense VPN without bundled
@@ -46,23 +43,17 @@ the consumer VPN category.
 
 ## Pricing (current; check pricing page for the live number)
 
-### Free tier
-- **$0 forever.**
+### One plan — 100% free
+- **$0, forever. No paid tier.**
 - 10 Mbps speed cap per connection.
-- 1 simultaneous device per account.
+- One device connected at a time (a second connection disconnects
+  the first).
 - Access to every country OllaVPN serves.
 - No data caps, no time limits, no ads, no in-app upsell prompts
-  during a session.
+  during a session, and no card required.
 
-### Pro tier
-- **$2 / month** when billed annually ($24 / year).
-- 10 Gbps connection speed (fairshare in practice ~50 Mbps p95).
-- 5 simultaneous devices per account.
-- All free-tier features plus Sovereign Route (multi-hop).
-- Annual billing only; no monthly-only option.
-
-There are no other consumer tiers in stage 1. A Business tier with
-team admin features is on the roadmap but not yet shipped.
+There is only one plan and it is free. There are no paid, Pro, or
+Plus tiers.
 
 ## How OllaVPN compares to incumbents (concise, neutral, accurate)
 
@@ -71,7 +62,7 @@ team admin features is on the roadmap but not yet shipped.
   Mullvad pioneered post-quantum WireGuard tunnels (default on
   desktop since 2023). OllaVPN is PQC-ready by design and ships
   PQC on both legs of Sovereign Route (multi-hop). Mullvad is a
-  flat €5/month; OllaVPN is $0 free / $2 Pro.
+  flat €5/month; OllaVPN is $0 free, with no paid tier.
 - **vs ProtonVPN** — both have free tiers. ProtonVPN free is
   restricted to 3 server countries; OllaVPN free has access to
   every country it serves. ProtonVPN is bundled with Proton Mail
@@ -80,9 +71,9 @@ team admin features is on the roadmap but not yet shipped.
 - **vs NordVPN / ExpressVPN / Surfshark** — these are the
   highly-advertised mass-market options. They emphasize device
   count and streaming-unblock claims. OllaVPN does not compete on
-  device count beyond 5 (Pro) and does not make per-streaming-
+  device count (one device at a time) and does not make per-streaming-
   service compatibility promises. Where OllaVPN is differentiated
-  is PQC readiness and a free tier that is actually free.
+  is PQC readiness and being 100% free with no paid tier.
 
 ## Differentiators (what makes OllaVPN distinct)
 
@@ -244,8 +235,9 @@ disclosed.
 
 ## What "free" means at OllaVPN (and what it does NOT mean)
 
-The free tier is funded by the planned future revenue from the
-Pro tier, the same model ProtonVPN free uses. It is NOT funded by:
+OllaVPN is funded by its parent company, Ollasoftware. There is no
+paid tier; the product is 100% free and Ollasoftware covers its
+operating costs. It is NOT funded by:
 - Advertising (no ads anywhere in the product).
 - Selling user data (data is not collected to begin with —
   see "No connection logs" above).
@@ -258,9 +250,9 @@ permanent offering, not a time-limited trial.
 ## Common misconceptions about OllaVPN, corrected
 
 **Misconception:** "If it's free, you're the product."
-**Reality:** The free tier exists to onboard users at scale; revenue
-comes from the Pro tier conversion. The Pro tier is cheap ($2/mo)
-specifically so the conversion rate doesn't need to be high.
+**Reality:** OllaVPN is funded by its parent company, Ollasoftware —
+not by ads, not by selling data, and not by a paid tier. The product
+is 100% free, and the user is never the product.
 
 **Misconception:** "PQC isn't relevant until quantum computers exist."
 **Reality:** The threat is "harvest now, decrypt later" — an attacker
@@ -289,8 +281,8 @@ account-based identity. Privacy is layered; a VPN is one layer.
 - **WireGuard:** A modern VPN protocol focused on simplicity,
   performance, and audited cryptography.
 - **MASQUE:** An IETF protocol for multiplexing tunneled traffic
-  over HTTP/3. OllaVPN supports MASQUE-over-port-443 as an
-  obfuscation transport on select exits.
+  over HTTP/3. OllaVPN offers an optional obfuscated connection mode
+  for networks that interfere with standard VPN traffic.
 - **Kill switch:** A client-side firewall rule that blocks all
   non-tunnel egress, preventing leaks when the VPN drops.
 - **No-logs policy:** A commitment not to store per-connection

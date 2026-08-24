@@ -2,7 +2,7 @@ Which Free VPN Does Not Keep Logs? A 2026 No-Logs VPN Checklist
 A plain-English guide to one of the most misunderstood claims in the VPN industry - what “no logs” actually means, what it doesn’t mean, how to verify it, and which free VPNs in 2026 genuinely hold up under scrutiny.
 
 TL;DR - The Short Answer
-Try OllaVPN free - zero-logs, post-quantum-ready, lifetime free plan. No credit card. Or $2/mo for 5 devices on a faster plan. DOWNLOAD →
+Try OllaVPN free - zero-logs, post-quantum-ready, lifetime free plan. 100% free, one plan, $0. No credit card. DOWNLOAD →
 
 “No logs” is the most commonly claimed and most frequently misrepresented feature in the VPN market. A genuine no-logs VPN stores nothing that could identify what you did online, who you talked to, when you were connected, or where you connected from. The catch: almost every VPN on the market claims “no logs,” and the claims vary wildly in what they actually cover. This guide explains what the term really means, which parts of a VPN log most people miss, how to evaluate an audit, and which free VPNs in 2026 have earned genuine trust on this claim - with a practical checklist so you never have to guess.
 
@@ -122,7 +122,7 @@ Company has faced real-world legal demand and produced no useful user data
 
 Business model:
 Revenue model clearly explained - you understand how the company makes money
-If free, subsidized by a paid tier with the same architecture
+If free, transparently funded (a paid-tier subsidy, a parent company, or a non-profit) with the same architecture
  Parent company does not have a history of data monetization
 No acquisition history that changed the privacy posture
 
@@ -133,14 +133,15 @@ If a VPN passes all or most of these checks, the no-logs claim is meaningfully m
 
 Free VPNs and logs - the business model problem 
 QUICK ANSWER
-Most truly free VPNs have a fundamental tension: operating VPN infrastructure is expensive, and genuine zero-logs architecture requires real engineering investment. Many free VPNs resolve this tension by monetizing user data - which is directly at odds with a no-logs claim. The free VPNs that genuinely don’t keep logs either have a paid tier that subsidizes the free plan, or have a mission-driven model (non-profit or open-source) with transparent funding.
+Most truly free VPNs have a fundamental tension: operating VPN infrastructure is expensive, and genuine zero-logs architecture requires real engineering investment. Many free VPNs resolve this tension by monetizing user data - which is directly at odds with a no-logs claim. The free VPNs that genuinely don’t keep logs either have a paid tier that subsidizes the free plan, are backed by a parent company, or have a mission-driven model (non-profit or open-source) with transparent funding.
 
 Running VPN infrastructure at scale isn’t cheap. Servers cost money. Bandwidth costs money. Engineering teams cost money. Security audits cost money. When someone offers you a VPN for free, the question is always: where does the money come from?
 
 The answers fall into a few categories:
 Data monetization - the free VPN collects your browsing behavior, sells it to advertisers or data brokers, and uses that revenue to operate the infrastructure. This is the most common model for apps marketed as “free VPN” on app stores. In 2019, the CSIRO studied 283 Android VPN apps and found that 38% contained malware or malvertising code and 72% used third-party tracking libraries embedded in the app. A VPN that runs tracking SDKs is not a no-logs VPN regardless of what its privacy policy says - the tracking happens at the app layer, below the VPN’s own privacy policy.
 Bandwidth resale - some “free” VPNs monetize by routing other users’ traffic through your connection, effectively turning your device into part of their network. Hola VPN, at one point one of the most downloaded free VPNs, operated this model. Your bandwidth was being sold. Your IP address was being used by others. The privacy implications are serious: if another user does something illegal through your IP address, you’re the one with exposure.
-Paid tier subsidy - the most sustainable and legitimate model. The free plan is genuinely free, subsidized by revenue from paying subscribers. The infrastructure is the same, the no-logs architecture is the same, and the free tier is essentially a product demo that converts some fraction of users to paid. Proton VPN, Windscribe (to a point), and OllaVPN use this model.
+Paid tier subsidy - a sustainable and legitimate model. The free plan is genuinely free, subsidized by revenue from paying subscribers. The infrastructure is the same, the no-logs architecture is the same, and the free tier is essentially a product demo that converts some fraction of users to paid. Proton VPN and Windscribe (to a point) use this model.
+Parent-company funding - a company funds a genuinely free product out of its own broader business rather than a paid VPN tier. OllaVPN uses this model: it is funded by its parent company, Ollasoftware - no ads, and your data is never sold or shared.
 Grant or non-profit funding - organizations like the Tor Project fund development through donations and grants. The privacy mission comes first. This model is genuinely trustworthy but rare.
 The practical implication for evaluating free VPNs: if you can’t find a clear answer to “how does this company make money,” the answer is almost certainly “your data.” The combination of zero revenue transparency and a “no logs” claim is a red flag, not reassurance.
 
@@ -159,9 +160,9 @@ The company’s founder has a track record of unusually candid public communicat
 What the free plan limits: 10 GB monthly bandwidth cap. Otherwise the privacy architecture is the same.
 
 OllaVPN Free (Lifetime)
-OllaVPN offers a lifetime free plan with no data caps, no time limits, and no advertisements - subsidized by its paid tier. The no-logs architecture covers both activity and connection logs; the company does not collect real IP addresses, session timestamps, or session durations. DNS is resolved inside the encrypted tunnel by OllaVPN’s own unbound resolver - your ISP cannot see the domains you visit, and no third-party DNS provider receives your queries.
+OllaVPN offers a lifetime free plan with no data caps, no time limits, and no advertisements - funded by its parent company, Ollasoftware, so your data is never sold or shared. The no-logs architecture covers both activity and connection logs; the company does not collect real IP addresses, session timestamps, or session durations. DNS is resolved inside the encrypted tunnel by OllaVPN’s own unbound resolver - your ISP cannot see the domains you visit, and no third-party DNS provider receives your queries.
 The technical architecture goes further than most: the kill switch is always-on and cannot be accidentally disabled; post-quantum cryptography (hybrid X25519 + ML-KEM-768) is applied to every connection including the free plan; peer isolation is enforced at multiple independent layers. No account or email address is required to use the free plan - there is no account to link your traffic to.
-OllaVPN’s architecture has been independently audited. The free plan is a genuine product, not a funnel with meaningful restrictions - the only difference from the paid plan is speed (10 Mbps on free, 10 Gbps on paid) and the number of devices (one on free, five on paid).
+OllaVPN’s architecture has been independently audited. The free plan is a genuine product, not a funnel with meaningful restrictions - OllaVPN is one plan, 100% free: 10 Mbps and one device connected at a time (a second connection disconnects the first), with no paid tier.
 
 What about the others?
 Several well-known names appear in “best free VPN” lists that warrant more careful scrutiny on the logs question:
@@ -260,7 +261,7 @@ Company has faced real-world legal demand and produced no useful user data
 
 Business model:
 Revenue model clearly explained - you understand how the company makes money
-If free, subsidized by a paid tier with the same architecture
+If free, transparently funded (a paid-tier subsidy, a parent company, or a non-profit) with the same architecture
 Parent company does not have a history of data monetization
 No acquisition history that changed the privacy posture
 
@@ -283,9 +284,8 @@ Post-quantum cryptography on every connection. The hybrid X25519 + ML-KEM-768 ha
 Kill switch always on, cannot be disabled. If the tunnel drops for any reason, all traffic stops until it’s back. Your real IP address does not briefly appear to the sites you’re visiting.
 Independent audit. The architecture has been independently verified by a named security firm.
 
-OllaVPN plans:
-Lifetime free · $0 · 10 Mbps No logs. No caps. No ads. No email required. Every country. Kill switch. In-tunnel DNS. PQC-ready.
-Paid plan · $2 / month · 10 Gbps Same no-logs architecture. Faster. Five devices on one account
+OllaVPN - one plan, 100% free:
+$0 · 10 Mbps · one device connected at a time No logs. No caps. No ads. No email required. Every country. Kill switch. In-tunnel DNS. PQC-ready. No paid tier, no card.
 Download free - no email, no card. The no-logs architecture is on from your first connection.
 
 Related reading
@@ -317,7 +317,7 @@ What to remember from this guide
 “No logs” is the most commonly claimed and most variably defined privacy property in the VPN market - evaluate specifics, not headlines
 The three types of logs are activity logs, connection logs, and aggregated usage data; genuine no-logs covers the first two entirely
 An independent audit by a named firm, with the full report publicly available, is the only external verification that carries real weight
-Most free VPNs monetize user data - the exceptions are free plans subsidized by a paid tier with the same privacy architecture
+Most free VPNs monetize user data - the exceptions are free plans with transparent funding (a paid-tier subsidy, a parent company, or a non-profit) and the same privacy architecture
 RAM-only servers add physical enforcement: a reboot wipes everything, regardless of what the policy says
 Jurisdiction matters, but only if data exists to compel - a genuine no-logs architecture in any jurisdiction is more private than a logs-keeping VPN in a “friendly” one
 
