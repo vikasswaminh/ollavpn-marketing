@@ -16,6 +16,10 @@
 /home                    /             301
 /index.html?*            /:splat       301
 
+# ─── Pricing removed 2026-08-24 (product is 100% free) ───
+/pricing                 /free-vpn     301
+/pricing.html            /free-vpn     301
+
 # Clean-URL canonicalization: extension-stripped is the sitemap
 # canonical (see sitemap.xml). CF Pages auto-serves /pqc → /pqc.html,
 # but external links to /pqc.html should resolve to /pqc to avoid

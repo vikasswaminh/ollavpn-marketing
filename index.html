@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>OllaVPN — Post-Quantum-Ready Free VPN</title>
-<meta name="description" content="Modern privacy-first VPN, post-quantum-ready out of the box. Lifetime free plan, no data caps. $2/mo for 5 devices on a faster connection." />
+<meta name="description" content="A genuinely free VPN — lifetime free, no logs. Post-quantum-ready encryption, an always-on kill switch, and in-tunnel DNS on a growing global network." />
 <link rel="canonical" href="https://ollavpn.com/" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -19,7 +19,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="OllaVPN" />
 <meta property="og:title" content="OllaVPN — Post-Quantum-Ready Free VPN" />
-<meta property="og:description" content="Modern privacy-first VPN, post-quantum-ready out of the box. Lifetime free plan, no data caps. $2/mo for 5 devices on a faster connection." />
+<meta property="og:description" content="A genuinely free VPN — lifetime free, no logs. Post-quantum-ready encryption, an always-on kill switch, and in-tunnel DNS on a growing global network." />
 <meta property="og:url" content="https://ollavpn.com/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:image" content="https://ollavpn.com/og-image.png" />
@@ -28,7 +28,7 @@
 <meta property="og:image:alt" content="OllaVPN — Free, post-quantum-ready VPN" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="OllaVPN — Post-Quantum-Ready Free VPN" />
-<meta name="twitter:description" content="Modern privacy-first VPN, post-quantum-ready out of the box. Lifetime free plan, no data caps. $2/mo for 5 devices on a faster connection." />
+<meta name="twitter:description" content="A genuinely free VPN — lifetime free, no logs. Post-quantum-ready encryption, an always-on kill switch, and in-tunnel DNS on a growing global network." />
 <meta name="twitter:image" content="https://ollavpn.com/og-image.png" />
 <script type="application/ld+json">
 {
@@ -39,7 +39,7 @@
       "@id": "https://ollavpn.com/#org",
       "name": "OllaVPN",
       "url": "https://ollavpn.com/",
-      "description": "OllaVPN is a privacy-focused consumer VPN that is post-quantum cryptography (PQC) ready out of the box. Lifetime free tier (10 Mbps) and a $2/month Pro tier (10 Gbps, 5 devices).",
+      "description": "OllaVPN is a privacy-focused consumer VPN that is post-quantum cryptography (PQC) ready out of the box. 100% free — a lifetime free tier (1 device) with no paid plans, and no activity logs.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://ollavpn.com/favicon-256.png",
@@ -89,27 +89,16 @@
       "name": "OllaVPN",
       "brand": { "@id": "https://ollavpn.com/#org" },
       "category": "Virtual Private Network",
-      "description": "Post-quantum-ready consumer VPN with a permanent free tier and a $2/month Pro tier. Always-on kill switch, in-tunnel DNS, no connection logs, and optional Sovereign Route multi-hop on Pro.",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Free",
-          "price": "0",
-          "priceCurrency": "USD",
-          "url": "https://ollavpn.com/pricing.html",
-          "availability": "https://schema.org/InStock",
-          "description": "Lifetime free — 10 Mbps, 1 device, every country."
-        },
-        {
-          "@type": "Offer",
-          "name": "Pro (annual)",
-          "price": "24",
-          "priceCurrency": "USD",
-          "url": "https://ollavpn.com/pricing.html",
-          "availability": "https://schema.org/PreOrder",
-          "description": "$2/month billed annually — 10 Gbps, 5 devices, Sovereign Route multi-hop."
-        }
-      ]
+      "description": "Post-quantum-ready consumer VPN with a permanent, 100% free tier — no paid plans. Always-on kill switch, in-tunnel DNS, and no activity logs.",
+      "offers": {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://ollavpn.com/free-vpn",
+        "availability": "https://schema.org/InStock",
+        "description": "100% free — 1 device, no logs."
+      }
     }
   ]
 }
@@ -393,7 +382,6 @@
         </div>
       </div>
 
-      <a href="/pricing">Pricing</a>
 
       <div class="nav-item">
         <a href="/blog/" class="nav-head">Blogs <span class="caret">&#9662;</span></a>
@@ -452,91 +440,24 @@
 <section class="section" id="pricing">
   <div class="wrap">
     <div class="head reveal">
-      <span class="kicker"><span class="pip">●</span> PRICING</span>
-      <h2 class="h-display h2">Free forever.<br/><span class="accent">Pro and Business when you outgrow it.</span></h2>
-      <p class="lede">Three plans, one security stack. Free for everyday use, Pro for power users, Business for teams.</p>
+      <span class="kicker"><span class="pip">●</span> 100% FREE</span>
+      <h2 class="h-display h2">Free forever.<br/><span class="accent">No paid tiers. No catch.</span></h2>
+      <p class="lede">One plan, and it's free. The full security stack — post-quantum-ready handshake, kill switch, in-tunnel DNS, peer isolation — on every connection. No credit card, no trial countdown, no upsell.</p>
     </div>
 
-    <!-- Commitment toggle (1mo / 12mo / 24mo) — same widget as /pricing -->
-    <div class="commit-row">
-      <div class="commit-toggle" role="tablist" aria-label="Choose billing term">
-        <button type="button" data-commit="mo1" role="tab">1 month</button>
-        <button type="button" data-commit="mo12" role="tab">12 months <span class="save-tag">save 40%</span></button>
-        <button type="button" data-commit="mo24" class="active" role="tab" aria-selected="true">24 months <span class="save-tag">save up to 70%</span></button>
-      </div>
-    </div>
-
-    <div class="plans">
-      <!-- Free (term-independent) -->
+    <div class="plans" style="grid-template-columns: minmax(0, 440px); justify-content: center;">
+      <!-- Free — the only plan -->
       <div class="plan reveal">
         <h3>Free</h3>
         <p class="sub">Security and privacy for everyone</p>
         <div class="price">$0.00<small>/forever</small></div>
-        <a class="btn outline lg" href="dl/">Get OllaVPN Free</a>
+        <a class="btn primary lg" href="dl/">Get OllaVPN — free</a>
         <div class="plan-trust">💳 No credit card required</div>
         <ul>
           <li>1 device · 10 Mbps</li>
           <li>All countries unlocked</li>
           <li>PQC handshake · kill switch · zero logs</li>
           <li>In-tunnel DNS · peer isolation</li>
-        </ul>
-      </div>
-
-      <!-- Pro (BEST DEAL banner) -->
-      <div class="plan popular reveal">
-        <div class="plan-banner">★ Best deal</div>
-        <span class="plan-pct-off commit-val-inline" data-commit="mo12">40% OFF</span>
-        <span class="plan-pct-off commit-val-inline active" data-commit="mo24">70% OFF</span>
-        <h3>Pro</h3>
-        <p class="sub">Advanced features and fastest speeds</p>
-
-        <!-- Strikethrough only on multi-month -->
-        <div class="plan-strikethrough commit-val" data-commit="mo12">$9.99 /mo</div>
-        <div class="plan-strikethrough commit-val active" data-commit="mo24">$9.99 /mo</div>
-
-        <!-- Discounted price (1mo shows $9.99 with no strikethrough) -->
-        <div class="price commit-val" data-commit="mo1">$9.99<small>/mo</small></div>
-        <div class="price commit-val" data-commit="mo12">$5.99<small>/mo</small></div>
-        <div class="price commit-val active" data-commit="mo24">$2.99<small>/mo</small></div>
-
-        <!-- Save callout only on multi-month -->
-        <div class="plan-save commit-val" data-commit="mo12">Save $48 over 12 months</div>
-        <div class="plan-save commit-val active" data-commit="mo24">Save $168 over 24 months</div>
-
-        <a class="btn primary lg" href="pricing.html#plans">Get OllaVPN Pro <span class="arrow">→</span></a>
-        <div class="plan-trust">💲 30-day money-back guarantee</div>
-        <ul>
-          <li>5 devices · 10 Gbps per session</li>
-          <li>Premium low-latency exits</li>
-          <li>Same PQC + DNS + kill switch</li>
-          <li>Stream + game without throttling</li>
-        </ul>
-      </div>
-
-      <!-- Business -->
-      <div class="plan reveal">
-        <span class="plan-pct-off commit-val-inline" data-commit="mo12">23% OFF</span>
-        <span class="plan-pct-off commit-val-inline active" data-commit="mo24">38% OFF</span>
-        <h3>Business</h3>
-        <p class="sub">For teams that ship secure by default</p>
-
-        <div class="plan-strikethrough commit-val" data-commit="mo12">$12.99 /user/mo</div>
-        <div class="plan-strikethrough commit-val active" data-commit="mo24">$12.99 /user/mo</div>
-
-        <div class="price commit-val" data-commit="mo1">$12.99<small>/user/mo</small></div>
-        <div class="price commit-val" data-commit="mo12">$9.99<small>/user/mo</small></div>
-        <div class="price commit-val active" data-commit="mo24">$7.99<small>/user/mo</small></div>
-
-        <div class="plan-save commit-val" data-commit="mo12">Save $36 / user</div>
-        <div class="plan-save commit-val active" data-commit="mo24">Save $120 / user</div>
-
-        <a class="btn outline lg" href="pricing.html#plans">Get OllaVPN Business <span class="arrow">→</span></a>
-        <div class="plan-trust">💲 30-day money-back guarantee</div>
-        <ul>
-          <li>Unlimited devices per user</li>
-          <li>10 Gbps + QoS priority</li>
-          <li>Admin panel · audit · dedicated IPs</li>
-          <li>Slack support + 4-hour SLA</li>
         </ul>
       </div>
     </div>
@@ -650,7 +571,7 @@
         <div class="icon">$0</div>
         <div class="num">→ 06 / LIFETIME FREE</div>
         <h3>A free plan you can actually keep</h3>
-        <p>No credit card. No trial countdown. The free plan is built to stay free. A $2/month plan lifts the speed cap and adds 5-device support.</p>
+        <p>No credit card. No trial countdown. The free plan is built to stay free — the whole product, at no cost, with no paid tier to upsell.</p>
       </div>
     </div>
   </div>
@@ -753,7 +674,7 @@ tunnel_key = <span class="tk-keyword">mix</span>(classical, pqc)
     <div class="head reveal">
       <span class="kicker"><span class="pip">●</span> SAME PROTECTION, EVERY CONNECTION</span>
       <h2 class="h-display h2">No "premium" countries.<br/><span class="accent">No encryption tiers.</span></h2>
-      <p class="lede">Every connection gets the same post-quantum-ready protection, the same kill switch, the same DNS hygiene. The free plan and the $2 plan use the same security stack — the paid plan just removes the speed cap and adds 5-device support.</p>
+      <p class="lede">Every connection gets the same post-quantum-ready protection, the same kill switch, the same DNS hygiene. There are no tiers to upsell and no "premium" servers — it's all in the one free plan.</p>
     </div>
     <div class="compare reveal">
       <div class="compare-row us">
@@ -798,9 +719,9 @@ tunnel_key = <span class="tk-keyword">mix</span>(classical, pqc)
       </div>
       <div class="rcard reveal">
         <div class="head"><span class="ok">●</span> NO ENCRYPTION TIERS</div>
-        <h3>Free and paid use the same stack</h3>
-        <p>Post-quantum-ready handshake, kill switch, DNS-leak protection, peer isolation — identical on the free plan and the $2 plan. The paid plan just removes the speed cap.</p>
-        <div class="id">Same security, every plan</div>
+        <h3>One plan, the full stack</h3>
+        <p>Post-quantum-ready handshake, kill switch, DNS-leak protection, peer isolation — every feature ships in the one free plan. There's nothing to upgrade to.</p>
+        <div class="id">Same security, always</div>
       </div>
       <div class="rcard reveal">
         <div class="head"><span class="ok">●</span> NO DARK PATTERNS</div>
@@ -829,9 +750,9 @@ tunnel_key = <span class="tk-keyword">mix</span>(classical, pqc)
     <div class="top">
       <div>
         <div class="brand"><span class="brand-mark"></span>OllaVPN</div>
-        <p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN. Lifetime free plan or $2/month for 5 devices.</p>
+        <p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN. 100% free — no paid plans.</p>
       </div>
-      <div><h4>Product</h4><ul><li><a href="apps.html">Apps</a></li><li><a href="technology.html">Technology</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="dl/">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="apps.html">Apps</a></li><li><a href="technology.html">Technology</a></li><li><a href="dl/">Download</a></li></ul></div>
       <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li><li><a href="https://login.ollavpn.com/">Dashboard</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog/">Blog</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>
