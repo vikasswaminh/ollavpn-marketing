@@ -81,7 +81,7 @@
       "url": "https://ollavpn.com/dl/",
       "publisher": { "@id": "https://ollavpn.com/#org" },
       "image": "https://ollavpn.com/og-image.png",
-      "description": "Post-quantum-ready WireGuard VPN for macOS. Lifetime free with 10 Mbps and every country, optional Pro tier at $2/mo for 10 Gbps and 5 devices.",
+      "description": "Post-quantum-ready WireGuard VPN for macOS. 100% free — 10 Mbps, every country, one device, $0, no paid tier.",
       "featureList": [
         "Post-quantum (PQC) ready handshake",
         "Always-on kill switch",
@@ -92,6 +92,7 @@
       ],
       "offers": {
         "@type": "Offer",
+        "url": "https://ollavpn.com/free-vpn",
         "price": "0",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock"
@@ -102,7 +103,7 @@
       "@id": "https://ollavpn.com/free-vpn-mac#faq",
       "mainEntity": [
         { "@type": "Question", "name": "Is OllaVPN free on Mac?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. OllaVPN's free tier on macOS is lifetime free — 10 Mbps, every country we serve, one device, no data cap, no credit card. The Pro tier at $2/month lifts the speed cap to 10 Gbps and adds four more device slots, but the free tier never expires." } },
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. OllaVPN on macOS is 100% free — 10 Mbps, every country we serve, one device, no data cap, no credit card. There's no paid tier and nothing to upgrade to; the free plan never expires." } },
         { "@type": "Question", "name": "Does OllaVPN work on Apple Silicon?",
           "acceptedAnswer": { "@type": "Answer", "text": "Yes. OllaVPN ships a native Apple Silicon build (arm64) and a separate Intel build (x86_64) signed with the same code-signing certificate. The installer detects your CPU and installs the correct variant." } },
         { "@type": "Question", "name": "What macOS versions are supported?",
@@ -110,7 +111,7 @@
         { "@type": "Question", "name": "Is the macOS app notarized?",
           "acceptedAnswer": { "@type": "Answer", "text": "Notarization is on the roadmap for public launch — until then macOS may show a Gatekeeper prompt on first launch. You can verify the SHA-256 of the installer against the value published on the download page to confirm authenticity in the meantime." } },
         { "@type": "Question", "name": "Will OllaVPN slow down my Mac's internet?",
-          "acceptedAnswer": { "@type": "Answer", "text": "All VPNs add some latency — the traffic round-trips through the exit server. OllaVPN's free tier is capped at 10 Mbps, which is fast enough for HD streaming, all browsing, and most calls. On Pro the cap is 10 Gbps and the actual throughput depends on the closest available exit. Apple Silicon Macs running the native arm64 build see near-zero CPU overhead from the tunnel." } },
+          "acceptedAnswer": { "@type": "Answer", "text": "All VPNs add some latency — the traffic round-trips through the exit server. OllaVPN is 100% free and capped at 10 Mbps, which is fast enough for HD streaming, all browsing, and most calls. The actual throughput depends on the closest available exit. Apple Silicon Macs running the native arm64 build see near-zero CPU overhead from the tunnel." } },
         { "@type": "Question", "name": "Does the macOS app have a kill switch?",
           "acceptedAnswer": { "@type": "Answer", "text": "Yes. The kill switch is on by default on macOS and cannot be disabled. If the tunnel drops mid-session, the system firewall blocks all non-tunnel egress until the tunnel reconnects. This is enforced via macOS Packet Filter rules that the OllaVPN service daemon installs at connect time." } },
         { "@type": "Question", "name": "Does OllaVPN leak DNS on Mac?",
@@ -178,7 +179,7 @@
   <div class="nav-inner">
     <a href="/" class="brand"><span class="brand-mark"></span>OllaVPN</a>
     <div class="nav-links">
-      <div class="nav-item"><a href="/pricing">Pricing</a></div>
+      <div class="nav-item"></div>
       <div class="nav-item"><a href="/technology">Technology</a></div>
       <div class="nav-item"><a href="/tools/">Tools</a></div>
       <div class="nav-item"><a href="/blog/">Blog</a></div>
@@ -217,24 +218,24 @@
   <div class="tldr">
     <span class="label">TL;DR</span>
     <p><strong>OllaVPN for Mac is genuinely free, forever.</strong> 10 Mbps, every country, one device, no time limit, no credit card. Apple Silicon native, Intel supported, macOS 12 and later.</p>
-    <p>The kill switch is on by default and cannot be disabled. DNS stays inside the tunnel. No connection logs. The Pro tier at $2 a month lifts the speed cap to 10 Gbps and adds four more device slots.</p>
+    <p>The kill switch is on by default and cannot be disabled. DNS stays inside the tunnel. No connection logs. OllaVPN is 100% free — one plan, $0, with no paid tier and nothing to upgrade to.</p>
     <p><a href="/dl/"><strong>Download OllaVPN free for Mac →</strong></a></p>
   </div>
 
   <h2>What you get on the free tier on Mac</h2>
   <p>OllaVPN's free plan on macOS is the same shape as the free plan on every other platform — the trade is bandwidth and devices, and what you get in exchange is the entire country list and every privacy feature. There is no "Mac users only get fewer countries" small print. There is no "Mac costs extra because Apple." A macOS user on the free tier gets the same access to the network as a Windows or Android user.</p>
 
-  <p><strong>10 Mbps speed cap.</strong> Plenty for HD streaming (Netflix HD requires 5 Mbps, Hulu HD 6 Mbps, Disney+ HD 5 Mbps), all browsing, all calls (Zoom HD needs 1.8 Mbps both ways, FaceTime HD 1.5 Mbps), and large downloads at a steady but unhurried pace. Where 10 Mbps stops working: 4K streaming (Netflix 4K needs 25 Mbps, Apple TV+ 4K 25 Mbps), simultaneous downloads + streaming, and torrenting at speed. If you regularly hit any of those use cases, the Pro tier at $2/month annual is built for that — 10 Gbps cap, 5 devices.</p>
+  <p><strong>10 Mbps speed cap.</strong> Plenty for HD streaming (Netflix HD requires 5 Mbps, Hulu HD 6 Mbps, Disney+ HD 5 Mbps), all browsing, all calls (Zoom HD needs 1.8 Mbps both ways, FaceTime HD 1.5 Mbps), and large downloads at a steady but unhurried pace. Where 10 Mbps stops working: 4K streaming (Netflix 4K needs 25 Mbps, Apple TV+ 4K 25 Mbps), simultaneous downloads + streaming, and torrenting at speed. If you regularly hit any of those use cases, a heavier paid VPN elsewhere may suit you better — OllaVPN is 100% free, with a single 10 Mbps plan and no paid tier.</p>
 
-  <p><strong>1 simultaneous device.</strong> If you connect from a phone too, only one tunnel is active at a time on free. The second device that tries to connect evicts the first. This is rate-limited at the cp side (a few seconds between reassignments) so you can't accidentally thrash. Pro raises the device cap to 5, which fits a household with two phones, two laptops, and a tablet without juggling.</p>
+  <p><strong>1 simultaneous device.</strong> If you connect from a phone too, only one tunnel is active at a time on free. The second device that tries to connect evicts the first. This is rate-limited at the cp side (a few seconds between reassignments) so you can't accidentally thrash. That one-device limit is the same for everyone — OllaVPN is 100% free, with no paid tier that raises it.</p>
 
-  <p><strong>Every country we serve.</strong> Some free VPNs cap free users to two or three countries. Proton VPN Free is the most prominent example — three exits, period. OllaVPN does not. If we have an exit in Frankfurt, Detroit, or any other city, free users can connect to it. The exit list rotates as we add and remove servers — check the in-app country picker for the live list, or run our <a href="/what-is-my-ip">what-is-my-IP tool</a> from each country after connecting to verify.</p>
+  <p><strong>Every country we serve.</strong> Some free VPNs cap free users to two or three countries. Proton VPN Free is the most prominent example — three exits, period. OllaVPN does not. Wherever we have an exit, free users can connect to it. The exit list rotates as we add and remove servers — check the in-app country picker for the live list, or run our <a href="/what-is-my-ip">what-is-my-IP tool</a> from each country after connecting to verify.</p>
 
-  <p><strong>No data cap.</strong> Stream as much as the 10 Mbps cap will carry. There is no monthly meter, no rollover, no "fair use" small print, no automatic Pro upgrade after a threshold. The math: 10 Mbps continuously for 30 days is roughly 3.2 TB — far more than any reasonable user would do in a month. Even if you sustained the cap 24/7 we wouldn't email you about it. The cap itself is the only ceiling.</p>
+  <p><strong>No data cap.</strong> Stream as much as the 10 Mbps cap will carry. There is no monthly meter, no rollover, no "fair use" small print, and no paid tier to be nudged into after a threshold. The math: 10 Mbps continuously for 30 days is roughly 3.2 TB — far more than any reasonable user would do in a month. Even if you sustained the cap 24/7 we wouldn't email you about it. The cap itself is the only ceiling.</p>
 
-  <p><strong>No time limit.</strong> The free tier does not become a paywall after seven days, or thirty, or three hundred and sixty-five. It is the product. The Pro tier exists because some users want more bandwidth or more devices and will pay for it; it does not exist as the goal we're funneling free users toward against their will. We make no attempt to nag free users to upgrade in-session. The closest we come is a Settings page entry that lists Pro features, which is necessary to make the upgrade discoverable for users who genuinely want it.</p>
+  <p><strong>No time limit.</strong> The free tier does not become a paywall after seven days, or thirty, or three hundred and sixty-five. It is the product. OllaVPN is 100% free — one plan, $0, with no paid tier and nothing to upgrade toward. There's no upsell in-session and no premium features held back; everyone gets the same 10 Mbps privacy-first connection.</p>
 
-  <p><strong>What's on the account itself.</strong> Free signup requires an email address and a password (argon2id-hashed at the cp). Email verification is mandatory before first connect — same as for Pro signups. The account record stores: email, password hash, account state, created/verified dates, current peer-slot assignment (which exit you're connected to, if any). It does NOT store: connection history, DNS queries, source IPs of past connections, destination IPs of past connections, per-packet metadata, or any browsing data. The full data inventory is documented in our <a href="/.well-known/security.txt">security disclosure</a> and the <a href="/about/">company about page</a>.</p>
+  <p><strong>What's on the account itself.</strong> Free signup requires an email address and a password (argon2id-hashed at the cp). Email verification is mandatory before first connect — the same for every account. The account record stores: email, password hash, account state, created/verified dates, current peer-slot assignment (which exit you're connected to, if any). It does NOT store: connection history, DNS queries, source IPs of past connections, destination IPs of past connections, per-packet metadata, or any browsing data. The full data inventory is documented in our <a href="/.well-known/security.txt">security disclosure</a> and the <a href="/about/">company about page</a>.</p>
 
   <h2>What's actually inside the macOS app</h2>
   <p>OllaVPN for Mac is built on the same engineering as the Windows and Android apps — the WireGuard tunnel, the in-tunnel DNS resolver, the per-peer rate cap. The macOS-specific work lives in five places: the Apple Silicon native build, the Network System Extension that hosts the tunnel, the system service daemon that hosts the kill-switch firewall, the menu bar UI app, and the secure IPC channel between the UI and the daemon.</p>
@@ -258,7 +259,7 @@
 
   <p><strong>Packet Tunnel Provider (NEPacketTunnelProvider).</strong> The full-tunnel option. The extension creates a virtual network interface (utun) and claims the system default route. All IP traffic flows through the extension, which can encrypt it and forward it to a remote endpoint. OllaVPN, Tailscale, Mullvad, and ProtonVPN all use this. It's the right primitive for a "real" VPN.</p>
 
-  <p><strong>App Proxy Provider (NEAppProxyProvider).</strong> A per-app tunnel option. The extension can selectively route specific apps' traffic; everything else uses the system default. This is the split-tunneling primitive. OllaVPN doesn't yet expose this; the Pro tier roadmap includes split-tunneling for power users who want it.</p>
+  <p><strong>App Proxy Provider (NEAppProxyProvider).</strong> A per-app tunnel option. The extension can selectively route specific apps' traffic; everything else uses the system default. This is the split-tunneling primitive. OllaVPN doesn't yet expose this; split-tunneling is on the roadmap for power users who want it.</p>
 
   <p><strong>Filter Data Provider (NEFilterDataProvider).</strong> A traffic-inspection-only option. The extension can observe and block traffic but not modify or tunnel it. This is what content filters and parental-control apps use. Not relevant to a VPN.</p>
 
@@ -297,7 +298,7 @@
   <h2>Apple Silicon vs Intel performance</h2>
   <p>OllaVPN ships universal binaries (UB2) containing both Apple Silicon (arm64) and Intel (x86_64) slices. On install, macOS picks the right one. There is no Rosetta involvement on Apple Silicon Macs.</p>
 
-  <p><strong>Apple Silicon (M1/M2/M3/M4 and successors):</strong> The ChaCha20-Poly1305 cipher that WireGuard uses runs natively on the ARMv8 crypto extensions present on every M-series chip. CPU overhead from a tunnel under normal browsing load: <strong>sub-1%</strong> of one P-core. Under sustained 10 Mbps streaming: 1-2%. Under 1 Gbps Pro-tier throughput (if you upgrade): 5-8% of one P-core. Battery impact is correspondingly small — we've benchmarked a closed-lid-streaming-via-VPN session on an M2 MacBook Air at roughly 1-2% additional battery drain per hour vs the same session without VPN, well within the noise floor of macOS' own battery accounting.</p>
+  <p><strong>Apple Silicon (M1/M2/M3/M4 and successors):</strong> The ChaCha20-Poly1305 cipher that WireGuard uses runs natively on the ARMv8 crypto extensions present on every M-series chip. CPU overhead from a tunnel under normal browsing load: <strong>sub-1%</strong> of one P-core. Under sustained 10 Mbps streaming: 1-2%. Under 1 Gbps sustained throughput (a stress-test benchmark well above the free cap): 5-8% of one P-core. Battery impact is correspondingly small — we've benchmarked a closed-lid-streaming-via-VPN session on an M2 MacBook Air at roughly 1-2% additional battery drain per hour vs the same session without VPN, well within the noise floor of macOS' own battery accounting.</p>
 
   <p><strong>Intel (x86_64, supported back to macOS 12 Monterey):</strong> Roughly 2x the CPU overhead of Apple Silicon, due to the absence of dedicated crypto acceleration on older Intel Macs without AES-NI improvements. Typical numbers: 2-3% CPU under normal browsing, 3-5% under 10 Mbps streaming. Still imperceptible in Activity Monitor's foreground apps but measurable in detailed CPU reports. Battery impact is correspondingly larger; on a 2019 16-inch Intel MacBook Pro we measure roughly 4-5% additional battery drain per hour during sustained VPN streaming. Not a deal-breaker but a real cost.</p>
 
@@ -306,7 +307,7 @@
   <h2>How it compares to other free VPNs on Mac</h2>
   <p>The other free VPNs that ship a macOS app in 2026 are Proton VPN Free, Windscribe Free, PrivadoVPN Free, hide.me Free, and TunnelBear Free. Here's the honest comparison on the dimensions that matter on a Mac specifically.</p>
 
-  <p><strong>Country selection on free tier.</strong> OllaVPN: every country we serve (the in-app picker shows the live list — typically 8-15 countries depending on rotation). Proton VPN Free: 3 countries (US, NL, JP — the same three for years). Windscribe Free: 10+ rotating (US, UK, CA, DE, FR, NL, NO, RO, CH, HK, plus a rotating set). PrivadoVPN Free: 13 fixed (US-East, US-West, UK, DE, FR, NL, CH, CA, BR, AR, MX, AU, JP). hide.me Free: 8 fixed (DE, NL, US-E, US-W, CA, UK, FR, SG). TunnelBear Free: 47 countries (the largest free-tier list in the category, but capped at 500 MB/month).</p>
+  <p><strong>Country selection on free tier.</strong> OllaVPN: every country we serve (the in-app picker shows the current list). Proton VPN Free: 3 countries (US, NL, JP — the same three for years). Windscribe Free: 10+ rotating (US, UK, CA, DE, FR, NL, NO, RO, CH, HK, plus a rotating set). PrivadoVPN Free: 13 fixed (US-East, US-West, UK, DE, FR, NL, CH, CA, BR, AR, MX, AU, JP). hide.me Free: 8 fixed (DE, NL, US-E, US-W, CA, UK, FR, SG). TunnelBear Free: 47 countries (the largest free-tier list in the category, but capped at 500 MB/month).</p>
 
   <p><strong>Data cap on free tier.</strong> OllaVPN: unlimited. Proton VPN Free: unlimited. Windscribe Free: 10 GB/mo (+5 GB for email verify, +5 GB for tweet — max 20 GB). PrivadoVPN Free: 10 GB/mo. hide.me Free: 10 GB/mo. TunnelBear Free: 500 MB/mo (+1.5 GB for tweet — max 2 GB).</p>
 
@@ -361,7 +362,7 @@
 
   <p><strong>The Network Extension prompt doesn't appear.</strong> Sometimes macOS suppresses the prompt if you've previously denied it. Open System Settings → General → Login Items &amp; Extensions → Network Extensions; toggle OllaVPN to enabled. If OllaVPN isn't listed there, uninstall OllaVPN and reinstall; the prompt should appear on fresh install.</p>
 
-  <p><strong>"Connection failed" on first connect.</strong> Usually a firewall/router on your local network is blocking UDP 51820 (WireGuard's default port). Workarounds: (1) try a different network briefly to isolate; (2) on a restrictive corporate or hotel network, the Frankfurt exit supports MASQUE-over-port-443 obfuscation that looks like HTTPS to network observers — switch to it in the country picker.</p>
+  <p><strong>"Connection failed" on first connect.</strong> Usually a firewall/router on your local network is blocking UDP 51820 (WireGuard's default port). Workarounds: (1) try a different network briefly to isolate; (2) on a restrictive corporate or hotel network, OllaVPN's obfuscated connection mode looks like HTTPS to network observers — switch to it in the country picker.</p>
 
   <p><strong>Wi-Fi switches and the tunnel drops.</strong> Expected and recovers automatically. The menu bar shows "Reconnecting" for 1-3 seconds while the daemon detects the network change, holds the kill switch, and re-handshakes on the new network. If it stays "Reconnecting" longer than 30 seconds, click Disconnect then Connect.</p>
 
@@ -395,11 +396,11 @@
 
   <p><strong>No Linux desktop client yet.</strong> Linux is on a roadmap but not stage-1 scope. Proton VPN's Linux client is the gold standard if you need it; Mullvad's is also excellent.</p>
 
-  <p><strong>No split-tunneling on macOS yet.</strong> Split-tunneling on macOS requires the NEAppProxyProvider path rather than the NEPacketTunnelProvider we use today. It's a planned Pro-tier feature. Currently every app on the Mac goes through the tunnel.</p>
+  <p><strong>No split-tunneling on macOS yet.</strong> Split-tunneling on macOS requires the NEAppProxyProvider path rather than the NEPacketTunnelProvider we use today. It's a planned feature. Currently every app on the Mac goes through the tunnel.</p>
 
-  <p><strong>No in-tunnel ad blocking yet.</strong> Windscribe (R.O.B.E.R.T.) and a few competitors ship resolver-level ad blocking. We have not yet shipped this on the tunnel-resolver path. It's a planned Pro-tier feature.</p>
+  <p><strong>No in-tunnel ad blocking yet.</strong> Windscribe (R.O.B.E.R.T.) and a few competitors ship resolver-level ad blocking. We have not yet shipped this on the tunnel-resolver path. It's a planned feature.</p>
 
-  <p><strong>No multi-hop on free.</strong> Sovereign Route (multi-hop through a Swiss entry-hop, with PQC on both legs) is being built but is positioned as a Pro-tier feature, not free. The free tier is single-hop with full PQC protection — that's the trade.</p>
+  <p><strong>No multi-hop yet.</strong> Sovereign Route (multi-hop through a second entry-hop, with PQC on both legs) is being built but is not shipping yet. Every connection is single-hop with full PQC protection today — that's the trade.</p>
 
   <p><strong>No Apple TV / Smart TV app.</strong> Apple TV's TVOS Network Extension story is its own thing and we have not shipped there yet. PrivadoVPN ships a Fire TV app; Proton ships an Android TV app; OllaVPN does not yet cover the living-room device.</p>
 
@@ -407,7 +408,7 @@
 
   <div class="faq-item">
     <h3>Is OllaVPN free on Mac?</h3>
-    <p>Yes. OllaVPN's free tier on macOS is lifetime free — 10 Mbps, every country we serve, one device, no data cap, no credit card. The Pro tier at $2/month lifts the speed cap to 10 Gbps and adds four more device slots, but the free tier never expires.</p>
+    <p>Yes. OllaVPN on macOS is 100% free — 10 Mbps, every country we serve, one device, no data cap, no credit card. There's no paid tier and nothing to upgrade to; the free plan never expires.</p>
   </div>
 
   <div class="faq-item">
@@ -515,7 +516,7 @@
       <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
       <div>
         <h5>Product</h5>
-        <a href="/pricing">Pricing</a>
+        
         <a href="/apps">Apps</a>
         <a href="/dl/">Download</a>
         <a href="/technology">Technology</a>

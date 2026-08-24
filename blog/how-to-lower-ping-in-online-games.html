@@ -1171,7 +1171,7 @@
         </div>
       </div>
 
-      <a href="/pricing">Pricing</a>
+      
 
       <div class="nav-item active">
         <a href="/blog/" class="nav-head">Blogs <span class="caret">&#9662;</span></a>
@@ -1247,7 +1247,7 @@
       
       <p>You&#39;ll also want to check your game&#39;s server region and ensure it&#39;s set to the closest one available to you. Sometimes, simply picking a server on the other side of the world by accident can be the root cause of your high ping, and it&#39;s an easy fix once you know where to look in your game settings. Always aim for the server geographically nearest to you for the best results.</p>
       
-      <p>While a VPN doesn&#39;t directly lower ping for most people, it can sometimes help by routing your connection more efficiently around congested internet paths, especially if your ISP is throttling or taking a suboptimal route. OllaVPN offers a free plan with 10 Mbps, which is usually plenty for gaming, and a Plus plan for 10 Gbps if you need more speed, all with our privacy-first, post-quantum-ready encryption, no card needed.</p>
+      <p>While a VPN doesn&#39;t directly lower ping for most people, it can sometimes help by routing your connection more efficiently around congested internet paths, especially if your ISP is throttling or taking a suboptimal route. OllaVPN offers a 100% free plan with 10 Mbps, which is usually plenty for gaming — one plan for everyone, no paid tier, all with our privacy-first, post-quantum-ready encryption, no card needed.</p>
       
     </div>
 
@@ -1325,7 +1325,7 @@ Another scenario where a VPN can help is with <strong>ISP throttling</strong>. S
 
 However, there's a flip side. Every time your data goes through a VPN, it adds an extra step: encryption and decryption. This process, known as <strong>encryption overhead</strong>, takes a tiny bit of time and processing power. While modern VPN protocols like WireGuard are incredibly efficient, there's always a slight delay introduced. So, if your ISP is already giving you an excellent, direct route and not throttling your connection, adding a VPN into the mix will almost certainly increase your ping, not decrease it. Even with our <a href="/features/post-quantum-ready">post-quantum-ready</a> encryption, which is designed for future-proofing, there's still that inherent overhead.
 
-When considering OllaVPN for ping reduction, it's important to understand the speeds. Our free plan gives you a solid 10 Mbps – enough for most online gaming, but if you're dealing with very large game updates or trying to stream 4K simultaneously, you might feel the speed cap. If you need serious bandwidth for gaming or anything else, **OllaVPN Plus** boosts you to 10 Gbps on five devices for just $2 a month. This eliminates any speed concerns that might contribute to higher ping on our free tier, allowing the VPN's potential for optimal routing to shine through without being bottlenecked by the VPN itself.
+When considering OllaVPN for ping reduction, it's important to understand the speeds. Our free plan gives you a solid 10 Mbps – enough for most online gaming, but if you're dealing with very large game updates or trying to stream 4K simultaneously, you might feel the speed cap. OllaVPN is 100% free with a single 10 Mbps plan, so that cap is the same for everyone. For most online gaming it is plenty, allowing the VPN's potential for optimal routing to shine through without being bottlenecked by the VPN itself.
     
     <h2 id="router-optimization">Can optimizing your router settings really make a difference?</h2>
     <p class="short-answer">Yes, optimizing your router settings can absolutely make a noticeable difference, particularly for ping and overall network responsiveness.</p>
@@ -1366,10 +1366,10 @@ When considering OllaVPN for ping reduction, it's important to understand the sp
   <p><strong>No WebRTC leak.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit's IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN — either OllaVPN's leak prevention has failed (file a report at <code>security@ollavpn.com</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
   <h2 id="tier1-howto-troubleshoot">If a step fails, here's how to debug</h2>
   <p>The most common failure modes for any VPN setup task on Windows, macOS, or Android, in order of frequency:</p>
-  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. On Frankfurt the obfuscated MASQUE-on-port-443 transport works around many restrictive firewalls — switch to it in the country picker.</p>
+  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. Try our obfuscated connection mode in the app.</p>
   <p><strong>The VPN connects but the internet is broken.</strong> Almost always a DNS issue. The in-tunnel resolver hasn't taken precedence (sometimes after a macOS update or a Windows feature update, the supplemental DNS keys get cleared). Restarting the VPN typically fixes it; full disconnect and reconnect re-installs the DNS configuration.</p>
   <p><strong>Some apps work but others don't.</strong> Either the app has its own proxy settings configured separately (some corporate apps), or the app uses a protocol the VPN doesn't carry (very rare — almost everything is TCP/UDP and works fine through the tunnel). Check the app's settings before assuming the VPN is at fault.</p>
-  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice; if you need more, the Pro tier at $2/mo annual lifts it to 10 Gbps.</p>
+  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice — and it's the same for everyone, since OllaVPN is 100% free with no paid tier.</p>
 
   <h2 id="tier1-about">About this guide</h2>
   <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
@@ -1528,7 +1528,7 @@ When considering OllaVPN for ping reduction, it's important to understand the sp
   <div class="wrap">
     <div class="top">
       <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
-      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../dl/">Download</a></li></ul></div>
       <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
       <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>

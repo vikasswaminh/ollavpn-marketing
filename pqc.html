@@ -114,7 +114,7 @@
       "name": "Does PQC slow down my OllaVPN connection?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not noticeably. While post-quantum algorithms can be a bit more computationally intensive, OllaVPN's implementation is highly optimized. Free plan users get a solid 10 Mbps, which is plenty for most tasks, and Plus users enjoy up to 10 Gbps, so speed really isn't an issue for either group."
+        "text": "Not noticeably. While post-quantum algorithms can be a bit more computationally intensive, OllaVPN's implementation is highly optimized. Free-plan users get a solid 10 Mbps, which is plenty for most tasks, so speed really isn't an issue."
       }
     },
     {
@@ -162,7 +162,7 @@
       "name": "Does the OllaVPN free plan include Post-Quantum Cryptography?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolutely! Every OllaVPN user, whether you're on our free plan or OllaVPN Plus, gets the full benefit of our post-quantum cryptography. We firmly believe that fundamental privacy and security shouldn't be hidden behind a paywall, so it's included for everyone, always."
+        "text": "Absolutely! Every OllaVPN user gets the full benefit of our post-quantum cryptography. We firmly believe that fundamental privacy and security shouldn't be hidden behind a paywall, so it's included for everyone, always."
       }
     },
     {
@@ -344,7 +344,7 @@
         </div>
       </div>
 
-      <a href="/pricing">Pricing</a>
+      
 
       <div class="nav-item active">
         <a href="/blog/" class="nav-head">Blogs <span class="caret">&#9662;</span></a>
@@ -473,7 +473,7 @@
 
 <p>This PQC layer works seamlessly with the underlying <a href="/blog/wireguard-protocol-explained">WireGuard protocol</a>, which is already known for its strong cryptography and efficient key management. WireGuard handles the secure tunneling and data transfer, while our hybrid handshake ensures that the initial <strong>key exchange</strong>—the crucial part where your device and our server agree on the secret keys for that session—is quantum-resistant. It's an extra layer of protection that doesn't slow you down, ensuring your past, present, and future data remains private.</p>
 
-<p>You don't need to do anything special to enable it; it's active by default on all OllaVPN connections, ensuring you're <strong>future-ready</strong> against potential threats from quantum computing. This forward-looking approach is a core part of how we protect your privacy, whether you're using our free plan or OllaVPN Plus.</p>
+<p>You don't need to do anything special to enable it; it's active by default on all OllaVPN connections, ensuring you're <strong>future-ready</strong> against potential threats from quantum computing. This forward-looking approach is a core part of how we protect your privacy, on our free plan.</p>
     
     <h2 id="request-walkthrough">Could you walk me through a connection with OllaVPN&#39;s PQC?</h2>
     <p class="short-answer">When you connect to OllaVPN, your device and our server establish a secure tunnel using a combination of classical and post-quantum encryption to protect your data from current and future threats.</p>
@@ -505,7 +505,7 @@ This entire process happens in milliseconds, completely transparent to you. The 
     <h2 id="defaults-and-configuration">Is OllaVPN&#39;s Post-Quantum Cryptography on by default?</h2>
     <p class="short-answer">Yes, OllaVPN's post-quantum cryptography is on by default for all users, with no configuration needed.</p>
 
-It's actually a core part of how OllaVPN works, not an optional extra you need to remember to switch on. From the moment you connect, your traffic is protected by a hybrid cryptographic handshake that includes a post-quantum algorithm. This means you get the best of both worlds: the proven security of traditional cryptography today, combined with forward-looking protection against potential future threats from quantum computers. It's built in for everyone, whether you're on the free plan or a Plus subscriber.
+It's actually a core part of how OllaVPN works, not an optional extra you need to remember to switch on. From the moment you connect, your traffic is protected by a hybrid cryptographic handshake that includes a post-quantum algorithm. This means you get the best of both worlds: the proven security of traditional cryptography today, combined with forward-looking protection against potential future threats from quantum computers. It's built in for everyone on our 100% free plan.
 
 We believe true privacy shouldn't require you to be a security expert. That's why we bake these advanced protections directly into the service. There's <strong>no user configuration needed</strong> for our post-quantum features; it just works automatically in the background. This ensures you always have the strongest possible encryption without having to tinker with settings or understand complex security concepts. It's designed for seamless integration into your everyday internet use.
 
@@ -527,7 +527,7 @@ This isn't something the average user will do daily, for sure. It requires a dec
 
 <p>The primary focus of PQC is to secure your data against decryption by future, powerful quantum computers. It's about ensuring that the information you send today can't be stored and decrypted years from now by an adversary with a quantum machine. That's a very specific, albeit critical, threat. Other vulnerabilities, like those related to software bugs or misconfigurations, still need to be addressed through diligent development and security auditing, which we take very seriously at OllaVPN.</p>
 
-<p>From a practical standpoint, the biggest "trade-off" for you is barely noticeable. There's a <strong>minimal performance impact</strong> with post-quantum algorithms compared to classical ones. We're talking milliseconds, not seconds, on a modern CPU. For our free users, your connection is capped at 10 Mbps anyway, so you absolutely won't feel any difference from PQC. For OllaVPN Plus users enjoying 10 Gbps, any overhead is still negligible – the bottleneck is almost always your internet connection or the server load, not the PQC itself. We've optimized our implementation to ensure that this crucial security upgrade doesn't slow you down.</p>
+<p>From a practical standpoint, the biggest "trade-off" for you is barely noticeable. There's a <strong>minimal performance impact</strong> with post-quantum algorithms compared to classical ones. We're talking milliseconds, not seconds, on a modern CPU. Your connection is capped at 10 Mbps, so you absolutely won't feel any difference from PQC; any overhead is negligible, and the bottleneck is almost always your internet connection or the server load, not the PQC itself. We've optimized our implementation to ensure that this crucial security upgrade doesn't slow you down.</p>
     
     <h2 id="pqc-and-other-primitives">How does PQC fit with OllaVPN&#39;s other privacy features?</h2>
     <p class="short-answer">Post-quantum cryptography adds a critical layer to OllaVPN's existing privacy features, creating a more robust and future-proof shield for your online activity.</p>
@@ -550,9 +550,9 @@ This isn't something the average user will do daily, for sure. It requires a dec
     <h2 id="free-plan-inclusion">Is Post-Quantum Cryptography included in OllaVPN&#39;s free plan?</h2>
     <p class="short-answer">Yes, OllaVPN includes post-quantum cryptography in its free plan, available to all users without any restrictions.</p>
 
-<p>That's right, post-quantum-ready encryption isn't a premium feature or an add-on you have to pay for. It's built into every connection you make with OllaVPN, whether you're using our free plan or OllaVPN Plus. We believe that robust, future-proof security should be a standard, not a luxury. You get it automatically, for $0 forever, with no card or email required.</p>
+<p>That's right, post-quantum-ready encryption isn't a premium feature or an add-on you have to pay for. It's built into every connection you make with OllaVPN, on our free plan. We believe that robust, future-proof security should be a standard, not a luxury. You get it automatically, for $0 forever, with no card or email required.</p>
 
-<p>You might be wondering how we can afford to offer such advanced security for free. The answer is simple: OllaVPN's free tier, which gives you 10 Mbps and access to every country in our network, is funded entirely by our Plus subscribers. When you upgrade to <a href="/plus">OllaVPN Plus</a> for just $2/month, you're not just getting 10 Gbps speeds on five devices; you're also directly supporting our mission to provide free, private, and secure internet access to everyone, worldwide. This model allows us to keep the free plan genuinely free, without resorting to ads or selling your data.</p>
+<p>You might be wondering how we can afford to offer such advanced security for free. The answer is simple: OllaVPN runs lean, self-operated infrastructure and gives you 10 Mbps with access to every country in our network — funded without ads and without selling your data. That's how we keep the free plan genuinely free for everyone, worldwide.</p>
     
 
     <h2 id="harvest-now-economics">Who actually does "harvest now, decrypt later," and at what cost?</h2>
@@ -630,7 +630,7 @@ This isn't something the average user will do daily, for sure. It requires a dec
       <h3>Want this on your device?</h3>
       <p>OllaVPN is free forever for 1 device. No card, no email tricks.</p>
       <a class="btn primary lg" href="/dl/">Get OllaVPN free <span class="arrow">&rarr;</span></a>
-      <span class="feature-cta-sub">Or <a href="/pricing">see all plans</a></span>
+      <span class="feature-cta-sub"><a href="/free-vpn">Why it's 100% free</a></span>
     </div>
 
       </article>
@@ -672,7 +672,7 @@ This isn't something the average user will do daily, for sure. It requires a dec
   <div class="wrap">
     <div class="top">
       <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
-      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../dl/">Download</a></li></ul></div>
       <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
       <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>

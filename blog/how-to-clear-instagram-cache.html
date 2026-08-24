@@ -1171,7 +1171,7 @@
         </div>
       </div>
 
-      <a href="/pricing">Pricing</a>
+      
 
       <div class="nav-item active">
         <a href="/blog/" class="nav-head">Blogs <span class="caret">&#9662;</span></a>
@@ -1301,7 +1301,7 @@ Sometimes, the simplest solution is the best: try restarting your device. A quic
 
 You're not alone if you've ever tried to clear your app cache and hit a snag. One frequent issue is simply **locating the right settings**. Android menus can vary a bit between phone manufacturers, so if you "can't find 'Storage & cache'", try looking under "Apps & notifications" or "App management" first, then selecting the specific app. Sometimes the wording is slightly different, but the core idea of managing app storage remains the same.
 
-Another common frustration is when you clear the cache for an app like Instagram, but it's "still slow after clearing". This often happens because the performance issue isn't cache-related. It might be due to a poor internet connection, too many apps running in the background, or the app itself needing an update. Clearing the cache is a good first step, but it's not a magic bullet for all performance woes. Remember, your free OllaVPN connection is 10 Mbps, so if you're on Plus, check that you're not trying to push 4K video over a weak Wi-Fi signal.
+Another common frustration is when you clear the cache for an app like Instagram, but it's "still slow after clearing". This often happens because the performance issue isn't cache-related. It might be due to a poor internet connection, too many apps running in the background, or the app itself needing an update. Clearing the cache is a good first step, but it's not a magic bullet for all performance woes. Remember, your free OllaVPN connection is 10 Mbps, so check that you're not trying to push 4K video over a weak Wi-Fi signal.
 
 Occasionally, an "app crashes during process" when you try to clear its cache. This is rare, but it can indicate a deeper problem with the app installation itself. Try restarting your phone first. If that doesn't work, uninstalling and reinstalling the app might be necessary, though this will likely delete any local data associated with it (like downloaded media). Finally, be very careful not to accidentally clear "data" instead of "cache". Clearing data resets the app to its factory state, logging you out and deleting all user settings and saved content, which can be a real headache to recover. Always double-check what you're tapping!
     
@@ -1321,7 +1321,7 @@ Your phone itself is usually your best bet for managing its own cache. Both Andr
 
 While there are many third-party "cleaner" apps out there promising to optimize your phone and clear cache, we strongly recommend you avoid them. Many are either unnecessary, ineffective, or worse, they can be privacy invasive, collecting data about your usage. They often run in the background, consuming battery and resources, and might even display unwanted ads. Stick to your phone's built-in storage manager; it's almost always the safest and most efficient choice.
 
-Clearing your cache is a good step towards maintaining your device's performance and privacy. For even broader digital privacy, especially when you're online, consider a tool like OllaVPN. While it doesn't clear your browser cache, it encrypts your internet connection, shielding your online activity from snoopers. Our free plan gives you 10 Mbps and access to every country in our network, or you can upgrade to <a href="/plus">OllaVPN Plus</a> for 10 Gbps on five devices for just $2 a month.
+Clearing your cache is a good step towards maintaining your device's performance and privacy. For even broader digital privacy, especially when you're online, consider a tool like OllaVPN. While it doesn't clear your browser cache, it encrypts your internet connection, shielding your online activity from snoopers. Our free plan gives you 10 Mbps and access to every country in our network — and OllaVPN is 100% free, with no paid tier or upsell.
     
     <h2 id="vpn-help">How does a VPN help (or not help) with clearing my Instagram cache?</h2>
     <p class="short-answer">A VPN doesn't directly clear your Instagram cache, but it can help with privacy and accessing content.</p>
@@ -1330,7 +1330,7 @@ A VPN's job is to encrypt your internet connection and route it through a server
 
 So, while a VPN won't magically wipe your app's temporary files, it's still incredibly useful for your Instagram experience. <strong>Privacy and Security</strong> are the biggest benefits. By encrypting your connection, OllaVPN prevents your internet service provider (ISP) or anyone else from snooping on your activity, including when you're scrolling through Instagram. This is especially important on public Wi-Fi networks where your data might be vulnerable.
 
-Another way a VPN helps is with <strong>Bypassing Geo-restrictions</strong>. If you're traveling and want to access Instagram content that's only available in your home country, or if certain features are region-locked, connecting to a VPN server in that country can often grant you access. OllaVPN's free plan offers 10 Mbps speed across every country in our network, with no data cap and absolutely no logs, helping you stay private and access content without limits. And if you need more speed for heavy use or want to protect five devices, <a href="/plus">OllaVPN Plus</a> gives you 10 Gbps and post-quantum-ready encryption for just $2 a month.
+Another way a VPN helps is with <strong>Bypassing Geo-restrictions</strong>. If you're traveling and want to access Instagram content that's only available in your home country, or if certain features are region-locked, connecting to a VPN server in that country can often grant you access. OllaVPN's free plan offers 10 Mbps speed across every country in our network, with no data cap and absolutely no logs, helping you stay private and access content without limits. And because OllaVPN is 100% free — no paid tier, no upsell — you get post-quantum-ready encryption at no cost.
     
     <h2 id="advanced-troubleshooting">What if my Instagram issues persist after clearing the cache?</h2>
     <p class="short-answer">If clearing Instagram's cache doesn't fix your issues, the next steps involve checking your app, network, device, and potentially reporting the problem to Instagram directly.</p>
@@ -1362,10 +1362,10 @@ The good news is that there's <strong>no harm in doing it often</strong>. Cleari
   <p><strong>No WebRTC leak.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit's IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN — either OllaVPN's leak prevention has failed (file a report at <code>security@ollavpn.com</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
   <h2 id="tier1-howto-troubleshoot">If a step fails, here's how to debug</h2>
   <p>The most common failure modes for any VPN setup task on Windows, macOS, or Android, in order of frequency:</p>
-  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. On Frankfurt the obfuscated MASQUE-on-port-443 transport works around many restrictive firewalls — switch to it in the country picker.</p>
+  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. Try our obfuscated connection mode in the app.</p>
   <p><strong>The VPN connects but the internet is broken.</strong> Almost always a DNS issue. The in-tunnel resolver hasn't taken precedence (sometimes after a macOS update or a Windows feature update, the supplemental DNS keys get cleared). Restarting the VPN typically fixes it; full disconnect and reconnect re-installs the DNS configuration.</p>
   <p><strong>Some apps work but others don't.</strong> Either the app has its own proxy settings configured separately (some corporate apps), or the app uses a protocol the VPN doesn't carry (very rare — almost everything is TCP/UDP and works fine through the tunnel). Check the app's settings before assuming the VPN is at fault.</p>
-  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice; if you need more, the Pro tier at $2/mo annual lifts it to 10 Gbps.</p>
+  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice — that ceiling is what keeps OllaVPN 100% free, with no paid tier.</p>
 
   <h2 id="tier1-about">About this guide</h2>
   <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
@@ -1524,7 +1524,7 @@ The good news is that there's <strong>no harm in doing it often</strong>. Cleari
   <div class="wrap">
     <div class="top">
       <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
-      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../dl/">Download</a></li></ul></div>
       <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
       <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>

@@ -154,7 +154,7 @@
       "name": "Will the VPN changes apply to all my Android devices?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No, you'll need to install and set up OllaVPN individually on each Android device you want to protect. However, with <a href=\"/plus\">OllaVPN Plus</a>, your single account covers up to five devices simultaneously, making it super convenient to secure your entire digital life across multiple gadgets."
+        "text": "No, you'll need to install and set up OllaVPN individually on each Android device you want to protect. Because OllaVPN is 100% free with no paid tier, you can install it on every device you own at no cost, making it super convenient to secure your entire digital life across multiple gadgets."
       }
     },
     {
@@ -1171,7 +1171,7 @@
         </div>
       </div>
 
-      <a href="/pricing">Pricing</a>
+      
 
       <div class="nav-item active">
         <a href="/blog/" class="nav-head">Blogs <span class="caret">&#9662;</span></a>
@@ -1339,7 +1339,7 @@ While privacy is key, a VPN also offers security and utility. You can use it for
 
 <p>When you're looking for a VPN, especially on Android where so many "free" options are actually data harvesters, the first thing to check is their <strong>privacy policy and logging practices</strong>. You want a provider with a strict <a href="/no-logs">no logs policy</a> – meaning they don't track your online activity, IP addresses, or connection timestamps. This is non-negotiable for true privacy. After that, look for strong encryption, ideally built on modern protocols like WireGuard, to keep your data safe from prying eyes.</p>
 
-<p>Next up is <strong>performance and network access</strong>. A VPN is only useful if it doesn't slow you to a crawl or limit where you can connect. OllaVPN offers a free tier with 10 Mbps speed, which is plenty for most browsing, streaming, and everyday use across our global network. If you need more horsepower, OllaVPN Plus boosts you to 10 Gbps on up to five devices for just $2/month. This funding model is how we keep the free tier truly free, without selling your data or running annoying ads.</p>
+<p>Next up is <strong>performance and network access</strong>. A VPN is only useful if it doesn't slow you to a crawl or limit where you can connect. OllaVPN offers a free tier with 10 Mbps speed, which is plenty for most browsing, streaming, and everyday use across our global network. OllaVPN is 100% free — one plan for everyone, with no paid tier and nothing to upgrade to. We keep it truly free by running lean, self-operated infrastructure, without selling your data or running annoying ads.</p>
 
 <p>Finally, consider the future. OllaVPN is built with <strong>post-quantum-ready</strong> encryption, preparing you for a world where even today's strongest encryption might be vulnerable to quantum computers. This forward-thinking approach, combined with robust security features and a commitment to privacy, helps ensure your Android device stays private and secure for the long haul. Don't settle for less when your digital life is on the line.</p>
     
@@ -1364,10 +1364,10 @@ While OllaVPN encrypts your connection, you should still exercise <strong>cautio
   <p><strong>No WebRTC leak.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit's IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN — either OllaVPN's leak prevention has failed (file a report at <code>security@ollavpn.com</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
   <h2 id="tier1-howto-troubleshoot">If a step fails, here's how to debug</h2>
   <p>The most common failure modes for any VPN setup task on Windows, macOS, or Android, in order of frequency:</p>
-  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. On Frankfurt the obfuscated MASQUE-on-port-443 transport works around many restrictive firewalls — switch to it in the country picker.</p>
+  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. Try our obfuscated connection mode in the app.</p>
   <p><strong>The VPN connects but the internet is broken.</strong> Almost always a DNS issue. The in-tunnel resolver hasn't taken precedence (sometimes after a macOS update or a Windows feature update, the supplemental DNS keys get cleared). Restarting the VPN typically fixes it; full disconnect and reconnect re-installs the DNS configuration.</p>
   <p><strong>Some apps work but others don't.</strong> Either the app has its own proxy settings configured separately (some corporate apps), or the app uses a protocol the VPN doesn't carry (very rare — almost everything is TCP/UDP and works fine through the tunnel). Check the app's settings before assuming the VPN is at fault.</p>
-  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice; if you need more, the Pro tier at $2/mo annual lifts it to 10 Gbps.</p>
+  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice — and it's the same for everyone, since OllaVPN is 100% free with no paid tier.</p>
 
   <h2 id="tier1-about">About this guide</h2>
   <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
@@ -1412,7 +1412,7 @@ While OllaVPN encrypts your connection, you should still exercise <strong>cautio
       <p>The easiest way is to use an &#39;IP address checker&#39; website. Check your IP before connecting to OllaVPN, then connect and check it again. If your IP address and reported location have changed, you&#39;re good to go! Our app also clearly shows a &#34;Connected&#34; status, giving you peace of mind.</p>
       
       <h3>Will the VPN changes apply to all my Android devices?</h3>
-      <p>No, you&#39;ll need to install and set up OllaVPN individually on each Android device you want to protect. However, with &lt;a href=&#34;/plus&#34;&gt;OllaVPN Plus&lt;/a&gt;, your single account covers up to five devices simultaneously, making it super convenient to secure your entire digital life across multiple gadgets.</p>
+      <p>No, you&#39;ll need to install and set up OllaVPN individually on each Android device you want to protect. Because OllaVPN is 100% free with no paid tier, you can install it on every device you own at no cost, making it super convenient to secure your entire digital life across multiple gadgets.</p>
       
       <h3>What&#39;s the difference between this and other VPN setup methods?</h3>
       <p>Using a dedicated app like OllaVPN is the most straightforward and secure method. Other options, like manual setup, are often more complex, lack crucial features like a kill switch, and don&#39;t offer the same level of convenience or our post-quantum ready encryption. We make it simple and safe.</p>
@@ -1526,7 +1526,7 @@ While OllaVPN encrypts your connection, you should still exercise <strong>cautio
   <div class="wrap">
     <div class="top">
       <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
-      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../dl/">Download</a></li></ul></div>
       <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
       <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>

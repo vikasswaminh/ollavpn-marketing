@@ -146,7 +146,7 @@
       "name": "Will I get the full 10 Mbps free speed in QUIC mode?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, you will. The 10 Mbps speed cap on OllaVPN's free plan applies regardless of whether you're using standard WireGuard or QUIC mode. So, you get the same reliable speed for browsing, streaming HD video, and video calls, even with QUIC's enhanced block resistance. If you need more, OllaVPN Plus offers 10 Gbps."
+        "text": "Yes, you will. The 10 Mbps speed cap on OllaVPN's free plan applies regardless of whether you're using standard WireGuard or QUIC mode. So, you get the same reliable speed for browsing, streaming HD video, and video calls, even with QUIC's enhanced block resistance. That 10 Mbps cap is the same for everyone — OllaVPN is 100% free, with no paid tier and nothing to upgrade to."
       }
     },
     {
@@ -346,7 +346,7 @@
         </div>
       </div>
 
-      <a href="/pricing">Pricing</a>
+      
 
       <div class="nav-item active">
         <a href="/blog/" class="nav-head">Blogs <span class="caret">&#9662;</span></a>
@@ -503,7 +503,7 @@ For most users, especially on stable, unrestricted
     <h2 id="quic-latency">What kind of latency does QUIC mode add compared to plain WireGuard?</h2>
     <p class="short-answer">QUIC mode adds a negligible amount of latency compared to plain WireGuard in most scenarios, and you're unlikely to notice it unless you're on a very high-speed connection.</p>
 <p>When you're using OllaVPN's QUIC mode, you're essentially adding another layer on top of WireGuard. WireGuard itself is already incredibly efficient and fast, but QUIC is designed to handle tricky network conditions even better. This extra layer does introduce a tiny bit of processing overhead, which technically translates to a fractional increase in latency. However, we're talking about milliseconds here, not whole seconds.</p>
-<p>For most users, especially those on our free 10 Mbps plan, this latency impact will be completely imperceptible. Your internet connection's inherent latency, the distance to the VPN server, and other factors will have a far greater effect on your overall speed experience. You'd really only start to notice this kind of overhead if you were pushing the limits on a very fast connection, like the 10 Gbps available with OllaVPN Plus, where every millisecond might theoretically count for specific, latency-sensitive applications.</p>
+<p>For most users, especially those on our free 10 Mbps plan, this latency impact will be completely imperceptible. Your internet connection's inherent latency, the distance to the VPN server, and other factors will have a far greater effect on your overall speed experience. You'd really only start to notice this kind of overhead if you were pushing the limits on a very fast, high-bandwidth connection, where every millisecond might theoretically count for specific, latency-sensitive applications.</p>
 <p>Think of it this way: <strong>Latency vs. Reliability</strong>. QUIC isn't primarily about making things faster in perfect conditions; it's about making them more reliable and consistent in imperfect conditions. So, while there's a theoretical latency overhead, the trade-off is a connection that's much more resilient to packet loss and network congestion, which can actually make your overall experience feel faster and smoother when your network is struggling.</p>
     
     <h2 id="quic-vs-obfuscation">How does QUIC compare to other obfuscation methods like Shadowsocks?</h2>
@@ -518,11 +518,11 @@ While Shadowsocks and stunnel have their uses and can be quite effective in many
     <h2 id="quic-free-plan">Is QUIC mode included in OllaVPN&#39;s free plan?</h2>
     <p class="short-answer">Yes, QUIC mode is fully included in OllaVPN's free plan, just like every other feature we offer.</p>
 
-<p>We don't hold back any features for our free users, including advanced options like QUIC mode. You get access to every country in our network, the kill switch, in-tunnel DNS, and our post-quantum-ready encryption, all for $0 forever. The only real difference between our free plan and OllaVPN Plus is speed: you get a consistent 10 Mbps on the free plan, which is plenty for HD streaming, browsing, and most gaming.</p>
+<p>We don't hold back any features for our free users, including advanced options like QUIC mode. You get access to every country in our network, the kill switch, in-tunnel DNS, and our post-quantum-ready encryption, all for $0 forever. The 10 Mbps speed cap is the same for everyone — OllaVPN is 100% free, with no paid tier — and it's plenty for HD streaming, browsing, and most gaming.</p>
 
 <p>QUIC mode is particularly useful if you're on a very restrictive network, like some public Wi-Fi hotspots or corporate firewalls. It uses UDP, which is often less aggressively blocked than TCP, making it easier for you to establish and maintain a VPN connection. We want everyone to have the best possible experience, regardless of their network conditions, which is why it's a core part of the free offering.</p>
 
-<p>You can enable QUIC mode right within the OllaVPN app, and it works seamlessly without any special configuration. There's no catch, no hidden fees, and no need for a credit card. We don't log your activity or sell your data; the free plan is truly <a href="/free-vpn-explained">funded by our Plus subscribers</a>, ensuring you get a private, secure connection without compromise.</p>
+<p>You can enable QUIC mode right within the OllaVPN app, and it works seamlessly without any special configuration. There's no catch, no hidden fees, and no need for a credit card. We don't log your activity or sell your data; the free plan is truly <a href="/free-vpn-explained">funded by lean, self-operated infrastructure</a>, ensuring you get a private, secure connection without compromise.</p>
     
     <h2 id="when-to-use-wireguard">When might you choose plain WireGuard over QUIC mode?</h2>
     <p class="short-answer">You'd choose plain WireGuard over QUIC mode when you're on an unrestricted network and want the absolute maximum raw speed and minimal overhead.</p>
@@ -531,7 +531,7 @@ QUIC mode is fantastic for getting around tough network restrictions, but it doe
 
 Think of it this way: QUIC is like putting your car on a special transport truck to get it past a tricky roadblock. It works great, but if there's no roadblock, you're better off just driving the car directly. For day-to-day browsing, streaming, and even gaming on an open network, the difference might not be noticeable, but for tasks where every millisecond counts, or when you're pushing the limits of your connection, <strong>raw speed</strong> can be a factor.
 
-This is especially true if you're a <a href="/plus">OllaVPN Plus</a> subscriber, where you have access to speeds up to 10 Gbps. On those kinds of connections, even the slightest additional overhead from QUIC could theoretically impact your maximum throughput. For most users on <strong>unrestricted networks</strong>, WireGuard offers a streamlined, secure, and incredibly fast VPN experience with minimal overhead.
+This is especially true on a very fast underlying connection, where even the slightest additional overhead from QUIC could theoretically impact your maximum throughput. For most users on <strong>unrestricted networks</strong>, WireGuard offers a streamlined, secure, and incredibly fast VPN experience with minimal overhead.
     
     <h2 id="post-quantum-ready">What does &#39;post-quantum-ready&#39; encryption mean for QUIC mode?</h2>
     <p class="short-answer">For QUIC mode, 'post-quantum-ready' encryption means your data is protected against potential decryption by future quantum computers, even if those computers can break traditional encryption methods.</p>
@@ -583,7 +583,7 @@ This is especially true if you're a <a href="/plus">OllaVPN Plus</a> subscriber,
       <p>It has a significantly higher chance of working than standard VPN protocols. While no VPN can guarantee 100% uptime in heavily-restricted regions like China due to evolving censorship, QUIC&#39;s ability to mimic HTTPS gives it a strong advantage in bypassing sophisticated firewalls. It&#39;s definitely worth trying.</p>
       
       <h3>Will I get the full 10 Mbps free speed in QUIC mode?</h3>
-      <p>Yes, you will. The 10 Mbps speed cap on OllaVPN&#39;s free plan applies regardless of whether you&#39;re using standard WireGuard or QUIC mode. So, you get the same reliable speed for browsing, streaming HD video, and video calls, even with QUIC&#39;s enhanced block resistance. If you need more, OllaVPN Plus offers 10 Gbps.</p>
+      <p>Yes, you will. The 10 Mbps speed cap on OllaVPN&#39;s free plan applies regardless of whether you&#39;re using standard WireGuard or QUIC mode. So, you get the same reliable speed for browsing, streaming HD video, and video calls, even with QUIC&#39;s enhanced block resistance. That 10 Mbps cap is the same for everyone — OllaVPN is 100% free, with no paid tier and nothing to upgrade to.</p>
       
       <h3>Is QUIC encrypted the same way as WireGuard?</h3>
       <p>QUIC uses TLS 1.3 for its encryption, which is very robust and widely used for secure web traffic. OllaVPN layers its post-quantum-ready encryption on top of this, ensuring your data is secured to the highest standards, similar to how WireGuard handles its encryption. Both are extremely secure.</p>
@@ -677,7 +677,7 @@ This is especially true if you're a <a href="/plus">OllaVPN Plus</a> subscriber,
   <div class="wrap">
     <div class="top">
       <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
-      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../dl/">Download</a></li></ul></div>
       <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
       <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>
