@@ -154,7 +154,7 @@
       "name": "Will the changes apply to all my devices automatically?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No, this setup is specific to the Linux machine you're working on. Each device you want to connect via WireGuard will need its own installation and configuration. However, with OllaVPN Plus, you can use your account on up to five devices concurrently, each with its own WireGuard setup and a 10 Gbps connection."
+        "text": "No, this setup is specific to the Linux machine you're working on. Each device you want to connect via WireGuard will need its own installation and configuration. Because OllaVPN is 100% free with no paid tier, you can use your account on every device you own — each with its own WireGuard setup and the same 10 Mbps connection."
       }
     },
     {
@@ -1171,7 +1171,7 @@
         </div>
       </div>
 
-      <a href="/pricing">Pricing</a>
+      
 
       <div class="nav-item active">
         <a href="/blog/" class="nav-head">Blogs <span class="caret">&#9662;</span></a>
@@ -1314,16 +1314,16 @@ For the more technically inclined, you can verify your WireGuard interface direc
 
 <p>Beyond NetworkManager, you'll find various <strong>GUI clients</strong> developed by the community that offer a more visual way to manage WireGuard. These applications often provide a user-friendly interface for importing configurations, monitoring your connection status, and switching between different VPN profiles. If you're comfortable with the command line but want to automate repetitive tasks, simple <strong>shell scripts</strong> can also be incredibly useful. You can write a small script to bring up or take down your WireGuard interface with a single command, or even to automatically switch configurations based on your location or time of day.</p>
 
-<p>At OllaVPN, we focus on making our setup as straightforward as possible, no matter how you connect. For those who opt for <a href="/plus">OllaVPN Plus</a>, you get dedicated applications that handle all the WireGuard configuration for you, simplifying the process of getting that 10 Gbps connection up and running across up to five devices. But even on our free plan, we aim to provide configurations that are easy to drop into these existing tools, so you can spend less time configuring and more time browsing securely.</p>
+<p>At OllaVPN, we focus on making our setup as straightforward as possible, no matter how you connect. Because OllaVPN is 100% free, everyone gets the same dedicated applications that handle all the WireGuard configuration for you, simplifying the process of getting connected. On our free plan we also provide configurations that are easy to drop into these existing tools, so you can spend less time configuring and more time browsing securely.</p>
     
     <h2 id="vpn-help-with-task">How does a VPN like OllaVPN fit into this WireGuard setup?</h2>
     <p class="short-answer">OllaVPN provides the secure, private server infrastructure and configuration files you need to easily connect your local WireGuard client to our network, ensuring your traffic is encrypted and your IP address is hidden.</p>
 
 <p>You're already familiar with setting up WireGuard if you're reading this, which means you know you need two things: a client (the app on your device) and a server endpoint. OllaVPN handles the server part entirely. We run the global network of servers, maintain the infrastructure, and generate the necessary <a href="/download">OllaVPN config files</a> that contain all the server-side details like the server endpoint and its public key. All you do is import our config into your WireGuard client, and you're connected.</p>
 
-<p>This setup gives you all the benefits of WireGuard's efficiency and modern cryptography, combined with OllaVPN's commitment to your privacy and security. We operate a strict no logs policy, meaning we don't track your online activities or collect any data that could identify you. This is crucial for privacy — if there's nothing to log, there's nothing to share or sell. We never engage in data sale, because our free service is funded by our Plus subscribers, not by monetizing your information.</p>
+<p>This setup gives you all the benefits of WireGuard's efficiency and modern cryptography, combined with OllaVPN's commitment to your privacy and security. We operate a strict no logs policy, meaning we don't track your online activities or collect any data that could identify you. This is crucial for privacy — if there's nothing to log, there's nothing to share or sell. We never engage in data sale, because our free service runs on lean, self-operated infrastructure, not by monetizing your information.</p>
 
-<p>So, while you manage your local WireGuard client, OllaVPN provides the backbone: a network designed for privacy, security, and performance. You get robust encryption, a hidden IP address, and access to our global network, all without needing to set up or maintain your own server. And because we believe everyone deserves privacy, our basic service is <a href="/pricing">free forever</a> – as in $0 forever – with no ads, no data caps, and no hidden catches.</p>
+<p>So, while you manage your local WireGuard client, OllaVPN provides the backbone: a network designed for privacy, security, and performance. You get robust encryption, a hidden IP address, and access to our global network, all without needing to set up or maintain your own server. And because we believe everyone deserves privacy, our basic service is <a href="/free-vpn">free forever</a> – as in $0 forever – with no ads, no data caps, and no hidden catches.</p>
     
     <h2 id="undo-changes">Can I easily undo the WireGuard setup if I need to?</h2>
     <p class="short-answer">Yes, undoing the WireGuard setup is straightforward, and involves stopping the service, removing the configuration, and uninstalling the tools.</p>
@@ -1350,7 +1350,7 @@ Finally, let's talk about **DNS settings**. DNS (Domain Name System) is how your
 
 <p>Another advanced technique involves setting up <strong>multiple interfaces</strong>. Imagine running two WireGuard tunnels simultaneously for different purposes – perhaps one to a specific country for geo-restricted content and another for general, privacy-focused browsing. While our app doesn't directly support this configuration, the underlying WireGuard protocol allows for it if you're comfortable with manual setup.</p>
 
-<p>Sometimes, performance issues can be resolved with a simple <strong>MTU adjustment</strong>. If you're experiencing packet loss or slow speeds on certain networks, tweaking the Maximum Transmission Unit can make a difference. And don't forget our <strong>QUIC option</strong>; if you're on a highly restrictive network that might be blocking standard WireGuard UDP traffic, switching to QUIC can often provide a more stable and faster connection. For those who truly push their network to the limit, remember that <a href="/plus">OllaVPN Plus</a> offers 10 Gbps speeds on five devices, making it an excellent choice for bandwidth-intensive tasks.</p>
+<p>Sometimes, performance issues can be resolved with a simple <strong>MTU adjustment</strong>. If you're experiencing packet loss or slow speeds on certain networks, tweaking the Maximum Transmission Unit can make a difference. And don't forget our <strong>QUIC option</strong>; if you're on a highly restrictive network that might be blocking standard WireGuard UDP traffic, switching to QUIC can often provide a more stable and faster connection. OllaVPN is 100% free with a single 10 Mbps plan, so the QUIC option and these tweaks are available to everyone at no cost, whatever your network demands.</p>
     
 
     
@@ -1364,10 +1364,10 @@ Finally, let's talk about **DNS settings**. DNS (Domain Name System) is how your
   <p><strong>No WebRTC leak.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit's IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN — either OllaVPN's leak prevention has failed (file a report at <code>security@ollavpn.com</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
   <h2 id="tier1-howto-troubleshoot">If a step fails, here's how to debug</h2>
   <p>The most common failure modes for any VPN setup task on Windows, macOS, or Android, in order of frequency:</p>
-  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. On Frankfurt the obfuscated MASQUE-on-port-443 transport works around many restrictive firewalls — switch to it in the country picker.</p>
+  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. Try our obfuscated connection mode in the app.</p>
   <p><strong>The VPN connects but the internet is broken.</strong> Almost always a DNS issue. The in-tunnel resolver hasn't taken precedence (sometimes after a macOS update or a Windows feature update, the supplemental DNS keys get cleared). Restarting the VPN typically fixes it; full disconnect and reconnect re-installs the DNS configuration.</p>
   <p><strong>Some apps work but others don't.</strong> Either the app has its own proxy settings configured separately (some corporate apps), or the app uses a protocol the VPN doesn't carry (very rare — almost everything is TCP/UDP and works fine through the tunnel). Check the app's settings before assuming the VPN is at fault.</p>
-  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice; if you need more, the Pro tier at $2/mo annual lifts it to 10 Gbps.</p>
+  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice — and it's the same for everyone, since OllaVPN is 100% free with no paid tier.</p>
 
   <h2 id="tier1-about">About this guide</h2>
   <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
@@ -1412,7 +1412,7 @@ Finally, let's talk about **DNS settings**. DNS (Domain Name System) is how your
       <p>You can verify it in a few ways. Use `wg show` to see the connection status, check your public IP address with `curl ifconfig.me` (it should show your VPN server&#39;s IP), and run a DNS leak test. We&#39;ll cover these verification steps in detail to make sure you&#39;re truly secure and connected.</p>
       
       <h3>Will the changes apply to all my devices automatically?</h3>
-      <p>No, this setup is specific to the Linux machine you&#39;re working on. Each device you want to connect via WireGuard will need its own installation and configuration. However, with OllaVPN Plus, you can use your account on up to five devices concurrently, each with its own WireGuard setup and a 10 Gbps connection.</p>
+      <p>No, this setup is specific to the Linux machine you&#39;re working on. Each device you want to connect via WireGuard will need its own installation and configuration. Because OllaVPN is 100% free with no paid tier, you can use your account on every device you own — each with its own WireGuard setup and the same 10 Mbps connection.</p>
       
       <h3>What&#39;s the difference between this and other WireGuard methods?</h3>
       <p>This guide focuses on the direct, command-line method using `wg-quick`, which is the most common and robust way to set up WireGuard. Other methods might involve graphical user interfaces or NetworkManager plugins, but they usually build on the same underlying configuration. This manual approach gives you the most control and understanding.</p>
@@ -1526,7 +1526,7 @@ Finally, let's talk about **DNS settings**. DNS (Domain Name System) is how your
   <div class="wrap">
     <div class="top">
       <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
-      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../dl/">Download</a></li></ul></div>
       <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
       <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>

@@ -1171,7 +1171,7 @@
         </div>
       </div>
 
-      <a href="/pricing">Pricing</a>
+      
 
       <div class="nav-item active">
         <a href="/blog/" class="nav-head">Blogs <span class="caret">&#9662;</span></a>
@@ -1323,7 +1323,7 @@ Finally, you can <strong>check username availability</strong> on Reddit's sign-u
 
 <p>However, deleting an account isn't about *how* you connect, but about *who* you are to the platform. Reddit, like most online services, identifies you by your username and associated email address, not your IP address. So, whether you're connected through a VPN or not, you'll still need to log into your account and follow Reddit's specific steps to initiate deletion. Using a VPN won't make the "delete account" button appear faster, nor will it bypass any waiting periods Reddit might impose before the account is permanently removed.</p>
 
-<p>What a VPN *does* do is ensure your activities leading up to and during the deletion request are private. If you're concerned about your ISP or other third parties observing your final interactions with Reddit, OllaVPN provides that layer of <strong>data encryption</strong> and <strong>IP address masking</strong>. We don't keep logs, so your activity remains private. Remember, you can always protect your privacy with our <a href="/free">10 Mbps free plan</a>, which gives you access to every country in our network for $0 forever, or boost your speeds to 10 Gbps with <a href="/plus">OllaVPN Plus</a> if you need to download things quickly before you go.</p>
+<p>What a VPN *does* do is ensure your activities leading up to and during the deletion request are private. If you're concerned about your ISP or other third parties observing your final interactions with Reddit, OllaVPN provides that layer of <strong>data encryption</strong> and <strong>IP address masking</strong>. We don't keep logs, so your activity remains private. Remember, you can always protect your privacy with our <a href="/free">10 Mbps free plan</a>, which gives you access to every country in our network for $0 forever — it's 100% free, with no paid tier and nothing to upgrade to.</p>
     
     <h2 id="before-you-delete">What should I consider before permanently deleting my Reddit account?</h2>
     <p class="short-answer">Before permanently deleting your Reddit account, you should download your data, unlink third-party apps, consider the finality of losing karma and posts, and understand that the action is irreversible.</p>
@@ -1364,10 +1364,10 @@ The main takeaway here is that while you can absolutely get back on Reddit, your
   <p><strong>No WebRTC leak.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit's IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN — either OllaVPN's leak prevention has failed (file a report at <code>security@ollavpn.com</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
   <h2 id="tier1-howto-troubleshoot">If a step fails, here's how to debug</h2>
   <p>The most common failure modes for any VPN setup task on Windows, macOS, or Android, in order of frequency:</p>
-  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. On Frankfurt the obfuscated MASQUE-on-port-443 transport works around many restrictive firewalls — switch to it in the country picker.</p>
+  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. Try our obfuscated connection mode in the app.</p>
   <p><strong>The VPN connects but the internet is broken.</strong> Almost always a DNS issue. The in-tunnel resolver hasn't taken precedence (sometimes after a macOS update or a Windows feature update, the supplemental DNS keys get cleared). Restarting the VPN typically fixes it; full disconnect and reconnect re-installs the DNS configuration.</p>
   <p><strong>Some apps work but others don't.</strong> Either the app has its own proxy settings configured separately (some corporate apps), or the app uses a protocol the VPN doesn't carry (very rare — almost everything is TCP/UDP and works fine through the tunnel). Check the app's settings before assuming the VPN is at fault.</p>
-  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice; if you need more, the Pro tier at $2/mo annual lifts it to 10 Gbps.</p>
+  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice — and it's the same for everyone, since OllaVPN is 100% free with no paid tier.</p>
 
   <h2 id="tier1-about">About this guide</h2>
   <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
@@ -1526,7 +1526,7 @@ The main takeaway here is that while you can absolutely get back on Reddit, your
   <div class="wrap">
     <div class="top">
       <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
-      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../dl/">Download</a></li></ul></div>
       <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
       <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>

@@ -1171,7 +1171,7 @@
         </div>
       </div>
 
-      <a href="/pricing">Pricing</a>
+      
 
       <div class="nav-item active">
         <a href="/blog/" class="nav-head">Blogs <span class="caret">&#9662;</span></a>
@@ -1333,7 +1333,7 @@ A VPN protects privacy and security by encrypting your internet traffic and rout
 
 Sometimes, though, an ISP might be throttling your connection for certain activities, like streaming or gaming. In these cases, a VPN can actually help. Since your ISP can't see what you're doing, they can't selectively slow down your traffic, potentially leading to a more consistent experience. Also, if there's a congested route between you and a specific service, the VPN might find a better path. <strong>How OllaVPN helps you troubleshoot</strong>: Our app includes features like <a href="/features#protocol-switching">protocol switching</a>, which can sometimes find a more stable connection method if one protocol is struggling, and a <a href="/features#kill-switch">kill switch</a> to prevent accidental data leaks if your connection drops.
 
-If you're using our free tier, you get a reliable 10 Mbps connection across our entire network, which is enough for most daily tasks. If you need more speed for heavy downloads or 4K streaming and you're experiencing slowdowns you suspect are related to bandwidth, OllaVPN Plus offers 10 Gbps on up to five devices for just $2 a month. This upgrade can help you rule out VPN speed as a bottleneck, ensuring your VPN isn't the cause of your connection woes.
+If you're using our free tier, you get a reliable 10 Mbps connection across our entire network, which is enough for most daily tasks. OllaVPN is 100% free — one plan, $0, no paid tier — so the 10 Mbps cap applies to everyone. If you're experiencing slowdowns you suspect are related to bandwidth, testing on a different network briefly can help you rule out VPN speed as a bottleneck, ensuring your VPN isn't the cause of your connection woes.
     
     <h2 id="why-ollavpn-connects">What makes OllaVPN reliable when other VPNs struggle to connect?</h2>
     <p class="short-answer">OllaVPN uses modern protocols like WireGuard and QUIC, coupled with in-tunnel DNS and post-quantum-ready encryption, to maintain stable connections where older VPNs often fail.</p>
@@ -1342,7 +1342,7 @@ If you're using our free tier, you get a reliable 10 Mbps connection across our 
 
 <p>For even tougher network conditions, we offer a <strong>QUIC option</strong>. This protocol, originally designed by Google for web browsing, is fantastic at punching through highly restrictive networks and maintaining a stable connection, even when your underlying internet is flaky. Combined with <strong>in-tunnel DNS</strong>, which prevents DNS leaks and ensures your requests go through our encrypted tunnel, it means you're far less likely to get blocked or experience connection drops.</p>
 
-<p>Another stability factor is our commitment to real privacy. Since we operate a strict <strong>no logs</strong> policy and fund our service through our <a href="/plus">OllaVPN Plus</a> subscribers (who get 10 Gbps for just $2/month on five devices) rather than selling your data or running ads, we have no incentive to complicate our network with unnecessary tracking that can introduce instability. You get a clean, fast, and private connection, <strong>free forever</strong> at <strong>10 Mbps</strong>, across <strong>every country in our network</strong>, secured by <strong>post-quantum-ready encryption</strong> that's built for the long haul.</p>
+<p>Another stability factor is our commitment to real privacy. Since we operate a strict <strong>no logs</strong> policy and keep the service running on lean, self-operated infrastructure rather than selling your data or running ads, we have no incentive to complicate our network with unnecessary tracking that can introduce instability. You get a clean, fast, and private connection, <strong>free forever</strong> at <strong>10 Mbps</strong>, across <strong>every country in our network</strong>, secured by <strong>post-quantum-ready encryption</strong> that's built for the long haul.</p>
     
     <h2 id="preventative-measures">How can I prevent my VPN from not connecting in the future?</h2>
     <p class="short-answer">You can prevent future VPN connection issues by regularly updating your app, ensuring a strong internet connection, and understanding potential network restrictions.</p>
@@ -1374,10 +1374,10 @@ Before you contact them, try to be prepared. Note down any <strong>specific erro
   <p><strong>No WebRTC leak.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit's IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN — either OllaVPN's leak prevention has failed (file a report at <code>security@ollavpn.com</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
   <h2 id="tier1-howto-troubleshoot">If a step fails, here's how to debug</h2>
   <p>The most common failure modes for any VPN setup task on Windows, macOS, or Android, in order of frequency:</p>
-  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. On Frankfurt the obfuscated MASQUE-on-port-443 transport works around many restrictive firewalls — switch to it in the country picker.</p>
+  <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard's default UDP/51820 port. Try a different network briefly to confirm it's network-side. Try our obfuscated connection mode in the app.</p>
   <p><strong>The VPN connects but the internet is broken.</strong> Almost always a DNS issue. The in-tunnel resolver hasn't taken precedence (sometimes after a macOS update or a Windows feature update, the supplemental DNS keys get cleared). Restarting the VPN typically fixes it; full disconnect and reconnect re-installs the DNS configuration.</p>
   <p><strong>Some apps work but others don't.</strong> Either the app has its own proxy settings configured separately (some corporate apps), or the app uses a protocol the VPN doesn't carry (very rare — almost everything is TCP/UDP and works fine through the tunnel). Check the app's settings before assuming the VPN is at fault.</p>
-  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice; if you need more, the Pro tier at $2/mo annual lifts it to 10 Gbps.</p>
+  <p><strong>Speed is much slower than expected.</strong> The exit you picked is either congested or geographically far from you. Try a closer exit (the country picker shows latency). The free-tier 10 Mbps cap is the ceiling regardless of exit choice — and it's the same for everyone, since OllaVPN is 100% free with no paid tier.</p>
 
   <h2 id="tier1-about">About this guide</h2>
   <p>Maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. Fact-checked by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer. We refresh this post quarterly so its facts, recommendations, and competitor comparisons stay accurate as the category evolves. The last full re-evaluation was 23 June 2026; the next is scheduled for September 2026.</p>
@@ -1536,7 +1536,7 @@ Before you contact them, try to be prepared. Note down any <strong>specific erro
   <div class="wrap">
     <div class="top">
       <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">Free, post-quantum-ready VPN.</p></div>
-      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../dl/">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../dl/">Download</a></li></ul></div>
       <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
       <div><h4>Project</h4><ul><li><a href="./">Blog</a></li><li><a href="#">Source repo</a></li><li><a href="#">Status</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy (draft)</a></li><li><a href="/warrant-canary">Warrant canary (template)</a></li></ul></div>

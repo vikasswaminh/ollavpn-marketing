@@ -19,6 +19,8 @@
 # ─── Pricing removed 2026-08-24 (product is 100% free) ───
 /pricing                 /free-vpn     301
 /pricing.html            /free-vpn     301
+/plus                    /free-vpn     301
+/plus.html               /free-vpn     301
 
 # Clean-URL canonicalization: extension-stripped is the sitemap
 # canonical (see sitemap.xml). CF Pages auto-serves /pqc → /pqc.html,
