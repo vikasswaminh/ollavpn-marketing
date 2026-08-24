@@ -32,131 +32,70 @@
 <link rel="stylesheet" href="/jetbrains-mono.css" />
 <link rel="stylesheet" href="../styles.css?v=20260820_v1" />
 <style>
-  .page-hero { padding: 88px 0 32px; position: relative; overflow: hidden; }
-  .page-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.12), transparent 60%); pointer-events:none; }
+  .page-hero { padding: 30px 0 28px; position: relative; overflow: hidden; }
+  .page-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(99,102,241,0.10), transparent 60%); pointer-events:none; }
   .page-hero .wrap { position: relative; }
+  .page-hero .chip { font-family: var(--mono); font-size: 14px; padding: 6px 14px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .page-hero .eyebrow { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .page-hero h1, .page-hero .h1, .page-hero .h-display.h1 { font-family: var(--display); font-size: clamp(34px, 4.5vw, 46px) !important; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin: 8px 0 8px !important; color: #FFFFFF; }
+  .page-hero p.lede, .page-hero p.lead { font-size: 17.5px !important; color: var(--text-dim) !important; line-height: 1.55; margin: 0; max-width: 760px; }
 
-  /* Recent Blogs Showcase Section */
-  .recent-blogs-section {
-    margin-bottom: 40px;
-  }
-  .recent-blogs-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-  .recent-blogs-title {
-    font-family: var(--display);
-    font-size: 20px;
-    font-weight: 700;
-    color: #FFFFFF;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  
-  .recent-card {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 22px;
-    border: 1px solid rgba(99, 102, 241, 0.35);
-    background: linear-gradient(180deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
-    border-radius: 12px;
-    text-decoration: none;
-    color: inherit;
-    transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
-    position: relative;
-  }
-  .recent-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--red);
-    box-shadow: 0 8px 24px -6px rgba(99, 102, 241, 0.3);
-  }
-  .recent-card .tag-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  .recent-card .tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--red);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .recent-card .date {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-mute);
-  }
-  .recent-card h3 {
-    font-family: var(--display);
-    font-size: 16.5px;
-    font-weight: 600;
-    line-height: 1.35;
-    color: #FFFFFF !important;
-    margin: 0 0 10px;
-  }
-  .recent-card p {
-    font-size: 13px;
-    color: #E2E8F0 !important;
-    line-height: 1.55;
-    margin: 0 0 14px;
-    flex-grow: 1;
-  }
-  .recent-card .read-link {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    color: var(--red);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-  }
-
+  .section-sm .wrap, .page-hero .wrap { max-width: 1440px; padding: 0 58px; }
   .blog-layout {
     display: grid;
-    grid-template-columns: 240px minmax(0, 1fr);
-    gap: 36px;
+    grid-template-columns: 390px minmax(0, 1fr);
+    gap: 24px;
     align-items: start;
     position: relative;
     z-index: 1;
+    margin-top: 14px;
   }
   .blog-sidebar {
     position: sticky;
-    top: 80px;
+    top: 74px;
+    align-self: start;
+    height: fit-content;
+    max-height: calc(100vh - 84px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(99, 102, 241, 0.4) transparent;
     font-size: 14px;
-    z-index: 10;
+    z-index: 30;
+    padding-right: 6px;
   }
-  .blog-sidebar h4 {
+  .blog-sidebar h4, .grid-header h4 {
     font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 11.5px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--text-mute);
-    margin: 0 0 12px;
-    padding-bottom: 8px;
+    margin: 0 0 10px;
+    padding-bottom: 6px;
     border-bottom: 1px solid var(--line);
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  .blog-sidebar ul { list-style: none; padding: 0; margin: 0 0 32px; }
+  .grid-header {
+    margin-bottom: 12px;
+  }
+  .blog-sidebar ul { list-style: none; padding: 0; margin: 0 0 16px; }
   .blog-sidebar li { margin: 0; }
   .blog-sidebar button.side-filter-btn {
     background: none;
-    border: none;
+    border: 1px solid transparent;
     cursor: pointer !important;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 14.5px;
     color: var(--text-dim);
     text-align: left;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 8px 12px;
+    padding: 7px 15px;
     margin: 2px 0;
     border-radius: 8px;
     transition: all .15s ease;
@@ -167,13 +106,17 @@
     pointer-events: auto !important;
   }
   .blog-sidebar button.side-filter-btn:hover {
-    color: var(--text);
-    background: rgba(255,255,255,0.06);
+    color: #fff;
+    background: rgba(99, 102, 241, 0.14);
+    border-color: rgba(99, 102, 241, 0.65);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.35);
   }
   .blog-sidebar button.side-filter-btn.active {
     color: #fff !important;
-    background: rgba(99, 102, 241, 0.2) !important;
-    border-left: 3px solid var(--red) !important;
+    background: rgba(99, 102, 241, 0.22) !important;
+    border-color: rgba(99, 102, 241, 0.7) !important;
+    border-left: 4px solid var(--red) !important;
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3);
     font-weight: 600 !important;
   }
   .blog-sidebar .count {
@@ -181,7 +124,7 @@
     font-size: 11px;
     color: var(--text-mute);
     background: rgba(255,255,255,0.06);
-    padding: 2px 6px;
+    padding: 2px 7px;
     border-radius: 99px;
     pointer-events: none;
   }
@@ -190,16 +133,57 @@
     background: rgba(99, 102, 241, 0.25);
   }
 
+  /* LHS Categories Search Utility Bar */
+  .sidebar-search-wrap {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .sidebar-search-input {
+    width: 100%;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 7px 12px 7px 32px;
+    font-size: 13px;
+    color: #FFFFFF;
+    font-family: var(--sans);
+    outline: none;
+    transition: all .15s ease;
+  }
+  .sidebar-search-input:hover {
+    border-color: rgba(99, 102, 241, 0.65);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3);
+  }
+  .sidebar-search-input:focus {
+    border-color: var(--red);
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.4), 0 0 10px rgba(99, 102, 241, 0.25);
+  }
+  .sidebar-search-input::placeholder {
+    color: var(--text-mute);
+    font-size: 11.5px;
+  }
+  .sidebar-search-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-mute);
+    font-size: 11px;
+    pointer-events: none;
+  }
+
   /* Filter Header & Search Bar */
   .filter-controls {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 8px;
+    margin-bottom: 12px;
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 18px 20px;
+    border-radius: 8px;
+    padding: 10px 14px;
     position: relative;
     z-index: 10;
   }
@@ -208,58 +192,65 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 6px;
   }
   .filter-heading {
     font-family: var(--display);
-    font-size: 20px;
+    font-size: 15.5px;
     font-weight: 700;
     color: #FFFFFF;
     margin: 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
   }
   .filter-badge {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 10.5px;
     color: var(--red);
     background: rgba(99, 102, 241, 0.15);
-    padding: 3px 8px;
+    padding: 1px 6px;
     border-radius: 99px;
   }
   .search-wrapper {
     position: relative;
     width: 100%;
-    max-width: 320px;
+    max-width: 260px;
   }
   .search-input {
     width: 100%;
     background: var(--bg-2);
     border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 8px 12px 8px 34px;
-    font-size: 13px;
+    border-radius: 6px;
+    padding: 5px 8px 5px 26px;
+    font-size: 12px;
     color: #FFFFFF;
     font-family: var(--sans);
     outline: none;
     transition: border-color .15s;
   }
-  .search-input:focus { border-color: var(--red); }
+  .search-input:hover {
+    border-color: rgba(99, 102, 241, 0.65);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3);
+  }
+  .search-input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.4);
+  }
   .search-icon {
     position: absolute;
-    left: 10px;
+    left: 7px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--text-mute);
-    font-size: 13px;
+    font-size: 11px;
     pointer-events: none;
   }
 
   .pill-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 5px;
     position: relative;
     z-index: 15;
   }
@@ -267,9 +258,9 @@
     background: var(--bg-2);
     border: 1px solid var(--line);
     color: var(--text-dim);
-    font-size: 12px;
+    font-size: 11px;
     font-family: var(--mono);
-    padding: 6px 14px;
+    padding: 3px 10px;
     border-radius: 999px;
     cursor: pointer !important;
     transition: all .15s ease;
@@ -279,7 +270,11 @@
     z-index: 20;
     pointer-events: auto !important;
   }
-  .pill-btn:hover { border-color: var(--red); color: #FFFFFF; }
+  .pill-btn:hover {
+    border-color: rgba(99, 102, 241, 0.8);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.35);
+    color: #FFFFFF;
+  }
   .pill-btn.active {
     background: var(--red) !important;
     color: #fff !important;
@@ -287,27 +282,28 @@
     font-weight: 600 !important;
   }
 
-  /* Post Grid */
+  /* Compact Post Grid with Distinct Bold Borders on Hover */
   .post-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
   }
   .post-card {
     display: flex;
     flex-direction: column;
     padding: 22px 24px;
+    min-height: 220px;
     border: 1px solid var(--line);
     border-radius: 12px;
     background: var(--panel);
     text-decoration: none;
     color: inherit;
-    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
   }
   .post-card:hover {
-    border-color: rgba(99, 102, 241, 0.6);
-    box-shadow: 0 4px 20px -8px rgba(99, 102, 241, 0.2);
-    transform: translateY(-1px);
+    border-color: rgba(99, 102, 241, 0.85);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.5), 0 8px 24px -6px rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
   }
   .post-card .meta {
     font-family: var(--mono);
@@ -315,75 +311,84 @@
     color: var(--text-mute);
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    line-height: 1.4;
+    line-height: 1.3;
+    margin-bottom: 6px;
   }
   .post-card h3 {
     font-family: var(--display);
-    font-size: 19px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.3;
-    margin: 8px 0 6px;
+    font-size: 17.5px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    margin: 4px 0 8px;
     color: #FFFFFF !important;
   }
   .post-card p {
-    font-size: 14px;
-    color: #E2E8F0 !important;
+    font-size: 13.5px;
+    color: #CBD5E1 !important;
     line-height: 1.55;
     margin: 0;
+    flex-grow: 1;
   }
   .post-card .read {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--red);
     letter-spacing: 0.04em;
-    margin-top: 12px;
-    font-weight: 600;
+    margin-top: 14px;
+    font-weight: 700;
   }
 
   .no-results {
     display: none;
-    padding: 48px 24px;
+    padding: 24px 16px;
     text-align: center;
     background: var(--panel);
     border: 1px dashed var(--line);
-    border-radius: 12px;
+    border-radius: 8px;
     color: var(--text-dim);
   }
 
-  /* Right Sidebar */
+  /* Compact Sidebar Cards */
   .sidebar-card {
-    padding: 20px;
+    padding: 12px 14px;
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 8px;
     background: var(--panel);
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+    transition: all .15s ease;
   }
-  .sidebar-card h4 { border-bottom: none; padding-bottom: 4px; margin-bottom: 14px; }
-  .sidebar-card p.smallcopy { font-size: 13px; color: #E2E8F0; line-height: 1.55; margin: 0 0 14px; }
-  .sidebar-card .btn { display: block; text-align: center; }
+  .sidebar-card:hover {
+    border-color: rgba(99, 102, 241, 0.7);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.35);
+  }
+  .sidebar-card h4 { border-bottom: none; padding-bottom: 2px; margin-bottom: 6px; font-size: 10.5px; }
+  .sidebar-card p.smallcopy { font-size: 12px; color: #CBD5E1; line-height: 1.4; margin: 0 0 8px; }
+  .sidebar-card .btn { display: block; text-align: center; padding: 5px 10px; font-size: 11.5px; }
   .side-link {
-    color: #E2E8F0;
+    color: #CBD5E1;
     text-decoration: none;
     display: block;
-    padding: 5px 0;
-    font-size: 13px;
-    line-height: 1.45;
+    padding: 3px 0;
+    font-size: 12px;
+    line-height: 1.35;
+    transition: color .15s ease;
   }
   .side-link:hover { color: var(--red); }
 
-  @media (max-width: 1200px) {
-    
-  }
   @media (max-width: 1100px) {
-    .blog-layout { grid-template-columns: minmax(0, 1fr) 260px; }
+    .blog-layout { grid-template-columns: minmax(0, 1fr) 240px; }
     .sidebar-left { display: none; }
   }
+  @media (max-width: 720px) { .post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  } }
   @media (max-width: 820px) {
     .blog-layout { grid-template-columns: 1fr; }
     .blog-sidebar { position: static; }
     .sidebar-left { display: block; }
-    
   }
 </style>
 </head>
@@ -484,7 +489,7 @@
   </div>
 </section>
 
-<section class="section-sm" style="padding-bottom: 64px;">
+<section class="section-sm" style="padding-top: 28px; padding-bottom: 48px;">
   <div class="wrap">
 
     <div class="blog-layout">
@@ -492,6 +497,10 @@
       <!-- LEFT SIDEBAR: Interactive Categories with Exact Verified Counts -->
       <aside class="blog-sidebar sidebar-left" aria-label="Blog categories">
         <h4>Categories</h4>
+        <div class="sidebar-search-wrap">
+          <input type="search" id="sidebar-blog-search" class="sidebar-search-input" placeholder="Search guides & topics..." aria-label="Search categories and guides">
+          <span class="sidebar-search-icon" aria-hidden="true">&#128269;</span>
+        </div>
         <ul id="category-list">
           <li>
             <button type="button" class="side-filter-btn active" data-cat="all">
@@ -560,73 +569,94 @@
 
       <!-- CENTER: Post Grid & Interactive Header -->
       <main id="main-content">
+        <div class="grid-header">
+          <h4><span id="active-cat-title">Articles</span> <span class="count" id="visible-count" style="font-family:var(--mono);font-size:11px;color:var(--red);background:rgba(99,102,241,0.15);padding:1px 6px;border-radius:99px;">111</span></h4>
+        </div>
         <div class="post-grid" id="post-grid">
-      <a class="post-card" href="which-free-vpn-does-not-keep-logs.html" data-category="privacy-security" data-pillar="true">
-        <span class="meta">2026 · 07 · 16 &middot; Privacy guide</span>
+      <a class="post-card" href="what-your-isp-can-see-about-you.html" data-category="privacy-security" data-pillar="false">
+        <span class="meta">2026 · 06 · 26 &middot; Privacy guide</span>
+        <h3>What Your ISP Can See About You (And How to Hide It)</h3>
+        <p>The plain-English guide to exactly what your internet provider logs, sells, and hands over—down to the packet level. What HTTPS hides, and how to close every gap.</p>
+        <span class="read">READ &rarr;</span>
+      </a>
+      <a class="post-card" href="are-free-vpns-safe.html" data-category="buyer-guides" data-pillar="false">
+        <span class="meta">2026 · 06 · 24 &middot; Buyer guide</span>
+        <h3>Are Free VPNs Safe? An Honest 2026 Guide</h3>
+        <p>The complete breakdown of which free VPNs are genuinely safe, which ones are privacy traps in disguise, and how to test any free VPN yourself.</p>
+        <span class="read">READ &rarr;</span>
+      </a>
+      <a class="post-card" href="does-chatgpt-store-your-conversations.html" data-category="privacy-security" data-pillar="false">
+        <span class="meta">2026 · 06 · 22 &middot; Privacy guide</span>
+        <h3>Does ChatGPT Store Your Conversations?</h3>
+        <p>The plain-English guide to what OpenAI actually does with everything you type into ChatGPT—how long it’s kept, how it’s used for training, and how to stop it.</p>
+        <span class="read">READ &rarr;</span>
+      </a>
+      <a class="post-card" href="which-free-vpn-does-not-keep-logs.html" data-category="buyer-guides" data-pillar="false">
+        <span class="meta">2026 · 06 · 18 &middot; Buyer guide</span>
         <h3>Which Free VPN Does Not Keep Logs? A 2026 No-Logs VPN Checklist</h3>
         <p>A plain-English guide to what “no logs” actually means, what it doesn’t mean, how to verify it, and which free VPNs in 2026 genuinely hold up under scrutiny.</p>
         <span class="read">READ &rarr;</span>
       </a>
 
-      <a class="post-card" href="what-is-a-man-in-the-middle-attack.html" data-category="network-security" data-pillar="true">
-        <span class="meta">2026 · 07 · 16 &middot; Security guide</span>
+      <a class="post-card" href="what-is-a-man-in-the-middle-attack.html" data-category="pillars" data-pillar="true">
+        <span class="meta">2026 · 06 · 20 &middot; Pillar guide</span>
         <h3>What Is a Man-in-the-Middle (MITM) Attack?</h3>
         <p>The plain-English guide to one of the oldest tricks in networking, still working in 2026. How someone intercepts communications and how to defend yourself.</p>
         <span class="read">READ &rarr;</span>
       </a>
 
-      <a class="post-card" href="what-happens-when-someone-knows-your-ip-address.html" data-category="privacy-security" data-pillar="true">
-        <span class="meta">2026 · 07 · 16 &middot; Privacy guide</span>
+      <a class="post-card" href="what-happens-when-someone-knows-your-ip-address.html" data-category="pillars" data-pillar="true">
+        <span class="meta">2026 · 06 · 14 &middot; Pillar guide</span>
         <h3>What Happens When Someone Knows Your IP Address? A Complete 2026 Guide</h3>
         <p>The full, plain-English guide to what someone can actually do with your IP address - location tracking, DDoS attacks, targeted hacking, identity fraud, and how to protect yourself.</p>
         <span class="read">READ &rarr;</span>
       </a>
 
-      <a class="post-card" href="free-vpn-vs-paid-vpn.html" data-category="buyer-comparisons" data-pillar="true">
-        <span class="meta">2026 · 07 · 16 &middot; Buyer guide</span>
+      <a class="post-card" href="free-vpn-vs-paid-vpn.html" data-category="comparisons" data-pillar="false">
+        <span class="meta">2026 · 06 · 16 &middot; Comparisons</span>
         <h3>Free VPN vs Paid VPN: Which One Is Actually Worth It?</h3>
         <p>An honest, no-fluff breakdown of what you actually get - and give up - when you choose a free VPN over a paid one. Free tier trade-offs, speeds, streaming, and safety.</p>
         <span class="read">READ &rarr;</span>
       </a>
 
-      <a class="post-card" href="vpn-for-online-gaming.html" data-category="use-cases" data-pillar="false">
-        <span class="meta">2026 · 07 · 15 &middot; Buyer guide</span>
+      <a class="post-card" href="vpn-for-online-gaming.html" data-category="buyer-guides" data-pillar="false">
+        <span class="meta">2025 · 06 · 12 &middot; Buyer guide</span>
         <h3>Free VPN for Online Gaming 2026: Low Ping & No Lag</h3>
         <p>The honest guide to free VPNs for gaming in 2026 — what actually reduces ping, which free tiers are worth using, and bufferbloat fixes.</p>
         <span class="read">READ &rarr;</span>
       </a>
 
       <a class="post-card" href="how-advertisers-track-you-across-the-internet.html" data-category="privacy-security" data-pillar="false">
-        <span class="meta">2026 · 07 · 15 &middot; Privacy guide</span>
+        <span class="meta">2026 · 06 · 10 &middot; Privacy guide</span>
         <h3>How Advertisers Track You Across the Internet (And How to Fight Back)</h3>
         <p>The complete, plain-English guide to every method advertisers use to follow you around the web — third-party cookies, browser fingerprinting, pixel beacons, data brokers — and how to stop them.</p>
         <span class="read">READ &rarr;</span>
       </a>
 
-      <a class="post-card" href="lifetime-free-vpn.html" data-category="beginner-basics" data-pillar="false">
-        <span class="meta">2026 · 07 · 15 &middot; Beginner basics</span>
+      <a class="post-card" href="lifetime-free-vpn.html" data-category="buyer-guides" data-pillar="false">
+        <span class="meta">2026 · 06 · 08 &middot; Buyer guide</span>
         <h3>Lifetime Free VPN: Is OllaVPN Really Free Forever?</h3>
         <p>The complete, no-fluff guide to what 'lifetime free VPN' actually means in 2026. What the free plan includes, our sustainable funding model, and zero-log architecture.</p>
         <span class="read">READ &rarr;</span>
       </a>
 
-      <a class="post-card" href="free-vpn-for-netflix.html" data-category="use-cases" data-pillar="true">
-        <span class="meta">2026 · 07 · 15 &middot; Streaming guide</span>
+      <a class="post-card" href="free-vpn-for-netflix.html" data-category="buyer-guides" data-pillar="false">
+        <span class="meta">2026 · 06 · 06 &middot; Buyer guide</span>
         <h3>Free VPN for Netflix 2026: Does It Actually Work?</h3>
         <p>Most free VPNs fail with Netflix in 2026. Not because Netflix is impossible to get around — but because the way free VPN services are built makes them easy for Netflix to detect. A small handful of free options genuinely...</p>
         <span class="read">READ &rarr;</span>
       </a>
 
-      <a class="post-card" href="best-free-vpn-for-india.html" data-category="buyer-guides" data-pillar="true">
-        <span class="meta">2026 · 06 · 11 &middot; Buyer guide</span>
+      <a class="post-card" href="best-free-vpn-for-india.html" data-category="buyer-guides" data-pillar="false">
+        <span class="meta">2026 · 06 · 03 &middot; Buyer guide</span>
         <h3>Best Free VPN for India 2026: No Credit Card, No Logs, Really Free</h3>
         <p>A genuinely free VPN for India in 2026 — with no credit card and no logs — means what it sounds like: you download the app, connect, and get a private, encrypted tunnel without entering payment details, without your brow...</p>
         <span class="read">READ &rarr;</span>
       </a>
 
-      <a class="post-card" href="how-public-wifi-steals-passwords.html" data-category="privacy-security" data-pillar="true">
-        <span class="meta">2026 · 06 · 10 &middot; Privacy guide</span>
-        <h3>How Public Wi-Fi Can Steal Your Passwords (2026 Guide)</h3>
+      <a class="post-card" href="how-public-wifi-steals-passwords.html" data-category="pillars" data-pillar="true">
+        <span class="meta">2026 · 06 · 01 &middot; Pillar guide</span>
+        <h3>How Public Wi‑Fi Can Steal Your Passwords (2026 Guide)</h3>
         <p>Public Wi‑Fi networks — coffee shops, airports, hotels, libraries — are inherently open. Without encryption between your device and the websites you visit, anyone on the same network can see the data you send and receive...</p>
         <span class="read">READ &rarr;</span>
       </a>
@@ -698,13 +728,6 @@
         <span class="meta">2026 · 06 · 09 &middot; Protocol & tech</span>
         <h3>WireGuard vs. OpenVPN: Which VPN Protocol Should You Trust?</h3>
         <p>WireGuard is generally the better choice today for most people, offering a faster, simpler, and more efficient experience. Think of it like a modern, streamlined sports car compared to OpenVPN&#39;s more traditional, arm...</p>
-        <span class="read">READ &rarr;</span>
-      </a>
-
-      <a class="post-card" href="are-free-vpns-safe.html" data-category="privacy-security" data-pillar="false">
-        <span class="meta">2026 · 06 · 09 &middot; Privacy guides</span>
-        <h3>Are Free VPNs Safe? What You Need to Know Before You Connect</h3>
-        <p>Many &#34;free&#34; VPNs aren&#39;t safe at all. They often compromise your privacy by selling your browsing data, injecting ads, or even hiding malware in their apps. These hidden costs mean you&#39;re paying with your ...</p>
         <span class="read">READ &rarr;</span>
       </a>
 
@@ -785,10 +808,10 @@
         <span class="read">READ &rarr;</span>
       </a>
 
-      <a class="post-card" href="free-vpn-vs-paid-vpn.html" data-category="beginner-basics" data-pillar="false">
-        <span class="meta">2026 · 06 · 09 &middot; Beginner basics</span>
-        <h3>Free VPN vs. Paid VPN: What's the Real Difference and Which Should You Pick?</h3>
-        <p>Most &#34;free&#34; VPNs aren&#39;t really free; they often make their money by selling your data, bombarding you with ads, or tricking you into pricey subscriptions. At OllaVPN, we believe in being honest: a truly free ...</p>
+      <a class="post-card" href="free-vpn-vs-paid-vpn.html" data-category="comparisons" data-pillar="false">
+        <span class="meta">2026 · 06 · 16 &middot; Comparisons</span>
+        <h3>Free VPN vs Paid VPN: Which One Is Actually Worth It?</h3>
+        <p>An honest, no-fluff breakdown of what you actually get - and give up - when you choose a free VPN over a paid one. Free tier trade-offs, speeds, streaming, and safety.</p>
         <span class="read">READ &rarr;</span>
       </a>
 

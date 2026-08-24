@@ -25,7 +25,13 @@
     if (!cards.length) return;
 
     var searchInput = document.getElementById('blog-search');
-    var searchVal = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    var sideSearchInput = document.getElementById('sidebar-blog-search');
+    var searchVal = '';
+    if (sideSearchInput && sideSearchInput.value.trim()) {
+      searchVal = sideSearchInput.value.toLowerCase().trim();
+    } else if (searchInput && searchInput.value.trim()) {
+      searchVal = searchInput.value.toLowerCase().trim();
+    }
     var visibleCount = 0;
 
     // Update active button classes
