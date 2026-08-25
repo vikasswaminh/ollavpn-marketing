@@ -4,50 +4,38 @@
    violet/amber accents, same Lato self-host pattern, same Tailwind-
    scale radius. Content stays ours; visual system is borrowed. */
 :root {
-  /* Surface tokens (2026-06-09): pure-white page bg. Visual depth comes
-     from a faint brand-red grid pattern painted on <body> (NetworkersHome
-     pattern), not from off-white tint. Cards lift via 1px line + shadow. */
-  /* Premium PQC dark (2026-07): near-black canvas + violet primary.
-     Token NAMES unchanged so the whole site + blog inherit; --red now
-     carries the VIOLET brand accent, red retired to logo/alerts. */
-  --bg: #07090E;             /* Deep Obsidian Midnight */             /* canvas — near-black */
-  --bg-2: #0E121E;           /* Elevated surface */           /* surface-1: alt sections */
-  --grid-line: rgba(124, 92, 255, 0.06);   /* faint violet grid */
+  /* Surface tokens: Premium Obsidian Midnight canvas + Electric Blue/Indigo primary */
+  --bg: #07090E;             /* Deep Obsidian Midnight */
+  --bg-2: #0E121E;           /* Elevated surface */
+  --grid-line: rgba(99, 102, 241, 0.06);   /* faint blue grid */
   --grid-size: 32px;
-  --bg-tint: rgba(34, 211, 238, 0.07);     /* cyan-tint info card */
-  --panel: rgba(16, 22, 38, 0.75); /* Frosted glass card */          /* cards */
+  --bg-tint: rgba(99, 102, 241, 0.07);     /* blue-tint info card */
+  --panel: rgba(16, 22, 38, 0.75); /* Frosted glass card */
   --panel-2: #151D33;        /* raised panel */
-  --line: rgba(255, 255, 255, 0.09);       /* hairline — border-first */
+  --line: rgba(255, 255, 255, 0.09);       /* hairline border */
   --line-2: rgba(255, 255, 255, 0.14);
-  --text: #FFFFFF;           /* Ultra crisp white */           /* near-white */
-  --text-dim: #E2E8F0;       /* Readable secondary slate */
-  --text-mute: #6E6E7C;
-  --surface-dark: #070913;   /* deep indigo band — footer + trust */
-  --red: #6366F1;            /* Electric Indigo */            /* PRIMARY = electric violet (brand accent) */
-  --red-2: #4F46E5;          /* Hover Indigo */          /* hover/pressed */
+  --text: #FFFFFF;           /* Ultra crisp white */
+  --text-dim: #CBD5E1;       /* Readable secondary slate */
+  --text-mute: #94A3B8;      /* Muted text */
+  --surface-dark: #070913;   /* deep indigo band */
+  --red: #6366F1;            /* ELECTRIC BLUE / INDIGO ACCENT */
+  --red-2: #4F46E5;          /* Hover blue/indigo */
   --red-soft: rgba(99, 102, 241, 0.15);
+  --accent: #6366F1;         /* Primary blue accent */
+  --accent-2: #4F46E5;
   --amber: #FBBF24;
   --amber-2: #F59E0B;
   --green: #34D399;
-  --blue: #06B6D4;           /* Cyber Cyan */           /* quantum cyan */
+  --blue: #38BDF8;           /* Cyber Cyan / Sky Blue */
   --violet: #8B5CF6;         /* PQC accent */
-  /* Radius — default bumped to 12px for softer modern cards; 6/8/16 retained. */
   --radius: 12px;
   --radius-sm: 6px;
   --radius-lg: 16px;
   --radius-xl: 20px;
   --radius-pill: 9999px;
-  /* Card shadow: 2-layer lift (contact + ambient) — buildbetter signature. */
   --shadow-card: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px rgba(0,0,0,.38);
   --shadow-card-hover: 0 1px 2px rgba(0,0,0,.45), 0 18px 46px rgba(0,0,0,.55);
-  /* Radial hero glow — violet wash centered behind the H1 */
-  --gradient-hero: radial-gradient(70% 60% at 50% 0%, rgba(99,102,241,.24), rgba(6,182,212,0.06) 45%, transparent 75%);
-
-  /* Type system (2026-06-10): Lato for BOTH body + display so every head
-     across the site carries the same chunky personality as the hero H1.
-     Display heads use Lato 700 (Bold, self-hosted at lato-700-latin.woff2).
-     Inter is left available but unused — preload kept for now in case we
-     swap back; can drop in a follow-up if we commit to single-family. */
+  --gradient-hero: radial-gradient(70% 60% at 50% 0%, rgba(99,102,241,.24), rgba(56,189,248,0.06) 45%, transparent 75%);
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -115,18 +103,18 @@ h3 { font-size: clamp(17px, 1.6vw, 22px); letter-spacing: -0.03em; }
    on near-black bg; bottom border drops since the dark surface itself
    separates it from the nav below. */
 .utilbar {
-  background: #0B0B10; color: rgba(255,255,255,0.72);
+  background: #f8f9fa; color: #343a40;
   font-family: var(--mono); font-size: 11px;
-  border-bottom: 1px solid #0B0B10;
+  border-bottom: 1px solid #e9ecef;
   padding: 7px 0; letter-spacing: 0.04em;
 }
-.utilbar a { color: rgba(255,255,255,0.82); }
-.utilbar a:hover { color: #fff; }
+.utilbar a { color: #495057; }
+.utilbar a:hover { color: #111111; }
 /* Utilbar wrap widens to match the nav (1440px) so the status indicator
    on the left and the trail links on the right align with the nav logo
    and CTAs above. */
 .utilbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; max-width: 1440px; }
-.utilbar .green-dot { color: var(--green); }
+.utilbar .green-dot { color: #2b8a3e; }
 
 /* Nav (ItemUI #16): solid white instead of glassmorphism. A 1px line
    appears at page top before any scroll; once the user scrolls past 0,
@@ -136,20 +124,20 @@ h3 { font-size: clamp(17px, 1.6vw, 22px); letter-spacing: -0.03em; }
 /* Nav is white (utilbar above is dark — only the utilbar is the dark band). */
 .nav {
   position: sticky; top: 0; z-index: 100;
-  background: #07090E;
-  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
   transition: box-shadow .15s, border-color .15s;
 }
 .nav.scrolled {
-  background: #07090E;
-  border-bottom-color: var(--line);
-  box-shadow: 0 4px 20px -4px rgba(0,0,0,0.6);
+  background: #ffffff;
+  border-bottom-color: #dee2e6;
+  box-shadow: 0 4px 20px -4px rgba(0,0,0,0.06);
 }
 /* Nav-inner runs wider than the section .wrap (1200px) so the logo and CTAs
    sit closer to the viewport edges, giving the nav a wider, more spacious feel
    than the content columns below. Page sections still cap at 1200px. */
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 28px; max-width: 1440px; margin: 0 auto; }
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.02em; font-size: 17px; color: var(--text); }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.02em; font-size: 17px; color: var(--text); flex: 1; }
 /* Brand mark (OllaVPN arch glyph, 2026-06-09): inline-SVG data URI so
    every page using <span class="brand-mark"></span> picks up the new
    identity without HTML edits. Red rounded square + white tunnel arch +
@@ -162,12 +150,12 @@ h3 { font-size: clamp(17px, 1.6vw, 22px); letter-spacing: -0.03em; }
 /* Nav links with animated underline (ItemUI #17). Standard Proton/Express
    affordance: a 2px red line scales in from the left on hover/active.
    Better hit feedback than color-only change. */
-.nav-links { display: flex; align-items: center; gap: 24px; font-size: 14px; color: var(--text-dim); }
+.nav-links { display: flex; align-items: center; gap: 24px; font-size: 14px; color: var(--text-dim); justify-content: center; flex: 2; }
 .nav-links a { position: relative; display: inline-flex; align-items: center; padding: 6px 0; transition: color .15s; white-space: nowrap; line-height: 1; }
 .nav-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .18s ease; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
-.nav-cta { display: flex; gap: 10px; align-items: center; }
+.nav-cta { display: flex; gap: 10px; align-items: center; justify-content: flex-end; flex: 1; }
 
 /* Mega-dropdown nav (2026-06-05) — wide-view pattern from
    networkershome.com. A nav item with a panel pops a full-width mega
@@ -859,7 +847,7 @@ body.mobile-nav-open { overflow: hidden; }
 }
 
 
-/* Crisp Pure White Article Typography */
+/* Light Theme Article Typography */
 .article,
 .article p,
 .article li,
@@ -872,19 +860,19 @@ body.mobile-nav-open { overflow: hidden; }
 .article .faq-a,
 .article .faq-a p,
 .article .faq-q {
-  color: #FFFFFF !important;
+  color: #334155 !important;
 }
 
 .article h1,
 .article h2,
 .article h3,
 .article h4 {
-  color: #FFFFFF !important;
+  color: #0F172A !important;
 }
 
 .article strong,
 .article b {
-  color: #FFFFFF !important;
+  color: #0F172A !important;
   font-weight: 700;
 }
 
@@ -912,7 +900,7 @@ body.mobile-nav-open { overflow: hidden; }
   font-family: var(--display);
   font-size: clamp(20px, 2.2vw, 24px);
   font-weight: 700;
-  color: #FFFFFF !important;
+  color: #0F172A !important;
   margin: 0 0 16px;
   padding: 0;
   border: none;
@@ -930,7 +918,7 @@ body.mobile-nav-open { overflow: hidden; }
   padding-left: 26px;
   font-size: 15px;
   line-height: 1.6;
-  color: #E2E8F0 !important;
+  color: #334155 !important;
   margin: 0;
 }
 .key-takeaways ul li::before {
@@ -1727,9 +1715,9 @@ body.mobile-nav-open { overflow: hidden; }
    ========================================================================== */
 body {
   background-color: #07090E !important;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px) !important;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) !important;
   background-size: 36px 36px !important;
 }
 
