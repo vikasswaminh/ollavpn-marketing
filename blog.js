@@ -50,7 +50,7 @@
     var headingEl = document.getElementById('active-cat-title');
     if (headingEl) {
       var titleText = catTitles[currentCategory] || 'Articles';
-      headingEl.innerHTML = titleText + ' <span class="filter-badge" id="visible-count">0</span>';
+      headingEl.textContent = titleText;
     }
 
     // Filter article cards
@@ -129,6 +129,10 @@
     // Reset filter click
     if (e.target.closest('[data-reset-filter]')) {
       e.preventDefault();
+      var sideSearchInput = document.getElementById('sidebar-blog-search');
+      var searchInput = document.getElementById('blog-search');
+      if (sideSearchInput) sideSearchInput.value = '';
+      if (searchInput) searchInput.value = '';
       applyCategoryFilter('all');
       return;
     }
@@ -150,10 +154,20 @@
     }
   });
 
-  // Search input live filtering
-  document.addEventListener('input', function (e) {
-    if (e.target && e.target.id === 'blog-search') {
+  // Search input live filtering (sidebar & main search)
+  function handleSearchEvent(e) {
+    if (e.target && (e.target.id === 'sidebar-blog-search' || e.target.id === 'blog-search' || e.target.classList.contains('sidebar-search-input'))) {
       applyCategoryFilter(currentCategory);
+    }
+  }
+  document.addEventListener('input', handleSearchEvent);
+  document.addEventListener('search', handleSearchEvent);
+  document.addEventListener('keyup', function (e) {
+    if (e.target && (e.target.id === 'sidebar-blog-search' || e.target.id === 'blog-search' || e.target.classList.contains('sidebar-search-input'))) {
+      if (e.key === 'Escape') {
+        e.target.value = '';
+        applyCategoryFilter(currentCategory);
+      }
     }
   });
 
