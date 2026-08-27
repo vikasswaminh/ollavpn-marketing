@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="32" fill="#07090E"/>
+  <!-- Top Facet -->
+  <polygon points="256,90 380,160 256,230 132,160" fill="#818CF8"/>
+  <!-- Left Facet with Cutout -->
+  <polygon points="132,160 256,230 256,370 132,300" fill="#6366F1"/>
+  <!-- Left Cutout Inner -->
+  <polygon points="164,205 224,240 224,315 164,280" fill="#07090E"/>
+  <!-- Right Facet with Cutout -->
+  <polygon points="256,230 380,160 380,300 256,370" fill="#38BDF8"/>
+  <!-- Right Cutout Inner -->
+  <polygon points="288,240 348,205 348,280 288,315" fill="#07090E"/>
+  <!-- Wordmark -->
+  <text x="256" y="445" font-family="'Inter', 'IBM Plex Sans', sans-serif" font-size="52" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">OllaVPN</text>
+</svg>

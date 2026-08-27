@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="32" fill="#07090E"/>
+  <!-- Boxy Lock Shackle -->
+  <path d="M 186,180 L 186,130 A 70,70 0 0,1 326,130 L 326,180 L 286,180 L 286,130 A 30,30 0 0,0 226,130 L 226,180 Z" fill="#818CF8"/>
+  <!-- Boxy Lock Body -->
+  <rect x="146" y="176" width="220" height="154" rx="16" fill="#6366F1"/>
+  <!-- Speed Wave Inset Bars -->
+  <rect x="176" y="206" width="70" height="16" rx="4" fill="#38BDF8"/>
+  <rect x="176" y="234" width="110" height="16" rx="4" fill="#38BDF8"/>
+  <rect x="176" y="262" width="50" height="16" rx="4" fill="#38BDF8"/>
+  <!-- Square Keyhole -->
+  <rect x="296" y="220" width="36" height="36" rx="6" fill="#07090E"/>
+  <polygon points="304,256 324,256 332,290 296,290" fill="#07090E"/>
+  <!-- Wordmark -->
+  <text x="256" y="445" font-family="'Inter', 'IBM Plex Sans', sans-serif" font-size="52" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">OllaVPN</text>
+</svg>
