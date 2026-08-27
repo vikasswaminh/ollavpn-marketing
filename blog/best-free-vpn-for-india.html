@@ -180,7 +180,18 @@
 </script>
 
 <style>
-  .reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--red); width: 0; z-index: 1000; transition: width .1s ease; }
+  .reading-progress {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 3px !important;
+    max-height: 3px !important;
+    width: 0%;
+    background: linear-gradient(90deg, #6366F1, #38BDF8) !important;
+    transition: width .08s linear !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
+  }
   .article-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr) 260px; gap: 36px; align-items: start; max-width: 1440px; margin: 0 auto; padding: 40px 24px 80px; }
   .article-sidebar-left { position: sticky; top: 84px; font-size: 14px; }
   .toc-rail { position: sticky; top: 84px; font-size: 13px; max-height: calc(100vh - 100px); overflow-y: auto; padding-left: 14px; border-left: 1px solid var(--line); }
