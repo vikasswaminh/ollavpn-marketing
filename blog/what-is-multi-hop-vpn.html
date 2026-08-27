@@ -263,9 +263,17 @@
     letter-spacing: 0.08em; text-transform: uppercase; }
   .tldr p { margin: 12px 0 0; font-size: 16px; line-height: 1.65; }
 
-  .toc-rail { display: none; }
+  .toc-rail { display: none; 
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .toc-rail::-webkit-scrollbar { display: none !important; width: 0 !important; }
   @media (min-width: 980px) {
-    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; }
+    .toc-rail { display: block; position: sticky; top: 96px; align-self: start; padding: 4px 0 0; 
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .toc-rail::-webkit-scrollbar { display: none !important; width: 0 !important; }
   }
   .toc-inline {
     display: block; margin: 0 0 2.2em;
@@ -608,7 +616,11 @@
   padding-left: 14px !important;
   border-left: 1px solid var(--line) !important;
   display: block !important;
-}
+
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .toc-rail::-webkit-scrollbar { display: none !important; width: 0 !important; }
 
 .toc-rail .label {
   font-family: var(--mono) !important;
@@ -664,7 +676,11 @@
   }
   .toc-rail {
     display: none !important;
+  
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
+  .toc-rail::-webkit-scrollbar { display: none !important; width: 0 !important; }
 }
 
 </style>
@@ -1063,7 +1079,11 @@
   padding-left: 14px !important;
   border-left: 1px solid var(--line) !important;
   display: block !important;
-}
+
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .toc-rail::-webkit-scrollbar { display: none !important; width: 0 !important; }
 
 .toc-rail .label {
   font-family: var(--mono) !important;
@@ -1119,7 +1139,11 @@
   }
   .toc-rail {
     display: none !important;
+  
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
+  .toc-rail::-webkit-scrollbar { display: none !important; width: 0 !important; }
 }
 
 </style>

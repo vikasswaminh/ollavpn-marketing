@@ -209,31 +209,7 @@
 
   window.addEventListener('hashchange', initFilterFromURL);
 
-  // ==========================================
-  // 4. Reading-Progress Bar
-  // ==========================================
-  var bar = document.querySelector(".reading-progress");
-  var article = document.querySelector(".article");
-  if (bar && article) {
-    var raf = 0;
-    function updateProgress() {
-      raf = 0;
-      var rect = article.getBoundingClientRect();
-      var articleTop = window.scrollY + rect.top;
-      var articleHeight = article.offsetHeight - window.innerHeight;
-      if (articleHeight <= 0) {
-        bar.style.width = "100%";
-        return;
-      }
-      var progress = (window.scrollY - articleTop) / articleHeight;
-      var pct = Math.max(0, Math.min(1, progress)) * 100;
-      bar.style.width = pct.toFixed(2) + "%";
-    }
-    window.addEventListener("scroll", function () {
-      if (!raf) raf = requestAnimationFrame(updateProgress);
-    }, { passive: true });
-    updateProgress();
-  }
+  // Reading-Progress Bar removed
 
   // ==========================================
   // 5. Section Anchor Copy & Share
