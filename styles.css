@@ -1908,7 +1908,7 @@ body.mobile-nav-open { overflow: hidden; }
    EXACT 3-Column Blog Layout (All 111 Blog Pages Matching Screenshot)
    ========================================================================== */
 body {
-  background-color: #101828 !important;
+  background-color: #FFFFFF !important;
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) !important;
@@ -1960,7 +1960,7 @@ body {
   height: 6px !important;
   border-radius: 50% !important;
   background: #FF8A7A !important;
-  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25) !important;
+  box-shadow: 0 0 0 3px rgba(255, 138, 122, 0.25) !important;
 }
 
 .sidebar-card h4 {
@@ -2149,7 +2149,7 @@ body {
 .article a {
   color: #FF8A7A !important;
   text-decoration: none !important;
-  border-bottom: 1px solid rgba(129, 140, 248, 0.3) !important;
+  border-bottom: 1px solid rgba(255, 138, 122, 0.3) !important;
   transition: border-color .15s !important;
 }
 
