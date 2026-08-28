@@ -1735,6 +1735,14 @@ body.mobile-nav-open { overflow: hidden; }
 /* ==========================================================================
    Universal 3-Column Blog Layout, LHS Sidebar & RHS TOC Rail (All 111 Blogs)
    ========================================================================== */
+/* FIX (2026-08-28): 18 top-level feature/tool pages use .article-layout WITHOUT
+   a left sidebar, so <article> is the FIRST child and was being crushed into the
+   240px sidebar rail while .toc-rail landed in the wide middle (article body
+   pushed off-screen). When <article> is first (no sidebar) span it across the
+   sidebar+main columns; .toc-rail auto-flows to the 260px right column. Blog
+   posts (sidebar is the first child) are unaffected. */
+.article-layout > .article:first-child { grid-column: 1 / 3 !important; }
+
 .article-layout {
   display: grid !important;
   grid-template-columns: 240px minmax(0, 1fr) 260px !important;
