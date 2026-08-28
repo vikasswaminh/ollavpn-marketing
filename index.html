@@ -111,7 +111,7 @@
 <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/inter.css" />
 <link rel="stylesheet" href="/jetbrains-mono.css" />
-<link rel="stylesheet" href="styles.css?v=20260827_v13" />
+<link rel="stylesheet" href="styles.css?v=20260827_v14" />
 <style>
   /* Centered hero (2026-06-09 redesign) — NetworkersHome shape.
      Replaces the prior 2-column hero-grid + console mockup with a single
@@ -119,18 +119,22 @@
      cards. Faint red radial wash (--gradient-hero) sits behind the H1. */
   /* Tighter vertical rhythm: less air between nav -> hero (top) and
      hero -> pricing (bottom + adjacent-section rule below). */
-  .hero { position: relative; padding: 40px 0 0; overflow: hidden; background: transparent; text-align: center; }
-  .hero + .section { padding-top: 24px; }
-  .hero + .section .head { margin-bottom: 18px; }
+  .hero { position: relative; padding: 56px 0 44px; overflow: hidden; background: transparent; }
   .hero::before {
     content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
     background: var(--gradient-hero);
   }
   .hero .wrap { position: relative; z-index: 1; }
-  /* Hero content spans the full .wrap (1144px content area, matching every
-     other section). Inner elements (H1, pill) keep their own narrower
-     max-widths for typography reasons. */
-  .hero-content { max-width: none; margin: 0 auto; }
+  /* Two-column hero (2026-08-28): wide wrap (~80%) with messaging on the left +
+     the $0 plan card on the right, so the hero fills big screens instead of a
+     narrow centered column. Only the hero widens; sections below stay 1200px. */
+  .hero .hero-wrap {
+    width: 80%; max-width: 1600px; margin: 0 auto;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 440px);
+    gap: 56px; align-items: center; text-align: left;
+  }
+  .hero-left { max-width: none; }
+  .hero-right { justify-self: end; width: 100%; }
 
   .hero-pill {
     display: inline-flex; align-items: center; gap: 8px;
@@ -142,15 +146,20 @@
   }
   .hero-pill .pill-star { color: var(--amber); font-size: 13px; line-height: 1; }
 
-  /* Hero H1 (2026-06-09, denser): font-size ramp reduced ~30% per request
-     while keeping the chunky-display feel (Lato wght 700, tight -0.05em). */
-  .hero h1.h1 { font-family: var(--sans); font-size: clamp(34px, 5.3vw, 64px); margin: 20px auto 0; max-width: 760px; font-weight: 700; letter-spacing: -0.05em; line-height: 1.0; }
+  .hero h1.h1 { font-family: var(--sans); font-size: clamp(34px, 4.4vw, 60px); margin: 16px 0 0; max-width: none; font-weight: 700; letter-spacing: -0.045em; line-height: 1.02; }
   .hero h1 .accent { color: var(--red); }
+  .hero-sub { margin: 14px 0 0; font-family: var(--sans); font-weight: 700; font-size: clamp(18px, 1.8vw, 24px); letter-spacing: -0.02em; line-height: 1.2; color: var(--text); }
+  .hero-sub .accent { color: var(--red); }
 
-  .hero .lede { margin: 18px auto 0; color: var(--text-dim); font-size: 15px; max-width: 640px; line-height: 1.5; }
-  .hero .actions { margin-top: 25px; display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-  .hero .meta { margin-top: 20px; display: flex; gap: 24px; flex-wrap: wrap; font-size: 12px; color: var(--text-mute); justify-content: center; }
-  .hero .meta .ok { color: var(--green); margin-right: 4px; }
+  .hero .lede { margin: 16px 0 0; color: var(--text-dim); font-size: 15px; max-width: 600px; line-height: 1.55; }
+  .hero .actions { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
+
+  @media (max-width: 900px) {
+    .hero .hero-wrap { width: 92%; grid-template-columns: 1fr; gap: 30px; text-align: center; }
+    .hero-right { justify-self: center; max-width: 440px; margin: 0 auto; }
+    .hero .lede { margin-left: auto; margin-right: auto; }
+    .hero .actions { justify-content: center; }
+  }
 
   /* Stat strip immediately below hero (-20% internal padding, -30% num size) */
   .hero-stats { padding: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--panel); }
@@ -422,32 +431,26 @@
   </div>
 </nav>
 
-<!-- Hero (centered, NetworkersHome shape — pill · h1 · lede · CTAs · meta) -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-content">
+<!-- Hero (two-column: messaging left · $0 plan card right — wide, 2026-08-28) -->
+<section class="hero" id="pricing">
+  <div class="wrap hero-wrap">
+    <div class="hero-left">
       <span class="hero-pill">
         <span class="pill-star">★</span>
         100% PRIVATE · LIFETIME FREE
       </span>
       <h1 class="h-display h1">Secure Core in <span class="accent">120+ Countries</span></h1>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing (merged with hero on the homepage 2026-06-09: tight padding-top
-     so the pricing tier cards read as part of the hero region itself) -->
-<section class="section" id="pricing">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="kicker"><span class="pip">●</span> 100% FREE</span>
-      <h2 class="h-display h2">Free forever.<br/><span class="accent">No paid tiers. No catch.</span></h2>
+      <p class="hero-sub">Free forever. <span class="accent">No paid tiers. No catch.</span></p>
       <p class="lede">One plan, and it's free. The full security stack — post-quantum-ready handshake, kill switch, in-tunnel DNS, peer isolation — on every connection. No credit card, no trial countdown, no upsell.</p>
+      <div class="actions">
+        <a class="btn primary lg" href="dl/">Download free →</a>
+        <a class="btn ghost lg" href="technology.html">How it works</a>
+      </div>
     </div>
 
-    <div class="plans" style="grid-template-columns: minmax(0, 440px); justify-content: center;">
+    <div class="hero-right">
       <!-- Free — the only plan -->
-      <div class="plan reveal">
+      <div class="plan">
         <h3>Free</h3>
         <p class="sub">Security and privacy for everyone</p>
         <div class="price">$0.00<small>/forever</small></div>
