@@ -3265,3 +3265,19 @@ body, .page-hero, #post-grid, .blog-layout, .article-center-col {
   display: none !important;
   border: none !important;
 }
+
+
+/* ==========================================================================
+   PROPORTIONAL SECTION NUMBERING CLEANUP (SUPPRESS BROKEN PSEUDO-ELEMENTS)
+   ========================================================================== */
+.article > h2::before,
+.article h2::before,
+article h2::before,
+.article-center-col h2::before,
+.prose > h2::before,
+.prose h2::before,
+.blog-main-content-box h2::before {
+  content: none !important;
+  display: none !important;
+  counter-increment: none !important;
+}
