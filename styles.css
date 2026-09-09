@@ -3329,3 +3329,150 @@ article h2::before,
     display: none !important;
   }
 }
+
+
+/* ==========================================================================
+   GLOBAL BLOG CONTENT TYPOGRAPHY: LATO FONT & 2PX SMALLER FONT SIZE
+   ========================================================================== */
+
+/* 1. Enforce Lato Font Across ALL Blog Article Content */
+.layout-flex-24obs,
+.layout-flex-24obs *,
+.article-center-col,
+.article-center-col *,
+.blog-main-content-box,
+.blog-main-content-box *,
+.prose,
+.prose *,
+.article-tldr-box,
+.article-tldr-box *,
+.article-takeaways-box,
+.article-takeaways-box *,
+.faqs-accordion-box,
+.faqs-accordion-box *,
+.wrap-up-box,
+.wrap-up-box *,
+.download-section-box,
+.download-section-box *,
+.answer-card,
+.answer-card *,
+.specs-card,
+.specs-card *,
+.content-point-box,
+.content-point-box *,
+.quick-answer-card-24obs,
+.quick-answer-card-24obs * {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* 2. Body Text & Paragraphs: ~2px smaller (was 1.05rem / 16.8px -> now 0.925rem / 14.8px) */
+.blog-main-content-box p,
+.prose p,
+.prose > p,
+.article-center-col p,
+.article-center-col > p,
+.article-tldr-box p,
+#tldr p,
+.wrap-up-box p,
+#wrapping-it-up p {
+  font-size: 0.925rem !important;
+  line-height: 1.72 !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+/* 3. Lists & Bullet Items: ~2px smaller (was 1.02rem-1.05rem -> now 0.90rem / 14.4px) */
+.blog-main-content-box li,
+.prose li,
+.article-center-col li,
+.takeaways-list-24obs li,
+.takeaways-list-24obs li div,
+.takeaways-list-24obs li strong {
+  font-size: 0.90rem !important;
+  line-height: 1.62 !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+/* 4. Section H2 Headings: ~2px smaller (was 1.8rem / 28.8px -> now 1.68rem / 26.8px) */
+.blog-main-content-box h2,
+.prose h2,
+.prose > h2,
+.article-center-col h2,
+.wrap-up-box h2,
+#wrapping-it-up h2 {
+  font-size: 1.68rem !important;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* 5. Section H3 Subheadings: ~2px smaller (was 1.35rem / 21.6px -> now 1.22rem / 19.5px) */
+.blog-main-content-box h3,
+.prose h3,
+.prose > h3,
+.article-center-col h3,
+.article-tldr-box h3,
+#tldr h3,
+.article-takeaways-box h3,
+#key-takeaways h3 {
+  font-size: 1.22rem !important;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* 6. FAQ Accordions: ~2px smaller */
+.faqs-accordion-box h2 {
+  font-size: 1.72rem !important;
+  font-family: 'Lato', sans-serif !important;
+}
+.faqs-accordion-box p {
+  font-size: 0.925rem !important;
+  font-family: 'Lato', sans-serif !important;
+}
+.faq-accordion-summary,
+.faq-accordion-summary span {
+  font-size: 0.925rem !important;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 800 !important;
+}
+.faq-accordion-content,
+.faq-accordion-content p {
+  font-size: 0.88rem !important;
+  line-height: 1.68 !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+/* 7. Quick Answers & Callout Cards: ~2px smaller (was 15.5px -> now 13.5px) */
+.answer-card p,
+.quick-answer-card-24obs p,
+.content-point-box p {
+  font-size: 13.5px !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.specs-card,
+.specs-card * {
+  font-size: 13px !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.comparison-table th,
+.comparison-table td,
+.table-wrap th,
+.table-wrap td {
+  font-size: 13px !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.download-section-box h2 {
+  font-size: 1.88rem !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.download-section-box p {
+  font-size: 0.925rem !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.download-section-box .btn-primary {
+  font-size: 0.96rem !important;
+  font-family: 'Lato', sans-serif !important;
+}
