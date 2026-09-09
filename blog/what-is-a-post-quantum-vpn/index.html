@@ -64,7 +64,7 @@ View All Guides &rarr;
   </ul>
 </section>
 <div class="blog-main-content-box">
-<p>The plain-English guide to what a post-quantum VPN actually changes under the hood, why harvest-now-decrypt-later matters today, and how to verify real PQC protection.</p>
+The plain-English guide to what a post-quantum VPN actually changes under the hood, why harvest-now-decrypt-later matters today, and how to verify real PQC protection.
 <p>What Is a <a href="/blog/what-is-a-post-quantum-vpn.html">Post-Quantum VPN</a> and Why Do You Need One?</p>
 <p>The plain-English guide to the newest, most misunderstood label in the VPN world. What a “<a href="/blog/what-is-a-post-quantum-vpn.html">post-quantum VPN</a>” actually changes under the hood, why the timing of your upgrade matters even though quantum computers don’t exist yet, and how to tell a real post-quantum VPN from a marketing sticker.</p>
 <h2 id="1-why-post-quantum-vpn-suddenly-became-a-real-category">1. Why “post-quantum VPN” suddenly became a real category</h2>
@@ -139,48 +139,48 @@ View All Guides &rarr;
 <p>Once the handshake  -  classical, post-quantum, or hybrid  -  has established a shared secret, the rest of your traffic is scrambled with symmetric encryption, almost always AES-256 or ChaCha20. These don’t rely on the “hard math problem” structure that makes public-key cryptography vulnerable to Shor’s algorithm. The relevant quantum attack against symmetric ciphers, Grover’s algorithm, only roughly halves their effective security margin rather than breaking them outright  -  and AES-256 has so much margin to spare that even halved, it remains solidly secure.</p>
 <p>This is why the <a href="/blog/what-is-a-post-quantum-vpn.html">post-quantum VPN</a> conversation is narrower than it might sound. You don’t need a “post-quantum AES.” You need a post-quantum handshake, because that’s the only piece a quantum computer meaningfully threatens.</p>
 </div>
-<section id="faqs" class="faqs-accordion-box" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 24px 28px; margin-bottom: 24px; width: 100%; box-shadow: 0 4px 16px rgba(0,0,0,0.02); box-sizing: border-box;">
+<section id="faqs" class="faqs-accordion-box" style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 26px 30px; margin-bottom: 24px; width: 100%; box-shadow: 0 4px 16px rgba(0,0,0,0.02); box-sizing: border-box;">
   <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 16px 0; color: #0F172A; border: none !important; padding-bottom: 0 !important;">Frequently Asked Questions</h2>
-  <div style="display: flex; flex-direction: column;">
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>1. Quantum computers don't exist yet, so this doesn't matter for years.</span>
+      <span>Quantum computers don't exist yet, so this doesn't matter for years.</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       This ignores harvest now, decrypt later. The threat isn’t that your VPN traffic gets broken today - it’s that it gets recorded today and broken whenever a capable quantum computer eventually exists. The earlier your VPN upgrades, the less of your past traffic is exposed to that eventual risk.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>2. A [post-quantum VPN](/blog/what-is-a-post-quantum-vpn.html) will be noticeably slower.</span>
+      <span>A [post-quantum VPN](/blog/what-is-a-post-quantum-vpn.html) will be noticeably slower.</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       This was closer to true with early, experimental post-quantum algorithms, which sometimes had unwieldy key sizes. The NIST-standardized algorithms, particularly ML-KEM, are efficient enough that the added handshake overhead - a few extra kilobytes, a few milliseconds - is basically invisible during normal use. Your video call, your browsing, your downloads all run at the same speed once the handshake completes.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>3. If quantum computers can break my VPN's handshake, they can break everything about my privacy.</span>
+      <span>If quantum computers can break my VPN's handshake, they can break everything about my privacy.</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       Not quite. A broken handshake means an attacker with a future quantum computer could recover the session key for connections made before your VPN upgraded. It doesn’t retroactively unmask your identity if your provider had a strict [no-logs policy](/blog/which-free-vpn-does-not-keep-logs.html), and it doesn’t affect encryption that never depended on the vulnerable math in the first place, such as the AES-256 bulk cipher.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>4. I have to manually turn on post-quantum mode.</span>
+      <span>I have to manually turn on post-quantum mode.</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       On a well-built modern VPN, no - it should be part of the default handshake for every connection, not a setting hidden three menus deep that most users will never find. If a provider requires you to dig through advanced settings to get post-quantum protection, most users won’t get the benefit.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>5. Post-quantum VPNs require special hardware or a faster device.</span>
+      <span>Post-quantum VPNs require special hardware or a faster device.</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
@@ -189,8 +189,8 @@ View All Guides &rarr;
   </details>
   </div>
 </section>
-<section id="wrapping-it-up" class="wrap-up-box" style="background: #FFF8F8; border: 1px solid rgba(218, 41, 28, 0.2); border-left: 5px solid #DA291C; border-radius: 16px; padding: 24px 28px; margin-bottom: 24px; width: 100%; box-shadow: 0 4px 16px rgba(218, 41, 28, 0.03); box-sizing: border-box;">
-  <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 10px 0; color: #0F172A; border: none !important; padding-bottom: 0 !important;">Wrapping It Up</h2>
+<section id="wrapping-it-up" class="wrap-up-box" style="background: #FFF5F5 !important; border: 1.5px solid rgba(218, 41, 28, 0.25) !important; border-left: 5px solid #DA291C !important; border-radius: 16px !important; padding: 26px 30px !important; margin-bottom: 24px !important; width: 100% !important; box-shadow: 0 4px 20px rgba(218, 41, 28, 0.05) !important; box-sizing: border-box !important;">
+  <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 12px 0; color: #DA291C; border: none !important; padding-bottom: 0 !important;">Wrapping It Up</h2>
   <p style="font-size: 1.05rem; line-height: 1.75; color: #1E293B; margin-bottom: 12px;">
     Navigating What Is a Post-Quantum VPN and Why Do You Need One? effectively requires choosing security architectures built on transparency, strong encryption, and verified zero data logging.
   </p>

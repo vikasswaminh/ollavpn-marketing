@@ -64,7 +64,7 @@ View All Guides &rarr;
   </ul>
 </section>
 <div class="blog-main-content-box">
-<p>You’re using a VPN because you care about your privacy, but sometimes, a hidden vulnerability called a DNS leak can unintentionally expose your browsing, even with your VPN on. It’s like locking your front door but leaving a window wide open! This guide will show you a simple, effective way to check for DNS leaks on any device, ensuring your online activity truly stays private and that your internet requests aren’t taking an unprotected detour outside your secure VPN tunnel.</p>
+You're using a VPN because you care about your privacy, but sometimes, a hidden vulnerability called a DNS leak can unintentionally expose your browsing, even with your VPN on. It's like locking your front door but leaving a window wide open! This guide will show you a simple, effective way to check for DNS leaks on any device, ensuring your online activity truly stays private and that your internet requests aren't taking an unprotected detour outside your secure VPN tunnel.
 <h2 id="1-whats-the-quick-way-to-test-for-a-dns-leak">1. What’s the quick way to test for a DNS leak?</h2>
 <p>To quickly test for a DNS leak, visit a dedicated DNS leak test website with your VPN off, note your original IP and DNS servers, then connect your VPN and re-run the test to ensure only your VPN’s IP and DNS servers appear.</p>
 <p>The fastest way to check for a DNS leak is to use an online tool designed for just that purpose. You’ll want to start by visiting a site like <a href="https://www.dnsleaktest.com">dnsleaktest.com</a> or <a href="https://www.ipleak.net">ipleak.net</a> *before* you connect your VPN. This gives you a baseline. Make a note of your current public IP address and the list of DNS servers that show up. These are your real, unmasked details. Next, fire up OllaVPN and connect to any server. Once you’re connected and confirmed that your VPN is active, go back to the same DNS leak test website and refresh the page, or run the test again. What you’re looking for now is a new public IP address that matches your VPN server’s location, and a DNS server list that *only* shows servers associated with OllaVPN. You shouldn’t see any of the DNS servers you noted down in the first step. If you still see your original IP address or any of your original DNS servers, that’s a DNS leak. It means your internet requests are bypassing the VPN tunnel, revealing your activity to your ISP or others. OllaVPN is designed to prevent these leaks by routing all your DNS requests securely through its encrypted tunnel and using its own private, zero-log DNS servers. So, when you’re connected to us, you should see only our details, keeping your online activity private.</p>
@@ -127,75 +127,75 @@ View All Guides &rarr;
 <li>What are common DNS leak errors, and how do you fix them quickly?</li>
 </ul>
 </div>
-<section id="faqs" class="faqs-accordion-box" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 24px 28px; margin-bottom: 24px; width: 100%; box-shadow: 0 4px 16px rgba(0,0,0,0.02); box-sizing: border-box;">
+<section id="faqs" class="faqs-accordion-box" style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 26px 30px; margin-bottom: 24px; width: 100%; box-shadow: 0 4px 16px rgba(0,0,0,0.02); box-sizing: border-box;">
   <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 16px 0; color: #0F172A; border: none !important; padding-bottom: 0 !important;">Frequently Asked Questions</h2>
-  <div style="display: flex; flex-direction: column;">
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>1. How long does it take to test for a DNS leak?</span>
+      <span>How long does it take to test for a DNS leak?</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       Not long at all! You can usually complete a basic DNS leak test in about 5 minutes. It's a pretty quick process, especially once you know what you're looking for. It's a small investment of time for a big privacy win, letting you confirm your VPN is working as intended without much fuss.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>2. Do I need to be technical to perform a DNS leak test?</span>
+      <span>Do I need to be technical to perform a DNS leak test?</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       Nope, not really. We've designed this guide so anyone can follow it. You don't need any special tech skills; just follow the steps, and you'll be able to check for yourself. It's more about careful observation than technical wizardry, and you'll quickly get the hang of it.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>3. What if a step in the test doesn't work for me?</span>
+      <span>What if a step in the test doesn't work for me?</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       If you hit a snag, don't worry. Sometimes browsers or websites can be a bit finicky. Try refreshing the page, or even switching to a different web browser. We've also got a dedicated section for common errors and quick fixes to help you out, so you won't be left hanging.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>4. Will testing for a DNS leak delete my data permanently?</span>
+      <span>Will testing for a DNS leak delete my data permanently?</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       Absolutely not. Performing a DNS leak test is a non-invasive check. You're just looking at information that's already publicly available to your ISP. It won't delete any of your personal data or change your system settings permanently, so you can do it with peace of mind.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>5. Can I undo the changes if I change my mind after fixing a leak?</span>
+      <span>Can I undo the changes if I change my mind after fixing a leak?</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       Mostly, yes. If you made any manual changes to your network settings to fix a leak, you can typically revert them. However, if you're using a quality VPN like OllaVPN, it's designed to handle these issues automatically, so you might not even need to make manual changes in the first place.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>6. Is it safe to do a DNS leak test on a public Wi-Fi network?</span>
+      <span>Is it safe to do a DNS leak test on a public Wi-Fi network?</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       Yes, it's safe to perform the test itself on public Wi-Fi. In fact, it's a good idea to check your VPN's integrity in such environments. Just make sure your VPN is connected \before\ you start browsing or doing anything sensitive, even for the test, to keep yourself protected.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>7. Should I use a VPN while doing this test?</span>
+      <span>Should I use a VPN while doing this test?</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
       Yes, you absolutely should! The whole point of the test is to see if your VPN is effectively preventing DNS leaks. You'll perform the test once with your VPN off to get your baseline, and then again with your VPN on to see if it's properly routing your DNS requests through its servers.
     </p>
   </details>
-  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
+  <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 1.05rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>8. How do I verify that my DNS leak fix actually worked?</span>
+      <span>How do I verify that my DNS leak fix actually worked?</span>
       <span class="faq-accordion-icon" style="font-size: 1.25rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 1.0rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
@@ -204,8 +204,8 @@ View All Guides &rarr;
   </details>
   </div>
 </section>
-<section id="wrapping-it-up" class="wrap-up-box" style="background: #FFF8F8; border: 1px solid rgba(218, 41, 28, 0.2); border-left: 5px solid #DA291C; border-radius: 16px; padding: 24px 28px; margin-bottom: 24px; width: 100%; box-shadow: 0 4px 16px rgba(218, 41, 28, 0.03); box-sizing: border-box;">
-  <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 10px 0; color: #0F172A; border: none !important; padding-bottom: 0 !important;">Wrapping It Up</h2>
+<section id="wrapping-it-up" class="wrap-up-box" style="background: #FFF5F5 !important; border: 1.5px solid rgba(218, 41, 28, 0.25) !important; border-left: 5px solid #DA291C !important; border-radius: 16px !important; padding: 26px 30px !important; margin-bottom: 24px !important; width: 100% !important; box-shadow: 0 4px 20px rgba(218, 41, 28, 0.05) !important; box-sizing: border-box !important;">
+  <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 12px 0; color: #DA291C; border: none !important; padding-bottom: 0 !important;">Wrapping It Up</h2>
   <p style="font-size: 1.05rem; line-height: 1.75; color: #1E293B; margin-bottom: 12px;">
     Navigating How Do You Test for a DNS Leak, and Why Does It Matter? effectively requires choosing security architectures built on transparency, strong encryption, and verified zero data logging.
   </p>
