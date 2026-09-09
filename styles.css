@@ -3285,19 +3285,47 @@ article h2::before,
 }
 
 
+
+
+
 /* ==========================================================================
-   STATIC LHS & RHS SIDEBAR OVERRIDE (NO SCROLL-STICK)
+   PINNED LHS & RHS SIDEBARS (STATIONARY ON SCREEN WHILE CENTER SCROLLS)
    ========================================================================== */
-.desktop-sidebar-24obs,
-.desktop-sidebar-24obs.left-sidebar,
-.desktop-sidebar-24obs.right-sidebar,
-.article-left-sidebar,
-.article-right-sidebar {
-  position: static !important;
-  top: auto !important;
-  bottom: auto !important;
+.desktop-sidebar-24obs {
+  width: 200px !important;
+  flex-shrink: 0 !important;
+  position: sticky !important;
+  top: 90px !important;
   align-self: flex-start !important;
+  max-height: calc(100vh - 105px) !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #E2E8F0 transparent !important;
+  margin: 0 !important;
   transform: none !important;
-  max-height: none !important;
-  overflow-y: visible !important;
+  box-sizing: border-box !important;
+}
+
+.desktop-sidebar-24obs.left-sidebar,
+.desktop-sidebar-24obs.right-sidebar {
+  width: 200px !important;
+  margin: 0 !important;
+  position: sticky !important;
+  top: 90px !important;
+  align-self: flex-start !important;
+}
+
+.desktop-sidebar-24obs::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+.desktop-sidebar-24obs::-webkit-scrollbar-thumb {
+  background: #E2E8F0 !important;
+  border-radius: 4px !important;
+}
+
+@media (max-width: 1120px) {
+  .desktop-sidebar-24obs {
+    display: none !important;
+  }
 }
