@@ -80,7 +80,7 @@ View All Guides &rarr;
 <p>User data sales. Some free VPNs collect your browsing history, the domains you visit, and session metadata - and sell it to data brokers or advertisers. You installed a VPN to protect your privacy, and the VPN is actively harvesting it.</p>
 <p>Ad injection and tracking. Some free VPNs modify web traffic in transit to insert advertisements or tracking pixels. Beyond the obvious privacy violation, ad injection can introduce security vulnerabilities and deliver malware.</p>
 <p>Bandwidth resale. Some free VPN apps use your device and internet connection as exit nodes in a commercial proxy network. Your IP appears in logs of whatever other customers are doing online - a security and potentially legal risk.</p>
-<p>Weak or missing encryption. Some free VPNs cut costs by using outdated protocols, skipping the kill switch, or not securing DNS queries through the tunnel. A VPN that looks connected but uses broken encryption provides the psychological comfort of privacy without any of the actual protection.</p>
+<p>Weak or missing encryption. Some free VPNs cut costs by using outdated protocols, skipping the <a href="/blog/what-is-a-vpn-kill-switch/">kill switch</a>, or not securing DNS queries through the tunnel. A VPN that looks connected but uses broken encryption provides the psychological comfort of privacy without any of the actual protection.</p>
 <p>Malware bundling. In the worst cases, a “free VPN” is simply a vehicle for delivering malware. Common enough in early-generation apps to show up prominently in academic research.</p>
 <p>Any one of these outcomes makes a free VPN worse than no VPN at all. The irony is that users who are actively trying to protect themselves are putting themselves at greater risk than if they’d done nothing - because the VPN gives a false sense of security while actively harvesting data or exposing the device to malware.</p>
 <h2 id="the-seven-warning-signs-of-an-unsafe-free-vpn">The seven warning signs of an unsafe free VPN</h2>
@@ -134,7 +134,7 @@ View All Guides &rarr;
 <p>Turbo VPN, VPN Proxy Master, and others: Multiple services with hundreds of millions of combined downloads have been linked to Chinese ownership, creating specific legal risks for user data</p>
 <p>The takeaway: the free VPN category has a significantly elevated rate of malware, data exposure, and deceptive practices. The safety check matters more here than for almost any other software category.</p>
 <h2 id="dns-leaks-and-ip-leaks-in-free-vpns">DNS leaks and IP leaks in free VPNs</h2>
-<p>DNS leaks and IP leaks are the most common technical safety failures in free VPNs, and they can expose your real identity and browsing activity even when the VPN appears to be connected.</p>
+<p><a href="/blog/what-is-a-dns-leak/">DNS leaks</a> and IP leaks are the most common technical safety failures in free VPNs, and they can expose your real identity and browsing activity even when the VPN appears to be connected.</p>
 <p>A VPN routes all traffic - including DNS queries - through an encrypted tunnel. When a VPN fails to route DNS queries through the tunnel, those queries leak through your regular connection. Your ISP can see every domain you visit even though you believe you’re protected. This is a DNS leak.</p>
 <p>When a VPN fails to bind your real IP to the tunnel, your real IP can be exposed through WebRTC, IPv6, or fallback routes. This is an IP leak.</p>
 <p>Common causes in free VPNs:</p>
@@ -158,7 +158,7 @@ View All Guides &rarr;
 <p>The legal jurisdiction of a VPN operator determines what data it can be compelled to produce under law - and free VPNs based in high-risk jurisdictions create meaningful risks even if they technically have a <a href="/blog/which-free-vpn-does-not-keep-logs.html">no-logs</a> policy.</p>
 <p>Even a well-implemented <a href="/blog/which-free-vpn-does-not-keep-logs.html">no-logs</a> policy operates under the laws of the country the VPN is incorporated in. Those laws determine what data the government can compel the VPN to produce.</p>
 <p>High-risk jurisdictions include:</p>
-<p>Five Eyes, Nine Eyes, or Fourteen Eyes member countries - alliances that share surveillance data across members.</p>
+<p><a href="/blog/five-eyes-nine-eyes-fourteen-eyes/">Five Eyes</a>, Nine Eyes, or Fourteen Eyes member countries - alliances that share surveillance data across members.</p>
 <p>Countries with mandatory data retention laws, where VPNs may be legally required to log the very data, they claim not to keep.</p>
 <p>Countries with weak or unenforced privacy law.</p>
 <p>Many widely downloaded free VPN apps are operated by companies with Chinese ownership. China’s legal obligations for companies to cooperate with government data requests are significantly more expansive than in most Western jurisdictions.</p>

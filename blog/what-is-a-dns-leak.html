@@ -87,7 +87,7 @@ View All Guides &rarr;
 </ul>
 <p>The best way to think about it: a DNS leak doesn’t undo your VPN  -  but it dramatically narrows what your VPN is protecting.</p>
 <h2 id="what-causes-dns-leaks">What causes DNS leaks</h2>
-<p>QUICK ANSWER The most common causes are VPNs that don’t handle DNS inside their own infrastructure, IPv6 traffic bypassing the tunnel, unexpected VPN disconnects without a kill switch, and operating-system misconfigurations. Choosing a VPN that handles DNS correctly by default removes most of the risk.</p>
+<p>QUICK ANSWER The most common causes are VPNs that don’t handle DNS inside their own infrastructure, IPv6 traffic bypassing the tunnel, unexpected VPN disconnects without a <a href="/blog/what-is-a-vpn-kill-switch/">kill switch</a>, and operating-system misconfigurations. Choosing a VPN that handles DNS correctly by default removes most of the risk.</p>
 <p>DNS leaks have a handful of common root causes. Most of them are unintentional  -  bugs in older VPN clients, oversights in operating-system networking, side effects of recent network changes.</p>
 <h4 id="the-vpn-doesnt-run-its-own-dns">The VPN doesn’t run its own DNS</h4>
 <p>Some VPNs route the rest of your traffic through the tunnel but leave DNS lookups to your operating system, which routes them to your internet provider’s resolver. Reputable VPNs run their own DNS infrastructure to prevent this.</p>
@@ -152,13 +152,13 @@ View All Guides &rarr;
 <p>IPv6 deserves its own mention because it’s the source of more “I thought I was protected” VPN incidents than any other single cause.</p>
 <p>Most VPNs were originally built for IPv4  -  the older addressing system the internet has used for decades. When IPv6  -  the newer system  -  became available on residential networks, many VPNs simply ignored it. The result: IPv4 traffic went through the tunnel, IPv6 traffic went around it. If your home network uses both, you had what’s effectively a permanent partial leak.</p>
 <p>Modern reputable VPNs handle IPv6 either by routing it through the tunnel or by disabling it inside the tunnel by default. Either is a valid approach. What’s not valid is letting it leak.</p>
-<p>When you run a DNS leak test, also check whether the site offers an <strong>IPv6 leak test</strong>  -  many do. Run both.</p>
+<p>When you run a DNS leak test, also check whether the site offers an <strong><a href="/blog/what-is-an-ipv6-leak/">IPv6 leak</a> test</strong>  -  many do. Run both.</p>
 <h2 id="your-privacy-checklist">Your privacy checklist</h2>
 <h4 id="the-five-minute-no-leak-sanity-check-once-a-year">The five-minute “no-leak” sanity check, once a year</h4>
 <ul>
 <li><strong>Run a DNS leak test</strong> while connected to your VPN. Standard <em>and</em> extended.</li>
 <li><strong>Run an IPv6 leak test</strong> at the same time.</li>
-<li><strong>Run a WebRTC leak test</strong> from a browser. (Browsers sometimes leak real IPs through WebRTC even when the VPN is up.)</li>
+<li><strong>Run a <a href="/blog/what-is-a-webrtc-leak/">WebRTC leak</a> test</strong> from a browser. (Browsers sometimes leak real IPs through WebRTC even when the VPN is up.)</li>
 <li><strong>Verify the kill switch is enabled</strong> in your VPN app’s settings.</li>
 <li><strong>Update your VPN app</strong> to the latest version.</li>
 <li><strong>Check that your operating system is up to date</strong>  -  Windows, macOS, and Linux release networking fixes regularly.</li>
@@ -171,7 +171,7 @@ View All Guides &rarr;
 <li><strong>The kill switch is always on.</strong> You can’t accidentally disable it. If the tunnel ever drops, traffic stops until the tunnel is back.</li>
 <li><strong>IPv6 is handled by default.</strong> No partial leaks, no manual configuration.</li>
 <li><strong>No third-party DNS resolver in the loop.</strong> We don’t hand your lookups to a public resolver and call it private. They go through us, inside the tunnel.</li>
-<li><strong>Post-quantum cryptography ready from day one.</strong> The same encryption that protects your traffic today is built to remain secure against future quantum computers  -  the “harvest now, decrypt later” concern explained in our <a href="nordvpn-vs-protonvpn.html">comparison guide</a>.</li>
+<li><strong><a href="/blog/what-is-post-quantum-cryptography/">Post-quantum cryptography</a> ready from day one.</strong> The same encryption that protects your traffic today is built to remain secure against future quantum computers  -  the “harvest now, decrypt later” concern explained in our <a href="nordvpn-vs-protonvpn.html">comparison guide</a>.</li>
 </ul>
 <p>The result: if you run a DNS leak test while connected to OllaVPN, the test should show only OllaVPN’s resolver. Every connection. Every time. There’s nothing for you to configure.</p>
 <p><strong>Try OllaVPN  -  the whole menu:</strong></p>

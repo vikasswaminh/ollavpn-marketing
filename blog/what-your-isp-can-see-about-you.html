@@ -108,7 +108,7 @@ View All Guides &rarr;
 <p>Every website visit typically starts with a DNS lookup, translating a domain name into an IP address. By default, that lookup travels as plain, unencrypted text to a DNS resolver - usually your ISP’s own - meaning your ISP gets a running log of every domain you visit before you even connect to it.</p>
 <p>DNS is often called the internet’s phone book: to call someone, you first look up their number. Traditional DNS lookups happen over an old, unencrypted protocol (port 53). Unless you’ve changed your settings, your device sends those lookups straight to a resolver run by your ISP - effectively a request log of every domain you’re about to visit, independent of whether the site itself uses HTTPS.</p>
 <p>Two newer protocols address this directly:</p>
-<p>DNS over HTTPS (DoH) wraps DNS queries inside an encrypted HTTPS connection, so they look like ordinary web traffic and can’t be read by anyone in between, including your ISP.</p>
+<p><a href="/blog/what-is-dns-over-https/">DNS over HTTPS</a> (DoH) wraps DNS queries inside an encrypted HTTPS connection, so they look like ordinary web traffic and can’t be read by anyone in between, including your ISP.</p>
 <p>DNS over TLS (DoT) achieves the same encryption using a dedicated encrypted channel rather than disguising the traffic as HTTPS.</p>
 <p>Both are now supported natively in most modern browsers and operating systems, but neither is enabled by default in every configuration. And a plain VPN connection doesn’t automatically fix DNS either. A VPN that lets DNS queries leak outside its encrypted tunnel (a “DNS leak”) defeats much of the purpose. That’s why “does the VPN handle DNS inside the tunnel” is one of the first questions worth asking about any VPN product - not an afterthought.</p>
 <h2 id="what-your-isp-cannot-see-with-a-vpn">What your ISP cannot see with a VPN</h2>
@@ -155,7 +155,7 @@ View All Guides &rarr;
 <p>Here’s the practical, ordered list.</p>
 <p>The layers that actually work</p>
 <p>Use a VPN that encrypts DNS inside its encrypted tunnel. This is your first line of defense: it wraps your destination domains, DNS requests, and content in a single encrypted connection, blocking your provider’s view.</p>
-<p>Confirm there’s no DNS leak. Your VPN might show “connected” while silently leaking queries. Use a leak test tool; if your provider’s name shows up, your configurations need adjusting.</p>
+<p>Confirm there’s no <a href="/blog/what-is-a-dns-leak/">DNS leak</a>. Your VPN might show “connected” while silently leaking queries. Use a leak test tool; if your provider’s name shows up, your configurations need adjusting.</p>
 <p>Enable Encrypted Client Hello (ECH) where supported. This extension encrypts the SNI handshake header, stopping domain leaks on normal connections. Though adoption is ongoing, enable it in your browser flags.</p>
 <p>Avoid plain HTTP sites. Without SSL/TLS, every interaction, search, and form submission travels in plain text, making it visible to any network interceptor.</p>
 <p>Review your router’s telemetry and default DNS settings. Provider-issued routers often route through default DNS pools and collect usage analytics. Replace the hardware or manually update the DNS configurations.</p>
@@ -181,8 +181,8 @@ View All Guides &rarr;
 <p>OllaVPN’s approach to this specific problem:</p>
 <p>DNS is handled entirely inside the encrypted tunnel by default, on every plan including the free tier - see our DNS leak guide for how to verify this yourself in under two minutes.</p>
 <p>A <a href="/blog/which-free-vpn-does-not-keep-logs.html">no-logs</a> policy means that even the visibility we could technically have as your VPN provider isn’t retained anywhere for anyone to request later.</p>
-<p>An always-on kill switch means that if the encrypted tunnel drops unexpectedly, your traffic stops rather than silently falling back to your ISP’s unencrypted view.</p>
-<p>Post-quantum cryptography on every connection, including the lifetime free plan, protects against traffic captured today being decrypted years from now as quantum computing matures.</p>
+<p>An always-on <a href="/blog/what-is-a-vpn-kill-switch/">kill switch</a> means that if the encrypted tunnel drops unexpectedly, your traffic stops rather than silently falling back to your ISP’s unencrypted view.</p>
+<p><a href="/blog/what-is-post-quantum-cryptography/">Post-quantum cryptography</a> on every connection, including the lifetime free plan, protects against traffic captured today being decrypted years from now as quantum computing matures.</p>
 <p>Free for life - the specific technical fixes in this guide shouldn’t be locked behind a subscription.</p>
 <p>OllaVPN  -  built around the things that actually matter:</p>
 <p>Lifetime free $0 · 10 Mbps Unlimited data. Every country we serve. In-tunnel DNS and post-quantum protection on by default. No email required.</p>

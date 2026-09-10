@@ -104,7 +104,7 @@ View All Guides &rarr;
 <p>Post-quantum tunnels</p>
 <p>Default on desktop (pioneered)</p>
 <p>Rolling out</p>
-<p>Kill switch</p>
+<p><a href="/blog/what-is-a-vpn-kill-switch/">Kill switch</a></p>
 <p>Yes, on all platforms</p>
 <p>Yes, on all platforms</p>
 <p>What this table is really telling you: this isn’t a “which is better” decision in the usual sense. Both products are excellent. The choice is between two genuinely thoughtful philosophies about how a privacy VPN should be structured.</p>
@@ -167,7 +167,7 @@ View All Guides &rarr;
 <h2 id="post-quantum-readiness-----mullvads-important-lead">Post-quantum readiness  -  Mullvad’s important lead</h2>
 <p>QUICK ANSWER Mullvad pioneered post-quantum-safe WireGuard tunnels and made them the default on desktop in 2023. ProtonVPN is rolling out post-quantum protections more recently. OllaVPN is built post-quantum-ready from day one.</p>
 <p>This deserves its own section because Mullvad genuinely led the industry here, and it would be dishonest to tell this story without giving them direct credit.</p>
-<p>The concern that drives post-quantum cryptography is a pattern researchers call <strong>“harvest now, decrypt later”</strong>: an adversary captures and stores your encrypted traffic today, even though they can’t read it today, on the bet that they’ll be able to decrypt it five or ten years from now once quantum computers mature. The encrypted sessions you run this week could sit in storage somewhere, waiting for the locks to become breakable.</p>
+<p>The concern that drives <a href="/blog/what-is-post-quantum-cryptography/">post-quantum cryptography</a> is a pattern researchers call <strong>“harvest now, decrypt later”</strong>: an adversary captures and stores your encrypted traffic today, even though they can’t read it today, on the bet that they’ll be able to decrypt it five or ten years from now once quantum computers mature. The encrypted sessions you run this week could sit in storage somewhere, waiting for the locks to become breakable.</p>
 <p>Most of the encryption used on the internet today relies on math problems that a sufficiently powerful quantum computer could solve. Post-quantum algorithms are designed to resist that future. Some of the biggest names in security  -  Apple, Signal, Cloudflare, Google  -  have been rolling out PQC across their own products over the last two years.</p>
 <p><strong>Mullvad shipped quantum-resistant tunnels in production WireGuard ahead of essentially every other commercial VPN.</strong> In 2023, the company integrated a Classic McEliece and Kyber hybrid into WireGuard’s existing handshake. In 2024, Mullvad made those tunnels <strong>the default on desktop clients</strong>  -  meaning new connections automatically use post-quantum protection without requiring the user to flip any switch.</p>
 <p>It’s the kind of move that defines what “privacy-first” actually means in practice. Mullvad didn’t wait for the rest of the industry. They didn’t wait for standardization to finish. They didn’t wait for a marketing reason. They did it because it was the right thing to do for users.</p>

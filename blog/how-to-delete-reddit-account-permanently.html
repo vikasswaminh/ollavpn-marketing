@@ -109,7 +109,7 @@ View All Guides &rarr;
 <p><strong>Visible state in the app.</strong> The OllaVPN menu-bar or system-tray icon should be green (connected) and any status panel should show the country you selected. If the icon is gray or amber, the tunnel didn’t fully come up  -  retry the connect.</p>
 <p><strong>IP address changed.</strong> Open <a href="/what-is-my-ip">our what-is-my-IP tool</a>. The IP shown should be the exit’s IP, not your real ISP’s IP, and the country shown should match the country you selected in the app. If you still see your real IP, the tunnel isn’t carrying traffic  -  the most common cause is a firewall on the local network blocking WireGuard’s UDP/51820. Try a different network briefly to isolate.</p>
 <p><strong>DNS is going through the tunnel.</strong> Open <a href="/dns-lookup">our DNS lookup tool</a>. The resolver IP shown should be the in-tunnel one (CGNAT 100.64.x.x range), not your ISP’s DNS. If you see your ISP’s resolver, DNS is leaking  -  see our <a href="/in-tunnel-dns">in-tunnel DNS page</a> for the technical details on why this happens and how OllaVPN prevents it.</p>
-<p><strong>No WebRTC leak.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit’s IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN  -  either OllaVPN’s leak prevention has failed (file a report at <code>[[email protected]](/cdn-cgi/l/email-protection)</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
+<p><strong>No <a href="/blog/what-is-a-webrtc-leak/">WebRTC leak</a>.</strong> Open <a href="/webrtc-leak-test">our WebRTC leak test</a>. You should see only the exit’s IPv4 address. If your real IP appears (private LAN address or public IPv4/IPv6), WebRTC is bypassing the VPN  -  either OllaVPN’s leak prevention has failed (file a report at <code>[[email protected]](/cdn-cgi/l/email-protection)</code>) or your browser has a WebRTC-specific privacy issue we can help diagnose.</p>
 <h2 id="if-a-step-fails-heres-how-to-debug">If a step fails, here’s how to debug</h2>
 <p>The most common failure modes for any VPN setup task on Windows, macOS, or Android, in order of frequency:</p>
 <p><strong>The VPN refuses to connect at all.</strong> Almost always a network-side issue: a restrictive firewall on the local network (school, corporate, hotel) blocking WireGuard’s default UDP/51820 port. Try a different network briefly to confirm it’s network-side. On Frankfurt the obfuscated MASQUE-on-port-443 transport works around many restrictive firewalls  -  switch to it in the country picker.</p>
@@ -170,7 +170,7 @@ View All Guides &rarr;
   </details>
   <details class="faq-accordion-item" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s ease;">
     <summary class="faq-accordion-summary" style="font-size: 0.925rem; font-weight: 800; color: #0F172A; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-      <span>6. Is it safe to delete my Reddit account on public Wi-Fi?</span>
+      <span>6. Is it safe to delete my Reddit account on [public Wi-Fi](/blog/how-public-wifi-steals-passwords/)?</span>
       <span class="faq-accordion-icon" style="font-size: 1.125rem; color: #DA291C; font-weight: 800; margin-left: 12px;">+</span>
     </summary>
     <p class="faq-accordion-content" style="font-size: 0.88rem; color: #1E293B; line-height: 1.68; margin-top: 10px; margin-bottom: 0; padding-top: 10px; border-top: 1px solid #E2E8F0;">
@@ -203,7 +203,7 @@ View All Guides &rarr;
     Navigating How to Permanently Delete Your Reddit Account effectively requires choosing security architectures built on transparency, strong encryption, and verified zero data logging.
   </p>
   <p style="font-size: 0.925rem; line-height: 1.75; color: #1E293B; margin-bottom: 0;">
-    With OllaVPN, you get post-quantum protected WireGuard tunneling, default-on kill switch defense, and in-tunnel DNS resolution to ensure your internet connection stays completely private across every network.
+    With OllaVPN, you get post-quantum protected WireGuard tunneling, default-on [kill switch](/blog/what-is-a-vpn-kill-switch/) defense, and in-tunnel DNS resolution to ensure your internet connection stays completely private across every network.
   </p>
 </section>
 <section id="download" class="download-section-box" style="background: linear-gradient(135deg, #ffffff 0%, #FFF8F8 100%); border: 1.5px solid rgba(218, 41, 28, 0.2); border-radius: 18px; padding: 32px 28px; margin-bottom: 24px; text-align: center; width: 100%; box-shadow: 0 6px 24px rgba(218, 41, 28, 0.06); box-sizing: border-box;">

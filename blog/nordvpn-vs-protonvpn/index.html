@@ -98,10 +98,10 @@ View All Guides &rarr;
 <p>Protocol family</p>
 <p>WireGuard-based (NordLynx) + OpenVPN</p>
 <p>WireGuard + OpenVPN</p>
-<p>Kill switch</p>
+<p><a href="/blog/what-is-a-vpn-kill-switch/">Kill switch</a></p>
 <p>Yes, on all platforms</p>
 <p>Yes, on all platforms</p>
-<p>Post-quantum cryptography</p>
+<p><a href="/blog/what-is-post-quantum-cryptography/">Post-quantum cryptography</a></p>
 <p>Rolling out</p>
 <p>Rolling out</p>
 <p>You can read that table two ways. The pessimistic read is “both kind of do everything.” The optimistic read  -  and the one we’d encourage  -  is that this is a category where the two leading options have both matured to the point where you can’t really make a wrong choice. The decision is now about <em>fit</em>, not features.</p>
@@ -139,10 +139,10 @@ View All Guides &rarr;
 <p>For <strong>torrenting</strong>, both support P2P on appropriate servers. NordVPN supports P2P broadly across its paid network. ProtonVPN supports P2P on VPN Plus and Proton Unlimited; the free tier does not allow torrenting. Both have kill switches that prevent your real IP from leaking if the tunnel drops mid-download.</p>
 <h2 id="security-and-encryption">Security and encryption</h2>
 <p>This is the section where comparison articles usually descend into a wall of cipher acronyms. We’d like to spare you that.</p>
-<p>The plain-English summary: <strong>both companies use modern, well-respected encryption</strong>. Both run WireGuard or a WireGuard variant. Both include a <strong>kill switch</strong> that blocks your traffic if the VPN drops, on every platform. Both protect against the common categories of leak  -  DNS leaks, IPv6 leaks, WebRTC  -  by default.</p>
+<p>The plain-English summary: <strong>both companies use modern, well-respected encryption</strong>. Both run WireGuard or a WireGuard variant. Both include a <strong>kill switch</strong> that blocks your traffic if the VPN drops, on every platform. Both protect against the common categories of leak  -  <a href="/blog/what-is-a-dns-leak/">DNS leaks</a>, <a href="/blog/what-is-an-ipv6-leak/">IPv6 leaks</a>, WebRTC  -  by default.</p>
 <p>Where they differ in posture:</p>
 <ul>
-<li><strong>NordVPN</strong> runs a closed-source app suite but has been <strong>independently audited multiple times</strong> by major firms including Deloitte and PwC, with the audits covering both the no-logs policy and the application code. After a server-configuration incident in 2018, the company publicly disclosed what happened, addressed the root cause, and made a structural move to diskless RAM-only servers. The transparency around that incident is, in our opinion, one of the company’s better moments.</li>
+<li><strong>NordVPN</strong> runs a closed-source app suite but has been <strong>independently audited multiple times</strong> by major firms including Deloitte and PwC, with the audits covering both the <a href="/blog/what-logs-does-vpn-keep/">no-logs policy</a> and the application code. After a server-configuration incident in 2018, the company publicly disclosed what happened, addressed the root cause, and made a structural move to diskless RAM-only servers. The transparency around that incident is, in our opinion, one of the company’s better moments.</li>
 <li><strong>ProtonVPN</strong> publishes the full source code for every app  -  Windows, macOS, Linux, iOS, Android, browser extensions  -  and has had them externally audited. The combination of “fully open source” and “Swiss-based” is a particular kind of reassurance that some readers value highly.</li>
 </ul>
 <p>Both companies are also beginning to roll out <strong>post-quantum cryptography</strong> protections  -  more on what that means in the dedicated section further down.</p>

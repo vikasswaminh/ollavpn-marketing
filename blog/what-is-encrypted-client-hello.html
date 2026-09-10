@@ -58,7 +58,7 @@ View All Guides &rarr;
     <li style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px;">
       <span class="takeaway-bullet" style="color: #DA291C; font-weight: 800; font-size: 1.125rem; line-height: 1.2;">•</span>
       <div style="font-size: 0.90rem; line-height: 1.65; color: #1E293B;">
-        <strong style="color: #0F172A; font-weight: 800;">How does ECH fit in with other internet privacy concepts like DNS over HTTPS:</strong> ECH significantly improves your online privacy by encrypting the last unencrypted part of your web traffic, making it harder for others to see which websites you're visiting.
+        <strong style="color: #0F172A; font-weight: 800;">How does ECH fit in with other internet privacy concepts like [DNS over HTTPS](/blog/what-is-dns-over-https/):</strong> ECH significantly improves your online privacy by encrypting the last unencrypted part of your web traffic, making it harder for others to see which websites you're visiting.
       </div>
     </li>
   </ul>
@@ -108,7 +108,7 @@ View All Guides &rarr;
 <p>ECH isn’t a replacement for HTTPS; it’s an extension that adds another layer of privacy to your web browsing.</p>
 <p>Think of it this way: HTTPS encrypts the content of your communication with a website, like your passwords, messages, and banking details. It’s fantastic for keeping your data private once the connection is established. However, certain information, specifically the website’s name you’re trying to reach (the Server Name Indication, or SNI), is typically sent unencrypted during the initial connection setup. This means that even with HTTPS, someone observing your network traffic could still see *which* websites you’re visiting, even if they can’t see *what* you’re doing on them.</p>
 <p>This is where ECH, or Encrypted Client Hello, comes in. It literally <strong>extends HTTPS</strong> by encrypting that previously unencrypted SNI field. This happens during the <strong>pre-handshake encryption</strong> phase, before the main HTTPS connection is fully established. So, instead of just encrypting your data, ECH encrypts the very first part of your conversation, making it much harder for snoopers to know which specific website you’re trying to connect to. It’s a <strong>complementary security</strong> measure, building on HTTPS rather than replacing it.</p>
-<p>For you, the user, this means even greater privacy. When you use OllaVPN, which handles your DNS requests and encrypts your entire connection, ECH adds an extra layer of stealth. It makes it significantly tougher for anyone monitoring your internet service provider or public Wi-Fi to build a profile of your browsing habits based on the websites you visit.</p>
+<p>For you, the user, this means even greater privacy. When you use OllaVPN, which handles your DNS requests and encrypts your entire connection, ECH adds an extra layer of stealth. It makes it significantly tougher for anyone monitoring your internet service provider or <a href="/blog/how-public-wifi-steals-passwords/">public Wi-Fi</a> to build a profile of your browsing habits based on the websites you visit.</p>
 <h2 id="can-ech-help-me-get-around-internet-censorship-in-some-regions">Can ECH help me get around internet censorship in some regions?</h2>
 <p>Yes, ECH can help you bypass some forms of internet censorship, but it’s not a complete solution like a VPN.</p>
 <p>ECH, or Encrypted Client Hello, is a relatively new web standard that encrypts the initial handshake between your browser and a website. This handshake usually contains the name of the website you’re trying to visit. Without ECH, censors can see this information and use it for <strong>domain blocking</strong>, even if the rest of your connection is encrypted. So, by encrypting this last piece of unencrypted metadata, ECH makes it harder for them to know which specific sites you’re trying to reach.</p>
@@ -211,7 +211,7 @@ View All Guides &rarr;
     Navigating What is Encrypted Client Hello (ECH) and Why Should You Care? effectively requires choosing security architectures built on transparency, strong encryption, and verified zero data logging.
   </p>
   <p style="font-size: 0.925rem; line-height: 1.75; color: #1E293B; margin-bottom: 0;">
-    With OllaVPN, you get post-quantum protected WireGuard tunneling, default-on kill switch defense, and in-tunnel DNS resolution to ensure your internet connection stays completely private across every network.
+    With OllaVPN, you get post-quantum protected WireGuard tunneling, default-on [kill switch](/blog/what-is-a-vpn-kill-switch/) defense, and in-tunnel DNS resolution to ensure your internet connection stays completely private across every network.
   </p>
 </section>
 <section id="download" class="download-section-box" style="background: linear-gradient(135deg, #ffffff 0%, #FFF8F8 100%); border: 1.5px solid rgba(218, 41, 28, 0.2); border-radius: 18px; padding: 32px 28px; margin-bottom: 24px; text-align: center; width: 100%; box-shadow: 0 6px 24px rgba(218, 41, 28, 0.06); box-sizing: border-box;">

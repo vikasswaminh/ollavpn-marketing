@@ -200,7 +200,7 @@ View All Guides &rarr;
 <h2 id="what-they-cant-do-with-your-ip-address">What they can’t do with your IP address</h2>
 <p>It’s worth stating clearly what your IP address does not expose, because fear here tends to get dramatic.</p>
 <p>They cannot read your messages or intercept your traffic.</p>
-<p>Knowing your IP address is not the same as being on your network. Traffic sent through your connection is encrypted in transit by HTTPS, end-to-end encryption, and VPN tunnels. Knowing where traffic goes doesn’t let someone read it.</p>
+<p>Knowing your IP address is not the same as being on your network. Traffic sent through your connection is encrypted in transit by HTTPS, <a href="/blog/what-is-end-to-end-encryption/">end-to-end encryption</a>, and VPN tunnels. Knowing where traffic goes doesn’t let someone read it.</p>
 <p>They cannot directly hack your device.</p>
 <p>An IP address is a location, not an access credential. To hack a device, they need a vulnerability to exploit - like an open port, an unpatched service, or compromised credentials. Your IP tells them where to look; it doesn’t give them entry.</p>
 <p>They cannot instantly find your home address.</p>
@@ -227,7 +227,7 @@ View All Guides &rarr;
 <p>What matters when choosing:</p>
 <p>Genuine <a href="/blog/which-free-vpn-does-not-keep-logs.html">no-logs policy</a> (independently audited, not just claimed)</p>
 <p>Jurisdiction outside aggressive data-retention regimes</p>
-<p>Kill switch that prevents traffic from flowing if the VPN connection drops</p>
+<p><a href="/blog/what-is-a-vpn-kill-switch/">Kill switch</a> that prevents traffic from flowing if the VPN connection drops</p>
 <p>DNS handled inside the encrypted tunnel</p>
 <p>Secure your router</p>
 <p>Change the default admin credentials.</p>
@@ -249,7 +249,7 @@ View All Guides &rarr;
 <h2 id="how-ollavpn-hides-your-ip">How OllaVPN hides your IP</h2>
 <p>We built OllaVPN to answer one question: what should a privacy-first VPN do automatically in 2026?</p>
 <p>Your real IP is replaced from the first packet. Every connection - web, app, game, streaming - goes through the encrypted tunnel before it reaches the open internet. Your home IP is never exposed to the destination.</p>
-<p>Post-quantum cryptography, built in. The tunnel uses a hybrid classical + ML-KEM-768 handshake designed to stay secure against future quantum computers. It’s not a paid upgrade. It’s on by default, including on the free plan.</p>
+<p><a href="/blog/what-is-post-quantum-cryptography/">Post-quantum cryptography</a>, built in. The tunnel uses a hybrid classical + ML-KEM-768 handshake designed to stay secure against future quantum computers. It’s not a paid upgrade. It’s on by default, including on the free plan.</p>
 <p>An always-on kill switch that cannot be disabled. If the VPN connection drops, your traffic stops. It doesn’t “fall back” to your real IP.</p>
 <p>DNS handled inside the encrypted tunnel. Your DNS queries - the requests that reveal which websites you’re visiting - go through the tunnel to our in-tunnel resolver. They never touch your ISP’s DNS servers.</p>
 <p>Genuine <a href="/blog/which-free-vpn-does-not-keep-logs.html">no-logs policy</a>. We don’t log which sites you visit, when you connect, or what you do. There’s nothing to hand over.</p>

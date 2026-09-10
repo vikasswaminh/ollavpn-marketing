@@ -96,8 +96,8 @@ View All Guides &rarr;
 <p>Servers: every country in OllaVPN’s network. Free users are not restricted to a subset of server locations the way they are on most VPN free tiers. Every country is available.</p>
 <p>Protocol: <a href="/free-wireguard-vpn">WireGuard</a>. The modern, fast, auditable VPN protocol. Not a downgraded legacy protocol reserved for non-paying users.</p>
 <p>Post-quantum encryption: included. The same hybrid post-quantum handshake that protects paid connections is available on the free plan with no configuration required. This is not a paid feature.</p>
-<p>Kill switch: always-on, mandatory. If the VPN connection drops, traffic is blocked. There is no option to disable the kill switch. This is an unusual design choice - most VPNs make the kill switch optional - but it’s the right one for a privacy-first product.</p>
-<p>DNS: in-tunnel. DNS queries go through OllaVPN’s in-tunnel resolver rather than your ISP’s or a third-party service. This prevents DNS leaks by default.</p>
+<p><a href="/blog/what-is-a-vpn-kill-switch/">Kill switch</a>: always-on, mandatory. If the VPN connection drops, traffic is blocked. There is no option to disable the kill switch. This is an unusual design choice - most VPNs make the kill switch optional - but it’s the right one for a privacy-first product.</p>
+<p>DNS: in-tunnel. DNS queries go through OllaVPN’s in-tunnel resolver rather than your ISP’s or a third-party service. This prevents <a href="/blog/what-is-a-dns-leak/">DNS leaks</a> by default.</p>
 <p>IPv6: handled inside the tunnel. IPv6 traffic is protected rather than leaked. A common oversight in VPN implementations that OllaVPN addresses explicitly.</p>
 <p>No account required, no email, no card. Download the app. Connect. That’s it.</p>
 <h2 id="the-sustainability-model-how-plus-funds-free">The sustainability model: how Plus funds Free</h2>
@@ -126,7 +126,7 @@ View All Guides &rarr;
 <h2 id="post-quantum-encryption-on-the-free-plan">Post-quantum encryption on the free plan</h2>
 <p>QUICK ANSWER Post-quantum encryption is included on OllaVPN’s free plan at no extra cost. The same hybrid handshake (classical X25519 + ML-KEM-768) that protects paid connections also protects free connections. This is notable because most VPNs that have deployed post-quantum protection have restricted it to premium tiers.</p>
 <p>One of the more unusual things about OllaVPN’s free plan is that it includes post-quantum encryption without configuration, without a toggle, and without any additional cost.</p>
-<p>Post-quantum cryptography (PQC) is, in simple terms, a family of new encryption algorithms designed to remain secure even when powerful quantum computers eventually exist. The most important present-day threat it addresses is called “harvest now, decrypt later” - adversaries capturing your encrypted VPN traffic today and storing it to decrypt later once quantum computers become capable. For a full explainer on how this works and why it matters, see our <a href="/blog/what-is-post-quantum-cryptography.html">post-quantum cryptography</a> guide.</p>
+<p><a href="/blog/what-is-post-quantum-cryptography/">Post-quantum cryptography</a> (PQC) is, in simple terms, a family of new encryption algorithms designed to remain secure even when powerful quantum computers eventually exist. The most important present-day threat it addresses is called “harvest now, decrypt later” - adversaries capturing your encrypted VPN traffic today and storing it to decrypt later once quantum computers become capable. For a full explainer on how this works and why it matters, see our <a href="/blog/what-is-post-quantum-cryptography.html">post-quantum cryptography</a> guide.</p>
 <p>The short version: your VPN traffic from today could be decryptable by a sufficiently advanced quantum computer in ten or fifteen years. Post-quantum encryption is designed to make that impossible. The U.S. NIST finalized the first three post-quantum standards - FIPS 203, 204, and 205 - in August 2024, and major deployments followed at Apple, Signal, Google Chrome, Cloudflare, and Mullvad.</p>
 <p>OllaVPN uses a hybrid handshake: a classical X25519 key exchange combined with ML-KEM-768, the post-quantum key encapsulation mechanism from the NIST FIPS 203 standard. Both must succeed for the connection to form. If one algorithm is later found to have weaknesses, the other holds the connection together. This belt-and-suspenders design is the industry consensus approach for the transition period.</p>
 <p>What matters for the question at hand: this is available on the free plan. Not a paid feature. Not a manual setting. Every OllaVPN connection, including free ones, uses the hybrid post-quantum handshake from the first packet.</p>
@@ -180,7 +180,7 @@ View All Guides &rarr;
 <p>In-tunnel DNS</p>
 <p>IPv6 support</p>
 <p>Access to every server country</p>
-<p>WireGuard protocol</p>
+<p><a href="/blog/wireguard-vs-openvpn/">WireGuard protocol</a></p>
 <p>Four-layer <a href="/peer-isolation">peer isolation</a></p>
 <p>No activity logging</p>
 <p>No account requirement</p>

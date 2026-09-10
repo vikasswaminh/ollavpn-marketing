@@ -107,7 +107,7 @@ View All Guides &rarr;
 <p>Estimates for when a “cryptographically relevant quantum computer” might exist range from optimistic early 2030s to conservative 2040s guesses, with some researchers doubting it happens at scale within our lifetimes. Nobody knows the exact year  -  but betting decades of recorded traffic on the pessimistic end of that range is not a bet worth making, especially when the fix costs almost nothing.</p>
 <h2 id="the-standards-behind-post-quantum-vpns">The standards behind post-quantum VPNs</h2>
 <p>In August 2024, NIST finalized FIPS 203 (ML-KEM), the key-exchange standard that post-quantum VPNs use for their handshake, alongside two signature standards (FIPS 204 and FIPS 205) that matter more for certificate authentication than for the VPN handshake itself.</p>
-<p>A <a href="/blog/what-is-a-post-quantum-vpn.html">post-quantum VPN</a> isn’t inventing its own cryptography from scratch  -  that would be a red flag, not a feature. It’s implementing algorithms that went through the U.S. National Institute of Standards and Technology’s public, multi-year Post-Quantum Cryptography competition, which ran from 2016 to 2024 and involved cryptographers around the world trying to break candidate algorithms in public.</p>
+<p>A <a href="/blog/what-is-a-post-quantum-vpn.html">post-quantum VPN</a> isn’t inventing its own cryptography from scratch  -  that would be a red flag, not a feature. It’s implementing algorithms that went through the U.S. National Institute of Standards and Technology’s public, multi-year <a href="/blog/what-is-post-quantum-cryptography/">Post-Quantum Cryptography</a> competition, which ran from 2016 to 2024 and involved cryptographers around the world trying to break candidate algorithms in public.</p>
 <p>The result, finalized in August 2024:</p>
 <p>FIPS 203  -  ML-KEM (Module-Lattice-based Key-Encapsulation Mechanism, formerly Kyber). This is the one that matters most for a VPN handshake. It’s a key-establishment algorithm, meaning its job is to let two parties agree on a shared secret over an insecure channel  -  exactly what a VPN handshake needs.</p>
 <p>FIPS 204  -  ML-DSA (Module-Lattice-based Digital Signature Algorithm, formerly Dilithium). A signature scheme, more relevant to certificate authentication and software update verification than to the handshake itself, but part of the broader post-quantum picture a VPN provider needs to think about.</p>
@@ -130,7 +130,7 @@ View All Guides &rarr;
 <p>2023. Mullvad becomes one of the first commercial VPN providers to ship quantum-resistant WireGuard tunnels, using a Classic McEliece and Kyber hybrid, later making it the default on desktop.</p>
 <p>August 2023. Google Chrome starts rolling out the X25519Kyber768 hybrid for TLS 1.3 connections, defaulted on for most users by 2024.</p>
 <p>September 2023. Signal launches PQXDH, a post-quantum hybrid upgrade to the key-agreement protocol underlying its end-to-end encrypted messaging.</p>
-<p>February 2024. Apple ships PQ3, a post-quantum upgrade to iMessage’s end-to-end encryption protocol.</p>
+<p>February 2024. Apple ships PQ3, a post-quantum upgrade to iMessage’s <a href="/blog/what-is-end-to-end-encryption/">end-to-end encryption</a> protocol.</p>
 <p>August 2024. NIST finalizes FIPS 203, 204, and 205  -  the moment post-quantum cryptography stops being experimental and becomes a formal, deployable standard.</p>
 <p>2025 onward. Broad rollout accelerates across browsers, messaging platforms, cloud infrastructure, and VPN providers. VPNs built from the ground up in this period  -  OllaVPN among them  -  ship post-quantum handshakes as a default, not an opt-in.</p>
 <p>If you’ve been wondering whether “<a href="/blog/what-is-a-post-quantum-vpn.html">post-quantum VPN</a>” is real yet or still a few years off: it’s real, it’s shipped in products used by hundreds of millions of people, and the VPN category specifically is now in the middle of catching up to where browsers and messaging apps already are.</p>
@@ -195,7 +195,7 @@ View All Guides &rarr;
     Navigating What Is a Post-Quantum VPN and Why Do You Need One? effectively requires choosing security architectures built on transparency, strong encryption, and verified zero data logging.
   </p>
   <p style="font-size: 0.925rem; line-height: 1.75; color: #1E293B; margin-bottom: 0;">
-    With OllaVPN, you get post-quantum protected WireGuard tunneling, default-on kill switch defense, and in-tunnel DNS resolution to ensure your internet connection stays completely private across every network.
+    With OllaVPN, you get post-quantum protected WireGuard tunneling, default-on [kill switch](/blog/what-is-a-vpn-kill-switch/) defense, and in-tunnel DNS resolution to ensure your internet connection stays completely private across every network.
   </p>
 </section>
 <section id="download" class="download-section-box" style="background: linear-gradient(135deg, #ffffff 0%, #FFF8F8 100%); border: 1.5px solid rgba(218, 41, 28, 0.2); border-radius: 18px; padding: 32px 28px; margin-bottom: 24px; text-align: center; width: 100%; box-shadow: 0 6px 24px rgba(218, 41, 28, 0.06); box-sizing: border-box;">

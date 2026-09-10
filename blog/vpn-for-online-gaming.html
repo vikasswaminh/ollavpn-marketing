@@ -73,7 +73,7 @@ View All Guides &rarr;
 <p>So in a perfect world, where your ISP routes your traffic efficiently and directly, a VPN will make things slightly worse. The added hop costs you somewhere between 2ms and 20ms depending on how close the VPN exit is to you and the quality of the VPN’s infrastructure.</p>
 <p>But here’s the part that some providers gloss over: your ISP’s world isn’t perfect. Windscribe’s own analysis puts it bluntly: “if your ISP is throttling your connection or using a garbage-tier route to the game server, a VPN can actually decrease your ping by providing a high-speed shortcut.” Multiple community reports also describe cases where users measured ping improvements when their ISP routing was the culprit.</p>
 <p>The practical test is simple: check your ping to a game server without a VPN, then check it again with a VPN exit close to that server. If the VPN number is lower, your ISP routing was the problem. If it’s higher, it wasn’t - and you’re adding overhead for no ping benefit. The access and security benefits may still make it worth running.</p>
-<p>When a free VPN for gaming helps vs hurts ping - flat infographic showing ISP throttling on the left as the case for VPN, and already-optimal routing on the right as the case against</p>
+<p>When a free VPN for gaming helps vs hurts ping - flat infographic showing <a href="/blog/vpn-for-avoiding-isp-throttling/">ISP throttling</a> on the left as the case for VPN, and already-optimal routing on the right as the case against</p>
 <h2 id="whats-really-causing-your-lag">What’s really causing your lag</h2>
 <p>QUICK ANSWER</p>
 <p>Gaming lag comes from four distinct sources: ping (latency to the server), packet loss (data that never arrives), jitter (inconsistent latency), and bandwidth congestion. Each has a different cause and a different fix. A VPN primarily affects ping and can help with ISP-caused congestion - it doesn’t fix packet loss caused by a bad cable or jitter caused by Wi-Fi interference.</p>
@@ -99,7 +99,7 @@ View All Guides &rarr;
 <p>How VPN routing affects gaming ping - a flat flow diagram showing a squiggly ISP path resulting in 120ms ping versus a direct VPN-optimized path resulting in 42ms ping</p>
 <h2 id="what-to-look-for-in-a-free-gaming-vpn">What to look for in a free gaming VPN</h2>
 <p>QUICK ANSWER</p>
-<p>The five things that actually matter for gaming: WireGuard protocol, unlimited bandwidth (no data cap), servers close to your game’s regional servers, <a href="/peer-isolation">peer isolation</a> so you’re not on a shared IP with people who’ll get you flagged, and a genuine no-logs policy. Everything else is secondary.</p>
+<p>The five things that actually matter for gaming: <a href="/blog/wireguard-vs-openvpn/">WireGuard protocol</a>, unlimited bandwidth (no data cap), servers close to your game’s regional servers, <a href="/peer-isolation">peer isolation</a> so you’re not on a shared IP with people who’ll get you flagged, and a genuine <a href="/blog/what-logs-does-vpn-keep/">no-logs policy</a>. Everything else is secondary.</p>
 <p>Not every “free gaming VPN” claim deserves the name. Here’s the checklist we’d use:</p>
 <p>WireGuard support - covered above. Non-negotiable.</p>
 <p>Unlimited bandwidth - gaming uses less than 1 Mbps during a match, so bandwidth isn’t the issue for the gaming session itself. The issue is what happens after you browse, stream, or play long sessions. A VPN that throttles you after 10GB or cuts your session mid-game is the problem. Free VPNs with monthly data caps (10GB, 2GB, or even 500MB) might be fine for general privacy, but they can cut out during a long gaming session. Look for either no cap or a hard per-session speed limit (like OllaVPN’s kernel-enforced 10 Mbps cap) rather than a monthly allowance.</p>
@@ -112,7 +112,7 @@ View All Guides &rarr;
 <p>No monthly data cap (or a per-session speed limit rather than a total)</p>
 <p>Servers in the same region as your game’s servers</p>
 <p>Peer isolation at the exit node</p>
-<p>Kill switch on by default</p>
+<p><a href="/blog/what-is-a-vpn-kill-switch/">Kill switch</a> on by default</p>
 <p>Explicit no-logs policy with specifics</p>
 <p>No credit card required to start</p>
 <h2 id="the-free-tier-reality-check">The free tier reality check</h2>
@@ -188,7 +188,7 @@ View All Guides &rarr;
 <p>Connecting to foreign servers for matchmaking - some regions have shorter queue times, different player skill distributions, or simply better ping to specific game server clusters. A player in South East Asia connecting to Japanese servers may get better matchmaking than connecting through their ISP’s default routing. A VPN with a Tokyo exit lets you test this without committing to anything.</p>
 <p>DDoS protection in competitive or streaming contexts - in competitive gaming (especially in games with P2P matchmaking, older titles, or Twitch-stream-based targeting), opponents can identify your IP and send junk traffic to disconnect you. A VPN hides your real IP behind the VPN server’s address. The peer isolation feature in OllaVPN adds an extra layer by preventing other users on the same exit from probing your device - important in any shared-IP setup.</p>
 <p>Regional game pricing - game prices on platforms like Steam vary by region. Connecting through a VPN exit in a lower-cost region sometimes allows purchases at local prices. This is a gray area that varies by platform’s terms of service, so we’re flagging it as an observed use case rather than a recommendation.</p>
-<p>Playing on public Wi-Fi without exposing your connection - gaming from a hotel, airport, or café Wi-Fi puts your traffic on a network with strangers. A VPN encrypts that traffic end-to-end, preventing anyone on the same network from intercepting or monitoring it. The WireGuard-class encryption in OllaVPN, combined with their <a href="/pqc">post-quantum</a> key exchange, makes this a meaningful protection even on adversarial networks.</p>
+<p>Playing on <a href="/blog/how-public-wifi-steals-passwords/">public Wi-Fi</a> without exposing your connection - gaming from a hotel, airport, or café Wi-Fi puts your traffic on a network with strangers. A VPN encrypts that traffic end-to-end, preventing anyone on the same network from intercepting or monitoring it. The WireGuard-class encryption in OllaVPN, combined with their <a href="/pqc">post-quantum</a> key exchange, makes this a meaningful protection even on adversarial networks.</p>
 <h2 id="how-to-set-up-your-gaming-vpn">How to set up your gaming VPN</h2>
 <p>QUICK ANSWER</p>
 <p>Setup is quick. On PC: download the app, connect to the server region closest to your game’s servers, and start the game. On mobile: same process through the App Store or Google Play. On console (PS5, Xbox): either set up the VPN on your router, or use your PC as a Wi-Fi hotspot that routes console traffic through the VPN.</p>
