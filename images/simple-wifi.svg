@@ -1,0 +1,13 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" rx="16" fill="#FFFFFF"/>
+  <rect x="2" y="2" width="796" height="496" rx="14" stroke="#E6E6E6" stroke-width="2"/>
+  <circle cx="400" cy="250" r="160" fill="#FCF0F1"/>
+  <!-- Wi-Fi Arcs -->
+  <path d="M310 190 A130 130 0 0 1 490 190" stroke="#EE2C3C" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M340 225 A90 90 0 0 1 460 225" stroke="#191E27" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M370 260 A50 50 0 0 1 430 260" stroke="#EE2C3C" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- Lock Center -->
+  <circle cx="400" cy="295" r="16" fill="#191E27"/>
+  <rect x="388" y="295" width="24" height="20" rx="4" fill="#EE2C3C"/>
+  <text x="400" y="420" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="20" font-weight="700" fill="#191E27">Public Wi-Fi Encryption Shield</text>
+</svg>

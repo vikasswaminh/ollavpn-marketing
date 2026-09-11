@@ -1,0 +1,11 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" rx="16" fill="#FFFFFF"/>
+  <rect x="2" y="2" width="796" height="496" rx="14" stroke="#E6E6E6" stroke-width="2"/>
+  <circle cx="400" cy="250" r="160" fill="#FCF0F1"/>
+  <!-- Switch Body -->
+  <rect x="300" y="190" width="200" height="120" rx="60" fill="#191E27"/>
+  <circle cx="440" cy="250" r="48" fill="#EE2C3C"/>
+  <!-- Lightning / Cut Symbol -->
+  <path d="M444 226 L430 248 H442 L436 274 L454 250 H442 Z" fill="#FFFFFF"/>
+  <text x="400" y="420" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="20" font-weight="700" fill="#191E27">System-Level Kill Switch Guard</text>
+</svg>
