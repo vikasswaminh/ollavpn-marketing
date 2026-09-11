@@ -134,9 +134,11 @@ h3 { font-size: clamp(17px, 1.6vw, 22px); letter-spacing: -0.03em; }
    identity without HTML edits. Red rounded square + white tunnel arch +
    red center "destination" dot. Matches /favicon.svg pixel-for-pixel. */
 .brand-mark {
-  width: 28px; height: 28px;
-  flex: 0 0 28px;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='4' y='4' width='56' height='56' rx='13' fill='%23c92a2a'/><path d='M 18 50 L 18 30 A 14 14 0 0 1 46 30 L 46 50 Z' fill='%23FFFFFF'/><circle cx='32' cy='36' r='5' fill='%23c92a2a'/></svg>") center/contain no-repeat;
+  width: 30px; height: 30px;
+  flex: 0 0 30px;
+  background: url('/favicon.svg') no-repeat center / contain;
+  display: inline-block;
+  vertical-align: middle;
 }
 /* Nav links with animated underline (ItemUI #17). Standard Proton/Express
    affordance: a 2px red line scales in from the left on hover/active.
