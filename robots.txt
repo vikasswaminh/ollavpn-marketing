@@ -1,4 +1,4 @@
-# OllaVPN — robots.txt
+﻿# OllaVPN â€” robots.txt
 #
 # Public marketing site. Everything here is intended to be crawled,
 # indexed, and cited by search engines AND answer engines.
@@ -10,7 +10,7 @@
 # major crawlers' policies.
 #
 # User-facing app surfaces (dashboard, signup, login) live on
-# login.ollavpn.com and are behind authentication — not exposed here.
+# login.ollavpn.com and are behind authentication â€” not exposed here.
 
 User-agent: *
 Allow: /
@@ -18,7 +18,7 @@ Disallow: /404
 Disallow: /downloads/
 Disallow: /blog/drafts/
 
-# ─── Major search engines ─────────────────────────────────
+# â”€â”€â”€ Major search engines â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 User-agent: Googlebot
 Allow: /
 
@@ -40,7 +40,7 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-# ─── AI / answer-engine crawlers (explicitly allowed) ─────
+# â”€â”€â”€ AI / answer-engine crawlers (explicitly allowed) â”€â”€â”€â”€â”€
 # We grant these crawlers full access for AEO. We want our
 # pages to be citable sources inside generated answers.
 
@@ -110,5 +110,8 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-# ─── Sitemap ──────────────────────────────────────────────
+# --- Sitemaps for Google Search Console ---
 Sitemap: https://ollavpn.com/sitemap.xml
+Sitemap: https://ollavpn.com/sitemap-blog.xml
+Sitemap: https://ollavpn.com/sitemap-main.xml
+Sitemap: https://ollavpn.com/sitemap-index.xml
