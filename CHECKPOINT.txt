@@ -1,0 +1,61 @@
+================================================================================
+OLLAVPN REPOSITORY & WORKFLOW CHECKPOINT - BASELINE ESTABLISHED
+================================================================================
+Checkpoint ID  : CP-20260915-1005
+Timestamp      : 2026-09-15T10:05:00+05:30
+Rule           : All subsequent reports must only record changes, publications, 
+                 and features committed AFTER this checkpoint.
+
+REPOSITORIES STATE AT CHECKPOINT:
+--------------------------------------------------------------------------------
+1. Source Repository: ollavpn-blog
+   Branch      : main
+   HEAD Commit : 889e235 (889e23550d654510139c0d0265701d1921d09107)
+   Subject     : fix(branding): eliminate blue logo container background and use direct clean red logo
+   Commit Date : 2026-09-11 17:40:44 +0530
+   Status      : Clean / Up to date with origin/main
+
+2. Deployment Target: ollavpn-marketing
+   Branch      : main
+   HEAD Commit : 9cc4d5e (9cc4d5ea90a76006ee5850446edb2c8daae639e3)
+   Subject     : fix(branding): eliminate blue logo backgrounds across all marketing pages and navbars
+   Commit Date : 2026-09-11 17:40:55 +0530
+   Status      : Clean / Up to date with origin/main
+
+ACTIVE CATALOG AT CHECKPOINT:
+--------------------------------------------------------------------------------
+Total Active Guides  : 140 articles
+Latest Published Set :
+  - BLOG37: Best VPN for Streaming 2026 (2026-08-18)
+    Slug: best-vpn-for-streaming | Tag: Buyer guides
+  - BLOG36: VPN Kill Switch Explained 2026 (2026-08-17)
+    Slug: vpn-kill-switch-explained | Tag: Protocol & tech
+  - BLOG35: Free VPN for Telegram 2026 (2026-08-14)
+    Slug: free-vpn-for-telegram | Tag: Use cases
+  - BLOG34: Free VPN for WhatsApp 2026 (2026-08-13)
+    Slug: free-vpn-for-whatsapp | Tag: Use cases
+  - BLOG33: VPN Speed Explained (2026-08-12)
+    Slug: vpn-speed-explained | Tag: Protocol & tech
+  - BLOG32: Free VPN for Android 2026 (2026-08-11)
+    Slug: free-vpn-for-android | Tag: Buyer guide
+  - BLOG31: Free VPN for Torrenting in 2026 (2026-08-10)
+    Slug: free-vpn-for-torrenting | Tag: Privacy guide
+
+COMPLETED BASELINE MILESTONES (ALREADY REPORTED - DO NOT DUPLICATE):
+--------------------------------------------------------------------------------
+- 140 complete blog guides published and live on production
+- Section-level Quick Answer lightboxes deployed site-wide
+- Redundant bottom Key Takeaways eliminated across all 140 guides
+- Universal spaced hyphen elimination (3,235 instances cleaned; 0 remaining)
+- Step numbering sequence double-indexing ('1. Step 1:') purged across all setup guides
+- TL;DR callout headers standardized without subtitles
+- TL;DR raw markdown links converted into highlighted clickable HTML anchors
+- Automated topic-clustered 'Related Articles in This Topic' card cluster deployed at the end of all 140 reads
+- 500+ contextual internal links injected site-wide
+- Google Site Verification google68ba550866231573.html deployed
+- Blog index modernized with 9-card (3x3) layout, search count showing 140 guides, and category filter buttons
+- Lato typography and OllaVPN Red (#DA291C) design system applied
+- Original product landing page at https://ollavpn.com/ root preserved
+- Exact 40x40 squircle red logo image with 8px radius matching screenshot deployed
+- Complete elimination of legacy #6366F1 blue background SVG residue across all marketing pages and navbars
+================================================================================
