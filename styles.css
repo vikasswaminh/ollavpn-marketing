@@ -3562,3 +3562,9 @@ article h2::before,
   text-decoration: none !important;
   box-shadow: none !important;
 }
+
+/* CTA Tag & Heading Spacing */
+.cta .chip {
+  margin-bottom: 22px !important;
+  display: inline-flex !important;
+}
