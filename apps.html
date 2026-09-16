@@ -373,7 +373,7 @@
 }
 
 .section-sm .head {
-  margin: 0 auto 18px 0 !important;
+  margin: 0 auto 24px auto !important;
 }
 
 .h2 {
@@ -737,6 +737,63 @@
   }
 }
 
+
+/* Premium Centered Section Header System */
+.head, .section-sm .head {
+  max-width: 780px !important;
+  margin: 0 auto 24px auto !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.chip-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid #FEE2E2 !important;
+  background: #FEF2F2 !important;
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #DA291C !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 1px 4px rgba(218, 41, 28, 0.06) !important;
+  margin-bottom: 6px !important;
+}
+
+.chip-badge .chip-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #DA291C !important;
+  box-shadow: 0 0 0 3px rgba(218, 41, 28, 0.2) !important;
+}
+
+.section-sm .head .h2 {
+  font-size: 2.15rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+  color: #0F172A !important;
+  margin: 6px 0 0 0 !important;
+  text-align: center !important;
+}
+
+.section-sm .head .lede {
+  font-size: 0.98rem !important;
+  line-height: 1.55 !important;
+  color: #475467 !important;
+  max-width: 620px !important;
+  margin: 10px auto 0 auto !important;
+  text-align: center !important;
+}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260915_fav2" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260915_fav2" />
@@ -898,7 +955,14 @@
 
 <section class="section-sm">
   <div class="wrap">
-    <div class="head"><span class="kicker"><span class="pip">●</span> WHAT IT LOOKS LIKE</span><h2 class="h-display h2 mt-16">One click. <span class="accent">Connected.</span></h2><p class="lede" style="color:var(--text-dim);">A connect button bigger than the rest of the UI. We don't bury the thing you came to do — and the privileged service does the dangerous parts so the UI never needs admin rights at click-time.</p></div>
+    <div class="head">
+      <div class="chip-badge">
+        <span class="chip-dot"></span>
+        WHAT IT LOOKS LIKE
+      </div>
+      <h2 class="h-display h2">One click. <span class="accent">Connected.</span></h2>
+      <p class="lede">A connect button bigger than the rest of the UI. We don't bury the thing you came to do — and the privileged service does the dangerous parts so the UI never needs admin rights at click-time.</p>
+    </div>
     <div class="show">
       <div class="desk">
         <div class="bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span style="font-family:var(--mono);font-size:10.5px;color:#94A3B8;margin-left:auto;font-weight:600;">OllaVPN Client v2.4.0</span></div>
@@ -939,7 +1003,14 @@
 
 <section class="section-sm">
   <div class="wrap">
-    <div class="head"><span class="kicker"><span class="pip">●</span> BUILT INTO THE WINDOWS CLIENT</span><h2 class="h-display h2 mt-16">Power, not <span class="accent">prompts.</span></h2></div>
+    <div class="head">
+      <div class="chip-badge">
+        <span class="chip-dot"></span>
+        BUILT INTO THE WINDOWS CLIENT
+      </div>
+      <h2 class="h-display h2">Power, not <span class="accent">prompts.</span></h2>
+      <p class="lede">Engineered for silent, unbreakable security. High-speed WireGuard tunneling with zero popups and zero telemetry.</p>
+    </div>
     <div class="features">
       <div class="feat-card"><div class="num">→ 01</div><h3>Kill switch always on</h3><p>If the tunnel drops, the network drops with it. Packets do not leak in the gap. No "advanced" toggle to find — it's the default.</p></div>
       <div class="feat-card"><div class="num">→ 02</div><h3>LAN access stays on</h3><p>Local devices on your home network keep working while the tunnel is up. Printer, NAS, smart-home gear — all reachable. One-click toggle if you want it off.</p></div>

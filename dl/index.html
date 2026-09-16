@@ -403,7 +403,7 @@
 }
 
 .section-sm .head {
-  margin: 0 auto 16px 0 !important;
+  margin: 0 auto 20px auto !important;
 }
 
 .h2 {
@@ -708,6 +708,63 @@
   .dl-platforms-preview {
     grid-template-columns: 1fr !important;
   }
+}
+
+
+/* Premium Centered Section Header System */
+.head, .section-sm .head {
+  max-width: 780px !important;
+  margin: 0 auto 24px auto !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.chip-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid #FEE2E2 !important;
+  background: #FEF2F2 !important;
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #DA291C !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 1px 4px rgba(218, 41, 28, 0.06) !important;
+  margin-bottom: 6px !important;
+}
+
+.chip-badge .chip-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #DA291C !important;
+  box-shadow: 0 0 0 3px rgba(218, 41, 28, 0.2) !important;
+}
+
+.section-sm .head .h2 {
+  font-size: 2.15rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+  color: #0F172A !important;
+  margin: 6px 0 0 0 !important;
+  text-align: center !important;
+}
+
+.section-sm .head .lede {
+  font-size: 0.98rem !important;
+  line-height: 1.55 !important;
+  color: #475467 !important;
+  max-width: 620px !important;
+  margin: 10px auto 0 auto !important;
+  text-align: center !important;
 }
 
 </style>
