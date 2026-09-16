@@ -346,6 +346,397 @@
   .feat-card p { color: var(--text-dim); font-size: 14px; margin-top: 10px; }
 
   @media (max-width: 980px) { .platforms, .show, .features { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   OPTIMIZED COMPACT SPACING & MODERN DESIGN FOR APPS.HTML
+   ========================================================================== */
+.page-hero {
+  padding: 40px 0 20px 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.page-hero .h1 {
+  font-size: 2.35rem !important;
+  line-height: 1.2 !important;
+  margin-top: 10px !important;
+}
+
+.page-hero p.lede {
+  margin-top: 10px !important;
+  font-size: 1.02rem !important;
+  line-height: 1.5 !important;
+}
+
+.section-sm {
+  padding: 28px 0 !important;
+}
+
+.section-sm .head {
+  margin: 0 auto 18px 0 !important;
+}
+
+.h2 {
+  font-size: 1.85rem !important;
+  line-height: 1.25 !important;
+  margin-top: 8px !important;
+}
+
+.platforms {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+}
+
+.plat {
+  padding: 18px 20px !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 14px !important;
+  background: #FFFFFF !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  min-height: 180px !important;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03) !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+.plat:hover {
+  border-color: #CBD5E1 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08) !important;
+}
+
+.plat.live {
+  border-color: rgba(218, 41, 28, 0.35) !important;
+  background: linear-gradient(180deg, rgba(218, 41, 28, 0.04), #FFFFFF 65%) !important;
+}
+
+.plat.live:hover {
+  border-color: #DA291C !important;
+  box-shadow: 0 8px 24px rgba(218, 41, 28, 0.12) !important;
+}
+
+.plat-badge {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  width: fit-content !important;
+}
+
+.plat-badge.live {
+  background: #ECFDF5 !important;
+  color: #059669 !important;
+  border: 1px solid #A7F3D0 !important;
+}
+
+.plat-badge.dev {
+  background: #F1F5F9 !important;
+  color: #64748B !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+.plat-icon-wrap {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+.plat.live .plat-icon-wrap {
+  background: #FEF2F2 !important;
+  border-color: #FEE2E2 !important;
+  color: #DA291C !important;
+}
+
+.plat h3 {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.01em !important;
+}
+
+.plat .v {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.75rem !important;
+  color: #64748B !important;
+  line-height: 1.3 !important;
+}
+
+.plat .dl {
+  margin-top: auto !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+}
+
+.plat-btn-dl {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  background: #DA291C !important;
+  color: #ffffff !important;
+  padding: 7px 12px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  transition: background 0.15s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.plat-btn-dl:hover {
+  background: #b91c1c !important;
+}
+
+.plat .dl.muted {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.74rem !important;
+  color: #94A3B8 !important;
+  padding: 4px 0 !important;
+}
+
+/* App Showcase & Install Section */
+.show {
+  display: grid !important;
+  grid-template-columns: 1.1fr 0.9fr !important;
+  gap: 24px !important;
+  align-items: center !important;
+  margin-top: 24px !important;
+}
+
+.desk {
+  width: 100% !important;
+  max-width: 560px !important;
+  margin: 0 auto !important;
+  border: 1px solid #E2E8F0 !important;
+  background: #FFFFFF !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12) !important;
+}
+
+.desk .bar {
+  padding: 10px 14px !important;
+  display: flex !important;
+  gap: 7px !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  background: #F8FAFC !important;
+}
+
+.desk .bar .d {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+}
+
+.desk .bar .d.r { background: #EF4444 !important; }
+.desk .bar .d.y { background: #F59E0B !important; }
+.desk .bar .d.g { background: #10B981 !important; }
+
+.desk .grid {
+  padding: 18px !important;
+  display: grid !important;
+  grid-template-columns: 170px 1fr !important;
+  gap: 16px !important;
+}
+
+.desk .side {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.desk .item {
+  padding: 7px 10px !important;
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.72rem !important;
+  color: #64748B !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+
+.desk .item.active {
+  background: #FEF2F2 !important;
+  color: #DA291C !important;
+  font-weight: 700 !important;
+}
+
+.desk .main {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.desk .big {
+  padding: 16px 18px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(180deg, #FEF2F2, #FFFFFF 70%) !important;
+  border: 1px solid #FEE2E2 !important;
+}
+
+.desk .big .city {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.02em !important;
+  margin-top: 4px !important;
+}
+
+.desk .big .meta {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.72rem !important;
+  color: #64748B !important;
+  margin-top: 4px !important;
+}
+
+.desk .triple {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 6px !important;
+}
+
+.desk .triple > div {
+  padding: 8px 10px !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 8px !important;
+  background: #F8FAFC !important;
+  text-align: center !important;
+}
+
+.desk .triple .k {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.64rem !important;
+  color: #94A3B8 !important;
+  font-weight: 700 !important;
+}
+
+.desk .triple .v {
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  margin-top: 2px !important;
+  color: #0F172A !important;
+}
+
+.desk .triple .v small {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.65rem !important;
+  color: #DA291C !important;
+  font-weight: 600 !important;
+}
+
+.install {
+  padding: 20px 22px !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 14px !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+}
+
+.install .step {
+  display: grid !important;
+  grid-template-columns: 28px 1fr !important;
+  gap: 12px !important;
+  padding: 10px 0 !important;
+  border-top: 1px solid #F1F5F9 !important;
+}
+
+.install .step:first-of-type {
+  border-top: none !important;
+}
+
+.install .step .n {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.80rem !important;
+  font-weight: 800 !important;
+  color: #DA291C !important;
+}
+
+.install .step .body {
+  font-size: 0.88rem !important;
+  color: #334155 !important;
+  line-height: 1.45 !important;
+}
+
+/* Features Grid */
+.features {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 12px !important;
+}
+
+.feat-card {
+  padding: 18px 20px !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  background: #FFFFFF !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+}
+
+.feat-card:hover {
+  border-color: #CBD5E1 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06) !important;
+}
+
+.feat-card .num {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #DA291C !important;
+}
+
+.feat-card h3 {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  margin: 6px 0 0 0 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.01em !important;
+}
+
+.feat-card p {
+  color: #475467 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.45 !important;
+  margin-top: 6px !important;
+}
+
+.cta {
+  padding: 38px 0 !important;
+}
+
+@media (max-width: 980px) {
+  .platforms {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .show {
+    grid-template-columns: 1fr !important;
+  }
+  .features {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .platforms {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260915_fav2" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260915_fav2" />
@@ -451,30 +842,55 @@
 
 <section class="section-sm">
   <div class="wrap">
-    <div class="platforms">
+        <div class="platforms">
       <div class="plat live">
-        <div class="icon">W</div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="plat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.95-1.801"/></svg>
+          </div>
+          <span class="plat-badge live"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#059669;"></span>ACTIVE RELEASE</span>
+        </div>
         <h3>Windows</h3>
-        <div class="v">10 / 11 · 64-bit</div>
-        <div class="dl"><a href="dl/" style="color:inherit;">↓ download · verify SHA-256 →</a></div>
+        <div class="v">Windows 10 / 11 · 64-bit (x64)</div>
+        <div class="dl">
+          <a href="/dl/" class="plat-btn-dl">↓ Download Free (v2.4.0)</a>
+        </div>
       </div>
+
       <div class="plat deferred">
-        <div class="icon">M</div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="plat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.87c.64-.78 1.08-1.86.96-2.95-1 .04-2.14.65-2.79 1.43-.57.66-.99 1.77-.86 2.83 1.12.09 2.05-.53 2.69-1.31z"/></svg>
+          </div>
+          <span class="plat-badge dev">COMING Q3 2026</span>
+        </div>
         <h3>macOS</h3>
-        <div class="v">Apple Silicon + Intel</div>
-        <div class="dl muted">on the roadmap</div>
+        <div class="v">Apple Silicon (M-series) &amp; Intel</div>
+        <div class="dl muted">In Active Roadmap</div>
       </div>
+
       <div class="plat deferred">
-        <div class="icon">A</div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="plat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.414 13.8533 8.0772 12 8.0772c-1.8533 0-3.5902.3368-5.1367.8725L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
+          </div>
+          <span class="plat-badge dev">COMING Q3 2026</span>
+        </div>
         <h3>Android</h3>
-        <div class="v">modern Android</div>
-        <div class="dl muted">on the roadmap</div>
+        <div class="v">Android 10+ (Phone, Tablet, TV)</div>
+        <div class="dl muted">In Active Roadmap</div>
       </div>
+
       <div class="plat deferred">
-        <div class="icon">i</div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="plat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          <span class="plat-badge dev">IN DEVELOPMENT</span>
+        </div>
         <h3>iOS</h3>
-        <div class="v">iPhone &amp; iPad</div>
-        <div class="dl muted">on the roadmap</div>
+        <div class="v">iPhone &amp; iPad (iOS 17+)</div>
+        <div class="dl muted">TestFlight Alpha Coming</div>
       </div>
     </div>
   </div>
@@ -485,7 +901,7 @@
     <div class="head"><span class="kicker"><span class="pip">●</span> WHAT IT LOOKS LIKE</span><h2 class="h-display h2 mt-16">One click. <span class="accent">Connected.</span></h2><p class="lede" style="color:var(--text-dim);">A connect button bigger than the rest of the UI. We don't bury the thing you came to do — and the privileged service does the dangerous parts so the UI never needs admin rights at click-time.</p></div>
     <div class="show">
       <div class="desk">
-        <div class="bar"><span class="d"></span><span class="d"></span><span class="d"></span></div>
+        <div class="bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span style="font-family:var(--mono);font-size:10.5px;color:#94A3B8;margin-left:auto;font-weight:600;">OllaVPN Client v2.4.0</span></div>
         <div class="grid">
           <div class="side">
             <div class="item active">→ Connect</div>
@@ -513,7 +929,7 @@
       <div class="install">
         <span class="kicker"><span class="pip">●</span> INSTALL · WINDOWS</span>
         <h3 class="h3 mt-8" style="margin-top:8px;">Three steps. <span class="accent">One installer.</span></h3>
-        <div class="step"><div class="n">01</div><div class="body">Download the installer from <a href="dl/" style="color:var(--red-2);">ollavpn.com/dl/</a>. One file, self-contained.</div></div>
+        <div class="step"><div class="n">01</div><div class="body">Download the installer from <a href="/dl/" style="color:var(--red-2);">ollavpn.com/dl/</a>. One file, self-contained.</div></div>
         <div class="step"><div class="n">02</div><div class="body">Verify the SHA-256 checksum on the download page if you want to. A recipe is included.</div></div>
         <div class="step"><div class="n">03</div><div class="body">Run the installer. Sign in. Click Connect. That's it.</div></div>
       </div>
@@ -539,7 +955,7 @@
   <div class="wrap">
     <span class="chip"><span class="dot"></span>Lifetime free · Windows · self-contained installer</span>
     <h2 class="h-display h2 mt-16">Install. Click. <span class="accent">Stand.</span></h2>
-    <div class="actions"><a class="btn primary xl" href="dl/">Download for Windows <span class="arrow">→</span></a><a class="btn xl" href="technology.html">How it works →</a></div>
+    <div class="actions"><a class="btn primary xl" href="/dl/">Download for Windows <span class="arrow">→</span></a><a class="btn xl" href="technology.html">How it works →</a></div>
   </div>
 </section>
 
@@ -547,7 +963,7 @@
   <div class="wrap">
     <div class="top">
       <div><div class="brand"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x" alt="OllaVPN Logo" width="40" height="40" class="brand-img" style="width: 40px; height: 40px; border-radius: 8px; display: block; flex-shrink: 0;" /><span class="brand-text">Olla<span class="brand-red">VPN</span></span></div><p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN.</p></div>
-      <div><h4>Product</h4><ul><li><a href="apps.html">Apps</a></li><li><a href="technology.html">Technology</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="dl/">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="apps.html">Apps</a></li><li><a href="technology.html">Technology</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
       <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog/">Blog</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>

@@ -376,6 +376,340 @@
   .note p { color: var(--text-dim); font-size: 13px; margin: 8px 0 0; line-height: 1.55; }
 
   @media (max-width: 980px) { .download, .note-grid { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   OPTIMIZED COMPACT SPACING & MODERN DESIGN FOR DL/INDEX.HTML
+   ========================================================================== */
+.page-hero {
+  padding: 38px 0 20px 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.page-hero .h1 {
+  font-size: 2.35rem !important;
+  line-height: 1.2 !important;
+  margin-top: 10px !important;
+}
+
+.page-hero p.lede {
+  margin-top: 8px !important;
+  font-size: 1.02rem !important;
+  line-height: 1.5 !important;
+}
+
+.section-sm {
+  padding: 26px 0 !important;
+}
+
+.section-sm .head {
+  margin: 0 auto 16px 0 !important;
+}
+
+.h2 {
+  font-size: 1.85rem !important;
+  line-height: 1.25 !important;
+  margin-top: 8px !important;
+}
+
+/* Download Grid */
+.download {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 20px !important;
+  align-items: stretch !important;
+  margin-top: 20px !important;
+}
+
+.dl-card {
+  padding: 24px !important;
+  border-radius: 16px !important;
+  border: 1.5px solid rgba(218, 41, 28, 0.35) !important;
+  background: linear-gradient(180deg, rgba(218, 41, 28, 0.04), #FFFFFF 60%) !important;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.dl-header-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  margin-bottom: 12px !important;
+}
+
+.dl-badge {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.dl-badge.live {
+  background: #ECFDF5 !important;
+  color: #059669 !important;
+  border: 1px solid #A7F3D0 !important;
+}
+
+.dl-card h2 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 !important;
+  color: #0F172A !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.dl-card .meta {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+  margin-top: 14px !important;
+}
+
+.dl-card .meta > div {
+  padding: 8px 12px !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 8px !important;
+  background: #FFFFFF !important;
+}
+
+.dl-card .meta .k {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.68rem !important;
+  color: #64748B !important;
+  font-weight: 600 !important;
+}
+
+.dl-card .meta .v {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  margin-top: 2px !important;
+  color: #0F172A !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* SHA-256 Box */
+.sha-box {
+  padding: 12px 14px !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 10px !important;
+  background: #F8FAFC !important;
+  margin-top: 14px !important;
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.72rem !important;
+  color: #334155 !important;
+  position: relative !important;
+}
+
+.sha-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 6px !important;
+}
+
+.sha-copy-btn {
+  background: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.sha-copy-btn:hover {
+  background: #F1F5F9 !important;
+  border-color: #94A3B8 !important;
+}
+
+.sha-box .h {
+  color: #0F172A !important;
+  font-weight: 600 !important;
+  user-select: all !important;
+  display: block !important;
+  word-break: break-all !important;
+  line-height: 1.4 !important;
+  background: #FFFFFF !important;
+  padding: 6px 8px !important;
+  border-radius: 6px !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+.dl-btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  background: #DA291C !important;
+  color: #FFFFFF !important;
+  padding: 12px 22px !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 14px rgba(218, 41, 28, 0.3) !important;
+  transition: all 0.2s ease !important;
+  margin-top: 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.dl-btn-primary:hover {
+  background: #b91c1c !important;
+  box-shadow: 0 6px 20px rgba(218, 41, 28, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Recipe / Verify */
+.recipe {
+  padding: 22px !important;
+  border-radius: 16px !important;
+  border: 1px solid #E2E8F0 !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.recipe h3 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  margin: 8px 0 0 0 !important;
+  color: #0F172A !important;
+}
+
+.recipe p {
+  color: #475467 !important;
+  font-size: 0.86rem !important;
+  margin: 6px 0 0 0 !important;
+  line-height: 1.45 !important;
+}
+
+.recipe pre {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.74rem !important;
+  padding: 10px 12px !important;
+  border-radius: 8px !important;
+  background: #0F172A !important;
+  border: 1px solid #1E293B !important;
+  color: #38BDF8 !important;
+  white-space: pre-wrap !important;
+  margin: 6px 0 0 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Note Grid */
+.note-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 14px !important;
+  margin-top: 20px !important;
+}
+
+.note {
+  padding: 18px 20px !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+}
+
+.note .head {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.70rem !important;
+  font-weight: 700 !important;
+  color: #DA291C !important;
+  letter-spacing: 0.05em !important;
+}
+
+.note h4 {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  margin: 6px 0 0 0 !important;
+  color: #0F172A !important;
+}
+
+.note p {
+  color: #475467 !important;
+  font-size: 0.84rem !important;
+  margin: 6px 0 0 0 !important;
+  line-height: 1.45 !important;
+}
+
+/* Roadmap Platform Cards */
+.dl-platforms-preview {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 14px !important;
+  margin-top: 16px !important;
+}
+
+.dl-plat-card {
+  padding: 16px 18px !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  background: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+}
+
+.dl-plat-card .icon-box {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 8px !important;
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #334155 !important;
+  flex-shrink: 0 !important;
+}
+
+.dl-plat-card h4 {
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+}
+
+.dl-plat-card .status {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.68rem !important;
+  color: #64748B !important;
+  margin-top: 2px !important;
+}
+
+@media (max-width: 980px) {
+  .download {
+    grid-template-columns: 1fr !important;
+  }
+  .note-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .dl-platforms-preview {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260915_fav2" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260915_fav2" />
@@ -476,34 +810,66 @@
     <h1 class="h-display h1 mt-16">Get OllaVPN <span class="accent">for Windows.</span></h1>
     <p class="lede mt-16" style="max-width:680px;color:var(--text-dim);">Self-contained installer. No separate driver to chase down. No second client to install. Sign in, click Connect, you're done.</p>
 
-    <div class="download">
+        <div class="download">
       <div class="dl-card">
-        <div class="platform">PLATFORM · WINDOWS 10 / 11 · 64-BIT</div>
-        <h2>OllaVPN-amd64-installer.exe</h2>
-        <div class="meta">
-          <div><div class="k">Architecture</div><div class="v">64-bit (x64)</div></div>
-          <div><div class="k">Min OS</div><div class="v">Windows 10 or 11</div></div>
-          <div><div class="k">Plan</div><div class="v">Lifetime free</div></div>
-          <div><div class="k">Verification</div><div class="v">SHA-256 published</div></div>
+        <div>
+          <div class="dl-header-row">
+            <span class="platform" style="font-family:var(--mono);font-size:0.72rem;color:#64748B;font-weight:700;">WINDOWS 10 / 11 · 64-BIT</span>
+            <span class="dl-badge live"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#059669;"></span>v2.4.0 STABLE</span>
+          </div>
+          <h2>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#DA291C"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.95-1.801"/></svg>
+            OllaVPN-amd64-installer.exe
+          </h2>
+          <div class="meta">
+            <div><div class="k">Architecture</div><div class="v">64-bit (x64) Native</div></div>
+            <div><div class="k">Min Operating System</div><div class="v">Windows 10 or 11</div></div>
+            <div><div class="k">Privacy &amp; Security</div><div class="v">PQC + WireGuard + Kill Switch</div></div>
+            <div><div class="k">Integrity Verification</div><div class="v">SHA-256 Published</div></div>
+          </div>
+          <div class="sha-box" data-installer-meta>
+            <div class="sha-header">
+              <span style="font-weight:700;color:#64748B;">SHA-256 HASH</span>
+              <button type="button" class="sha-copy-btn" id="copy-sha-btn" onclick="navigator.clipboard.writeText('8457c4ab8225b7798e5aa1463a3c7d7db6cc00d17eeabdbc41c7bc949461862c');this.innerText='✓ Copied!';setTimeout(()=>this.innerText='Copy SHA-256',2000);">Copy SHA-256</button>
+            </div>
+            <span class="h" data-installer-sha>8457c4ab8225b7798e5aa1463a3c7d7db6cc00d17eeabdbc41c7bc949461862c</span>
+          </div>
         </div>
-        <div class="sha-box" data-installer-meta>
-          <span class="lab">SHA-256 · click to copy</span>
-          <span class="h" data-installer-sha>8457c4ab8225b7798e5aa1463a3c7d7db6cc00d17eeabdbc41c7bc949461862c</span>
+        <div>
+          <a class="dl-btn-primary" href="https://login.ollavpn.com/downloads/OllaVPN-amd64-installer.exe" download>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Installer for Windows (.exe)
+          </a>
+          <p style="font-size:0.75rem;color:#64748B;margin-top:10px;text-align:center;line-height:1.4;">Self-contained installer · No separate drivers · 100% Lifetime Free</p>
         </div>
-        <a class="btn primary xl" style="margin-top:24px;display:inline-flex;" href="https://login.ollavpn.com/downloads/OllaVPN-amd64-installer.exe" download>↓ Download installer <span class="arrow">→</span></a>
-        <p style="font-size:12px;color:var(--text-mute);margin-top:14px;">Windows may warn about the publisher during early access. Verifying the SHA-256 below is the quick way to confirm the installer is the same one this page describes.</p>
       </div>
 
       <div class="recipe">
-        <span class="kicker"><span class="pip">●</span> VERIFY</span>
-        <h3>Confirm the SHA-256.</h3>
-        <p>Run one of these in the same folder where the installer is. The output should match the hex above exactly.</p>
-        <p style="color:var(--text-mute);font-family:var(--mono);font-size:11px;margin-top:18px;">Windows · PowerShell</p>
-        <pre>(Get-FileHash -Algorithm SHA256 .\OllaVPN-amd64-installer.exe).Hash.ToLower()</pre>
-        <p style="color:var(--text-mute);font-family:var(--mono);font-size:11px;margin-top:14px;">Linux / macOS</p>
-        <pre>sha256sum -c OllaVPN-amd64-installer.exe.sha256
-# or
-shasum -a 256 OllaVPN-amd64-installer.exe</pre>
+        <div>
+          <span class="kicker"><span class="pip">●</span> INTEGRITY VERIFICATION</span>
+          <h3>Confirm the SHA-256 Checksum</h3>
+          <p>Verify that your downloaded executable matches our published cryptographic signature bit-for-bit.</p>
+          
+          <div style="margin-top:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:#64748B;font-family:var(--mono);font-size:0.70rem;font-weight:700;">Windows · PowerShell</span>
+              <button type="button" class="sha-copy-btn" onclick="navigator.clipboard.writeText('(Get-FileHash -Algorithm SHA256 .\\OllaVPN-amd64-installer.exe).Hash.ToLower()');this.innerText='✓ Copied!';setTimeout(()=>this.innerText='Copy',2000);">Copy</button>
+            </div>
+            <pre>(Get-FileHash -Algorithm SHA256 .\OllaVPN-amd64-installer.exe).Hash.ToLower()</pre>
+          </div>
+
+          <div style="margin-top:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:#64748B;font-family:var(--mono);font-size:0.70rem;font-weight:700;">Linux / macOS Terminal</span>
+              <button type="button" class="sha-copy-btn" onclick="navigator.clipboard.writeText('shasum -a 256 OllaVPN-amd64-installer.exe');this.innerText='✓ Copied!';setTimeout(()=>this.innerText='Copy',2000);">Copy</button>
+            </div>
+            <pre>shasum -a 256 OllaVPN-amd64-installer.exe</pre>
+          </div>
+        </div>
+
+        <div style="background:#FEF2F2;border:1px solid #FEE2E2;border-radius:8px;padding:10px 12px;margin-top:14px;">
+          <p style="font-size:0.76rem;color:#991B1B;margin:0;line-height:1.4;"><strong>Note:</strong> Windows SmartScreen may show an early-access advisory. Comparing the SHA-256 hash confirms the binary is genuine.</p>
+        </div>
       </div>
     </div>
 
@@ -529,7 +895,43 @@ shasum -a 256 OllaVPN-amd64-installer.exe</pre>
 
 <section class="section-sm">
   <div class="wrap">
-    <div class="head"><span class="kicker"><span class="pip">●</span> OTHER PLATFORMS</span><h2 class="h-display h2 mt-16">macOS, iOS &amp; Android <span class="accent">on the roadmap.</span></h2><p class="lede" style="color:var(--text-dim);">Windows is what's available today. Sign up for the project newsletter to know when the next platforms ship.</p></div>
+    <div class="head">
+      <span class="kicker"><span class="pip">●</span> EXPANDING COVERAGE</span>
+      <h2 class="h-display h2 mt-16">macOS, iOS &amp; Android <span class="accent">on the roadmap.</span></h2>
+      <p class="lede" style="color:var(--text-dim);">Windows is live and ready today. Native clients for the rest of your devices are currently in testing.</p>
+    </div>
+
+    <div class="dl-platforms-preview">
+      <div class="dl-plat-card">
+        <div class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.87c.64-.78 1.08-1.86.96-2.95-1 .04-2.14.65-2.79 1.43-.57.66-.99 1.77-.86 2.83 1.12.09 2.05-.53 2.69-1.31z"/></svg>
+        </div>
+        <div>
+          <h4>macOS</h4>
+          <div class="status">Targeting Q3 2026 · Apple Silicon + Intel</div>
+        </div>
+      </div>
+
+      <div class="dl-plat-card">
+        <div class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.414 13.8533 8.0772 12 8.0772c-1.8533 0-3.5902.3368-5.1367.8725L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
+        </div>
+        <div>
+          <h4>Android</h4>
+          <div class="status">Targeting Q3 2026 · APK Beta Testing</div>
+        </div>
+      </div>
+
+      <div class="dl-plat-card">
+        <div class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </div>
+        <div>
+          <h4>iOS</h4>
+          <div class="status">In Development · TestFlight Alpha</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -537,7 +939,7 @@ shasum -a 256 OllaVPN-amd64-installer.exe</pre>
   <div class="wrap">
     <div class="top">
       <div><div class="brand"><span class="brand-mark"></span>OllaVPN</div><p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN.</p></div>
-      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="./">Download</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="../apps.html">Apps</a></li><li><a href="../technology.html">Technology</a></li><li><a href="/pricing">Pricing</a></li><li><a href="./">Download</a></li></ul></div>
       <div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="../careers.html">Careers</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../blog/">Blog</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>
