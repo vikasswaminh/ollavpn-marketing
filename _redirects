@@ -16,13 +16,12 @@
 /home                    /             301
 /index.html?*            /:splat       301
 
-# ─── Pricing Active Route ─────────────────────────────────
-/pricing                 /pricing.html 200
 
 # Clean-URL canonicalization: extension-stripped is the sitemap
 # canonical (see sitemap.xml). CF Pages auto-serves /pqc → /pqc.html,
 # but external links to /pqc.html should resolve to /pqc to avoid
 # duplicate-content signals to crawlers.
+/pricing.html            /pricing      301
 /pqc.html                /pqc          301
 /killswitch.html         /killswitch   301
 /in-tunnel-dns.html      /in-tunnel-dns  301
