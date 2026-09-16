@@ -341,18 +341,19 @@
 }
 
 
-/* 3-Column Normal Blog Structure for Technology Page */
+
+/* Fix Sticky Sidebar Positioning, Overlap & Scrolling */
 .page-container-24obs {
   width: 100% !important;
   max-width: 1400px !important;
   margin: 0 auto !important;
-  padding: 16px 20px !important;
+  padding: 16px 20px 40px 20px !important;
   box-sizing: border-box !important;
 }
 
 .layout-flex-24obs {
   display: flex !important;
-  gap: 24px !important;
+  gap: 28px !important;
   align-items: flex-start !important;
   justify-content: center !important;
   width: 100% !important;
@@ -362,13 +363,29 @@
 }
 
 .desktop-sidebar-24obs {
-  width: 216px !important;
+  width: 220px !important;
   flex-shrink: 0 !important;
   position: sticky !important;
-  top: 76px !important;
+  top: 96px !important;
+  max-height: calc(100vh - 115px) !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #CBD5E1 transparent !important;
   align-self: flex-start !important;
   margin: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 24px !important;
+  padding-right: 4px !important;
   box-sizing: border-box !important;
+  z-index: 10 !important;
+}
+
+.desktop-sidebar-24obs::-webkit-scrollbar {
+  width: 4px !important;
+}
+.desktop-sidebar-24obs::-webkit-scrollbar-thumb {
+  background: #CBD5E1 !important;
+  border-radius: 4px !important;
 }
 
 @media (max-width: 1120px) {
@@ -492,7 +509,7 @@
 
 /* Compact Spacing Across Technology Page */
 .page-hero {
-  padding: 32px 0 18px 0 !important;
+  padding: 24px 0 16px 0 !important;
 }
 
 .page-hero .h1 {
@@ -508,7 +525,7 @@
 }
 
 .section-sm {
-  padding: 26px 0 !important;
+  padding: 24px 0 !important;
 }
 
 .section-sm .head {
@@ -525,50 +542,6 @@
   font-size: 0.98rem !important;
   line-height: 1.5 !important;
 }
-
-.layer {
-  padding: 12px 14px !important;
-  gap: 10px !important;
-}
-
-.spec {
-  padding: 14px 16px !important;
-}
-
-.road {
-  padding: 16px 18px !important;
-}
-
-.audit-card {
-  padding: 18px 20px !important;
-}
-
-.audit-row {
-  padding: 9px 12px !important;
-}
-
-.grid-3 {
-  gap: 12px !important;
-}
-
-.grid-2 {
-  gap: 14px !important;
-}
-
-.faq-item {
-  margin-bottom: 8px !important;
-}
-
-.faq-q {
-  padding: 12px 16px !important;
-  font-size: 0.95rem !important;
-}
-
-.faq-a {
-  padding: 10px 16px 14px 16px !important;
-  font-size: 0.88rem !important;
-}
-
 </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260915_fav2" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260915_fav2" />
@@ -600,6 +573,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="/index.html"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x" alt="OllaVPN Logo" width="40" height="40" class="brand-img" style="width: 40px; height: 40px; border-radius: 8px; display: block; flex-shrink: 0;" /><span class="brand-text">Olla<span class="brand-red">VPN</span></span></a>
+    
     <div class="nav-links">
       <div class="nav-item active">
         <a href="/technology.html" class="nav-head">Technology <span class="caret">&#9662;</span></a>
@@ -653,12 +627,12 @@
           </div>
         </div>
       </div>
-      </div>
 
       <a href="/free-vpn">Free VPN</a>
       <a href="/apps.html">Apps</a>
       <a href="/dl/">Download</a>
     </div>
+
     <div class="nav-cta">
       <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
       <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
