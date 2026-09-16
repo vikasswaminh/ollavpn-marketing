@@ -333,6 +333,13 @@
   .audit-row .todo { color: var(--text-mute); }
 
   @media (max-width: 980px) { .stack-grid, .specs-grid, .roadmap, .audit-grid { grid-template-columns: 1fr; } }
+
+.tech-guide-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #DA291C !important;
+  box-shadow: 0 12px 24px rgba(218, 41, 28, 0.08) !important;
+}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260915_fav2" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260915_fav2" />
@@ -394,26 +401,29 @@
         <div class="mega" role="menu">
           <div class="mega-cols">
             <div class="mega-col">
-              <h5>Guides</h5>
-              <a href="/blog/best-free-vpn-for-windows.html">Best free VPN for Windows</a>
-              <a href="/blog/">DNS leak test <span class="sub">What it catches, what it misses</span></a>
-              <a href="/blog/">What is post-quantum crypto?</a>
+              <h5>Guides & Architecture</h5>
+              <a href="/blog/what-is-post-quantum-cryptography.html">What is post-quantum crypto?</a>
+              <a href="/blog/what-is-a-dns-leak.html">DNS leak test & defense</a>
+              <a href="/blog/webrtc-leak-explained.html">WebRTC leak explained (2026)</a>
+              <a href="/blog/what-is-an-ipv6-leak.html">IPv6 dual-stack leaks</a>
             </div>
             <div class="mega-col">
-              <h5>Comparisons</h5>
+              <h5>Protocols & Comparisons</h5>
+              <a href="/blog/wireguard-vs-openvpn.html">WireGuard vs OpenVPN</a>
+              <a href="/blog/what-is-a-vpn-kill-switch.html">Kill switch architecture</a>
               <a href="/blog/mullvad-vs-protonvpn.html">Mullvad vs ProtonVPN</a>
-              <a href="/blog/nordvpn-vs-protonvpn.html">NordVPN vs ProtonVPN</a>
-              <a href="/blog/nordvpn-vs-expressvpn.html">NordVPN vs ExpressVPN</a>
-              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes explained</a>
+              <a href="/blog/five-eyes-nine-eyes-fourteen-eyes.html">5/9/14-Eyes jurisdictions</a>
             </div>
             <div class="mega-col">
-              <h5>Tools</h5>
-              <a href="https://status.ollavpn.com/">Status page</a>
-              <a href="/blog/">Changelog</a>
-              <a href="/llms.txt">llms.txt</a>
+              <h5>Buyer Guides & Free Tiers</h5>
+              <a href="/blog/lifetime-free-vpn-guide.html">Lifetime Free VPN Guide</a>
+              <a href="/blog/free-vpn-for-streaming-sports.html">Free VPN for Sports</a>
+              <a href="/blog/best-free-vpn-for-windows.html">Free VPN for Windows</a>
+              <a href="/blog/">All 146 Engineering Guides &rarr;</a>
             </div>
           </div>
         </div>
+      </div>
       </div>
 
       <a href="/free-vpn">Free VPN</a>
@@ -680,12 +690,97 @@ key       = <span class="tk-keyword">mix</span>(classical, pqc)
   </div>
 </section>
 
+
+<section class="section-sm" id="technical-guides" style="background: #FAFAFA; border-top: 1px solid #EAEAEA; border-bottom: 1px solid #EAEAEA; padding: 72px 0;">
+  <div class="wrap" style="max-width: 1140px; margin: 0 auto; padding: 0 24px;">
+    <div class="head" style="margin-bottom: 40px; text-align: left;">
+      <span class="kicker" style="font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #DA291C; text-transform: uppercase;"><span class="pip" style="color: #DA291C;">●</span> ENGINEERING &amp; PROTOCOL GUIDES</span>
+      <h2 class="h-display h2 mt-16" style="font-size: 2.25rem; font-weight: 800; color: #0F172A; margin: 12px 0 16px 0; letter-spacing: -0.02em;">Technical Deep Dives &amp; Architecture Guides</h2>
+      <p style="font-size: 1.05rem; line-height: 1.68; color: #475467; max-width: 680px; margin: 0;">Peer-reviewed deep dives covering post-quantum cryptographic primitives, kernel-level packet filtering, leak shielding, and zero-log infrastructure.</p>
+    </div>
+    
+    <div class="tech-guides-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+      <!-- Card 1: PQC -->
+      <a href="/blog/what-is-post-quantum-cryptography.html" class="tech-guide-card" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 28px; text-decoration: none; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <span style="background: #FFF1F2; color: #E11D48; font-family: var(--mono); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.05em; text-transform: uppercase;">CRYPTOGRAPHY</span>
+          <span style="font-size: 12px; color: #64748B; font-weight: 600;">14 MIN READ</span>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #0F172A; line-height: 1.35; margin: 0 0 10px 0; letter-spacing: -0.01em;">What is Post-Quantum Cryptography?</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #475467; margin: 0 0 16px 0; flex-grow: 1;">How hybrid ML-KEM-768 + X25519 key exchange neutralizes "harvest now, decrypt later" threats before quantum computers arrive.</p>
+        <span style="font-size: 0.92rem; font-weight: 700; color: #DA291C; display: inline-flex; align-items: center; gap: 6px;">Read Architecture Guide &rarr;</span>
+      </a>
+
+      <!-- Card 2: WebRTC Leaks -->
+      <a href="/blog/webrtc-leak-explained.html" class="tech-guide-card" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 28px; text-decoration: none; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <span style="background: #EFF6FF; color: #2563EB; font-family: var(--mono); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.05em; text-transform: uppercase;">SECURITY AUDIT</span>
+          <span style="font-size: 12px; color: #64748B; font-weight: 600;">12 MIN READ</span>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #0F172A; line-height: 1.35; margin: 0 0 10px 0; letter-spacing: -0.01em;">WebRTC Leak Explained (2026): Check &amp; Fix</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #475467; margin: 0 0 16px 0; flex-grow: 1;">How browser-level STUN and TURN requests bypass virtual tunnels, and how OllaVPN shields real IPs automatically on every connection.</p>
+        <span style="font-size: 0.92rem; font-weight: 700; color: #DA291C; display: inline-flex; align-items: center; gap: 6px;">Read Security Guide &rarr;</span>
+      </a>
+
+      <!-- Card 3: IPv6 Leaks -->
+      <a href="/blog/what-is-an-ipv6-leak.html" class="tech-guide-card" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 28px; text-decoration: none; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <span style="background: #F0FDF4; color: #16A34A; font-family: var(--mono); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.05em; text-transform: uppercase;">NETWORK PROTOCOLS</span>
+          <span style="font-size: 12px; color: #64748B; font-weight: 600;">16 MIN READ</span>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #0F172A; line-height: 1.35; margin: 0 0 10px 0; letter-spacing: -0.01em;">IPv6 Leak Explained: Why It Happens &amp; Fixes</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #475467; margin: 0 0 16px 0; flex-grow: 1;">Dual-stack operating systems routing IPv6 traffic unencrypted outside IPv4-only VPN tunnels and how to enforce kernel-level isolation.</p>
+        <span style="font-size: 0.92rem; font-weight: 700; color: #DA291C; display: inline-flex; align-items: center; gap: 6px;">Read Protocol Guide &rarr;</span>
+      </a>
+
+      <!-- Card 4: Kill Switch -->
+      <a href="/blog/what-is-a-vpn-kill-switch.html" class="tech-guide-card" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 28px; text-decoration: none; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <span style="background: #FEF3C7; color: #D97706; font-family: var(--mono); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.05em; text-transform: uppercase;">ARCHITECTURE</span>
+          <span style="font-size: 12px; color: #64748B; font-weight: 600;">10 MIN READ</span>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #0F172A; line-height: 1.35; margin: 0 0 10px 0; letter-spacing: -0.01em;">VPN Kill Switch: Fail-Closed Protection</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #475467; margin: 0 0 16px 0; flex-grow: 1;">Why software-level timeouts leak packets during network drops, and how Windows Filtering Platform (WFP) and iptables lock connections.</p>
+        <span style="font-size: 0.92rem; font-weight: 700; color: #DA291C; display: inline-flex; align-items: center; gap: 6px;">Read Kill Switch Guide &rarr;</span>
+      </a>
+
+      <!-- Card 5: WireGuard vs OpenVPN -->
+      <a href="/blog/wireguard-vs-openvpn.html" class="tech-guide-card" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 28px; text-decoration: none; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <span style="background: #F3E8FF; color: #9333EA; font-family: var(--mono); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.05em; text-transform: uppercase;">BENCHMARKS</span>
+          <span style="font-size: 12px; color: #64748B; font-weight: 600;">15 MIN READ</span>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #0F172A; line-height: 1.35; margin: 0 0 10px 0; letter-spacing: -0.01em;">WireGuard vs. OpenVPN: 2026 Comparison</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #475467; margin: 0 0 16px 0; flex-grow: 1;">In-depth performance benchmarks, codebase attack surface (4,000 vs 100,000 lines), handshakes, and cryptographic cipher modernizations.</p>
+        <span style="font-size: 0.92rem; font-weight: 700; color: #DA291C; display: inline-flex; align-items: center; gap: 6px;">Read Benchmark Report &rarr;</span>
+      </a>
+
+      <!-- Card 6: Lifetime Free Tier -->
+      <a href="/blog/lifetime-free-vpn-guide.html" class="tech-guide-card" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 28px; text-decoration: none; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <span style="background: #FFF1F2; color: #DA291C; font-family: var(--mono); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.05em; text-transform: uppercase;">BUYER GUIDE</span>
+          <span style="font-size: 12px; color: #64748B; font-weight: 600;">18 MIN READ</span>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #0F172A; line-height: 1.35; margin: 0 0 10px 0; letter-spacing: -0.01em;">Lifetime Free VPN: Speed Caps vs Data Limits</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #475467; margin: 0 0 16px 0; flex-grow: 1;">The engineering economics behind sustainable free tiers, unmetered bandwidth, and how paid upgrades eliminate user data monetisation.</p>
+        <span style="font-size: 0.92rem; font-weight: 700; color: #DA291C; display: inline-flex; align-items: center; gap: 6px;">Read Architecture Guide &rarr;</span>
+      </a>
+    </div>
+    
+    <div style="margin-top: 36px; text-align: center;">
+      <a href="/blog/" style="display: inline-flex; align-items: center; gap: 8px; background: #0F172A; color: #FFFFFF; font-weight: 700; font-size: 1rem; padding: 13px 28px; border-radius: 10px; text-decoration: none; transition: background 0.2s ease, transform 0.2s ease; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);">
+        Explore All 146 Engineering &amp; Security Guides &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
 <section class="section-sm" id="about">
   <div class="wrap" style="max-width:780px;">
     <div class="head"><span class="kicker"><span class="pip">●</span> ABOUT THIS PAGE</span><h2 class="h-display h2 mt-16">Who wrote this, and how it stays correct.</h2></div>
     <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">This page is maintained by <a href="/about/team#nathan-pratt">Nathan Pratt</a>, OllaVPN's Privacy &amp; Security Lead. The technical claims about the WireGuard handshake, the PQC integration, the kill-switch enforcement layers, and the peer-isolation defense layers were fact-checked against the production codebase by <a href="/about/team#hannah-wu">Hannah Wu</a>, Senior Security Engineer, during the June 2026 update cycle. The infrastructure descriptions reflect the deployed state of OllaVPN's control plane and exit fleet as of 22 June 2026.</p>
     <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">This page is refreshed quarterly. If a technical claim becomes outdated — a default changes, a new defense layer is added, an audit completes — the page is updated and the dateModified field in the schema is incremented. If you spot an error or a claim that no longer matches the code, email <code>guides@ollavpn.com</code> and we will correct it in the next refresh.</p>
-    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">If you want to go deeper than this page goes: the broader <a href="/best-free-vpn-2026">best free VPN 2026 guide</a> covers the wider category context. The <a href="/blog/what-is-post-quantum-cryptography.html">post-quantum cryptography pillar</a> explains PQC fundamentals without assuming the reader knows the cryptography. The <a href="/blog/what-is-a-vpn-kill-switch.html">kill switch deep-dive</a> covers why "always on" matters. The <a href="/blog/what-is-a-dns-leak.html">DNS leak primer</a> explains the resolver layer in detail. The <a href="/blog/what-is-multi-hop-vpn.html">multi-hop VPN explainer</a> covers Sovereign Route's conceptual basis.</p>
+    <p style="font-size:17px;line-height:1.72;color:var(--text);margin-top:1em;">If you want to go deeper than this page goes: our <a href="/blog/lifetime-free-vpn-guide.html">Lifetime Free VPN Architecture Guide</a> covers the sustainable infrastructure economics. The <a href="/blog/what-is-post-quantum-cryptography.html">post-quantum cryptography pillar</a> explains PQC fundamentals without assuming advanced cryptographic background. The <a href="/blog/what-is-a-vpn-kill-switch.html">kill switch deep-dive</a> covers why "always on" matters. The <a href="/blog/what-is-a-dns-leak.html">DNS leak primer</a> explains the resolver layer in detail. The <a href="/blog/webrtc-leak-explained.html">WebRTC leak guide</a> details browser-level discovery shielding, and the <a href="/blog/what-is-multi-hop-vpn.html">multi-hop VPN explainer</a> covers Sovereign Route's conceptual basis.</p>
   </div>
 </section>
 
