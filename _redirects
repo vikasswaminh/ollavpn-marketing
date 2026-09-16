@@ -16,7 +16,8 @@
 /home                    /             301
 /index.html?*            /:splat       301
 
-# ─── Pricing removed 2026-08-24 (product is 100% free) ───
+# ─── Pricing Active Route ─────────────────────────────────
+/pricing                 /pricing.html 200
 
 # Clean-URL canonicalization: extension-stripped is the sitemap
 # canonical (see sitemap.xml). CF Pages auto-serves /pqc → /pqc.html,
