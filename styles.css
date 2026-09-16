@@ -3572,9 +3572,9 @@ article h2::before,
 /* Exits Strip Enhanced Font Sizes & Well-Defined Dividers */
 .exits {
   padding: 36px 0 !important;
-  border-top: 1.5px solid #E2E8F0 !important;
-  border-bottom: 1.5px solid #E2E8F0 !important;
-  background: #FAFBFD !important;
+  border-top: 1.5px solid #CBD5E1 !important;
+  border-bottom: 1.5px solid #CBD5E1 !important;
+  background: #F8FAFC !important;
 }
 
 .exits .label {
@@ -3596,7 +3596,7 @@ article h2::before,
   font-weight: 800 !important;
   letter-spacing: 0.03em !important;
   color: #0F172A !important;
-  border-right: 2px solid #CBD5E1 !important;
+  border-right: 2px solid #94A3B8 !important;
   padding: 16px 14px !important;
 }
 
