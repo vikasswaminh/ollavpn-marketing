@@ -103,7 +103,7 @@
   line-height: 1 !important;
   cursor: pointer !important;
 }
-.nav-links a::after, .nav-item::after {
+.nav-links > a::after, .nav-item::after {
   content: "" !important;
   position: absolute !important;
   left: 0 !important;
@@ -122,7 +122,7 @@
   color: #DA291C !important;
   font-weight: 600 !important;
 }
-.nav-links a:hover::after, .nav-links a.active::after, .nav-item:hover::after, .nav-item.active::after {
+.nav-links > a:hover::after, .nav-links > a.active::after, .nav-item:hover::after, .nav-item.active::after {
   transform: scaleX(1) !important;
 }
 .nav-item .caret {
@@ -268,6 +268,42 @@
 .legal ul{padding-left:20px}
 .legal a{color:var(--red-2,#8F73FF)}
 .legal .lede{color:var(--text);font-size:1.05rem}
+
+/* Mega Dropdown Clean Item Styling & Underline Removal */
+.mega a::after,
+.mega-col a::after,
+.mega a:hover::after,
+.mega-col a:hover::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+}
+
+.mega-col a {
+  display: block !important;
+  padding: 6px 10px !important;
+  margin: 2px 0 !important;
+  font-size: 13.5px !important;
+  color: #475467 !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.mega-col a:hover {
+  background: #FEF2F2 !important;
+  color: #DA291C !important;
+  font-weight: 600 !important;
+  border: none !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260915_fav2" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260915_fav2" />
