@@ -3568,3 +3568,25 @@ article h2::before,
   margin-bottom: 22px !important;
   display: inline-flex !important;
 }
+
+/* Exits Strip Enhanced Font Sizes */
+.exits .label {
+  font-family: var(--mono);
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: var(--text-dim) !important;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.exit-grid > div {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.exit-grid > div small {
+  font-size: 12px !important;
+  color: var(--text-mute) !important;
+  margin-top: 5px !important;
+}
