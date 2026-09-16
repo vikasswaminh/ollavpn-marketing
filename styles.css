@@ -3569,24 +3569,45 @@ article h2::before,
   display: inline-flex !important;
 }
 
-/* Exits Strip Enhanced Font Sizes */
+/* Exits Strip Enhanced Font Sizes & Well-Defined Dividers */
+.exits {
+  padding: 36px 0 !important;
+  border-top: 1.5px solid #E2E8F0 !important;
+  border-bottom: 1.5px solid #E2E8F0 !important;
+  background: #FAFBFD !important;
+}
+
 .exits .label {
   font-family: var(--mono);
-  font-size: 13.5px !important;
-  font-weight: 500 !important;
-  color: var(--text-dim) !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
   text-align: center;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 18px !important;
+}
+
+.exit-grid {
+  margin-top: 16px !important;
 }
 
 .exit-grid > div {
-  font-size: 16px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.02em !important;
+  font-size: 17.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.03em !important;
+  color: #0F172A !important;
+  border-right: 2px solid #CBD5E1 !important;
+  padding: 16px 14px !important;
+}
+
+.exit-grid > div:last-child {
+  border-right: none !important;
 }
 
 .exit-grid > div small {
-  font-size: 12px !important;
-  color: var(--text-mute) !important;
-  margin-top: 5px !important;
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  color: #64748B !important;
+  margin-top: 6px !important;
+  font-weight: 500 !important;
 }
