@@ -3640,7 +3640,7 @@ article h2::before,
 }
 
 .hero-right .plan .price {
-  font-size: 40px !important;
+  font-size: 44px !important;
   font-weight: 800 !important;
   letter-spacing: -0.03em !important;
   margin: 18px 0 16px !important;
@@ -3651,11 +3651,12 @@ article h2::before,
 }
 
 .hero-right .plan .price small {
-  font-size: 14px !important;
-  color: #64748B !important;
+  font-size: 24px !important;
+  color: #DA291C !important;
   margin-left: 8px !important;
   font-family: var(--sans) !important;
-  font-weight: 500 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
 }
 
 .hero-right .plan .btn {
