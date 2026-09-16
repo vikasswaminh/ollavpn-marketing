@@ -198,33 +198,33 @@ The fix is straightforward in principle: either the VPN needs to tunnel IPv6 tra
   <strong style="color: #DA291C; display: block; margin-bottom: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;">QUICK ANSWER</strong>
   <p style="margin: 0; font-size: 13.5px; line-height: 1.65; color: #334155;">Having a kill switch or passing a basic IPv4 test does not protect against IPv6 leaks. True protection requires verifying that IPv6 traffic is either fully encrypted in the tunnel or blocked at the network adapter level.</p>
 </div>
-<p style="margin-bottom: 8px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Myth 1:</strong> "If my VPN has a kill switch, IPv6 leaks aren't a concern."
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Myth 1:</strong> "If my VPN has a kill switch, IPv6 leaks aren't a concern."</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
   Untrue as a blanket statement. A kill switch's job is to block traffic if the VPN tunnel drops , it has nothing to do with traffic that was never routed through the tunnel to begin with. An IPv6 leak isn't a connection failure the kill switch would notice; it's a routing gap that exists even while the VPN is fully connected and working normally for IPv4.
 </p>
-<p style="margin-bottom: 8px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Myth 2:</strong> "Disabling IPv6 on my router means none of my devices can leak."
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Myth 2:</strong> "Disabling IPv6 on my router means none of my devices can leak."</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
   Partial truth. If your router genuinely blocks IPv6 for the entire network, individual devices behind it won't have IPv6 connectivity to leak over , but many consumer routers don't disable IPv6 as completely or reliably as their settings menu implies, and mobile devices switching to cellular data bypass the router's settings entirely.
 </p>
-<p style="margin-bottom: 8px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Myth 3:</strong> "IPv6 leaks only affect a small number of unusual setups."
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Myth 3:</strong> "IPv6 leaks only affect a small number of unusual setups."</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
   Untrue, and probably the most consequential misconception here. Given how widely IPv6 has been adopted by mobile carriers and ISPs, and how many popular VPN apps have, at various points, shipped without full IPv6 handling, this affects a meaningful share of ordinary VPN users , not just people with unusual network configurations.
 </p>
-<p style="margin-bottom: 8px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Myth 4:</strong> "If my 'what is my IP' test shows the VPN server's address, I'm not leaking."
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Myth 4:</strong> "If my 'what is my IP' test shows the VPN server's address, I'm not leaking."</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
   Misleading, depending on the test. A basic IP-check page often only reports your IPv4 address unless it's specifically built to check IPv6 as well. A clean-looking result from a test that doesn't check IPv6 at all tells you nothing about whether you have an IPv6 leak , you need a test designed to check both.
 </p>
-<p style="margin-bottom: 8px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Myth 5:</strong> "Once I've confirmed my VPN doesn't leak IPv6, I'm permanently covered."
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Myth 5:</strong> "Once I've confirmed my VPN doesn't leak IPv6, I'm permanently covered."</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
   Untrue. VPN apps update, operating systems change default behaviors, and network conditions vary , a setup that tested clean once can regress after an app update or on a different network. Periodic re-testing, particularly after any change to your VPN app or network, is the only way to stay confident rather than just assuming.
 </p>
@@ -243,27 +243,27 @@ The fix is straightforward in principle: either the VPN needs to tunnel IPv6 tra
   <p style="margin: 0; font-size: 13.5px; line-height: 1.65; color: #334155;">Testing for an IPv6 leak takes two minutes: check your IPv6 address on an IP testing tool before connecting, then reconnect to your VPN and check again. If your original IPv6 address is visible, your traffic is leaking.</p>
 </div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">Don't take a VPN's documentation at its word , verifying this yourself takes a few minutes and removes any guesswork.</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 1:</strong> Confirm whether your network even has IPv6 connectivity in the first place. Before connecting to your VPN, visit any dedicated IP-check page that specifically reports both IPv4 and IPv6 addresses. If no IPv6 address is shown at all, your current network may not offer IPv6, in which case there's nothing for this specific leak to exploit right now , though it's still worth testing on other networks, especially mobile.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 2:</strong> If IPv6 is present, note your real IPv6 address before connecting. This gives you a baseline to compare against.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 3:</strong> Connect to your VPN normally. 
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 4:</strong> Revisit the same IPv6-aware IP-check page. A properly protected connection will either show the VPN server's IPv6 address (if the VPN tunnels IPv6) or show no IPv6 address at all (if the VPN has disabled it). If it shows your original, real IPv6 address from Step 2, that's a leak.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 5:</strong> Repeat the test on a different network, particularly mobile data if you use it. Behavior can genuinely differ between a home Wi-Fi connection and a cellular one, given how differently ISPs and mobile carriers have rolled out IPv6.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 6:</strong> Repeat again after any VPN app update. A clean result today doesn't guarantee a clean result after the next update , this is worth treating as a periodic check rather than a one-time confirmation.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 7:</strong> If you found a leak, apply one of the prevention methods above, then retest to confirm it's actually resolved. Don't assume a fix worked without re-running the same test that revealed the problem in the first place.
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 1:</strong> Confirm whether your network even has IPv6 connectivity in the first place. Before connecting to your VPN, visit any dedicated IP-check page that specifically reports both IPv4 and IPv6 addresses. If no IPv6 address is shown at all, your current network may not offer IPv6, in which case there's nothing for this specific leak to exploit right now , though it's still worth testing on other networks, especially mobile.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 2:</strong> If IPv6 is present, note your real IPv6 address before connecting. This gives you a baseline to compare against.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 3:</strong> Connect to your VPN normally.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 4:</strong> Revisit the same IPv6-aware IP-check page. A properly protected connection will either show the VPN server's IPv6 address (if the VPN tunnels IPv6) or show no IPv6 address at all (if the VPN has disabled it). If it shows your original, real IPv6 address from Step 2, that's a leak.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 5:</strong> Repeat the test on a different network, particularly mobile data if you use it. Behavior can genuinely differ between a home Wi-Fi connection and a cellular one, given how differently ISPs and mobile carriers have rolled out IPv6.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 6:</strong> Repeat again after any VPN app update. A clean result today doesn't guarantee a clean result after the next update , this is worth treating as a periodic check rather than a one-time confirmation.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 7:</strong> If you found a leak, apply one of the prevention methods above, then retest to confirm it's actually resolved. Don't assume a fix worked without re-running the same test that revealed the problem in the first place.</p>
+</div>
 <h2 id="a-jurisdiction-style-checklist-for-evaluating-any-vpns-ipv6-handling">A Jurisdiction-Style Checklist for Evaluating Any VPN’s IPv6 Handling</h2>
 <div class="answer-card" style="margin: 20px 0 24px; border-left: 4px solid #DA291C; background: rgba(218, 41, 28, 0.04); padding: 16px 20px; border-radius: 0 8px 8px 0;">
   <strong style="color: #DA291C; display: block; margin-bottom: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;">QUICK ANSWER</strong>

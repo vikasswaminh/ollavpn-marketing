@@ -100,18 +100,18 @@ A rogue Wi-Fi hotspot, better known as an evil twin, is a fake wireless network 
   <p style="margin: 0; font-size: 13.5px; line-height: 1.65; color: #334155;">Building a convincing evil twin takes three ingredients: a way to broadcast a matching SSID, a stronger or closer signal than the real network, and , for the more advanced versions , a captive portal page that mimics a login screen to harvest credentials. All three are achievable with consumer hardware and freely available tools.</p>
 </div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">It's worth walking through the mechanics once, not so you can build one, but so the signs of one stop looking mysterious.</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 1:</strong> Cloning the SSID. Wi-Fi adapters can be configured in "access point mode" to broadcast any name the attacker chooses. Cheap, purpose-built devices exist specifically for this , some look like a portable battery pack or a travel router, small enough to sit unnoticed in a bag under a café table or tucked into a backpack in an airport lounge.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 2:</strong> Winning the signal race. Devices generally connect to the strongest available signal among networks with a name they recognize. An attacker sitting closer to the victim than the real access point, or simply using a more powerful radio, can often out-broadcast the legitimate network without needing to jam or disable it at all.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 3:</strong> The captive portal trick (optional but common). Many public networks show a "sign-in" page before granting internet access , think hotel Wi-Fi asking for a room number, or an airport lounge asking you to agree to terms. Evil twins frequently replicate this experience with a fake portal that asks for an email address, a room number, a loyalty program login, or even a credit card "for verification." The page looks convincing because copying HTML and a logo is trivial. Whatever the victim types goes straight to the attacker.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Step 4:</strong> Deauthentication (the more aggressive version). Some attackers go further and actively knock victims off the real network using deauthentication frames , a feature of the Wi-Fi standard originally meant for legitimate network management, repurposed to force nearby devices to disconnect and search for a new network to join. If the evil twin is the strongest signal broadcasting a familiar name at that moment, the disconnected device often reconnects to it automatically, with no user interaction at all.
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 1:</strong> Cloning the SSID. Wi-Fi adapters can be configured in "access point mode" to broadcast any name the attacker chooses. Cheap, purpose-built devices exist specifically for this , some look like a portable battery pack or a travel router, small enough to sit unnoticed in a bag under a café table or tucked into a backpack in an airport lounge.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 2:</strong> Winning the signal race. Devices generally connect to the strongest available signal among networks with a name they recognize. An attacker sitting closer to the victim than the real access point, or simply using a more powerful radio, can often out-broadcast the legitimate network without needing to jam or disable it at all.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 3:</strong> The captive portal trick (optional but common). Many public networks show a "sign-in" page before granting internet access , think hotel Wi-Fi asking for a room number, or an airport lounge asking you to agree to terms. Evil twins frequently replicate this experience with a fake portal that asks for an email address, a room number, a loyalty program login, or even a credit card "for verification." The page looks convincing because copying HTML and a logo is trivial. Whatever the victim types goes straight to the attacker.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Step 4:</strong> Deauthentication (the more aggressive version). Some attackers go further and actively knock victims off the real network using deauthentication frames , a feature of the Wi-Fi standard originally meant for legitimate network management, repurposed to force nearby devices to disconnect and search for a new network to join. If the evil twin is the strongest signal broadcasting a familiar name at that moment, the disconnected device often reconnects to it automatically, with no user interaction at all.</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">None of this requires deep technical skill in 2026. Tools that automate most of these steps have existed for years, are widely documented, and run on hardware you can buy for the price of a nice dinner. That's the uncomfortable truth behind why this attack hasn't gone away.</p>
 <h2 id="what-an-attacker-can-see-and-do-once-youre-connected">What an attacker can see and do once you’re connected</h2>
 <div class="answer-card" style="margin: 20px 0 24px; border-left: 4px solid #DA291C; background: rgba(218, 41, 28, 0.04); padding: 16px 20px; border-radius: 0 8px 8px 0;">
@@ -212,33 +212,33 @@ A rogue Wi-Fi hotspot, better known as an evil twin, is a fake wireless network 
   <strong style="color: #DA291C; display: block; margin-bottom: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;">QUICK ANSWER</strong>
   <p style="margin: 0; font-size: 13.5px; line-height: 1.65; color: #334155;">Common assumptions about public Wi-Fi safety, like trusting password protection or the HTTPS padlock, create dangerous blind spots. Understanding what these safeguards actually protect against is crucial to avoiding evil twin traps.</p>
 </div>
-<p style="margin-bottom: 8px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Myth 1:</strong> "If a network needs a password, it's safe."
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Myth 1:</strong> "If a network needs a password, it's safe."</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
   A password on the Wi-Fi network only controls who can join it , it says nothing about who's operating the access point. An attacker can absolutely set up a password-protected evil twin using the same password the venue posts on a chalkboard, since that password is public information by design. Encryption between your device and the access point does nothing to protect you from the access point operator itself being the attacker.
 </p>
-<p style="margin-bottom: 8px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Myth 2:</strong> "The HTTPS padlock means I'm completely safe on any network."
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Myth 2:</strong> "The HTTPS padlock means I'm completely safe on any network."</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
   HTTPS protects the content of your connection to that specific website from being read or altered in transit , it's genuinely important and you should always check for it. But it doesn't stop an attacker on an evil twin from seeing which domains you visit via DNS lookups, from attempting downgrade attacks against poorly configured sites, or from serving you a captive portal before HTTPS even gets a chance to matter.
 </p>
-<p style="margin-bottom: 8px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Myth 3:</strong> "Evil twin attacks require serious hacking skill, so it probably won't happen to me."
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Myth 3:</strong> "Evil twin attacks require serious hacking skill, so it probably won't happen to me."</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
   This was truer a decade ago. Purpose-built, largely automated hardware for this exact attack is now inexpensive and simple enough that the barrier to entry is closer to "willing to try" than "trained security professional." Treating it as a low-probability, high-skill event is exactly the outdated assumption that keeps people from checking.
 </p>
-<p style="margin-bottom: 8px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Myth 4:</strong> "My phone would warn me if something was wrong."
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Myth 4:</strong> "My phone would warn me if something was wrong."</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
   Modern operating systems have gotten better at flagging some suspicious behavior , captive portal detection, occasional "weak security" labels , but none of them verify who actually owns an access point, because there's no protocol-level mechanism to check that. A "no internet, secured" label just means the Wi-Fi handshake succeeded; it says nothing about trustworthiness.
 </p>
-<p style="margin-bottom: 8px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Myth 5:</strong> "A VPN is overkill for just checking email at a coffee shop."
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Myth 5:</strong> "A VPN is overkill for just checking email at a coffee shop."</p>
+</div>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
   Email logins, session tokens, and the metadata around who you're emailing are exactly the kind of thing an evil twin is well positioned to capture on unencrypted or poorly configured connections. "Just checking email" is one of the single most common tasks people do on public Wi-Fi, and one of the most consistently targeted in real incident writeups. The two-second delay of turning on a VPN is a poor trade against that.
 </p>

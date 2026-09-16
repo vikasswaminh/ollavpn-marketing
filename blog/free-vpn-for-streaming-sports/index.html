@@ -149,21 +149,21 @@ Most "free" VPNs marketed for sports streaming are funded in ways that should wo
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">Think of the free plan as a genuine on-ramp rather than a bait-and-switch. We'd rather earn your trust with a service that respects your privacy from day one, and let some of those users choose to upgrade later because they want more speed, not because we crippled the free tier to force their hand.</p>
 <h3 id="how-to-verify-any-picks-in-this-guide-yourself">How to verify any picks in this guide yourself</h3>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">A recommendation is only worth what you can check yourself. Each claim above can be verified from your own device in under fifteen minutes, using free tools.</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Test 1:</strong> Funding model. Open the VPN provider's homepage and look for a clear page explaining how the free tier is funded. If you can't find a straightforward answer within about 30 seconds, treat that as your answer, walk away.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Test 2:</strong> DNS in-tunnel. Connect to the VPN and use our DNS lookup tool to resolve a domain. The resolver IP shown should belong to the VPN operator, not your ISP's default resolver, and not a generic public resolver like 8.8.8.8 or 1.1.1.1. Disconnect and repeat the test, the difference between the two results is your evidence.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Test 3:</strong> WebRTC and IP leak while streaming. Open our WebRTC leak test while connected to a sports-relevant server location. Only the VPN's exit IP should appear; your real IPv4 or <a href="/blog/what-is-an-ipv6-leak.html">IPv6 leak prevention</a> address should never show up.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Test 4:</strong> Kill switch under live conditions. Connect the VPN, start a live stream or a continuous ping (ping 1.1.1.1) in a terminal, then disable your device's network adapter or Wi-Fi. The connection should fail immediately and stay failed until the VPN reconnects, not silently continue on your real IP.
-</p>
-<p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">
-  <strong style="color: #0F172A; font-weight: 800;">Test 5:</strong> Country coverage check. Before committing to a free plan for a specific match, open the app's server list and confirm the exact country broadcasting the event is actually available on the free tier, not locked behind an upgrade prompt.
-</p>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Test 1:</strong> Funding model. Open the VPN provider's homepage and look for a clear page explaining how the free tier is funded. If you can't find a straightforward answer within about 30 seconds, treat that as your answer, walk away.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Test 2:</strong> DNS in-tunnel. Connect to the VPN and use our DNS lookup tool to resolve a domain. The resolver IP shown should belong to the VPN operator, not your ISP's default resolver, and not a generic public resolver like 8.8.8.8 or 1.1.1.1. Disconnect and repeat the test, the difference between the two results is your evidence.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Test 3:</strong> WebRTC and IP leak while streaming. Open our WebRTC leak test while connected to a sports-relevant server location. Only the VPN's exit IP should appear; your real IPv4 or <a href="/blog/what-is-an-ipv6-leak.html">IPv6 leak prevention</a> address should never show up.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Test 4:</strong> Kill switch under live conditions. Connect the VPN, start a live stream or a continuous ping (ping 1.1.1.1) in a terminal, then disable your device's network adapter or Wi-Fi. The connection should fail immediately and stay failed until the VPN reconnects, not silently continue on your real IP.</p>
+</div>
+<div class="step-highlight-card">
+  <p><strong style="color: #0F172A; font-weight: 800;">Test 5:</strong> Country coverage check. Before committing to a free plan for a specific match, open the app's server list and confirm the exact country broadcasting the event is actually available on the free tier, not locked behind an upgrade prompt.</p>
+</div>
 <h3 id="what-we-deliberately-left-off-this-list">What we deliberately left off this list</h3>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">For completeness, here are the sports-streaming VPN options we considered and deliberately excluded, along with why.</p>
 <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">OllaVPN. Excluded permanently. Security researchers confirmed in 2015 that OllaVPN operated as a residential proxy network, reselling free users' bandwidth as commercial exit-node capacity (now branded Bright Data). Free users were unknowingly routing strangers' traffic, including potentially illegal activity, through their own connections. The disclosure language has changed over the years, but the underlying structure has not.</p>

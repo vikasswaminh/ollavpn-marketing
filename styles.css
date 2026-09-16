@@ -3727,3 +3727,40 @@ article h2::before,
   font-weight: 800 !important;
   margin-right: 8px !important;
 }
+
+
+/* Step / Test / Procedure / Myth Highlight Cards */
+.step-highlight-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-left: 4px solid #DA291C !important;
+  border-radius: 12px !important;
+  padding: 18px 22px !important;
+  margin: 14px 0 16px 0 !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  transition: all 0.2s ease !important;
+}
+
+.step-highlight-card:hover {
+  border-left-color: #B91C1C !important;
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.07) !important;
+}
+
+.step-highlight-card p {
+  margin: 0 !important;
+  line-height: 1.72 !important;
+  color: #1E293B !important;
+  font-size: 1.02rem !important;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.step-highlight-card strong {
+  color: #DA291C !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  display: inline-block !important;
+  margin-right: 4px !important;
+}
