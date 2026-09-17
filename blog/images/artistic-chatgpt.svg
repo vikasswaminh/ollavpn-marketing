@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="art-gpt-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBF9FC"/>
+      <stop offset="100%" stop-color="#F1EAF5"/>
+    </linearGradient>
+    <linearGradient id="art-bubble-user" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#734B8C"/>
+      <stop offset="100%" stop-color="#5B3A70"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#art-gpt-bg)"/>
+  <circle cx="200" cy="125" r="95" fill="#EADAEE" opacity="0.4"/>
+
+  <!-- Left User Prompt Bubble -->
+  <g transform="translate(100, 75)">
+    <rect x="0" y="0" width="140" height="52" rx="14" fill="url(#art-bubble-user)"/>
+    <polygon points="120,52 135,62 130,52" fill="#5B3A70"/>
+    <!-- Dialogue lines -->
+    <rect x="18" y="18" width="65" height="5" rx="2.5" fill="#F8F5FA"/>
+    <rect x="18" y="29" width="95" height="5" rx="2.5" fill="#D8B4E2"/>
+  </g>
+
+  <!-- Right AI Response Bubble -->
+  <g transform="translate(160, 135)">
+    <rect x="0" y="0" width="145" height="56" rx="14" fill="#FFFFFF" stroke="#D8B4E2" stroke-width="2"/>
+    <polygon points="20,0 25,-10 35,0" fill="#FFFFFF"/>
+    <!-- Dialogue prompt lines -->
+    <rect x="18" y="18" width="105" height="5" rx="2.5" fill="#734B8C"/>
+    <rect x="18" y="29" width="75" height="5" rx="2.5" fill="#B8A8C2"/>
+    <circle cx="102" cy="31.5" r="2.5" fill="#10B981"/>
+  </g>
+
+  <!-- Encrypted Lock Vault Over Dialogue History -->
+  <g transform="translate(195, 120)">
+    <circle cx="0" cy="0" r="26" fill="#362244" stroke="#734B8C" stroke-width="3"/>
+    <rect x="-10" y="-4" width="20" height="16" rx="4" fill="#FDE68A"/>
+    <path d="M -6,-4 V -9 C -6 -13 -3 -16 0 -16 C 3 -16 6 -13 6 -9 V -4" fill="none" stroke="#FDE68A" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="0" cy="3" r="2" fill="#362244"/>
+    <line x1="0" y1="3" x2="0" y2="8" stroke="#362244" stroke-width="1.5"/>
+  </g>
+</svg>
