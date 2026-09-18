@@ -5123,3 +5123,12 @@ article h2::before,
   display: none !important;
   counter-increment: none !important;
 }
+
+/* Suppress legacy black download banner */
+.download-section-box,
+#download.download-section-box,
+section#download,
+section#cta-download,
+.cta-download-box {
+  display: none !important;
+}
