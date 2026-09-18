@@ -123,30 +123,31 @@
      the $0 plan card on the right, so the hero fills big screens instead of a
      narrow centered column. Only the hero widens; sections below stay 1200px. */
   .hero .hero-wrap {
-    width: 82%; max-width: 1600px; margin: 0 auto;
-    display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
-    gap: 36px; align-items: center; text-align: left;
+    width: 95%; max-width: 1720px; margin: 0 auto; padding: 0 16px;
+    display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(420px, 490px);
+    gap: 56px; align-items: center; text-align: left;
   }
-  .hero-left { max-width: none; }
-  .hero-right { justify-self: end; width: 100%; }
+  .hero-left { max-width: 840px; justify-self: start; width: 100%; }
+  .hero-right { justify-self: end; width: 100%; max-width: 490px; }
 
   .hero-pill {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 14px; border-radius: var(--radius-pill);
+    padding: 7px 16px; border-radius: var(--radius-pill);
     background: var(--red); color: #101828;
-    font-family: var(--mono); font-size: 11px; font-weight: 700;
+    font-family: var(--mono); font-size: 12px; font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
     box-shadow: 0 4px 14px -4px rgba(218,41,28,0.45);
   }
-  .hero-pill .pill-star { color: var(--amber); font-size: 13px; line-height: 1; }
+  .hero-pill .pill-star { color: var(--amber); font-size: 14px; line-height: 1; }
 
-  .hero h1.h1 { font-family: var(--sans); font-size: clamp(32px, 4.1vw, 54px); margin: 12px 0 0; max-width: none; font-weight: 700; letter-spacing: -0.04em; line-height: 1.05; }
+  .hero h1.h1 { font-family: var(--sans); font-size: clamp(38px, 4.6vw, 64px); margin: 16px 0 0; max-width: none; font-weight: 800; letter-spacing: -0.04em; line-height: 1.08; }
   .hero h1 .accent { color: var(--red); }
-  .hero-sub { margin: 10px 0 0; font-family: var(--sans); font-weight: 700; font-size: clamp(17px, 1.7vw, 22px); letter-spacing: -0.02em; line-height: 1.2; color: var(--text); }
+  .hero-sub { margin: 14px 0 0; font-family: var(--sans); font-weight: 700; font-size: clamp(20px, 2.0vw, 26px); letter-spacing: -0.02em; line-height: 1.25; color: var(--text); }
   .hero-sub .accent { color: var(--red); }
 
-  .hero .lede { margin: 12px 0 0; color: var(--text-dim); font-size: 14.5px; max-width: 600px; line-height: 1.5; }
-  .hero .actions { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start; }
+  .hero .lede { margin: 16px 0 0; color: var(--text-dim); font-size: 16.5px; max-width: 740px; line-height: 1.6; }
+  .hero .actions { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-start; }
+  .hero .actions .btn { padding: 14px 28px !important; font-size: 15px !important; font-weight: 700 !important; border-radius: 8px !important; }
 
   @media (max-width: 900px) {
     .hero .hero-wrap { width: 92%; grid-template-columns: 1fr; gap: 30px; text-align: center; }
@@ -380,16 +381,122 @@
 .footer .bottom { padding-top: 18px !important; }
   .cta .chip { margin-bottom: 22px !important; display: inline-flex !important; }
 
-/* Hero Right $0 Plan Card - Neat, Modern & Well-Spaced */
+/* Hero Right $0 Plan Card - Neat, Modern, Bigger & Well-Spaced */
 .hero-right .plan {
-  padding: 28px 26px !important;
+  padding: 36px 32px !important;
   background: #FFFFFF !important;
   border: 1.5px solid #E2E8F0 !important;
-  border-radius: 16px !important;
-  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.09), 0 4px 14px rgba(15, 23, 42, 0.04) !important;
   display: flex !important;
   flex-direction: column !important;
   position: relative !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.hero-right .plan h3 {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  margin: 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.hero-right .plan .sub {
+  font-size: 14.5px !important;
+  color: #64748B !important;
+  margin: 6px 0 0 !important;
+  font-weight: 500 !important;
+}
+
+.hero-right .plan .price {
+  font-size: 52px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  margin: 20px 0 18px !important;
+  line-height: 1 !important;
+  color: #0F172A !important;
+  display: flex !important;
+  align-items: baseline !important;
+}
+
+.hero-right .plan .price small {
+  font-size: 26px !important;
+  color: #DA291C !important;
+  margin-left: 8px !important;
+  font-family: var(--sans) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.hero-right .plan .btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  padding: 15px 24px !important;
+  border-radius: 10px !important;
+  background: #DA291C !important;
+  color: #FFFFFF !important;
+  font-family: var(--sans) !important;
+  font-size: 15.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  border: none !important;
+  box-shadow: 0 4px 16px rgba(218, 41, 28, 0.32) !important;
+  transition: all 0.15s ease !important;
+  margin: 0 0 12px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.hero-right .plan .btn:hover {
+  background: #B91C1C !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 22px rgba(218, 41, 28, 0.42) !important;
+}
+
+.hero-right .plan .plan-trust {
+  font-size: 13.5px !important;
+  color: #64748B !important;
+  text-align: center !important;
+  margin: 0 0 20px 0 !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+
+.hero-right .plan ul {
+  list-style: none !important;
+  padding: 22px 0 0 0 !important;
+  margin: 0 !important;
+  border-top: 1px solid #F1F5F9 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.hero-right .plan ul li {
+  font-size: 14.5px !important;
+  color: #334155 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+}
+
+.hero-right .plan ul li::before {
+  content: "✓" !important;
+  color: #DA291C !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  flex-shrink: 0 !important;
 }
 
 .hero-right .plan h3 {
