@@ -124,30 +124,30 @@
      narrow centered column. Only the hero widens; sections below stay 1200px. */
     .hero .hero-wrap {
     width: 90%; max-width: 1480px; margin: 0 auto; padding: 0 16px;
-    display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(360px, 420px);
-    gap: 42px; align-items: center; text-align: left;
+    display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(360px, 420px);
+    gap: 48px; align-items: center; text-align: left;
   }
-  .hero-left { max-width: 760px; justify-self: start; width: 100%; }
+  .hero-left { max-width: 840px; justify-self: start; width: 100%; }
   .hero-right { justify-self: end; width: 100%; max-width: 420px; }
 
   .hero-pill {
     display: inline-flex; align-items: center; gap: 7px;
-    padding: 5.5px 13px; border-radius: var(--radius-pill);
+    padding: 6px 14px; border-radius: var(--radius-pill);
     background: var(--red); color: #101828;
-    font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+    font-family: var(--mono); font-size: 12px; font-weight: 600;
     letter-spacing: 0.06em; text-transform: uppercase;
     box-shadow: 0 3px 10px -3px rgba(218,41,28,0.35);
   }
-  .hero-pill .pill-star { color: var(--amber); font-size: 12.5px; line-height: 1; }
+  .hero-pill .pill-star { color: var(--amber); font-size: 13px; line-height: 1; }
 
-  .hero h1.h1 { font-family: var(--sans); font-size: clamp(33px, 3.8vw, 52px); margin: 12px 0 0; max-width: none; font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; }
+  .hero h1.h1 { font-family: var(--sans); font-size: clamp(38px, 4.5vw, 62px); margin: 14px 0 0; max-width: none; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; }
   .hero h1 .accent { color: var(--red); }
-  .hero-sub { margin: 10px 0 0; font-family: var(--sans); font-weight: 600; font-size: clamp(17.5px, 1.7vw, 21.5px); letter-spacing: -0.015em; line-height: 1.3; color: var(--text); }
+  .hero-sub { margin: 12px 0 0; font-family: var(--sans); font-weight: 600; font-size: clamp(19px, 2vw, 24px); letter-spacing: -0.015em; line-height: 1.35; color: var(--text); }
   .hero-sub .accent { color: var(--red); }
 
-  .hero .lede { margin: 12px 0 0; color: #475569; font-size: 15px; font-weight: 400; max-width: 620px; line-height: 1.55; }
-  .hero .actions { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
-  .hero .actions .btn { padding: 12px 24px !important; font-size: 13.5px !important; font-weight: 600 !important; letter-spacing: 0.03em !important; border-radius: 6px !important; }
+  .hero .lede { margin: 14px 0 0; color: #475569; font-size: 16px; font-weight: 400; max-width: 720px; line-height: 1.6; }
+  .hero .actions { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-start; }
+  .hero .actions .btn { padding: 13px 28px !important; font-size: 14.5px !important; font-weight: 600 !important; letter-spacing: 0.02em !important; border-radius: 7px !important; }
 
   @media (max-width: 900px) {
     .hero .hero-wrap { width: 92%; grid-template-columns: 1fr; gap: 30px; text-align: center; }
