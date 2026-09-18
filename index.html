@@ -134,20 +134,20 @@
     display: inline-flex; align-items: center; gap: 8px;
     padding: 7px 16px; border-radius: var(--radius-pill);
     background: var(--red); color: #101828;
-    font-family: var(--mono); font-size: 12px; font-weight: 700;
+    font-family: var(--mono); font-size: 14px; font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
     box-shadow: 0 4px 14px -4px rgba(218,41,28,0.45);
   }
-  .hero-pill .pill-star { color: var(--amber); font-size: 14px; line-height: 1; }
+  .hero-pill .pill-star { color: var(--amber); font-size: 16px; line-height: 1; }
 
   .hero h1.h1 { font-family: var(--sans); font-size: clamp(38px, 4.6vw, 64px); margin: 16px 0 0; max-width: none; font-weight: 800; letter-spacing: -0.04em; line-height: 1.08; }
   .hero h1 .accent { color: var(--red); }
-  .hero-sub { margin: 14px 0 0; font-family: var(--sans); font-weight: 700; font-size: clamp(20px, 2.0vw, 26px); letter-spacing: -0.02em; line-height: 1.25; color: var(--text); }
+  .hero-sub { margin: 14px 0 0; font-family: var(--sans); font-weight: 700; font-size: clamp(22px, 2.2vw, 28px); letter-spacing: -0.02em; line-height: 1.25; color: var(--text); }
   .hero-sub .accent { color: var(--red); }
 
-  .hero .lede { margin: 16px 0 0; color: var(--text-dim); font-size: 16.5px; max-width: 740px; line-height: 1.6; }
+  .hero .lede { margin: 16px 0 0; color: var(--text-dim); font-size: 18.5px; max-width: 760px; line-height: 1.6; }
   .hero .actions { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-start; }
-  .hero .actions .btn { padding: 14px 28px !important; font-size: 15px !important; font-weight: 700 !important; border-radius: 8px !important; }
+  .hero .actions .btn { padding: 15px 30px !important; font-size: 17px !important; font-weight: 700 !important; border-radius: 9px !important; }
 
   @media (max-width: 900px) {
     .hero .hero-wrap { width: 92%; grid-template-columns: 1fr; gap: 30px; text-align: center; }
@@ -161,18 +161,18 @@
   .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
   .stat-strip .stat { padding: 15px 12px; text-align: center; border-right: 1px solid var(--line); }
   .stat-strip .stat:last-child { border-right: 0; }
-  .stat-strip .stat-num { font-size: 26px; font-weight: 600; color: var(--red); letter-spacing: -0.02em; line-height: 1; }
-  .stat-strip .stat-label { margin-top: 4px; font-family: var(--mono); font-size: 10px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; }
+  .stat-strip .stat-num { font-size: 30px; font-weight: 600; color: var(--red); letter-spacing: -0.02em; line-height: 1; }
+  .stat-strip .stat-label { margin-top: 4px; font-family: var(--mono); font-size: 12.5px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; }
 
   /* 3-pillar cards under stat strip (-10% section padding, -20% card padding) */
   .hero-pillars { padding: 46px 0; background: transparent; }
   .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   .pillar { padding: 18px 20px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); display: flex; flex-direction: column; transition: box-shadow .18s, transform .18s; }
   .pillar:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
-  .pillar-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--red-soft); color: var(--red); display: inline-flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; margin-bottom: 10px; }
-  .pillar h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; margin: 0; }
-  .pillar p { color: var(--text-dim); font-size: 13px; line-height: 1.48; margin: 8px 0 0; flex: 1; }
-  .pillar-link { margin-top: 12px; color: var(--red); font-weight: 600; font-size: 13px; }
+  .pillar-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--red-soft); color: var(--red); display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+  .pillar h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin: 0; }
+  .pillar p { color: var(--text-dim); font-size: 15.5px; line-height: 1.55; margin: 8px 0 0; flex: 1; }
+  .pillar-link { margin-top: 12px; color: var(--red); font-weight: 700; font-size: 15px; }
   .pillar-link:hover { color: var(--red-2); }
 
   /* Console-bar: kept for the "Owned metal · global network" feature card
@@ -182,23 +182,23 @@
      rules + @keyframes pulse were removed at that time. */
   .console-bar { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
   .console-bar .d { width: 11px; height: 11px; border-radius: 50%; background: var(--line-2); }
-  .console-bar .title { margin-left: 10px; font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .console-bar .title { margin-left: 10px; font-family: var(--mono); font-size: 13px; color: var(--text-mute); letter-spacing: 0.04em; }
   .console-bar .right { margin-left: auto; display: flex; gap: 8px; }
 
   /* Exit strip — padding -10% per request */
   .exits { padding: 36px 0; border-top: 1.5px solid #CBD5E1; border-bottom: 1.5px solid #CBD5E1; background: #F8FAFC; }
-  .exits .label { font-family: var(--mono); font-size: 14.5px; font-weight: 600; color: #334155; text-align: center; letter-spacing: 0.05em; margin-bottom: 18px; }
+  .exits .label { font-family: var(--mono); font-size: 16.5px; font-weight: 700; color: #334155; text-align: center; letter-spacing: 0.05em; margin-bottom: 18px; }
   .exit-grid { margin-top: 14px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-  .exit-grid > div { padding: 16px 14px; text-align: center; font-weight: 800; letter-spacing: 0.03em; color: #0F172A; border-right: 2px solid #94A3B8; font-size: 17.5px; }
+  .exit-grid > div { padding: 16px 14px; text-align: center; font-weight: 800; letter-spacing: 0.03em; color: #0F172A; border-right: 2px solid #94A3B8; font-size: 19.5px; }
   .exit-grid > div:last-child { border-right: 0; }
-  .exit-grid > div small { display: block; font-family: var(--sans); font-size: 13px; color: #64748B; margin-top: 6px; font-weight: 500; }
+  .exit-grid > div small { display: block; font-family: var(--sans); font-size: 15px; color: #64748B; margin-top: 6px; font-weight: 500; }
 
   /* Feature row */
   .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 58px 0; border-top: 1px solid var(--line); }
   .feature.reverse > :first-child { order: 2; }
   .feature .copy .h3 { margin-top: 10px; }
-  .feature .copy p { margin-top: 10px; color: var(--text-dim); font-size: 13px; max-width: 520px; }
-  .feature .copy ul { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: var(--text-dim); }
+  .feature .copy p { margin-top: 12px; color: var(--text-dim); font-size: 15.5px; max-width: 560px; line-height: 1.6; }
+  .feature .copy ul { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; color: var(--text-dim); }
   /* ItemUI #19: unified bullet glyph — ✓ red across all marketing lists. */
   .feature .copy ul li::before { content: "✓ "; color: var(--red); font-family: var(--mono); margin-right: 6px; }
 
@@ -209,9 +209,9 @@
   .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
   .card { padding: 18px 20px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); min-height: 160px; transition: border-color .15s; display: flex; flex-direction: column; }
   .card:hover { border-color: var(--line-2); }
-  .card .num { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
-  .card h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; margin: 6px 0 0; }
-  .card p { color: var(--text-dim); font-size: 13.5px; margin-top: 6px; line-height: 1.48; }
+  .card .num { font-family: var(--mono); font-size: 13px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .card h3 { font-size: 19.5px; font-weight: 700; letter-spacing: -0.02em; margin: 6px 0 0; }
+  .card p { color: var(--text-dim); font-size: 15.5px; margin-top: 6px; line-height: 1.48; }
   .card .icon { width: 32px; height: 32px; border-radius: 8px; background: var(--red-soft); border: 1px solid rgba(124, 92, 255, 0.35); display: flex; align-items: center; justify-content: center; color: var(--red-2); font-family: var(--mono); font-size: 13px; margin-bottom: 8px; }
 
   /* Per-exit throughput row */
@@ -223,11 +223,11 @@
      white rows let the bar fill carry the visual emphasis. */
   .compare-row.us { background: var(--panel); }
   .compare-row .name { font-weight: 600; }
-  .compare-row .name small { display: block; font-family: var(--mono); font-size: 11px; color: var(--text-mute); margin-top: 2px; font-weight: 400; }
+  .compare-row .name small { display: block; font-family: var(--mono); font-size: 13px; color: var(--text-mute); margin-top: 2px; font-weight: 400; }
   .bar { height: 10px; border-radius: 5px; background: var(--bg-2); border: 1px solid var(--line); overflow: hidden; }
   .bar > span { display: block; height: 100%; background: var(--line-2); border-radius: 5px; }
   .compare-row.us .bar > span { background: linear-gradient(90deg, var(--red), var(--red-2)); }
-  .compare-row .gbps { font-family: var(--mono); font-size: 14px; color: var(--text); text-align: right; }
+  .compare-row .gbps { font-family: var(--mono); font-size: 16.5px; color: var(--text); text-align: right; }
   .compare-row .gbps small { color: var(--text-mute); }
 
   /* Plan cards (3-up teaser, 2026-06-09 update — matches /pricing layout).
@@ -293,12 +293,12 @@
   .commit-val-inline { display: none; }
   .commit-val-inline.active { display: inline; }
   .plan.featured { border-color: rgba(124, 92, 255, 0.35); background: linear-gradient(180deg, var(--red-soft), var(--panel) 60%); }
-  .plan h3 { font-size: 18px; font-weight: 600; margin: 0; letter-spacing: -0.02em; }
+  .plan h3 { font-size: 20px; font-weight: 700; margin: 0; letter-spacing: -0.02em; }
   .plan .who { font-family: var(--mono); font-size: 10px; color: var(--text-mute); margin-top: 4px; }
-  .plan .price { font-size: 34px; font-weight: 600; letter-spacing: -0.03em; margin-top: 10px; line-height: 1; }
-  .plan .price small { font-size: 11px; color: var(--text-mute); margin-left: 6px; font-family: var(--mono); font-weight: 400; }
+  .plan .price { font-size: 38px; font-weight: 600; letter-spacing: -0.03em; margin-top: 10px; line-height: 1; }
+  .plan .price small { font-size: 13px; color: var(--text-mute); margin-left: 6px; font-family: var(--mono); font-weight: 400; }
   .plan .was { font-family: var(--mono); font-size: 11px; color: var(--text-mute); margin-top: 4px; }
-  .plan ul { margin: 12px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-dim); flex: 1; }
+  .plan ul { margin: 12px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 15px; color: var(--text-dim); flex: 1; }
   /* ItemUI #19: single bullet glyph + single color across all lists
      (was ✓ green here, → red in .feature .copy ul). Now ✓ red everywhere. */
   .plan ul li::before { content: "✓ "; color: var(--red); font-family: var(--mono); margin-right: 6px; }
@@ -312,7 +312,7 @@
 
   /* Marquee — real engineering signals only */
   .marquee { overflow: hidden; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .marquee-track { display: flex; gap: 36px; white-space: nowrap; animation: scroll 40s linear infinite; font-family: var(--mono); font-size: 12px; color: var(--text-dim); letter-spacing: 0.04em; }
+  .marquee-track { display: flex; gap: 36px; white-space: nowrap; animation: scroll 40s linear infinite; font-family: var(--mono); font-size: 14px; color: var(--text-dim); letter-spacing: 0.04em; }
   .marquee-track .pip { color: var(--red); }
   @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
@@ -321,9 +321,9 @@
   .rcard { padding: 24px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--panel); display: flex; flex-direction: column; gap: 10px; min-height: 200px; }
   .rcard .head { font-family: var(--mono); font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
   .rcard .head .ok { color: var(--green); }
-  .rcard h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin: 4px 0 0; }
-  .rcard p { color: var(--text-dim); font-size: 13px; margin: 6px 0 0; line-height: 1.55; }
-  .rcard .id { font-family: var(--mono); font-size: 11px; color: var(--text-mute); margin-top: auto; }
+  .rcard h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; margin: 4px 0 0; }
+  .rcard p { color: var(--text-dim); font-size: 15.5px; margin: 6px 0 0; line-height: 1.55; }
+  .rcard .id { font-family: var(--mono); font-size: 13px; color: var(--text-mute); margin-top: auto; }
 
   @media (max-width: 980px) {
     .feature, .card-grid, .receipts-grid, .plans, .exit-grid, .pillar-grid { grid-template-columns: 1fr; }
@@ -396,7 +396,7 @@
 }
 
 .hero-right .plan h3 {
-  font-size: 26px !important;
+  font-size: 28px !important;
   font-weight: 800 !important;
   color: #0F172A !important;
   margin: 0 !important;
@@ -404,14 +404,14 @@
 }
 
 .hero-right .plan .sub {
-  font-size: 14.5px !important;
+  font-size: 16.5px !important;
   color: #64748B !important;
   margin: 6px 0 0 !important;
   font-weight: 500 !important;
 }
 
 .hero-right .plan .price {
-  font-size: 52px !important;
+  font-size: 56px !important;
   font-weight: 800 !important;
   letter-spacing: -0.03em !important;
   margin: 20px 0 18px !important;
@@ -422,7 +422,7 @@
 }
 
 .hero-right .plan .price small {
-  font-size: 26px !important;
+  font-size: 28px !important;
   color: #DA291C !important;
   margin-left: 8px !important;
   font-family: var(--sans) !important;
@@ -435,12 +435,12 @@
   align-items: center !important;
   justify-content: center !important;
   width: 100% !important;
-  padding: 15px 24px !important;
+  padding: 16px 26px !important;
   border-radius: 10px !important;
   background: #DA291C !important;
   color: #FFFFFF !important;
   font-family: var(--sans) !important;
-  font-size: 15.5px !important;
+  font-size: 17.5px !important;
   font-weight: 700 !important;
   letter-spacing: 0.02em !important;
   text-decoration: none !important;
@@ -459,7 +459,7 @@
 }
 
 .hero-right .plan .plan-trust {
-  font-size: 13.5px !important;
+  font-size: 15.5px !important;
   color: #64748B !important;
   text-align: center !important;
   margin: 0 0 20px 0 !important;
@@ -482,7 +482,7 @@
 }
 
 .hero-right .plan ul li {
-  font-size: 14.5px !important;
+  font-size: 16.5px !important;
   color: #334155 !important;
   display: flex !important;
   align-items: center !important;
@@ -495,7 +495,7 @@
   content: "✓" !important;
   color: #DA291C !important;
   font-weight: 800 !important;
-  font-size: 15px !important;
+  font-size: 17px !important;
   flex-shrink: 0 !important;
 }
 
@@ -867,52 +867,6 @@
   </div>
 </section>
 
-
-<!-- Featured Security Research & Guides (PageRank & Topical Authority Funnel) -->
-<section class="lab-research-section" style="padding: 60px 0; background: #F8FAFC; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0;">
-  <div class="wrap" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-    <div style="text-align: center; margin-bottom: 36px;">
-      <span style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: #FFF5F5; color: #DA291C; border: 1px solid rgba(218,41,28,0.2); border-radius: 999px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-family: 'Lato', sans-serif;">
-        ● OLLAVPN SECURITY LAB RESEARCH
-      </span>
-      <h2 style="font-size: clamp(24px, 2.5vw, 34px); font-weight: 800; color: #0F172A; margin: 12px 0 8px 0; letter-spacing: -0.02em; font-family: 'Lato', sans-serif;">
-        Latest Architectural &amp; Cryptographic Analyses
-      </h2>
-      <p style="color: #64748B; font-size: 15.5px; max-width: 620px; margin: 0 auto; line-height: 1.5; font-family: 'Lato', sans-serif;">
-        Peer-reviewed benchmarks, protocol evaluations, and consumer security guides authored by Dual CCIE #22239 network architects.
-      </p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
-      <a href="/blog/vpn-for-safe-online-banking/" style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 12px; padding: 24px; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.03);" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#DA291C'; this.style.boxShadow='0 12px 28px rgba(218,41,28,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#E2E8F0'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.03)';">
-        <span style="color: #DA291C; font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">SECURITY &amp; BANKING</span>
-        <h3 style="font-size: 18px; font-weight: 700; color: #0F172A; margin: 0 0 10px 0; line-height: 1.35; font-family: 'Lato', sans-serif;">Free VPN for Safe Online Banking (2026): Security Checklist</h3>
-        <p style="color: #475569; font-size: 13.5px; line-height: 1.55; margin: 0 0 16px 0; flex: 1;">How in-tunnel DNS resolution, WireGuard tunneling, and default-on kill switches protect financial data on public Wi-Fi.</p>
-        <span style="color: #DA291C; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 4px;">Read Security Checklist &rarr;</span>
-      </a>
-
-      <a href="/blog/what-is-a-post-quantum-vpn/" style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 12px; padding: 24px; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.03);" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#DA291C'; this.style.boxShadow='0 12px 28px rgba(218,41,28,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#E2E8F0'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.03)';">
-        <span style="color: #DA291C; font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">CRYPTOGRAPHY &bull; CORE PILLAR</span>
-        <h3 style="font-size: 18px; font-weight: 700; color: #0F172A; margin: 0 0 10px 0; line-height: 1.35; font-family: 'Lato', sans-serif;">What Is a Post-Quantum VPN and Why Do You Need One?</h3>
-        <p style="color: #475569; font-size: 13.5px; line-height: 1.55; margin: 0 0 16px 0; flex: 1;">Defending against Harvest Now, Decrypt Later threats using ML-KEM lattice-based key encapsulation.</p>
-        <span style="color: #DA291C; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 4px;">Read Cryptographic Breakdown &rarr;</span>
-      </a>
-
-      <a href="/blog/free-vpn-for-chromeos/" style="background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 12px; padding: 24px; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.03);" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#DA291C'; this.style.boxShadow='0 12px 28px rgba(218,41,28,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#E2E8F0'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.03)';">
-        <span style="color: #DA291C; font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">DEVICE SETUP GUIDE</span>
-        <h3 style="font-size: 18px; font-weight: 700; color: #0F172A; margin: 0 0 10px 0; line-height: 1.35; font-family: 'Lato', sans-serif;">Free VPN for ChromeOS: Safe Setup Guide &amp; What Works</h3>
-        <p style="color: #475569; font-size: 13.5px; line-height: 1.55; margin: 0 0 16px 0; flex: 1;">System-level Android container integration vs. browser extension limitations on modern Chromebooks.</p>
-        <span style="color: #DA291C; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 4px;">Read Setup Guide &rarr;</span>
-      </a>
-    </div>
-
-    <div style="text-align: center; margin-top: 32px;">
-      <a href="/blog/" style="display: inline-flex; align-items: center; gap: 6px; color: #DA291C; font-weight: 800; font-size: 14.5px; text-decoration: none; border-bottom: 1.5px solid #DA291C; padding-bottom: 2px;">
-        Explore All 150+ Security &amp; VPN Technical Guides &rarr;
-      </a>
-    </div>
-  </div>
-</section>
 
 <footer class="footer">
   <div class="wrap">
