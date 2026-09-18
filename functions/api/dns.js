@@ -32,6 +32,10 @@ export async function onRequest(context) {
 function json(body, status = 200) {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
+    headers: {
+      "Content-Type": "application/json",
+      "Cache-Control": "no-store",
+      "X-Robots-Tag": "noindex, nofollow, noarchive",
+    },
   });
 }

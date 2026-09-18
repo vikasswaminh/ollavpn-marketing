@@ -152,7 +152,7 @@
     <p class="short-answer">It runs the same ICE gathering a malicious site would, against public STUN servers, then displays everything it discovers.</p>
     <p>The test creates an <code>RTCPeerConnection</code> object configured with public STUN servers (Google's and Cloudflare's). It opens a data channel — a minimum trigger for ICE gathering — and then watches the <code>onicecandidate</code> event for the IPs WebRTC discovers along the way. The whole process takes one to three seconds.</p>
     <p>Discovered IPs come in two flavours: <strong>host</strong> candidates (your local IPs, like 192.168.1.50) and <strong>srflx</strong> candidates (your public IP, as seen by the STUN server). Modern browsers anonymise local IPs by default using <strong>mDNS hostnames</strong> like xxx.local, which doesn't leak real network info. Public IPs are the privacy-critical ones.</p>
-    <p>We also fetch your public IP from <a href="/api/myip">/api/myip</a> as a reference. If a WebRTC-discovered IP matches that reference, you're not leaking — both report the same IP because both go through your VPN. If they differ, you're leaking.</p>
+    <p>We also fetch your public IP from <code>/api/myip</code> as a reference. If a WebRTC-discovered IP matches that reference, you're not leaking — both report the same IP because both go through your VPN. If they differ, you're leaking.</p>
 
     <h2 id="interpret">Interpreting the result</h2>
     <p class="short-answer">If the WebRTC public IPs match your reported IP, you're safe. If they differ, you're leaking your real IP.</p>

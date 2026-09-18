@@ -1,4 +1,4 @@
-﻿# OllaVPN â€” robots.txt
+# OllaVPN — robots.txt
 #
 # Public marketing site. Everything here is intended to be crawled,
 # indexed, and cited by search engines AND answer engines.
@@ -10,105 +10,249 @@
 # major crawlers' policies.
 #
 # User-facing app surfaces (dashboard, signup, login) live on
-# login.ollavpn.com and are behind authentication â€” not exposed here.
+# login.ollavpn.com and are behind authentication — not exposed here.
 
 User-agent: *
 Allow: /
 Disallow: /404
 Disallow: /downloads/
 Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
-# â”€â”€â”€ Major search engines â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─── Major search engines ───────────────────────────────────────────
 User-agent: Googlebot
 Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-# â”€â”€â”€ AI / answer-engine crawlers (explicitly allowed) â”€â”€â”€â”€â”€
-# We grant these crawlers full access for AEO. We want our
-# pages to be citable sources inside generated answers.
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: GoogleOther
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: Bingbot
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: Slurp
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: Baiduspider
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: YandexBot
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: Applebot
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+# ─── AI / answer-engine crawlers (explicitly allowed) ──────
+User-agent: GPTBot
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: Bytespider
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: meta-externalagent
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: FacebookBot
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: CCBot
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: Diffbot
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: omgili
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: Mistralbot
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: Amazonbot
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 User-agent: YouBot
 Allow: /
+Disallow: /404
+Disallow: /downloads/
+Disallow: /blog/drafts/
+Disallow: /api/
+Disallow: /api/*
 
 # --- Sitemaps for Google Search Console ---
 Sitemap: https://ollavpn.com/sitemap.xml
