@@ -3525,3 +3525,83 @@ section#cta-download,
   border: none !important;
   padding-bottom: 0 !important;
 }
+
+/* ==========================================================================
+   PERFECT IDENTICAL SHADE: TL;DR & KEY TAKEAWAYS CALLOUT BOXES
+   Background: #EFEFF0, Border-Left: 5px solid #DA291C, Border: 1px solid #E2E8F0
+   ========================================================================== */
+.article-tldr-box,
+.article-takeaways-box,
+#tldr,
+#takeaways,
+#key-takeaways {
+  background: #EFEFF0 !important;
+  background-color: #EFEFF0 !important;
+  border: 1px solid #E2E8F0 !important;
+  border-left: 5px solid #DA291C !important;
+  border-radius: 0 12px 12px 0 !important;
+  padding: 24px 28px !important;
+  margin-bottom: 28px !important;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03) !important;
+  box-sizing: border-box !important;
+  display: block !important;
+}
+
+.article-tldr-box h2,
+.article-tldr-box h3,
+.article-takeaways-box h2,
+.article-takeaways-box h3,
+#tldr h2,
+#tldr h3,
+#takeaways h2,
+#takeaways h3,
+#key-takeaways h2,
+#key-takeaways h3 {
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  font-family: 'Lato', sans-serif !important;
+  border: none !important;
+  padding-bottom: 0 !important;
+}
+
+.article-takeaways-box h2,
+.article-takeaways-box h3,
+#takeaways h2,
+#takeaways h3,
+#key-takeaways h2,
+#key-takeaways h3 {
+  font-size: 1.25rem !important;
+}
+
+.takeaways-list-24obs {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.takeaways-list-24obs li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  color: #1E293B !important;
+  font-size: 1.02rem !important;
+  line-height: 1.68 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.takeaways-list-24obs li .takeaway-bullet {
+  color: #DA291C !important;
+  font-weight: 800 !important;
+  font-size: 1.25rem !important;
+  line-height: 1.35 !important;
+  flex-shrink: 0 !important;
+}
