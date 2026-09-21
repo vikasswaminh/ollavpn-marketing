@@ -3485,3 +3485,43 @@ section#cta-download,
 .cta-download-box {
   display: none !important;
 }
+
+
+/* Standardized Highlight Boxes (Exact Matching TL;DR and Key Takeaways) */
+.article-tldr-box {
+  background: #FFF5F5 !important;
+  border: 1.5px solid rgba(218, 41, 28, 0.2) !important;
+  border-left: 5px solid #DA291C !important;
+  border-radius: 12px !important;
+  padding: 18px 22px !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 4px 16px rgba(218, 41, 28, 0.04) !important;
+  box-sizing: border-box !important;
+}
+
+.article-takeaways-box {
+  background: #FFF5F5 !important;
+  border: 1.5px solid rgba(218, 41, 28, 0.2) !important;
+  border-left: 5px solid #DA291C !important;
+  border-radius: 12px !important;
+  padding: 18px 22px !important;
+  margin-bottom: 24px !important;
+  box-shadow: 0 4px 16px rgba(218, 41, 28, 0.04) !important;
+  box-sizing: border-box !important;
+}
+
+.article-tldr-box h2,
+.article-tldr-box h3,
+.article-takeaways-box h2,
+.article-takeaways-box h3 {
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: #DA291C !important;
+  margin-top: 0 !important;
+  margin-bottom: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-family: 'Lato', sans-serif !important;
+  border: none !important;
+  padding-bottom: 0 !important;
+}
