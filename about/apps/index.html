@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OllaVPN — Apps for Windows · Post-Quantum-Ready VPN</title>
+<meta name="description" content="Download OllaVPN free for Windows. Post-quantum-ready encryption, always-on kill switch, no logs, no email required. Lifetime free or $2/month." />
+<link rel="canonical" href="https://ollavpn.com/about/apps.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#FFFFFF" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="OllaVPN — Apps for Windows · Post-Quantum-Ready" />
+<meta property="og:description" content="Download OllaVPN free for Windows. Post-quantum-ready, always-on kill switch, no logs, no email required." />
+<meta property="og:url" content="https://ollavpn.com/about/apps.html">
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://ollavpn.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="OllaVPN — Free, post-quantum-ready VPN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="OllaVPN — Apps for Windows" />
+<meta name="twitter:description" content="Download free for Windows. Post-quantum-ready, no logs, no email required." />
+<meta name="twitter:image" content="https://ollavpn.com/og-image.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OllaVPN for Windows",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "SecurityApplication",
+  "downloadUrl": "https://login.ollavpn.com/downloads/OllaVPN-amd64-installer.exe",
+  "softwareVersion": "0.1.0",
+  "fileSize": "10.15 MB",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "OllaVPN" }
+}
+</script>
+<!-- Self-hosted Lato (no Google Fonts CDN call for primary type). JetBrains Mono is still pulled
+     from Google for mono code blocks - used sparingly, can be self-hosted in a follow-up. -->
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260921_restored_v3" />
+<style>
+
+/* ==========================================================================
+   BULLETPROOF HIGH-CONTRAST DARK NAVIGATION BAR SYSTEM
+   ========================================================================== */
+.utilbar {
+  background: #F9FAFB !important;
+  color: #667085 !important;
+  font-family: var(--mono, monospace) !important;
+  font-size: 11.5px !important;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.08) !important;
+  padding: 7px 0 !important;
+  letter-spacing: 0.04em !important;
+}
+.utilbar a {
+  color: #475467 !important;
+  text-decoration: none !important;
+}
+.utilbar a:hover {
+  color: #101828 !important;
+}
+.utilbar .green-dot {
+  color: #34D399 !important;
+}
+
+.nav {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.10) !important;
+  transition: background .15s ease, box-shadow .15s ease, border-color .15s ease !important;
+}
+.nav.scrolled {
+  background: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom-color: rgba(99, 102, 241, 0.40) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85) !important;
+}
+.nav-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 64px !important;
+  padding: 0 28px !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+}
+.brand, a.brand, .brand:visited {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  font-size: 17.5px !important;
+  color: #101828 !important;
+  text-decoration: none !important;
+  flex: 1 !important;
+}
+.brand span {
+  color: #101828 !important;
+  font-weight: 700 !important;
+}
+
+
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 26px !important;
+  font-size: 14px !important;
+  color: #475467 !important;
+  justify-content: center !important;
+  flex: 2 !important;
+}
+.nav-links a, .nav-item, .nav-item .nav-head {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 6px 0 !important;
+  color: #475467 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color .15s ease !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+}
+.nav-links > a::after, .nav-item::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: -6px !important;
+  height: 2px !important;
+  background: #DA291C !important;
+  transform: scaleX(0) !important;
+  transform-origin: left !important;
+  transition: transform .18s ease !important;
+}
+.nav-links a:hover, .nav-item:hover, .nav-item:hover .nav-head, .nav-item:focus-within .nav-head {
+  color: #101828 !important;
+}
+.nav-links a.active, .nav-item.active, .nav-item.active .nav-head {
+  color: #DA291C !important;
+  font-weight: 600 !important;
+}
+.nav-links > a:hover::after, .nav-links > a.active::after, .nav-item:hover::after, .nav-item.active::after {
+  transform: scaleX(1) !important;
+}
+.nav-item .caret {
+  display: inline-block !important;
+  margin-left: 5px !important;
+  font-size: 10px !important;
+  color: #667085 !important;
+  transition: transform .18s ease, color .18s ease !important;
+}
+.nav-item:hover .caret, .nav-item:focus-within .caret {
+  transform: rotate(180deg) !important;
+  color: #101828 !important;
+}
+
+/* Mega dropdown */
+.mega {
+  position: absolute !important;
+  top: calc(100% + 2px) !important;
+  left: 50% !important;
+  transform: translate(-50%, -4px) !important;
+  min-width: 720px !important;
+  background: #F9FAFB !important;
+  border: 1px solid #1E293B !important;
+  border-radius: 14px !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.95), 0 4px 20px rgba(0, 0, 0, 0.8) !important;
+  padding: 24px !important;
+  z-index: 99999 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity .15s ease, transform .15s ease, visibility .15s !important;
+}
+.nav-item:hover .mega, .nav-item:focus-within .mega, .mega:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translate(-50%, 0) !important;
+}
+.mega-col h5 {
+  margin: 0 0 12px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #667085 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+.mega-col a {
+  display: block !important;
+  padding: 8px 10px !important;
+  margin: 0 -10px !important;
+  font-size: 14px !important;
+  color: #475467 !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: background .12s, color .12s !important;
+}
+.mega-col a:hover {
+  background: #F9FAFB !important;
+  color: #101828 !important;
+}
+
+/* Nav CTAs */
+.nav-cta {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex: 1 !important;
+}
+.nav-cta .btn.ghost {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 8px 16px !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #475467 !important;
+  background: #F9FAFB !important;
+  border: 1px solid rgba(16, 24, 40, 0.16) !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: all .15s ease !important;
+}
+.nav-cta .btn.ghost:hover {
+  background: #F9FAFB !important;
+  color: #101828 !important;
+  border-color: #475467 !important;
+}
+.nav-cta .btn.primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #DA291C !important;
+  color: #101828 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 9px 18px !important;
+  font-size: 13.5px !important;
+  text-decoration: none !important;
+  border: none !important;
+  transition: all .15s ease !important;
+}
+.nav-cta .btn.primary:hover {
+  background: #A61E1E !important;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.45) !important;
+  color: #101828 !important;
+}
+
+/* Mobile Hamburger & Drawer */
+.nav-hamburger {
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: #F9FAFB !important;
+  border: 1px solid rgba(16, 24, 40, 0.14) !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  color: #101828 !important;
+  padding: 0 !important;
+  margin-left: 4px !important;
+}
+.nav-hamburger .bars, .nav-hamburger .bars::before, .nav-hamburger .bars::after {
+  background: #FFFFFF !important;
+}
+.mobile-drawer {
+  background: #F2F4F7 !important;
+  border-left: 1px solid rgba(16, 24, 40, 0.12) !important;
+}
+.mobile-drawer a {
+  color: #101828 !important;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.08) !important;
+  text-decoration: none !important;
+}
+.mobile-drawer h5 {
+  color: #667085 !important;
+}
+
+  .page-hero { padding: 96px 0 56px; position: relative; overflow: hidden; }
+  .page-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.16), transparent 60%); pointer-events:none; }
+  .page-hero .wrap { position: relative; }
+
+  .platforms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .plat { padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); display:flex; flex-direction:column; gap:10px; min-height:170px; transition: border-color .15s, transform .15s; }
+  .plat:hover { border-color: var(--line-2); transform: translateY(-2px); }
+  .plat.live { border-color: rgba(238,62,71,0.35); background: linear-gradient(180deg, rgba(238,62,71,0.08), var(--panel) 60%); }
+  .plat.deferred { opacity: 0.85; }
+  .plat.skip { opacity: 0.55; }
+  .plat .icon { width: 36px; height: 36px; border-radius: 10px; background: var(--bg-2); border: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-weight: 600; }
+  .plat.live .icon { background: var(--red-soft); border-color: #F7C9CD; color: var(--red-2); }
+  .plat h3 { font-size: 17px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+  .plat .v { font-family: var(--mono); font-size: 11px; color: var(--text-mute); }
+  .plat .dl { margin-top: auto; font-family: var(--mono); font-size: 11px; color: var(--red-2); }
+  .plat .dl.muted { color: var(--text-mute); }
+
+  .show { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-top: 48px; }
+
+  .desk { width: 100%; max-width: 540px; margin: 0 auto; border: 1px solid var(--line); background: var(--panel); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(11,11,16,0.18), 0 24px 64px -28px rgba(11,11,16,0.10); }
+  .desk .bar { padding: 10px 14px; display:flex; gap: 6px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+  .desk .bar .d { width: 11px; height: 11px; border-radius: 50%; background: var(--line-2); }
+  .desk .grid { padding: 22px; display: grid; grid-template-columns: 200px 1fr; gap: 22px; }
+  .desk .side { display: flex; flex-direction: column; gap: 4px; }
+  .desk .item { padding: 9px 12px; font-family: var(--mono); font-size: 11px; color: var(--text-dim); border-radius: 8px; }
+  .desk .item.active { background: var(--bg-2); color: var(--text); }
+  .desk .main { display: flex; flex-direction: column; gap: 14px; }
+  .desk .big { padding: 22px; border-radius: 12px; background: linear-gradient(180deg, var(--red-soft), var(--bg) 60%); border: 1px solid #F7C9CD; }
+  .desk .big .city { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; }
+  .desk .big .meta { font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; }
+  .desk .triple { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .desk .triple > div { padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+  .desk .triple .k { font-family: var(--mono); font-size: 10px; color: var(--text-mute); }
+  .desk .triple .v { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-top: 2px; }
+  .desk .triple .v small { font-family: var(--mono); font-size: 10px; color: var(--red-2); font-weight: 400; }
+
+  .install { padding: 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+  .install .step { display: grid; grid-template-columns: 28px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .install .step:first-child { border-top: 0; }
+  .install .step .n { font-family: var(--mono); font-size: 13px; color: var(--red-2); }
+  .install .step .body { font-size: 14px; color: var(--text-dim); }
+  .install .step .body code { display: block; margin-top: 8px; font-family: var(--mono); font-size: 12px; padding: 8px 12px; border-radius: 6px; background: var(--bg-2); border: 1px solid var(--line); color: var(--text); white-space: pre-wrap; }
+
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .feat-card { padding: 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+  .feat-card.todo { background: var(--bg-2); }
+  .feat-card .num { font-family: var(--mono); font-size: 11px; color: var(--text-mute); }
+  .feat-card.todo .num { color: var(--text-mute); }
+  .feat-card h3 { font-size: 18px; font-weight: 600; margin: 10px 0 0; letter-spacing: -0.01em; }
+  .feat-card p { color: var(--text-dim); font-size: 14px; margin-top: 10px; }
+
+  @media (max-width: 980px) { .platforms, .show, .features { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   OPTIMIZED COMPACT SPACING & MODERN DESIGN FOR APPS.HTML
+   ========================================================================== */
+.page-hero {
+  padding: 40px 0 20px 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.page-hero .h1 {
+  font-size: 2.35rem !important;
+  line-height: 1.2 !important;
+  margin-top: 10px !important;
+}
+
+.page-hero p.lede {
+  margin-top: 10px !important;
+  font-size: 1.02rem !important;
+  line-height: 1.5 !important;
+}
+
+.section-sm {
+  padding: 28px 0 !important;
+}
+
+.section-sm .head {
+  margin: 0 auto 24px auto !important;
+}
+
+.h2 {
+  font-size: 1.85rem !important;
+  line-height: 1.25 !important;
+  margin-top: 8px !important;
+}
+
+.platforms {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+}
+
+.plat {
+  padding: 18px 20px !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 14px !important;
+  background: #FFFFFF !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  min-height: 180px !important;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03) !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+.plat:hover {
+  border-color: #CBD5E1 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08) !important;
+}
+
+.plat.live {
+  border-color: rgba(218, 41, 28, 0.35) !important;
+  background: linear-gradient(180deg, rgba(218, 41, 28, 0.04), #FFFFFF 65%) !important;
+}
+
+.plat.live:hover {
+  border-color: #DA291C !important;
+  box-shadow: 0 8px 24px rgba(218, 41, 28, 0.12) !important;
+}
+
+.plat-badge {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  width: fit-content !important;
+}
+
+.plat-badge.live {
+  background: #ECFDF5 !important;
+  color: #059669 !important;
+  border: 1px solid #A7F3D0 !important;
+}
+
+.plat-badge.dev {
+  background: #F1F5F9 !important;
+  color: #64748B !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+.plat-icon-wrap {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+.plat.live .plat-icon-wrap {
+  background: #FEF2F2 !important;
+  border-color: #FEE2E2 !important;
+  color: #DA291C !important;
+}
+
+.plat h3 {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.01em !important;
+}
+
+.plat .v {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.75rem !important;
+  color: #64748B !important;
+  line-height: 1.3 !important;
+}
+
+.plat .dl {
+  margin-top: auto !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+}
+
+.plat-btn-dl {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  background: #DA291C !important;
+  color: #ffffff !important;
+  padding: 7px 12px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  transition: background 0.15s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.plat-btn-dl:hover {
+  background: #b91c1c !important;
+}
+
+.plat .dl.muted {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.74rem !important;
+  color: #94A3B8 !important;
+  padding: 4px 0 !important;
+}
+
+/* App Showcase & Install Section */
+.show {
+  display: grid !important;
+  grid-template-columns: 1.1fr 0.9fr !important;
+  gap: 24px !important;
+  align-items: center !important;
+  margin-top: 24px !important;
+}
+
+.desk {
+  width: 100% !important;
+  max-width: 560px !important;
+  margin: 0 auto !important;
+  border: 1px solid #E2E8F0 !important;
+  background: #FFFFFF !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12) !important;
+}
+
+.desk .bar {
+  padding: 10px 14px !important;
+  display: flex !important;
+  gap: 7px !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  background: #F8FAFC !important;
+}
+
+.desk .bar .d {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+}
+
+.desk .bar .d.r { background: #EF4444 !important; }
+.desk .bar .d.y { background: #F59E0B !important; }
+.desk .bar .d.g { background: #10B981 !important; }
+
+.desk .grid {
+  padding: 18px !important;
+  display: grid !important;
+  grid-template-columns: 170px 1fr !important;
+  gap: 16px !important;
+}
+
+.desk .side {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.desk .item {
+  padding: 7px 10px !important;
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.72rem !important;
+  color: #64748B !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+
+.desk .item.active {
+  background: #FEF2F2 !important;
+  color: #DA291C !important;
+  font-weight: 700 !important;
+}
+
+.desk .main {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.desk .big {
+  padding: 16px 18px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(180deg, #FEF2F2, #FFFFFF 70%) !important;
+  border: 1px solid #FEE2E2 !important;
+}
+
+.desk .big .city {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.02em !important;
+  margin-top: 4px !important;
+}
+
+.desk .big .meta {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.72rem !important;
+  color: #64748B !important;
+  margin-top: 4px !important;
+}
+
+.desk .triple {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 6px !important;
+}
+
+.desk .triple > div {
+  padding: 8px 10px !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 8px !important;
+  background: #F8FAFC !important;
+  text-align: center !important;
+}
+
+.desk .triple .k {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.64rem !important;
+  color: #94A3B8 !important;
+  font-weight: 700 !important;
+}
+
+.desk .triple .v {
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  margin-top: 2px !important;
+  color: #0F172A !important;
+}
+
+.desk .triple .v small {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.65rem !important;
+  color: #DA291C !important;
+  font-weight: 600 !important;
+}
+
+.install {
+  padding: 20px 22px !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 14px !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+}
+
+.install .step {
+  display: grid !important;
+  grid-template-columns: 28px 1fr !important;
+  gap: 12px !important;
+  padding: 10px 0 !important;
+  border-top: 1px solid #F1F5F9 !important;
+}
+
+.install .step:first-of-type {
+  border-top: none !important;
+}
+
+.install .step .n {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.80rem !important;
+  font-weight: 800 !important;
+  color: #DA291C !important;
+}
+
+.install .step .body {
+  font-size: 0.88rem !important;
+  color: #334155 !important;
+  line-height: 1.45 !important;
+}
+
+/* Features Grid */
+.features {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 12px !important;
+}
+
+.feat-card {
+  padding: 18px 20px !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  background: #FFFFFF !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+}
+
+.feat-card:hover {
+  border-color: #CBD5E1 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06) !important;
+}
+
+.feat-card .num {
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #DA291C !important;
+}
+
+.feat-card h3 {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  margin: 6px 0 0 0 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.01em !important;
+}
+
+.feat-card p {
+  color: #475467 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.45 !important;
+  margin-top: 6px !important;
+}
+
+.cta {
+  padding: 38px 0 !important;
+}
+
+@media (max-width: 980px) {
+  .platforms {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .show {
+    grid-template-columns: 1fr !important;
+  }
+  .features {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .platforms {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* Premium Centered Section Header System */
+.head, .section-sm .head {
+  max-width: 780px !important;
+  margin: 0 auto 24px auto !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.chip-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid #FEE2E2 !important;
+  background: #FEF2F2 !important;
+  font-family: var(--mono, monospace) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #DA291C !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 1px 4px rgba(218, 41, 28, 0.06) !important;
+  margin-bottom: 6px !important;
+}
+
+.chip-badge .chip-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #DA291C !important;
+  box-shadow: 0 0 0 3px rgba(218, 41, 28, 0.2) !important;
+}
+
+.section-sm .head .h2 {
+  font-size: 2.15rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+  color: #0F172A !important;
+  margin: 6px 0 0 0 !important;
+  text-align: center !important;
+}
+
+.section-sm .head .lede {
+  font-size: 0.98rem !important;
+  line-height: 1.55 !important;
+  color: #475467 !important;
+  max-width: 620px !important;
+  margin: 10px auto 0 auto !important;
+  text-align: center !important;
+}
+
+
+/* Center Aligned Page Hero */
+.page-hero {
+  padding: 44px 0 24px 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-align: center !important;
+}
+
+.page-hero .wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.page-hero .chip {
+  margin: 0 auto !important;
+}
+
+.page-hero .h1 {
+  font-size: 2.6rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.18 !important;
+  margin: 14px 0 0 0 !important;
+  text-align: center !important;
+  color: #0F172A !important;
+}
+
+.page-hero p.lede {
+  margin: 14px auto 0 auto !important;
+  font-size: 1.05rem !important;
+  line-height: 1.55 !important;
+  text-align: center !important;
+  max-width: 680px !important;
+  color: #475467 !important;
+}
+
+
+/* Mega Dropdown Clean Item Styling & Underline Removal */
+.mega a::after,
+.mega-col a::after,
+.mega a:hover::after,
+.mega-col a:hover::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+}
+
+.mega-col a {
+  display: block !important;
+  padding: 6px 10px !important;
+  margin: 2px 0 !important;
+  font-size: 13.5px !important;
+  color: #475467 !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.mega-col a:hover {
+  background: #FEF2F2 !important;
+  color: #DA291C !important;
+  font-weight: 600 !important;
+  border: none !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+  .cta .chip { margin-bottom: 22px !important; display: inline-flex !important; }
+</style>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+</head>
+<body>
+
+
+<!-- Top utility bar - networkershome.com pattern: a thin mono-typeface
+     row above the main nav for live status + secondary links. -->
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Blogs</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x" alt="OllaVPN Logo" width="40" height="40" class="brand-img" style="width: 40px; height: 40px; border-radius: 8px; display: block; flex-shrink: 0;" /><span class="brand-text">Olla<span class="brand-red">VPN</span></span></a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="/technology.html" class="nav-head">Technology <span class="caret">&#9662;</span></a>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <a href="/blog/">Blogs</a>
+
+      <a href="/apps.html" class="active">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Apps · Windows available now</span>
+    <h1 class="h-display h1 mt-16">Windows now. <span class="accent">More to come.</span></h1>
+    <p class="lede mt-16" style="max-width:680px;color:var(--text-dim);margin-left:auto;margin-right:auto;text-align:center;">One account. One install. The Windows app is available today — self-contained, no separate driver to chase down, no second installer. macOS and Android are next on the roadmap.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+        <div class="platforms">
+      <div class="plat live">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="plat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.95-1.801"/></svg>
+          </div>
+          <span class="plat-badge live"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#059669;"></span>ACTIVE RELEASE</span>
+        </div>
+        <h3>Windows</h3>
+        <div class="v">Windows 10 / 11 · 64-bit (x64)</div>
+        <div class="dl">
+          <a href="/dl/" class="plat-btn-dl">↓ Download Free (v2.4.0)</a>
+        </div>
+      </div>
+
+      <div class="plat deferred">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="plat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.87c.64-.78 1.08-1.86.96-2.95-1 .04-2.14.65-2.79 1.43-.57.66-.99 1.77-.86 2.83 1.12.09 2.05-.53 2.69-1.31z"/></svg>
+          </div>
+          <span class="plat-badge dev">COMING Q3 2026</span>
+        </div>
+        <h3>macOS</h3>
+        <div class="v">Apple Silicon (M-series) &amp; Intel</div>
+        <div class="dl muted">In Active Roadmap</div>
+      </div>
+
+      <div class="plat deferred">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="plat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.414 13.8533 8.0772 12 8.0772c-1.8533 0-3.5902.3368-5.1367.8725L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
+          </div>
+          <span class="plat-badge dev">COMING Q3 2026</span>
+        </div>
+        <h3>Android</h3>
+        <div class="v">Android 10+ (Phone, Tablet, TV)</div>
+        <div class="dl muted">In Active Roadmap</div>
+      </div>
+
+      <div class="plat deferred">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="plat-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          <span class="plat-badge dev">IN DEVELOPMENT</span>
+        </div>
+        <h3>iOS</h3>
+        <div class="v">iPhone &amp; iPad (iOS 17+)</div>
+        <div class="dl muted">TestFlight Alpha Coming</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="head">
+      <div class="chip-badge">
+        <span class="chip-dot"></span>
+        WHAT IT LOOKS LIKE
+      </div>
+      <h2 class="h-display h2">One click. <span class="accent">Connected.</span></h2>
+      <p class="lede">A connect button bigger than the rest of the UI. We don't bury the thing you came to do — and the privileged service does the dangerous parts so the UI never needs admin rights at click-time.</p>
+    </div>
+    <div class="show">
+      <div class="desk">
+        <div class="bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span style="font-family:var(--mono);font-size:10.5px;color:#94A3B8;margin-left:auto;font-weight:600;">OllaVPN Client v2.4.0</span></div>
+        <div class="grid">
+          <div class="side">
+            <div class="item active">→ Connect</div>
+            <div class="item">→ Exits</div>
+            <div class="item">→ LAN access</div>
+            <div class="item">→ Diagnostics</div>
+            <div class="item">→ Account</div>
+            <div class="item">→ Settings</div>
+          </div>
+          <div class="main">
+            <div class="big">
+              <div style="font-family:var(--mono); font-size:10px; color:var(--text-dim);">CONNECTED · POST-QUANTUM · KILL SWITCH ON</div>
+              <div class="city">Europe</div>
+              <div class="meta">Forward-secret · re-keyed continuously</div>
+            </div>
+            <div class="triple">
+              <div><div class="k">TUNNEL</div><div class="v">UP<small> secure</small></div></div>
+              <div><div class="k">PEERS</div><div class="v">●<small> isolated</small></div></div>
+              <div><div class="k">DNS</div><div class="v">●<small> in-tunnel</small></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="install">
+        <span class="kicker"><span class="pip">●</span> INSTALL · WINDOWS</span>
+        <h3 class="h3 mt-8" style="margin-top:8px;">Three steps. <span class="accent">One installer.</span></h3>
+        <div class="step"><div class="n">01</div><div class="body">Download the installer from <a href="/dl/" style="color:var(--red-2);">ollavpn.com/dl/</a>. One file, self-contained.</div></div>
+        <div class="step"><div class="n">02</div><div class="body">Verify the SHA-256 checksum on the download page if you want to. A recipe is included.</div></div>
+        <div class="step"><div class="n">03</div><div class="body">Run the installer. Sign in. Click Connect. That's it.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="head">
+      <div class="chip-badge">
+        <span class="chip-dot"></span>
+        BUILT INTO THE WINDOWS CLIENT
+      </div>
+      <h2 class="h-display h2">Power, not <span class="accent">prompts.</span></h2>
+      <p class="lede">Engineered for silent, unbreakable security. High-speed WireGuard tunneling with zero popups and zero telemetry.</p>
+    </div>
+    <div class="features">
+      <div class="feat-card"><div class="num">→ 01</div><h3>Kill switch always on</h3><p>If the tunnel drops, the network drops with it. Packets do not leak in the gap. No "advanced" toggle to find — it's the default.</p></div>
+      <div class="feat-card"><div class="num">→ 02</div><h3>LAN access stays on</h3><p>Local devices on your home network keep working while the tunnel is up. Printer, NAS, smart-home gear — all reachable. One-click toggle if you want it off.</p></div>
+      <div class="feat-card"><div class="num">→ 03</div><h3>Post-quantum-ready, by default</h3><p>Every connection uses a hybrid post-quantum key exchange. No setting to find, no premium upsell. Quantum-era privacy on the lifetime free plan.</p></div>
+      <div class="feat-card"><div class="num">→ 04</div><h3>Self-contained installer</h3><p>One installer. No separate driver to chase down. No second VPN client to install. Sign in, click Connect, you're done.</p></div>
+      <div class="feat-card"><div class="num">→ 05</div><h3>DNS that doesn't leak</h3><p>Name lookups travel inside the tunnel. OS-level DNS is firewall-blocked while you're connected, so a misconfigured app can't accidentally reveal what you're visiting.</p></div>
+      <div class="feat-card"><div class="num">→ 06</div><h3>True peer isolation</h3><p>Other users on the same connection cannot reach your device. Independent layers of network enforcement, verified end-to-end on every release.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Lifetime free · Windows · self-contained installer</span>
+    <h2 class="h-display h2 mt-16">Install. Click. <span class="accent">Stand.</span></h2>
+    <div class="actions"><a class="btn primary xl" href="/dl/">Download for Windows <span class="arrow">→</span></a><a class="btn xl" href="technology.html">How it works →</a></div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x" alt="OllaVPN Logo" width="40" height="40" class="brand-img" style="width: 40px; height: 40px; border-radius: 8px; display: block; flex-shrink: 0;" /><span class="brand-text">Olla<span class="brand-red">VPN</span></span></div><p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="apps.html">Apps</a></li><li><a href="technology.html">Technology</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog/">Blog</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>POST-QUANTUM READY</span><span>NO LOGS</span><span>LIFETIME FREE</span></span></div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

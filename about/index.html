@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OllaVPN — Team · Who's behind the privacy</title>
+<meta name="description" content="The two people running OllaVPN: Nathan Pratt (Privacy & Security Lead) and Hannah Wu (Senior Security Engineer). Small team, deep technical roots." />
+<link rel="canonical" href="https://ollavpn.com/about/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#FFFFFF" />
+<meta name="msapplication-TileColor" content="#DC2626" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="OllaVPN — Team · Who's behind the privacy" />
+<meta property="og:description" content="The two people running OllaVPN: Nathan Pratt (Privacy & Security Lead) and Hannah Wu (Senior Security Engineer). Small team, deep technical roots." />
+<meta property="og:url" content="https://ollavpn.com/about/">
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://ollavpn.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="OllaVPN — Team" />
+<meta name="twitter:description" content="The two people running OllaVPN: Nathan Pratt (Privacy & Security Lead) and Hannah Wu (Senior Security Engineer). Small team, deep technical roots." />
+<meta name="twitter:image" content="https://ollavpn.com/og-image.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Person", "@id": "https://ollavpn.com/about/team#nathan-pratt", "name": "Nathan Pratt", "jobTitle": "Privacy & Security Lead", "worksFor": { "@id": "https://ollavpn.com/#org" } },
+    { "@type": "Person", "@id": "https://ollavpn.com/about/team#hannah-wu",   "name": "Hannah Wu",   "jobTitle": "Senior Security Engineer", "worksFor": { "@id": "https://ollavpn.com/#org" } }
+  ]
+}
+</script>
+<link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/lato.css" />
+<link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/inter.css" />
+<link rel="stylesheet" href="/jetbrains-mono.css" />
+<link rel="stylesheet" href="/styles.css?v=20260921_restored_v3" />
+<style>
+
+/* ==========================================================================
+   BULLETPROOF HIGH-CONTRAST DARK NAVIGATION BAR SYSTEM
+   ========================================================================== */
+.utilbar {
+  background: #F9FAFB !important;
+  color: #667085 !important;
+  font-family: var(--mono, monospace) !important;
+  font-size: 11.5px !important;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.08) !important;
+  padding: 7px 0 !important;
+  letter-spacing: 0.04em !important;
+}
+.utilbar a {
+  color: #475467 !important;
+  text-decoration: none !important;
+}
+.utilbar a:hover {
+  color: #101828 !important;
+}
+.utilbar .green-dot {
+  color: #34D399 !important;
+}
+
+.nav {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.10) !important;
+  transition: background .15s ease, box-shadow .15s ease, border-color .15s ease !important;
+}
+.nav.scrolled {
+  background: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom-color: rgba(99, 102, 241, 0.40) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85) !important;
+}
+.nav-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 64px !important;
+  padding: 0 28px !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+}
+.brand, a.brand, .brand:visited {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  font-size: 17.5px !important;
+  color: #101828 !important;
+  text-decoration: none !important;
+  flex: 1 !important;
+}
+.brand span {
+  color: #101828 !important;
+  font-weight: 700 !important;
+}
+.brand-mark {
+  width: 28px !important;
+  height: 28px !important;
+  flex: 0 0 28px !important;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='4' y='4' width='56' height='56' rx='13' fill='%236366F1'/><path d='M 18 50 L 18 30 A 14 14 0 0 1 46 30 L 46 50 Z' fill='%23FFFFFF'/><circle cx='32' cy='36' r='5' fill='%236366F1'/></svg>") center/contain no-repeat !important;
+}
+
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 26px !important;
+  font-size: 14px !important;
+  color: #475467 !important;
+  justify-content: center !important;
+  flex: 2 !important;
+}
+.nav-links a, .nav-item, .nav-item .nav-head {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 6px 0 !important;
+  color: #475467 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color .15s ease !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+}
+.nav-links > a::after, .nav-item::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: -6px !important;
+  height: 2px !important;
+  background: #DA291C !important;
+  transform: scaleX(0) !important;
+  transform-origin: left !important;
+  transition: transform .18s ease !important;
+}
+.nav-links a:hover, .nav-item:hover, .nav-item:hover .nav-head, .nav-item:focus-within .nav-head {
+  color: #101828 !important;
+}
+.nav-links a.active, .nav-item.active, .nav-item.active .nav-head {
+  color: #DA291C !important;
+  font-weight: 600 !important;
+}
+.nav-links > a:hover::after, .nav-links > a.active::after, .nav-item:hover::after, .nav-item.active::after {
+  transform: scaleX(1) !important;
+}
+.nav-item .caret {
+  display: inline-block !important;
+  margin-left: 5px !important;
+  font-size: 10px !important;
+  color: #667085 !important;
+  transition: transform .18s ease, color .18s ease !important;
+}
+.nav-item:hover .caret, .nav-item:focus-within .caret {
+  transform: rotate(180deg) !important;
+  color: #101828 !important;
+}
+
+/* Mega dropdown */
+.mega {
+  position: absolute !important;
+  top: calc(100% + 2px) !important;
+  left: 50% !important;
+  transform: translate(-50%, -4px) !important;
+  min-width: 720px !important;
+  background: #F9FAFB !important;
+  border: 1px solid #1E293B !important;
+  border-radius: 14px !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.95), 0 4px 20px rgba(0, 0, 0, 0.8) !important;
+  padding: 24px !important;
+  z-index: 99999 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity .15s ease, transform .15s ease, visibility .15s !important;
+}
+.nav-item:hover .mega, .nav-item:focus-within .mega, .mega:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translate(-50%, 0) !important;
+}
+.mega-col h5 {
+  margin: 0 0 12px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #667085 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+.mega-col a {
+  display: block !important;
+  padding: 8px 10px !important;
+  margin: 0 -10px !important;
+  font-size: 14px !important;
+  color: #475467 !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: background .12s, color .12s !important;
+}
+.mega-col a:hover {
+  background: #F9FAFB !important;
+  color: #101828 !important;
+}
+
+/* Nav CTAs */
+.nav-cta {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex: 1 !important;
+}
+.nav-cta .btn.ghost {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 8px 16px !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #475467 !important;
+  background: #F9FAFB !important;
+  border: 1px solid rgba(16, 24, 40, 0.16) !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: all .15s ease !important;
+}
+.nav-cta .btn.ghost:hover {
+  background: #F9FAFB !important;
+  color: #101828 !important;
+  border-color: #475467 !important;
+}
+.nav-cta .btn.primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #DA291C !important;
+  color: #101828 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 9px 18px !important;
+  font-size: 13.5px !important;
+  text-decoration: none !important;
+  border: none !important;
+  transition: all .15s ease !important;
+}
+.nav-cta .btn.primary:hover {
+  background: #A61E1E !important;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.45) !important;
+  color: #101828 !important;
+}
+
+/* Mobile Hamburger & Drawer */
+.nav-hamburger {
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: #F9FAFB !important;
+  border: 1px solid rgba(16, 24, 40, 0.14) !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  color: #101828 !important;
+  padding: 0 !important;
+  margin-left: 4px !important;
+}
+.nav-hamburger .bars, .nav-hamburger .bars::before, .nav-hamburger .bars::after {
+  background: #FFFFFF !important;
+}
+.mobile-drawer {
+  background: #F2F4F7 !important;
+  border-left: 1px solid rgba(16, 24, 40, 0.12) !important;
+}
+.mobile-drawer a {
+  color: #101828 !important;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.08) !important;
+  text-decoration: none !important;
+}
+.mobile-drawer h5 {
+  color: #667085 !important;
+}
+
+  .page-hero { padding: 96px 0 56px; position: relative; overflow: hidden; }
+  .page-hero::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(50% 50% at 50% 0%, rgba(238,62,71,0.16), transparent 60%);
+    pointer-events:none; }
+  .page-hero .wrap { position: relative; }
+
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+  .person {
+    padding: 32px; border-radius: var(--radius-lg);
+    border: 1px solid var(--line); background: var(--panel);
+    box-shadow: var(--shadow-card);
+    scroll-margin-top: 96px;
+  }
+  .person .avatar {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--red); color: #101828;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-weight: 700; font-size: 24px;
+    letter-spacing: -0.01em; line-height: 1;
+    margin-bottom: 18px;
+  }
+  .person .name { font-family: var(--display); font-weight: 700;
+    font-size: 28px; letter-spacing: -0.035em; line-height: 1.1;
+    margin: 0; color: var(--text); }
+  .person .role { font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text-mute); margin-top: 8px; }
+  .person p { font-size: 15px; line-height: 1.65; color: var(--text-dim);
+    margin: 18px 0 0; }
+  .person .areas {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px;
+  }
+  .person .areas span {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 4px 10px;
+    border: 1px solid var(--line-2); border-radius: var(--radius-pill);
+    color: var(--text-dim);
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .person .areas span:hover { background: var(--red-soft); color: var(--red); border-color: var(--red); }
+
+  .stance {
+    margin-top: 56px;
+    border-top: 1px solid var(--line); padding-top: 40px;
+    max-width: 760px; margin-left: auto; margin-right: auto; text-align: center;
+  }
+  .stance h2 { font-size: 26px; margin: 0 0 12px; }
+  .stance p { font-size: 16px; color: var(--text-dim); line-height: 1.7; margin: 0 0 12px; }
+
+  .work-list { list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    max-width: 880px; margin-left: auto; margin-right: auto; }
+  .work-list li { padding: 18px 22px; border: 1px solid var(--line);
+    border-radius: var(--radius); background: var(--panel);
+    font-size: 14px; color: var(--text-dim); }
+
+  .team-cta { padding: 96px 0; border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: radial-gradient(40% 50% at 50% 0%, rgba(225,28,38,0.10), transparent 60%);
+    text-align: center; }
+  .team-cta .actions { margin-top: 28px; display: inline-flex; gap: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 880px) {
+    .team-grid, .work-list { grid-template-columns: 1fr; }
+  }
+
+/* Mega Dropdown Clean Item Styling & Underline Removal */
+.mega a::after,
+.mega-col a::after,
+.mega a:hover::after,
+.mega-col a:hover::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+}
+
+.mega-col a {
+  display: block !important;
+  padding: 6px 10px !important;
+  margin: 2px 0 !important;
+  font-size: 13.5px !important;
+  color: #475467 !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.mega-col a:hover {
+  background: #FEF2F2 !important;
+  color: #DA291C !important;
+  font-weight: 600 !important;
+  border: none !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+</style>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<div class="utilbar">
+  <div class="wrap">
+    <div class="utilbar-left">
+      <span class="green-dot">&#9679;</span> All systems operational
+      <a href="https://status.ollavpn.com/" style="margin-left:8px;">status.ollavpn.com</a>
+    </div>
+    <div class="utilbar-right">
+      <a href="/technology.html">Trust</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/blog/">Blogs</a>
+      <span style="opacity:.4;">&middot;</span>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x" alt="OllaVPN Logo" width="40" height="40" class="brand-img" style="width: 40px; height: 40px; border-radius: 8px; display: block; flex-shrink: 0;" /><span class="brand-text">Olla<span class="brand-red">VPN</span></span></a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="/technology.html" class="nav-head">Technology <span class="caret">&#9662;</span></a>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum crypto <span class="sub">Hybrid handshake on every connect</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/killswitch">Kill switch <span class="sub">On by default</span></a>
+              <a href="/in-tunnel-dns">In-tunnel DNS <span class="sub">No leaks, no logs</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Peer isolation <span class="sub">4-layer, enforced</span></a>
+              <a href="/technology.html">All technology &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pricing">Pricing</a>
+
+      <a href="/blog/">Blogs</a>
+
+      <a href="/free-vpn">Free VPN</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="/dl/">Download free <span class="arrow">&rarr;</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker"><span class="pip">&bull;</span> WHO'S BEHIND OLLAVPN</span>
+    <h1 class="h-display h1 mt-16">Small team.<br/><span class="accent">Deep technical roots.</span></h1>
+    <p class="lede mt-16" style="max-width:680px; color: var(--text-dim);">Two people run OllaVPN day-to-day. No marketing department, no growth-hacker rolodex, no &ldquo;head of partnerships&rdquo;. The same people who write the code answer the support emails and sign every release.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="team-grid">
+
+      <article class="person" id="nathan-pratt">
+        <div class="avatar" aria-hidden="true">NP</div>
+        <h2 class="name">Nathan Pratt</h2>
+        <div class="role">Privacy &amp; Security Lead</div>
+        <p>Nathan covers privacy engineering, post-quantum cryptography, and the policy + technical layers of consumer VPN security. Eight years at Mozilla and Cloudflare before joining OllaVPN, mostly on protocol design and the unglamorous business of making sure something as small as a stray DNS query doesn&#39;t blow a user&#39;s cover.</p>
+        <p>He writes most of the blog content here and reviews every fact-claim. If something on this site looks wrong, his email is in the header of every post.</p>
+        <div class="areas">
+          <span>Post-quantum crypto</span>
+          <span>WireGuard</span>
+          <span>DNS hygiene</span>
+          <span>Threat modeling</span>
+          <span>Policy</span>
+        </div>
+      </article>
+
+      <article class="person" id="hannah-wu">
+        <div class="avatar" aria-hidden="true">HW</div>
+        <h2 class="name">Hannah Wu</h2>
+        <div class="role">Senior Security Engineer</div>
+        <p>Hannah reviews everything Nathan writes before it ships. She came up through kernel networking at a major cloud provider and now spends her time on the OllaVPN data-plane: peer isolation, the four-layer leak defense, kill-switch behavior under partition, and the Windows / macOS client&#39;s tunnel state machine.</p>
+        <p>If a blog post here has a &ldquo;Reviewed by Hannah Wu&rdquo; line, it means she walked through every technical claim and either approved it or made Nathan rewrite it.</p>
+        <div class="areas">
+          <span>Kernel networking</span>
+          <span>Peer isolation</span>
+          <span>Kill switch</span>
+          <span>Linux / Windows / macOS</span>
+          <span>Audit</span>
+        </div>
+      </article>
+
+    </div>
+
+    <aside class="stance">
+      <h2>Why two-person matters here</h2>
+      <p>Most VPN companies have hundreds of employees, dozens of subcontractors, and a marketing team that doesn&#39;t know what their engineers ship. The bigger that team, the harder it is to make honest claims about what the product actually does &mdash; because nobody on staff has read all the code.</p>
+      <p>OllaVPN is two people. We&#39;ve both read every line of the data-plane. When a blog post says &ldquo;peer isolation is verified end-to-end,&rdquo; we can point at the four sysctl + nftables + WireGuard config + automated e2e test that enforces it. When something breaks, one of us pages the other on Signal. The product is small enough that we can still tell the truth about it.</p>
+      <p>When that stops being true, we&#39;ll say so.</p>
+    </aside>
+
+  </div>
+</section>
+
+<section class="section-sm" style="border-top: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker"><span class="pip">&bull;</span> WHAT WE'RE WORKING ON</span>
+      <h2 class="h-display h2 mt-16">Right now.</h2>
+      <p class="lede">Things we&#39;re shipping this quarter, in plain language.</p>
+    </div>
+    <ul class="work-list">
+      <li>macOS client polish &mdash; system-extension migration done, signing next</li>
+      <li>Android client &mdash; fork of <code style="font-family: var(--mono); font-size: 13px;">wireguard-android</code> in progress</li>
+      <li>Windows installer code-signing (EV cert)</li>
+      <li>Audited public transparency report &mdash; Q3 target</li>
+    </ul>
+  </div>
+</section>
+
+<section class="team-cta">
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>Try OllaVPN free &middot; no card &middot; lifetime</span>
+    <h2 class="h-display h2 mt-16">Built by two people who <span class="accent">read every line.</span></h2>
+    <div class="actions">
+      <a class="btn primary xl" href="/dl/">Get OllaVPN free <span class="arrow">&rarr;</span></a>
+      <a class="btn xl" href="/blog/">Read what Nathan writes</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="brand"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x" alt="OllaVPN Logo" width="40" height="40" class="brand-img" style="width: 40px; height: 40px; border-radius: 8px; display: block; flex-shrink: 0;" /><span class="brand-text">Olla<span class="brand-red">VPN</span></span></div><p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN.</p></div>
+      <div><h4>Product</h4><ul><li><a href="apps.html">Apps</a></li><li><a href="technology.html">Technology</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog/">Blog</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span><span class="badges"><span>POST-QUANTUM READY</span><span>NO LOGS</span><span>LIFETIME FREE</span></span></div>
+  </div>
+</footer>
+
+<script defer src="/blog.js?v=20260610-1318"></script>
+<script src="/shared.js" defer></script>
+</body>
+</html>

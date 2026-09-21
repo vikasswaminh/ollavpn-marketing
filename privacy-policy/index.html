@@ -1,13 +1,474 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting to OllaVPN...</title>
-  <meta http-equiv="refresh" content="0; url=/privacy.html">
-  <link rel="canonical" href="https://ollavpn.com/privacy.html">
-  <script>window.location.replace("/privacy.html");</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy — OllaVPN</title>
+<meta name="description" content="How OllaVPN collects, uses, and protects your data. We are a no-logs privacy VPN: we do not record the sites you visit, your DNS queries, or your traffic." />
+<link rel="canonical" href="https://ollavpn.com/privacy-policy">
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#FFFFFF" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OllaVPN" />
+<meta property="og:title" content="Privacy Policy — OllaVPN" />
+<meta property="og:url" content="https://ollavpn.com/privacy-policy">
+<link rel="stylesheet" href="/styles.css?v=20260921_restored_v3" />
+<style>
+
+/* ==========================================================================
+   BULLETPROOF HIGH-CONTRAST DARK NAVIGATION BAR SYSTEM
+   ========================================================================== */
+.utilbar {
+  background: #F9FAFB !important;
+  color: #667085 !important;
+  font-family: var(--mono, monospace) !important;
+  font-size: 11.5px !important;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.08) !important;
+  padding: 7px 0 !important;
+  letter-spacing: 0.04em !important;
+}
+.utilbar a {
+  color: #475467 !important;
+  text-decoration: none !important;
+}
+.utilbar a:hover {
+  color: #101828 !important;
+}
+.utilbar .green-dot {
+  color: #34D399 !important;
+}
+
+.nav {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.10) !important;
+  transition: background .15s ease, box-shadow .15s ease, border-color .15s ease !important;
+}
+.nav.scrolled {
+  background: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom-color: rgba(99, 102, 241, 0.40) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85) !important;
+}
+.nav-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 64px !important;
+  padding: 0 28px !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+}
+.brand, a.brand, .brand:visited {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  font-size: 17.5px !important;
+  color: #101828 !important;
+  text-decoration: none !important;
+  flex: 1 !important;
+}
+.brand span {
+  color: #101828 !important;
+  font-weight: 700 !important;
+}
+
+
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 26px !important;
+  font-size: 14px !important;
+  color: #475467 !important;
+  justify-content: center !important;
+  flex: 2 !important;
+}
+.nav-links a, .nav-item, .nav-item .nav-head {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 6px 0 !important;
+  color: #475467 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color .15s ease !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+}
+.nav-links > a::after, .nav-item::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: -6px !important;
+  height: 2px !important;
+  background: #DA291C !important;
+  transform: scaleX(0) !important;
+  transform-origin: left !important;
+  transition: transform .18s ease !important;
+}
+.nav-links a:hover, .nav-item:hover, .nav-item:hover .nav-head, .nav-item:focus-within .nav-head {
+  color: #101828 !important;
+}
+.nav-links a.active, .nav-item.active, .nav-item.active .nav-head {
+  color: #DA291C !important;
+  font-weight: 600 !important;
+}
+.nav-links > a:hover::after, .nav-links > a.active::after, .nav-item:hover::after, .nav-item.active::after {
+  transform: scaleX(1) !important;
+}
+.nav-item .caret {
+  display: inline-block !important;
+  margin-left: 5px !important;
+  font-size: 10px !important;
+  color: #667085 !important;
+  transition: transform .18s ease, color .18s ease !important;
+}
+.nav-item:hover .caret, .nav-item:focus-within .caret {
+  transform: rotate(180deg) !important;
+  color: #101828 !important;
+}
+
+/* Mega dropdown */
+.mega {
+  position: absolute !important;
+  top: calc(100% + 2px) !important;
+  left: 50% !important;
+  transform: translate(-50%, -4px) !important;
+  min-width: 720px !important;
+  background: #F9FAFB !important;
+  border: 1px solid #1E293B !important;
+  border-radius: 14px !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.95), 0 4px 20px rgba(0, 0, 0, 0.8) !important;
+  padding: 24px !important;
+  z-index: 99999 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity .15s ease, transform .15s ease, visibility .15s !important;
+}
+.nav-item:hover .mega, .nav-item:focus-within .mega, .mega:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translate(-50%, 0) !important;
+}
+.mega-col h5 {
+  margin: 0 0 12px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #667085 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+.mega-col a {
+  display: block !important;
+  padding: 8px 10px !important;
+  margin: 0 -10px !important;
+  font-size: 14px !important;
+  color: #475467 !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: background .12s, color .12s !important;
+}
+.mega-col a:hover {
+  background: #F9FAFB !important;
+  color: #101828 !important;
+}
+
+/* Nav CTAs */
+.nav-cta {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex: 1 !important;
+}
+.nav-cta .btn.ghost {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 8px 16px !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #475467 !important;
+  background: #F9FAFB !important;
+  border: 1px solid rgba(16, 24, 40, 0.16) !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: all .15s ease !important;
+}
+.nav-cta .btn.ghost:hover {
+  background: #F9FAFB !important;
+  color: #101828 !important;
+  border-color: #475467 !important;
+}
+.nav-cta .btn.primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #DA291C !important;
+  color: #101828 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 9px 18px !important;
+  font-size: 13.5px !important;
+  text-decoration: none !important;
+  border: none !important;
+  transition: all .15s ease !important;
+}
+.nav-cta .btn.primary:hover {
+  background: #A61E1E !important;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.45) !important;
+  color: #101828 !important;
+}
+
+/* Mobile Hamburger & Drawer */
+.nav-hamburger {
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: #F9FAFB !important;
+  border: 1px solid rgba(16, 24, 40, 0.14) !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  color: #101828 !important;
+  padding: 0 !important;
+  margin-left: 4px !important;
+}
+.nav-hamburger .bars, .nav-hamburger .bars::before, .nav-hamburger .bars::after {
+  background: #FFFFFF !important;
+}
+.mobile-drawer {
+  background: #F2F4F7 !important;
+  border-left: 1px solid rgba(16, 24, 40, 0.12) !important;
+}
+.mobile-drawer a {
+  color: #101828 !important;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.08) !important;
+  text-decoration: none !important;
+}
+.mobile-drawer h5 {
+  color: #667085 !important;
+}
+
+.legal{max-width:820px;margin:0 auto;padding:48px 20px 72px}
+.legal h1{font-size:2rem;letter-spacing:-.02em;margin:0 0 8px}
+.legal .eff{color:var(--text-dim);font-size:.95rem;margin:0 0 32px}
+.legal h2{font-size:1.35rem;letter-spacing:-.02em;margin:40px 0 12px}
+.legal h3{font-size:1.05rem;margin:24px 0 8px}
+.legal p,.legal li{color:var(--text-dim);line-height:1.7}
+.legal ul{padding-left:20px}
+.legal a{color:var(--red-2,#8F73FF)}
+.legal .lede{color:var(--text);font-size:1.05rem}
+.legal table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92rem}
+.legal th,.legal td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line,rgba(16, 24, 40,.08));vertical-align:top;color:var(--text-dim)}
+.legal th{color:var(--text)}
+
+/* Mega Dropdown Clean Item Styling & Underline Removal */
+.mega a::after,
+.mega-col a::after,
+.mega a:hover::after,
+.mega-col a:hover::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+}
+
+.mega-col a {
+  display: block !important;
+  padding: 6px 10px !important;
+  margin: 2px 0 !important;
+  font-size: 13.5px !important;
+  color: #475467 !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.mega-col a:hover {
+  background: #FEF2F2 !important;
+  color: #DA291C !important;
+  font-weight: 600 !important;
+  border: none !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+</style>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 </head>
-<body style="font-family: sans-serif; text-align: center; padding: 40px;">
-  <p>Page has moved permanently. Redirecting to <a href="/privacy.html">/privacy.html</a>...</p>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/index.html"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x" alt="OllaVPN Logo" width="40" height="40" class="brand-img" style="width: 40px; height: 40px; border-radius: 8px; display: block; flex-shrink: 0;" /><span class="brand-text">Olla<span class="brand-red">VPN</span></span></a>
+    <div class="nav-links">
+      <!-- Product — mega-dropdown -->
+      <!-- Technology — mega-dropdown -->
+      <div class="nav-item">
+        <a href="/technology.html" class="nav-head">Technology <span class="caret">&#9662;</span></a> <span class="caret">▾</span>
+        <div class="mega" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h5>Crypto</h5>
+              <a href="/pqc">Post-quantum handshake</a>
+              <a href="/pqc">WireGuard hybrid</a>
+              <a href="/pqc">Forward secrecy</a>
+            </div>
+            <div class="mega-col">
+              <h5>Architecture</h5>
+              <a href="/peer-isolation">Network topology</a>
+              <a href="/peer-isolation">Tunnel addressing (CGNAT)</a>
+              <a href="/peer-isolation">Exit operation</a>
+            </div>
+            <div class="mega-col">
+              <h5>Privacy</h5>
+              <a href="/in-tunnel-dns">DNS-leak defense</a>
+              <a href="/in-tunnel-dns">IPv6 handling</a>
+              <a href="/peer-isolation">Abuse defense</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing — mega-dropdown -->
+      <a href="/pricing">Pricing</a>
+
+      <!-- Blogs — mega-dropdown -->
+      <a href="/blog/">Blogs</a>
+
+      <!-- Apps / Download — flat links (no dropdown needed for single-target items) -->
+      <a href="apps.html">Apps</a>
+      <a href="dl/">Download</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://login.ollavpn.com/">Sign in</a>
+      <a class="btn primary" href="dl/">Download free <span class="arrow">→</span></a>
+      <button class="nav-hamburger" type="button" aria-label="Open navigation menu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</nav>
+<main class="legal">
+<article>
+<h1>Privacy Policy</h1>
+<p class="eff">Effective 11 July 2026 · This is our current policy and may be updated; material changes are announced here at least 30 days before they take effect.</p>
+
+<p class="lede">OllaVPN exists to keep your browsing private. The best way to protect data is to never collect it. This page describes exactly what we do and do not collect, why, and how long we keep it.</p>
+
+<h2>1. Our core commitment: no activity logs</h2>
+<p>We do <strong>not</strong> log, store, or share:</p>
+<ul>
+<li>The websites, IP addresses, or services you connect to.</li>
+<li>Your DNS queries. DNS runs inside the encrypted tunnel and is not recorded.</li>
+<li>Per-destination, per-port, or per-flow byte counts.</li>
+<li>Any browsing-history-equivalent data.</li>
+<li>Your real name, home address, phone number, payment details, or government ID. The free tier has no payment surface, so we have no way to receive any of these in the first place.</li>
+</ul>
+<p>We cannot hand over what we do not have.</p>
+
+<h2>2. What we do collect, and why</h2>
+<h3>2.1 Account data</h3>
+<table>
+<tr><th>Data</th><th>Why</th><th>Retention</th></tr>
+<tr><td>Email address</td><td>Account identity, sign-in, password recovery, security alerts</td><td>While your account exists; deleted within 30 days of closure</td></tr>
+<tr><td>Password (Argon2id hash)</td><td>Authentication. Your plaintext password is never stored or logged.</td><td>While your account exists</td></tr>
+<tr><td>Email-verified and account-created timestamps</td><td>Anti-abuse and the &ldquo;verify before access&rdquo; gate</td><td>While your account exists</td></tr>
+<tr><td>Device public key</td><td>Identifies your registered device on our network</td><td>While the device is registered</td></tr>
+</table>
+
+<h3>2.2 Operational &amp; abuse-defense data</h3>
+<p>A free, unlimited-data VPN is a target for abuse. The minimum data below exists solely to keep the service usable and safe for everyone; none of it describes your browsing.</p>
+<table>
+<tr><th>Data</th><th>Why</th><th>Retention</th></tr>
+<tr><td>Signup IP address</td><td>Per-IP signup rate limit (anti-abuse)</td><td>7 days</td></tr>
+<tr><td>Login IP address (per attempt)</td><td>Credential-stuffing defense (per-IP login rate limit)</td><td>1 hour rolling</td></tr>
+<tr><td>Session (refresh) tokens</td><td>Session management; you can review and revoke sessions in your dashboard</td><td>90 days after last use, or until you sign out</td></tr>
+<tr><td>Daily bandwidth counter</td><td>Fair-use soft/hard caps that keep the shared free network healthy</td><td>90 days</td></tr>
+<tr><td>Security audit-log entries</td><td>The security-event timeline you can review in your dashboard</td><td>1 year</td></tr>
+<tr><td>Abuse reports filed against an account</td><td>Triage and dispute</td><td>Until resolved, then 90 days</td></tr>
+</table>
+<p>We keep a single per-device &ldquo;last handshake&rdquo; timestamp (minute-level) to show online status and to clean up stale devices. It is not a per-session activity log.</p>
+
+<h2>3. Where your data lives</h2>
+<p>Account data is stored on our own infrastructure, not rented from a hyperscaler. TLS at our edge is terminated by Cloudflare; a Cloudflare Turnstile challenge runs only at signup to block bots. Country-level GeoIP lookups use a local database on our servers &mdash; no per-query data leaves our infrastructure. We do not publish the number or exact locations of our exit servers.</p>
+<p>Your tunneled traffic &mdash; the actual data you send and receive &mdash; only ever transits our exit servers and the public internet. It does not pass through Cloudflare, and its contents are never inspected or logged.</p>
+
+<h2>4. Third parties, advertising, and tracking</h2>
+<p>We do <strong>not</strong> sell, rent, or trade your data. There is <strong>no advertising, no analytics SDK, and no tracking pixel</strong> in our apps. We share data with a service provider only when it is strictly required to operate the product (for example, edge TLS or email delivery) and only under a data-processing agreement, or when compelled by valid legal process (see section 6).</p>
+
+<h2>5. Your rights</h2>
+<p>Wherever you live &mdash; the EU, UK, California, or elsewhere &mdash; you can:</p>
+<ul>
+<li><strong>Access / port</strong> &mdash; request a structured copy of the data we hold on you (returned within 30 days).</li>
+<li><strong>Rectify</strong> &mdash; correct inaccurate account data.</li>
+<li><strong>Erase</strong> &mdash; delete your account and associated data yourself at any time from your dashboard (or by emailing us). We complete deletion within 30 days, retaining only pre-existing security audit entries for the limited period required for abuse defense.</li>
+<li><strong>Object / restrict</strong> &mdash; particularly for the anti-abuse rate-limit data.</li>
+</ul>
+<p>To exercise any right, email <a href="mailto:privacy@ollavpn.com">privacy@ollavpn.com</a> from your account address. We reply within 7 days.</p>
+
+<h2>6. Government &amp; legal requests</h2>
+<p>If we ever receive a lawful request, we will: (1) require formal, valid legal process; (2) notify you before disclosure where we are legally permitted to; (3) disclose only the specific data named &mdash; never bulk exports; and (4) provide only what we actually hold, which for activity data is nothing. We maintain a <a href="/warrant-canary">warrant canary</a> as an additional transparency signal.</p>
+
+<h2>7. Children</h2>
+<p>OllaVPN is not directed at anyone under 18. We do not knowingly collect a child's data, and &mdash; per India's DPDP Act &sect;9 &mdash; we do not process it without verifiable parental consent, nor do we track or target advertising at children. If you believe a child has created an account, email <a href="mailto:privacy@ollavpn.com">privacy@ollavpn.com</a> and we will delete it.</p>
+
+<h2>India &mdash; Digital Personal Data Protection Act, 2023</h2>
+<p>If you are in India, the DPDP Act 2023 applies. As a Data Principal you can access a summary of the personal data we process and with whom it is shared (&sect;11); request correction or erasure (&sect;12); raise a grievance (&sect;13); and nominate someone to exercise your rights (&sect;14). You may withdraw consent at any time &mdash; as easily as you gave it (&sect;6); withdrawing consent means deleting your account (from your dashboard, or by emailing us).</p>
+<p><strong>Grievance Officer:</strong> Rajesh S, <a href="mailto:rajesh.s@networkershome.com">rajesh.s@networkershome.com</a>. Unresolved grievances may be escalated to the Data Protection Board of India.</p>
+
+<h2>8. Changes to this policy</h2>
+<p>We announce material changes on this page at least 30 days before they take effect.</p>
+
+<h2>9. Contact</h2>
+<ul>
+<li>Privacy &amp; data requests &mdash; <a href="mailto:privacy@ollavpn.com">privacy@ollavpn.com</a></li>
+<li>Grievance Officer (DPDP) &mdash; Rajesh S, <a href="mailto:rajesh.s@networkershome.com">rajesh.s@networkershome.com</a></li>
+<li>Abuse &amp; takedowns &mdash; <a href="mailto:abuse@ollavpn.com">abuse@ollavpn.com</a></li>
+<li>Security disclosure &mdash; <a href="mailto:security@ollavpn.com">security@ollavpn.com</a></li>
+<li>General support &mdash; <a href="mailto:support@ollavpn.com">support@ollavpn.com</a></li>
+</ul>
+</article>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="brand"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x" alt="OllaVPN Logo" width="40" height="40" class="brand-img" style="width: 40px; height: 40px; border-radius: 8px; display: block; flex-shrink: 0;" /><span class="brand-text">Olla<span class="brand-red">VPN</span></span></div>
+        <p class="muted mt-16" style="max-width:260px">A modern, post-quantum-ready privacy VPN. Lifetime free plan or $2/month for 5 devices.</p>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="/apps">Apps</a></li><li><a href="/technology">Technology</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/dl/">Download</a></li></ul></div>
+      <div><h4>Free VPN</h4><ul><li><a href="/free-vpn">Free VPN — honest guide</a></li><li><a href="/free-vpn-for-windows">Free VPN for Windows</a></li><li><a href="/free-vpn-for-india">Free VPN for India</a></li><li><a href="/free-wireguard-vpn">Free WireGuard VPN</a></li><li><a href="/free-quic-vpn">Free QUIC VPN</a></li></ul></div><div><h4>Account</h4><ul><li><a href="https://login.ollavpn.com/">Sign in</a></li><li><a href="https://login.ollavpn.com/signup">Sign up</a></li><li><a href="https://login.ollavpn.com/">Dashboard</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/careers">Careers</a></li><li><a href="/contact">Contact</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms of service</a></li><li><a href="/warrant-canary">Warrant canary</a></li></ul></div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 OllaVPN · A modern, post-quantum-ready privacy VPN.</span>
+      <span class="badges"><span>POST-QUANTUM READY</span><span>NO LOGS</span><span>LIFETIME FREE</span></span>
+    </div>
+  </div>
+</footer>
+<script src="shared.js"></script>
 </body>
 </html>
