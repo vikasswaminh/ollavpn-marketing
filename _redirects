@@ -1,3 +1,31 @@
+# Blog Canonical .html fallback redirect
+/blog/:slug.html                                /blog/:slug/                         301
+
+# Blog 50, 51, 52 Canonical & Alias Redirects
+/blog/best-vpn-for-smart-tv.html                /blog/best-vpn-for-smart-tv/         301
+/blog/free-vpn-for-smart-tv                     /blog/best-vpn-for-smart-tv/         301
+/blog/free-vpn-for-smart-tv/                    /blog/best-vpn-for-smart-tv/         301
+/blog/free-vpn-for-smart-tv.html                /blog/best-vpn-for-smart-tv/         301
+/blog/vpn-for-smart-tv                          /blog/best-vpn-for-smart-tv/         301
+/blog/vpn-for-smart-tv/                         /blog/best-vpn-for-smart-tv/         301
+/blog/vpn-for-smart-tv.html                     /blog/best-vpn-for-smart-tv/         301
+
+/blog/vpn-for-digital-nomads.html               /blog/vpn-for-digital-nomads/        301
+/blog/free-vpn-for-digital-nomads               /blog/vpn-for-digital-nomads/        301
+/blog/free-vpn-for-digital-nomads/              /blog/vpn-for-digital-nomads/        301
+/blog/free-vpn-for-digital-nomads.html          /blog/vpn-for-digital-nomads/        301
+/blog/best-free-vpn-for-digital-nomads          /blog/vpn-for-digital-nomads/        301
+/blog/best-free-vpn-for-digital-nomads/         /blog/vpn-for-digital-nomads/        301
+/blog/best-free-vpn-for-digital-nomads.html     /blog/vpn-for-digital-nomads/        301
+
+/blog/vpn-for-router.html                       /blog/vpn-for-router/                301
+/blog/free-vpn-for-router                       /blog/vpn-for-router/                301
+/blog/free-vpn-for-router/                      /blog/vpn-for-router/                301
+/blog/free-vpn-for-router.html                  /blog/vpn-for-router/                301
+/blog/best-vpn-for-router                       /blog/vpn-for-router/                301
+/blog/best-vpn-for-router/                      /blog/vpn-for-router/                301
+/blog/best-vpn-for-router.html                  /blog/vpn-for-router/                301
+
 # Cloudflare Pages — _redirects for ollavpn.com
 # https://developers.cloudflare.com/pages/configuration/redirects/
 #
