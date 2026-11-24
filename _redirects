@@ -1,5 +1,3 @@
-# Blog Canonical .html fallback redirect
-/blog/:slug.html                                /blog/:slug/                         301
 
 # Blog 50, 51, 52 Canonical & Alias Redirects
 /blog/best-vpn-for-smart-tv.html                /blog/best-vpn-for-smart-tv/         301
@@ -37,7 +35,6 @@
 /index.html              /             301
 /index                   /             301
 /home                    /             301
-/index.html?*            /:splat       301
 
 # Clean-URL canonicalization
 /pricing.html            /pricing      301
@@ -46,8 +43,6 @@
 /in-tunnel-dns.html      /in-tunnel-dns  301
 /peer-isolation.html     /peer-isolation 301
 
-# ─── Downloads handoff ────────────────────────────────────
-/downloads/*             https://login.ollavpn.com/downloads/:splat  301
 
 # ─── Legacy Marketing & Tool Pages (Fix GSC 404s) ────────
 /features/custom-dns                /in-tunnel-dns                      301
@@ -539,3 +534,15 @@
 /wireguard/                                             /free-wireguard-vpn                             301
 /wireguard-vs-openvpn                                   /blog/what-is-wireguard/                        301
 /wireguard-vs-openvpn/                                  /blog/what-is-wireguard/                        301
+
+# ==========================================
+# Dynamic rules (placeholders / splats) MUST stay at the END of this file.
+# Cloudflare Pages caps dynamic redirects at 100 and counted every rule after the
+# first dynamic one as dynamic, so with these at the top only rules 1-100 ever
+# applied (found 2026-11-24: rules 101-508 had never worked).
+# ==========================================
+# Blog Canonical .html fallback redirect
+/blog/:slug.html                                /blog/:slug/                         301
+/index.html?*            /:splat       301
+# ─── Downloads handoff ────────────────────────────────────
+/downloads/*             https://login.ollavpn.com/downloads/:splat  301
