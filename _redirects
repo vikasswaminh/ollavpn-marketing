@@ -37,7 +37,13 @@
 /home                    /             301
 
 # Clean-URL canonicalization
-/pricing.html            /pricing      301
+# Paid plans hidden until launch (owner 2026-11-25) - 302 so they can come back
+/pricing                 /free-vpn     302
+/pricing/                /free-vpn     302
+/about/pricing           /free-vpn     302
+/about/pricing/          /free-vpn     302
+/about/pricing.html      /free-vpn     302
+/pricing.html            /free-vpn     302
 /pqc.html                /pqc          301
 /killswitch.html         /killswitch   301
 /in-tunnel-dns.html      /in-tunnel-dns  301
@@ -47,8 +53,8 @@
 # ─── Legacy Marketing & Tool Pages (Fix GSC 404s) ────────
 /features/custom-dns                /in-tunnel-dns                      301
 /features/custom-dns/               /in-tunnel-dns                      301
-/plus                               /pricing                            301
-/plus/                              /pricing                            301
+/plus                               /free-vpn                           302
+/plus/                              /free-vpn                           302
 /security                           /pqc                                301
 /security/                          /pqc                                301
 /status                             /                                   301
