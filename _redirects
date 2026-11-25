@@ -39,6 +39,9 @@
 # Clean-URL canonicalization
 # Paid plans hidden until launch (owner 2026-11-25) - 302 so they can come back
 /pricing                 /free-vpn     302
+/free-vpn-10-mbps        /free-vpn     302
+/free-vpn-10-mbps/       /free-vpn     302
+/free-vpn-10-mbps.html   /free-vpn     302
 /pricing/                /free-vpn     302
 /about/pricing           /free-vpn     302
 /about/pricing/          /free-vpn     302
@@ -468,8 +471,8 @@
 /no-logs-policy/                                        /blog/no-logs-policy/                           301
 /overview/vpn-protection                                /why-ollavpn                                    301
 /overview/vpn-protection/                               /why-ollavpn                                    301
-/plus-vpn                                               /free-vpn-10-mbps                               301
-/plus-vpn/                                              /free-vpn-10-mbps                               301
+/plus-vpn                                               /free-vpn                                       302
+/plus-vpn/                                              /free-vpn                                       302
 /post-quantum-encryption                                /pqc                                            301
 /post-quantum-encryption/                               /pqc                                            301
 /privacy-policy                                         /privacy                                        301
