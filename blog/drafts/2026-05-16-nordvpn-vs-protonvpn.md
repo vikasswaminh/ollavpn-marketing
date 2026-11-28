@@ -146,7 +146,7 @@ OllaVPN is built to be ready for that future, today.
 
 The pricing is also genuinely simple:
 
-- **Lifetime free** — **10 Mbps**, every country, no time limits, no data caps, no ads, no upsell nags. Free is free, for as long as you use it.
+- **Lifetime free** — **up to 100 Mbps**, every country, no time limits, 20 GB of free data every month, no ads, no upsell nags. Free is free, for as long as you use it.
 - **$2/month paid plan** — **5 devices**, **10 Gbps** connection speed. Enough for a household, fast enough that you'll forget the VPN is even on.
 
 If you're already happy with NordVPN or ProtonVPN, stay where you are — they're both excellent. But if you're shopping today and want to factor PQC-readiness into your decision, **OllaVPN is a top-grade alternative worth a look** alongside the two names above.

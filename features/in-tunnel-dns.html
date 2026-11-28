@@ -703,7 +703,7 @@
         </li>
         <li style="display: flex; align-items: flex-start; gap: 10px; color: #1E293B; font-size: 1.02rem; line-height: 1.68; margin: 0; padding: 0;">
           <span class="takeaway-bullet" style="color: #DA291C; font-weight: 800; font-size: 1.25rem; line-height: 1.35; flex-shrink: 0;">&bull;</span>
-          <span><strong>Operator-Controlled Resolvers:</strong> Runs on private Unbound DNS nodes with strict zero-logging and DNSSEC validation.</span>
+          <span><strong>Operator-Controlled Resolvers:</strong> Runs on our private DNS resolvers with strict zero-logging and DNSSEC validation.</span>
         </li>
         <li style="display: flex; align-items: flex-start; gap: 10px; color: #1E293B; font-size: 1.02rem; line-height: 1.68; margin: 0; padding: 0;">
           <span class="takeaway-bullet" style="color: #DA291C; font-weight: 800; font-size: 1.25rem; line-height: 1.35; flex-shrink: 0;">&bull;</span>
@@ -742,7 +742,7 @@
 </div>
       <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">A lot of VPNs, especially ad-funded or freemium throttled providers, overlook DNS security or cut corners. Even if your web traffic is encrypted, your DNS queries might still go through your ISP or a public third-party resolver. This creates a severe privacy hole known as a <a href="/blog/what-is-a-dns-leak/" style="color: #DA291C; font-weight: 500; text-decoration: underline;">DNS leak</a>.</p>
       <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">Some VPNs try to fix this by using publicly available DNS resolvers like Cloudflare or Google. While these are faster than ISP resolvers, they are still third parties that log and analyze connection telemetry. Furthermore, weak clients fail to enforce firewall rules, causing the operating system to fall back to unencrypted local DNS.</p>
-      <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">OllaVPN operates its own private, zero-log Unbound DNS resolvers co-located on every exit node. DNS requests are resolved entirely in-memory with zero disk logging, eliminating DNS hijacking and accidental leaks.</p>
+      <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">OllaVPN operates its own private, zero-log DNS resolvers, built into every server in our network. DNS requests are resolved entirely in-memory with zero disk logging, eliminating DNS hijacking and accidental leaks.</p>
 
       <h2 id="real-world-protection" style="font-size: 1.85rem; font-weight: 800; color: #0F172A; margin: 36px 0 18px 0; font-family: 'Lato', sans-serif; border-bottom: 2px solid #F1F5F9; padding-bottom: 8px;">What real-world threats does in-tunnel DNS protect you against?</h2>
       <div class="answer-card" style="margin: 20px 0 24px; border-left: 5px solid #DA291C; background: #FFF5F5; padding: 18px 22px; border-radius: 0 10px 10px 0;">
@@ -818,7 +818,7 @@
   <strong style="color: #DA291C; display: block; margin-bottom: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800;">QUICK ANSWER</strong>
   <p style="margin: 0; color: #1E293B; font-size: 1.02rem; line-height: 1.6;">No. In-tunnel DNS runs directly on co-located exit node resolvers with sub-millisecond local caching, resulting in faster and more responsive domain lookups.</p>
 </div>
-      <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">Because our Unbound resolvers are physically deployed directly on each VPN exit server, DNS resolution latency is nearly instantaneous. Hot domain lookups are cached directly in RAM, often returning responses faster than congested residential ISP resolvers.</p>
+      <p style="margin-bottom: 16px; line-height: 1.75; color: #09090b; font-size: 1.05rem;">Because our private DNS resolvers run directly on each VPN server, DNS resolution latency is nearly instantaneous. Hot domain lookups are cached directly in RAM, often returning responses faster than congested residential ISP resolvers.</p>
 
       <h2 id="future-proofing" style="font-size: 1.85rem; font-weight: 800; color: #0F172A; margin: 36px 0 18px 0; font-family: 'Lato', sans-serif; border-bottom: 2px solid #F1F5F9; padding-bottom: 8px;">Is OllaVPN's in-tunnel DNS future-proof against evolving threats?</h2>
       <div class="answer-card" style="margin: 20px 0 24px; border-left: 5px solid #DA291C; background: #FFF5F5; padding: 18px 22px; border-radius: 0 10px 10px 0;">
@@ -840,7 +840,7 @@
   <p style="margin: 0; color: #1E293B; font-size: 1.02rem; line-height: 1.6;">OllaVPN operates its own zero-log resolvers and enforces kernel-level firewall blocking on port 53, whereas competitors frequently leak queries or rely on third-party public resolvers.</p>
 </div>
       <div class="step-highlight-card" style="background: #FFFFFF !important; border: 1.5px solid #E2E8F0 !important; border-left: 5px solid #DA291C !important; border-radius: 14px !important; padding: 18px 22px !important; margin: 16px 0 !important; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05) !important; box-sizing: border-box !important; width: 100% !important;">
-  <p style="margin: 0 !important; line-height: 1.72 !important; color: #1E293B !important; font-size: 1.02rem !important; font-family: 'Lato', sans-serif !important;"><strong style="color: #DA291C !important; font-weight: 800 !important; font-size: 1.05rem !important; display: inline-block !important; margin-right: 6px !important;">Operator-Controlled vs Third-Party:</strong> OllaVPN operates dedicated, zero-log Unbound resolvers on every server. Competitors often route queries through third-party services like Google or Cloudflare.</p>
+  <p style="margin: 0 !important; line-height: 1.72 !important; color: #1E293B !important; font-size: 1.02rem !important; font-family: 'Lato', sans-serif !important;"><strong style="color: #DA291C !important; font-weight: 800 !important; font-size: 1.05rem !important; display: inline-block !important; margin-right: 6px !important;">Operator-Controlled vs Third-Party:</strong> OllaVPN operates dedicated, zero-log private DNS resolvers on every server. Competitors often route queries through third-party services like Google or Cloudflare.</p>
 </div>
       <div class="step-highlight-card" style="background: #FFFFFF !important; border: 1.5px solid #E2E8F0 !important; border-left: 5px solid #DA291C !important; border-radius: 14px !important; padding: 18px 22px !important; margin: 16px 0 !important; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05) !important; box-sizing: border-box !important; width: 100% !important;">
   <p style="margin: 0 !important; line-height: 1.72 !important; color: #1E293B !important; font-size: 1.02rem !important; font-family: 'Lato', sans-serif !important;"><strong style="color: #DA291C !important; font-weight: 800 !important; font-size: 1.05rem !important; display: inline-block !important; margin-right: 6px !important;">Firewall-Enforced vs Advisory Routing:</strong> OllaVPN installs kernel firewall rules (Windows Filtering Platform / macOS Packet Filter / Android VpnService) to block all non-tunnel port-53 queries. Weak VPNs allow the OS to silently fall back to ISP DNS.</p>
@@ -931,7 +931,7 @@
             <span class="faq-icon" style="color: #DA291C; font-size: 1.05rem; font-weight: bold; margin-left: 10px;">+</span>
           </summary>
           <div class="faq-accordion-content" style="padding-top: 8px; color: #334155; font-size: 0.95rem; line-height: 1.6;">
-            <p style="margin: 0;">Yes. Every OllaVPN user on the $0 forever plan receives full in-tunnel DNS protection with no bandwidth caps on DNS, no card required, and zero activity logs.</p>
+            <p style="margin: 0;">Yes. Every OllaVPN user on the $0 forever plan receives full in-tunnel DNS protection, no card required, and zero activity logs.</p>
           </div>
         </details>
       </div>
@@ -940,7 +940,7 @@
     <section id="wrapping-it-up" class="wrap-up-box wrapping-lightbox" style="margin-top: 36px; margin-bottom: 24px; padding: 28px; background: #FFF5F5 !important; border: 1.5px solid rgba(218, 41, 28, 0.25) !important; border-left: 5px solid #DA291C !important; border-radius: 12px !important; text-align: left !important;">
       <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 12px 0; color: #DA291C !important; border: none !important; padding-bottom: 0 !important; text-align: center !important; font-family: 'Lato', sans-serif !important;">Wrapping It Up</h2>
       <p style="font-size: 1.05rem; line-height: 1.75; color: #1E293B !important; margin-bottom: 12px; text-align: left !important; font-family: 'Lato', sans-serif !important;">In-tunnel DNS is a fundamental cornerstone of genuine internet privacy. Without it, standard VPN encryption leaves your browsing destinations completely exposed to your ISP and local network operators.</p>
-      <p style="font-size: 1.05rem; line-height: 1.75; color: #1E293B !important; margin-bottom: 0; text-align: left !important; font-family: 'Lato', sans-serif !important;">With OllaVPN, you get operator-controlled zero-log Unbound resolvers, kernel firewall-enforced port-53 blocking, and post-quantum WireGuard encryption built-in by default on all platforms.</p>
+      <p style="font-size: 1.05rem; line-height: 1.75; color: #1E293B !important; margin-bottom: 0; text-align: left !important; font-family: 'Lato', sans-serif !important;">With OllaVPN, you get operator-controlled zero-log DNS resolvers, kernel firewall-enforced port-53 blocking, and post-quantum WireGuard encryption built-in by default on all platforms.</p>
     </section>
 
     <div class="feature-cta" style="margin-top: 36px; padding: 32px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 14px; text-align: center;">

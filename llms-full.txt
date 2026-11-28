@@ -48,7 +48,7 @@ the consumer VPN category.
 
 ### Free tier
 - **$0 forever.**
-- 10 Mbps speed cap per connection.
+- 100 Mbps speed cap per connection.
 - 1 simultaneous device per account.
 - Access to every country OllaVPN serves.
 - No data caps, no time limits, no ads, no in-app upsell prompts
