@@ -285,7 +285,7 @@ Genuine no-logs policy. We don’t log which sites you visit, when you connect, 
 Available on the lifetime free plan. Privacy isn’t a premium feature.
 
 OllaVPN - your IP, gone:
-Lifetime free · $0 · 10 Mbps IP masking, kill switch, PQC, DNS protection. Every country. No time limits. No data caps. No ads.
+Lifetime free · $0 · up to 100 Mbps IP masking, kill switch, PQC, DNS protection. Every country. No time limits. 20 GB of free data every month. No ads.
 Paid plan · $2 / month · 10 Gbps Same protection, faster connection. Five devices on one account.
 
 Try the free plan → - no email, no card, your IP hidden from the first connection.

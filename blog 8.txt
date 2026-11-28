@@ -106,7 +106,7 @@ Video calls can be hit or miss. A congested free server can cause dropped frames
 Streaming at HD or 4K is often unusable on free tiers, both because of speed limits and because streaming services block the IP ranges.
 Large file downloads and uploads are slow - if a free tier has a data cap, you'll hit it quickly on anything heavy.
 Paid VPNs have more servers, more bandwidth, and dedicated infrastructure. On a good paid VPN, speed overhead compared to your base connection is usually small enough to be unnoticeable for anything short of saturating a gigabit line.
-One nuance worth naming: the best reputable free tiers - OllaVPN's free plan offers 10 Mbps, ProtonVPN's free tier offers uncapped speeds on a smaller server set - are significantly more usable for everyday browsing and light use than the typical free VPN. The "free VPNs are unusably slow" stereotype is true of the bottom half of the market; it's less true of the privacy-focused exceptions.
+One nuance worth naming: the best reputable free tiers - OllaVPN's free plan offers up to 100 Mbps, ProtonVPN's free tier offers uncapped speeds on a smaller server set - are significantly more usable for everyday browsing and light use than the typical free VPN. The "free VPNs are unusably slow" stereotype is true of the bottom half of the market; it's less true of the privacy-focused exceptions.
 
 Privacy and logging policies 
 QUICK ANSWER
@@ -123,7 +123,7 @@ Reputable free tiers like ProtonVPN and OllaVPN publish their policies, have had
 
 Data caps and server limits 
 QUICK ANSWER
-Most free VPNs cap your monthly data - often severely. The exceptions (ProtonVPN Free, OllaVPN Free) offer unlimited data. Server selection on free tiers is almost always more limited than on paid tiers, which matters for speed and streaming.
+Most free VPNs cap your monthly data - often severely. The exceptions are ProtonVPN Free, with unlimited data, and OllaVPN Free, with 20 GB of free data every month. Server selection on free tiers is almost always more limited than on paid tiers, which matters for speed and streaming.
 Data caps are the most immediately annoying feature of most free VPNs.
 Common limits in the free VPN market: 500 MB/month, 2 GB/month, 10 GB/month. For reference: a single hour of Netflix at standard quality uses roughly 1 GB. A video call at HD quality uses about 1.5 GB per hour. A data cap of 500 MB per month is enough to check your email on public Wi-Fi a few times and not much else.
 The no-cap exceptions - ProtonVPN Free and OllaVPN Free - are meaningful because they don't use artificial data limits to push you toward upgrading. You can use them as your daily driver for browsing and lower-bandwidth tasks without running into a wall.
@@ -195,15 +195,15 @@ OllaVPN was built with one belief: post-quantum-safe privacy shouldn't be a feat
 
 Here's what OllaVPN's free tier actually includes:
 Post-quantum cryptography ready on every connection - free or paid. Every tunnel is built to be resistant to "harvest now, decrypt later" attacks.
-No data cap. No time limit. You can use it daily without hitting a wall.
+20 GB of free data every month. No time limit. You can use it daily without hitting a wall.
 No ads, no data brokering, no traffic injection. The free tier is funded by paid subscribers who want more speed and more devices. Your traffic isn't the product.
 Kill switch that can't be disabled. Privacy isn't an optional setting.
 Audited privacy practices. Same no-logs policy on free and paid tiers.
 Every country we serve. Free users aren't limited to a single server location.
-The trade-off for the free tier is speed - 10 Mbps vs the 10 Gbps available on the paid plan - and device count (one device at a time). Those are real constraints. For heavy users, streamers, or households covering multiple devices, the paid plan at $2/month is the right call. But for a solo user who wants genuine privacy protection with PQC readiness and no data cap, the free plan is a real option, not a gimped trial version.
+The trade-off for the free tier is speed - 10 Mbps vs the 10 Gbps available on the paid plan - and device count (one device at a time). Those are real constraints. For heavy users, streamers, or households covering multiple devices, the paid plan at $2/month is the right call. But for a solo user who wants genuine privacy protection with PQC readiness and 20 GB of free data every month, the free plan is a real option, not a gimped trial version.
 
 OllaVPN pricing - the whole menu:
-Free plan - $0 · 10 Mbps Every country we serve. No data cap. No time limit. No ads. Post-quantum ready. No card required.
+Free plan - $0 · Up to 100 Mbps Every country we serve. 20 GB of free data every month. No time limit. No ads. Post-quantum ready. No card required.
 Paid plan - $2 / month · 10 Gbps Five devices on one account. Full-speed connections. Same PQC protection, more bandwidth.
 No tiers, no bundles, no math to do. If the free plan does the job, use it. If you need more speed or more devices, the paid plan is $2.
 You can try the free plan right now - no email, no card.
@@ -266,7 +266,7 @@ What's the cheapest trustworthy paid VPN?
 OllaVPN at $2/month is the most affordable paid option we'd put in the "trustworthy" category with confidence in 2026. ProtonVPN VPN Plus at approximately $2.99/month on a two-year plan is also at the budget end of the reputable market. Below those price points, the trustworthiness of the product tends to become harder to verify.
 
 Does a free VPN slow down your internet?
-Yes, usually - and often significantly. Free VPN servers are shared across many users with limited infrastructure investment. Peak-time congestion is common. Paid VPN infrastructure is less congested because it's better resourced. OllaVPN's free tier caps speed at 10 Mbps, which is transparent and sufficient for browsing; the congestion on most other free tiers is less predictable and can be much worse.
+Yes, usually - and often significantly. Free VPN servers are shared across many users with limited infrastructure investment. Peak-time congestion is common. Paid VPN infrastructure is less congested because it's better resourced. OllaVPN's free tier caps speed at 100 Mbps, which is transparent and sufficient for browsing; the congestion on most other free tiers is less predictable and can be much worse.
 
 Can I use a free VPN for Netflix?
 Almost never reliably. Streaming platforms maintain lists of known VPN IP ranges and block them. The IP addresses used by free VPN tiers are usually already on those lists. Paid VPN providers that actively maintain streaming support rotate their IP addresses and invest in keeping ahead of the blocks - that maintenance effort costs money and can't be sustained on a free tier.
@@ -275,6 +275,6 @@ What should I look for in a free VPN?
 Four things: (1) A published, independently audited no-logs policy - not just a marketing claim, a named firm and a date. (2) A clearly explained business model - how does this company fund its free tier? (3) A kill switch included in the free tier, not just the paid plan. (4) Jurisdiction - where is the company based and what legal obligations does that create? If a free VPN can't answer all four clearly, treat it with scepticism.
 
 Is OllaVPN's free plan really free forever?
-Yes. OllaVPN's free plan has no time limit, no data cap, and no card required. You can use it indefinitely. The paid plan exists for users who need faster speeds (10 Gbps vs 10 Mbps) or more simultaneous devices (five vs one). The free plan is not a trial version - it's a real tier that we intend to maintain as long as OllaVPN exists.
+Yes. OllaVPN's free plan has no time limit, a 20 GB monthly data allowance, and no card required. You can use it indefinitely. The paid plan exists for users who need faster speeds (10 Gbps vs 10 Mbps) or more simultaneous devices (five vs one). The free plan is not a trial version - it's a real tier that we intend to maintain as long as OllaVPN exists.
 What is post-quantum cryptography and do I need it in my VPN?
 Post-quantum cryptography is a new family of encryption algorithms designed to remain secure even if large-scale quantum computers become practical - which most cryptographers expect to happen within the next decade. The concern is "harvest now, decrypt later": adversaries storing your encrypted traffic today, betting they'll be able to decrypt it in the future. A post-quantum-ready VPN protects against that future threat. Most VPNs don't offer this yet. Mullvad pioneered it in production tunnels. OllaVPN includes it on every connection, free and paid.
