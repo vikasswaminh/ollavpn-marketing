@@ -48,6 +48,15 @@
 /about/pricing.html      /free-vpn     302
 /pricing.html            /free-vpn     302
 /pqc.html                /pqc          301
+/post-quantum-encryption            /pqc     301
+/post-quantum-encryption/           /pqc     301
+/post-quantum-encryption.html       /pqc     301
+/features/post-quantum-encryption   /pqc     301
+/features/post-quantum-encryption/  /pqc     301
+/features/post-quantum-encryption.html /pqc  301
+/technology/post-quantum-encryption  /pqc    301
+/technology/post-quantum-encryption/ /pqc    301
+/technology/post-quantum-encryption.html /pqc 301
 /killswitch.html         /killswitch   301
 /in-tunnel-dns.html      /in-tunnel-dns  301
 /peer-isolation.html     /peer-isolation 301
