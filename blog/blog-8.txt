@@ -200,7 +200,7 @@ No ads, no data brokering, no traffic injection. The free tier is funded by paid
 Kill switch that can't be disabled. Privacy isn't an optional setting.
 Audited privacy practices. Same no-logs policy on free and paid tiers.
 Every country we serve. Free users aren't limited to a single server location.
-The trade-off for the free tier is speed - 10 Mbps vs the 10 Gbps available on the paid plan - and device count (one device at a time). Those are real constraints. For heavy users, streamers, or households covering multiple devices, the paid plan at $2/month is the right call. But for a solo user who wants genuine privacy protection with PQC readiness and 20 GB of free data every month, the free plan is a real option, not a gimped trial version.
+The trade-off for the free plan is a speed of up to 100 Mbps, a 20 GB monthly data allowance, and device count (one device at a time). Those are real constraints. For heavy users, streamers, or households covering multiple devices, the paid plan at $2/month is the right call. But for a solo user who wants genuine privacy protection with PQC readiness and 20 GB of free data every month, the free plan is a real option, not a gimped trial version.
 
 OllaVPN pricing - the whole menu:
 Free plan - $0 · Up to 100 Mbps Every country we serve. 20 GB of free data every month. No time limit. No ads. Post-quantum ready. No card required.
@@ -275,6 +275,6 @@ What should I look for in a free VPN?
 Four things: (1) A published, independently audited no-logs policy - not just a marketing claim, a named firm and a date. (2) A clearly explained business model - how does this company fund its free tier? (3) A kill switch included in the free tier, not just the paid plan. (4) Jurisdiction - where is the company based and what legal obligations does that create? If a free VPN can't answer all four clearly, treat it with scepticism.
 
 Is OllaVPN's free plan really free forever?
-Yes. OllaVPN's free plan has no time limit, a 20 GB monthly data allowance, and no card required. You can use it indefinitely. The paid plan exists for users who need faster speeds (10 Gbps vs 10 Mbps) or more simultaneous devices (five vs one). The free plan is not a trial version - it's a real tier that we intend to maintain as long as OllaVPN exists.
+Yes. OllaVPN's free plan has no time limit, a 20 GB monthly data allowance, and no card required. You can use it indefinitely. The limits that matter are speed (up to 100 Mbps), data (20 GB a month) and simultaneous devices (one). The free plan is not a trial version - it's a real tier that we intend to maintain as long as OllaVPN exists.
 What is post-quantum cryptography and do I need it in my VPN?
 Post-quantum cryptography is a new family of encryption algorithms designed to remain secure even if large-scale quantum computers become practical - which most cryptographers expect to happen within the next decade. The concern is "harvest now, decrypt later": adversaries storing your encrypted traffic today, betting they'll be able to decrypt it in the future. A post-quantum-ready VPN protects against that future threat. Most VPNs don't offer this yet. Mullvad pioneered it in production tunnels. OllaVPN includes it on every connection, free and paid.

@@ -324,7 +324,7 @@ What does “no logs” actually mean for a VPN?
 In its strictest form, it means the VPN stores nothing that could identify what you did online: no browsing activity, no IP addresses, no connection timestamps, no session durations. In practice, providers define the term differently - some “no logs” policies cover activity logs only, while still collecting connection metadata. Read the full privacy policy to understand exactly which data types are and aren’t collected.
 
 Which free VPN has the best no-logs policy?
-The three free VPNs with the most credible no-logs architectures in 2026 are Proton VPN Free (five consecutive independent audits, Swiss jurisdiction, unlimited bandwidth), OllaVPN Free (no-account required, in-tunnel DNS, post-quantum encryption, lifetime free with no data caps), and Windscribe Free (10 GB monthly, open-source desktop clients, transparent business model).
+The three free VPNs with the most credible no-logs architectures in 2026 are Proton VPN Free (five consecutive independent audits, Swiss jurisdiction, unlimited bandwidth), OllaVPN Free (private DNS, post-quantum encryption, lifetime free with 20 GB a month), and Windscribe Free (10 GB monthly, open-source desktop clients, transparent business model).
 
 Can a VPN be forced to hand over my data even with a no-logs policy?
 Yes - but if the no-logs architecture is genuine, there is nothing to hand over. The VPN can comply with a court order and produce no useful data, because no data was ever collected. The VPNs with the strongest credibility on this point have documented cases where they received legal demands and the outcome was consistent with the no-logs claim: nothing was produced because nothing existed.
