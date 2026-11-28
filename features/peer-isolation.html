@@ -801,7 +801,7 @@ It also doesn't prevent things like <strong>browser fingerprinting</strong>, whe
 
     <p><strong>What about peer-to-peer apps like file-sharing or video calls?</strong> Direct peer-to-peer connections between two OllaVPN users on the same exit are blocked. Most modern P2P apps (Zoom, Discord, FaceTime) use external relay servers when direct connection fails, so the user-visible behavior is "calls work, slightly higher latency than direct P2P would have given." Apps that strictly require direct P2P (some torrent clients in specific configurations) may behave differently — try and see.</p>
 
-    <p><strong>Is peer isolation different on the free vs Pro tier?</strong> No. Peer isolation is a network-architecture property of the exit servers, not a per-user feature. Free users and Pro users on the same exit are equally isolated from each other (and from all other users).</p>
+    <p><strong>Is peer isolation the same for every user?</strong> No. Peer isolation is a network-architecture property of the exit servers, not a per-user feature. Free users and Pro users on the same exit are equally isolated from each other (and from all other users).</p>
 
     <p><strong>What if a server's firewall rule gets accidentally deleted?</strong> The e2e test would catch it before release ships, the four-layer design means the WireGuard and sysctl layers still enforce the property, and our deployment automation re-applies the firewall rules on every restart. The window for a regression to escape into production is small.</p>
 
