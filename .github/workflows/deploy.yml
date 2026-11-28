@@ -25,7 +25,7 @@ jobs:
       - name: Build
         run: |
           mkdir -p _site
-          rsync -a --delete --exclude='/.git' --exclude='/.github' --exclude='/.gitea' --exclude='/_site' --exclude='CLAUDE.md' --exclude='README.md' ./ _site/
+          rsync -a --delete --exclude='/.git' --exclude='/.github' --exclude='/.gitea' --exclude='/_site' --exclude='CLAUDE.md' --exclude='README.md' --exclude='AGENTS.md' --exclude='/CHECKPOINT.txt' --exclude='/*Report*.txt' --exclude='/daily_report_*' --exclude='/blog *.txt' --exclude='*-backup' --exclude='/blog/drafts/' --exclude='/blog/*.txt' ./ _site/
 
       - name: Deploy to Cloudflare Pages
         if: github.ref == 'refs/heads/main'
